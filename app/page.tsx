@@ -351,10 +351,8 @@ const styles: Record<string, React.CSSProperties> = {
   profile: { display: "flex", gap: 18, alignItems: "center" },
   avatar: { width: 82, height: 82, borderRadius: 22, display: "grid", placeItems: "center", fontSize: 35, background: "linear-gradient(135deg,#263b85,#6a45b8)" },
   stats: { display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 12, margin: "25px 0" },
-  stats: { display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 12, margin: "25px 0" },
   achievements: { borderTop: "1px solid #222c40", paddingTop: 25 },
   achievementGrid: { display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 12 },
-  achievement: { background: "#111827", border: "1px solid #222d43", borderRadius: 14, padding: 17, display: "flex", justifyContent: "space-between", alignItems: "center" },
   achievement: { background: "#111827", border: "1px solid #222d43", borderRadius: 14, padding: 17, display: "flex", justifyContent: "space-between", alignItems: "center" },
   achievementIcon: { marginRight: 8 },
   passportLinks: { marginTop: 20, display: "flex", gap: 14, alignItems: "center", flexWrap: "wrap", color: "#69e8df", fontSize: 13 },
@@ -362,7 +360,6 @@ const styles: Record<string, React.CSSProperties> = {
   lead: { color: "#8d9ab3", marginTop: -20, marginBottom: 25 },
   searchBox: { display: "flex", gap: 10, maxWidth: 800 },
   input: { flex: 1 },
-  searchBox: { display: "flex", gap: 10, maxWidth: 800 },
   playerList: { display: "grid", gap: 10, marginTop: 25 },
   playerCard: { display: "flex", alignItems: "center", gap: 15, background: "#0d1320", border: "1px solid #202a40", borderRadius: 15, padding: 16 },
   miniAvatar: { width: 48, height: 48, display: "grid", placeItems: "center", borderRadius: 14, background: "#1a2440" },
@@ -388,4 +385,4 @@ styles.sectionTitle = { display: "flex", alignItems: "baseline", gap: 14, margin
 styles.sectionTitle = { display: "flex", alignItems: "baseline", gap: 14, marginBottom: 35 };
 styles.input = { flex: 1, background: "#0d1421", border: "1px solid #29364e", borderRadius: 11, color: "white", padding: "15px 17px", outline: "none" };
 styles.page = { ...styles.page, lineHeight: 1.4 };
-styles.page.h1 = {};
+
