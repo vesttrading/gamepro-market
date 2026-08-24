@@ -382,3 +382,4 @@ styles.sectionTitle = { display: "flex", alignItems: "baseline", gap: 14, margin
 styles.input = { flex: 1, background: "#0d1421", border: "1px solid #29364e", borderRadius: 11, color: "white", padding: "15px 17px", outline: "none" };
 styles.page = { ...styles.page, lineHeight: 1.4 };
 
+
