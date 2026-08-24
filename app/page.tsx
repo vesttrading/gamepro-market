@@ -201,5 +201,5 @@ export default function HomePage() {
 
 <style jsx>{
   a, button { font-family: inherit; }
-}</style>
+`}</style>
 
