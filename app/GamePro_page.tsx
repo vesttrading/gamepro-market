@@ -298,7 +298,6 @@ const styles: Record<string, React.CSSProperties> = {
   headerInner: { maxWidth: 1200, margin: "0 auto", minHeight: 72, padding: "0 22px", display: "flex", alignItems: "center", gap: 28 },
   logo: { background: "none", border: 0, color: "white", display: "flex", alignItems: "center", gap: 10, fontSize: 17, cursor: "pointer", marginRight: "auto" },
   logoMark: { width: 38, height: 38, display: "grid", placeItems: "center", borderRadius: 11, background: "linear-gradient(135deg,#00e5d4,#695cff)" },
-  logo: { background: "none", border: 0, color: "white", display: "flex", alignItems: "center", gap: 10, fontSize: 17, cursor: "pointer", marginRight: "auto" },
   nav: { display: "flex", gap: 24 },
   navButton: { background: "none", border: 0 },
   headerActions: { display: "flex", alignItems: "center", gap: 10 },
@@ -332,7 +331,6 @@ const styles: Record<string, React.CSSProperties> = {
   hero: { maxWidth: 1050, margin: "0 auto", padding: "115px 22px 90px", textAlign: "center" },
   badge: { display: "inline-block", color: "#64e9df", fontSize: 13, letterSpacing: 1.4, marginBottom: 22 },
   heroH1: { fontSize: 72 },
-  hero: { maxWidth: 1050, margin: "0 auto", padding: "115px 22px 90px", textAlign: "center" },
   heroButtons: { display: "flex", justifyContent: "center", gap: 14, marginTop: 35, flexWrap: "wrap" },
   primary: { background: "linear-gradient(135deg,#12e2d0,#00aeb8)", color: "#031014", border: 0, borderRadius: 11, padding: "15px 26px", fontWeight: 800, cursor: "pointer", boxShadow: "0 8px 30px rgba(0,210,200,.2)" },
   secondary: { background: "rgba(255,255,255,.03)", color: "#dce8ff", border: "1px solid #00cfc5", borderRadius: 11, padding: "15px 26px", fontWeight: 700, cursor: "pointer" },
@@ -342,7 +340,6 @@ const styles: Record<string, React.CSSProperties> = {
   gameGrid: { display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 14 },
   gameCard: { background: "rgba(15,20,33,.9)", border: "1px solid #202b42", borderRadius: 18, padding: 20, display: "flex", alignItems: "center", gap: 14 },
   gameIcon: { fontSize: 30 },
-  gameCard: { background: "rgba(15,20,33,.9)", border: "1px solid #202b42", borderRadius: 18, padding: 20, display: "flex", alignItems: "center", gap: 14 },
   active: { marginLeft: "auto", color: "#62eadf", fontSize: 10, fontWeight: 800 },
   soon: { marginLeft: "auto", color: "#65728c", fontSize: 10, fontWeight: 800 },
   passportSection: { background: "linear-gradient(180deg,rgba(0,217,205,.04),transparent)", padding: "90px 22px" },
@@ -350,10 +347,8 @@ const styles: Record<string, React.CSSProperties> = {
   profile: { display: "flex", gap: 18, alignItems: "center" },
   avatar: { width: 82, height: 82, borderRadius: 22, display: "grid", placeItems: "center", fontSize: 35, background: "linear-gradient(135deg,#263b85,#6a45b8)" },
   stats: { display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 12, margin: "25px 0" },
-  stats: { display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 12, margin: "25px 0" },
   achievements: { borderTop: "1px solid #222c40", paddingTop: 25 },
   achievementGrid: { display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 12 },
-  achievement: { background: "#111827", border: "1px solid #222d43", borderRadius: 14, padding: 17, display: "flex", justifyContent: "space-between", alignItems: "center" },
   achievement: { background: "#111827", border: "1px solid #222d43", borderRadius: 14, padding: 17, display: "flex", justifyContent: "space-between", alignItems: "center" },
   achievementIcon: { marginRight: 8 },
   passportLinks: { marginTop: 20, display: "flex", gap: 14, alignItems: "center", flexWrap: "wrap", color: "#69e8df", fontSize: 13 },
@@ -361,7 +356,6 @@ const styles: Record<string, React.CSSProperties> = {
   lead: { color: "#8d9ab3", marginTop: -20, marginBottom: 25 },
   searchBox: { display: "flex", gap: 10, maxWidth: 800 },
   input: { flex: 1 },
-  searchBox: { display: "flex", gap: 10, maxWidth: 800 },
   playerList: { display: "grid", gap: 10, marginTop: 25 },
   playerCard: { display: "flex", alignItems: "center", gap: 15, background: "#0d1320", border: "1px solid #202a40", borderRadius: 15, padding: 16 },
   miniAvatar: { width: 48, height: 48, display: "grid", placeItems: "center", borderRadius: 14, background: "#1a2440" },
@@ -387,4 +381,4 @@ styles.sectionTitle = { display: "flex", alignItems: "baseline", gap: 14, margin
 styles.sectionTitle = { display: "flex", alignItems: "baseline", gap: 14, marginBottom: 35 };
 styles.input = { flex: 1, background: "#0d1421", border: "1px solid #29364e", borderRadius: 11, color: "white", padding: "15px 17px", outline: "none" };
 styles.page = { ...styles.page, lineHeight: 1.4 };
-styles.page.h1 = {};
+
