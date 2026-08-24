@@ -114,9 +114,43 @@ export default function HomePage() {
         <div className="navlinks" style={{display:"flex",gap:22,flex:1,justifyContent:"center"}}>
           <a href="#games" style={{color:"#bdc4da"}}>{t.games}</a><a href="#players" style={{color:"#bdc4da"}}>{t.players}</a><a href="#guilds" style={{color:"#bdc4da"}}>{t.guilds}</a><a href="#how" style={{color:"#bdc4da"}}>{t.how}</a>
         </div>
-        <select value={lang} onChange={e=>setLang(e.target.value as Lang)} style={{background:"#0c1123",color:"white",border:"1px solid #313858",borderRadius:9,padding:9}}><option>RU</option><option>EN</option><option>TR</option><option>DE</option></select>
-      </nav>
-    </header>
+       <div style={{ display: "flex", alignItems: "center", gap: "12px", background: "#0c1123", padding: "6px 14px", borderRadius: "20px" }}>
+  <span style={{ fontSize: "16px", color: "#00f0ff" }}>🌐</span>
+  {[
+    { id: "RU", code: "ru" },
+    { id: "EN", code: "gb" },
+    { id: "TR", code: "tr" },
+    { id: "DE", code: "de" }
+  ].map((item) => (
+    <button
+      key={item.id}
+      onClick={() => setLang(item.id as any)}
+      style={{
+        background: "transparent",
+        border: "none",
+        cursor: "pointer",
+        padding: "2px",
+        borderRadius: "50%",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        transition: "all 0.2s ease",
+        transform: lang === item.id ? "scale(1.15)" : "scale(1)",
+        boxShadow: lang === item.id ? "0 0 12px #00f0ff, 0 0 4px #00f0ff" : "none"
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.transform = "scale(1.15)";
+        e.currentTarget.style.boxShadow = "0 0 12px #00f0ff";
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.transform = lang === item.id ? "scale(1.15)" : "scale(1)";
+        e.currentTarget.style.boxShadow = lang === item.id ? "0 0 12px #00f0ff, 0 0 4px #00f0ff" : "none";
+      }}
+    >
+     <span style={{ fontSize: "20px" }}>{item.id === "RU" ? "🇷🇺" : item.id === "EN" ? "🇬🇧" : item.id === "TR" ? "🇹🇷" : "🇩🇪"}</span>
+    </button>
+  ))}
+</div>
 
     <main>
       <section style={{maxWidth:1000,width:"92%",margin:"auto",textAlign:"center",padding:"82px 0 70px"}}>
