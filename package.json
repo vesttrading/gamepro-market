@@ -1,16 +1,15 @@
-export const metadata = {
-  title: 'GamePro Market',
-  description: 'Marketplace for pro players',
-}
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
-  return (
-    <html lang="ru">
-      <body>{children}</body>
-    </html>
-  )
+{
+  "name": "gamepro-market",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  }
 }
