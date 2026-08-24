@@ -20,13 +20,18 @@ export default function HomePage() {
   const [search, setSearch] = useState("");
   const [showSearch, setShowSearch] = useState(false);
 
-  const filteredPlayers = useMemo(() => {
-    const q = search.toLowerCase().trim();
-    if (!q) return players;
-    return players.filter((p) =>
-      `${p.name} ${p.role} ${p.game} ${p.region} ${p.rating}`.toLowerCase().includes(q)
-    );
-  }, [search]);
+ const filteredPlayers = useMemo(() => {
+  const q = search.toLowerCase().trim();
+  if (!q) return players;
+
+  return players.filter((p) => {
+    const nameMatch = p.name.toLowerCase().includes(q);
+    const roleMatch = p.role.toLowerCase().includes(q);
+    const gameMatch = p.game.toLowerCase().includes(q);
+
+    return nameMatch || roleMatch || gameMatch;
+  });
+}, [search]);
 
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -372,14 +377,7 @@ const styles: Record<string, React.CSSProperties> = {
   footer: { maxWidth: 1150, margin: "0 auto", padding: "45px 22px", display: "flex", justifyContent: "space-between", color: "#68758e", gap: 20, flexWrap: "wrap" },
 };
 
-styles.heroH1 = { fontSize: "clamp(46px,8vw,76px)", lineHeight: 1.03, margin: "0 0 24px", letterSpacing: "-2px" };
-styles.heroP = { maxWidth: 720, margin: "0 auto", color: "#8e9bb6", fontSize: 18, lineHeight: 1.6 };
-styles.sectionTitle = { display: "flex", alignItems: "baseline", gap: 14, marginBottom: 35 };
-styles.sectionTitle = { display: "flex", alignItems: "baseline", gap: 14, marginBottom: 35 };
-styles.sectionTitle = { display: "flex", alignItems: "baseline", gap: 14, marginBottom: 35 };
-styles.sectionTitle = { display: "flex", alignItems: "baseline", gap: 14, marginBottom: 35 };
-styles.sectionTitle = { display: "flex", alignItems: "baseline", gap: 14, marginBottom: 35 };
-styles.input = { flex: 1, background: "#0d1421", border: "1px solid #29364e", borderRadius: 11, color: "white", padding: "15px 17px", outline: "none" };
-styles.page = { ...styles.page, lineHeight: 1.4 };
-
-
+styles.heroH1 = { fontSize: "clamp(46px, 8vw, 76px)" };
+styles.heroP = { maxWidth: 720, margin: "0 auto" };
+styles.sectionTitle = { display: "flex", alignItems: "center" };
+styles.input = { flex: 1, background: "#0d1421" };
