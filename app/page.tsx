@@ -298,7 +298,6 @@ const styles: Record<string, React.CSSProperties> = {
   headerInner: { maxWidth: 1200, margin: "0 auto", minHeight: 72, padding: "0 22px", display: "flex", alignItems: "center", gap: 28 },
   logo: { background: "none", border: 0, color: "white", display: "flex", alignItems: "center", gap: 10, fontSize: 17, cursor: "pointer", marginRight: "auto" },
   logoMark: { width: 38, height: 38, display: "grid", placeItems: "center", borderRadius: 11, background: "linear-gradient(135deg,#00e5d4,#695cff)" },
-  logo: { background: "none", border: 0, color: "white", display: "flex", alignItems: "center", gap: 10, fontSize: 17, cursor: "pointer", marginRight: "auto" },
   nav: { display: "flex", gap: 24 },
   navButton: { background: "none", border: 0 },
   headerActions: { display: "flex", alignItems: "center", gap: 10 },
@@ -384,4 +383,4 @@ styles.sectionTitle = { display: "flex", alignItems: "baseline", gap: 14, margin
 styles.sectionTitle = { display: "flex", alignItems: "baseline", gap: 14, marginBottom: 35 };
 styles.input = { flex: 1, background: "#0d1421", border: "1px solid #29364e", borderRadius: 11, color: "white", padding: "15px 17px", outline: "none" };
 styles.page = { ...styles.page, lineHeight: 1.4 };
-styles.page.h1 = {};
+
