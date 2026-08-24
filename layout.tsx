@@ -1,17 +1,19 @@
+import type { Metadata } from "next";
+import "./globals.css";
 
-export const metadata = {
-  title: 'GamePro Market',
-  description: 'Marketplace for pro players',
-}
+export const metadata: Metadata = {
+  title: "GamePro",
+  description: "GamePro Market",
+};
 
 export default function RootLayout({
   children,
-}: {
-  children: React.ReactNode
-}) {
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <html lang="ru">
       <body>{children}</body>
     </html>
-  )
+  );
 }
