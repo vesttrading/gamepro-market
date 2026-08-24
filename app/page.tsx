@@ -114,48 +114,14 @@ export default function HomePage() {
         <div className="navlinks" style={{display:"flex",gap:22,flex:1,justifyContent:"center"}}>
           <a href="#games" style={{color:"#bdc4da"}}>{t.games}</a><a href="#players" style={{color:"#bdc4da"}}>{t.players}</a><a href="#guilds" style={{color:"#bdc4da"}}>{t.guilds}</a><a href="#how" style={{color:"#bdc4da"}}>{t.how}</a>
         </div>
-       <div style={{ display: "flex", alignItems: "center", gap: "12px", background: "#0c1123", padding: "6px 14px", borderRadius: "20px" }}>
-  <span style={{ fontSize: "16px", color: "#00f0ff" }}>🌐</span>
-  {[
-    { id: "RU", code: "ru" },
-    { id: "EN", code: "gb" },
-    { id: "TR", code: "tr" },
-    { id: "DE", code: "de" }
-  ].map((item) => (
-    <button
-      key={item.id}
-      onClick={() => setLang(item.id as any)}
-      style={{
-        background: "transparent",
-        border: "none",
-        cursor: "pointer",
-        padding: "2px",
-        borderRadius: "50%",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        transition: "all 0.2s ease",
-        transform: lang === item.id ? "scale(1.15)" : "scale(1)",
-        boxShadow: lang === item.id ? "0 0 12px #00f0ff, 0 0 4px #00f0ff" : "none"
-      }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.transform = "scale(1.15)";
-        e.currentTarget.style.boxShadow = "0 0 12px #00f0ff";
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.transform = lang === item.id ? "scale(1.15)" : "scale(1)";
-        e.currentTarget.style.boxShadow = lang === item.id ? "0 0 12px #00f0ff, 0 0 4px #00f0ff" : "none";
-      }}
-    >
-     <span style={{ fontSize: "20px" }}>{item.id === "RU" ? "🇷🇺" : item.id === "EN" ? "🇬🇧" : item.id === "TR" ? "🇹🇷" : "🇩🇪"}</span>
-    </button>
-  ))}
-</div>
+        <select value={lang} onChange={e=>setLang(e.target.value as Lang)} style={{background:"#0c1123",color:"white",border:"1px solid #313858",borderRadius:9,padding:9}}><option>RU</option><option>EN</option><option>TR</option><option>DE</option></select>
+      </nav>
+    </header>
 
     <main>
       <section style={{maxWidth:1000,width:"92%",margin:"auto",textAlign:"center",padding:"82px 0 70px"}}>
         <span style={{color:"#72fff4",border:"1px solid #168f88",background:"#0b292b",padding:"8px 13px",borderRadius:99,fontSize:12,fontWeight:800}}>🏆 ACHIEVEMENT PASSPORT</span>
-        <h1 style={{fontSize:"clamp(36px,5.5vw,60px)",lineHeight:.98,margin:"22px 0 18px"}}>{t.h1}<br/><span style={{background:"linear-gradient(90deg,#fff,#e832ff,#16ddff)",WebkitBackgroundClip:"text",color:"transparent"}}>{t.h2}</span></h1>
+        <h1 style={{fontSize:"clamp(44px,7vw,80px)",lineHeight:.98,margin:"22px 0 18px"}}>{t.h1}<br/><span style={{background:"linear-gradient(90deg,#fff,#e832ff,#16ddff)",WebkitBackgroundClip:"text",color:"transparent"}}>{t.h2}</span></h1>
         <p style={{maxWidth:690,margin:"auto",color:"#9da6c0",fontSize:18,lineHeight:1.65}}>{t.intro}</p>
         <div style={{marginTop:28,display:"flex",justifyContent:"center",gap:12,flexWrap:"wrap"}}><a href="#passport" style={btn}>🎮 {t.create}</a><a href="#players" style={outline}>🔎 {t.find}</a></div>
       </section>
@@ -199,7 +165,5 @@ export default function HomePage() {
 
     <footer style={{borderTop:"1px solid #171c31",padding:28,color:"#737c98"}}><div className="footer" style={{maxWidth:1160,width:"92%",margin:"auto",display:"flex",justifyContent:"space-between",gap:15}}><span>© 2026 GamePro Market</span><span>Achievement Passport · WoW MVP · Dota 2 · CS2 · PoE2</span></div></footer>
 
-<style jsx>{
-  a, button { font-family: inherit; }
-`}</style>
-
+    <style jsx>{`\n      a,button{font-family:inherit}.navlinks a{text-decoration:none;transition:color .2s}.navlinks a:hover{color:#58eee5!important}.sectionHead,.gameHeader{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:25px}.verifiedPill,.status{display:inline-flex;padding:7px 10px;border-radius:999px;background:#0c302f;color:#52eee3;border:1px solid #168f88;font-size:11px;font-weight:900}.futureStatus{display:inline-flex;padding:6px 9px;border-radius:999px;background:#171d31;color:#8994af;font-size:10px;font-weight:800}.greenTag{background:#0d2929;padding:7px;border-radius:7px;color:#45e0a1;font-size:11px;border:1px solid #174f49}\n      @media(max-width:900px){.navlinks{display:none!important}.grid2,.cards,.steps,.gameGrid{grid-template-columns:1fr!important}.gameGrid>div{min-height:0}.sectionHead,.gameHeader{align-items:flex-start;flex-direction:column}.sectionHead button{width:100%}}\n      @media(max-width:560px){.nav{min-height:68px}.nav select{margin-left:auto}.stats{grid-template-columns:1fr!important}.badges{grid-template-columns:1fr!important}.searchbar{flex-direction:column}.searchbar button{width:100%}.footer{display:block!important;text-align:center}.footer span{display:block;margin:7px 0}.hero{} }\n    `}</style>\n  </div>;
+}
