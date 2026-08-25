@@ -114,16 +114,18 @@ export default function HomePage() {
     ["🔥","FireMage","Fire Mage · EU","2710","AOTC"]
   ].filter(x => !q || x.join(" ").toLowerCase().includes(q.toLowerCase()));
 
-  const sharePassport = async () => {
-    const url = typeof window !== "undefined" ? window.location.href + "#passport" : "";
-   try {
-  if (navigator.share) {
-    await navigator.share({ url });
-  } else {
-    await navigator.clipboard.writeText(url);
+ const sharePassport = async () => {
+  const url = typeof window !== "undefined" ? window.location.href : "";
+  try {
+    if (navigator.share) {
+      await navigator.share({ url });
+    } else {
+      await navigator.clipboard.writeText(url);
+    }
+  } catch (e) {
+    console.error(e);
   }
-} catch (e) {}
-  };
+};
 
   const btn:React.CSSProperties={
     display:"inline-flex",alignItems:"center",justifyContent:"center",gap:8,padding:"14px 22px",borderRadius:12,
