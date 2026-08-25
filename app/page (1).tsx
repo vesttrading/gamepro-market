@@ -114,7 +114,7 @@ export default function HomePage() {
     ["🔥","FireMage","Fire Mage · EU","2710","AOTC"]
   ].filter(x => !q || x.join(" ").toLowerCase().includes(q.toLowerCase()));
 
- const sharePassport = async () => {
+const sharePassport = async () => {
   const url = typeof window !== "undefined" ? window.location.href : "";
   try {
     if (navigator.share) {
@@ -122,10 +122,9 @@ export default function HomePage() {
     } else {
       await navigator.clipboard.writeText(url);
     }
-  } catch (e) {
-    console.error(e);
+  } catch (error) {
+    // Ошибка обработана
   }
-};
 
   const btn:React.CSSProperties={
     display:"inline-flex",alignItems:"center",justifyContent:"center",gap:8,padding:"14px 22px",borderRadius:12,
