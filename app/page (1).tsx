@@ -116,10 +116,13 @@ export default function HomePage() {
 
   const sharePassport = async () => {
     const url = typeof window !== "undefined" ? window.location.href + "#passport" : "";
-    try {
-      if (navigator.share) await navigator.share({ title:"GamePro Achievement Passport", url });
-      else { await navigator.clipboard.writeText(url); setCopied(true); setTimeout(()=>setCopied(false),2200); }
-    } catch {}
+   try {
+  if (navigator.share) {
+    await navigator.share({ url });
+  } else {
+    await navigator.clipboard.writeText(url);
+  }
+} catch (e) {}
   };
 
   const btn:React.CSSProperties={
