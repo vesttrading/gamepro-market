@@ -118,8 +118,6 @@ export default function HomePage() {
   const [supabaseSaving,setSupabaseSaving] = useState(false);
   const [supabaseStatus,setSupabaseStatus] = useState("");
   const [verified,setVerified] = useState(false);
-  const [verifiedId,setVerifiedId] = useState("");
-  const [passportUrl,setPassportUrl] = useState("");
   const [verifying,setVerifying] = useState(false);
   const t=L[lang];
 
@@ -173,9 +171,6 @@ export default function HomePage() {
       });
       if (!updateResponse.ok) throw new Error(await updateResponse.text() || "Не удалось подтвердить VERIFIED.");
       setVerified(true);
-      const id = `GP-${String(rioData.name || "PLAYER").toUpperCase().replace(/[^A-Z0-9]/g, "").slice(0,8)}-${String(rows[0].id).padStart(6,"0")}`;
-      setVerifiedId(id);
-      setPassportUrl(`${window.location.origin}/?passport=${encodeURIComponent(id)}`);
       setSupabaseStatus("✓ VERIFIED подтверждён GamePro.");
     } catch (error) {
       setSupabaseStatus(error instanceof Error ? error.message : "Не удалось подтвердить VERIFIED.");
@@ -293,28 +288,6 @@ export default function HomePage() {
             <div style={{marginTop:14,padding:15,borderRadius:12,background:"#0a1021"}}><b style={{fontSize:22}}>{rioData.mythic_plus_scores_by_season?.[0]?.scores?.all ?? "—"}</b><small style={{display:"block",color:"#9da6c0",marginTop:4}}>Mythic+ Score</small></div>
             <button onClick={saveRaiderIOToSupabase} disabled={supabaseSaving} style={{...btn,marginTop:14}}>💾 {supabaseSaving ? "Сохраняем…" : "Сохранить в GamePro"}</button>
             <button onClick={verifyRaiderIO} disabled={verifying || verified} style={{...btn,marginTop:10,opacity:verified?0.75:1}}>{verified ? "✓ VERIFIED" : (verifying ? "Проверяем…" : "✓ Подтвердить VERIFIED")}</button>
-          {verified && <div id="passport-card" style={{marginTop:14,padding:18,borderRadius:16,background:"#08151a",border:"1px solid #17bcb2"}}>
-            <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",gap:12,flexWrap:"wrap"}}>
-              <div>
-                <div style={{fontSize:12,color:"#52eee3",fontWeight:800,letterSpacing:1}}>GAMEPRO ACHIEVEMENT PASSPORT</div>
-                <h3 style={{margin:"6px 0 4px",fontSize:24}}>✓ VERIFIED</h3>
-                <div style={{color:"#9da6c0"}}>{rioData?.name} · {rioData?.realm?.name || rioRealm} · {String(rioData?.region?.name || rioRegion).toUpperCase()}</div>
-              </div>
-              <div style={{textAlign:"right"}}>
-                <div style={{fontSize:11,color:"#7f8aa5"}}>VERIFIED ID</div>
-                <b style={{fontSize:18,color:"#52eee3"}}>{verifiedId || "—"}</b>
-              </div>
-            </div>
-            <div style={{display:"flex",gap:10,flexWrap:"wrap",marginTop:14}}>
-              <button style={btn} onClick={async()=>{
-                if (passportUrl && navigator.clipboard) {
-                  await navigator.clipboard.writeText(passportUrl);
-                  alert("Ссылка на паспорт скопирована.");
-                }
-              }}>🔗 Поделиться паспортом</button>
-              <span style={{alignSelf:"center",fontSize:12,color:"#74809a"}}>Источник: Raider.IO · подтверждено GamePro</span>
-            </div>
-          </div>
             {supabaseStatus && <p style={{color:supabaseStatus.startsWith("✓") ? "#45e0a1" : "#ffb3bf",fontSize:12,marginBottom:0}}>{supabaseStatus}</p>}
           </div>}
           <p style={{color:"#65708d",fontSize:11,margin:"14px 0 0"}}>Источник: <a href="https://raider.io" target="_blank" rel="noreferrer" style={{color:"#52eee3"}}>Raider.IO</a>. Данные из источника ещё не являются VERIFIED GamePro.</p>
