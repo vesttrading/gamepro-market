@@ -117,6 +117,8 @@ export default function HomePage() {
   const [rioError,setRioError] = useState("");
   const [supabaseSaving,setSupabaseSaving] = useState(false);
   const [supabaseStatus,setSupabaseStatus] = useState("");
+  const [verified,setVerified] = useState(false);
+  const [verifying,setVerifying] = useState(false);
   const t=L[lang];
 
   const players=[
@@ -143,6 +145,38 @@ export default function HomePage() {
       setRioData(await response.json());
     } catch (error) { setRioError(error instanceof Error ? error.message : "Не удалось получить данные Raider.IO."); }
     finally { setRioLoading(false); }
+  };
+
+  const verifyRaiderIO = async () => {
+    if (!rioData) return;
+    if (!SUPABASE_URL || !SUPABASE_KEY) {
+      setSupabaseStatus("Supabase не настроен в переменных Vercel.");
+      return;
+    }
+    setVerifying(true);
+    setSupabaseStatus("");
+    try {
+      const name = encodeURIComponent(rioData.name);
+      const realm = encodeURIComponent(rioData.realm?.name || rioRealm);
+      const findResponse = await fetch(`${SUPABASE_URL}/rest/v1/player_verifications?player_name=eq.${name}&realm=eq.${realm}&select=id`, {
+        headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` }
+      });
+      if (!findResponse.ok) throw new Error("Не удалось найти сохранённую запись.");
+      const rows = await findResponse.json();
+      if (!rows.length) throw new Error("Сначала нажми «Сохранить в GamePro».");
+      const updateResponse = await fetch(`${SUPABASE_URL}/rest/v1/player_verifications?id=eq.${rows[0].id}`, {
+        method: "PATCH",
+        headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}`, "Content-Type": "application/json", Prefer: "return=minimal" },
+        body: JSON.stringify({ source_verified: true })
+      });
+      if (!updateResponse.ok) throw new Error(await updateResponse.text() || "Не удалось подтвердить VERIFIED.");
+      setVerified(true);
+      setSupabaseStatus("✓ VERIFIED подтверждён GamePro.");
+    } catch (error) {
+      setSupabaseStatus(error instanceof Error ? error.message : "Не удалось подтвердить VERIFIED.");
+    } finally {
+      setVerifying(false);
+    }
   };
 
   const saveRaiderIOToSupabase = async () => {
@@ -253,6 +287,7 @@ export default function HomePage() {
             </div>
             <div style={{marginTop:14,padding:15,borderRadius:12,background:"#0a1021"}}><b style={{fontSize:22}}>{rioData.mythic_plus_scores_by_season?.[0]?.scores?.all ?? "—"}</b><small style={{display:"block",color:"#9da6c0",marginTop:4}}>Mythic+ Score</small></div>
             <button onClick={saveRaiderIOToSupabase} disabled={supabaseSaving} style={{...btn,marginTop:14}}>💾 {supabaseSaving ? "Сохраняем…" : "Сохранить в GamePro"}</button>
+            <button onClick={verifyRaiderIO} disabled={verifying || verified} style={{...btn,marginTop:10,opacity:verified?0.75:1}}>{verified ? "✓ VERIFIED" : (verifying ? "Проверяем…" : "✓ Подтвердить VERIFIED")}</button>
             {supabaseStatus && <p style={{color:supabaseStatus.startsWith("✓") ? "#45e0a1" : "#ffb3bf",fontSize:12,marginBottom:0}}>{supabaseStatus}</p>}
           </div>}
           <p style={{color:"#65708d",fontSize:11,margin:"14px 0 0"}}>Источник: <a href="https://raider.io" target="_blank" rel="noreferrer" style={{color:"#52eee3"}}>Raider.IO</a>. Данные из источника ещё не являются VERIFIED GamePro.</p>
