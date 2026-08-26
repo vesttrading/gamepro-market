@@ -2,6 +2,9 @@
 
 import { useState } from "react";
 
+const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY;
+
 const L = {
   RU: {
     games:"Игры", players:"Игроки", guilds:"Гильдии", how:"Как это работает",
@@ -112,6 +115,8 @@ export default function HomePage() {
   const [rioData,setRioData] = useState<any>(null);
   const [rioLoading,setRioLoading] = useState(false);
   const [rioError,setRioError] = useState("");
+  const [supabaseSaving,setSupabaseSaving] = useState(false);
+  const [supabaseStatus,setSupabaseStatus] = useState("");
   const t=L[lang];
 
   const players=[
@@ -130,7 +135,7 @@ export default function HomePage() {
 
   const searchRaiderIO = async () => {
     if (!rioName.trim() || !rioRealm.trim()) { setRioError("Укажи имя персонажа и реалм."); setRioData(null); return; }
-    setRioLoading(true); setRioError(""); setRioData(null);
+    setRioLoading(true); setRioError(""); setRioData(null); setSupabaseStatus("");
     try {
       const params = new URLSearchParams({region:rioRegion,realm:rioRealm.trim().toLowerCase().replace(/\s+/g,"-"),name:rioName.trim(),fields:"mythic_plus_scores_by_season:current,gear"});
       const response = await fetch("https://raider.io/api/v1/characters/profile?"+params.toString());
@@ -138,6 +143,46 @@ export default function HomePage() {
       setRioData(await response.json());
     } catch (error) { setRioError(error instanceof Error ? error.message : "Не удалось получить данные Raider.IO."); }
     finally { setRioLoading(false); }
+  };
+
+  const saveRaiderIOToSupabase = async () => {
+    if (!rioData) return;
+    if (!SUPABASE_URL || !SUPABASE_KEY) {
+      setSupabaseStatus("Supabase не настроен в переменных Vercel.");
+      return;
+    }
+    setSupabaseSaving(true); setSupabaseStatus("");
+    try {
+      const score = rioData.mythic_plus_scores_by_season?.[0]?.scores?.all ?? null;
+      const payload = {
+        player_name: rioData.name,
+        realm: rioData.realm?.name || rioRealm,
+        region: String(rioData.region?.name || rioRegion).toUpperCase(),
+        mythic_plus_score: score,
+        source: "raider.io",
+        source_verified: false,
+        raw_data: rioData
+      };
+      const response = await fetch(`${SUPABASE_URL}/rest/v1/player_verifications`, {
+        method: "POST",
+        headers: {
+          apikey: SUPABASE_KEY,
+          Authorization: `Bearer ${SUPABASE_KEY}`,
+          "Content-Type": "application/json",
+          Prefer: "return=minimal"
+        },
+        body: JSON.stringify(payload)
+      });
+      if (!response.ok) {
+        const text = await response.text();
+        throw new Error(text || "Supabase не принял данные.");
+      }
+      setSupabaseStatus("✓ Данные сохранены в Supabase. Пока это DATA FOUND, не VERIFIED.");
+    } catch (error) {
+      setSupabaseStatus(error instanceof Error ? `Ошибка Supabase: ${error.message}` : "Не удалось сохранить данные.");
+    } finally {
+      setSupabaseSaving(false);
+    }
   };
 
   const btn:React.CSSProperties={
@@ -207,6 +252,8 @@ export default function HomePage() {
               <span className="verifiedPill">DATA FOUND · NOT VERIFIED</span>
             </div>
             <div style={{marginTop:14,padding:15,borderRadius:12,background:"#0a1021"}}><b style={{fontSize:22}}>{rioData.mythic_plus_scores_by_season?.[0]?.scores?.all ?? "—"}</b><small style={{display:"block",color:"#9da6c0",marginTop:4}}>Mythic+ Score</small></div>
+            <button onClick={saveRaiderIOToSupabase} disabled={supabaseSaving} style={{...btn,marginTop:14}}>💾 {supabaseSaving ? "Сохраняем…" : "Сохранить в GamePro"}</button>
+            {supabaseStatus && <p style={{color:supabaseStatus.startsWith("✓") ? "#45e0a1" : "#ffb3bf",fontSize:12,marginBottom:0}}>{supabaseStatus}</p>}
           </div>}
           <p style={{color:"#65708d",fontSize:11,margin:"14px 0 0"}}>Источник: <a href="https://raider.io" target="_blank" rel="noreferrer" style={{color:"#52eee3"}}>Raider.IO</a>. Данные из источника ещё не являются VERIFIED GamePro.</p>
         </div>
