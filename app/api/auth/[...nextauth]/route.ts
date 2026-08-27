@@ -6,6 +6,12 @@ const handler = NextAuth({
     BattleNetProvider({
       clientId: process.env.BATTLE_NET_CLIENT_ID!,
       clientSecret: process.env.BATTLE_NET_CLIENT_SECRET!,
+      issuer: "https://oauth.battle.net",
+      authorization: {
+        params: {
+          scope: "openid wow.profile",
+        },
+      },
     }),
   ],
 
@@ -16,21 +22,17 @@ const handler = NextAuth({
   },
 
   callbacks: {
-    async jwt({ token, account, profile }) {
-      if (account) {
-        token.battleNetId = account.providerAccountId;
-      }
-
-      if (profile) {
-        token.battleNetProfile = profile;
+    async jwt({ token, account }) {
+      if (account?.access_token) {
+        token.accessToken = account.access_token;
       }
 
       return token;
     },
 
     async session({ session, token }) {
-      if (session.user) {
-        (session.user as any).battleNetId = token.battleNetId;
+      if (token.accessToken) {
+        (session as any).accessToken = token.accessToken;
       }
 
       return session;
