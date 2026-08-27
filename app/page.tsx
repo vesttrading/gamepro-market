@@ -118,7 +118,6 @@ export default function HomePage() {
   const [supabaseSaving,setSupabaseSaving] = useState(false);
   const [supabaseStatus,setSupabaseStatus] = useState("");
   const [verified,setVerified] = useState(false);
-  const [verifiedId,setVerifiedId] = useState<string>("");
   const [verifying,setVerifying] = useState(false);
   const t=L[lang];
 
@@ -172,7 +171,6 @@ export default function HomePage() {
       });
       if (!updateResponse.ok) throw new Error(await updateResponse.text() || "Не удалось подтвердить VERIFIED.");
       setVerified(true);
-      setVerifiedId(String(rows[0].id || ""));
       setSupabaseStatus("✓ VERIFIED подтверждён GamePro.");
     } catch (error) {
       setSupabaseStatus(error instanceof Error ? error.message : "Не удалось подтвердить VERIFIED.");
@@ -256,9 +254,8 @@ export default function HomePage() {
         <div className="sectionHead"><div><h2 style={{fontSize:36,marginBottom:8}}>{t.passport}</h2><p style={{color:"#9da6c0",marginTop:0}}>{t.sub}</p></div><button onClick={sharePassport} style={outline}>🔗 {copied ? t.copied : t.share}</button></div>
         <div className="grid2" style={{display:"grid",gridTemplateColumns:"1.05fr .95fr",gap:20}}>
           <div style={card}>
-            <div style={{display:"flex",alignItems:"center",gap:15}}><div style={{width:72,height:72,borderRadius:18,display:"grid",placeItems:"center",fontSize:32,background:"linear-gradient(135deg,#7e2cff,#ec2ad4)"}}>⚡</div><div><div style={{fontSize:11,fontWeight:900,letterSpacing:1.5,color:"#52eee3",marginBottom:5}}>GAMEPRO ACHIEVEMENT PASSPORT</div><h3 style={{fontSize:24,margin:"0 0 5px"}}>{rioData?.name || "Vladimir"}</h3><div style={{color:"#9da6c0"}}>{rioData?.class?.name || "Restoration Shaman"} · {rioData?.realm?.name || rioRealm || "EU"} · {String(rioData?.region?.name || rioRegion).toUpperCase()} · World of Warcraft</div><div style={{display:"flex",alignItems:"center",gap:8,marginTop:8,flexWrap:"wrap"}}><span className="verifiedPill">✓ VERIFIED</span><span style={{color:"#71809e",fontSize:11}}>VERIFIED ID: {verifiedId || "—"}</span></div></div></div>
-            <div className="stats" style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:10,marginTop:25}}>{[[rioData?.mythic_plus_scores_by_season?.[0]?.scores?.all ?? "2850","Mythic+ Rating"],["CE","Raid Progress"],["2.4k+","M+ Runs"]].map(x=><div key={x[0]} style={{padding:15,background:"#080d1b",border:"1px solid #1e2540",borderRadius:12}}><b style={{fontSize:21}}>{x[0]}</b><small style={{display:"block",color:"#9da6c0",marginTop:4}}>{x[1]}</small></div>)}</div>
-            <button onClick={sharePassport} style={{...outline,marginTop:18,width:"100%"}}>🔗 {copied ? t.copied : "Поделиться паспортом"}</button>
+            <div style={{display:"flex",alignItems:"center",gap:15}}><div style={{width:72,height:72,borderRadius:18,display:"grid",placeItems:"center",fontSize:32,background:"linear-gradient(135deg,#7e2cff,#ec2ad4)"}}>⚡</div><div><h3 style={{fontSize:24,margin:"0 0 5px"}}>Vladimir</h3><div style={{color:"#9da6c0"}}>Restoration Shaman · EU · World of Warcraft</div><div style={{color:"#45e0a1",fontSize:12,marginTop:6}}>● {t.verified}</div></div></div>
+            <div className="stats" style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:10,marginTop:25}}>{[["2850","Mythic+ Rating"],["CE","Raid Progress"],["2.4k+","M+ Runs"]].map(x=><div key={x[0]} style={{padding:15,background:"#080d1b",border:"1px solid #1e2540",borderRadius:12}}><b style={{fontSize:21}}>{x[0]}</b><small style={{display:"block",color:"#9da6c0",marginTop:4}}>{x[1]}</small></div>)}</div>
           </div>
           <div style={card}><div style={{display:"flex",justifyContent:"space-between",alignItems:"center",gap:10}}><h3 style={{marginTop:0}}>🏆 {t.verifiedShort}</h3><span className="verifiedPill">✓ VERIFIED</span></div><div className="badges" style={{display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:12}}>{["KSM","2850 M+","Cutting Edge","AOTC"].map(x=><div key={x} style={{padding:17,borderRadius:14,background:"#0a1021",border:"1px solid #1c8f82"}}><b>🏆 {x}</b><small style={{display:"block",color:"#45e0a1",marginTop:6}}>✓ {t.verifiedShort}</small></div>)}</div></div>
         </div>
