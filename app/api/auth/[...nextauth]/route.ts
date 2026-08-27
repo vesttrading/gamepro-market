@@ -6,6 +6,7 @@ const handler = NextAuth({
   BattleNetProvider({
     clientId: process.env.BATTLE_NET_CLIENT_ID!,
     clientSecret: process.env.BATTLE_NET_CLIENT_SECRET!,
+    issuer: "https://battle.net",
     authorization: {
       params: {
         scope: "openid wow.profile",
