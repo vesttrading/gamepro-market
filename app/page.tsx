@@ -231,8 +231,8 @@ export default function HomePage() {
     background:"linear-gradient(145deg,#10162b,#080d1b)",border:"1px solid #262d49",borderRadius:20,padding:25
   };
 
-   return (
-    <div style={{minHeight:"100vh",background:"radial-gradient(circle at 80% 0%, #28105b 0, transparent 34%), #05070b"}}>
+  return (
+    <div className="min-h-screen bg-[#05070b] bg-[radial-gradient(circle_at_80%_0%,#28105b_0,transparent_34%)]">
       <Header lang={lang} setLang={setLang} />
       <main>
 
