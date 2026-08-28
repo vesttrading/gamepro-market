@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "GamePro",
-  description: "GamePro Market",
+  title: "GamePro Market",
+  description: "Покупай и продавай достижения WoW",
 };
 
 export default function RootLayout({
@@ -13,7 +13,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <body>{children}</body>
+      <body className="bg-[#0a0f1e] text-white font-sans antialiased">
+        <div className="container mx-auto px-4">
+          {children}
+        </div>
+      </body>
     </html>
   );
 }
