@@ -1,3 +1,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* 1. Центрирование и фиксация ширины основных секций */
+#passport, #players {
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: 1160px !important;
+  width: 92% !important;
+}
+
+/* 2. Восстановление сетки для паспорта (строка 246) */
+.grid2 {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
+  gap: 20px !important;
+  width: 100% !important;
+}
+
+/* 3. Восстановление сетки для карточек игроков (строка 259) */
+.cards {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)) !important;
+  gap: 16px !important;
+  width: 100% !important;
+}
+
+/* 4. Возвращение оформления кастомным карточкам (строка 247) */
+.card {
+  background-color: #10162b !important;
+  border: 1px solid #171c31 !important;
+  border-radius: 16px !important;
+  padding: 24px !important;
+}
