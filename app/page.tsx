@@ -231,11 +231,12 @@ export default function HomePage() {
     background:"linear-gradient(145deg,#10162b,#080d1b)",border:"1px solid #262d49",borderRadius:20,padding:25
   };
 
-  return <div style={{minHeight:"100vh",background:"radial-gradient(circle at 80% 0,#28105b 0,transparent 34%),radial-gradient(circle at 15% 35%,#073c42 0,transparent 25%),#050713",color:"#f7f8ff",fontFamily:"Arial,sans-serif"}}>
-    <Header lang={lang} setLang={setLang} />
+   return (
+    <div style={{minHeight:"100vh",background:"radial-gradient(circle at 80% 0%, #28105b 0, transparent 34%), #05070b"}}>
+      <Header lang={lang} setLang={setLang} />
+      <main>
 
-    <main>
-      <section style={{maxWidth:1000,width:"92%",margin:"auto",textAlign:"center",padding:"82px 0 70px"}}>
+        <section style={{maxWidth:1000,width:"92%",margin:"auto",textAlign:"center",padding:"82px 0 70px"}}>
         <span style={{color:"#72fff4",border:"1px solid #168f88",background:"#0b292b",padding:"8px 13px",borderRadius:99,fontSize:12,fontWeight:800}}>🏆 ACHIEVEMENT PASSPORT</span>
         <h1 style={{fontSize:"clamp(44px,7vw,80px)",lineHeight:.98,margin:"22px 0 18px"}}>{t.h1}<br/><span style={{background:"linear-gradient(90deg,#fff,#e832ff,#16ddff)",WebkitBackgroundClip:"text",color:"transparent"}}>{t.h2}</span></h1>
         <p style={{maxWidth:690,margin:"auto",color:"#9da6c0",fontSize:18,lineHeight:1.65}}>{t.intro}</p>
