@@ -1,5 +1,5 @@
 "use client";
-import Header from "@/components/Header";
+import Header from "../components/Header";
 import { useState } from "react";
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
