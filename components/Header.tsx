@@ -47,33 +47,7 @@ export default function Header({ lang, setLang, t }: HeaderProps) {
             flexShrink: 0,
           }}
         >
-          <span
-            style={{
-              fontSize: 22,
-              fontWeight: 900,
-              color: "#ffffff",
-            }}
-          >
-            GamePro
-          </span>
-          <span
-            style={{
-              color: "#52eee3",
-              fontSize: 22,
-              fontWeight: 900,
-            }}
-          >
-            .
-          </span>
-          <span
-            style={{
-              fontSize: 22,
-              fontWeight: 900,
-              color: "#ffffff",
-            }}
-          >
-            Market
-          </span>
+         <img src="/gamepro-logo.png" alt="GamePro Market" style={{ height: "45px", width: "auto" }} />
         </a>
 
         <div
