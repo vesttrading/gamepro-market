@@ -123,16 +123,19 @@ div[style*="justifyContent: \"space-between\""] {
   width: 500px !important;   
   max-width: 500px !important;
 }
- /* Уменьшаем заголовок «Найти игрока» */
-main div > h1 {
-    font-size: 28px !important;
-    margin-bottom: 12px !important;
+
+/* Выстраиваем карточки игроков в красивый левый ряд */
+main section:has(.searchbar) + div,
+main .searchbar + div {
+    display: flex !important;
+    justify-content: flex-start !important; /* Прижимает все карточки строго влево */
+    flex-wrap: wrap !important; /* Если игроков много, они аккуратно перенесутся на новую строку */
+    gap: 16px !important; /* Устанавливает аккуратное расстояние между карточками */
 }
 
-/* Уменьшаем отступы только внутри главного контейнера поиска */
-main > div {
-    padding-top: 20px !important;
-    padding-bottom: 20px !important;
+/* Делаем каждую карточку фиксированной и компактной */
+main section:has(.searchbar) + div > div,
+main .searchbar + div > div {
+    max-width: 320px !important; /* Ограничивает ширину карточки до аккуратного размера */
+    width: 100% !important;
 }
-
-
