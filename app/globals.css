@@ -147,23 +147,25 @@ main .searchbar + div > div > div:last-child {
     flex-wrap: nowrap !important;   /* Запрещаем перенос вниз */
     gap: 8px !important;            /* Расстояние между плашками */
 }
-/* Выстраиваем форму ввода Raider.IO в одну горизонтальную линию */
-main section:has(input[placeholder*="Реалм"]) form,
-main form:has(input[placeholder*="персонажа"]) {
+/* Насильно выстраиваем инпуты, селектор и кнопку в одну строку */
+main form[action*="raider"] > div,
+main form:has(input) > div:first-child,
+main form:has(input[placeholder*="персонажа"]) > div {
     display: flex !important;
-    flex-direction: row !important; /* Насильно ставит элементы в один ряд */
-    align-items: center !important; /* Выравнивает инпуты и кнопку ровно по высоте */
-    justify-content: center !important; /* Центрирует всю строку на экране */
-    gap: 12px !important;           /* Задает аккуратный отступ между полями */
-    flex-wrap: nowrap !important;   /* Запрещает им переноситься вниз */
-    max-width: 850px !important;    /* Достаточная ширина, чтобы поля не сжимались */
+    flex-direction: row !important; /* Ставит элементы строго в горизонтальный ряд */
+    align-items: center !important; /* Выравнивает поля и кнопку по высоте */
+    gap: 12px !important;           /* Расстояние между полями */
+    flex-wrap: nowrap !important;   /* Запрещает перенос полей на новую строчку */
     width: 100% !important;
-    margin: 20px auto 0 !important; /* Выравнивает блок по центру страницы */
 }
 
-/* Настраиваем поля ввода и кнопку, чтобы они не ломались в ряду */
-main form:has(input[placeholder*="персонажа"]) input,
-main form:has(input[placeholder*="персонажа"]) select,
-main form:has(input[placeholder*="персонажа"]) button {
-    margin: 0 !important; /* Сбрасываем лишние внешние отступы */
+/* Делаем так, чтобы кнопка "Проверить" тоже встала в этот же ряд */
+main form:has(input[placeholder*="персонажа"]) {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-end !important; /* Выравнивает кнопку по нижней линии инпутов */
+    gap: 12px !important;
+    max-width: 850px !important;    /* Делает всю форму аккуратной по ширине */
+    width: 100% !important;
+    margin: 20px auto 0 !important; /* Центрирует всю строку на странице */
 }
