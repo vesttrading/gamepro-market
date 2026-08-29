@@ -110,3 +110,7 @@
 #passport button {
   margin: 0 !important;
 }
+/* Уменьшаем отступ снизу у блока с заголовком и кнопкой */
+.sectionHead {
+  margin-bottom: 12px !important;
+}
