@@ -2,6 +2,9 @@
 
 import { useState } from "react";
 
+const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
 const L = {
   RU: {
     games:"Игры", players:"Игроки", guilds:"Гильдии", how:"Как это работает",
@@ -106,6 +109,17 @@ export default function HomePage() {
   const [lang,setLang] = useState<Lang>("RU");
   const [q,setQ] = useState("");
   const [copied,setCopied] = useState(false);
+  const [rioName,setRioName] = useState("");
+  const [rioRealm,setRioRealm] = useState("");
+  const [rioRegion,setRioRegion] = useState("eu");
+  const [rioData,setRioData] = useState<any>(null);
+  const [rioLoading,setRioLoading] = useState(false);
+  const [rioError,setRioError] = useState("");
+  const [supabaseSaving,setSupabaseSaving] = useState(false);
+  const [supabaseStatus,setSupabaseStatus] = useState("");
+  const [verified,setVerified] = useState(false);
+  const [verifiedId,setVerifiedId] = useState<string>("");
+  const [verifying,setVerifying] = useState(false);
   const t=L[lang];
 
   const players=[
@@ -120,6 +134,91 @@ export default function HomePage() {
       if (navigator.share) await navigator.share({ title:"GamePro Achievement Passport", url });
       else { await navigator.clipboard.writeText(url); setCopied(true); setTimeout(()=>setCopied(false),2200); }
     } catch {}
+  };
+
+  const searchRaiderIO = async () => {
+    if (!rioName.trim() || !rioRealm.trim()) { setRioError("Укажи имя персонажа и реалм."); setRioData(null); return; }
+    setRioLoading(true); setRioError(""); setRioData(null); setSupabaseStatus("");
+    try {
+      const params = new URLSearchParams({region:rioRegion,realm:rioRealm.trim().toLowerCase().replace(/\s+/g,"-"),name:rioName.trim(),fields:"mythic_plus_scores_by_season:current,gear"});
+      const response = await fetch("https://raider.io/api/v1/characters/profile?"+params.toString());
+      if (!response.ok) throw new Error("Персонаж не найден в Raider.IO.");
+      setRioData(await response.json());
+    } catch (error) { setRioError(error instanceof Error ? error.message : "Не удалось получить данные Raider.IO."); }
+    finally { setRioLoading(false); }
+  };
+
+  const verifyRaiderIO = async () => {
+    if (!rioData) return;
+    if (!SUPABASE_URL || !SUPABASE_KEY) {
+      setSupabaseStatus("Supabase не настроен в переменных Vercel.");
+      return;
+    }
+    setVerifying(true);
+    setSupabaseStatus("");
+    try {
+      const name = encodeURIComponent(rioData.name);
+      const realm = encodeURIComponent(rioData.realm?.name || rioRealm);
+      const findResponse = await fetch(`${SUPABASE_URL}/rest/v1/player_verifications?player_name=eq.${name}&realm=eq.${realm}&select=id`, {
+        headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` }
+      });
+      if (!findResponse.ok) throw new Error("Не удалось найти сохранённую запись.");
+      const rows = await findResponse.json();
+      if (!rows.length) throw new Error("Сначала нажми «Сохранить в GamePro».");
+      const updateResponse = await fetch(`${SUPABASE_URL}/rest/v1/player_verifications?id=eq.${rows[0].id}`, {
+        method: "PATCH",
+        headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}`, "Content-Type": "application/json", Prefer: "return=minimal" },
+        body: JSON.stringify({ source_verified: true })
+      });
+      if (!updateResponse.ok) throw new Error(await updateResponse.text() || "Не удалось подтвердить VERIFIED.");
+      setVerified(true);
+      setVerifiedId(String(rows[0].id || ""));
+      setSupabaseStatus("✓ VERIFIED подтверждён GamePro.");
+    } catch (error) {
+      setSupabaseStatus(error instanceof Error ? error.message : "Не удалось подтвердить VERIFIED.");
+    } finally {
+      setVerifying(false);
+    }
+  };
+
+  const saveRaiderIOToSupabase = async () => {
+    if (!rioData) return;
+    if (!SUPABASE_URL || !SUPABASE_KEY) {
+      setSupabaseStatus("Supabase не настроен в переменных Vercel.");
+      return;
+    }
+    setSupabaseSaving(true); setSupabaseStatus("");
+    try {
+      const score = rioData.mythic_plus_scores_by_season?.[0]?.scores?.all ?? null;
+      const payload = {
+        player_name: rioData.name,
+        realm: rioData.realm?.name || rioRealm,
+        region: String(rioData.region?.name || rioRegion).toUpperCase(),
+        mythic_plus_score: score,
+        source: "raider.io",
+        source_verified: false,
+        raw_data: rioData
+      };
+      const response = await fetch(`${SUPABASE_URL}/rest/v1/player_verifications`, {
+        method: "POST",
+        headers: {
+          apikey: SUPABASE_KEY,
+          Authorization: `Bearer ${SUPABASE_KEY}`,
+          "Content-Type": "application/json",
+          Prefer: "return=minimal"
+        },
+        body: JSON.stringify(payload)
+      });
+      if (!response.ok) {
+        const text = await response.text();
+        throw new Error(text || "Supabase не принял данные.");
+      }
+      setSupabaseStatus("✓ Данные сохранены в Supabase. Пока это DATA FOUND, не VERIFIED.");
+    } catch (error) {
+      setSupabaseStatus(error instanceof Error ? `Ошибка Supabase: ${error.message}` : "Не удалось сохранить данные.");
+    } finally {
+      setSupabaseSaving(false);
+    }
   };
 
   const btn:React.CSSProperties={
@@ -157,8 +256,8 @@ export default function HomePage() {
         <div className="sectionHead"><div><h2 style={{fontSize:36,marginBottom:8}}>{t.passport}</h2><p style={{color:"#9da6c0",marginTop:0}}>{t.sub}</p></div><button onClick={sharePassport} style={outline}>🔗 {copied ? t.copied : t.share}</button></div>
         <div className="grid2" style={{display:"grid",gridTemplateColumns:"1.05fr .95fr",gap:20}}>
           <div style={card}>
-            <div style={{display:"flex",alignItems:"center",gap:15}}><div style={{width:72,height:72,borderRadius:18,display:"grid",placeItems:"center",fontSize:32,background:"linear-gradient(135deg,#7e2cff,#ec2ad4)"}}>⚡</div><div><h3 style={{fontSize:24,margin:"0 0 5px"}}>Vladimir</h3><div style={{color:"#9da6c0"}}>Restoration Shaman · EU · World of Warcraft</div><div style={{color:"#45e0a1",fontSize:12,marginTop:6}}>● {t.verified}</div></div></div>
-            <div className="stats" style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:10,marginTop:25}}>{[["2850","Mythic+ Rating"],["CE","Raid Progress"],["2.4k+","M+ Runs"]].map(x=><div key={x[0]} style={{padding:15,background:"#080d1b",border:"1px solid #1e2540",borderRadius:12}}><b style={{fontSize:21}}>{x[0]}</b><small style={{display:"block",color:"#9da6c0",marginTop:4}}>{x[1]}</small></div>)}</div>
+            <div style={{display:"flex",alignItems:"center",gap:15}}><div style={{width:72,height:72,borderRadius:18,display:"grid",placeItems:"center",fontSize:32,background:"linear-gradient(135deg,#7e2cff,#ec2ad4)"}}>⚡</div><div><div style={{fontSize:11,fontWeight:900,letterSpacing:1.5,color:"#52eee3",marginBottom:5}}>GAMEPRO ACHIEVEMENT PASSPORT</div><h3 style={{fontSize:24,margin:"0 0 5px"}}>{rioData?.name || "Vladimir"}</h3><div style={{color:"#9da6c0"}}>{rioData?.class?.name || "Restoration Shaman"} · {rioData?.realm?.name || rioRealm || "EU"} · {String(rioData?.region?.name || rioRegion).toUpperCase()} · World of Warcraft</div><div style={{display:"flex",alignItems:"center",gap:8,marginTop:8,flexWrap:"wrap"}}><span className="verifiedPill">✓ VERIFIED</span><span style={{color:"#71809e",fontSize:11}}>VERIFIED ID: {verifiedId || "—"}</span></div></div></div>
+            <div className="stats" style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:10,marginTop:25}}>{[[rioData?.mythic_plus_scores_by_season?.[0]?.scores?.all ?? "2850","Mythic+ Rating"],["CE","Raid Progress"],["2.4k+","M+ Runs"]].map(x=><div key={x[0]} style={{padding:15,background:"#080d1b",border:"1px solid #1e2540",borderRadius:12}}><b style={{fontSize:21}}>{x[0]}</b><small style={{display:"block",color:"#9da6c0",marginTop:4}}>{x[1]}</small></div>)}</div>
           </div>
           <div style={card}><div style={{display:"flex",justifyContent:"space-between",alignItems:"center",gap:10}}><h3 style={{marginTop:0}}>🏆 {t.verifiedShort}</h3><span className="verifiedPill">✓ VERIFIED</span></div><div className="badges" style={{display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:12}}>{["KSM","2850 M+","Cutting Edge","AOTC"].map(x=><div key={x} style={{padding:17,borderRadius:14,background:"#0a1021",border:"1px solid #1c8f82"}}><b>🏆 {x}</b><small style={{display:"block",color:"#45e0a1",marginTop:6}}>✓ {t.verifiedShort}</small></div>)}</div></div>
         </div>
@@ -168,6 +267,33 @@ export default function HomePage() {
         <h2 style={{textAlign:"center",fontSize:36}}>{t.searchTitle}</h2><p style={{textAlign:"center",color:"#9da6c0"}}>{t.searchSub}</p>
         <div className="searchbar" style={{display:"flex",gap:10,maxWidth:760,margin:"25px auto"}}><input value={q} onChange={e=>setQ(e.target.value)} placeholder={t.placeholder} style={{flex:1,minWidth:0,background:"#090e1d",border:"1px solid #26364b",borderRadius:12,padding:15,color:"white",outline:"none"}}/><button style={btn}>🔎 {t.search}</button></div>
         <div className="cards" style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:16}}>{players.map(x=><div key={x[1]} style={card}><div style={{display:"flex",gap:12,alignItems:"center"}}><div style={{width:48,height:48,borderRadius:12,display:"grid",placeItems:"center",background:"linear-gradient(135deg,#6126e9,#e92ad4)",fontSize:22}}>{x[0]}</div><div><h3 style={{margin:"0 0 4px"}}>{x[1]}</h3><small style={{color:"#9da6c0"}}>{x[2]}</small></div></div><div style={{display:"flex",gap:7,marginTop:15,flexWrap:"wrap"}}><span className="greenTag">✓ {x[3]} VERIFIED</span><span className="greenTag">✓ {x[4]}</span></div></div>)}</div>
+      </section>
+
+      <section id="raiderio" style={{maxWidth:1160,width:"92%",margin:"auto",padding:"0 0 60px"}}>
+        <div style={{...card,borderColor:"#17bcb2"}}>
+          <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",gap:12,flexWrap:"wrap"}}>
+            <div><h2 style={{fontSize:28,margin:"0 0 7px"}}>🔎 Проверить игрока через Raider.IO</h2><p style={{color:"#9da6c0",margin:0}}>Первый живой источник GamePro для Mythic+ данных.</p></div>
+            <span className="verifiedPill">RAIDER.IO</span>
+          </div>
+          <div className="rioForm" style={{display:"grid",gridTemplateColumns:"1fr 1fr 90px auto",gap:10,marginTop:18}}>
+            <input value={rioName} onChange={e=>setRioName(e.target.value)} placeholder="Имя персонажа" style={{background:"#090e1d",border:"1px solid #26364b",borderRadius:12,padding:14,color:"white",outline:"none"}} />
+            <input value={rioRealm} onChange={e=>setRioRealm(e.target.value)} placeholder="Реалм, например Kazzak" style={{background:"#090e1d",border:"1px solid #26364b",borderRadius:12,padding:14,color:"white",outline:"none"}} />
+            <select value={rioRegion} onChange={e=>setRioRegion(e.target.value)} style={{background:"#090e1d",border:"1px solid #26364b",borderRadius:12,padding:14,color:"white"}}><option value="eu">EU</option><option value="us">US</option><option value="kr">KR</option><option value="tw">TW</option></select>
+            <button style={btn} onClick={searchRaiderIO} disabled={rioLoading}>{rioLoading ? "Проверяем…" : "Проверить"}</button>
+          </div>
+          {rioError && <p style={{color:"#ff8e9e",marginBottom:0}}>{rioError}</p>}
+          {rioData && <div style={{marginTop:18,padding:18,borderRadius:16,background:"#080d1b",border:"1px solid #1c8f82"}}>
+            <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",gap:12,flexWrap:"wrap"}}>
+              <div><h3 style={{margin:"0 0 5px"}}>{rioData.name}</h3><div style={{color:"#9da6c0"}}>{rioData.class?.name || ""} · {rioData.realm?.name || rioRealm} · {String(rioData.region?.name || rioRegion).toUpperCase()}</div></div>
+              <span className="verifiedPill">DATA FOUND · NOT VERIFIED</span>
+            </div>
+            <div style={{marginTop:14,padding:15,borderRadius:12,background:"#0a1021"}}><b style={{fontSize:22}}>{rioData.mythic_plus_scores_by_season?.[0]?.scores?.all ?? "—"}</b><small style={{display:"block",color:"#9da6c0",marginTop:4}}>Mythic+ Score</small></div>
+            <button onClick={saveRaiderIOToSupabase} disabled={supabaseSaving} style={{...btn,marginTop:14}}>💾 {supabaseSaving ? "Сохраняем…" : "Сохранить в GamePro"}</button>
+            <button onClick={verifyRaiderIO} disabled={verifying || verified} style={{...btn,marginTop:10,opacity:verified?0.75:1}}>{verified ? "✓ VERIFIED" : (verifying ? "Проверяем…" : "✓ Подтвердить VERIFIED")}</button>
+            {supabaseStatus && <p style={{color:supabaseStatus.startsWith("✓") ? "#45e0a1" : "#ffb3bf",fontSize:12,marginBottom:0}}>{supabaseStatus}</p>}
+          </div>}
+          <p style={{color:"#65708d",fontSize:11,margin:"14px 0 0"}}>Источник: <a href="https://raider.io" target="_blank" rel="noreferrer" style={{color:"#52eee3"}}>Raider.IO</a>. Данные из источника ещё не являются VERIFIED GamePro.</p>
+        </div>
       </section>
 
       <section id="how" style={{maxWidth:1160,width:"92%",margin:"auto",padding:"60px 0"}}>
@@ -189,11 +315,11 @@ export default function HomePage() {
 
 <section id="guilds" style={{maxWidth:1160,width:"92%",margin:"auto",padding:"40px 0 80px"}}><div style={{...card,textAlign:"center",borderColor:"#17bcb2",background:"radial-gradient(circle at 50% 0,#0c3335,transparent 60%),linear-gradient(145deg,#10162b,#080d1b)"}}><div style={{fontSize:35}}>👥</div><h2 style={{fontSize:34}}>{t.guild}</h2><p style={{maxWidth:700,margin:"0 auto 24px",color:"#9da6c0",lineHeight:1.7}}>{t.guildText}</p><a href="#players" style={btn}>{t.open}</a></div></section>
 
-      <section style={{maxWidth:760,width:"92%",margin:"auto",padding:"0 0 80px",textAlign:"center"}}><h2>{t.shareTitle}</h2><p style={{color:"#9da6c0"}}>{t.passportLink}: Vladimir · 2850 M+ · CE · VERIFIED</p><button onClick={sharePassport} style={btn}>🔗 {copied ? t.copied : t.share}</button></section>
     </main>
 
     <footer style={{borderTop:"1px solid #171c31",padding:28,color:"#737c98"}}><div className="footer" style={{maxWidth:1160,width:"92%",margin:"auto",display:"flex",justifyContent:"space-between",gap:15}}><span>© 2026 GamePro Market</span><span>Achievement Passport · WoW MVP · Dota 2 · CS2 · PoE2</span></div></footer>
 
     <style jsx>{`\n      a,button{font-family:inherit}      .navlinks a:hover{color:#58eee5!important}.navlinks a:active,.navlinks a:focus-visible{color:#58eee5!important;text-shadow:0 0 14px #19e0d5}.achievementBadge{display:inline-flex;align-items:center;gap:6px;padding:9px 12px;border:1px solid #1c8f82;border-radius:999px;background:#0a1d24;color:#52eee3;font-size:12px;font-weight:900;box-shadow:0 0 16px #16d8cf18}.achievementBadge b{font-size:9px;color:#8afff7}.achievementBadge:active{box-shadow:0 0 24px #16d8cfaa,0 0 50px #16d8cf55;transform:translateY(1px)}button:active,a:active{box-shadow:0 0 28px #16d8cfaa,0 0 60px #16d8cf44!important;transform:translateY(1px)}button:focus-visible,select:focus-visible,a:focus-visible{outline:2px solid #19e0d5;outline-offset:3px;box-shadow:0 0 24px #16d8cf88}.reviewGrid{}
-.navlinks a{text-decoration:none;transition:color .2s}.navlinks a:hover{color:#58eee5!important}.sectionHead,.gameHeader{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:25px}.verifiedPill,.status{display:inline-flex;padding:7px 10px;border-radius:999px;background:#0c302f;color:#52eee3;border:1px solid #168f88;font-size:11px;font-weight:900}.futureStatus{display:inline-flex;padding:6px 9px;border-radius:999px;background:#171d31;color:#8994af;font-size:10px;font-weight:800}.greenTag{background:#0d2929;padding:7px;border-radius:7px;color:#45e0a1;font-size:11px;border:1px solid #174f49}\n      @media(max-width:900px){.navlinks{display:none!important}.grid2,.cards,.steps,.gameGrid,.reviewGrid{grid-template-columns:1fr!important}.gameGrid>div{min-height:0}.sectionHead,.gameHeader{align-items:flex-start;flex-direction:column}.sectionHead button{width:100%}}\n      @media(max-width:560px){.nav{min-height:68px}.nav select{margin-left:auto}.stats{grid-template-columns:1fr!important}.badges{grid-template-columns:1fr!important}.searchbar{flex-direction:column}.searchbar button{width:100%}.footer{display:block!important;text-align:center}.footer span{display:block;margin:7px 0}.hero{} }\n    `}</style>\n  </div>;
+.navlinks a{text-decoration:none;transition:color .2s}.navlinks a:hover{color:#58eee5!important}.sectionHead,.gameHeader{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:25px}.verifiedPill,.status{display:inline-flex;padding:7px 10px;border-radius:999px;background:#0c302f;color:#52eee3;border:1px solid #168f88;font-size:11px;font-weight:900}.futureStatus{display:inline-flex;padding:6px 9px;border-radius:999px;background:#171d31;color:#8994af;font-size:10px;font-weight:800}.greenTag{background:#0d2929;padding:7px;border-radius:7px;color:#45e0a1;font-size:11px;border:1px solid #174f49}\n      @media(max-width:900px){.navlinks{display:none!important}.grid2,.cards,.steps,.gameGrid,.reviewGrid{grid-template-columns:1fr!important}.gameGrid>div{min-height:0}.sectionHead,.gameHeader{align-items:flex-start;flex-direction:column}.sectionHead button{width:100%}}\n      @media(max-width:700px){.rioForm{grid-template-columns:1fr!important}.rioForm button{width:100%}}
+      @media(max-width:560px){.nav{min-height:68px}.nav select{margin-left:auto}.stats{grid-template-columns:1fr!important}.badges{grid-template-columns:1fr!important}.searchbar{flex-direction:column}.searchbar button{width:100%}.footer{display:block!important;text-align:center}.footer span{display:block;margin:7px 0}.hero{} }\n    `}</style>\n  </div>;
 }
