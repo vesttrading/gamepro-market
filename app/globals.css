@@ -64,7 +64,7 @@ div[style*="justifyContent: \"space-between\""] {
   width: auto !important;
   min-width: 200px !important;
   max-width: 250px !important;
-  margin: 0 !important; /* Убирает авто-отступы, которые утягивали её вправо или вниз */
+  margin-left: 40px !important; /* Отодвинет кнопку вправо от текста на 40 пикселей */
   padding: 10px 24px !important;
 }
 
@@ -101,7 +101,3 @@ div[style*="justifyContent: \"space-between\""] {
   margin: 0 auto !important;   /* Центрируем её строго по середине экрана */
 }
 
-/* Делаем саму карточку игрока более компактной */
-.card {
-  padding: 16px 20px !important; /* Уменьшаем внутренние отступы (было 24px) */
-}
