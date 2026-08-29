@@ -241,7 +241,7 @@ export default function HomePage() {
         <div style={{marginTop:28,display:"flex",justifyContent:"center",gap:12,flexWrap:"wrap"}}><button style={btn} onClick={()=>{}}><span>🎮</span> {t.login}</button></div><div className="achievementRow" style={{marginTop:22,display:"flex",justifyContent:"center",gap:10,flexWrap:"wrap"}}>{["KSM","AOTC","CE","2400+ PvP"].map(x=><span key={x} className="achievementBadge">✓ {x} <b>VERIFIED</b></span>)}</div>
       </section>
 
-      <section id="passport" style={{maxWidth:1160,width:"92%",margin:"auto",padding:"10px 0 0px"}}>
+      <section id="passport" style={{maxWidth:1160,width:"92%",margin:"auto",padding:"60px 0 0px"}}>
         <div className="sectionHead"><div><h2 style={{fontSize:36,marginBottom:8}}>{t.passport}</h2><p style={{color:"#9da6c0",marginTop:0}}>{t.sub}</p></div><button onClick={sharePassport} style={outline}>🔗 {copied ? t.copied : t.share}</button></div>
         <div className="grid2" style={{display:"grid",gridTemplateColumns:"1.05fr .95fr",gap:20}}>
           <div style={card}>
