@@ -123,21 +123,27 @@ div[style*="justifyContent: \"space-between\""] {
   width: 500px !important;   
   max-width: 500px !important;
 }
-
-/* Выстраиваем карточки игроков в красивый левый ряд */
+/* 1. Центрируем карточки игроков и делаем красивый отступ между ними */
 main section:has(.searchbar) + div,
 main .searchbar + div {
     display: flex !important;
-    justify-content: center !important; /* Прижимает все карточки строго влево */
-    flex-wrap: wrap !important; /* Если игроков много, они аккуратно перенесутся на новую строку */
-    gap: 26px !important; /* Устанавливает аккуратное расстояние между карточками */
+    justify-content: center !important; 
+    flex-wrap: wrap !important; 
+    gap: 24px !important; 
 }
 
-/* Делаем каждую карточку фиксированной и компактной */
+/* 2. Задаем карточкам правильную ширину, чтобы они не были огромными */
 main section:has(.searchbar) + div > div,
 main .searchbar + div > div {
-    max-width: 160px !important; /* Ограничивает ширину карточки до аккуратного размера */
+    max-width: 250px !important; /* Отличная ширина: карточки компактные, но вместительные */
     width: 100% !important;
 }
 
-
+/* 3. Насильно выстраиваем плашки с галочками в одну горизонтальную строку */
+main section:has(.searchbar) + div > div > div:last-child,
+main .searchbar + div > div > div:last-child {
+    display: flex !important;
+    flex-direction: row !important; /* Строго в ряд */
+    flex-wrap: nowrap !important;   /* Запрещаем перенос вниз */
+    gap: 8px !important;            /* Расстояние между плашками */
+}
