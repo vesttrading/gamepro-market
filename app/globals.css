@@ -33,84 +33,45 @@
   border-radius: 16px !important;
   padding: 24px !important;
 }
-/* Делаем кнопку «Поделиться паспортом» аккуратной по центру */
-#passport button {
-  width: auto !important;
-  min-width: 250px !important;
-  margin: 15px auto !important;
-  padding: 10px 24px !important;
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-}
-/* Выстраиваем заголовок и кнопку в одну линию по краям */
-.sectionHead {
-  display: flex !important;
-  justify-content: space-between !important;
-  align-items: center !important;
-  flex-wrap: wrap !important;
-  gap: 15px !important;
-  margin-bottom: 25px !important;
-}
-
-/* Корректируем отступы у кнопки, так как она теперь в линии */
-#passport button {
-  margin: 0 !important; 
-}
-/* Находим заголовок и кнопку внутри паспорта и выстраиваем в линию */
-#passport > h2, 
-#passport > button {
-  display: inline-block !important;
-  vertical-align: middle !important;
-}
-
-/* Создаем контейнер-строку для заголовка и кнопки */
-#passport {
-  display: flex !important;
-  flex-direction: row !important;
-  justify-content: space-between !important;
-  align-items: flex-start !important;
-  flex-wrap: wrap !important;
-  gap: 20px !important;
-}
-
-/* Сетку карточек возвращаем на всю ширину под ними */
-#passport .grid2 {
-  width: 100% !important;
-  margin-top: 20px !important;
-}
-
-/* Кнопку прижимаем вправо */
-#passport button {
-  margin: 0 0 0 auto !important;
-}
-/* 1. Возвращаем секции правильный блочный вид, чтобы карточки не сжимались влево */
+/* 1. Возвращаем секции правильный блочный вид, чтобы карточка Владимира была по центру */
 #passport {
   display: block !important;
+  margin: 0 auto !important;
+  max-width: 1160px !important;
+  width: 92% !important;
 }
 
-/* 2. Делаем специальный контейнер строкой для заголовка и кнопки */
-.sectionHead {
+/* 2. Сближаем заголовок и кнопку, убирая растяжение по краям экрана */
+.sectionHead, 
+div[style*="justifyContent: \"space-between\""] {
   display: flex !important;
   flex-direction: row !important;
-  justify-content: space-between !important;
-  align-items: center !important;
+  justify-content: flex-start !important; /* 🌟 Прижимает кнопку вплотную к тексту слева */
+  align-items: center !important;         /* Выравнивает их ровно по высоте */
   flex-wrap: wrap !important;
-  gap: 20px !important;
-  margin-bottom: 30px !important;
+  gap: 24px !important;                   /* Расстояние между текстом описания и кнопкой */
+  margin-bottom: 20px !important;
   width: 100% !important;
 }
 
-/* 3. Описание под заголовком оставляем блочным внутри */
+/* 3. Описание под заголовком оставляем обычным блоком, чтобы оно не ломало строку */
 .sectionHead > div:first-child {
   display: block !important;
 }
 
-/* 4. Кнопку аккуратно прижимаем к правому краю */
+/* 4. Делаем саму кнопку "Поделиться" компактной и убираем у неё лишние отступы */
 #passport button {
-  margin: 0 !important;
+  width: auto !important;
+  min-width: 200px !important;
+  max-width: 250px !important;
+  margin: 0 !important; /* Убирает авто-отступы, которые утягивали её вправо или вниз */
+  padding: 10px 24px !important;
 }
-/* Уменьшаем отступ снизу у блока с заголовком и кнопкой */
-.sectionHead {
-  margin-bottom: 12px !important;
+
+/* 5. Восстанавливаем сетку для паспорта, чтобы карточка была на всю ширину */
+.grid2 {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
+  gap: 20px !important;
+  width: 100% !important;
 }
