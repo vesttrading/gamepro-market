@@ -147,19 +147,23 @@ main .searchbar + div > div > div:last-child {
     flex-wrap: nowrap !important;   /* Запрещаем перенос вниз */
     gap: 8px !important;            /* Расстояние между плашками */
 }
-
-/* Выстраиваем элементы ввода Raider.IO в один ряд */
-main form:has(input[placeholder*="Реалм"]) > div,
-main form:has(input[placeholder*="Реалм"]) {
+/* Выстраиваем форму ввода Raider.IO в одну горизонтальную линию */
+main section:has(input[placeholder*="Реалм"]) form,
+main form:has(input[placeholder*="персонажа"]) {
     display: flex !important;
     flex-direction: row !important; /* Насильно ставит элементы в один ряд */
-    align-items: center !important; /* Выравнивает их ровно по высоте */
-    gap: 12px !important;           /* Расстояние между полями ввода */
-    flex-wrap: nowrap !important;   /* Запрещает перенос на следующую строку */
+    align-items: center !important; /* Выравнивает инпуты и кнопку ровно по высоте */
+    justify-content: center !important; /* Центрирует всю строку на экране */
+    gap: 12px !important;           /* Задает аккуратный отступ между полями */
+    flex-wrap: nowrap !important;   /* Запрещает им переноситься вниз */
+    max-width: 850px !important;    /* Достаточная ширина, чтобы поля не сжимались */
+    width: 100% !important;
+    margin: 20px auto 0 !important; /* Выравнивает блок по центру страницы */
 }
 
-/* Настраиваем ширину селектора региона EU */
-main form:has(input[placeholder*="Реалм"]) select {
-    max-width: 100px !important;    /* Делает плашку EU компактной */
-    width: 100% !important;
+/* Настраиваем поля ввода и кнопку, чтобы они не ломались в ряду */
+main form:has(input[placeholder*="персонажа"]) input,
+main form:has(input[placeholder*="персонажа"]) select,
+main form:has(input[placeholder*="персонажа"]) button {
+    margin: 0 !important; /* Сбрасываем лишние внешние отступы */
 }
