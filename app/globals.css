@@ -57,3 +57,30 @@
 #passport button {
   margin: 0 !important; 
 }
+/* Находим заголовок и кнопку внутри паспорта и выстраиваем в линию */
+#passport > h2, 
+#passport > button {
+  display: inline-block !important;
+  vertical-align: middle !important;
+}
+
+/* Создаем контейнер-строку для заголовка и кнопки */
+#passport {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  align-items: flex-start !important;
+  flex-wrap: wrap !important;
+  gap: 20px !important;
+}
+
+/* Сетку карточек возвращаем на всю ширину под ними */
+#passport .grid2 {
+  width: 100% !important;
+  margin-top: 20px !important;
+}
+
+/* Кнопку прижимаем вправо */
+#passport button {
+  margin: 0 0 0 auto !important;
+}
