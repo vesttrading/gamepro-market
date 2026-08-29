@@ -297,7 +297,7 @@ export default function HomePage() {
         <div className="gameHeader"><div><h2 style={{fontSize:36,marginBottom:8}}>{t.games}</h2><p style={{color:"#9da6c0",marginTop:0}}>{t.futureText}</p></div></div>
         <div className="gameGrid" style={{display:"grid",gridTemplateColumns:"1.2fr repeat(3,1fr)",gap:14}}>
           <div style={{...card,borderColor:"#17bcb2",boxShadow:"0 0 35px #16d8cf12"}}><span className="status">● {t.current}</span><h3 style={{fontSize:25}}>⚔️ {t.wow}</h3><p style={{color:"#9da6c0",lineHeight:1.6}}>{t.wowText}</p><b style={{color:"#54eee4"}}>M+ · Raids · PvP</b></div>
-          {["Dota 2","CS2","Path of Exile 2"].map(g=><div key={g} style={{...card,opacity:.88}}><span className="futureStatus">{t.future}</span><h3style={{fontSize:20,marginTop:20,maxWidth:500,width:"100%",margin:"20px auto 0"}}>🎮 {g}</h3><p style={{color:"#7f89a5",lineHeight:1.5}}>{t.futureText}</p></div>)}
+          {["Dota 2","CS2","Path of Exile 2"].map(g=><div key={g} style={{...card,opacity:.88}}><span className="futureStatus">{t.future}</span><h3 style={{fontSize:20,marginTop:20}}>🎮 {g}</h3><p style={{color:"#7f89a5",lineHeight:1.5}}>{t.futureText}</p></div>)}
         </div>
       </section>
 
