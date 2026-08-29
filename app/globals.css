@@ -139,33 +139,3 @@ main .searchbar + div > div {
     width: 100% !important;
 }
 
-/* 3. Насильно выстраиваем плашки с галочками в одну горизонтальную строку */
-main section:has(.searchbar) + div > div > div:last-child,
-main .searchbar + div > div > div:last-child {
-    display: flex !important;
-    flex-direction: row !important; /* Строго в ряд */
-    flex-wrap: nowrap !important;   /* Запрещаем перенос вниз */
-    gap: 8px !important;            /* Расстояние между плашками */
-}
-/* Насильно выстраиваем инпуты, селектор и кнопку в одну строку */
-main form[action*="raider"] > div,
-main form:has(input) > div:first-child,
-main form:has(input[placeholder*="персонажа"]) > div {
-    display: flex !important;
-    flex-direction: row !important; /* Ставит элементы строго в горизонтальный ряд */
-    align-items: center !important; /* Выравнивает поля и кнопку по высоте */
-    gap: 12px !important;           /* Расстояние между полями */
-    flex-wrap: nowrap !important;   /* Запрещает перенос полей на новую строчку */
-    width: 100% !important;
-}
-
-/* Делаем так, чтобы кнопка "Проверить" тоже встала в этот же ряд */
-main form:has(input[placeholder*="персонажа"]) {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: flex-end !important; /* Выравнивает кнопку по нижней линии инпутов */
-    gap: 12px !important;
-    max-width: 850px !important;    /* Делает всю форму аккуратной по ширине */
-    width: 100% !important;
-    margin: 20px auto 0 !important; /* Центрирует всю строку на странице */
-}
