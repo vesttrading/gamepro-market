@@ -96,28 +96,18 @@ div[style*="justifyContent: \"space-between\""] {
   align-items: center !important;   /* Центрирует описание под заголовком */
 }
 
-/* Главный контейнер выстраивает блок Владимира и блок ачивок в один ряд */
-#passport {
-  display: flex !important;
-  flex-direction: row !important;
-  flex-wrap: nowrap !important;
-  align-items: flex-start !important;
-  gap: 24px !important; /* Отступ между блоком Владимира и ачивками */
+/* Возвращаем сетку для карточек */
+.grid2 {
+  display: grid !important;
+  /* Задаем фиксированную ширину левой колонки (400px) и авто-ширину правой */
+  grid-template-columns: 400px 1fr !important; 
+  gap: 24px !important;
   width: 100% !important;
-  max-width: 1200px !important;
-  margin: 0 auto !important;
+  align-items: start !important;
 }
 
-/* Ограничиваем ширину блока Владимира */
-#passport > div:first-of-type {
-  max-width: 450px !important;
+/* Принудительно уменьшаем карточку Владимира внутри сетки */
+.grid2 > div:first-child {
+  max-width: 400px !important;
   width: 100% !important;
-  flex-shrink: 0 !important;
-}
-
-/* Ограничиваем ширину блока с ачивками и даем ему подстроиться */
-#passport > div:last-of-type {
-  max-width: 600px !important;
-  width: 100% !important;
-  flex-grow: 1 !important;
 }
