@@ -43,3 +43,17 @@
   justify-content: center !important;
   align-items: center !important;
 }
+/* Выстраиваем заголовок и кнопку в одну линию по краям */
+.sectionHead {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 15px !important;
+  margin-bottom: 25px !important;
+}
+
+/* Корректируем отступы у кнопки, так как она теперь в линии */
+#passport button {
+  margin: 0 !important; 
+}
