@@ -33,3 +33,13 @@
   border-radius: 16px !important;
   padding: 24px !important;
 }
+/* Делаем кнопку «Поделиться паспортом» аккуратной по центру */
+#passport button {
+  width: auto !important;
+  min-width: 250px !important;
+  margin: 15px auto !important;
+  padding: 10px 24px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
