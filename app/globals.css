@@ -128,7 +128,7 @@ div[style*="justifyContent: \"space-between\""] {
 main section:has(.searchbar) + div,
 main .searchbar + div {
     display: flex !important;
-    justify-content: flex-start !important; /* Прижимает все карточки строго влево */
+    justify-content: center !important; /* Прижимает все карточки строго влево */
     flex-wrap: wrap !important; /* Если игроков много, они аккуратно перенесутся на новую строку */
     gap: 16px !important; /* Устанавливает аккуратное расстояние между карточками */
 }
