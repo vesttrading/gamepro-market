@@ -95,7 +95,7 @@ div[style*="justifyContent: \"space-between\""] {
   flex-direction: column !important;
   align-items: center !important;   /* Центрирует описание под заголовком */
 }
-/* Уменьшаем ширину всей сетки с карточками */
+
 /* Выстраиваем карточку Владимира и карточку ачивок в одну линию справа */
 .grid2 {
   display: grid !important;
