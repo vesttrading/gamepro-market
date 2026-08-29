@@ -99,7 +99,7 @@ div[style*="justifyContent: \"space-between\""] {
 /* Выстраиваем карточку Владимира и карточку ачивок в одну линию справа */
 .grid2 {
   display: grid !important;
-  grid-template-columns: repeat(2, 1fr) !important; /* 🌟 Насильно создаем 2 колонки в ряд */
+  grid-template-columns: auto 1fr !important;
   gap: 16px !important;                             /* Уменьшаем промежуток между карточками */
   width: 100% !important;
 }
@@ -108,4 +108,9 @@ div[style*="justifyContent: \"space-between\""] {
 #passport .grid2 {
   max-width: 680px !important;  /* 🌟 Увеличиваем ширину, чтобы две карточки комфортно поместились */
   margin-left: 30px !important; /* Небольшой аккуратный отступ от текста заголовка */
+}
+.grid2 > div:first-child {
+  max-width: 420px !important;
+  width: 100% !important;
+  margin-right: auto !important;
 }
