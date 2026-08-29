@@ -261,7 +261,7 @@ export default function HomePage() {
 
       <section id="raiderio" style={{maxWidth:1160,width:"92%",margin:"auto",padding:"0 0 60px"}}>
         <div style={{...card,borderColor:"#17bcb2"}}>
-          <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",gap:12,flexWrap:"wrap"}}>
+          <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",gap:12,flexWrap:"nowrap"}}>
             <div><h2 style={{fontSize:28,margin:"0 0 7px"}}>🔎 Проверить игрока через Raider.IO</h2><p style={{color:"#9da6c0",margin:0}}>Первый живой источник GamePro для Mythic+ данных.</p></div>
             <span className="verifiedPill">RAIDER.IO</span>
           </div>
