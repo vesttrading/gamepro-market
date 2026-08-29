@@ -95,3 +95,13 @@ div[style*="justifyContent: \"space-between\""] {
   flex-direction: column !important;
   align-items: center !important;   /* Центрирует описание под заголовком */
 }
+/* Уменьшаем ширину всей сетки с карточками */
+#passport .grid2 {
+  max-width: 900px !important; /* Уменьшаем общую ширину (было 1160px) */
+  margin: 0 auto !important;   /* Центрируем её строго по середине экрана */
+}
+
+/* Делаем саму карточку игрока более компактной */
+.card {
+  padding: 16px 20px !important; /* Уменьшаем внутренние отступы (было 24px) */
+}
