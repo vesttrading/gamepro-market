@@ -123,3 +123,17 @@ div[style*="justifyContent: \"space-between\""] {
   width: 500px !important;   
   max-width: 500px !important;
 }
+/* Находим контейнер поиска игрока и принудительно двигаем его наверх */
+main:has(h1:contains("Найти игрока")),
+div:has(> h1),
+.search-container,
+#search-page {
+  margin-top: -60px !important; /* Отрицательный отступ поднимет блок выше к шапке */
+  padding-top: 10px !important;
+}
+
+/* На всякий случай точечно двигаем сам заголовок "Найти игрока" */
+h1 {
+  margin-top: 10px !important;
+  margin-bottom: 20px !important;
+}
