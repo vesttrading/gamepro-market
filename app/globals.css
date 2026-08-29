@@ -101,3 +101,10 @@ div[style*="justifyContent: \"space-between\""] {
   margin: 0 auto !important;   /* Центрируем её строго по середине экрана */
 }
 
+/* Уменьшаем синюю карточку игрока Vladimir и прижимаем её левее к тексту */
+#passport .grid2 {
+  max-width: 480px !important;   /* 🌟 Уменьшаем ширину блока, делая его компактным */
+  margin-left: 0 !important;     /* 🌟 Сбрасываем правый сдвиг */
+  margin-right: auto !important; /* Насильно тянем карточку в левую сторону к тексту */
+  width: 100% !important;
+}
