@@ -139,3 +139,9 @@ main .searchbar + div > div {
     max-width: 160px !important; /* Ограничивает ширину карточки до аккуратного размера */
     width: 100% !important;
 }
+/* Уменьшаем размер текста заголовка Найти игрока */
+main section:has(.searchbar) h1,
+main .searchbar ~ h1,
+main h1:has(~ .searchbar) {
+    font-size: 32px !important; /* Делает заголовок аккуратным и компактным */
+}
