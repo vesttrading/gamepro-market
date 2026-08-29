@@ -123,18 +123,36 @@ div[style*="justifyContent: \"space-between\""] {
   width: 500px !important;   
   max-width: 500px !important;
 }
-/* Находим страницу поиска по структуре и прижимаем контент к верху */
-main > div > div:has(input), 
-main .search-section,
-main > div:first-child {
-  margin-top: -50px !important;  /* Сдвигает весь блок выше */
-  padding-top: 0 !important;      /* Схлопывает лишние внутренние отступы */
+
+/* 1. Находим общий контейнер списка игроков и выстраиваем карточки в ряд по центру */
+main > div:last-child,
+main [class*="list"],
+main .grid {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;       /* Если карточек будет много, они перенесутся на новую строку */
+  justify-content: center !important; /* Центрируем весь ряд карточек */
+  gap: 16px !important;              /* Аккуратный отступ между карточками */
+  width: 100% !important;
+  max-width: 1100px !important;      /* Ограничиваем общую ширину ряда */
+  margin: 30px auto 0 auto !important; /* Центрируем сам контейнер на странице */
 }
 
-/* Принудительно поднимаем сам текстовый блок и форму */
-main h1, 
-main p, 
-main form {
-  position: relative !important;
-  top: -40px !important;          /* Насильно перемещает элементы вверх */
+/* 2. Уменьшаем размер самих карточек PlayerOne, MoonHeal и др. */
+main > div:last-child > div,
+main [class*="list"] > div,
+main .grid > div {
+  width: 320px !important;         /* 🌟 Задаем компактную фиксированную ширину */
+  max-width: 320px !important;
+  padding: 12px 16px !important;   /* Уменьшаем внутренние отступы, чтобы карточка стала тоньше */
+  border-radius: 8px !important;
+  flex-shrink: 0 !important;
+}
+
+/* 3. Делаем иконки и текст внутри карточек чуть аккуратнее */
+main > div:last-child img,
+main > div:last-child h3,
+main > div:last-child p {
+  margin-top: 2px !important;
+  margin-bottom: 2px !important;
 }
