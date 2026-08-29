@@ -136,6 +136,6 @@ main .searchbar + div {
 /* Делаем каждую карточку фиксированной и компактной */
 main section:has(.searchbar) + div > div,
 main .searchbar + div > div {
-    max-width: 320px !important; /* Ограничивает ширину карточки до аккуратного размера */
+    max-width: 240px !important; /* Ограничивает ширину карточки до аккуратного размера */
     width: 100% !important;
 }
