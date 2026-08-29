@@ -105,3 +105,38 @@ div[style*="justifyContent: \"space-between\""] {
 .card {
   padding: 16px 20px !important; /* Уменьшаем внутренние отступы (было 24px) */
 }
+/* Делаем всю секцию паспорта горизонтальной строкой */
+#passport {
+  display: flex !important;
+  flex-direction: row !important;      /* Выстраивает блоки слева направо */
+  justify-content: space-between !important; /* Разносит текст влево, а карточку вправо */
+  align-items: flex-start !important;  /* Выравнивает их по верхнему краю */
+  flex-wrap: wrap !important;          /* Защита для мобильных: на телефонах карточка прыгнет вниз */
+  gap: 40px !important;                /* Красивое расстояние между левым текстом и правой карточкой */
+  max-width: 1200px !important;        /* Общая максимальная ширина всей композиции */
+  margin: 40px auto !important;        /* Центрирует всю конструкцию на экране */
+  width: 92% !important;
+}
+
+/* Настраиваем левую текстовую часть */
+.sectionHead {
+  flex: 1 !important;                  /* Позволяет тексту занимать свободное место слева */
+  min-width: 300px !important;         /* Минимальная ширина для текста */
+  display: block !important;           /* Возвращаем тексту привычный вид сверху вниз */
+  text-align: left !important;         /* Прижимаем заголовки к левому краю */
+  margin: 0 !important;
+}
+
+/* Настраиваем правую часть с карточкой Владимира */
+#passport .grid2 {
+  flex: 1.2 !important;                /* Даем карточке чуть больше пространства, чем тексту */
+  min-width: 320px !important;         /* Защита от слишком сильного сжатия */
+  max-width: 650px !important;         /* Ограничиваем максимальную ширину самой карточки */
+  margin: 0 !important;
+}
+
+/* Кнопку "Поделиться" внутри текстового блока ставим аккуратно под описанием */
+.sectionHead button {
+  margin-top: 20px !important;         /* Отодвигаем кнопку чуть ниже текста описания */
+  display: inline-flex !important;
+}
