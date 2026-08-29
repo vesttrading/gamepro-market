@@ -75,3 +75,23 @@ div[style*="justifyContent: \"space-between\""] {
   gap: 20px !important;
   width: 100% !important;
 }
+/* 1. Уменьшаем размер заголовка Achievement Passport */
+#passport h2, 
+.sectionHead h2 {
+  font-size: 28px !important; /* Делает заголовок аккуратным и компактным */
+  margin: 0 !important;
+}
+
+/* 2. Центрируем всю верхнюю строку (заголовок, описание и кнопку) */
+.sectionHead {
+  justify-content: center !important; /* 🌟 Ставит всю строку строго по центру */
+  text-align: center !important;     /* Центрирует текст внутри */
+  margin: 0 auto 20px auto !important;
+}
+
+/* 3. Выравниваем элементы внутри строки, чтобы они стояли красиво */
+.sectionHead > div:first-child {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;   /* Центрирует описание под заголовком */
+}
