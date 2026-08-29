@@ -96,15 +96,17 @@ div[style*="justifyContent: \"space-between\""] {
   align-items: center !important;   /* Центрирует описание под заголовком */
 }
 
-/* Делаем родительский контейнер базой */
+/* Центрируем общий контейнер с двумя карточками */
 #passport .grid2 {
   position: relative !important;
   display: block !important;
   width: 100% !important;
-  min-height: 480px !important; /* Резервируем высоту под карточки */
+  max-width: 910px !important;  /* Складываем ширину карточек (380+500) + отступ (30) */
+  margin: 0 auto !important;    /* 🌟 Смещаем всю конструкцию строго по центру экрана */
+  min-height: 480px !important; 
 }
 
-/* Карточка Владимира (первый элемент) */
+/* Карточка Владимира */
 #passport .grid2 > div:first-child {
   position: absolute !important;
   left: 0 !important;
@@ -113,11 +115,11 @@ div[style*="justifyContent: \"space-between\""] {
   max-width: 380px !important;
 }
 
-/* Находим ВСЕ блоки с ачивками, которые идут следом за Владимиром */
+/* Блок ачивок справа */
 #passport .grid2 > div:not(:first-child) {
   position: absolute !important;
-  left: 410px !important;   /* Жестко сдвигаем вправо на 410px */
-  top: 0 !important;        /* Поднимаем ровно наверх */
-  width: 500px !important;   /* Уменьшаем ширину блока ачивок */
+  left: 410px !important;   
+  top: 0 !important;        
+  width: 500px !important;   
   max-width: 500px !important;
 }
