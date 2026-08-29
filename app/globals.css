@@ -96,21 +96,28 @@ div[style*="justifyContent: \"space-between\""] {
   align-items: center !important;   /* Центрирует описание под заголовком */
 }
 
-/* Выстраиваем карточку Владимира и карточку ачивок в одну линию справа */
-.grid2 {
-  display: grid !important;
-  grid-template-columns: auto 1fr !important;
-  gap: 16px !important;                             /* Уменьшаем промежуток между карточками */
+/* Главный контейнер выстраивает блок Владимира и блок ачивок в один ряд */
+#passport {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: flex-start !important;
+  gap: 24px !important; /* Отступ между блоком Владимира и ачивками */
   width: 100% !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
 }
 
-/* Корректируем максимальную ширину общего контейнера под две карточки */
-#passport .grid2 {
-  max-width: 680px !important;  /* 🌟 Увеличиваем ширину, чтобы две карточки комфортно поместились */
-  margin-left: 30px !important; /* Небольшой аккуратный отступ от текста заголовка */
-}
-.grid2 > div:first-child {
-  max-width: 420px !important;
+/* Ограничиваем ширину блока Владимира */
+#passport > div:first-of-type {
+  max-width: 450px !important;
   width: 100% !important;
-  margin-right: auto !important;
+  flex-shrink: 0 !important;
+}
+
+/* Ограничиваем ширину блока с ачивками и даем ему подстроиться */
+#passport > div:last-of-type {
+  max-width: 600px !important;
+  width: 100% !important;
+  flex-grow: 1 !important;
 }
