@@ -123,3 +123,28 @@ div[style*="justifyContent: \"space-between\""] {
   width: 500px !important;   
   max-width: 500px !important;
 }
+ /* Уменьшаем заголовок «Найти игрока» */
+main div > h1 {
+    font-size: 28px !important;
+    margin-bottom: 12px !important;
+}
+
+/* Уменьшаем отступы только внутри главного контейнера поиска */
+main > div {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+}
+ /* Безопасное уменьшение блока поиска на главной */
+main h1:has(+ p), 
+main h1:has(+ p) + p + div,
+main h1:has(+ p) ~ form {
+    /* Если нужно уменьшить сам текст заголовка, раскомментируйте строчку ниже: */
+    /* font-size: 28px !important; */
+}
+
+/* Находим именно тот контейнер, где лежит этот h1 */
+main:has(h1) > div:first-child,
+section:has(h1):first-of-type {
+    padding-top: 25px !important;
+    padding-bottom: 25px !important;
+}
