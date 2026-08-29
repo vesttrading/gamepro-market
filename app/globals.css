@@ -84,3 +84,29 @@
 #passport button {
   margin: 0 0 0 auto !important;
 }
+/* 1. Возвращаем секции правильный блочный вид, чтобы карточки не сжимались влево */
+#passport {
+  display: block !important;
+}
+
+/* 2. Делаем специальный контейнер строкой для заголовка и кнопки */
+.sectionHead {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 20px !important;
+  margin-bottom: 30px !important;
+  width: 100% !important;
+}
+
+/* 3. Описание под заголовком оставляем блочным внутри */
+.sectionHead > div:first-child {
+  display: block !important;
+}
+
+/* 4. Кнопку аккуратно прижимаем к правому краю */
+#passport button {
+  margin: 0 !important;
+}
