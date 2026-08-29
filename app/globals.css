@@ -123,12 +123,20 @@ div[style*="justifyContent: \"space-between\""] {
   width: 500px !important;   
   max-width: 500px !important;
 }
-/* Шаг 1: Сужаем и центрируем главный блок «Найти игрока» */
-main > div:first-child,
-.search-section,
-.search-container {
-  max-width: 500px !important;  /* Насильно уменьшаем ширину блока до 700px */
+/* Безопасно уменьшаем блок поиска игрока */
+main > section:first-of-type,
+main > div:first-of-type {
+  max-width: 480px !important;
   width: 100% !important;
-  margin: 0 auto !important;    /* Выравниваем его строго по центру экрана */
-  padding: 20px !important;     /* Делаем внутренние отступы аккуратнее */
+  margin: 0 auto !important;
+}
+
+/* Безопасно сужаем блоки с карточками игроков (отзывы и гильдии) */
+#reviews, 
+#guilds,
+main > section[id="reviews"],
+main > section[id="guilds"] {
+  max-width: 900px !important;
+  width: 100% !important;
+  margin: 0 auto !important;
 }
