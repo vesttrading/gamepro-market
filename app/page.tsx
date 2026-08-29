@@ -241,7 +241,7 @@ export default function HomePage() {
         <div style={{marginTop:28,display:"flex",justifyContent:"center",gap:12,flexWrap:"wrap"}}><button style={btn} onClick={()=>{}}><span>🎮</span> {t.login}</button></div><div className="achievementRow" style={{marginTop:22,display:"flex",justifyContent:"center",gap:10,flexWrap:"wrap"}}>{["KSM","AOTC","CE","2400+ PvP"].map(x=><span key={x} className="achievementBadge">✓ {x} <b>VERIFIED</b></span>)}</div>
       </section>
 
-      <section id="passport" style={{maxWidth:1160,width:"92%",margin:"auto",padding:"30px 0 0px"}}>
+      <section id="passport" style={{maxWidth:1160,width:"92%",margin:"auto",padding:"10px 0 0px"}}>
         <div className="sectionHead"><div><h2 style={{fontSize:36,marginBottom:8}}>{t.passport}</h2><p style={{color:"#9da6c0",marginTop:0}}>{t.sub}</p></div><button onClick={sharePassport} style={outline}>🔗 {copied ? t.copied : t.share}</button></div>
         <div className="grid2" style={{display:"grid",gridTemplateColumns:"1.05fr .95fr",gap:20}}>
           <div style={card}>
@@ -253,7 +253,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="players" style={{maxWidth:1160,width:"92%",margin:"auto",padding:"0px 0 60px"}}>
+      <section id="players" style={{maxWidth:1160,width:"92%",margin:"auto",padding:"0px 0 30px"}}>
         <h2 style={{textAlign:"center",fontSize:36}}>{t.searchTitle}</h2><p style={{textAlign:"center",color:"#9da6c0"}}>{t.searchSub}</p>
         <div className="searchbar" style={{display:"flex",gap:10,maxWidth:460,margin:"25px auto"}}><input value={q} onChange={e=>setQ(e.target.value)} placeholder={t.placeholder} style={{flex:1,minWidth:0,background:"#090e1d",border:"1px solid #26364b",borderRadius:12,padding:15,color:"white",outline:"none"}}/><button style={btn}>🔎 {t.search}</button></div>
         <div className="cards" style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:16}}>{players.map(x=><div key={x[1]} style={card}><div style={{display:"flex",gap:12,alignItems:"center"}}><div style={{width:48,height:48,borderRadius:12,display:"grid",placeItems:"center",background:"linear-gradient(135deg,#6126e9,#e92ad4)",fontSize:22}}>{x[0]}</div><div><h3 style={{margin:"0 0 4px"}}>{x[1]}</h3><small style={{color:"#9da6c0"}}>{x[2]}</small></div></div><div style={{display:"flex",gap:7,marginTop:15,flexWrap:"wrap"}}><span className="greenTag">✓ {x[3]} VERIFIED</span><span className="greenTag">✓ {x[4]}</span></div></div>)}</div>
