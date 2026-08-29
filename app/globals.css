@@ -147,12 +147,18 @@ main .searchbar + div > div > div:last-child {
     flex-wrap: nowrap !important;   /* Запрещаем перенос вниз */
     gap: 8px !important;            /* Расстояние между плашками */
 }
-/* Финальное уменьшение блока Raider.IO */
-main form[action*="raiderio"],
+
+/* Уменьшаем ширину всего блока Raider.IO */
+main form,
 main form:has(input[placeholder*="Реалм"]),
-main fieldset:has(input[placeholder*="Реалм"]) {
-    max-width: 500px !important; /* Насильно сжимаем блок до 500 пикселей */
+div:has(> form[action*="raider"]) {
+    max-width: 520px !important; /* Делает блок компактным */
     width: 100% !important;
-    margin-left: auto !important;  /* Центрируем на экране */
-    margin-right: auto !important; /* Центрируем на экране */
+    margin-left: auto !important;  /* Центрирует блок */
+    margin-right: auto !important; /* Центрирует блок */
+}
+
+/* Центрируем заголовок и подзаголовок над формой */
+main form:has(input[placeholder*="Реалм"]) {
+    text-align: left !important; /* Внутри формы текст оставляем ровным */
 }
