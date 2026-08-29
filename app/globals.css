@@ -148,17 +148,18 @@ main .searchbar + div > div > div:last-child {
     gap: 8px !important;            /* Расстояние между плашками */
 }
 
-/* Уменьшаем ширину всего блока Raider.IO */
-main form,
-main form:has(input[placeholder*="Реалм"]),
-div:has(> form[action*="raider"]) {
-    max-width: 520px !important; /* Делает блок компактным */
-    width: 100% !important;
-    margin-left: auto !important;  /* Центрирует блок */
-    margin-right: auto !important; /* Центрирует блок */
+/* Выстраиваем элементы ввода Raider.IO в один ряд */
+main form:has(input[placeholder*="Реалм"]) > div,
+main form:has(input[placeholder*="Реалм"]) {
+    display: flex !important;
+    flex-direction: row !important; /* Насильно ставит элементы в один ряд */
+    align-items: center !important; /* Выравнивает их ровно по высоте */
+    gap: 12px !important;           /* Расстояние между полями ввода */
+    flex-wrap: nowrap !important;   /* Запрещает перенос на следующую строку */
 }
 
-/* Центрируем заголовок и подзаголовок над формой */
-main form:has(input[placeholder*="Реалм"]) {
-    text-align: left !important; /* Внутри формы текст оставляем ровным */
+/* Настраиваем ширину селектора региона EU */
+main form:has(input[placeholder*="Реалм"]) select {
+    max-width: 100px !important;    /* Делает плашку EU компактной */
+    width: 100% !important;
 }
