@@ -147,3 +147,17 @@ main .searchbar + div > div > div:last-child {
     flex-wrap: nowrap !important;   /* Запрещаем перенос вниз */
     gap: 8px !important;            /* Расстояние между плашками */
 }
+/* Уменьшаем ширину блока проверки Raider.IO и центрируем его */
+main section#io, 
+main section:has(form[action*="raider"]) {
+    max-width: 500px !important; /* Делает блок компактным, как и поиск */
+    width: 100% !important;
+    margin-left: auto !important;  /* Эти две строчки выровняют */
+    margin-right: auto !important; /* блок ровно по центру экрана */
+}
+
+/* Сжимаем внутренние поля ввода (инпуты), чтобы они не были огромными */
+main section#io form, 
+main section:has(form[action*="raider"]) form {
+    gap: 12px !important; /* Уменьшает расстояние между полями */
+}
