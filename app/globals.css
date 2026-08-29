@@ -123,3 +123,7 @@ div[style*="justifyContent: \"space-between\""] {
   width: 500px !important;   
   max-width: 500px !important;
 }
+main {
+    padding-top: 25px !important;
+    padding-bottom: 25px !important;
+}
