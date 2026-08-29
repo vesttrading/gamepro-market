@@ -297,7 +297,7 @@ export default function HomePage() {
         <div className="gameHeader"><div><h2 style={{fontSize:36,marginBottom:8}}>{t.games}</h2><p style={{color:"#9da6c0",marginTop:0}}>{t.futureText}</p></div></div>
         <div className="gameGrid" style={{display:"grid",gridTemplateColumns:"1.2fr repeat(3,1fr)",gap:14}}>
           <div style={{...card,borderColor:"#17bcb2",boxShadow:"0 0 35px #16d8cf12"}}><span className="status">● {t.current}</span><h3 style={{fontSize:25}}>⚔️ {t.wow}</h3><p style={{color:"#9da6c0",lineHeight:1.6}}>{t.wowText}</p><b style={{color:"#54eee4"}}>M+ · Raids · PvP</b></div>
-          {["Dota 2","CS2","Path of Exile 2"].map(g=><div key={g} style={{...card,opacity:.88}}><span className="futureStatus">{t.future}</span><h3 style={{fontSize:20,marginTop:20}}>🎮 {g}</h3><p style={{color:"#7f89a5",lineHeight:1.5}}>{t.futureText}</p></div>)}
+          {["Dota 2","CS2","Path of Exile 2"].map(g=><div key={g} style={{...card,opacity:.88}}><span className="futureStatus">{t.future}</span><h3style={{fontSize:20,marginTop:20,maxWidth:500,width:"100%",margin:"20px auto 0"}}>🎮 {g}</h3><p style={{color:"#7f89a5",lineHeight:1.5}}>{t.futureText}</p></div>)}
         </div>
       </section>
 
@@ -305,7 +305,7 @@ export default function HomePage() {
 
 <section id="guilds" style={{maxWidth:1160,width:"92%",margin:"auto",padding:"40px 0 80px"}}><div style={{...card,textAlign:"center",borderColor:"#17bcb2",background:"radial-gradient(circle at 50% 0,#0c3335,transparent 60%),linear-gradient(145deg,#10162b,#080d1b)"}}><div style={{fontSize:35}}>👥</div><h2 style={{fontSize:34}}>{t.guild}</h2><p style={{maxWidth:700,margin:"0 auto 24px",color:"#9da6c0",lineHeight:1.7}}>{t.guildText}</p><a href="#players" style={btn}>{t.open}</a></div></section>
 
-      <section style={{maxWidth:500,width:"92%",margin:"auto",padding:"0 0 80px",textAlign:"center"}}><h2>{t.shareTitle}</h2><p style={{color:"#9da6c0"}}>{t.passportLink}: Vladimir · 2850 M+ · CE · VERIFIED</p><button onClick={sharePassport} style={btn}>🔗 {copied ? t.copied : t.share}</button></section>
+      <section style={{maxWidth:760,width:"92%",margin:"auto",padding:"0 0 80px",textAlign:"center"}}><h2>{t.shareTitle}</h2><p style={{color:"#9da6c0"}}>{t.passportLink}: Vladimir · 2850 M+ · CE · VERIFIED</p><button onClick={sharePassport} style={btn}>🔗 {copied ? t.copied : t.share}</button></section>
     </main>
 
     <footer style={{borderTop:"1px solid #171c31",padding:28,color:"#737c98"}}><div className="footer" style={{maxWidth:1160,width:"92%",margin:"auto",display:"flex",justifyContent:"space-between",gap:15}}><span>© 2026 GamePro Market</span><span>Achievement Passport · WoW MVP · Dota 2 · CS2 · PoE2</span></div></footer>
