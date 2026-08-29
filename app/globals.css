@@ -127,8 +127,8 @@ div[style*="justifyContent: \"space-between\""] {
 main > div:first-child,
 .search-section,
 .search-container {
-  max-width: 700px !important;  /* Насильно уменьшаем ширину блока до 700px */
+  max-width: 500px !important;  /* Насильно уменьшаем ширину блока до 700px */
   width: 100% !important;
   margin: 0 auto !important;    /* Выравниваем его строго по центру экрана */
-  padding: 30px !important;     /* Делаем внутренние отступы аккуратнее */
+  padding: 20px !important;     /* Делаем внутренние отступы аккуратнее */
 }
