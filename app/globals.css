@@ -123,15 +123,3 @@ div[style*="justifyContent: \"space-between\""] {
   width: 500px !important;   
   max-width: 500px !important;
 }
-/* Уменьшаем заголовок и отступы блока поиска */
-main h1, 
-.jsx-f4888bab762c3c0 h1 {
-    font-size: 28px !important; /* Уменьшит размер текста */
-    margin-bottom: 12px !important; /* Прижмет подзаголовок ближе к названию */
-}
-
-main, 
-section#players {
-    padding-top: 20px !important; /* Сильно сожмет блок сверху */
-    padding-bottom: 20px !important; /* Сильно сожмет блок снизу */
-}
