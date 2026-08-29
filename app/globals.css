@@ -138,25 +138,3 @@ main .searchbar + div > div {
     max-width: 250px !important; /* Отличная ширина: карточки компактные, но вместительные */
     width: 100% !important;
 }
-/* Насильно выстраиваем абсолютно все элементы внутри блока Raider.IO в горизонтальную линию */
-main section[id*="raider"] form,
-main section:has(input[placeholder*="Реалм"]) form,
-section:last-of-type form {
-    display: flex !important;
-    flex-direction: row !important; /* Ставит в одну строку */
-    align-items: flex-end !important; /* Выравнивает кнопку и поля по нижней линии */
-    gap: 12px !important; /* Отступы между полями */
-    flex-wrap: nowrap !important; /* Запрещает перенос */
-    max-width: 900px !important; /* Ограничивает общую ширину ряда */
-    margin: 20px auto 0 !important; /* Центрирует форму на экране */
-}
-
-/* Делаем так, чтобы каждое поле ввода внутри формы правильно растягивалось в ряду */
-main section[id*="raider"] form > div,
-main section:has(input[placeholder*="Реалм"]) form > div,
-section:last-of-type form > div {
-    display: flex !important;
-    flex-direction: row !important;
-    gap: 12px !important;
-    width: 100% !important;
-}
