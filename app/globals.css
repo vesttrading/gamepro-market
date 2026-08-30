@@ -138,45 +138,29 @@ main .searchbar + div > div {
     max-width: 250px !important; /* Отличная ширина: карточки компактные, но вместительные */
     width: 100% !important;
 }
-/* 1. Ставим 3 поля в 1 ряд */
-main section:last-of-type > div:nth-child(2) {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr 100px !important; /* Имя | Реалм | EU */
-    gap: 10px !important;
-    align-items: end !important;
+/* Блок Проверить игрока через Raider.IO */
+section:has(h3:contains("Проверить игрока")), 
+section:has(h2:contains("Проверить игрока")) {
+    max-width: 800px !important; /* было 100% */
+    margin: 0 auto !important; /* центрируем */
+    padding: 16px !important; /* было 24-32px */
+    transform: scale(0.9); /* уменьшаем все внутри на 10% */
+    transform-origin: top center;
 }
 
-/* Убираем отступы у полей */
-main section:last-of-type input,
-main section:last-of-type select {
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 8px 12px !important; /* сделали компактнее */
+/* Уменьшаем заголовок */
+section:has(h3:contains("Проверить игрока")) h3,
+section:has(h2:contains("Проверить игрока")) h2 {
+    font-size: 18px !important; /* было 24px */
+}
+
+/* Уменьшаем подзаголовок */
+section:has(h3:contains("Проверить игрока")) p {
+    font-size: 12px !important; /* было 14px */
+}
+
+/* Уменьшаем инпуты */
+section input {
+    padding: 8px 12px !important; /* было 12-16px */
     font-size: 13px !important;
-}
-
-/* 2. УМЕНЬШАЕМ КНОПКУ */
-main section:last-of-type button {
-    grid-column: 1 / 4 !important; /* на всю ширину 3 колонок */
-    width: auto !important;
-    max-width: 300px !important; /* кнопка не на всю ширину */
-    margin: 12px auto 0 auto !important; /* центрируем */
-    padding: 8px 20px !important; /* меньше по высоте */
-    font-size: 14px !important;
-}
-
-/* Лейблы поменьше */
-main section:last-of-type label {
-    font-size: 11px !important;
-    margin-bottom: 4px !important;
-}
-
-/* На телефоне снова в колонку */
-@media (max-width: 768px) {
-    main section:last-of-type > div:nth-child(2) {
-        grid-template-columns: 1fr !important;
-    }
-    main section:last-of-type button {
-        max-width: 100% !important;
-    }
 }
