@@ -237,3 +237,14 @@ section#raiderio div:has(> button + a) a {
     }
 }
 
+/* Находим все текстовые блоки в середине (имя, плашка, цифры) и возвращаем их в центр */
+section#raiderio div.jsx-f4888bab762c3c0 > div:not(:first-child),
+section#raiderio div.jsx-f4888bab762c3c0 > h2,
+section#raiderio div.jsx-f4888bab762c3c0 > p {
+    grid-column: 1 / -1 !important; /* Растягивает блок на всю ширину рамки */
+    width: 100% !important;
+    text-align: center !important;  /* Центрирует текст, имя и цифры внутри */
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important; /* Центрирует внутренние элементы (например, плашку) */
+}
