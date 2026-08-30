@@ -168,3 +168,27 @@ section button {
         grid-template-columns: 1fr !important;
     }
 }
+/* ИЩЕМ БЛОК ПО ТЕКСТУ "Raider.IO" И СТАВИМ 3 ПОЛЯ В РЯД */
+h3:has(+ div + div input[placeholder="Имя персонажа"]) + div + div {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 90px !important;
+    gap: 12px !important;
+}
+
+h3:has(+ div + div input[placeholder="Имя персонажа"]) + div + div input,
+h3:has(+ div + div input[placeholder="Имя персонажа"]) + div + div select {
+    width: 100% !important;
+    margin-bottom: 0 !important;
+}
+
+h3:has(+ div + div input[placeholder="Имя персонажа"]) + div + div button {
+    grid-column: 1 / 4 !important;
+    margin-top: 12px !important;
+}
+
+/* Мобила */
+@media (max-width: 768px) {
+    h3:has(+ div + div input[placeholder="Имя персонажа"]) + div + div {
+        grid-template-columns: 1fr !important;
+    }
+}
