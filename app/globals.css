@@ -237,21 +237,13 @@ section#raiderio div:has(> button + a) a {
     }
 }
 
-/* Работаем строго с блоком, в котором появляются две нижние кнопки */
-section#raiderio div:not(.jsx-f4888bab762c3c0) {
-    display: flex !important;
-    flex-direction: column !important; /* Оставляем кнопки друг под другом */
-    align-items: center !important;    /* Центрируем кнопки внутри рамки */
+/* Напрямую сужаем и центрируем обе нижние кнопки результата */
+section#raiderio button[class*="save"],
+section#raiderio button:not(form button),
+section#raiderio a[class*="button"] {
+    display: block !important;       /* Превращаем в блоки, чтобы сработало auto-центрирование */
     width: 100% !important;
-    max-width: 120px !important;       /* <--- СУЖАЕМ САМУ ВТОРУЮ РАМКУ ДО 250px */
-    margin: 16px auto 0 !important;    /* Центрирует эту суженную рамку внутри главной */
-    gap: 10px !important;              /* Делает аккуратный зазор между кнопками */
-}
-
-/* Принудительно растягиваем обе кнопки на 100% ширины этой новой узкой рамки */
-section#raiderio div:not(.jsx-f4888bab762c3c0) button,
-section#raiderio div:not(.jsx-f4888bab762c3c0) a {
-    width: 100% !important;            /* Теперь кнопки займут ровно 250px */
-    margin: 0 !important;              
-    padding: 12px 0 !important;        
+    max-width: 250px !important;     /* <--- ВОТ ТУТ МЕНЯЙТЕ РАЗМЕР ВТОРОЙ РАМКИ */
+    margin: 12px auto !important;    /* auto слева и справа сжимает их ровно к центру */
+    text-align: center !important;
 }
