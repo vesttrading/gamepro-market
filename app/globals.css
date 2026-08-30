@@ -245,21 +245,19 @@ section#raiderio div.jsx-f4888bab762c3c0 > div[class] {
     box-sizing: border-box !important;
     overflow: hidden !important;
 }
-/* Находим контейнер с кнопками результата, который идет сразу за формой поиска */
-section#raiderio form + div,
-section#raiderio div.jsx-f4888bab762c3c0 form + div {
+
+/* ДОПОЛНЕНИЕ: Находим блок кнопок прямо внутри вашего селектора и ставим их в один ряд */
+section#raiderio div.jsx-f4888bab762c3c0 > div[class] div:has(button) {
     display: flex !important;
     flex-direction: row !important;     /* Строго горизонтально в один ряд */
-    justify-content: center !important; /* Центрирует кнопки на экране */
-    gap: 16px !important;               /* Расстояние между двумя кнопками */
-    width: 100% !important;
-    max-width: 100% !important;
+    justify-content: center !important; /* Центрирует пару кнопок */
+    gap: 16px !important;               /* Зазор между кнопками */
 }
 
-/* Настраиваем ширину только для этих двух нижних кнопок */
-section#raiderio form + div button,
-section#raiderio form + div a {
+/* Задаем аккуратную ширину для кнопок в ряду, чтобы они не слипались */
+section#raiderio div.jsx-f4888bab762c3c0 > div[class] div:has(button) button,
+section#raiderio div.jsx-f4888bab762c3c0 > div[class] div:has(button) a {
     width: auto !important;
-    min-width: 180px !important; /* Меняйте эту цифру, чтобы сделать кнопки шире или уже */
+    min-width: 180px !important; /* Настройка размера кнопок */
     margin: 0 !important;
 }
