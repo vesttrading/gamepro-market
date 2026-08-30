@@ -265,10 +265,10 @@ export default function HomePage() {
             <div><h2 style={{fontSize:28,margin:"0 0 7px"}}>🔎 Проверить игрока через Raider.IO</h2><p style={{color:"#9da6c0",margin:0}}>Первый живой источник GamePro для Mythic+ данных.</p></div>
             <span className="verifiedPill">RAIDER.IO</span>
           </div>
-       <div style={{display:"flex", gap:10, alignItems:"center", marginTop:18, flexWrap:"wrap"}}>
-     <input type="text" placeholder="Имя персонажа" value={rioChar} onChange={(e)=>setRioChar(e.target.value)} style={{...input, flex:2, minWidth:180}} />
-     <input type="text" placeholder="Реалм, например Kazzak" value={rioRealm} onChange={(e)=>setRioRealm(e.target.value)} style={{...input, flex:2, minWidth:180}} />
-     <select value={rioRegion} onChange={(e)=>setRioRegion(e.target.value)} style={{...input, width:90, flexShrink:0}}>
+     <div style={{display:"flex", gap:10, alignItems:"center", marginTop:18, flexWrap:"wrap"}}>
+  <input type="text" placeholder="Имя персонажа" value={rioName} onChange={(e)=>setRioName(e.target.value)} style={{...input, flex:2, minWidth:180}} />
+  <input type="text" placeholder="Реалм, например Kazzak" value={rioRealm} onChange={(e)=>setRioRealm(e.target.value)} style={{...input, flex:2, minWidth:180}} />
+  <select value={rioRegion} onChange={(e)=>setRioRegion(e.target.value)} style={{...input, width:90, flexShrink:0}}>
     <option value="us">US</option>
     <option value="eu">EU</option>
     <option value="kr">KR</option>
