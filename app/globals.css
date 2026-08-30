@@ -247,10 +247,3 @@ section#raiderio div.jsx-f4888bab762c3c0 div:has(button) {
     margin-top: 20px !important;
 }
 
-/* Одинаковый размер для этих двух кнопок в ряду */
-section#raiderio div.jsx-f4888bab762c3c0 div:has(button) button,
-section#raiderio div.jsx-f4888bab762c3c0 div:has(button) a {
-    width: auto !important;
-    min-width: 200px !important; /* Ширина кнопок */
-    margin: 0 !important;
-}
