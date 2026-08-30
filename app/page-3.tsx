@@ -221,26 +221,11 @@ export default function HomePage() {
     }
   };
 
-const btn = {
-  padding: "8px 14px",
-  borderRadius: 8,
-  border: "none",
-  background: "#3b82f6",
-  color: "#fff",
-  cursor: "pointer",
-  fontWeight: 600,
-  fontSize: 13
-};
-const input = {
-  padding: "8px 10px",
-  borderRadius: 6,
-  border: "1px solid #444",
-  background: "#1a1a1a",
-  color: "#fff",
-  outline: "none",
-  fontSize: 13,
-  width: 160
-};
+  const btn:React.CSSProperties={
+    display:"inline-flex",alignItems:"center",justifyContent:"center",gap:8,padding:"10px 20px",borderRadius:12,
+    background:"linear-gradient(135deg,#18e0d1,#12bfb6)",color:"#021312",fontWeight:900,border:0,cursor:"pointer",
+    textDecoration:"none",boxShadow:"0 0 30px #16d8cf38",transition:"transform .2s,box-shadow .2s"
+  };
   const outline={...btn,background:"transparent",color:"#4de8dd",boxShadow:"none",border:"1px solid #19cfc5"};
   const card:React.CSSProperties={
     background:"linear-gradient(145deg,#10162b,#080d1b)",border:"1px solid #262d49",borderRadius:20,padding:25
@@ -280,14 +265,12 @@ const input = {
             <div><h2 style={{fontSize:28,margin:"0 0 7px"}}>🔎 Проверить игрока через Raider.IO</h2><p style={{color:"#9da6c0",margin:0}}>Первый живой источник GamePro для Mythic+ данных.</p></div>
             <span className="verifiedPill">RAIDER.IO</span>
           </div>
- <div style={{display:"flex", gap:8, alignItems:"center", marginTop:14}}>
-  <input type="text" placeholder="Имя" value={rioName} onChange={(e)=>setRioName(e.target.value)} style={input} />
-  <input type="text" placeholder="Реалм" value={rioRealm} onChange={(e)=>setRioRealm(e.target.value)} style={input} />
-  <select value={rioRegion} onChange={(e)=>setRioRegion(e.target.value)} style={{...input, width:80}}>
-    <option value="us">US</option><option value="eu">EU</option><option value="kr">KR</option><option value="tw">TW</option>
-  </select>
-  <button style={btn} onClick={searchRaiderIO} disabled={rioLoading}>{rioLoading ? "..." : "Проверить"}</button>
-</div>
+          <div className="rioForm" style={{display:"grid",gridTemplateColumns:"1fr 1fr 90px auto",gap:10,marginTop:18}}>
+            <input value={rioName} onChange={e=>setRioName(e.target.value)} placeholder="Имя персонажа" style={{background:"#090e1d",border:"1px solid #26364b",borderRadius:12,padding:14,color:"white",outline:"none"}} />
+            <input value={rioRealm} onChange={e=>setRioRealm(e.target.value)} placeholder="Реалм, например Kazzak" style={{background:"#090e1d",border:"1px solid #26364b",borderRadius:12,padding:14,color:"white",outline:"none"}} />
+            <select value={rioRegion} onChange={e=>setRioRegion(e.target.value)} style={{background:"#090e1d",border:"1px solid #26364b",borderRadius:12,padding:14,color:"white"}}><option value="eu">EU</option><option value="us">US</option><option value="kr">KR</option><option value="tw">TW</option></select>
+            <button style={btn} onClick={searchRaiderIO} disabled={rioLoading}>{rioLoading ? "Проверяем…" : "Проверить"}</button>
+          </div>
           {rioError && <p style={{color:"#ff8e9e",marginBottom:0}}>{rioError}</p>}
           {rioData && <div style={{marginTop:18,padding:18,borderRadius:16,background:"#080d1b",border:"1px solid #1c8f82"}}>
             <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",gap:12,flexWrap:"wrap"}}>
