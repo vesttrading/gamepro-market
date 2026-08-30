@@ -139,15 +139,19 @@ main .searchbar + div > div {
     width: 100% !important;
 }
 
-/* Главный контейнер выстраиваем вертикально: заголовок НАВЕРХУ, форма под ним */
+/* Главный контейнер: центрируем и уменьшаем общую ширину блока */
+section#raiderio div.jsx-f4888bab762c3c0,
 section#raiderio > div {
     display: flex !important;
     flex-direction: column !important;
     gap: 20px !important;
     width: 100% !important;
+    max-width: 800px !important; /* Уменьшает ширину всего блока */
+    margin: 0 auto !important;    /* Центрирует блок на экране */
 }
 
-/* Принудительно растягиваем текстовый блок заголовка на всю ширину */
+/* Блок с заголовком и текстом */
+section#raiderio div.jsx-f4888bab762c3c0 > div:first-child,
 section#raiderio > div > div:first-child {
     width: 100% !important;
     display: flex !important;
@@ -155,30 +159,31 @@ section#raiderio > div > div:first-child {
     gap: 12px !important;
 }
 
-/* Форму с полями превращаем в независимый грид: 3 поля строго в один ряд */
+/* 3 поля в один ряд */
 section#raiderio form,
-section#raiderio div:has(> input[placeholder*="Имя"]) {
+section#raiderio div:has(> input[placeholder*="Имя"]),
+section#raiderio div.jsx-f4888bab762c3c0 form {
     display: grid !important;
-    grid-template-columns: 2fr 2fr 1fr !important; /* Имя и Реалм шире, EU — уже */
+    grid-template-columns: 2fr 2fr 1fr !important; 
     gap: 12px !important;
     width: 100% !important;
 }
 
-/* Гарантируем, что инпуты занимают всю выделенную им ширину */
+/* Растягивание инпутов внутри колонок */
 section#raiderio input,
 section#raiderio select {
     width: 100% !important;
     margin-bottom: 0 !important;
 }
 
-/* Кнопку «Проверить» выбиваем из общего ряда и растягиваем на всю ширину СТРОГО ВНИЗУ */
+/* Кнопка снизу во всю ширину формы */
 section#raiderio button {
     grid-column: 1 / -1 !important;
     width: 100% !important;
     margin-top: 8px !important;
 }
 
-/* Мобильный адаптив */
+/* Мобильная адаптация */
 @media (max-width: 768px) {
     section#raiderio form,
     section#raiderio div:has(> input[placeholder*="Имя"]) {
