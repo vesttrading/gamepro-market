@@ -138,35 +138,28 @@ main .searchbar + div > div {
     max-width: 250px !important; /* Отличная ширина: карточки компактные, но вместительные */
     width: 100% !important;
 }
-/* Правая часть с формой - делаем грид 3 в ряд */
+/* Блок Проверить игрока - 3 поля в 1 строку */
 section > div:nth-child(2) {
     display: grid !important;
-    grid-template-columns: 1fr 1fr 120px !important; /* Имя и Реалм по 1fr, EU фиксирован 120px */
+    grid-template-columns: 1fr 1fr 120px !important;
     gap: 12px !important;
     align-items: end !important;
 }
 
-/* Убираем лишние отступы у инпутов */
+/* Инпуты и селект на всю ширину своей колонки */
 section > div:nth-child(2) input,
 section > div:nth-child(2) select {
     width: 100% !important;
     margin-bottom: 0 !important;
 }
 
-/* Кнопка на всю ширину 3 колонок */
+/* Кнопка на всю ширину */
 section > div:nth-child(2) button {
     grid-column: 1 / 4 !important;
     margin-top: 12px !important;
 }
 
-/* Текст "Имя персонажа" и "Реалм" над инпутами */
-section > div:nth-child(2) label {
-    font-size: 12px !important;
-    margin-bottom: 4px !important;
-    display: block !important;
-}
-
-/* На телефоне возвращаем в колонку */
+/* На телефоне снова в колонку */
 @media (max-width: 768px) {
     section > div:nth-child(2) {
         grid-template-columns: 1fr !important;
