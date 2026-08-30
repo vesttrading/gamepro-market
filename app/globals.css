@@ -236,3 +236,18 @@ section#raiderio div:has(> button + a) a {
         gap: 10px !important;
     }
 }
+/* Находим блок с кнопками сохранения и подтверждения */
+section#raiderio div.jsx-f4888bab762c3c0 > div:last-child {
+    display: flex !important;
+    flex-direction: row !important; /* Выстраивает кнопки горизонтально */
+    justify-content: center !important; /* Центрирует их на экране */
+    gap: 16px !important; /* Расстояние между двумя кнопками */
+    width: 100% !important;
+}
+
+/* Управляем размером этих двух кнопок */
+section#raiderio div.jsx-f4888bab762c3c0 > div:last-child button,
+section#raiderio div.jsx-f4888bab762c3c0 > div:last-child a {
+    width: 220px !important; /* <--- МЕНЯЙТЕ ЭТУ ЦИФРУ ДЛЯ НАСТРОЙКИ ШИРИНЫ */
+    margin: 0 !important; /* Убирает прыжки кнопок */
+}
