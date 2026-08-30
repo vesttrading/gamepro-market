@@ -139,40 +139,32 @@ main .searchbar + div > div {
     width: 100% !important;
 }
 
-[30.08.2026 18:56] Vladimir: /* ==========================================================================
-   1. ТОТ САМЫЙ ПРАВИЛЬНЫЙ КОД (Который встал как надо)
-   ========================================================================== */
-
-/* Убираем лишнюю пустоту сверху синей рамки */
 section#raiderio {
-    padding-top: 24px !important;    /* Сжимает рамку сверху ближе к заголовку */
-    padding-bottom: 24px !important; /* Делает нижнюю часть тоже аккуратной */
+    padding-top: 24px !important;    
+    padding-bottom: 24px !important; 
 }
 
-/* Главный контейнер внутри рамки */
 section#raiderio div.jsx-f4888bab762c3c0,
 section#raiderio > div {
     display: flex !important;
     flex-direction: column !important;
-    gap: 12px !important;            /* Поднимает строку с полями ближе к заголовку */
+    gap: 12px !important;            
     width: 100% !important;
     max-width: 800px !important; 
     margin: 0 auto !important;    
 }
 
-/* Блок с заголовком и текстом */
 section#raiderio div.jsx-f4888bab762c3c0 > div:first-child,
 section#raiderio > div > div:first-child {
     width: 100% !important;
     display: flex !important;
-    flex-direction: column !important; /* Текст и плашка Raider.io аккуратно друг под другом */
+    flex-direction: column !important; 
     align-items: center !important;
     text-align: center !important;
     gap: 6px !important;
-    margin-bottom: 4px !important;     /* Дополнительно подтягивает инпуты вверх */
+    margin-bottom: 4px !important;     
 }
 
-/* 3 поля в один ряд */
 section#raiderio form,
 section#raiderio div:has(> input[placeholder*="Имя"]),
 section#raiderio div.jsx-f4888bab762c3c0 form {
@@ -182,20 +174,17 @@ section#raiderio div.jsx-f4888bab762c3c0 form {
     width: 100% !important;
 }
 
-/* Инпуты */
 section#raiderio input,
 section#raiderio select {
     width: 100% !important;
     margin-bottom: 0 !important;
 }
 
-/* Ошибка валидации */
 section#raiderio form > div:last-child,
 section#raiderio form p {
     grid-column: 1 / -1 !important;
 }
 
-/* Кнопка по центру */
 section#raiderio button {
     grid-column: 1 / -1 !important; 
     display: block !important;       
@@ -205,7 +194,6 @@ section#raiderio button {
     padding: 12px 32px !important;   
 }
 
-/* Текст источника в самом низу */
 section#raiderio p:last-of-type,
 section#raiderio span:last-of-type,
 section#raiderio .source-text {
@@ -214,7 +202,26 @@ section#raiderio .source-text {
     text-align: center !important;
 }
 
-/* Мобильная адаптация */
+section#raiderio div:has(> button + button),
+section#raiderio div:has(> button + a),
+section#raiderio div:has(> a + button) {
+    display: flex !important;
+    flex-direction: row !important;     
+    justify-content: center !important; 
+    align-items: center !important;
+    gap: 16px !important;               
+    width: 100% !important;
+    margin: 20px auto 0 !important;
+}
+
+section#raiderio div:has(> button + button) button,
+section#raiderio div:has(> button + a) button,
+section#raiderio div:has(> button + a) a {
+    width: auto !important;
+    min-width: 170px !important; 
+    margin: 0 !important;        
+}
+
 @media (max-width: 768px) {
     section#raiderio form,
     section#raiderio div:has(> input[placeholder*="Имя"]) {
@@ -223,36 +230,6 @@ section#raiderio .source-text {
     section#raiderio button {
         max-width: 100% !important; 
     }
-}
-
-
-/* ==========================================================================
-   2. НОВОЕ ДОПЛЕНЕНИЕ: СТАВИМ ДВЕ КНОПКИ РЕЗУЛЬТАТА РЯДОМ
-   ========================================================================== */
-
-/* Находим контейнер, который появляется ПОСЛЕ кнопки «Проверить» и содержит две новые кнопки */
-section#raiderio div:has(> button + button),
-section#raiderio div:has(> button + a),
-section#raiderio div:has(> a + button) {
-    display: flex !important;
-    flex-direction: row !important;     /* Строго в один горизонтальный ряд */
-    justify-content: center !important; /* Центрируем всю пару кнопок */
-    align-items: center !important;
-    gap: 16px !important;               /* Расстояние между ними */
-    width: 100% !important;
-    margin: 20px auto 0 !important;
-}
-
-/* Изолируем эти две новые кнопки, чтобы они стояли красиво и имели одинаковую ширину */
-section#raiderio div:has(> button + button) button,
-section#raiderio div:has(> button + a) button,
-section#raiderio div:has(> button + a) a {
-    width: auto !important;
-    min-width: 170px !important; /* Аккуратная фиксированная ширина для аккуратности */
-    margin: 0 !important;        /* Сбрасываем авто-маржины, чтобы они не разлетались */
-}
-[30.08.2026 18:56] Vladimir: /* На мобильных экранах пусть эти две кнопки встают друг под друга для удобства */
-@media (max-width: 768px) {
     section#raiderio div:has(> button + button),
     section#raiderio div:has(> button + a) {
         flex-direction: column !important;
