@@ -139,31 +139,33 @@ main .searchbar + div > div {
     width: 100% !important;
 }
 
-/* Главный контейнер: центрируем, уменьшаем общую ширину и добавляем отступ сверху */
+/* Убираем лишнюю пустоту сверху синей рамки */
+section#raiderio {
+    padding-top: 24px !important;    /* Сжимает рамку сверху ближе к заголовку */
+    padding-bottom: 24px !important; /* Делает нижнюю часть тоже аккуратной */
+}
+
+/* Главный контейнер внутри рамки */
 section#raiderio div.jsx-f4888bab762c3c0,
 section#raiderio > div {
     display: flex !important;
     flex-direction: column !important;
-    gap: 16px !important;
+    gap: 12px !important;            /* Поднимает строку с полями ближе к заголовку */
     width: 100% !important;
     max-width: 800px !important; 
-    margin: 40px auto 0 !important; /* Первая цифра (40px) опускает всю верхнюю часть вниз */
+    margin: 0 auto !important;    
 }
 
-/* Блок с заголовком и текстом (делаем флексом для управления порядком) */
+/* Блок с заголовком и текстом */
 section#raiderio div.jsx-f4888bab762c3c0 > div:first-child,
 section#raiderio > div > div:first-child {
     width: 100% !important;
     display: flex !important;
-    flex-wrap: wrap !important;
-    gap: 12px !important;
+    flex-direction: column !important; /* Текст и плашка Raider.io аккуратно друг под другом */
     align-items: center !important;
-}
-
-/* Убираем плашку Raider.IO наверх к заголовку (задаем ей первый приоритет) */
-section#raiderio img[src*="raider"], 
-section#raiderio div:has(> img[src*="raider"]) {
-    order: -1 !important; /* Выталкивает картинку/плашку в самый верх текстового блока */
+    text-align: center !important;
+    gap: 6px !important;
+    margin-bottom: 4px !important;     /* Дополнительно подтягивает инпуты вверх */
 }
 
 /* 3 поля в один ряд */
@@ -176,35 +178,36 @@ section#raiderio div.jsx-f4888bab762c3c0 form {
     width: 100% !important;
 }
 
-/* Растягивание инпутов внутри колонок */
+/* Инпуты */
 section#raiderio input,
 section#raiderio select {
     width: 100% !important;
     margin-bottom: 0 !important;
 }
 
-/* Ошибка валидации (красный текст под кнопкой) во всю ширину */
+/* Ошибка валидации */
 section#raiderio form > div:last-child,
 section#raiderio form p {
     grid-column: 1 / -1 !important;
 }
 
-/* Кнопка: маленькая и строго по充ентру */
+/* Кнопка по центру */
 section#raiderio button {
     grid-column: 1 / -1 !important; 
     display: block !important;       
     width: auto !important;          
     max-width: 280px !important;     
-    margin: 12px auto 0 !important;  /* Уменьшили верхний отступ кнопки до 12px */
+    margin: 12px auto 0 !important;  
     padding: 12px 32px !important;   
 }
 
-/* Поднимаем нижнюю часть (текст про источник Raider.IO) чуть выше */
+/* Текст источника в самом низу */
 section#raiderio p:last-of-type,
 section#raiderio span:last-of-type,
 section#raiderio .source-text {
-    margin-top: -8px !important; /* Отрицательный отступ подтягивает текст кверху */
-    opacity: 0.8;
+    margin-top: 4px !important;
+    opacity: 0.7;
+    text-align: center !important;
 }
 
 /* Мобильная адаптация */
