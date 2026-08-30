@@ -138,6 +138,7 @@ main .searchbar + div > div {
     max-width: 250px !important; /* Отличная ширина: карточки компактные, но вместительные */
     width: 100% !important;
 }
+
 /* Оборачиваем 3 поля в грид 3 в ряд */
 section:has(input[placeholder*="Имя"]) form,
 section:has(input[placeholder*="Имя"]) > div:last-child {
