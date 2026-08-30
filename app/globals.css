@@ -168,29 +168,3 @@ section button {
         grid-template-columns: 1fr !important;
     }
 }
-/* Целимся по 3 инпутам и ставим их в грид */
-div:has(input[placeholder="Имя персонажа"]) {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr 90px !important; /* Имя | Реалм | EU */
-    gap: 10px !important;
-}
-
-/* Убираем margin-bottom у каждого поля */
-div:has(input[placeholder="Имя персонажа"]) input,
-div:has(input[placeholder="Имя персонажа"]) select {
-    margin-bottom: 0 !important;
-    width: 100% !important;
-}
-
-/* Кнопку оставляем как есть. Не трогаем */
-div:has(input[placeholder="Имя персонажа"]) button {
-    grid-column: 1 / 4 !important; /* кидаем кнопку на новую строку */
-    margin-top: 12px !important;
-}
-
-/* Мобила */
-@media (max-width: 768px) {
-    div:has(input[placeholder="Имя персонажа"]) {
-        grid-template-columns: 1fr !important;
-    }
-}
