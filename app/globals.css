@@ -187,25 +187,34 @@ section#raiderio form select {
     margin-bottom: 0 !important;
 }
 
-/* Текст ошибки ("Персонаж не найден") строго под полями на всю ширину */
+/* Обертка для кнопки и ошибки валидации (растягиваем на всю ширину сетки) */
 section#raiderio form > div:last-child,
 section#raiderio form p,
-section#raiderio form div[class*="error"] {
+section#raiderio form div:has(button) {
     grid-column: 1 / -1 !important;
     width: 100% !important;
-    text-align: center !important;
-    margin-top: 8px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important; /* Центрирует всё содержимое внутри */
+    justify-content: center !important;
+    margin-top: 12px !important;
 }
 
-/* Первая кнопка «Проверить» (внутри формы) — всегда по центру */
-section#raiderio form button,
-section#raiderio form input[type="submit"] {
-    grid-column: 1 / -1 !important; 
-    display: block !important;       
-    width: auto !important;          
-    max-width: 280px !important;     
-    margin: 12px auto 0 !important;  
+/* Кнопка «Проверить» — зажимаем размеры и строго по центру */
+section#raiderio form button {
+    display: inline-block !important;       
+    width: 100% !important;          
+    max-width: 280px !important; /* Не дает ей растянуться больше 280px */
     padding: 12px 32px !important;   
+    margin: 0 auto !important;
+}
+
+/* Текст ошибки под кнопкой */
+section#raiderio form div[class*="error"],
+section#raiderio form p {
+    text-align: center !important;
+    margin-top: 8px !important;
+    width: 100% !important;
 }
 
 
@@ -217,8 +226,8 @@ section#raiderio form input[type="submit"] {
 section#raiderio form + div,
 section#raiderio div:not(.jsx-f4888bab762c3c0) > div:has(button + button) {
     display: flex !important;
-    flex-direction: row !important; /* Строго в один ряд */
-    justify-content: center !important; /* По центру */
+    flex-direction: row !important; 
+    justify-content: center !important; 
     align-items: center !important;
     gap: 16px !important; 
     width: 100% !important;
@@ -251,6 +260,6 @@ section#raiderio .source-text {
         max-width: 100% !important; 
     }
     section#raiderio form + div {
-        flex-direction: column !important; /* На мобилках две кнопки встанут друг под друга */
+        flex-direction: column !important; 
     }
 }
