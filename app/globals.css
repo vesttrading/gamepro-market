@@ -139,23 +139,28 @@ main .searchbar + div > div {
     width: 100% !important;
 }
 
-/* Оборачиваем только контейнер с инпутами в грид (3 в ряд) */
-section:has(input[placeholder*="Имя"]) form {
+/* Находим родительский блок, в котором лежат все 3 поля, и делаем его гридом */
+section:has(input[placeholder*="Имя"]) input[placeholder*="Имя"]::parent,
+section:has(input[placeholder*="Имя"]) .flex,
+section:has(input[placeholder*="Имя"]) .grid,
+section:has(input[placeholder*="Имя"]) form,
+section:has(input[placeholder*="Имя"]) div:has(> input[placeholder*="Имя"]) {
     display: grid !important;
-    grid-template-columns: 2fr 2fr 1fr !important; /* Имя и Реалм шире, EU уже */
+    grid-template-columns: 2fr 2fr 1fr !important; /* Имя и Реалм шире, EU — уже */
     gap: 12px !important;
     margin-bottom: 16px !important;
 }
 
-/* Убираем у инпутов лишние внешние отступы, чтобы они не взрывали сетку */
-section:has(input[placeholder*="Имя"]) form input,
-section:has(input[placeholder*="Имя"]) form select {
+/* Растягиваем сами инпуты на всю ширину их колонок */
+section:has(input[placeholder*="Имя"]) input, 
+section:has(input[placeholder*="Имя"]) select {
     width: 100% !important;
     margin-bottom: 0 !important;
 }
 
-/* На мобильных устройствах возвращаем поля друг под друга */
+/* На мобильных возвращаем поля в одну колонку */
 @media (max-width: 768px) {
+    section:has(input[placeholder*="Имя"]) div:has(> input[placeholder*="Имя"]),
     section:has(input[placeholder*="Имя"]) form {
         grid-template-columns: 1fr !important;
     }
