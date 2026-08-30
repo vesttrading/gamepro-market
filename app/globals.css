@@ -239,14 +239,19 @@ section#raiderio div:has(> button + a) a {
 
 /* Работаем строго с блоком, в котором появляются две нижние кнопки */
 section#raiderio div:not(.jsx-f4888bab762c3c0) {
-    display: inline-block !important;
+    display: flex !important;
+    flex-direction: column !important; /* Оставляем кнопки друг под другом */
+    align-items: center !important;    /* Центрируем кнопки внутри рамки */
+    width: 100% !important;
+    max-width: 250px !important;       /* <--- СУЖАЕМ САМУ ВТОРУЮ РАМКУ ДО 250px */
+    margin: 16px auto 0 !important;    /* Центрирует эту суженную рамку внутри главной */
+    gap: 10px !important;              /* Делает аккуратный зазор между кнопками */
 }
 
+/* Принудительно растягиваем обе кнопки на 100% ширины этой новой узкой рамки */
 section#raiderio div:not(.jsx-f4888bab762c3c0) button,
 section#raiderio div:not(.jsx-f4888bab762c3c0) a {
-    display: inline-block !important; /* Выстраивает кнопки рядом друг с другом */
-    vertical-align: middle !important;
-    margin: 8px 10px !important;       /* Зазор между ними */
-    width: 210px !important;          /* Ширина кнопок (можно менять) */
-    padding: 12px 0 !important;       /* Внутренний отступ кнопок */
+    width: 100% !important;            /* Теперь кнопки займут ровно 250px */
+    margin: 0 !important;              
+    padding: 12px 0 !important;        
 }
