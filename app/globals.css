@@ -202,30 +202,24 @@ section#raiderio .source-text {
     text-align: center !important;
 }
 
-/* --- Мощный фикс для двух нижних кнопок --- */
-
-/* Находим общий родительский контейнер, где рендерятся данные игрока */
-section#raiderio div.jsx-f4888bab762c3c0 > div:last-of-type,
-section#raiderio > div > div:last-of-type {
+section#raiderio div:has(> button + button),
+section#raiderio div:has(> button + a),
+section#raiderio div:has(> a + button) {
     display: flex !important;
-    flex-direction: column !important;
+    flex-direction: row !important;     
+    justify-content: center !important; 
     align-items: center !important;
+    gap: 16px !important;               
+    width: 100% !important;
+    margin: 20px auto 0 !important;
 }
 
-/* Заставляем кнопки встать в один ряд */
-section#raiderio button:not(form button),
-section#raiderio a[class*="button"],
-section#raiderio div:not(.jsx-f4888bab762c3c0) button {
-    display: inline-flex !important;
+section#raiderio div:has(> button + button) button,
+section#raiderio div:has(> button + a) button,
+section#raiderio div:has(> button + a) a {
     width: auto !important;
-    min-width: 180px !important;
-    margin: 8px 8px !important; /* Боковые отступы выстроят их в одну горизонтальную линию */
-}
-
-/* Обертка для кнопок, если она есть */
-section#raiderio button:not(form button) + button,
-section#raiderio button:not(form button) + a {
-    margin-left: 12px !important;
+    min-width: 170px !important; 
+    margin: 0 !important;        
 }
 
 @media (max-width: 768px) {
@@ -236,9 +230,9 @@ section#raiderio button:not(form button) + a {
     section#raiderio button {
         max-width: 100% !important; 
     }
-    section#raiderio button:not(form button) {
-        display: block !important;
-        width: 100% !important;
-        margin: 8px 0 !important;
+    section#raiderio div:has(> button + button),
+    section#raiderio div:has(> button + a) {
+        flex-direction: column !important;
+        gap: 10px !important;
     }
 }
