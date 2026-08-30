@@ -243,7 +243,7 @@ section#raiderio button:not(form button),
 section#raiderio a[class*="button"] {
     display: block !important;       /* Превращаем в блоки, чтобы сработало auto-центрирование */
     width: 100% !important;
-    max-width: 250px !important;     /* <--- ВОТ ТУТ МЕНЯЙТЕ РАЗМЕР ВТОРОЙ РАМКИ */
+    max-width: 100px !important;     /* <--- ВОТ ТУТ МЕНЯЙТЕ РАЗМЕР ВТОРОЙ РАМКИ */
     margin: 12px auto !important;    /* auto слева и справа сжимает их ровно к центру */
     text-align: center !important;
 }
