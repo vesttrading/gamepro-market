@@ -146,8 +146,8 @@ section#raiderio > div {
     flex-direction: column !important;
     gap: 20px !important;
     width: 100% !important;
-    max-width: 800px !important; /* Уменьшает ширину всего блока */
-    margin: 0 auto !important;    /* Центрирует блок на экране */
+    max-width: 800px !important; 
+    margin: 0 auto !important;    
 }
 
 /* Блок с заголовком и текстом */
@@ -176,11 +176,20 @@ section#raiderio select {
     margin-bottom: 0 !important;
 }
 
-/* Кнопка снизу во всю ширину формы */
-section#raiderio button {
+/* Ошибка валидации (красный текст под кнопкой) во всю ширину */
+section#raiderio form > div:last-child,
+section#raiderio form p {
     grid-column: 1 / -1 !important;
-    width: 100% !important;
-    margin-top: 8px !important;
+}
+
+/* Кнопка: гарантированно маленькая и строго по центру */
+section#raiderio button {
+    grid-column: 1 / -1 !important; /* Встает на отдельную строку снизу */
+    display: block !important;       /* Переключаем в блочный режим для работы авто-отступов */
+    width: auto !important;          /* Сбрасываем ширину 100% */
+    max-width: 280px !important;     /* Ограничиваем максимальную ширину кнопки */
+    margin: 16px auto 0 !important;  /* auto слева и справа сдвинет её четко в центр */
+    padding: 12px 32px !important;   /* Аккуратные внутренние отступы */
 }
 
 /* Мобильная адаптация */
@@ -188,5 +197,8 @@ section#raiderio button {
     section#raiderio form,
     section#raiderio div:has(> input[placeholder*="Имя"]) {
         grid-template-columns: 1fr !important;
+    }
+    section#raiderio button {
+        max-width: 100% !important; /* На телефонах возвращаем во всю ширину */
     }
 }
