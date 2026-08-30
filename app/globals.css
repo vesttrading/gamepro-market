@@ -237,13 +237,3 @@ section#raiderio div:has(> button + a) a {
     }
 }
 
-/* Ставим две нижние кнопки строго в одну горизонтальную линию */
-section#raiderio div.jsx-f4888bab762c3c0 div:has(button) {
-    display: flex !important;
-    flex-direction: row !important;     /* Строго горизонтально в один ряд */
-    justify-content: center !important; /* Центрирует пару кнопок */
-    gap: 16px !important;               /* Расстояние между ними */
-    width: 100% !important;
-    margin-top: 20px !important;
-}
-
