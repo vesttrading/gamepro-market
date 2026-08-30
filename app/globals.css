@@ -168,31 +168,24 @@ section button {
         grid-template-columns: 1fr !important;
     }
 }
-/* ФИНАЛ: 3 поля в 1 ряд + маленькая кнопка */
-section:has(h2:contains("Проверить игрока")) > div:last-child {
+/* ТОЛЬКО 3 ПОЛЯ В 1 РЯД. КНОПКУ НЕ ТРОГАЕМ */
+main > div > section:last-of-type > div:last-of-type {
     display: grid !important;
-    grid-template-columns: 2fr 2fr 1fr !important; /* Имя | Реалм | EU */
+    grid-template-columns: 1fr 1fr 100px !important; /* Имя | Реалм | EU */
     gap: 12px !important;
+    align-items: end !important;
 }
 
-/* Чтобы старые стили не мешали */
-section:has(h2:contains("Проверить игрока")) input, 
-section:has(h2:contains("Проверить игрока")) select {
+/* Чтобы поля были на всю ширину своей колонки */
+main > div > section:last-of-type input,
+main > div > section:last-of-type select {
     width: 100% !important;
-    margin-bottom: 0 !important;
+    margin: 0 !important;
 }
 
-/* Кнопка уменьшенная и по центру */
-section:has(h2:contains("Проверить игрока")) button {
-    grid-column: 1 / 4 !important;
-    width: auto !important;
-    max-width: 300px !important; /* вот из-за этого она маленькая */
-    margin: 12px auto 0 auto !important;
-}
-
-/* На телефоне в колонку */
+/* На телефоне обратно в колонку */
 @media (max-width: 768px) {
-    section:has(h2:contains("Проверить игрока")) > div:last-child {
+    main > div > section:last-of-type > div:last-of-type {
         grid-template-columns: 1fr !important;
     }
 }
