@@ -111,8 +111,8 @@ div[style*="justifyContent: \"space-between\""] {
   position: absolute !important;
   left: 0 !important;
   top: 0 !important;
-  width: 350px !important;
-  max-width: 350px !important;
+  width: 250px !important;
+  max-width: 250px !important;
 }
 
 /* Блок ачивок справа */
