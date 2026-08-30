@@ -237,23 +237,11 @@ section#raiderio div:has(> button + a) a {
     }
 }
 
-/* Центрируем блок результатов, возвращаем рамку на место и выравниваем цифры */
-section#raiderio div.jsx-f4888bab762c3c0 > div:last-of-type {
-    grid-column: 1 / -1 !important; /* Удерживает инпуты в один ряд, выбивая результаты вниз */
-    width: 100% !important;
-    max-width: 100% !important;     /* Возвращает синюю рамку на место, не давая ей ломаться */
-    display: flex !important;
-    flex-direction: column !important; /* Выстраивает имя, цифры и кнопки строго вертикально */
-    align-items: center !important;    /* Сдвигает имя, плашку и цифры 1265.2 ровно в ЦЕНТР */
-    text-align: center !important;     /* Гарантирует центровку текста */
+/* Находим блок с результатами (где имя и цифры) и жестко ограничиваем его ширину */
+section#raiderio div.jsx-f4888bab762c3c0 > div:last-child,
+section#raiderio div.jsx-f4888bab762c3c0 > div:nth-child(3),
+section#raiderio div.jsx-f4888bab762c3c0 > div[class] {
+    max-width: 100% !important; /* Не дает блоку вылазить за пределы родителя */
     box-sizing: border-box !important;
-}
-
-/* Принудительно центрируем абсолютно всё, что находится внутри блока результатов */
-section#raiderio div.jsx-f4888bab762c3c0 > div:last-of-type * {
-    text-align: center !important;
-    justify-content: center !important;
-    align-items: center !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
+    overflow: hidden !important;
 }
