@@ -139,17 +139,9 @@ main .searchbar + div > div {
     width: 100% !important;
 }
 
-/* --- НОВОЕ: ФОРМА RAIDER.IO В 1 РЯД --- */
-div:has(h3:contains("Проверить игрока")) div.grid {
-  display: grid !important;
-  grid-template-columns: 1fr 1fr 90px !important;
-  gap: 12px !important;
-}
-div:has(h3:contains("Проверить игрока")) div.grid button {
-  grid-column: 1 / 4 !important;
-}
+/* МОБИЛКА ДЛЯ ФОРМЫ RAIDER.IO */
 @media (max-width: 768px) {
-  div:has(h3:contains("Проверить игрока")) div.grid {
+  .rioForm {
     grid-template-columns: 1fr !important;
   }
 }
