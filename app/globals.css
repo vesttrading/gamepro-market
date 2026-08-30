@@ -237,23 +237,22 @@ section#raiderio div:has(> button + a) a {
     }
 }
 
-/* Находим блок результатов по наличию плашки DATA FOUND и сужаем его */
-section#raiderio div:has(> div:contains("DATA FOUND")),
-section#raiderio div:has(> span:contains("DATA FOUND")),
-section#raiderio div:has(div[class*="status"]),
-section#raiderio div:has(span[class*="status"]) {
+/* Находим родительский блок, в котором лежат ТОЛЬКО две нижние кнопки */
+section#raiderio div.jsx-f4888bab762c3c0 div:has(> button + button),
+section#raiderio div.jsx-f4888bab762c3c0 div:has(> button) + div,
+section#raiderio div:last-child div:has(button) {
     display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;    /* Центрирует нижний блок */
+    flex-direction: column !important; /* Кнопки остаются друг под другом */
+    align-items: center !important;    /* Центрирует кнопки */
     width: 100% !important;
-    max-width: 250px !important;       /* <--- МЕНЯЙТЕ ТУТ РАЗМЕР ВТОРОЙ РАМКИ */
-    margin: 16px auto 0 !important;    /* Центрирует саму рамку внутри синей */
+    max-width: 260px !important;       /* <--- ШИРИНА ДВУХ КНОПОК. Меняйте эту цифру! */
+    margin: 20px auto 0 !important;    /* Центрирует всю эту узкую группу по центру рамки */
+    gap: 12px !important;              /* Расстояние между ними */
 }
 
-/* Принудительно растягиваем кнопки внутри этого суженного блока результатов */
-section#raiderio div:has(> div:contains("DATA FOUND")) button,
-section#raiderio div:has(> div:contains("DATA FOUND")) a,
-section#raiderio div:has(div[class*="status"]) button {
-    width: 100% !important;            /* Они займут ровно ширину рамки (например, 250px) */
-    margin: 8px 0 !important;
+/* Растягиваем кнопки ровно под ширину их узкого контейнера */
+section#raiderio div.jsx-f4888bab762c3c0 div:has(button) button,
+section#raiderio div.jsx-f4888bab762c3c0 div:has(button) a {
+    width: 100% !important;            /* Займут ровно 260px */
+    margin: 0 !important;
 }
