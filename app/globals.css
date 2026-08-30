@@ -168,27 +168,30 @@ section button {
         grid-template-columns: 1fr !important;
     }
 }
-/* ИЩЕМ БЛОК ПО ТЕКСТУ "Raider.IO" И СТАВИМ 3 ПОЛЯ В РЯД */
-h3:has(+ div + div input[placeholder="Имя персонажа"]) + div + div {
+/* БЬЕМ ПО ТЕКСТУ "Проверить игрока через Raider.IO" */
+h3:has(+ p + button) ~ div {
     display: grid !important;
     grid-template-columns: 1fr 1fr 90px !important;
     gap: 12px !important;
+    align-items: end !important;
 }
 
-h3:has(+ div + div input[placeholder="Имя персонажа"]) + div + div input,
-h3:has(+ div + div input[placeholder="Имя персонажа"]) + div + div select {
+/* Делаем поля на всю ширину колонки */
+h3:has(+ p + button) ~ div input,
+h3:has(+ p + button) ~ div select {
     width: 100% !important;
     margin-bottom: 0 !important;
 }
 
-h3:has(+ div + div input[placeholder="Имя персонажа"]) + div + div button {
+/* Кнопку кидаем на новую строку на всю ширину */
+h3:has(+ p + button) ~ div button {
     grid-column: 1 / 4 !important;
     margin-top: 12px !important;
 }
 
-/* Мобила */
+/* Мобильная версия */
 @media (max-width: 768px) {
-    h3:has(+ div + div input[placeholder="Имя персонажа"]) + div + div {
+    h3:has(+ p + button) ~ div {
         grid-template-columns: 1fr !important;
     }
 }
