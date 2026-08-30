@@ -237,27 +237,27 @@ section#raiderio div:has(> button + a) a {
     }
 }
 
-/* Находим блок с результатами (где имя и цифры) и жестко ограничиваем его ширину */
+/* Находим блок с результатами и заставляем кнопки внутри него встать в ряд */
 section#raiderio div.jsx-f4888bab762c3c0 > div:last-child,
 section#raiderio div.jsx-f4888bab762c3c0 > div:nth-child(3),
 section#raiderio div.jsx-f4888bab762c3c0 > div[class] {
-    max-width: 100% !important; /* Не дает блоку вылазить за пределы родителя */
+    max-width: 100% !important; 
     box-sizing: border-box !important;
     overflow: hidden !important;
-}
 
-/* ДОПОЛНЕНИЕ: Находим блок кнопок прямо внутри вашего селектора и ставим их в один ряд */
-section#raiderio div.jsx-f4888bab762c3c0 > div[class] div:has(button) {
+    /* ДОБАВЛЯЕМ В ВАШ КОД: строим элементы в одну строчку */
     display: flex !important;
-    flex-direction: row !important;     /* Строго горизонтально в один ряд */
-    justify-content: center !important; /* Центрирует пару кнопок */
-    gap: 16px !important;               /* Зазор между кнопками */
+    flex-direction: row !important;      /* Выстраивает кнопки горизонтально */
+    justify-content: center !important;  /* Центрирует их по горизонтали */
+    align-items: center !important;      /* Центрирует по вертикали */
+    flex-wrap: wrap !important;          /* Разрешает перенос, если экран станет слишком узким */
+    gap: 16px !important;                /* Делает аккуратный зазор между кнопками */
 }
 
-/* Задаем аккуратную ширину для кнопок в ряду, чтобы они не слипались */
-section#raiderio div.jsx-f4888bab762c3c0 > div[class] div:has(button) button,
-section#raiderio div.jsx-f4888bab762c3c0 > div[class] div:has(button) a {
+/* Ограничиваем размер кнопок, чтобы они не раздувались на всю рамку */
+section#raiderio div.jsx-f4888bab762c3c0 > div[class] button,
+section#raiderio div.jsx-f4888bab762c3c0 > div[class] a {
     width: auto !important;
-    min-width: 180px !important; /* Настройка размера кнопок */
-    margin: 0 !important;
+    min-width: 185px !important;         /* Ширина кнопок в ряду */
+    margin: 4px !important;
 }
