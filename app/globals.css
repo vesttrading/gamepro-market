@@ -186,4 +186,4 @@ main section:last-of-type > div:last-child button {
     main section:last-of-type > div:last-child {
         grid-template-columns: 1fr !important;
     }
-}
+
