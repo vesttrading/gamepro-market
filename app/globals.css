@@ -220,3 +220,24 @@ section#raiderio .source-text {
         max-width: 100% !important; 
     }
 }
+/* Находим блок, где появляются кнопки сохранения и верификации, и ставим их в один ряд */
+section#raiderio div:has(> button),
+section#raiderio div.jsx-f4888bab762c3c0 > div:last-child {
+    display: flex !important;
+    flex-direction: row !important; /* Выстраивает кнопки горизонтально */
+    justify-content: center !important; /* Центрирует группу кнопок */
+    align-items: center !important;
+    gap: 16px !important; /* Расстояние между двумя кнопками */
+    width: 100% !important;
+    margin-top: 16px !important;
+}
+
+/* Сбрасываем лишние растягивания и отступы у этих конкретных кнопок результата */
+section#raiderio div:has(> button) button,
+section#raiderio div:has(> button) a,
+section#raiderio button[class*="save"], 
+section#raiderio button:not(:first-of-type) {
+    width: auto !important;
+    min-width: 160px !important; /* Аккуратная одинаковая ширина для обеих кнопок */
+    margin: 0 !important; /* Отменяем вертикальный авто-маржин, чтобы они не прыгали */
+}
