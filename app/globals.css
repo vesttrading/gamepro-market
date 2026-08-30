@@ -168,3 +168,31 @@ section button {
         grid-template-columns: 1fr !important;
     }
 }
+/* ФИНАЛ: 3 поля в 1 ряд + маленькая кнопка */
+section:has(h2:contains("Проверить игрока")) > div:last-child {
+    display: grid !important;
+    grid-template-columns: 2fr 2fr 1fr !important; /* Имя | Реалм | EU */
+    gap: 12px !important;
+}
+
+/* Чтобы старые стили не мешали */
+section:has(h2:contains("Проверить игрока")) input, 
+section:has(h2:contains("Проверить игрока")) select {
+    width: 100% !important;
+    margin-bottom: 0 !important;
+}
+
+/* Кнопка уменьшенная и по центру */
+section:has(h2:contains("Проверить игрока")) button {
+    grid-column: 1 / 4 !important;
+    width: auto !important;
+    max-width: 300px !important; /* вот из-за этого она маленькая */
+    margin: 12px auto 0 auto !important;
+}
+
+/* На телефоне в колонку */
+@media (max-width: 768px) {
+    section:has(h2:contains("Проверить игрока")) > div:last-child {
+        grid-template-columns: 1fr !important;
+    }
+}
