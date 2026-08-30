@@ -237,31 +237,16 @@ section#raiderio div:has(> button + a) a {
     }
 }
 
-/* Находим главный блок с результатами и центрируем всё текстовое содержимое */
-section#raiderio div.jsx-f4888bab762c3c0 > div:last-child,
-section#raiderio > div > div:last-of-type {
-    text-align: center !important; /* Центрирует кнопки на экране */
-    display: block !important;     /* Сбрасываем флекс-колонку, которая выстраивала их вертикально */
+/* Работаем строго с блоком, в котором появляются две нижние кнопки */
+section#raiderio div:not(.jsx-f4888bab762c3c0) {
+    display: inline-block !important;
 }
 
-/* Напрямую находим обе кнопки и принудительно ставим их в один ряд */
-section#raiderio button:not(form button),
-section#raiderio a[class*="button"],
-section#raiderio div:not(.jsx-f4888bab762c3c0) button {
-    display: inline-block !important; /* Выстраивает кнопки горизонтально плечом к плечу */
+section#raiderio div:not(.jsx-f4888bab762c3c0) button,
+section#raiderio div:not(.jsx-f4888bab762c3c0) a {
+    display: inline-block !important; /* Выстраивает кнопки рядом друг с другом */
     vertical-align: middle !important;
-    margin: 8px 10px !important;       /* Отступы вокруг кнопок, чтобы они не слипались */
-    
-    /* РАЗМЕРЫ КНОПОК: меняйте эти цифры под себя */
-    width: 210px !important;          /* Ширина каждой кнопки */
-    padding: 12px 0 !important;       /* Высота (внутренние отступы) */
-}
-
-/* На мобильных телефонах возвращаем их друг под друга, чтобы было удобно нажимать пальцем */
-@media (max-width: 768px) {
-    section#raiderio button:not(form button) {
-        display: block !important;
-        width: 100% !important;
-        margin: 8px 0 !important;
-    }
+    margin: 8px 10px !important;       /* Зазор между ними */
+    width: 210px !important;          /* Ширина кнопок (можно менять) */
+    padding: 12px 0 !important;       /* Внутренний отступ кнопок */
 }
