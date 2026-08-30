@@ -237,13 +237,23 @@ section#raiderio div:has(> button + a) a {
     }
 }
 
-/* Напрямую сужаем и центрируем обе нижние кнопки результата */
-section#raiderio button[class*="save"],
-section#raiderio button:not(form button),
-section#raiderio a[class*="button"] {
-    display: block !important;       /* Превращаем в блоки, чтобы сработало auto-центрирование */
+/* Находим блок результатов по наличию плашки DATA FOUND и сужаем его */
+section#raiderio div:has(> div:contains("DATA FOUND")),
+section#raiderio div:has(> span:contains("DATA FOUND")),
+section#raiderio div:has(div[class*="status"]),
+section#raiderio div:has(span[class*="status"]) {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;    /* Центрирует нижний блок */
     width: 100% !important;
-    max-width: 100px !important;     /* <--- ВОТ ТУТ МЕНЯЙТЕ РАЗМЕР ВТОРОЙ РАМКИ */
-    margin: 12px auto !important;    /* auto слева и справа сжимает их ровно к центру */
-    text-align: center !important;
+    max-width: 250px !important;       /* <--- МЕНЯЙТЕ ТУТ РАЗМЕР ВТОРОЙ РАМКИ */
+    margin: 16px auto 0 !important;    /* Центрирует саму рамку внутри синей */
+}
+
+/* Принудительно растягиваем кнопки внутри этого суженного блока результатов */
+section#raiderio div:has(> div:contains("DATA FOUND")) button,
+section#raiderio div:has(> div:contains("DATA FOUND")) a,
+section#raiderio div:has(div[class*="status"]) button {
+    width: 100% !important;            /* Они займут ровно ширину рамки (например, 250px) */
+    margin: 8px 0 !important;
 }
