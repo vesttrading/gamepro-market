@@ -139,26 +139,30 @@ main .searchbar + div > div {
     width: 100% !important;
 }
 
-/* Делаем главный контейнер двухколоночным: текст слева, форма справа */
+/* Делаем главный контейнер вертикальной колонкой, чтобы заголовок встал НАВЕРХ */
 section#raiderio div.jsx-f4888bab762c3c0 {
-    display: grid !important;
-    grid-template-columns: 1fr 2fr !important; /* Левая часть под текст, правая под поля */
-    gap: 24px !important;
-    align-items: start !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+    width: 100% !important;
 }
 
-/* Обертка для текстовой левой части (заголовок, бейдж) */
+/* Принудительно растягиваем текстовый блок с заголовком на всю ширину */
 section#raiderio div.jsx-f4888bab762c3c0 > div:first-child {
-    grid-column: 1 !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 12px !important;
+    align-items: center !important;
 }
 
-/* Саму форму (инпуты + кнопка) превращаем во внутренний грид */
+/* Контейнер с полями превращаем в строгий грид (3 поля в один ряд) */
 section#raiderio div.jsx-f4888bab762c3c0 form,
 section#raiderio div.jsx-f4888bab762c3c0 > div:last-child {
-    grid-column: 2 !important; /* Переносим в правую колонку */
     display: grid !important;
-    grid-template-columns: 2fr 2fr 1fr !important; /* 3 поля в ряд */
+    grid-template-columns: 2fr 2fr 1fr !important; /* Имя и Реалм шире, EU — уже */
     gap: 12px !important;
+    width: 100% !important;
 }
 
 /* Инпуты занимают всю ширину своих колонок */
@@ -168,21 +172,17 @@ section#raiderio div.jsx-f4888bab762c3c0 select {
     margin-bottom: 0 !important;
 }
 
-/* Кнопка встает строго под полями на всю ширину правой колонки */
+/* Кнопку «Проверить» растягиваем на всю ширину СТРОГО под полями */
 section#raiderio div.jsx-f4888bab762c3c0 button {
     grid-column: 1 / -1 !important;
     width: 100% !important;
     margin-top: 8px !important;
 }
 
-/* Адаптив для мобильных: всё выстраивается в одну вертикальную колонку */
-@media (max-width: 992px) {
-    section#raiderio div.jsx-f4888bab762c3c0 {
-        grid-template-columns: 1fr !important;
-    }
+/* Адаптив для телефонов: инпуты встают друг под друга */
+@media (max-width: 768px) {
     section#raiderio div.jsx-f4888bab762c3c0 form,
     section#raiderio div.jsx-f4888bab762c3c0 > div:last-child {
-        grid-column: 1 !important;
         grid-template-columns: 1fr !important;
     }
 }
