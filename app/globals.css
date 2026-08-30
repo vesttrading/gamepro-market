@@ -237,22 +237,3 @@ section#raiderio div:has(> button + a) a {
     }
 }
 
-/* Находим родительский блок, в котором лежат ТОЛЬКО две нижние кнопки */
-section#raiderio div.jsx-f4888bab762c3c0 div:has(> button + button),
-section#raiderio div.jsx-f4888bab762c3c0 div:has(> button) + div,
-section#raiderio div:last-child div:has(button) {
-    display: flex !important;
-    flex-direction: column !important; /* Кнопки остаются друг под другом */
-    align-items: center !important;    /* Центрирует кнопки */
-    width: 100% !important;
-    max-width: 260px !important;       /* <--- ШИРИНА ДВУХ КНОПОК. Меняйте эту цифру! */
-    margin: 20px auto 0 !important;    /* Центрирует всю эту узкую группу по центру рамки */
-    gap: 12px !important;              /* Расстояние между ними */
-}
-
-/* Растягиваем кнопки ровно под ширину их узкого контейнера */
-section#raiderio div.jsx-f4888bab762c3c0 div:has(button) button,
-section#raiderio div.jsx-f4888bab762c3c0 div:has(button) a {
-    width: 100% !important;            /* Займут ровно 260px */
-    margin: 0 !important;
-}
