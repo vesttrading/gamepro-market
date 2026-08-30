@@ -139,24 +139,50 @@ main .searchbar + div > div {
     width: 100% !important;
 }
 
-/* Нацеливаемся на конкретный контейнер с полями внутри секции raiderio */
+/* Делаем главный контейнер двухколоночным: текст слева, форма справа */
 section#raiderio div.jsx-f4888bab762c3c0 {
     display: grid !important;
-    grid-template-columns: 2fr 2fr 1fr !important; /* Имя и Реалм шире, EU — уже */
-    gap: 12px !important;
-    margin-bottom: 16px !important;
+    grid-template-columns: 1fr 2fr !important; /* Левая часть под текст, правая под поля */
+    gap: 24px !important;
+    align-items: start !important;
 }
 
-/* Гарантируем правильную ширину элементов внутри сетки */
+/* Обертка для текстовой левой части (заголовок, бейдж) */
+section#raiderio div.jsx-f4888bab762c3c0 > div:first-child {
+    grid-column: 1 !important;
+}
+
+/* Саму форму (инпуты + кнопка) превращаем во внутренний грид */
+section#raiderio div.jsx-f4888bab762c3c0 form,
+section#raiderio div.jsx-f4888bab762c3c0 > div:last-child {
+    grid-column: 2 !important; /* Переносим в правую колонку */
+    display: grid !important;
+    grid-template-columns: 2fr 2fr 1fr !important; /* 3 поля в ряд */
+    gap: 12px !important;
+}
+
+/* Инпуты занимают всю ширину своих колонок */
 section#raiderio div.jsx-f4888bab762c3c0 input,
 section#raiderio div.jsx-f4888bab762c3c0 select {
     width: 100% !important;
     margin-bottom: 0 !important;
 }
 
-/* Адаптив: на мобильных экранах возвращаем в одну колонку */
-@media (max-width: 768px) {
+/* Кнопка встает строго под полями на всю ширину правой колонки */
+section#raiderio div.jsx-f4888bab762c3c0 button {
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    margin-top: 8px !important;
+}
+
+/* Адаптив для мобильных: всё выстраивается в одну вертикальную колонку */
+@media (max-width: 992px) {
     section#raiderio div.jsx-f4888bab762c3c0 {
+        grid-template-columns: 1fr !important;
+    }
+    section#raiderio div.jsx-f4888bab762c3c0 form,
+    section#raiderio div.jsx-f4888bab762c3c0 > div:last-child {
+        grid-column: 1 !important;
         grid-template-columns: 1fr !important;
     }
 }
