@@ -139,50 +139,49 @@ main .searchbar + div > div {
     width: 100% !important;
 }
 
-/* Делаем главный контейнер вертикальной колонкой, чтобы заголовок встал НАВЕРХ */
-section#raiderio div.jsx-f4888bab762c3c0 {
+/* Главный контейнер выстраиваем вертикально: заголовок НАВЕРХУ, форма под ним */
+section#raiderio > div {
     display: flex !important;
     flex-direction: column !important;
     gap: 20px !important;
     width: 100% !important;
 }
 
-/* Принудительно растягиваем текстовый блок с заголовком на всю ширину */
-section#raiderio div.jsx-f4888bab762c3c0 > div:first-child {
+/* Принудительно растягиваем текстовый блок заголовка на всю ширину */
+section#raiderio > div > div:first-child {
     width: 100% !important;
     display: flex !important;
     flex-wrap: wrap !important;
     gap: 12px !important;
-    align-items: center !important;
 }
 
-/* Контейнер с полями превращаем в строгий грид (3 поля в один ряд) */
-section#raiderio div.jsx-f4888bab762c3c0 form,
-section#raiderio div.jsx-f4888bab762c3c0 > div:last-child {
+/* Форму с полями превращаем в независимый грид: 3 поля строго в один ряд */
+section#raiderio form,
+section#raiderio div:has(> input[placeholder*="Имя"]) {
     display: grid !important;
     grid-template-columns: 2fr 2fr 1fr !important; /* Имя и Реалм шире, EU — уже */
     gap: 12px !important;
     width: 100% !important;
 }
 
-/* Инпуты занимают всю ширину своих колонок */
-section#raiderio div.jsx-f4888bab762c3c0 input,
-section#raiderio div.jsx-f4888bab762c3c0 select {
+/* Гарантируем, что инпуты занимают всю выделенную им ширину */
+section#raiderio input,
+section#raiderio select {
     width: 100% !important;
     margin-bottom: 0 !important;
 }
 
-/* Кнопку «Проверить» растягиваем на всю ширину СТРОГО под полями */
-section#raiderio div.jsx-f4888bab762c3c0 button {
+/* Кнопку «Проверить» выбиваем из общего ряда и растягиваем на всю ширину СТРОГО ВНИЗУ */
+section#raiderio button {
     grid-column: 1 / -1 !important;
     width: 100% !important;
     margin-top: 8px !important;
 }
 
-/* Адаптив для телефонов: инпуты встают друг под друга */
+/* Мобильный адаптив */
 @media (max-width: 768px) {
-    section#raiderio div.jsx-f4888bab762c3c0 form,
-    section#raiderio div.jsx-f4888bab762c3c0 > div:last-child {
+    section#raiderio form,
+    section#raiderio div:has(> input[placeholder*="Имя"]) {
         grid-template-columns: 1fr !important;
     }
 }
