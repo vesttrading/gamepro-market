@@ -243,7 +243,7 @@ section#raiderio div:not(.jsx-f4888bab762c3c0) {
     flex-direction: column !important; /* Оставляем кнопки друг под другом */
     align-items: center !important;    /* Центрируем кнопки внутри рамки */
     width: 100% !important;
-    max-width: 250px !important;       /* <--- СУЖАЕМ САМУ ВТОРУЮ РАМКУ ДО 250px */
+    max-width: 220px !important;       /* <--- СУЖАЕМ САМУ ВТОРУЮ РАМКУ ДО 250px */
     margin: 16px auto 0 !important;    /* Центрирует эту суженную рамку внутри главной */
     gap: 10px !important;              /* Делает аккуратный зазор между кнопками */
 }
