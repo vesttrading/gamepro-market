@@ -139,46 +139,17 @@ main .searchbar + div > div {
     width: 100% !important;
 }
 
-/* НАХОДИМ КАРТОЧКУ ПО ТЕКСТУ "Raider.IO" И ПЕРЕДЕЛЫВАЕМ ВНУТРИ */
-div:has(> h3:contains("Проверить игрока через Raider.IO")) {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr 1fr !important; /* 3 колонки сверху */
-    gap: 12px !important;
+/* --- НОВОЕ: ФОРМА RAIDER.IO В 1 РЯД --- */
+div:has(h3:contains("Проверить игрока")) div.grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr 90px !important;
+  gap: 12px !important;
 }
-
-/* Заголовок на всю ширину */
-div:has(> h3:contains("Проверить игрока через Raider.IO")) > h3,
-div:has(> h3:contains("Проверить игрока через Raider.IO")) > p {
-    grid-column: 1 / 4 !important;
+div:has(h3:contains("Проверить игрока")) div.grid button {
+  grid-column: 1 / 4 !important;
 }
-
-/* Левая колонка с RAIDER.IO кнопкой */
-div:has(> h3:contains("Проверить игрока через Raider.IO")) > button:first-of-type {
-    grid-row: 2 / 4 !important;
-    grid-column: 1 !important;
-    align-self: center !important;
-}
-
-/* Правая часть с формой */
-div:has(> h3:contains("Проверить игрока через Raider.IO")) > div {
-    grid-column: 2 / 4 !important;
-    display: grid !important;
-    grid-template-columns: 1fr 1fr 90px !important;
-    gap: 12px !important;
-}
-
-/* Кнопка "Проверить" на всю ширину формы */
-div:has(> h3:contains("Проверить игрока через Raider.IO")) > div > button {
-    grid-column: 1 / 4 !important;
-}
-
-/* Мобила */
 @media (max-width: 768px) {
-    div:has(> h3:contains("Проверить игрока через Raider.IO")) {
-        grid-template-columns: 1fr !important;
-    }
-    div:has(> h3:contains("Проверить игрока через Raider.IO")) > div {
-        grid-template-columns: 1fr !important;
-        grid-column: 1 !important;
-    }
+  div:has(h3:contains("Проверить игрока")) div.grid {
+    grid-template-columns: 1fr !important;
+  }
 }
