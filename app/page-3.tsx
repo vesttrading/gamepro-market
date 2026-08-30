@@ -226,6 +226,15 @@ export default function HomePage() {
     background:"linear-gradient(135deg,#18e0d1,#12bfb6)",color:"#021312",fontWeight:900,border:0,cursor:"pointer",
     textDecoration:"none",boxShadow:"0 0 30px #16d8cf38",transition:"transform .2s,box-shadow .2s"
   };
+  const input = {
+  padding: "10px 12px",
+  borderRadius: 8,
+  border: "1px solid #333",
+  background: "#111",
+  color: "#fff",
+  outline: "none",
+  fontSize: 14
+};
   const outline={...btn,background:"transparent",color:"#4de8dd",boxShadow:"none",border:"1px solid #19cfc5"};
   const card:React.CSSProperties={
     background:"linear-gradient(145deg,#10162b,#080d1b)",border:"1px solid #262d49",borderRadius:20,padding:25
@@ -265,16 +274,16 @@ export default function HomePage() {
             <div><h2 style={{fontSize:28,margin:"0 0 7px"}}>🔎 Проверить игрока через Raider.IO</h2><p style={{color:"#9da6c0",margin:0}}>Первый живой источник GamePro для Mythic+ данных.</p></div>
             <span className="verifiedPill">RAIDER.IO</span>
           </div>
-     <div style={{display:"flex", gap:10, alignItems:"center", marginTop:18, flexWrap:"wrap"}}>
-  <input type="text" placeholder="Имя персонажа" value={rioName} onChange={(e)=>setRioName(e.target.value)} style={{...input, flex:2, minWidth:180}} />
-  <input type="text" placeholder="Реалм, например Kazzak" value={rioRealm} onChange={(e)=>setRioRealm(e.target.value)} style={{...input, flex:2, minWidth:180}} />
-  <select value={rioRegion} onChange={(e)=>setRioRegion(e.target.value)} style={{...input, width:90, flexShrink:0}}>
+    <div style={{display:"flex", gap:10, alignItems:"center", marginTop:18, flexWrap:"wrap"}}>
+  <input type="text" placeholder="Имя персонажа" value={rioName} onChange={(e)=>setRioName(e.target.value)} style={input} />
+  <input type="text" placeholder="Реалм, например Kazzak" value={rioRealm} onChange={(e)=>setRioRealm(e.target.value)} style={input} />
+  <select value={rioRegion} onChange={(e)=>setRioRegion(e.target.value)} style={{...input, width:120}}>
     <option value="us">US</option>
     <option value="eu">EU</option>
     <option value="kr">KR</option>
     <option value="tw">TW</option>
   </select>
-  <button style={{...btn, flexShrink:0, padding:"12px 24px"}} onClick={searchRaiderIO} disabled={rioLoading}>{rioLoading ? "Проверяем..." : "Проверить"}</button>
+  <button style={btn} onClick={searchRaiderIO} disabled={rioLoading}>{rioLoading ? "Проверяем..." : "Проверить"}</button>
 </div>
           {rioError && <p style={{color:"#ff8e9e",marginBottom:0}}>{rioError}</p>}
           {rioData && <div style={{marginTop:18,padding:18,borderRadius:16,background:"#080d1b",border:"1px solid #1c8f82"}}>
