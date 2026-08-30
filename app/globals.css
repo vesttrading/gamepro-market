@@ -138,30 +138,45 @@ main .searchbar + div > div {
     max-width: 250px !important; /* Отличная ширина: карточки компактные, но вместительные */
     width: 100% !important;
 }
-/* Блок Проверить игрока - 3 поля в 1 строку */
-section > div:nth-child(2) {
+/* 1. Ставим 3 поля в 1 ряд */
+main section:last-of-type > div:nth-child(2) {
     display: grid !important;
-    grid-template-columns: 1fr 1fr 120px !important;
-    gap: 12px !important;
+    grid-template-columns: 1fr 1fr 100px !important; /* Имя | Реалм | EU */
+    gap: 10px !important;
     align-items: end !important;
 }
 
-/* Инпуты и селект на всю ширину своей колонки */
-section > div:nth-child(2) input,
-section > div:nth-child(2) select {
+/* Убираем отступы у полей */
+main section:last-of-type input,
+main section:last-of-type select {
     width: 100% !important;
-    margin-bottom: 0 !important;
+    margin: 0 !important;
+    padding: 8px 12px !important; /* сделали компактнее */
+    font-size: 13px !important;
 }
 
-/* Кнопка на всю ширину */
-section > div:nth-child(2) button {
-    grid-column: 1 / 4 !important;
-    margin-top: 12px !important;
+/* 2. УМЕНЬШАЕМ КНОПКУ */
+main section:last-of-type button {
+    grid-column: 1 / 4 !important; /* на всю ширину 3 колонок */
+    width: auto !important;
+    max-width: 300px !important; /* кнопка не на всю ширину */
+    margin: 12px auto 0 auto !important; /* центрируем */
+    padding: 8px 20px !important; /* меньше по высоте */
+    font-size: 14px !important;
+}
+
+/* Лейблы поменьше */
+main section:last-of-type label {
+    font-size: 11px !important;
+    margin-bottom: 4px !important;
 }
 
 /* На телефоне снова в колонку */
 @media (max-width: 768px) {
-    section > div:nth-child(2) {
+    main section:last-of-type > div:nth-child(2) {
         grid-template-columns: 1fr !important;
+    }
+    main section:last-of-type button {
+        max-width: 100% !important;
     }
 }
