@@ -167,24 +167,4 @@ section button {
     section:has(input[placeholder*="Имя"]) > div:last-child {
         grid-template-columns: 1fr !important;
     }
-
-/* Ставим 3 поля в 1 ряд в правой колонке */
-main section:last-of-type > div:last-child {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr 90px !important; /* Имя | Реалм | EU */
-    gap: 10px !important;
-    align-items: end !important;
 }
-
-/* Кнопка на всю ширину 3 колонок */
-main section:last-of-type > div:last-child button {
-    grid-column: 1 / 4 !important;
-    margin-top: 10px !important;
-}
-
-/* На телефоне обратно в колонку */
-@media (max-width: 768px) {
-    main section:last-of-type > div:last-child {
-        grid-template-columns: 1fr !important;
-    }
-
