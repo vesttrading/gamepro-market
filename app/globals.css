@@ -311,3 +311,13 @@ section#games div[class*="gameGrid"] > div:first-child {
 section#games div[class*="gameGrid"] > div:not(:first-child) {
     max-width: 220px !important; /* Они останутся маленькими и аккуратными в один ряд */
 }
+
+/* Поднимаем текст внутри первой карточки выше */
+section#games div[class*="gameGrid"] > div:first-child {
+    padding-top: 16px !important; /* Уменьшаем пустую зону сверху до минимума */
+}
+
+section#games div[class*="gameGrid"] > div:first-child h2 {
+    margin-top: 0px !important; /* Обнуляем отступ над самим заголовком */
+}
+
