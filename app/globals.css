@@ -17,7 +17,11 @@
   gap: 20px !important;
   width: 100% !important;
 }
-
+section#raiderio button {
+    display: inline-flex !important;
+    width: auto !important;
+    flex-shrink: 0 !important;
+}
 /* 3. Восстановление сетки для карточек игроков (строка 259) */
 .cards {
   display: grid !important;
