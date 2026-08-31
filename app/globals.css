@@ -234,7 +234,7 @@ section#raiderio div:has(> button + a) a {
 }
 
 section#raiderio {
-    margin-top: 80px !important;
+    margin-top: 60px !important;
 }
 @media (max-width: 768px) {
     section#raiderio form,
