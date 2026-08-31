@@ -284,11 +284,3 @@ section#raiderio > div:last-child {
         grid-template-columns: 1fr !important;
     }
 }
-/* Находим блок с результатами (где имя и цифры) и жестко ограничиваем его ширину */
-section#raiderio div.jsx-f4888bab762c3c0 > div:last-child,
-section#raiderio div.jsx-f4888bab762c3c0 > div:nth-child(3),
-section#raiderio div.jsx-f4888bab762c3c0 > div[class] {
-    max-width: 100% !important; /* Не дает блоку вылазить за пределы родителя */
-    box-sizing: border-box !important;
-    overflow: hidden !important;
-}
