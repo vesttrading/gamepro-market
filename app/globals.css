@@ -135,10 +135,18 @@ main section:has(.searchbar) + div {
     gap: 24px !important;
 }
 
-/* 2. Задаем карточкам правильную ширину (уменьшили с 250px до 210px) */
+/* 2. Задаем карточкам правильную ширину, чтобы они не были огромными */
 main section:has(.searchbar) + div > div {
-    max-width: 210px !important; 
+    max-width: 210px !important;
     width: 100% !important;
+}
+
+/* 3. Растягиваем саму кнопку поиска */
+div:has(> input) + button, 
+main section:has(.searchbar) button {
+    padding-left: 45px !important;
+    padding-right: 45px !important;
+    min-width: 140px !important;
 }
 
 /* 3. Растягиваем кнопку поиска */
