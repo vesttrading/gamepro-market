@@ -292,26 +292,15 @@ section#games div[class*="gameGrid"] {
     margin-top: -10px !important; /* Было -20px, сделали -55px, чтобы поднять сильнее */
 }
 
-/* 1. Сжимаем секцию и принудительно поднимаем карточки игр еще выше */
-section#games {
-    padding-top: 0px !important; /* Убираем пустую зону сверху всей секции */
+/* 1. Возвращаем World of Warcraft на всю верхнюю строку */
+section#games div[class*="gameGrid"] > div:first-child {
+    max-width: 100% !important; 
+    width: 100% !important;
+    margin-bottom: 24px !important; /* Отступ, чтобы нижние игры не прилипали */
 }
 
-section#games div[class*="gameGrid"] {
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: center !important;
-    align-items: flex-start !important;
-    flex-wrap: wrap !important;
-    gap: 16px !important;
-    margin-top: -55px !important; /* Было -20px, сделали -55px, чтобы поднять сильнее */
-}
-
-/* 2. Параметры самих карточек (оставляем без изменений) */
-section#games div[class*="gameGrid"] > div {
-    flex: 1 !important;
+/* 2. Сдвигаем карточки остальных игр на строку ниже и держим компактными */
+section#games div[class*="gameGrid"] > div:not(:first-child) {
     max-width: 220px !important;
-    min-width: 170px !important;
-    padding: 12px !important;
 }
 
