@@ -277,29 +277,20 @@ main h2 + p + div > div {
     max-width: 200px !important;
 }
 
-/* 1. Находим общий родительский блок для всех игр и выстраиваем их в ряд */
-main div:has(> div:has(h2)),
-main section > div:has(h2) {
+/* 1. Находим секцию игр по её ID и принудительно выстраиваем блоки в ряд */
+section#games div[class*="gameGrid"] {
     display: flex !important;
     flex-direction: row !important;
     justify-content: center !important;
     align-items: flex-start !important;
     flex-wrap: wrap !important;
-    gap: 20px !important; /* Уменьшили расстояние между карточками игр */
+    gap: 16px !important; /* Делаем расстояние между играми меньше */
 }
 
-/* 2. Делаем каждую карточку игры узкой и компактной */
-main div:has(> div:has(h2)) > div,
-main section > div:has(h2) > div {
+/* 2. Делаем каждую карточку игры узкой и сжимаем отступы */
+section#games div[class*="gameGrid"] > div {
     flex: 1 !important;
-    max-width: 240px !important; /* Делаем сами блоки игр намного меньше */
-    min-width: 180px !important;
-    padding: 12px !important; /* Уменьшаем внутренние вертикальные отступы */
-}
-
-/* 3. Уменьшаем размер текстов и иконок внутри */
-main div:has(> div:has(h2)) h2,
-main section > div:has(h2) h2 {
-    font-size: 1.1rem !important; /* Уменьшаем шрифты названий */
-    margin-bottom: 4px !important;
+    max-width: 220px !important; /* Уменьшаем ширину карточек игр */
+    min-width: 170px !important;
+    padding: 12px !important;    /* Сжимаем блоки по вертикали */
 }
