@@ -312,12 +312,21 @@ section#games div[class*="gameGrid"] > div:not(:first-child) {
     max-width: 220px !important; /* Они останутся маленькими и аккуратными в один ряд */
 }
 
-/* Поднимаем текст внутри первой карточки выше */
+/* Ужимаем элементы внутри первой карточки, чтобы сузить саму рамку */
 section#games div[class*="gameGrid"] > div:first-child {
-    padding-top: 16px !important; /* Уменьшаем пустую зону сверху до минимума */
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
 }
 
+/* Уменьшаем отступы у заголовка и текстов внутри карточки */
 section#games div[class*="gameGrid"] > div:first-child h2 {
-    margin-top: 0px !important; /* Обнуляем отступ над самим заголовком */
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
 }
+
+section#games div[class*="gameGrid"] > div:first-child p {
+    margin-top: 4px !important;
+    margin-bottom: 4px !important;
+}
+
 
