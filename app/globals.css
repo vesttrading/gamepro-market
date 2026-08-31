@@ -233,6 +233,9 @@ section#raiderio div:has(> button + a) a {
     margin: 0 !important;        
 }
 
+section#raiderio {
+    margin-top: 120px !important;
+}
 @media (max-width: 768px) {
     section#raiderio form,
     section#raiderio div:has(> input[placeholder*="Имя"]) {
