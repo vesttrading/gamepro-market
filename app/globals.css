@@ -289,7 +289,7 @@ section#games div[class*="gameGrid"] {
     align-items: flex-start !important;
     flex-wrap: wrap !important;
     gap: 16px !important;
-    margin-top: -30px !important; /* Было -20px, сделали -55px, чтобы поднять сильнее */
+    margin-top: -10px !important; /* Было -20px, сделали -55px, чтобы поднять сильнее */
 }
 
 /* 2. Параметры самих карточек (оставляем без изменений) */
