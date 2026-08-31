@@ -278,7 +278,7 @@ section#games {
 section#games div[class*="gameGrid"] {
     display: flex !important;
     flex-direction: row !important;
-    justify-content: center !important;
+    justify-content: Flex-end !important;
     align-items: stretch !important; /* Выравнивает все карточки по одной высоте */
     flex-wrap: nowrap !important;    /* Запрещает перенос карточек на новую строку */
     gap: 16px !important;
