@@ -292,58 +292,17 @@ section#games div[class*="gameGrid"] {
     margin-top: -10px !important; /* Было -20px, сделали -55px, чтобы поднять сильнее */
 }
 
-/* 2. Параметры самих карточек (оставляем без изменений) */
-section#games div[class*="gameGrid"] > div {
-    flex: 1 !important;
-    max-width: 220px !important;
-    min-width: 170px !important;
-    padding: 12px !important;
-}
-
-/* 1. Делаем рабочую карточку (первую) широкой на всю строку */
-section#games div[class*="gameGrid"] > div:first-child {
-    max-width: 100% !important; /* Растягиваем во всю ширину */
+/* Уменьшаем ширину трех карточек отзывов */
+main section div[class*="grid"] > div,
+main div[class*="grid"] > div {
+    max-width: 210px !important; /* Делаем карточки компактными */
     width: 100% !important;
-    margin-bottom: 24px !important; /* Делаем красивый отступ перед нижними играми */
+    padding: 16px !important;    /* Ужимаем пустоту внутри карточек */
 }
 
-/* 2. Ограничиваем остальные три игры, чтобы они автоматически упали на строку ниже */
-section#games div[class*="gameGrid"] > div:not(:first-child) {
-    max-width: 220px !important; /* Они останутся маленькими и аккуратными в один ряд */
+/* Делаем расстояние между ними чуть ближе */
+main section div[class*="grid"],
+main div[class*="grid"] {
+    gap: 16px !important; 
 }
-
-/* Ужимаем элементы внутри первой карточки, чтобы сузить саму рамку */
-section#games div[class*="gameGrid"] > div:first-child {
-    padding-top: 10px !important;
-    padding-bottom: 10px !important;
-}
-
-/* Уменьшаем отступы у заголовка и текстов внутри карточки */
-section#games div[class*="gameGrid"] > div:first-child h2 {
-    margin-top: 5px !important;
-    margin-bottom: 5px !important;
-}
-
-section#games div[class*="gameGrid"] > div:first-child p {
-    margin-top: 4px !important;
-    margin-bottom: 4px !important;
-}
-
-/* Ужимаем элементы внутри первой карточки, чтобы сузить саму рамку */
-section#games div[class*="gameGrid"] > div:first-child {
-    padding-top: 10px !important;
-    padding-bottom: 10px !important;
-}
-
-/* Уменьшаем отступы у заголовка и текстов внутри карточки */
-section#games div[class*="gameGrid"] > div:first-child h2 {
-    margin-top: 5px !important;
-    margin-bottom: 5px !important;
-}
-
-section#games div[class*="gameGrid"] > div:first-child p {
-    margin-top: 4px !important;
-    margin-bottom: 4px !important;
-}
-
 
