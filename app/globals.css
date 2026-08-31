@@ -307,4 +307,9 @@ section#games div[class*="gameGrid"] > div:first-child {
     margin-bottom: 0px !important;
 }
 
-
+/* Делаем название World of Warcraft в одну строку */
+section#games div[class*="gameGrid"] h2,
+section#games h2 {
+    white-space: nowrap !important; /* Запрещает тексту переноситься на новую строку */
+    font-size: 1.1rem !important;   /* Чуть уменьшаем шрифт, чтобы надпись точно влезла */
+}
