@@ -130,8 +130,8 @@ div[style*="justifyContent: \"space-between\""] {
 
 /* Растягиваем кнопку поиска */
 button[class*="search"] {
-    padding-left: 45px !important;
-    padding-right: 45px !important;
+    padding-left: 35px !important;
+    padding-right: 35px !important;
 }
 
 /* Возвращаем карточки в один ряд (если они упали в столбик) */
@@ -139,12 +139,12 @@ div[class*="cards"] {
     display: flex !important;
     justify-content: center !important;
     flex-wrap: wrap !important;
-    gap: 24px !important;
+    gap: 18px !important;
 }
 
 /* Уменьшаем ширину трех карточек */
 div[class*="cards"] > div {
-    max-width: 210px !important;
+    max-width: 180px !important;
     width: 100% !important;
 }
 
