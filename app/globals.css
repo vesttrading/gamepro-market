@@ -255,3 +255,22 @@ section#raiderio div.jsx-f4888bab762c3c0 > div[class] {
     box-sizing: border-box !important;
     overflow: hidden !important;
 }
+/* Выстраиваем блоки «01 Источник», «02 Проверка» и «03» в один ряд */
+main section:has(h2) + div,
+main h2 + p + div {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    flex-wrap: wrap !important;
+    gap: 40px !important; /* Отступ между тремя колонками */
+}
+
+/* Ограничиваем ширину каждого блока, чтобы они не растягивались во весь экран */
+main section:has(h2) + div > div,
+main h2 + p + div > div {
+    flex: 1 !important;
+    min-width: 250px !important;
+    max-width: 320px !important;
+  }
+}
