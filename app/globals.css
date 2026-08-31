@@ -241,3 +241,10 @@ section#raiderio div:has(> button + a) a {
     }
 }
 
+section#raiderio div.jsx-f4888bab762c3c0 > div:last-child,
+section#raiderio div.jsx-f4888bab762c3c0 > div:nth-child(3),
+section#raiderio div.jsx-f4888bab762c3c0 > div[class] {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+}
