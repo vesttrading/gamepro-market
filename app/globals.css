@@ -251,32 +251,22 @@ section#raiderio {
     }
 }
 
-/* Настройки для блока ИГРЫ */
-section#games {
-    padding-top: 0px !important;
-}
-
-section#games div[class*="gameGrid"] {
+/* Выстраиваем блоки «01 Источник», «02 Проверка» и «03» в один ряд */
+main section:has(h2) + div,
+main h2 + p + div {
     display: flex !important;
     flex-direction: row !important;
     justify-content: center !important;
     align-items: flex-start !important;
     flex-wrap: wrap !important;
-    gap: 16px !important;
-    margin-top: -10px !important;
+    gap: 40px !important; /* Отступ между тремя колонками */
 }
 
-/* Делаем карточки чуть шире, чтобы текст помещался */
-section#games div[class*="gameGrid"] > div {
+/* Ограничиваем ширину каждого блока, чтобы они не растягивались во весь экран */
+main section:has(h2) + div > div,
+main h2 + p + div > div {
     flex: 1 !important;
-    max-width: 245px !important;
-    min-width: 180px !important;
-    padding: 12px !important;
-}
-
-/* Выпрямляем World of Warcraft в одну строку */
-section#games div[class*="gameGrid"] > div h2 {
-    white-space: nowrap !important;
-    font-size: 1.1rem !important;
+    min-width: 250px !important;
+    max-width: 320px !important;
 }
 
