@@ -127,22 +127,25 @@ div[style*="justifyContent: \"space-between\""] {
   width: 500px !important;   
   max-width: 500px !important;
 }
-/* 1. Центрируем карточки игроков и делаем красивый отступ между ними */
-main section:has(.searchbar) + div,
-main .searchbar + div {
-    display: flex !important;
-    justify-content: center !important; 
-    flex-wrap: wrap !important; 
-    gap: 24px !important; 
+/* 1. Центрируем карточки игроков и делаем отступ между ними */
+html body main section.main-section-class .searchbar + div {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 24px;
 }
 
-/* 2. Задаем карточкам правильную ширину, чтобы они не были огромными */
-main section:has(.searchbar) + div > div,
-main .searchbar + div > div {
-    max-width: 250px !important; /* Отличная ширина: карточки компактные, но вместительные */
-    width: 100% !important;
+/* 2. Задаем карточкам правильную уменьшенную ширину */
+html body main section.main-section-class .searchbar + div > div {
+    width: 100%;
+    max-width: 210px; /* Карточки станут чуть уже, как вы и хотели */
 }
 
+/* 3. Растягиваем кнопку поиска */
+html body main section.main-section-class .searchbar button {
+    padding-left: 40px;
+    padding-right: 40px;
+}
 section#raiderio {
     padding-top: 24px !important;    
     padding-bottom: 24px !important; 
