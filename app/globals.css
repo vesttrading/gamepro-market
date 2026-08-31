@@ -276,6 +276,7 @@ main h2 + p + div > div {
     min-width: 250px !important;
     max-width: 200px !important;
 }
+
 /* Находим контейнер, который идет сразу после заголовка «Игры» */
 main div:has(> h1, > h2):contains("Игры") + div,
 main h1 + p + div,
