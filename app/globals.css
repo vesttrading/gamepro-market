@@ -277,20 +277,21 @@ main h2 + p + div > div {
     max-width: 200px !important;
 }
 
-/* 1. Находим секцию игр по её ID и принудительно выстраиваем блоки в ряд */
+/* 1. Находим секцию игр и поднимаем карточки выше */
 section#games div[class*="gameGrid"] {
     display: flex !important;
     flex-direction: row !important;
     justify-content: center !important;
     align-items: flex-start !important;
     flex-wrap: wrap !important;
-    gap: 16px !important; /* Делаем расстояние между играми меньше */
+    gap: 16px !important;
+    margin-top: -20px !important; /* Эта строчка принудительно поднимет карточки вверх */
 }
 
 /* 2. Делаем каждую карточку игры узкой и сжимаем отступы */
 section#games div[class*="gameGrid"] > div {
     flex: 1 !important;
-    max-width: 220px !important; /* Уменьшаем ширину карточек игр */
+    max-width: 220px !important;
     min-width: 170px !important;
-    padding: 12px !important;    /* Сжимаем блоки по вертикали */
+    padding: 12px !important;
 }
