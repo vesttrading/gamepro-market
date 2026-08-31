@@ -321,3 +321,15 @@ section div[class*="grid"] > div:first-child {
     flex: 1 1 400px !important;    /* Первая карточка будет шире остальных */
 }
 
+/* Делаем две правые карточки в отзывах маленькими */
+section#reviews div[class*="jsx-"] > div:not(:first-child) {
+    flex: 0 1 250px !important;    /* Ограничиваем базовый размер */
+    max-width: 280px !important;   /* Жесткий лимит по ширине */
+    width: 100% !important;
+}
+
+/* Первую карточку оставляем широкой */
+section#reviews div[class*="jsx-"] > div:first-child {
+    flex: 1 1 450px !important;    /* Занимает всё основное пространство */
+}
+
