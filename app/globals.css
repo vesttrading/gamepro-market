@@ -271,6 +271,6 @@ main section:has(h2) + div > div,
 main h2 + p + div > div {
     flex: 1 !important;
     min-width: 250px !important;
-    max-width: 320px !important;
+    max-width: 200px !important;
 }
 
