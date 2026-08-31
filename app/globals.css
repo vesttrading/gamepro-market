@@ -304,3 +304,20 @@ section#games div[class*="gameGrid"] > div h2 {
     white-space: nowrap !important;
     font-size: 1.1rem !important;
 }
+
+/* Находим контейнер с карточками отзывов (обычно это section или div) */
+/* Если вы знаете точный id или класс секции отзывов, замените им слово section ниже */
+
+/* 1. Делаем две правые карточки меньше */
+section div[class*="Grid"] > div:not(:first-child),
+section div[class*="grid"] > div:not(:first-child) {
+    flex: 0 1 240px !important;    /* Запрещаем растягиваться больше 240px */
+    max-width: 260px !important;   /* Жестко ограничиваем максимальную ширину */
+}
+
+/* 2. Позволяем первой карточке занять оставшееся свободное место */
+section div[class*="Grid"] > div:first-child,
+section div[class*="grid"] > div:first-child {
+    flex: 1 1 400px !important;    /* Первая карточка будет шире остальных */
+}
+
