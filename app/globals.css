@@ -300,3 +300,14 @@ section#games div[class*="gameGrid"] > div {
     padding: 12px !important;
 }
 
+/* 1. Делаем рабочую карточку (первую) широкой на всю строку */
+section#games div[class*="gameGrid"] > div:first-child {
+    max-width: 100% !important; /* Растягиваем во всю ширину */
+    width: 100% !important;
+    margin-bottom: 24px !important; /* Делаем красивый отступ перед нижними играми */
+}
+
+/* 2. Ограничиваем остальные три игры, чтобы они автоматически упали на строку ниже */
+section#games div[class*="gameGrid"] > div:not(:first-child) {
+    max-width: 220px !important; /* Они останутся маленькими и аккуратными в один ряд */
+}
