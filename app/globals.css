@@ -276,3 +276,24 @@ main h2 + p + div > div {
     min-width: 250px !important;
     max-width: 200px !important;
 }
+/* Находим контейнер, который идет сразу после заголовка «Игры» */
+main div:has(> h1, > h2):contains("Игры") + div,
+main h1 + p + div,
+main h2 + p + div {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    flex-wrap: wrap !important;
+    gap: 24px !important; /* Расстояние между блоками игр */
+}
+
+/* Уменьшаем сами блоки с играми (WoW, Dota 2, CS2) */
+main div:has(> h1, > h2):contains("Игры") + div > div,
+main h1 + p + div > div,
+main h2 + p + div > div {
+    flex: 1 !important;
+    max-width: 260px !important; /* Делаем их компактными по ширине */
+    min-width: 200px !important;
+    padding: 16px !important; /* Уменьшаем внутренние отступы, чтобы сжать по вертикали */
+}
