@@ -276,30 +276,3 @@ main h2 + p + div > div {
     min-width: 250px !important;
     max-width: 200px !important;
 }
-/* 1. Выстраиваем игры (WoW, Dota 2, CS2) в одну горизонтальную строку */
-main section:has(> div > h2),
-main h2:has(+ p) {
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: center !important;
-    align-items: flex-start !important;
-    flex-wrap: wrap !important;
-    gap: 30px !important; /* Расстояние между играми в ряду */
-    padding-top: 20px !important;
-    padding-bottom: 20px !important;
-}
-
-/* 2. Уменьшаем размер и отступы внутри каждого блока игры */
-main section:has(> div > h2) > div,
-div:has(> h2 + p) {
-    flex: 1 !important;
-    max-width: 260px !important; /* Ограничиваем ширину, чтобы они стали компактными */
-    min-width: 200px !important;
-    padding: 10px !important; /* Уменьшаем внутренние отступы */
-}
-
-/* 3. Делаем шрифты заголовков игр чуть аккуратнее и меньше */
-main section:has(> div > h2) h2 {
-    font-size: 1.2rem !important; /* Уменьшаем размер названия игры */
-    margin-bottom: 8px !important;
-}
