@@ -146,27 +146,9 @@ div[class*="cards"] {
 div[class*="cards"] > div {
     max-width: 180px !important;
     width: 100% !important;
+    }
 }
 
-/* 3. Растягиваем саму кнопку поиска */
-div:has(> input) + button, 
-main section:has(.searchbar) button {
-    padding-left: 45px !important;
-    padding-right: 45px !important;
-    min-width: 140px !important;
-}
-
-/* 3. Растягиваем кнопку поиска */
-main section:has(.searchbar) .searchbar button {
-    padding-left: 45px !important;
-    padding-right: 45px !important;
-}
-
-/* 3. Растягиваем кнопку поиска */
-html body main section.main-section-class .searchbar button {
-    padding-left: 40px;
-    padding-right: 40px;
-}
 section#raiderio {
     padding-top: 24px !important;    
     padding-bottom: 24px !important; 
