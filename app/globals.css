@@ -292,15 +292,19 @@ section#games div[class*="gameGrid"] {
     margin-top: -10px !important; /* Было -20px, сделали -55px, чтобы поднять сильнее */
 }
 
-/* 1. Возвращаем World of Warcraft на всю верхнюю строку */
-section#games div[class*="gameGrid"] > div:first-child {
-    max-width: 100% !important; 
-    width: 100% !important;
-    margin-bottom: 24px !important; /* Отступ, чтобы нижние игры не прилипали */
+/* Возвращаем абсолютно все игры (включая WoW) в один ровный ряд */
+section#games div[class*="gameGrid"] > div {
+    flex: 1 !important;
+    max-width: 220px !important; /* Теперь ВСЕ карточки будут одинакового маленького размера */
+    min-width: 170px !important;
+    padding: 12px !important;
 }
 
-/* 2. Сдвигаем карточки остальных игр на строку ниже и держим компактными */
-section#games div[class*="gameGrid"] > div:not(:first-child) {
+/* Убираем лишние отступы, которые двигали первую карточку */
+section#games div[class*="gameGrid"] > div:first-child {
     max-width: 220px !important;
+    width: 100% !important;
+    margin-bottom: 0px !important;
 }
+
 
