@@ -130,8 +130,8 @@ div[style*="justifyContent: \"space-between\""] {
 
 /* Растягиваем кнопку поиска */
 button[class*="search"] {
-    padding-left: 35px !important;
-    padding-right: 35px !important;
+    padding-left: 25px !important;
+    padding-right: 25px !important;
 }
 
 /* Возвращаем карточки в один ряд (если они упали в столбик) */
