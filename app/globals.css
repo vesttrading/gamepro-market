@@ -286,14 +286,17 @@ section#games div[class*="gameGrid"] {
 }
 
 /* Делаем ВСЕ карточки (включая первую) одинакового компактного размера в один ряд */
-section#games div[class*="gameGrid"] > div,
-section#games div[class*="gameGrid"] > div:first-child {
+section#games div[class*="gameGrid"] > div {
     flex: 1 !important;
-    max-width: 200px !important; /* Идеальная ширина, чтобы влез текст */
+    max-width: 200px !important;
     width: 100% !important;
     min-width: 150px !important;
     padding: 12px !important;
-    margin-bottom: 0px !important; /* Сбрасываем старый нижний отступ */
+}
+
+section#games div[class*="gameGrid"] > div:first-child {
+    max-width: 380px !important; /* Делает карточку WoW шире остальных */
+    margin-bottom: 0px !important;
 }
 
 /* Выпрямляем World of Warcraft в одну строку */
