@@ -251,35 +251,9 @@ section#raiderio {
     }
 }
 
-section#raiderio div.jsx-f4888bab762c3c0 > div:last-child,
-section#raiderio div.jsx-f4888bab762c3c0 > div:nth-child(3),
-section#raiderio div.jsx-f4888bab762c3c0 > div[class] {
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-    overflow: hidden !important;
-}
-/* Выстраиваем блоки «01 Источник», «02 Проверка» и «03» в один ряд */
-main section:has(h2) + div,
-main h2 + p + div {
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: center !important;
-    align-items: flex-start !important;
-    flex-wrap: wrap !important;
-    gap: 40px !important; /* Отступ между тремя колонками */
-}
-
-/* Ограничиваем ширину каждого блока, чтобы они не растягивались во весь экран */
-main section:has(h2) + div > div,
-main h2 + p + div > div {
-    flex: 1 !important;
-    min-width: 250px !important;
-    max-width: 200px !important;
-}
-
-/* 1. Сжимаем секцию и принудительно поднимаем карточки игр еще выше */
+/* Настройки для блока ИГРЫ */
 section#games {
-    padding-top: 0px !important; /* Убираем пустую зону сверху всей секции */
+    padding-top: 0px !important;
 }
 
 section#games div[class*="gameGrid"] {
@@ -289,27 +263,20 @@ section#games div[class*="gameGrid"] {
     align-items: flex-start !important;
     flex-wrap: wrap !important;
     gap: 16px !important;
-    margin-top: -10px !important; /* Было -20px, сделали -55px, чтобы поднять сильнее */
+    margin-top: -10px !important;
 }
 
-/* Возвращаем абсолютно все игры (включая WoW) в один ровный ряд */
+/* Делаем карточки чуть шире, чтобы текст помещался */
 section#games div[class*="gameGrid"] > div {
     flex: 1 !important;
-    max-width: 220px !important; /* Теперь ВСЕ карточки будут одинакового маленького размера */
-    min-width: 170px !important;
+    max-width: 245px !important;
+    min-width: 180px !important;
     padding: 12px !important;
 }
 
-/* Убираем лишние отступы, которые двигали первую карточку */
-section#games div[class*="gameGrid"] > div:first-child {
-    max-width: 220px !important;
-    width: 100% !important;
-    margin-bottom: 0px !important;
+/* Выпрямляем World of Warcraft в одну строку */
+section#games div[class*="gameGrid"] > div h2 {
+    white-space: nowrap !important;
+    font-size: 1.1rem !important;
 }
 
-/* Делаем название World of Warcraft в одну строку */
-section#games div[class*="gameGrid"] h2,
-section#games h2 {
-    white-space: nowrap !important; /* Запрещает тексту переноситься на новую строку */
-    font-size: 1.1rem !important;   /* Чуть уменьшаем шрифт, чтобы надпись точно влезла */
-}
