@@ -292,17 +292,14 @@ section#games div[class*="gameGrid"] {
     margin-top: -10px !important; /* Было -20px, сделали -55px, чтобы поднять сильнее */
 }
 
-/* Уменьшаем ширину трех карточек отзывов */
-main section div[class*="grid"] > div,
-main div[class*="grid"] > div {
-    max-width: 210px !important; /* Делаем карточки компактными */
+/* 1. Делаем рабочую карточку (первую) широкой на всю строку */
+section#games div[class*="gameGrid"] > div:first-child {
+    max-width: 100% !important; /* Растягиваем во всю ширину */
     width: 100% !important;
-    padding: 16px !important;    /* Ужимаем пустоту внутри карточек */
+    margin-bottom: 24px !important; /* Делаем красивый отступ перед нижними играми */
 }
 
-/* Делаем расстояние между ними чуть ближе */
-main section div[class*="grid"],
-main div[class*="grid"] {
-    gap: 16px !important; 
+/* 2. Ограничиваем остальные три игры, чтобы они автоматически упали на строку ниже */
+section#games div[class*="gameGrid"] > div:not(:first-child) {
+    max-width: 220px !important; /* Они останутся маленькими и аккуратными в один ряд */
 }
-
