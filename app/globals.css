@@ -127,16 +127,23 @@ div[style*="justifyContent: \"space-between\""] {
   width: 500px !important;   
   max-width: 500px !important;
 }
-/* 1. Центрируем карточки игроков и делаем красивый отступ между ними */
-main section:has(.searchbar) + div {
+
+/* Растягиваем кнопку поиска */
+button[class*="search"] {
+    padding-left: 45px !important;
+    padding-right: 45px !important;
+}
+
+/* Возвращаем карточки в один ряд (если они упали в столбик) */
+div[class*="cards"] {
     display: flex !important;
     justify-content: center !important;
     flex-wrap: wrap !important;
     gap: 24px !important;
 }
 
-/* 2. Задаем карточкам правильную ширину, чтобы они не были огромными */
-main section:has(.searchbar) + div > div {
+/* Уменьшаем ширину трех карточек */
+div[class*="cards"] > div {
     max-width: 210px !important;
     width: 100% !important;
 }
