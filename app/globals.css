@@ -277,24 +277,29 @@ main h2 + p + div > div {
     max-width: 200px !important;
 }
 
-/* Находим контейнер, который идет сразу после заголовка «Игры» */
-main div:has(> h1, > h2):contains("Игры") + div,
-main h1 + p + div,
-main h2 + p + div {
+/* 1. Находим общий родительский блок для всех игр и выстраиваем их в ряд */
+main div:has(> div:has(h2)),
+main section > div:has(h2) {
     display: flex !important;
     flex-direction: row !important;
     justify-content: center !important;
     align-items: flex-start !important;
     flex-wrap: wrap !important;
-    gap: 24px !important; /* Расстояние между блоками игр */
+    gap: 20px !important; /* Уменьшили расстояние между карточками игр */
 }
 
-/* Уменьшаем сами блоки с играми (WoW, Dota 2, CS2) */
-main div:has(> h1, > h2):contains("Игры") + div > div,
-main h1 + p + div > div,
-main h2 + p + div > div {
+/* 2. Делаем каждую карточку игры узкой и компактной */
+main div:has(> div:has(h2)) > div,
+main section > div:has(h2) > div {
     flex: 1 !important;
-    max-width: 260px !important; /* Делаем их компактными по ширине */
-    min-width: 200px !important;
-    padding: 16px !important; /* Уменьшаем внутренние отступы, чтобы сжать по вертикали */
+    max-width: 240px !important; /* Делаем сами блоки игр намного меньше */
+    min-width: 180px !important;
+    padding: 12px !important; /* Уменьшаем внутренние вертикальные отступы */
+}
+
+/* 3. Уменьшаем размер текстов и иконок внутри */
+main div:has(> div:has(h2)) h2,
+main section > div:has(h2) h2 {
+    font-size: 1.1rem !important; /* Уменьшаем шрифты названий */
+    margin-bottom: 4px !important;
 }
