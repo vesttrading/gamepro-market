@@ -445,37 +445,4 @@ section#guilds div[class*="jsx-"] {
     section#guilds > div {
         padding: 20px 16px !important;
     }
-
-    /* 1. Выстраиваем главные блоки паспорта (профиль и ачивки) друг под друга */
-    main div[class*="passport"], 
-    main div[class*="Passport"],
-    section#passport > div {
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: 20px !important;
-        width: 100% !important;
-    }
-
-    /* 2. Растягиваем левую карточку с ником Vladimir во всю ширину телефона */
-    main div[class*="passport"] > div:first-child,
-    main div[class*="Passport"] > div:first-child {
-        width: 100% !important;
-        max-width: 100% !important;
-    }
-
-    /* 3. Маленькие карточки (KSM, Cutting Edge) тоже выстраиваем в одну колонку */
-    main div[class*="passport"] div[class*="Grid"],
-    main div[class*="Passport"] div[class*="Grid"] {
-        display: flex !important;
-        flex-direction: column !important;
-        width: 100% !important;
-        gap: 12px !important;
-    }
-
-    /* 4. Делаем каждую плашку ачивки адаптивной */
-    main div[class*="passport"] div[class*="Grid"] > div,
-    main div[class*="Passport"] div[class*="Grid"] > div {
-        width: 100% !important;
-        max-width: 100% !important;
-    }
 } 
