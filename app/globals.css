@@ -160,13 +160,14 @@ div[style*="justifyContent: \"space-between\""] {
     grid-template-columns: repeat(4, 160px) !important; /* Ровно 4 колонки */
     gap: 12px !important;
     justify-content: center !important;
-    width: 100% !important;
+    width: 680px !important;
+    margin: 0 auto !important;
 }
 
 /* 5. Делаем плашки ачивок тоньше и аккуратнее */
 #passport .grid2 > div:not(:first-child) > div div,
 #passport .grid2 > div:not(:first-child) > div > div > div {
-    max-width: 100% !important;
+    max-width: 150px !important;
     width: 100% !important;
     padding: 8px 12px !important; /* Карточки станут компактнее */
     font-size: 13px !important;   /* Уменьшенный шрифт */
