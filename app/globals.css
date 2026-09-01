@@ -167,7 +167,7 @@ div[style*="justifyContent: \"space-between\""] {
 /* 5. Делаем плашки ачивок тоньше и аккуратнее */
 #passport .grid2 > div:not(:first-child) > div div,
 #passport .grid2 > div:not(:first-child) > div > div > div {
-    max-width: 150px !important;
+    max-width: 180px !important;
     width: 100% !important;
     padding: 8px 12px !important; /* Карточки станут компактнее */
     font-size: 13px !important;   /* Уменьшенный шрифт */
