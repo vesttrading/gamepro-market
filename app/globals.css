@@ -353,3 +353,18 @@ section#reviews h1 {
     box-sizing: border-box !important;
 }
 
+/* Уменьшаем ширину внутренней карточки в блоке гильдий */
+section#guilds > div {
+    max-width: 750px !important;  /* Задаем аккуратную ширину */
+    width: 100% !important;
+    margin-left: auto !important;  /* Центрируем карточку на экране */
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+}
+
+/* На всякий случай дублируем для вложенного div, если структура сложнее */
+section#guilds div[class*="jsx-"] {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
