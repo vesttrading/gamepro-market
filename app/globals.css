@@ -82,7 +82,7 @@ div[style*="justifyContent: \"space-between\""] {
 /* 1. Уменьшаем размер заголовка Achievement Passport */
 #passport h2, 
 .sectionHead h2 {
-  font-size: 30px !important; /* Делает заголовок аккуратным и компактным */
+  font-size: 28px !important; /* Делает заголовок аккуратным и компактным */
   margin: 0 !important;
 }
 
