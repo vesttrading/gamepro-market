@@ -428,20 +428,21 @@ section#guilds div[class*="jsx-"] {
     }
 } 
 
-/* Находим сетку с четырьмя карточками ачивок внутри паспорта */
-main div[class*="Passport"] div[class*="Grid"],
-main div[class*="passport"] div[class*="Grid"],
-div:has(> div > div:contains("KSM")) {
+/* Ищем блок с заголовком Achievement Passport и уменьшаем вложенную сетку карточек */
+main div:has(h2) div div div[class*="Grid"],
+main div:has(h1) div div div[class*="Grid"],
+main div[class*="Passport"] div div {
     display: grid !important;
-    /* Делаем две колонки, но уменьшаем их максимальную ширину */
-    grid-template-columns: repeat(2, minmax(120px, 180px)) !important; 
-    gap: 12px !important; /* Делаем аккуратные отступы между ними */
-    justify-content: start !important; /* Прижимаем сетку к левому краю своего блока */
+    /* Задаем жесткий уменьшенный размер для колонок (было ~250px, делаем по 180px) */
+    grid-template-columns: repeat(2, 180px) !important;
+    gap: 12px !important;
 }
 
-/* Уменьшаем сами карточки внутри этой сетки */
-main div[class*="Passport"] div[class*="Grid"] > div,
-main div[class*="passport"] div[class*="Grid"] > div {
-    max-width: 180px !important; /* Ограничиваем ширину каждой карточки */
-    padding: 8px 12px !important; /* Делаем внутренние отступы компактнее */
+/* Принудительно уменьшаем сами 4 плашки ачивок */
+main div:has(h2) div div div[class*="Grid"] > div,
+main div[class*="Passport"] div div > div {
+    max-width: 180px !important;
+    width: 180px !important;
+    padding: 10px !important; /* Делаем карточки компактнее внутри */
 }
+
