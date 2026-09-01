@@ -67,9 +67,9 @@ div[style*="justifyContent: \"space-between\""] {
 #passport button {
   width: auto !important;
   min-width: 100px !important;
-  max-width: 170px !important;
+  max-width: 210px !important;
   margin-left: 40px !important; /* Отодвинет кнопку вправо от текста на 40 пикселей */
-  padding: 6px 10px !important;
+  padding: 6px 4px !important;
 }
 
 /* 5. Восстанавливаем сетку для паспорта, чтобы карточка была на всю ширину */
