@@ -428,38 +428,20 @@ section#guilds div[class*="jsx-"] {
     }
 } 
 
-/* Ищем блок с заголовком Achievement Passport и уменьшаем вложенную сетку карточек */
-main div:has(h2) div div div[class*="Grid"],
-main div:has(h1) div div div[class*="Grid"],
-main div[class*="Passport"] div div {
+/* Пробиваемся напрямую к сетке ачивок через точную структуру div */
+#passport .grid2 > div:not(:first-child) > div > div,
+#passport .grid2 > div:not(:first-child) > div {
     display: grid !important;
-    /* Задаем жесткий уменьшенный размер для колонок (было ~250px, делаем по 180px) */
-    grid-template-columns: repeat(2, 180px) !important;
-    gap: 12px !important;
-}
-
-/* Принудительно уменьшаем сами 4 плашки ачивок */
-main div:has(h2) div div div[class*="Grid"] > div,
-main div[class*="Passport"] div div > div {
-    max-width: 180px !important;
-    width: 180px !important;
-    padding: 10px !important; /* Делаем карточки компактнее внутри */
-}
-
-/* Уменьшаем внутренние 4 карточки ачивок, чтобы они не вылезали */
-#passport .grid2 > div:not(:first-child) div[class*="Grid"],
-#passport .grid2 > div:not(:first-child) .grid {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important; /* Делаем строго 2 колонки */
-    gap: 10px !important; /* Уменьшаем расстояние между карточками */
+    grid-template-columns: repeat(2, 1fr) !important; /* Строго две колонки */
+    gap: 8px !important; /* Компактные отступы */
     width: 100% !important;
 }
 
-/* Принудительно сжимаем ширину каждой из 4 плашек ачивок */
-#passport .grid2 > div:not(:first-child) div[class*="Grid"] > div,
-#passport .grid2 > div:not(:first-child) .grid > div {
-    max-width: 200px !important; 
+/* Принудительно уменьшаем каждую из 4-х плашек ачивок */
+#passport .grid2 > div:not(:first-child) > div > div > div,
+#passport .grid2 > div:not(:first-child) > div > div {
+    max-width: 195px !important;
     width: 100% !important;
-    padding: 10px !important; /* Делаем внутренние отступы компактнее */
+    padding: 10px !important; /* Уменьшаем внутренние отступы плашек */
 }
 
