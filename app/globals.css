@@ -53,7 +53,7 @@ div[style*="justifyContent: \"space-between\""] {
   justify-content: flex-start !important; /* 🌟 Прижимает кнопку вплотную к тексту слева */
   align-items: center !important;         /* Выравнивает их ровно по высоте */
   flex-wrap: wrap !important;
-  gap: 24px !important;                   /* Расстояние между текстом описания и кнопкой */
+  gap: 20px !important;                   /* Расстояние между текстом описания и кнопкой */
   margin-bottom: 20px !important;
   width: 100% !important;
 }
