@@ -377,7 +377,7 @@ section#guilds div[class*="jsx-"] {
         gap: 15px !important;
     }
 
-    /* 2. Сбрасываем фиксированную ширину, чтобы карточки подстраивались под экран телефона */
+    /* 2. Сбрасываем фиксированную ширину карточек */
     section#reviews [class*="gameGrid"] > div,
     section#reviews [class*="Grid"] > div {
         flex: 1 1 auto !important;
@@ -385,13 +385,12 @@ section#guilds div[class*="jsx-"] {
         max-width: 100% !important;
     }
 
-    /* 3. Уменьшаем гигантские отступы сверху, чтобы на телефоне не было пустых экранов */
+    /* 3. Уменьшаем гигантские отступы сверху для телефона */
     section#reviews {
         margin-top: 40px !important; 
     }
     
     section#guilds > div {
-        padding: 20px 16px !important; /* Уменьшаем внутренние поля карточки гильдий */
+        padding: 20px 16px !important;
     }
 }
-
