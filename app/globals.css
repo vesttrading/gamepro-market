@@ -356,3 +356,15 @@ section#teams > div {
     padding: 40px 30px !important; /* Делаем внутренние отступы компактнее */
 }
 
+/* Находим большую карточку-обертку, которая идет сразу после главного контейнера */
+main > section > div > div {
+    max-width: 750px !important;  /* Сужаем карточку до аккуратного размера */
+    width: 100% !important;
+    margin: 0 auto !important;     /* Центрируем её на экране */
+}
+
+/* На всякий случай уменьшаем внутренние отступы, чтобы карточка стала компактнее */
+main > section > div > div {
+    padding: 30px 40px !important;
+}
+
