@@ -124,7 +124,7 @@ div[style*="justifyContent: \"space-between\""] {
     margin: 0 auto 20px auto !important; /* Расстояние до ачивок */
     border: none !important; /* Защита от лишних линий */
 }
-#passport .grid2 > div:first-child h2 { font-size: 16px !important; }
+#passport .grid2 > div:first-child * { font-size: 16px !important; }
 
 /* 3. Блок ачивок (встает ровно под Владимира) */
 #passport .grid2 > div:not(:first-child) {
