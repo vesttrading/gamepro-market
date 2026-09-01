@@ -149,6 +149,7 @@ div[style*="justifyContent: \"space-between\""] {
     width: 100% !important;
     max-width: 100% !important;
     border: none !important;
+    margin-top: -35px !important;
 }
 
 /* 4. Выстраиваем 4 карточки ачивок строго горизонтально в один ряд */
