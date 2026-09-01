@@ -111,7 +111,7 @@ div[style*="justifyContent: \"space-between\""] {
     width: 100% !important;
     height: auto !important; /* Убираем фиксированную высоту */
     min-height: auto !important; 
-    margin: 20px auto 0 auto !important; /* Центрируем по центру */
+    margin: 15px auto 0 auto !important; /* Центрируем по центру */
     padding: 0 20px !important;
     position: relative !important;
     border: none !important; /* Убираем возможные рамки и линии */
