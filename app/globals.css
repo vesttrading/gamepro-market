@@ -124,7 +124,7 @@ div[style*="justifyContent: \"space-between\""] {
     width: 100% !important;
     max-width: 600px !important;
     padding: 4px 12px !important;
-    margin: 0 auto 20px auto !important; /* Расстояние до ачивок */
+    margin: 0 auto 0px auto !important; /* Расстояние до ачивок */
     border: none !important; /* Защита от лишних линий */
     
     /* --- НАШИ ИСПРАВЛЕНИЯ РАЗМЕРОВ НАЧИНАЮТСЯ ТУТ --- */
