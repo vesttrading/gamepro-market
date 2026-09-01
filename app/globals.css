@@ -446,3 +446,20 @@ main div[class*="Passport"] div div > div {
     padding: 10px !important; /* Делаем карточки компактнее внутри */
 }
 
+/* Уменьшаем внутренние 4 карточки ачивок, чтобы они не вылезали */
+#passport .grid2 > div:not(:first-child) div[class*="Grid"],
+#passport .grid2 > div:not(:first-child) .grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important; /* Делаем строго 2 колонки */
+    gap: 10px !important; /* Уменьшаем расстояние между карточками */
+    width: 100% !important;
+}
+
+/* Принудительно сжимаем ширину каждой из 4 плашек ачивок */
+#passport .grid2 > div:not(:first-child) div[class*="Grid"] > div,
+#passport .grid2 > div:not(:first-child) .grid > div {
+    max-width: 200px !important; 
+    width: 100% !important;
+    padding: 10px !important; /* Делаем внутренние отступы компактнее */
+}
+
