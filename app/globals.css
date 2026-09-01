@@ -343,28 +343,3 @@ section#reviews h1 {
     margin-top: 10px !important;
 }
 
-/* Находим карточку в блоке гильдий по тексту заголовка или структуре */
-section:has(h2:contains("Гильдии")) > div,
-section:has(h3:contains("Гильдии")) > div,
-/* Альтернативный универсальный селектор для этой карточки: */
-section#guilds > div, 
-section#teams > div {
-    max-width: 800px !important;  /* Уменьшаем общую ширину карточки (было ~1200px) */
-    width: 100% !important;
-    margin-left: auto !important;  /* Центрируем карточку на экране */
-    margin-right: auto !important;
-    padding: 40px 30px !important; /* Делаем внутренние отступы компактнее */
-}
-
-/* Находим большую карточку-обертку, которая идет сразу после главного контейнера */
-main > section > div > div {
-    max-width: 750px !important;  /* Сужаем карточку до аккуратного размера */
-    width: 100% !important;
-    margin: 0 auto !important;     /* Центрируем её на экране */
-}
-
-/* На всякий случай уменьшаем внутренние отступы, чтобы карточка стала компактнее */
-main > section > div > div {
-    padding: 30px 40px !important;
-}
-
