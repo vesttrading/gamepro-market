@@ -112,20 +112,15 @@ div[style*="justifyContent: \"space-between\""] {
 
 /* Карточка Владимира */
 #passport .grid2 > div:first-child {
-  position: absolute !important;
-  left: 0 !important;
-  top: 0 !important;
-  width: 300px !important;
-  max-width: 300px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 20px !important; /* Отступ между Владимиром и ачивками ниже */
 }
 
-/* Блок ачивок справа */
+/* Блок ачивок (теперь он встанет ровно под Владимиром) */
 #passport .grid2 > div:not(:first-child) {
-  position: absolute !important;
-  left: 320px !important;   
-  top: 0 !important;        
-  width: 420px !important;   
-  max-width: 420px !important;
+    width: 100% !important;
+    max-width: 100% !important;
 }
 
 /* Жёстко ограничиваем ширину кнопки поиска */
