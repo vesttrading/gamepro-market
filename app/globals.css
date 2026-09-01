@@ -305,18 +305,29 @@ section#games div[class*="gameGrid"] > div h2 {
     font-size: 1.1rem !important;
 }
 
-/* Делаем вторую и третью карточки в секции отзывов узкими */
-section#reviews > div > div:nth-child(2),
-section#reviews > div > div:nth-child(3),
-section#reviews div:not(:first-child) {
-    flex: 0 1 240px !important;
-    max-width: 260px !important;
+/* Настраиваем контейнер, чтобы карточки встали в одну строку */
+section#reviews [class*="gameGrid"], 
+section#reviews [class*="Grid"] {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: space-between !important;
+    align-items: stretch !important;
+    gap: 20px !important;
     width: 100% !important;
 }
 
-/* Первую карточку (с оценкой 4.9/5) заставляем быть широкой */
-section#reviews > div > div:first-child,
-section#reviews div:first-child {
-    flex: 1 1 450px !important;
+/* Делаем две правые карточки маленькими */
+section#reviews [class*="gameGrid"] > div:not(:first-child),
+section#reviews [class*="Grid"] > div:not(:first-child) {
+    flex: 0 0 280px !important; /* Жестко фиксируем ширину 280px */
+    width: 280px !important;
+    max-width: 280px !important;
+}
+
+/* Первую карточку (4.9/5) заставляем занимать всё оставшееся место */
+section#reviews [class*="gameGrid"] > div:first-child,
+section#reviews [class*="Grid"] > div:first-child {
+    flex: 1 1 auto !important;
 }
 
