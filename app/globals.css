@@ -125,14 +125,14 @@ div[style*="justifyContent: \"space-between\""] {
     border: none !important; /* Защита от лишних линий */
     
     /* --- НАШИ ИСПРАВЛЕНИЯ РАЗМЕРОВ НАЧИНАЮТСЯ ТУТ --- */
-    font-size: 20px !important; /* Уменьшаем имя Vladimir и весь текст в карточке */
+    font-size: 18px !important; /* Уменьшаем имя Vladimir и весь текст в карточке */
 }
 
 /* Уменьшаем иконку молнии внутри этой карточки */
 #passport .grid2 > div:first-child img, 
 #passport .grid2 > div:first-child svg {
-    width: 14px !important;  /* Делаем молнию маленькой */
-    height: 14px !important;
+    width: 10px !important;  /* Делаем молнию маленькой */
+    height: 10px !important;
 }
 
 /* 3. Блок ачивок (встает ровно под Владимира) */
