@@ -427,4 +427,21 @@ section#guilds div[class*="jsx-"] {
         max-width: 100% !important;
     }
 } 
-/* --- КОНЕЦ КОДА --- */
+
+/* Находим сетку с четырьмя карточками ачивок внутри паспорта */
+main div[class*="Passport"] div[class*="Grid"],
+main div[class*="passport"] div[class*="Grid"],
+div:has(> div > div:contains("KSM")) {
+    display: grid !important;
+    /* Делаем две колонки, но уменьшаем их максимальную ширину */
+    grid-template-columns: repeat(2, minmax(120px, 180px)) !important; 
+    gap: 12px !important; /* Делаем аккуратные отступы между ними */
+    justify-content: start !important; /* Прижимаем сетку к левому краю своего блока */
+}
+
+/* Уменьшаем сами карточки внутри этой сетки */
+main div[class*="Passport"] div[class*="Grid"] > div,
+main div[class*="passport"] div[class*="Grid"] > div {
+    max-width: 180px !important; /* Ограничиваем ширину каждой карточки */
+    padding: 8px 12px !important; /* Делаем внутренние отступы компактнее */
+}
