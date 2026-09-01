@@ -125,7 +125,7 @@ div[style*="justifyContent: \"space-between\""] {
     border: none !important; /* Защита от лишних линий */
     
     /* --- НАШИ ИСПРАВЛЕНИЯ РАЗМЕРОВ НАЧИНАЮТСЯ ТУТ --- */
-    font-size: 16px !important; /* Уменьшаем имя Vladimir и весь текст в карточке */
+    font-size: 20px !important; /* Уменьшаем имя Vladimir и весь текст в карточке */
 }
 
 /* Уменьшаем иконку молнии внутри этой карточки */
