@@ -368,3 +368,10 @@ section#guilds div[class*="jsx-"] {
     margin: 0 auto;
 }
 
+/* Опускаем блок с паспортом игрока ниже */
+main > div:last-of-type,
+section + div:has(h3),
+div:has(> p:contains("Паспорт игрока")) {
+    margin-top: 100px !important; /* Увеличьте это число, если нужно опустить еще ниже */
+    padding-bottom: 60px !important; /* Добавляем отступ снизу, чтобы не прилипало к подвалу */
+}
