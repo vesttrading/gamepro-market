@@ -122,7 +122,7 @@ div[style*="justifyContent: \"space-between\""] {
 #passport .grid2 > div:first-child {
     position: relative !important;
     width: 100% !important;
-    max-width: 520px !important;
+    max-width: 600px !important;
     padding: 4px 12px !important;
     margin: 0 auto 20px auto !important; /* Расстояние до ачивок */
     border: none !important; /* Защита от лишних линий */
