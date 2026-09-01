@@ -118,9 +118,9 @@ div[style*="justifyContent: \"space-between\""] {
 /* 2. Карточка Владимира (сверху в полную длину) */
 #passport .grid2 > div:first-child {
     position: relative !important;
-    width: 100% !important;
+    width: 600px !important;
     max-width: 100% !important;
-    padding: 20px !important;
+    padding: 8px 16px!important;
     margin-bottom: 25px !important; /* Расстояние до ачивок */
     border: none !important; /* Защита от лишних линий */
 }
