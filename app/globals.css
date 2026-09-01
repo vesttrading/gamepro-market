@@ -305,31 +305,18 @@ section#games div[class*="gameGrid"] > div h2 {
     font-size: 1.1rem !important;
 }
 
-/* Находим контейнер с карточками отзывов (обычно это section или div) */
-/* Если вы знаете точный id или класс секции отзывов, замените им слово section ниже */
-
-/* 1. Делаем две правые карточки меньше */
-section div[class*="Grid"] > div:not(:first-child),
-section div[class*="grid"] > div:not(:first-child) {
-    flex: 0 1 240px !important;    /* Запрещаем растягиваться больше 240px */
-    max-width: 260px !important;   /* Жестко ограничиваем максимальную ширину */
-}
-
-/* 2. Позволяем первой карточке занять оставшееся свободное место */
-section div[class*="Grid"] > div:first-child,
-section div[class*="grid"] > div:first-child {
-    flex: 1 1 400px !important;    /* Первая карточка будет шире остальных */
-}
-
-/* Делаем две правые карточки в отзывах маленькими */
-section#reviews div[class*="jsx-"] > div:not(:first-child) {
-    flex: 0 1 250px !important;    /* Ограничиваем базовый размер */
-    max-width: 280px !important;   /* Жесткий лимит по ширине */
+/* Делаем вторую и третью карточки в секции отзывов узкими */
+section#reviews > div > div:nth-child(2),
+section#reviews > div > div:nth-child(3),
+section#reviews div:not(:first-child) {
+    flex: 0 1 240px !important;
+    max-width: 260px !important;
     width: 100% !important;
 }
 
-/* Первую карточку оставляем широкой */
-section#reviews div[class*="jsx-"] > div:first-child {
-    flex: 1 1 450px !important;    /* Занимает всё основное пространство */
+/* Первую карточку (с оценкой 4.9/5) заставляем быть широкой */
+section#reviews > div > div:first-child,
+section#reviews div:first-child {
+    flex: 1 1 450px !important;
 }
 
