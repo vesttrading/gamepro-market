@@ -343,3 +343,13 @@ section#reviews h1 {
     margin-top: 10px !important;
 }
 
+/* Этот код изменит только блок гильдий и ничего больше */
+.guilds-container {
+    max-width: 750px !important;  /* Уменьшаем ширину карточки */
+    width: 100% !important;
+    margin-left: auto !important;  /* Центрируем её на экране */
+    margin-right: auto !important;
+    padding: 40px 24px !important; /* Делаем внутренние отступы аккуратнее */
+    box-sizing: border-box !important;
+}
+
