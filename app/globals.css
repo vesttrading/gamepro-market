@@ -66,10 +66,10 @@ div[style*="justifyContent: \"space-between\""] {
 /* 4. Делаем саму кнопку "Поделиться" компактной и убираем у неё лишние отступы */
 #passport button {
   width: auto !important;
-  min-width: 200px !important;
+  min-width: 150px !important;
   max-width: 250px !important;
   margin-left: 40px !important; /* Отодвинет кнопку вправо от текста на 40 пикселей */
-  padding: 10px 24px !important;
+  padding: 6px 16px !important;
 }
 
 /* 5. Восстанавливаем сетку для паспорта, чтобы карточка была на всю ширину */
