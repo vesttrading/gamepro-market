@@ -111,8 +111,8 @@ div[style*="justifyContent: \"space-between\""] {
     width: 100% !important;
     height: auto !important; /* Убираем фиксированную высоту */
     min-height: auto !important; 
-    margin: 0 auto !important; /* Центрируем по центру */
-    padding: 20px !important;
+    margin: -30px auto 0 auto !important; /* Центрируем по центру */
+    padding: 0 20px !important;
     position: relative !important;
     border: none !important; /* Убираем возможные рамки и линии */
     outline: none !important;
@@ -124,7 +124,7 @@ div[style*="justifyContent: \"space-between\""] {
     width: 600px !important;
     max-width: 520px !important;
     padding: 4px 12px !important;
-    margin: 0 auto 20px auto !important; /* Расстояние до ачивок */
+    margin: -40 auto 20px auto !important; /* Расстояние до ачивок */
     border: none !important; /* Защита от лишних линий */
     
     /* --- НАШИ ИСПРАВЛЕНИЯ РАЗМЕРОВ НАЧИНАЮТСЯ ТУТ --- */
