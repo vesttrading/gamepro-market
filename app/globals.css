@@ -394,7 +394,7 @@ section#guilds div[class*="jsx-"] {
         padding: 20px 16px !important;
     }
 
-[01.09.2026 13:06] Vladimir: /* Настройки для мобильных экранов (телефонов) */
+ /* Настройки для мобильных экранов (телефонов) */
 @media (max-width: 768px) {
     /* 1. Выстраиваем карточки отзывов вертикально в одну колонку */
     section#reviews [class*="gameGrid"], 
@@ -420,7 +420,7 @@ section#guilds div[class*="jsx-"] {
         padding: 20px 16px !important;
     }
 
-  [01.09.2026 13:06] Vladimir: /* Настройки для мобильных экранов (телефонов) */
+   /* Настройки для мобильных экранов (телефонов) */
 @media (max-width: 768px) {
     /* 1. Выстраиваем карточки отзывов вертикально в одну колонку */
     section#reviews [class*="gameGrid"], 
