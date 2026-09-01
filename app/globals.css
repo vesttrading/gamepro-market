@@ -154,24 +154,6 @@ div[style*="justifyContent: \"space-between\""] {
     font-size: 13px !important;   /* Уменьшенный шрифт */
 }
 
-/* Блок ачивок (теперь встает ровно под Владимиром) */
-#passport .grid2 > div:not(:first-child) {
-    position: relative !important; /* Сбрасываем absolute */
-    left: 0 !important; /* Убираем старый сдвиг вправо */
-    top: 0 !important;
-    width: 100% !important;
-    max-width: 100% !important;
-}
-
-/* Выстраиваем 4 карточки ачивок горизонтально в одну строку */
-#passport .grid2 > div:not(:first-child) > div > div,
-#passport .grid2 > div:not(:first-child) > div {
-    display: grid !important;
-    grid-template-columns: repeat(4, 1fr) !important; /* Ровно 4 колонки в ряд */
-    gap: 12px !important;
-    width: 100% !important;
-}
-
 #passport .grid2 > div:not(:first-child) > div > div > div,
 #passport .grid2 > div:not(:first-child) > div > div {
     max-width: 100% !important;
