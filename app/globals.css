@@ -69,7 +69,7 @@ div[style*="justifyContent: \"space-between\""] {
   min-width: 100px !important;
   max-width: 230px !important;
   margin-left: 40px !important; /* Отодвинет кнопку вправо от текста на 40 пикселей */
-  padding: 6px 6px !important;
+  padding: 10px 12px !important;
 }
 
 /* 5. Восстанавливаем сетку для паспорта, чтобы карточка была на всю ширину */
