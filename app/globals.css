@@ -157,10 +157,10 @@ div[style*="justifyContent: \"space-between\""] {
 #passport .grid2 > div:not(:first-child) > div,
 #passport .grid2 > div:not(:first-child) > div > div {
     display: grid !important;
-    grid-template-columns: repeat(4, 160px) !important; /* Ровно 4 колонки */
+    grid-template-columns: repeat(2, 1fr) !important; /* Ровно 4 колонки */
     gap: 12px !important;
     justify-content: center !important;
-    width: 680px !important;
+    width: 500px !important;
     margin: 0 auto !important;
 }
 
