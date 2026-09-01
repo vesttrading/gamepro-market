@@ -70,8 +70,8 @@ div[style*="justifyContent: \"space-between\""] {
   max-width: 230px !important;
   margin-left: 40px !important; /* Отодвинет кнопку вправо от текста на 40 пикселей */
   padding: 10px 12px !important;
-  background-color: #00bcd4 !important; /* Насыщенный бирюзовый цвет фона */
-    border-color: #00bcd4 !important;     /* Бирюзовая рамка */
+  background-color: #14b8a6 !important; /* Насыщенный бирюзовый цвет фона */
+    border-color: #14b8a6 !important;     /* Бирюзовая рамка */
     color: #000000 !important;            /* Белый цвет текста для контраста */
 }
 
