@@ -201,47 +201,66 @@ button[class*="search"] {
     min-width: 90% !important;
 }
 
-div[class*="cards"] > div {
-    /* Жестко задаем ширину карточки */
-    width: 85px !important; 
+/* Находим контейнер по точному классу из инспектора */
+div[class*="stats"] {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    flex-wrap: nowrap !important;
+    gap: 8px !important;
+    width: 100% !important;
+    max-width: 360px !important;
+    margin: 15px auto !important;
+}
+
+/* Находим сами три карточки внутри этого контейнера */
+div[class*="stats"] > div {
+    /* Принудительно сжимаем ширину и высоту до квадрата */
+    width: 85px !important;
     max-width: 85px !important;
     min-width: 85px !important;
     
-    /* Принудительно делаем высоту точно такой же, как ширина */
     height: 85px !important;
     max-height: 85px !important;
     min-height: 85px !important;
-    aspect-ratio: 1 / 1 !important; 
+    aspect-ratio: 1 / 1 !important;
     
-    /* Центрируем контент и убираем распирающие боковые отступы */
+    /* Перебиваем внутренний padding: 15px, который распирал блок на фото */
+    padding: 4px 2px !important; 
+    box-sizing: border-box !important;
+
+    /* Центрируем текст внутри */
     display: flex !important;
     flex-direction: column !important;
     justify-content: center !important;
     align-items: center !important;
     text-align: center !important;
-    padding: 4px 2px !important; /* Минимальный паддинг по бокам, чтобы не растягивать блок */
-    box-sizing: border-box !important;
 }
 
-/* Принудительно уменьшаем шрифт цифр (2850, CE и т.д.) */
-div[class*="cards"] > div h2,
-div[class*="cards"] > div h3,
-div[class*="cards"] > div p:first-child,
-div[class*="cards"] > div div:first-child {
-    font-size: 14px !important; 
+/* Сжимаем шрифты, чтобы текст не ломал квадрат */
+div[class*="stats"] > div * {
+    max-width: 100% !important;
+}
+
+/* Стили для цифр */
+div[class*="stats"] > div h2,
+div[class*="stats"] > div h3,
+div[class*="stats"] > div p:first-child,
+div[class*="stats"] > div div:first-child {
+    font-size: 14px !important;
     font-weight: 700 !important;
     line-height: 1.1 !important;
     margin: 0 0 2px 0 !important;
 }
 
-/* Мелкий текст подписей (Mythic+ Rating) */
-div[class*="cards"] > div p,
-div[class*="cards"] > div span,
-div[class*="cards"] > div div:last-child {
-    font-size: 9px !important; 
+/* Стили для подписей */
+div[class*="stats"] > div p,
+div[class*="stats"] > div span,
+div[class*="stats"] > div div:last-child {
+    font-size: 9px !important;
     line-height: 1.1 !important;
     margin: 0 !important;
-    white-space: normal !important; 
+    white-space: normal !important;
 }
 section#raiderio {
     padding-top: 24px !important;    
