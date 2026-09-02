@@ -200,26 +200,6 @@ div[style*="justifyContent: \"space-between\""] {
     }
 }
 
- /* 5. Делаем плашки ачивок тоньше и принудительно переносим текст */
-#passport .grid2 > div:not(:first-child) > div > div div,
-#passport .grid2 > div:not(:first-child) > div > div > div,
-#passport .grid2 > div:not(:first-child) > div div button,
-#passport .grid2 > div:not(:first-child) > div div span,
-.jsx-f4888bab762c3c0.grid2 button {
-    max-width: 180px !important;
-    width: 100% !important;
-    padding: 6px 10px !important; 
-    font-size: 13px !important;   
-    
-    /* Заставляем плашку разрешать перенос элементов на новую строку */
-    display: flex !important;
-    flex-direction: row !important; /* Оставляем в ряд, но... */
-    flex-wrap: wrap !important;     /* ...принудительно переносим то, что не влезает! */
-    justify-content: center !important; 
-    align-items: center !important;
-    gap: 4px !important;            
-    height: auto !important;        
-}
  #passport .grid2 {
     display: flex !important;
     flex-direction: column !important;
