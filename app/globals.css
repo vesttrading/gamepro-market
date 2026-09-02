@@ -201,16 +201,15 @@ div[style*="justifyContent: \"space-between\""] {
 }
 
  /* Отключаем Grid-сетку для главного верхнего паспорта */
-#passport div:has(> div > [class*="stats"]),
-#passport .grid2:has([class*="stats"]) {
+#passport .grid2:has(div > div > h3) {
     display: flex !important;
-    flex-direction: column !important; /* Всё строится сверху вниз */
+    flex-direction: column !important; /* Выстраиваем всё сверху вниз */
     align-items: center !important;
     gap: 30px !important;
 }
 
-/* Нацеливаемся напрямую на контейнер с тремя карточками и ставим их в один ряд */
-#passport div[class*="stats"] {
+/* Находим контейнер, в котором лежат три карточки, и выстраиваем их в ряд */
+#passport .grid2:has(div > div > h3) > div:last-child {
     display: flex !important;
     flex-direction: row !important; /* Строго горизонтально */
     flex-wrap: nowrap !important;   /* Запрещаем перенос строк */
