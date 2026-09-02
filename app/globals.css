@@ -195,7 +195,7 @@ div[style*="justifyContent: \"space-between\""] {
 .jsx-f4888bab762c3c0.grid2 button,
 .jsx-f4888bab762c3c0.grid2 [class*="verified"] {
     display: flex !important;
-    flex-direction: column !important; /* Перенос VERIFIED на вторую строку */
+    flex-direction: column !important; /* Перенос VERIFIED строго на вторую строку */
     align-items: center !important;    /* Центрирование текста по горизонтали */
     justify-content: center !important;
     text-align: center !important;
@@ -204,23 +204,16 @@ div[style*="justifyContent: \"space-between\""] {
     padding: 8px 6px !important;
 }
 
-/* Принудительно разрываем строку для внутренних элементов */
+/* Принудительно разрываем строку для всех внутренних элементов плашки */
 .jsx-f4888bab762c3c0.grid2 > div:not(:first-child) > div > div > div *,
-.jsx-f4888bab762c3c0.grid2 button * {
+.jsx-f4888bab762c3c0.grid2 button *,
+.jsx-f4888bab762c3c0.grid2 button span {
     display: block !important;
     width: 100% !important;
     text-align: center !important;
 }
 
-/* 7. Ограничиваем ширину кнопки поиска */
-button[class*="search"] {
-    max-width: 100% !important;
-    width: 100% !important;
-    padding-left: 0px !important;
-    padding-right: 0px !important;
-}
-
-/* 7. Ограничиваем ширину кнопки поиска */
+/* 7. Жёстко ограничиваем ширину кнопки поиска */
 button[class*="search"] {
     max-width: 100% !important;
     width: 100% !important;
@@ -273,85 +266,6 @@ div[class*="stats"] > div span {
     line-height: 1.1 !important;
     margin: 0 !important;
     white-space: normal !important;
-}
-
-#passport .grid2 > div:not(:first-child) > div > div > div,
-#passport .grid2 > div:not(:first-child) > div > div {
-    max-width: 100% !important;
-    width: 100% !important;
-}
-/* Жёстко ограничиваем ширину кнопки поиска */
-button[class*="search"] {
-    padding-left: 0px !important;
-    padding-right: 0px !important;
-    width: 90px !important; /* Эта строчка принудительно сожмет кнопку */
-    min-width: 90% !important;
-}
-
-/* Находим контейнер по точному классу из инспектора */
-div[class*="stats"] {
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: center !important;
-    flex-wrap: nowrap !important;
-    gap: 8px !important;
-    width: 100% !important;
-    max-width: 360px !important;
-    margin: 15px auto !important;
-}
-
-/* Находим сами три карточки внутри этого контейнера */
-div[class*="stats"] > div {
-    /* Принудительно сжимаем ширину и высоту до квадрата */
-    width: 85px !important;
-    max-width: 85px !important;
-    min-width: 85px !important;
-    
-    height: 85px !important;
-    max-height: 85px !important;
-    min-height: 85px !important;
-    aspect-ratio: 1 / 1 !important;
-    
-    /* Перебиваем внутренний padding: 15px, который распирал блок на фото */
-    padding: 4px 2px !important; 
-    box-sizing: border-box !important;
-
-    /* Центрируем текст внутри */
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
-    align-items: center !important;
-    text-align: center !important;
-}
-
-/* Сжимаем шрифты, чтобы текст не ломал квадрат */
-div[class*="stats"] > div * {
-    max-width: 100% !important;
-}
-
-/* Стили для цифр */
-div[class*="stats"] > div h2,
-div[class*="stats"] > div h3,
-div[class*="stats"] > div p:first-child,
-div[class*="stats"] > div div:first-child {
-    font-size: 14px !important;
-    font-weight: 700 !important;
-    line-height: 1.1 !important;
-    margin: 0 0 2px 0 !important;
-}
-
-/* Стили для подписей */
-div[class*="stats"] > div p,
-div[class*="stats"] > div span,
-div[class*="stats"] > div div:last-child {
-    font-size: 9px !important;
-    line-height: 1.1 !important;
-    margin: 0 !important;
-    white-space: normal !important;
-}
-section#raiderio {
-    padding-top: 24px !important;    
-    padding-bottom: 24px !important; 
 }
 
 section#raiderio div.jsx-f4888bab762c3c0,
