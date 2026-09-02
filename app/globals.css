@@ -146,6 +146,40 @@ div[style*="justifyContent: \"space-between\""] {
     gap: 4px !important;            
     height: auto !important;        
 }
+
+#passport .grid2 {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    margin-top: -35px !important;
+    width: 100% !important;
+}
+
+#passport .grid2 > div:first-child {
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important; /* Прижимает Владимира к левому краю */
+    text-align: left !important;
+    gap: 15px !important;
+}
+
+@media (max-width: 768px) {
+    #passport .grid2 > div:first-child {
+        justify-content: center !important; /* Центрует обратно на телефонах */
+        text-align: center !important;
+    }
+}
+    
+    /* Заставляем плашку разрешать перенос элементов на новую строку */
+    display: flex !important;
+    flex-direction: row !important; /* Оставляем в ряд, но... */
+    flex-wrap: wrap !important;     /* ...принудительно переносим то, что не влезает! */
+    justify-content: center !important; 
+    align-items: center !important;
+    gap: 4px !important;            
+    height: auto !important;        
+}
  #passport .grid2 {
     display: flex !important;
     flex-direction: column !important;
