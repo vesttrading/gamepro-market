@@ -162,29 +162,28 @@ div[style*="justifyContent: \"space-between\""] {
     margin: 0 auto !important;
 }
 
-/* 5. Делаем плашки ачивок тоньше, аккуратнее и переносим VERIFIED вниз */
+/* 5. Делаем плашки ачивок тоньше и переносим VERIFIED вниз */
 #passport .grid2 > div:not(:first-child) > div > div div,
 #passport .grid2 > div:not(:first-child) > div > div > div,
-#passport .grid2 > div:not(:first-child) > div > div div button,
-#passport .grid2 > div:not(:first-child) > div > div div span {
+#passport .grid2 > div:not(:first-child) > div div button,
+#passport .grid2 > div:not(:first-child) > div div span {
     max-width: 180px !important;
     width: 100% !important;
-    padding: 8px 12px !important; 
-    font-size: 13px !important;   
-    
-    /* Смена направления на вертикальное заставит текст встать в две строки */
+    padding: 8px 12px !important;
+    font-size: 13px !important;
     display: flex !important;
-    flex-direction: column !important; 
-    align-items: center !important;    /* Текст строго по центру горизонтали */
+    flex-direction: column !important; /* Перенос строго на вторую строку */
+    align-items: center !important;    /* Центрирование текста по горизонтали */
     justify-content: center !important;
-    gap: 4px !important;               /* Отступ между названием и VERIFIED */
-    height: auto !important;           
+    gap: 4px !important;               /* Расстояние между строками */
+    height: auto !important;
 }
 
 /* 6. Принудительно отрываем зеленую надпись VERIFIED на отдельную строчку */
 #passport .grid2 [class*="verified"],
 #passport .grid2 div:not(:first-child) span[class*="verified"],
-#passport .grid2 div:not(:first-child) button span:last-child {
+#passport .grid2 div:not(:first-child) button span:last-child,
+.jsx-f4888bab762c3c0.grid2 button span {
     display: block !important;
     width: 100% !important;
     text-align: center !important;
