@@ -201,64 +201,48 @@ button[class*="search"] {
     min-width: 90% !important;
 }
 
-/* Возвращаем карточки в один ряд и фиксируем форму */
-div[class*="cards"] {
-    display: flex !important;
-    flex-direction: row !important; 
-    justify-content: center !important;
-    flex-wrap: nowrap !important; 
-    gap: 8px !important; 
-    width: 100% !important;
-    max-width: 380px !important;
-    margin: 0 auto !important;
-}
-
 div[class*="cards"] > div {
-    aspect-ratio: 1 / 1 !important; /* Делает карточки строго квадратными */
-    flex: 1 1 0% !important; 
-    max-width: 100px !important; 
-    min-width: 75px !important; 
+    /* Жестко задаем ширину карточки */
+    width: 85px !important; 
+    max-width: 85px !important;
+    min-width: 85px !important;
     
+    /* Принудительно делаем высоту точно такой же, как ширина */
+    height: 85px !important;
+    max-height: 85px !important;
+    min-height: 85px !important;
+    aspect-ratio: 1 / 1 !important; 
+    
+    /* Центрируем контент и убираем распирающие боковые отступы */
     display: flex !important;
     flex-direction: column !important;
     justify-content: center !important;
     align-items: center !important;
     text-align: center !important;
-    padding: 6px !important; /* Уменьшаем внутренние отступы, чтобы тексту было просторнее */
+    padding: 4px 2px !important; /* Минимальный паддинг по бокам, чтобы не растягивать блок */
     box-sizing: border-box !important;
 }
 
-/* Уменьшаем шрифт цифр (2850, CE, 2.4k+) */
+/* Принудительно уменьшаем шрифт цифр (2850, CE и т.д.) */
+div[class*="cards"] > div h2,
 div[class*="cards"] > div h3,
 div[class*="cards"] > div p:first-child,
-div[class*="cards"] > div span:first-child {
-    font-size: 16px !important; /* Делает цифры аккуратнее */
-    font-weight: bold !important;
-    margin-bottom: 2px !important;
+div[class*="cards"] > div div:first-child {
+    font-size: 14px !important; 
+    font-weight: 700 !important;
+    line-height: 1.1 !important;
+    margin: 0 0 2px 0 !important;
 }
 
-/* Уменьшаем шрифт подписей (Mythic+ Rating, Raid Progress...) */
+/* Мелкий текст подписей (Mythic+ Rating) */
 div[class*="cards"] > div p,
-div[class*="cards"] > div span {
-    font-size: 11px !important; /* Делает подписи мелкими */
-    line-height: 1.2 !important;
-    opacity: 0.8;
+div[class*="cards"] > div span,
+div[class*="cards"] > div div:last-child {
+    font-size: 9px !important; 
+    line-height: 1.1 !important;
+    margin: 0 !important;
+    white-space: normal !important; 
 }
-
-div[class*="cards"] > div {
-    aspect-ratio: 1 / 1 !important; /* Делает карточки строго квадратными */
-    flex: 1 1 0% !important; /* Равномерно распределяет ширину */
-    max-width: 110px !important; /* Ограничиваем максимальный размер квадрата */
-    min-width: 80px !important; /* Минимальный размер для мелких экранов */
-    
-    /* Выравниваем текст внутри квадратов строго по центру */
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
-    align-items: center !important;
-    text-align: center !important;
-}
-
 section#raiderio {
     padding-top: 24px !important;    
     padding-bottom: 24px !important; 
