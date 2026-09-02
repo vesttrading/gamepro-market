@@ -134,21 +134,17 @@ div[style*="justifyContent: \"space-between\""] {
     padding: 6px 10px !important; 
     font-size: 13px !important;   
 
-/* Заставляем плашку разрешать перенос элементов на новую строку */
+/* Находим блок с тремя карточками и выстраиваем их в один горизонтальный ряд */
+#passport .grid2 > div:last-child {
     display: flex !important;
-    flex-direction: row !important; /* Оставляем в ряд, но... */
-    flex-wrap: wrap !important;     /* ...принудительно переносим то, что не влезает! */
-    justify-content: center !important; 
+    flex-direction: row !important; /* Выстраиваем строго в горизонтальный ряд */
+    flex-wrap: nowrap !important;   /* Запрещаем перенос строк */
+    justify-content: center !important; /* Центрируем карточки под плашкой VERIFIED */
     align-items: center !important;
-    gap: 4px !important;            
-    height: auto !important;        
-}
-
-#passport .grid2 {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    margin-top: -35px !important;
+    gap: 15px !important;           /* Расстояние между карточками */
+    width: 100% !important;
+    height: auto !important;
+    margin-top: -35px !important;   /* Ваше смещение для поднятия блока */
 }
 
 #passport .grid2 > div:first-child {
