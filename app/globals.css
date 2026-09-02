@@ -133,6 +133,7 @@ div[style*="justifyContent: \"space-between\""] {
     width: 100% !important;
     padding: 6px 10px !important; 
     font-size: 13px !important;   
+}
 
 /* Находим блок с тремя карточками и выстраиваем их в один горизонтальный ряд */
 #passport .grid2 > div:last-child {
@@ -193,8 +194,7 @@ div[style*="justifyContent: \"space-between\""] {
     }
 }
 
-
-   div[class*="stats"] > div {
+    div[class*="stats"] > div {
     width: 85px !important;
     max-width: 85px !important;
     min-width: 85px !important;
