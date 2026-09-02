@@ -113,7 +113,7 @@ div[style*="justifyContent: \"space-between\""] {
 #passport .grid2 {
     display: flex !important;
     flex-direction: column !important;
-    align-items: flex-start !important;    /* Центрирует Владимира и все блоки на ноутбуке */
+    align-items: center !important;    /* Центрирует Владимира и все блоки на ноутбуке */
     text-align: center !important;     /* Выравнивает текст по центру */
     max-width: 450px !important;       /* Уменьшаем общую ширину блока на ноутбуке с 820px до аккуратных 450px */
     width: 100% !important;
@@ -124,6 +124,14 @@ div[style*="justifyContent: \"space-between\""] {
     position: relative !important;
     border: none !important;
     outline: none !important;
+}
+
+#passport .grid2 > div:first-child {
+    align-self: flex-start !important;
+    display: flex !important;
+    align-items: center !important;
+    text-align: left !important;
+    gap: 15px;
 }
 
 @media (max-width: 768px) {
