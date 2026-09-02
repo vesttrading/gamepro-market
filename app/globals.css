@@ -201,18 +201,30 @@ button[class*="search"] {
     min-width: 90% !important;
 }
 
-/* Возвращаем карточки в один ряд (если они упали в столбик) */
+/* Возвращаем карточки в один ряд и делаем их квадратными */
 div[class*="cards"] {
     display: flex !important;
+    flex-direction: row !important; /* Принудительно в один ряд */
     justify-content: center !important;
-    flex-wrap: wrap !important;
-    gap: 18px !important;
+    flex-wrap: nowrap !important; /* Запрещаем перенос на другую строку */
+    gap: 10px !important; /* Оптимальный отступ для мобильных */
+    width: 100% !important;
+    max-width: 400px !important;
+    margin: 0 auto !important;
 }
 
-/* Уменьшаем ширину трех карточек */
 div[class*="cards"] > div {
-    max-width: 180px !important;
-    width: 100% !important;
+    aspect-ratio: 1 / 1 !important; /* Делает карточки строго квадратными */
+    flex: 1 1 0% !important; /* Равномерно распределяет ширину */
+    max-width: 110px !important; /* Ограничиваем максимальный размер квадрата */
+    min-width: 80px !important; /* Минимальный размер для мелких экранов */
+    
+    /* Выравниваем текст внутри квадратов строго по центру */
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
 }
 
 section#raiderio {
