@@ -113,98 +113,25 @@ div[style*="justifyContent: \"space-between\""] {
 #passport .grid2 {
     display: flex !important;
     flex-direction: column !important;
-    max-width: 820px !important; /* Уменьшили общую ширину блока */
+    align-items: center !important;    /* Центрирует Владимира и все блоки на ноутбуке */
+    text-align: center !important;     /* Выравнивает текст по центру */
+    max-width: 450px !important;       /* Уменьшаем общую ширину блока на ноутбуке с 820px до аккуратных 450px */
     width: 100% !important;
-    height: auto !important; /* Убираем фиксированную высоту */
-    min-height: auto !important; 
-    margin: 10px auto 0 auto !important; /* Центрируем по центру */
-    padding: 0 20px !important;
+    height: auto !important;
+    min-height: auto !important;
+    margin: 20px auto !important;      /* Ровно центрирует весь паспорт на экране */
+    padding: 20px 15px !important;
     position: relative !important;
-    border: none !important; /* Убираем возможные рамки и линии */
+    border: none !important;
     outline: none !important;
 }
 
 @media (max-width: 768px) {
-    /* 1. ГЛАВНЫЙ ТЕМНЫЙ БЛОК — Уменьшаем его ширину, чтобы не был большим */
-    #passport, 
-    #passport .grid2,
-    div[class*="gamepro-achievement-passport"] {
-        width: 350px !important;     /* Жесткая компактная ширина для телефона */
-        max-width: 350px !important; 
-        margin: 15px auto !important; /* Центрируем сам паспорт на экране смартфона */
+    #passport .grid2 {
+        max-width: 350px !important;   /* На телефонах блок станет еще чуть уже и аккуратнее */
+        width: 100% !important;
         padding: 15px 10px !important;
-        box-sizing: border-box !important;
-    }
-
-    /* 2. БЛОК ВЛАДИМИРА — Ставим ровно по центру */
-    #passport .grid2 > div:first-child,
-    div[class*="gamepro-achievement-passport"] > div:first-child {
-        width: 100% !important;
-        max-width: 100% !important;
-        display: flex !important;
-        flex-direction: column !important; /* Выстраиваем аватарку и текст в столбик */
-        align-items: center !important;    /* Центрируем элементы по горизонтали */
-        text-align: center !important;     /* Центрируем сам текст */
-        padding: 0 !important;
-        margin-bottom: 15px !important;
-    }
-
-    /* Выравниваем внутренние обертки текста (имя, класс, сервер), если они есть */
-    #passport .grid2 > div:first-child div,
-    div[class*="gamepro-achievement-passport"] > div:first-child div {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        text-align: center !important;
-    }
-
-    /* 3. ТРИ НИЖНИЕ КАРТОЧКИ (2850, CE, 2.4k+) внутри медиа-запроса */
-    div[class*="stats"] {
-        display: flex !important;
-        flex-direction: row !important;
-        justify-content: center !important;
-        flex-wrap: nowrap !important;
-        gap: 8px !important;
-        width: 100% !important;
-        margin: 0 auto !important;
-    }
-
-    div[class*="stats"] > div {
-        width: 85px !important;
-        max-width: 85px !important;
-        min-width: 85px !important;
-        height: 85px !important;
-        max-height: 85px !important;
-        min-height: 85px !important;
-        aspect-ratio: 1 / 1 !important; 
-        padding: 4px 2px !important; 
-        box-sizing: border-box !important;
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: center !important;
-        align-items: center !important;
-        text-align: center !important;
-    }
-
-    div[class*="stats"] > div h2,
-    div[class*="stats"] > div h3,
-    div[class*="stats"] > div p:first-child,
-    div[class*="stats"] > div div:first-child {
-        font-size: 14px !important;
-        font-weight: 700 !important;
-        line-height: 1.1 !important;
-        margin: 0 0 2px 0 !important;
-    }
-
-    div[class*="stats"] > div p,
-    div[class*="stats"] > div span,
-    div[class*="stats"] > div div:last-child {
-        font-size: 9px !important;
-        line-height: 1.1 !important;
-        margin: 0 !important;
-        white-space: normal !important;
-    }
-}
+  }
 
 /* 3. Блок ачивок (встает ровно под Владимира) */
 #passport .grid2 > div:not(:first-child) {
