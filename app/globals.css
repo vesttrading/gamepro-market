@@ -345,6 +345,25 @@ section#raiderio > div > div:first-child {
     margin-bottom: 4px !important;     
 }
 
+/* Принудительно заставляем внутренности плашек выстраиваться в две строки */
+#passport div[class*="verified"] {
+    display: flex !important;
+    flex-direction: column !important; /* Перенос на вторую строку */
+    align-items: center !important;    /* Центрируем иконку и текст */
+    justify-content: center !important;
+    gap: 4px !important;               /* Отступ между названием и VERIFIED */
+    height: auto !important;           
+}
+
+/* Находим саму зеленую надпись VERIFIED и делаем её отдельной строкой */
+#passport div[class*="verified"] span,
+#passport div[class*="verified"] p,
+#passport .grid2 button span {
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+}
+
 section#raiderio form,
 section#raiderio div:has(> input[placeholder*="Имя"]),
 section#raiderio div.jsx-f4888bab762c3c0 form {
