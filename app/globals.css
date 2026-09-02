@@ -128,8 +128,6 @@ div[style*="justifyContent: \"space-between\""] {
 
 #passport .grid2 {
     margin-top: -35px !important;
-    margin-bottom: 250px !important;
-    margin: 0 auto !important;
 }
 
 @media (max-width: 768px) {
