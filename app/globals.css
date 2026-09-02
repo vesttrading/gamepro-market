@@ -169,11 +169,14 @@ div[style*="justifyContent: \"space-between\""] {
     padding: 8px 12px !important; /* Карточки станут компактнее */
     font-size: 13px !important;   /* Уменьшенный шрифт */
 }
+
 /* Принудительно разрываем контент внутри плашек на две строки */
 #passport .grid2 > div:not(:first-child) > div > div > div,
 #passport .grid2 > div:not(:first-child) > div > div div button,
 #passport .grid2 > div:not(:first-child) > div > div div span {
-    display: flex !important;
+} 
+  
+  display: flex !important;
     flex-direction: column !important; /* Скидывает всё, что внутри, на вторую строку */
     align-items: center !important;    /* Центрирует текст по горизонтали */
     justify-content: center !important;
