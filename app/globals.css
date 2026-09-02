@@ -190,6 +190,23 @@ div[style*="justifyContent: \"space-between\""] {
     text-align: center !important;
 }
 
+/* Находим родительский контейнер синих плашек и заставляем его контент переноситься */
+#passport .grid2 div[class*="verified"] {
+    display: flex !important;
+    flex-direction: column !important; /* Принудительно выстраивает название и VERIFIED в два этажа */
+    align-items: center !important;    /* Центрирует по горизонтали */
+    justify-content: center !important;
+    gap: 6px !important;               /* Расстояние между верхней и нижней строчкой */
+    height: auto !important;
+}
+
+/* Перебиваем строчное поведение любых элементов внутри этих плашек */
+#passport .grid2 div[class*="verified"] > * {
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+}
+
 /* 7. Ограничиваем ширину кнопки поиска */
 button[class*="search"] {
     max-width: 100% !important;
