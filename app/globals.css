@@ -164,10 +164,17 @@ div[style*="justifyContent: \"space-between\""] {
 /* 5. Делаем плашки ачивок тоньше и аккуратнее */
 #passport .grid2 > div:not(:first-child) > div div,
 #passport .grid2 > div:not(:first-child) > div > div > div {
-    max-width: 180px !important;
+ max-width: 180px !important;
     width: 100% !important;
     padding: 8px 12px !important; /* Карточки станут компактнее */
     font-size: 13px !important;   /* Уменьшенный шрифт */
+    
+    /* Добавляем перенос VERIFIED на вторую строку: */
+    display: flex !important;
+    flex-direction: column !important; /* Выстраивает текст в две строки сверху вниз */
+    align-items: center !important;    /* Центрирует иконку ачивки и галочку VERIFIED */
+    gap: 4px !important;               /* Расстояние между названием и VERIFIED */
+    height: auto !important;           /* Разрешает плашке растянуться по высоте */
 }
 
 #passport .grid2 > div:not(:first-child) > div > div > div,
