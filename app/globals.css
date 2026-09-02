@@ -126,15 +126,16 @@ div[style*="justifyContent: \"space-between\""] {
     outline: none !important;
 }
 
+#passport .grid2 {
+    margin-top: -35px !important;
+    margin-bottom: 250px !important;
+    margin: 0 auto !important;
+}
+
 @media (max-width: 768px) {
     #passport .grid2 {
         max-width: 355px !important;
         width: 100% !important;
-        
-        /* Объединяем вчерашние настройки отступов в одно правило: */
-        margin: -35px auto 250px auto !important; /* Вверх: -35px, Бока: авто, Низ: 250px */
-        
-        padding: 10px 12px 15px 12px !important;
     }
 }
 
