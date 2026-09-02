@@ -204,19 +204,23 @@ div[style*="justifyContent: \"space-between\""] {
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
+    justify-content: flex-start !important;
     width: 100% !important;
     gap: 25px !important;
 }
 
-/* Напрямую находим контейнер с карточками и выстраиваем их в ряд */
+/* Находим общий блок, в котором лежат все три карточки характеристик */
+#passport .grid2 > div:nth-child(2),
 #passport div[class*="stats"] {
     display: flex !important;
-    flex-direction: row !important;
+    flex-direction: row !important; /* Выстраиваем строго в горизонтальный ряд */
     flex-wrap: wrap !important;
-    justify-content: flex-start !important;
+    justify-content: flex-start !important; /* Прижимаем влево под Владимира */
     align-items: center !important;
-    gap: 15px !important;
+    gap: 15px !important; /* Расстояние между карточками */
     width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
    
 div[class*="stats"] > div {
