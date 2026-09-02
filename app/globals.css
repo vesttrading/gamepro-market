@@ -113,7 +113,7 @@ div[style*="justifyContent: \"space-between\""] {
 #passport .grid2 {
     display: flex !important;
     flex-direction: column !important;
-    align-items: center !important;    /* Центрирует Владимира и все блоки на ноутбуке */
+    align-items: flex-start !important;    /* Центрирует Владимира и все блоки на ноутбуке */
     text-align: center !important;     /* Выравнивает текст по центру */
     max-width: 450px !important;       /* Уменьшаем общую ширину блока на ноутбуке с 820px до аккуратных 450px */
     width: 100% !important;
