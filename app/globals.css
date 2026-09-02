@@ -190,18 +190,25 @@ div[style*="justifyContent: \"space-between\""] {
     text-align: center !important;
 }
 
-/* Находим родительский контейнер синих плашек и заставляем его контент переноситься */
-#passport .grid2 div[class*="verified"] {
+/* Финальное принудительное решение для синих плашек ачивок */
+#passport .grid2 > div button,
+#passport .grid2 > div:not(:first-child) [class*="verified"],
+#passport .grid2 > div:not(:first-child) > div > div > div > div,
+#passport .grid2 > div:not(:first-child) a {
     display: flex !important;
-    flex-direction: column !important; /* Принудительно выстраивает название и VERIFIED в два этажа */
-    align-items: center !important;    /* Центрирует по горизонтали */
+    flex-direction: column !important; /* Жестко выстраиваем контент сверху вниз */
+    align-items: center !important;    /* Центрируем название и галочку VERIFIED */
     justify-content: center !important;
-    gap: 6px !important;               /* Расстояние между верхней и нижней строчкой */
-    height: auto !important;
+    text-align: center !important;
+    gap: 4px !important;               /* Расстояние между названием и верификацией */
+    height: auto !important;           /* Даем плашке растянуться по высоте под две строки */
+    padding: 8px 6px !important;
 }
 
-/* Перебиваем строчное поведение любых элементов внутри этих плашек */
-#passport .grid2 div[class*="verified"] > * {
+/* Находим все текстовые элементы внутри этих плашек и запрещаем им стоять в ряд */
+#passport .grid2 > div:not(:first-child) button *,
+#passport .grid2 > div:not(:first-child) [class*="verified"] *,
+#passport .grid2 > div:not(:first-child) > div > div > div > div * {
     display: block !important;
     width: 100% !important;
     text-align: center !important;
