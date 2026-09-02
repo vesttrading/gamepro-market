@@ -190,30 +190,6 @@ div[style*="justifyContent: \"space-between\""] {
     text-align: center !important;
 }
 
-/* Финальное принудительное решение для синих плашек ачивок */
-#passport .grid2 > div button,
-#passport .grid2 > div:not(:first-child) [class*="verified"],
-#passport .grid2 > div:not(:first-child) > div > div > div > div,
-#passport .grid2 > div:not(:first-child) a {
-    display: flex !important;
-    flex-direction: column !important; /* Жестко выстраиваем контент сверху вниз */
-    align-items: center !important;    /* Центрируем название и галочку VERIFIED */
-    justify-content: center !important;
-    text-align: center !important;
-    gap: 4px !important;               /* Расстояние между названием и верификацией */
-    height: auto !important;           /* Даем плашке растянуться по высоте под две строки */
-    padding: 8px 6px !important;
-}
-
-/* Находим все текстовые элементы внутри этих плашек и запрещаем им стоять в ряд */
-#passport .grid2 > div:not(:first-child) button *,
-#passport .grid2 > div:not(:first-child) [class*="verified"] *,
-#passport .grid2 > div:not(:first-child) > div > div > div > div * {
-    display: block !important;
-    width: 100% !important;
-    text-align: center !important;
-}
-
 /* 7. Ограничиваем ширину кнопки поиска */
 button[class*="search"] {
     max-width: 100% !important;
