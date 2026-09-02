@@ -168,7 +168,25 @@ div[style*="justifyContent: \"space-between\""] {
     width: 100% !important;
     padding: 8px 12px !important; /* Карточки станут компактнее */
     font-size: 13px !important;   /* Уменьшенный шрифт */
-}  
+}
+/* Принудительно разрываем контент внутри плашек на две строки */
+#passport .grid2 > div:not(:first-child) > div > div > div,
+#passport .grid2 > div:not(:first-child) > div > div div button,
+#passport .grid2 > div:not(:first-child) > div > div div span {
+    display: flex !important;
+    flex-direction: column !important; /* Скидывает всё, что внутри, на вторую строку */
+    align-items: center !important;    /* Центрирует текст по горизонтали */
+    justify-content: center !important;
+    gap: 4px !important;
+}
+
+/* Находим саму надпись VERIFIED и заставляем её быть самостоятельной строкой */
+#passport .grid2 [class*="verified"],
+#passport .grid2 div:not(:first-child) span[class*="verified"] {
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+}
    
 /* Добавляем перенос VERIFIED на вторую строку: */
     display: flex !important;
