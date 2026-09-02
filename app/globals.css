@@ -6,7 +6,8 @@ body {
 
 /* Настройки для мобильных экранов (телефонов) */
 @media (max-width: 768px) {
-  
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
