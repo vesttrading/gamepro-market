@@ -136,7 +136,8 @@ div[style*="justifyContent: \"space-between\""] {
     width: 100% !important;
     padding: 6px 10px !important; 
     font-size: 13px !important;   
-    
+}
+
     /* Заставляем плашку разрешать перенос элементов на новую строку */
     display: flex !important;
     flex-direction: row !important; /* Оставляем в ряд, но... */
