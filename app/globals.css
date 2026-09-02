@@ -125,13 +125,33 @@ div[style*="justifyContent: \"space-between\""] {
 }
 
 @media (max-width: 768px) {
-    /* Ограничиваем общую ширину главного контейнера */
-    #passport .grid2 {
+    /* 1. Главный контейнер всего паспорта */
+    #passport, 
+    #passport .grid2,
+    div[class*="gamepro-achievement-passport"] {
         max-width: 100% !important;
-        width: 100% !important;
-        padding: 0 12px !important;
+        width: calc(100% - 24px) !important; /* Делает небольшие отступы от краев экрана телефона */
+        margin: 10px auto !important;
+        padding: 12px !important; /* Уменьшаем внутренние поля всей карточки */
         box-sizing: border-box !important;
     }
+
+    /* 2. Блок Владимира (имя, аватарка, специализация) */
+    #passport .grid2 > div:first-child,
+    div[class*="gamepro-achievement-passport"] > div:first-child {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 auto 15px auto !important;
+        padding: 0 !important; /* Убираем лишние внутренние отступы вокруг текста Владимира */
+    }
+
+    /* 3. Уменьшаем размер текста заголовка Владимир */
+    #passport h1, 
+    #passport h2,
+    #passport .grid2 > div:first-child span {
+        font-size: 20px !important; /* Делает имя аккуратнее на узком экране */
+    }
+}
 
     /* Уменьшаем ширину верхнего блока с именем Vladimir на телефонах */
     #passport .grid2 > div:first-child {
