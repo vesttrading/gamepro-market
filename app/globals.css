@@ -113,14 +113,14 @@ div[style*="justifyContent: \"space-between\""] {
 #passport .grid2 {
     display: flex !important;
     flex-direction: column !important;
-    align-items: center !important;    /* Центрирует Владимира и все блоки на ноутбуке */
+    align-items: flex-start !important;    /* Центрирует Владимира и все блоки на ноутбуке */
     text-align: center !important;     /* Выравнивает текст по центру */
     max-width: 450px !important;       /* Уменьшаем общую ширину блока на ноутбуке с 820px до аккуратных 450px */
     width: 100% !important;
     height: auto !important;
     min-height: auto !important;
     margin: 20px auto !important;      /* Ровно центрирует весь паспорт на экране */
-    padding: 20px 15px !important;
+    padding: 20px 20px !important;
     position: relative !important;
     border: none !important;
     outline: none !important;
@@ -128,9 +128,9 @@ div[style*="justifyContent: \"space-between\""] {
 
 @media (max-width: 768px) {
     #passport .grid2 {
-        max-width: 350px !important;   /* На телефонах блок станет еще чуть уже и аккуратнее */
+        max-width: 355px !important;   /* На телефонах блок станет еще чуть уже и аккуратнее */
         width: 100% !important;
-        padding: 15px 10px !important;
+        padding: 15px 12px !important;
     }
 }
 
