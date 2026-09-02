@@ -151,9 +151,8 @@ div[style*="justifyContent: \"space-between\""] {
     #passport .grid2 > div:first-child span {
         font-size: 20px !important; /* Делает имя аккуратнее на узком экране */
     }
-}
 
-    /* Уменьшаем ширину верхнего блока с именем Vladimir на телефонах */
+  /* Уменьшаем ширину верхнего блока с именем Vladimir на телефонах */
     #passport .grid2 > div:first-child {
         max-width: 100% !important;
         width: 100% !important;
