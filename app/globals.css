@@ -201,16 +201,48 @@ button[class*="search"] {
     min-width: 90% !important;
 }
 
-/* Возвращаем карточки в один ряд и делаем их квадратными */
+/* Возвращаем карточки в один ряд и фиксируем форму */
 div[class*="cards"] {
     display: flex !important;
-    flex-direction: row !important; /* Принудительно в один ряд */
+    flex-direction: row !important; 
     justify-content: center !important;
-    flex-wrap: nowrap !important; /* Запрещаем перенос на другую строку */
-    gap: 10px !important; /* Оптимальный отступ для мобильных */
+    flex-wrap: nowrap !important; 
+    gap: 8px !important; 
     width: 100% !important;
-    max-width: 400px !important;
+    max-width: 380px !important;
     margin: 0 auto !important;
+}
+
+div[class*="cards"] > div {
+    aspect-ratio: 1 / 1 !important; /* Делает карточки строго квадратными */
+    flex: 1 1 0% !important; 
+    max-width: 100px !important; 
+    min-width: 75px !important; 
+    
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 6px !important; /* Уменьшаем внутренние отступы, чтобы тексту было просторнее */
+    box-sizing: border-box !important;
+}
+
+/* Уменьшаем шрифт цифр (2850, CE, 2.4k+) */
+div[class*="cards"] > div h3,
+div[class*="cards"] > div p:first-child,
+div[class*="cards"] > div span:first-child {
+    font-size: 16px !important; /* Делает цифры аккуратнее */
+    font-weight: bold !important;
+    margin-bottom: 2px !important;
+}
+
+/* Уменьшаем шрифт подписей (Mythic+ Rating, Raid Progress...) */
+div[class*="cards"] > div p,
+div[class*="cards"] > div span {
+    font-size: 11px !important; /* Делает подписи мелкими */
+    line-height: 1.2 !important;
+    opacity: 0.8;
 }
 
 div[class*="cards"] > div {
