@@ -190,6 +190,36 @@ div[style*="justifyContent: \"space-between\""] {
     text-align: center !important;
 }
 
+/* Финальное решение по точным классам */
+.jsx-f4888bab762c3c0.grid2 > div:not(:first-child) > div > div > div,
+.jsx-f4888bab762c3c0.grid2 button,
+.jsx-f4888bab762c3c0.grid2 [class*="verified"] {
+    display: flex !important;
+    flex-direction: column !important; /* Перенос VERIFIED на вторую строку */
+    align-items: center !important;    /* Центрирование текста по горизонтали */
+    justify-content: center !important;
+    text-align: center !important;
+    gap: 4px !important;               /* Расстояние между строками */
+    height: auto !important;           
+    padding: 8px 6px !important;
+}
+
+/* Принудительно разрываем строку для внутренних элементов */
+.jsx-f4888bab762c3c0.grid2 > div:not(:first-child) > div > div > div *,
+.jsx-f4888bab762c3c0.grid2 button * {
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+}
+
+/* 7. Ограничиваем ширину кнопки поиска */
+button[class*="search"] {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
 /* 7. Ограничиваем ширину кнопки поиска */
 button[class*="search"] {
     max-width: 100% !important;
