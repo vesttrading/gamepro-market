@@ -207,28 +207,6 @@ div[style*="justifyContent: \"space-between\""] {
     }
 }
 
-/* 2. Карточка Владимира (сверху в полную длину) */
-#passport .grid2 > div:first-child {
-    position: relative !important;
-    width: 100% !important;
-    max-width: 600px !important;
-    padding: 4px 12px !important;
-    margin: 0 auto 30px auto !important; /* Расстояние до ачивок */
-    border: none !important; /* Защита от лишних линий */
-    
-    /* --- НАШИ ИСПРАВЛЕНИЯ РАЗМЕРОВ НАЧИНАЮТСЯ ТУТ --- */
-    font-size: 16px !important; /* Уменьшаем имя Vladimir и весь текст в карточке */
-}
-
-/* Уменьшаем иконку молнии и текст VERIFIED рядом с ней */
-#passport .grid2 > div:first-child [class*="verified"],
-#passport .grid2 > div:first-child span,
-#passport .grid2 > div:first-child i {
-    font-size: 11px !important; /* Уменьшаем размер и молнии, и текста до 11px */
-    width: auto !important;
-    height: auto !important;
-}
-
 /* 3. Блок ачивок (встает ровно под Владимира) */
 #passport .grid2 > div:not(:first-child) {
     display: block !important;
