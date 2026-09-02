@@ -126,7 +126,7 @@ div[style*="justifyContent: \"space-between\""] {
     outline: none !important;
 }
 
-[02.09.2026 16:35] Vladimir: /* 5. Делаем плашки ачивок тоньше и принудительно переносим текст */
+ /* 5. Делаем плашки ачивок тоньше и принудительно переносим текст */
 #passport .grid2 > div:not(:first-child) > div > div div,
 #passport .grid2 > div:not(:first-child) > div > div > div,
 #passport .grid2 > div:not(:first-child) > div div button,
