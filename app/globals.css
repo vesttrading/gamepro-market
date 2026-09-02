@@ -200,7 +200,8 @@ div[style*="justifyContent: \"space-between\""] {
     }
 }
 
- #passport .grid2 {
+ /* Перестраиваем главный контейнер паспорта в один вертикальный столбец */
+#passport > div {
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
@@ -209,18 +210,16 @@ div[style*="justifyContent: \"space-between\""] {
     gap: 25px !important;
 }
 
-/* Находим общий блок, в котором лежат все три карточки характеристик */
-#passport .grid2 > div:nth-child(2),
-#passport div[class*="stats"] {
+/* Находим блок с квадратами (2850, CE, 2.4k+) и принудительно разворачиваем в один ряд */
+#passport div[class*="stats"], 
+#passport [class*="stats"] > div {
     display: flex !important;
-    flex-direction: row !important; /* Выстраиваем строго в горизонтальный ряд */
-    flex-wrap: wrap !important;
-    justify-content: flex-start !important; /* Прижимаем влево под Владимира */
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
     align-items: center !important;
-    gap: 15px !important; /* Расстояние между карточками */
+    gap: 12px !important;
     width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
 }
    
 div[class*="stats"] > div {
