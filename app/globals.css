@@ -113,7 +113,7 @@ div[style*="justifyContent: \"space-between\""] {
 #passport .grid2 {
     display: flex !important;
     flex-direction: column !important;
-    max-width: 820px !important; /* Уменьшили общую ширину блока */
+    max-width: 720px !important; /* Уменьшили общую ширину блока */
     width: 100% !important;
     height: auto !important; /* Убираем фиксированную высоту */
     min-height: auto !important; 
