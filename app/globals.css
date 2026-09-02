@@ -125,46 +125,85 @@ div[style*="justifyContent: \"space-between\""] {
 }
 
 @media (max-width: 768px) {
-    /* 1. Главный контейнер всего паспорта */
+    /* 1. ГЛАВНЫЙ БЛОК (Родительский контейнер) */
+    /* Принудительно сжимаем весь паспорт до ширины экрана телефона */
     #passport, 
     #passport .grid2,
     div[class*="gamepro-achievement-passport"] {
         max-width: 100% !important;
-        width: calc(100% - 24px) !important; /* Делает небольшие отступы от краев экрана телефона */
+        width: calc(100% - 24px) !important; /* Отступы по 12px слева и справа от экрана */
         margin: 10px auto !important;
-        padding: 12px !important; /* Уменьшаем внутренние поля всей карточки */
+        padding: 16px 12px !important; /* Уменьшаем внутренние поля главного темного блока */
         box-sizing: border-box !important;
+        overflow: hidden !important; /* Запрещаем контенту вылезать наружу */
     }
 
-    /* 2. Блок Владимира (имя, аватарка, специализация) */
+    /* 2. БЛОК ВЛАДИМИРА (Верхняя часть карточки) */
+    /* Сжимаем верхнюю плашку с именем и аватаркой */
     #passport .grid2 > div:first-child,
     div[class*="gamepro-achievement-passport"] > div:first-child {
         max-width: 100% !important;
         width: 100% !important;
-        margin: 0 auto 15px auto !important;
-        padding: 0 !important; /* Убираем лишние внутренние отступы вокруг текста Владимира */
-    }
-
-    /* 3. Уменьшаем размер текста заголовка Владимир */
-    #passport h1, 
-    #passport h2,
-    #passport .grid2 > div:first-child span {
-        font-size: 20px !important; /* Делает имя аккуратнее на узком экране */
-    }
-
-  /* Уменьшаем ширину верхнего блока с именем Vladimir на телефонах */
-    #passport .grid2 > div:first-child {
-        max-width: 100% !important;
-        width: 100% !important;
-        padding: 10px !important; /* Уменьшаем внутренние отступы, чтобы блок стал компактнее */
+        padding: 0 !important;
+        margin-bottom: 15px !important;
         box-sizing: border-box !important;
     }
 
-    /* Немного уменьшаем аватарку, чтобы она не была гигантской */
-    #passport .grid2 > div:first-child img,
-    #passport .grid2 > div:first-child [class*="avatar"] {
-        width: 60px !important;
-        height: 60px !important;
+    /* Делаем имя "Владимир" чуть компактнее для мобильных */
+    #passport .grid2 > div:first-child h1,
+    #passport .grid2 > div:first-child h2,
+    #passport .grid2 > div:first-child span {
+        font-size: 20px !important;
+    }
+
+    /* 3. ТРИ НИЖНИЕ КАРТОЧКИ (2850, CE, 2.4k+) */
+    /* Выстраиваем их строго в один ряд внутри сжатого главного блока */
+    div[class*="stats"] {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center !important;
+        flex-wrap: nowrap !important;
+        gap: 8px !important;
+        width: 100% !important;
+        margin: 0 auto !important;
+    }
+
+    /* Делаем сами карточки аккуратными узкими квадратами */
+    div[class*="stats"] > div {
+        width: 85px !important;
+        max-width: 85px !important;
+        min-width: 85px !important;
+        
+        height: 85px !important;
+        max-height: 85px !important;
+        min-height: 85px !important;
+        aspect-ratio: 1 / 1 !important; 
+        
+        padding: 4px 2px !important; 
+        box-sizing: border-box !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    /* Уменьшаем шрифты внутри квадратов, чтобы текст не распирал их */
+    div[class*="stats"] > div h3,
+    div[class*="stats"] > div p:first-child {
+        font-size: 14px !important;
+        font-weight: 700 !important;
+        line-height: 1.1 !important;
+        margin: 0 0 2px 0 !important;
+    }
+
+    div[class*="stats"] > div p,
+    div[class*="stats"] > div span {
+        font-size: 9px !important;
+        line-height: 1.1 !important;
+        margin: 0 !important;
+        white-space: normal !important;
     }
 }
 
