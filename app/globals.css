@@ -131,7 +131,8 @@ div[style*="justifyContent: \"space-between\""] {
         max-width: 350px !important;   /* На телефонах блок станет еще чуть уже и аккуратнее */
         width: 100% !important;
         padding: 15px 10px !important;
-  }
+    }
+}
 
 /* 3. Блок ачивок (встает ровно под Владимира) */
 #passport .grid2 > div:not(:first-child) {
