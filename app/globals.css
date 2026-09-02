@@ -126,14 +126,6 @@ div[style*="justifyContent: \"space-between\""] {
     outline: none !important;
 }
 
-#passport .grid2 > div:first-child {
-    align-self: flex-start !important;
-    display: flex !important;
-    align-items: center !important;
-    text-align: left !important;
-    gap: 15px;
-}
-
 @media (max-width: 768px) {
     #passport .grid2 {
         max-width: 350px !important;   /* На телефонах блок станет еще чуть уже и аккуратнее */
