@@ -502,7 +502,7 @@ section#guilds div[class*="jsx-"] {
     }
 } 
 
-/* Выстраиваем левую панель и карточки друг под другом */
+/* Главный контейнер — всё строго друг под другом по центру */
 #passport .grid2 {
     display: flex !important;
     flex-direction: column !important;
@@ -511,14 +511,36 @@ section#guilds div[class*="jsx-"] {
     width: 100% !important;
 }
 
-/* Блок с карточками: выстраиваем их строго в одну строку */
-#passport .grid2 > div:last-child {
+/* 1. ВЕРХНИЙ РЯД С ЦИФРАМИ (2850, CE, 2.4k+) в одну строку */
+#passport .grid2 > div:has(span) {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    gap: 24px !important;
+    width: 100% !important;
+}
+
+/* 2. НИЖНИЙ РЯД С КАРТОЧКАМИ (KSM, 2850 M+, Cutting Edge, AOTC) в одну строку */
+#passport .grid2 > div:has(> div > img) {
     display: flex !important;
     flex-direction: row !important;
     justify-content: center !important;
     flex-wrap: nowrap !important;
     gap: 12px !important;
     width: 100% !important;
+}
+
+/* Сами нижние карточки — делаем их одинаковыми и аккуратными */
+#passport .grid2 > div:has(> div > img) > div {
+    flex: 1 1 0px !important;
+    max-width: 160px !important;
+    min-width: 110px !important;
+    padding: 12px !important;
+}
+
+/* Возвращаем кнопку VERIFIED на место, если она съезжала */
+#passport .grid2 > button {
+    margin: 0 auto !important;
 }
 
 /* Сами карточки внутри строки */
