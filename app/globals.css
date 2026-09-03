@@ -200,7 +200,7 @@ div[style*="justifyContent: \"space-between\""] {
     padding: 4px 2px !important; 
     box-sizing: border-box !important;
     display: flex !important;
-    flex-direction: column !important;
+    flex-direction: row !important;
     justify-content: center !important;
     align-items: center !important;
     text-align: center !important;
@@ -222,102 +222,7 @@ div[class*="stats"] > div span {
     line-height: 1.1 !important;
     margin: 0 !important;
     white-space: normal !important;
-}
-
-section#raiderio div.jsx-f4888bab762c3c0,
-section#raiderio > div {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 12px !important;            
-    width: 100% !important;
-    max-width: 800px !important; 
-    margin: 0 auto !important;    
-}
-
-section#raiderio div.jsx-f4888bab762c3c0 > div:first-child,
-section#raiderio > div > div:first-child {
-    width: 100% !important;
-    display: flex !important;
-    flex-direction: column !important; 
-    align-items: center !important;
-    text-align: center !important;
-    gap: 6px !important;
-    margin-bottom: 4px !important;     
-}
-
-section#raiderio form,
-section#raiderio div:has(> input[placeholder*="Имя"]),
-section#raiderio div.jsx-f4888bab762c3c0 form {
-    display: grid !important;
-    grid-template-columns: 2fr 2fr 1fr !important; 
-    gap: 12px !important;
-    width: 100% !important;
-}
-
-section#raiderio input,
-section#raiderio select {
-    width: 100% !important;
-    margin-bottom: 0 !important;
-}
-
-section#raiderio form > div:last-child,
-section#raiderio form p {
-    grid-column: 1 / -1 !important;
-}
-
-section#raiderio button {
-    grid-column: 1 / -1 !important; 
-    display: block !important;       
-    width: auto !important;          
-    max-width: 280px !important;     
-    margin: 12px auto 0 !important;  
-    padding: 12px 32px !important;   
-}
-
-section#raiderio p:last-of-type,
-section#raiderio span:last-of-type,
-section#raiderio .source-text {
-    margin-top: 4px !important;
-    opacity: 0.7;
-    text-align: center !important;
-}
-
-section#raiderio div:has(> button + button),
-section#raiderio div:has(> button + a),
-section#raiderio div:has(> a + button) {
-    display: flex !important;
-    flex-direction: row !important;     
-    justify-content: center !important; 
-    align-items: center !important;
-    gap: 16px !important;               
-    width: 100% !important;
-    margin: 20px auto 0 !important;
-}
-
-section#raiderio div:has(> button + button) button,
-section#raiderio div:has(> button + a) button,
-section#raiderio div:has(> button + a) a {
-    width: auto !important;
-    min-width: 170px !important; 
-    margin: 0 !important;        
-}
-
-section#raiderio {
-    margin-top: 50px !important;
-}
-@media (max-width: 768px) {
-    section#raiderio form,
-    section#raiderio div:has(> input[placeholder*="Имя"]) {
-        grid-template-columns: 1fr !important;
-    }
-    section#raiderio button {
-        max-width: 100% !important; 
-    }
-    section#raiderio div:has(> button + button),
-    section#raiderio div:has(> button + a) {
-        flex-direction: column !important;
-        gap: 10px !important;
-    }
+   }
 }
 
 /* Выстраиваем блоки «01 Источник», «02 Проверка» и «03» в один ряд */
