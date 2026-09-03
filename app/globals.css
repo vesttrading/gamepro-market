@@ -188,7 +188,7 @@ div[style*="justifyContent: \"space-between\""] {
     white-space: normal !important;
     margin-bottom: 5px !important;
   }
-}
+
     div[class*="stats"] > div {
     width: 85px !important;
     max-width: 85px !important;
