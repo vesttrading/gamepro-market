@@ -223,7 +223,6 @@ div[class*="stats"] > div span {
     margin: 0 !important;
     white-space: normal !important;
    }
-}
 
 /* Выстраиваем блоки «01 Источник», «02 Проверка» и «03» в один ряд */
 main section:has(h2) + div,
