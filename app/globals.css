@@ -502,26 +502,28 @@ section#guilds div[class*="jsx-"] {
     }
 } 
 
-/* Главный контейнер — всё строго друг под другом по центру */
+/* Главный контейнер — выстраиваем все крупные блоки сверху вниз */
 #passport .grid2 {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
-    gap: 20px !important;
-    width: 100% !important;
-}
-
-/* 1. ВЕРХНИЙ РЯД С ЦИФРАМИ (2850, CE, 2.4k+) в одну строку */
-#passport .grid2 > div:has(span) {
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: center !important;
     gap: 24px !important;
     width: 100% !important;
 }
 
-/* 2. НИЖНИЙ РЯД С КАРТОЧКАМИ (KSM, 2850 M+, Cutting Edge, AOTC) в одну строку */
-#passport .grid2 > div:has(> div > img) {
+/* Первый блок внутри — это аватарка и ник Vladimir (оставляем как есть) */
+
+/* Второй блок внутри — это цифры (2850, CE, 2.4k+). Выстраиваем их в ОДНУ СТРОКУ */
+#passport .grid2 > div:nth-child(2) {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    gap: 30px !important;
+    width: 100% !important;
+}
+
+/* Третий блок внутри — это карточки ачивок (KSM, AOTC...). Выстраиваем их ниже в ОДНУ СТРОКУ */
+#passport .grid2 > div:nth-child(3) {
     display: flex !important;
     flex-direction: row !important;
     justify-content: center !important;
@@ -530,23 +532,10 @@ section#guilds div[class*="jsx-"] {
     width: 100% !important;
 }
 
-/* Сами нижние карточки — делаем их одинаковыми и аккуратными */
-#passport .grid2 > div:has(> div > img) > div {
+/* Сами карточки ачивок внутри строки делаем одинаковыми и аккуратными */
+#passport .grid2 > div:nth-child(3) > div {
     flex: 1 1 0px !important;
     max-width: 160px !important;
     min-width: 110px !important;
-    padding: 12px !important;
-}
-
-/* Возвращаем кнопку VERIFIED на место, если она съезжала */
-#passport .grid2 > button {
-    margin: 0 auto !important;
-}
-
-/* Сами карточки внутри строки */
-#passport .grid2 > div:last-child > div {
-    flex: 1 1 0px !important;
-    max-width: 200px !important;
-    min-width: 120px !important;
     padding: 12px !important;
 }
