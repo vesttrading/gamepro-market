@@ -123,31 +123,36 @@ div[style*="justifyContent: \"space-between\""] {
     position: relative !important;
 }
 
- /* 5. Делаем плашки ачивок тоньше и принудительно переносим текст */
-#passport .grid2 > div:not(:first-child) > div > div div,
-#passport .grid2 > div:not(:first-child) > div > div > div,
-#passport .grid2 > div:not(:first-child) > div div button,
-#passport .grid2 > div:not(:first-child) > div div span,
-.jsx-f4888bab762c3c0.grid2 button {
-    max-width: 180px !important;
+/* 2. Блок с ТРЕМЯ цифрами (2850, CE, 2.4k+) — строго в ОДНУ СТРОКУ */
+#passport .grid2 > div:nth-child(2) {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    gap: 30px !important;
     width: 100% !important;
-    padding: 6px 10px !important; 
-    font-size: 13px !important;   
+    margin-bottom: 15px !important;
 }
 
-/* Находим блок с тремя карточками и выстраиваем их в один горизонтальный ряд */
+/* 3. Блок с НИЖНИМИ карточками ачивок — строго в ОДНУ СТРОКУ */
 #passport .grid2 > div:last-child {
     display: flex !important;
-    flex-direction: row !important; /* Выстраиваем строго в горизонтальный ряд */
-    flex-wrap: nowrap !important;   /* Запрещаем перенос строк */
-    justify-content: center !important; /* Центрируем карточки под плашкой VERIFIED */
-    align-items: center !important;
-    gap: 15px !important;           /* Расстояние между карточками */
+    flex-direction: row !important;
+    justify-content: center !important;
+    flex-wrap: nowrap !important;
+    gap: 10px !important;
     width: 100% !important;
-    height: auto !important;
-    margin-top: -35px !important;   /* Ваше смещение для поднятия блока */
+    margin-top: -35px !important;
 }
 
+/* 4. Делаем нижние карточки аккуратными и одинаковыми */
+#passport .grid2 > div:last-child > div {
+    flex: 1 1 0px !important;
+    max-width: 130px !important;
+    min-width: 95px !important;
+    padding: 8px !important;
+}
+
+/* 5. Возвращаем правильные стили для блока Vladimir (div:first-child) */
 #passport .grid2 > div:first-child {
     width: 100% !important;
     display: flex !important;
@@ -156,14 +161,14 @@ div[style*="justifyContent: \"space-between\""] {
     gap: 20px !important;
 }
 
-/* Контейнер для всего текста справа от аватарки */
+/* Контейнер для текста справа от аватарки */
 #passport .grid2 > div:first-child > div:last-child {
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
     text-align: left !important;
-    gap: 10px !important; /* Увеличили зазор между элементами */
-    height: auto !important; /* Разрешаем блоку растягиваться вниз */
+    gap: 10px !important;
+    height: auto !important;
 }
 
 /* Прижимаем имя Vladimir вплотную вправо к молнии */
@@ -174,26 +179,16 @@ div[style*="justifyContent: \"space-between\""] {
     gap: 8px !important;
 }
 
-/* Принудительный перенос длинной строки Shaman... World of Warcraft */
+/* Перенос длинной строки Shaman... World of Warcraft */
 #passport .grid2 > div:first-child > div:last-child p,
 #passport .grid2 > div:first-child > div:last-child span,
 #passport .grid2 > div:first-child > div:last-child div:nth-child(2) {
     display: block !important;
     width: 100% !important;
     white-space: normal !important;
-    margin-bottom: 5px !important; /* Отталкивает плашку VERIFIED ниже */
+    margin-bottom: 5px !important;
+  }
 }
-
-@media (max-width: 768px) {
-    #passport .grid2 > div:first-child {
-        justify-content: center !important;
-    }
-    #passport .grid2 > div:first-child > div:last-child {
-        align-items: center !important;
-        text-align: center !important;
-    }
-}
-
     div[class*="stats"] > div {
     width: 85px !important;
     max-width: 85px !important;
@@ -502,40 +497,3 @@ section#guilds div[class*="jsx-"] {
     }
 } 
 
-/* Главный контейнер — выстраиваем все крупные блоки сверху вниз */
-#passport .grid2 {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    gap: 24px !important;
-    width: 100% !important;
-}
-
-/* Первый блок внутри — это аватарка и ник Vladimir (оставляем как есть) */
-
-/* Второй блок внутри — это цифры (2850, CE, 2.4k+). Выстраиваем их в ОДНУ СТРОКУ */
-#passport .grid2 > div:nth-child(2) {
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: center !important;
-    gap: 30px !important;
-    width: 100% !important;
-}
-
-/* Третий блок внутри — это карточки ачивок (KSM, AOTC...). Выстраиваем их ниже в ОДНУ СТРОКУ */
-#passport .grid2 > div:nth-child(3) {
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: center !important;
-    flex-wrap: nowrap !important;
-    gap: 12px !important;
-    width: 100% !important;
-}
-
-/* Сами карточки ачивок внутри строки делаем одинаковыми и аккуратными */
-#passport .grid2 > div:nth-child(3) > div {
-    flex: 1 1 0px !important;
-    max-width: 160px !important;
-    min-width: 110px !important;
-    padding: 12px !important;
-}
