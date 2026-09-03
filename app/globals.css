@@ -502,18 +502,29 @@ section#guilds div[class*="jsx-"] {
     }
 } 
 
-/* Пробиваемся напрямую к сетке ачивок через точную структуру */
-/* Исправление сетки карточек */
+/* Выстраиваем левую панель и карточки друг под другом */
 #passport .grid2 {
-    display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 20px !important;
+    width: 100% !important;
+}
+
+/* Блок с карточками: выстраиваем их строго в одну строку */
+#passport .grid2 > div:last-child {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    flex-wrap: nowrap !important;
     gap: 12px !important;
     width: 100% !important;
 }
 
-/* Ограничение размеров самих карточек, чтобы они не были огромными */
-#passport .grid2 > div {
-    max-width: 100% !important;
-    width: 100% !important;
+/* Сами карточки внутри строки */
+#passport .grid2 > div:last-child > div {
+    flex: 1 1 0px !important;
+    max-width: 200px !important;
+    min-width: 120px !important;
     padding: 12px !important;
 }
