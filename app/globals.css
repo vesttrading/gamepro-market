@@ -503,18 +503,16 @@ section#guilds div[class*="jsx-"] {
 } 
 
 /* Пробиваемся напрямую к сетке ачивок через точную структуру div */
-#passport .grid2 > div:not(:first-child) > div > div,
-/* Пробиваемся напрямую к сетке */
-#passport .grid2 > div:not(:first-child) {
+#passport .grid2 {
     display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 8px !important; 
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
+    gap: 12px !important;
     width: 100% !important;
 }
 
-/* Принудительно уменьшаем как надо */
-#passport .grid2 > div:not(:first-child) {
-    max-width: 195px !important;
+/* Ограничение размеров самих карточек, чтобы они не были огромными */
+#passport .grid2 > div {
+    max-width: 100% !important;
     width: 100% !important;
-    padding: 10px !important;
+    padding: 12px !important;
 }
