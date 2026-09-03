@@ -502,7 +502,8 @@ section#guilds div[class*="jsx-"] {
     }
 } 
 
-/* Пробиваемся напрямую к сетке ачивок через точную структуру div */
+/* Пробиваемся напрямую к сетке ачивок через точную структуру */
+/* Исправление сетки карточек */
 #passport .grid2 {
     display: grid !important;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
