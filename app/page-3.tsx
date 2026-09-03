@@ -239,7 +239,6 @@ export default function HomePage() {
         <h1 style={{fontSize:"clamp(30px,5vw,55px)",lineHeight:.98,margin:"22px 0 18px"}}>{t.h1}<br/><span style={{background:"linear-gradient(90deg,#fff,#e832ff,#16ddff)",WebkitBackgroundClip:"text",color:"transparent"}}>{t.h2}</span></h1>
         <p style={{maxWidth:690,margin:"auto",color:"#9da6c0",fontSize:18,lineHeight:1.65}}>{t.intro}</p>
         <div style={{marginTop:28,display:"flex",justifyContent:"center",gap:12,flexWrap:"wrap"}}><button style={btn} onClick={()=>{}}><span>🎮</span> {t.login}</button></div><div className="achievementRow" style={{marginTop:22,display:"flex",justifyContent:"center",gap:10,flexWrap:"wrap"}}>{["KSM","AOTC","CE","2400+ PvP"].map(x=><span key={x} className="achievementBadge">✓ {x} <b>VERIFIED</b></span>)}</div>
-        </div>
       </section>
 
       <section id="passport" style={{maxWidth:1160,width:"92%",margin:"auto",padding:"80px 0 0px"}}>
@@ -303,40 +302,15 @@ export default function HomePage() {
       </section>
 
       <section id="reviews" style={{maxWidth:1160,width:"92%",margin:"auto",padding:"60px 0"}}><h2 style={{textAlign:"center",fontSize:36}}>{t.reviews}</h2><p style={{textAlign:"center",color:"#9da6c0"}}>GamePro — доверие, подтверждённое игроками.</p><div className="reviewGrid" style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:16,marginTop:25}}>{[["⭐ 4.9/5",t.gameproRating,"★★★★★"],["💬",t.playerReviews,"«Удобно показать прогресс и быстро найти подходящую команду.»"],["✓ VERIFIED",t.verifiedReviews,"«Наконец понятно, какие достижения действительно подтверждены.»"]].map(x=><div key={x[1]} style={card}><div style={{fontSize:25,fontWeight:900}}>{x[0]}</div><h3>{x[1]}</h3><p style={{color:"#9da6c0",lineHeight:1.6,marginBottom:0}}>{x[2]}</p></div>)}</div></section>
- </section>
+
 <section id="guilds" style={{maxWidth:1160,width:"92%",margin:"auto",padding:"40px 0 80px"}}><div style={{...card,textAlign:"center",borderColor:"#17bcb2",background:"radial-gradient(circle at 50% 0,#0c3335,transparent 60%),linear-gradient(145deg,#10162b,#080d1b)"}}><div style={{fontSize:35}}>👥</div><h2 style={{fontSize:34}}>{t.guild}</h2><p style={{maxWidth:700,margin:"0 auto 24px",color:"#9da6c0",lineHeight:1.7}}>{t.guildText}</p><a href="#players" style={btn}>{t.open}</a></div></section>
 
       <section style={{maxWidth:760,width:"92%",margin:"auto",padding:"0 0 80px",textAlign:"center"}}><h2>{t.shareTitle}</h2><p style={{color:"#9da6c0"}}>{t.passportLink}: Vladimir · 2850 M+ · CE · VERIFIED</p><button onClick={sharePassport} style={btn}>🔗 {copied ? t.copied : t.share}</button></section>
-      </section>
-   </section>
-   </main>
- </div>
-  
-   <footer style={{borderTop:"1px solid #171c31",padding:28,color:"#737c98"}}><div className="footer" style={{maxWidth:1160,width:"92%",margin:"auto",display:"flex",justifyContent:"space-between",gap:15}}><span>© 2026 GamePro Market</span><span>Achievement Passport · WoW MVP · Dota 2 · CS2 · PoE2</span></div></footer>
+    </main>
+
+    <footer style={{borderTop:"1px solid #171c31",padding:28,color:"#737c98"}}><div className="footer" style={{maxWidth:1160,width:"92%",margin:"auto",display:"flex",justifyContent:"space-between",gap:15}}><span>© 2026 GamePro Market</span><span>Achievement Passport · WoW MVP · Dota 2 · CS2 · PoE2</span></div></footer>
 
     <style jsx>{`\n      a,button{font-family:inherit}      .navlinks a:hover{color:#58eee5!important}.navlinks a:active,.navlinks a:focus-visible{color:#58eee5!important;text-shadow:0 0 14px #19e0d5}.achievementBadge{display:inline-flex;align-items:center;gap:6px;padding:9px 12px;border:1px solid #1c8f82;border-radius:999px;background:#0a1d24;color:#52eee3;font-size:12px;font-weight:900;box-shadow:0 0 16px #16d8cf18}.achievementBadge b{font-size:9px;color:#8afff7}.achievementBadge:active{box-shadow:0 0 24px #16d8cfaa,0 0 50px #16d8cf55;transform:translateY(1px)}button:active,a:active{box-shadow:0 0 28px #16d8cfaa,0 0 60px #16d8cf44!important;transform:translateY(1px)}button:focus-visible,select:focus-visible,a:focus-visible{outline:2px solid #19e0d5;outline-offset:3px;box-shadow:0 0 24px #16d8cf88}.reviewGrid{}
 .navlinks a{text-decoration:none;transition:color .2s}.navlinks a:hover{color:#58eee5!important}.sectionHead,.gameHeader{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:25px}.verifiedPill,.status{display:inline-flex;padding:7px 10px;border-radius:999px;background:#0c302f;color:#52eee3;border:1px solid #168f88;font-size:11px;font-weight:900}.futureStatus{display:inline-flex;padding:6px 9px;border-radius:999px;background:#171d31;color:#8994af;font-size:10px;font-weight:800}.greenTag{background:#0d2929;padding:7px;border-radius:7px;color:#45e0a1;font-size:11px;border:1px solid #174f49}\n      @media(max-width:900px){.navlinks{display:none!important}.grid2,.cards,.steps,.gameGrid,.reviewGrid{grid-template-columns:1fr!important}.gameGrid>div{min-height:0}.sectionHead,.gameHeader{align-items:flex-start;flex-direction:column}.sectionHead button{width:100%}}\n      @media(max-width:700px){.rioForm{grid-template-columns:1fr!important}.rioForm button{width:100%}}
- @media(max-width:560px){
-  .nav{min-height:68px}
-  .nav select{margin-left:auto}
-  .stats{
-    grid-template-columns:repeat(3,1fr)!important;
-    gap:8px!important;
-  }
-  .stats > div{
-    min-width:0!important;
-    padding:12px!important;
-  }
-  .stats > div b{
-    font-size:18px!important;
-  }
-  .stats > div small{
-    font-size:10px!important;
-  }
-  .badges{grid-template-columns:1fr!important}
-  .searchbar{flex-direction:column}
-  .searchbar button{width:100%}
-  .footer{display:block!important;text-align:center}
-  .footer span{display:block;margin:7px 0}
-  .hero{}
+      @media(max-width:560px){.nav{min-height:68px}.nav select{margin-left:auto}.stats{grid-template-columns:1fr!important}.badges{grid-template-columns:1fr!important}.searchbar{flex-direction:column}.searchbar button{width:100%}.footer{display:block!important;text-align:center}.footer span{display:block;margin:7px 0}.hero{} }\n    `}</style>\n  </div>;
 }
