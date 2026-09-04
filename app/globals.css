@@ -160,6 +160,7 @@ div[style*="justifyContent: \"space-between\""] {
 #passport .grid2 > div:first-child {
     width: 100% !important;
     display: flex !important;
+    flex-direction: column !important;
     align-items: center !important;
     justify-content: flex-start !important;
     gap: 20px !important;
