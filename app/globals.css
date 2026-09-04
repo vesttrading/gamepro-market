@@ -153,6 +153,7 @@ div[style*="justifyContent: \"space-between\""] {
     max-width: 130px !important;
     min-width: 95px !important;
     padding: 8px !important;
+    box-sizing: border-box !important;
 }
 
 /* 5. Возвращаем правильные стили для блока Vladimir (div:first-child) */
@@ -391,7 +392,7 @@ section#guilds div[class*="jsx-"] {
     main div[class*="passport"] div[class*="Grid"],
     main div[class*="Passport"] div[class*="Grid"] {
         display: flex !important;
-        flex-direction: column !important;
+        flex-direction: row !important;
         width: 100% !important;
         gap: 12px !important;
     }
