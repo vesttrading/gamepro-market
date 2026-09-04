@@ -51,6 +51,13 @@ section#raiderio button {
   overflow: visible !important;
 }
 
+#passport .grid2 {
+  width: 100% !important;
+  max-width: 1000px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
 /* Заголовок Passport */
 
 #passport .sectionHead {
