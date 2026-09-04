@@ -112,16 +112,14 @@ div[style*="justifyContent: \"space-between\""] {
 
 /* 1. Настраиваем и центрируем главный контейнер */
 #passport .grid2 {
-    display: flex !important;
-    flex-direction: column !important; /* Строго выстраиваем всё сверху вниз */
-    align-items: center !important;
-    text-align: center !important;
-    max-width: 450px !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 20px !important;
     width: 100% !important;
-    height: auto !important;
+    max-width: 1160px !important;
     margin: 20px auto !important;
-    padding: 20px !important;
-    position: relative !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
 }
 
 /* 2. Блок с ТРЕМЯ цифрами (2850, CE, 2.4k+) — строго в ОДНУ СТРОКУ */
