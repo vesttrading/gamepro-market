@@ -113,7 +113,7 @@ div[style*="justifyContent: \"space-between\""] {
 /* 1. Настраиваем и центрируем главный контейнер */
 #passport .grid2 {
     display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
+    grid-template-columns: 1fr !important;
     gap: 20px !important;
     width: 100% !important;
     max-width: 1160px !important;
