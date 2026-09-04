@@ -194,17 +194,6 @@ div[style*="justifyContent: \"space-between\""] {
     margin-bottom: 5px !important;
   }
 
-/* Три карточки 2850 / CE / 2.4k+ — в один ряд */
-div[class*="stats"] {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    justify-content: center !important;
-    align-items: center !important;
-    gap: 12px !important;
-    width: 100% !important;
-}
-
     div[class*="stats"] > div {
     width: 85px !important;
     max-width: 85px !important;
