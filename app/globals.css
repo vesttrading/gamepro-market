@@ -132,6 +132,10 @@ div[style*="justifyContent: \"space-between\""] {
     margin-bottom: 15px !important;
 }
 
+#passport .stats {
+    grid-template-columns: repeat(3, 1fr) !important;
+}
+
 /* 3. Блок с НИЖНИМИ карточками ачивок — строго в ОДНУ СТРОКУ */
 #passport .grid2 > div:last-child {
     display: flex !important;
