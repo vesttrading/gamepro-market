@@ -112,16 +112,14 @@ div[style*="justifyContent: \"space-between\""] {
 
 /* 1. Настраиваем и центрируем главный контейнер */
 #passport .grid2 {
-    display: flex !important;
-    flex-direction: column !important; /* Строго выстраиваем всё сверху вниз */
-    align-items: center !important;
-    text-align: center !important;
-    max-width: 450px !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
     width: 100% !important;
-    height: auto !important;
+    max-width: 500px !important;
     margin: 20px auto !important;
-    padding: 20px !important;
-    position: relative !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
 }
 
 /* 2. Блок с ТРЕМЯ цифрами (2850, CE, 2.4k+) — строго в ОДНУ СТРОКУ */
@@ -132,6 +130,10 @@ div[style*="justifyContent: \"space-between\""] {
     gap: 30px !important;
     width: 100% !important;
     margin-bottom: 15px !important;
+}
+
+#passport .stats {
+    grid-template-columns: repeat(3, 1fr) !important;
 }
 
 /* 3. Блок с НИЖНИМИ карточками ачивок — строго в ОДНУ СТРОКУ */
@@ -151,12 +153,14 @@ div[style*="justifyContent: \"space-between\""] {
     max-width: 130px !important;
     min-width: 95px !important;
     padding: 8px !important;
+    box-sizing: border-box !important;
 }
 
 /* 5. Возвращаем правильные стили для блока Vladimir (div:first-child) */
 #passport .grid2 > div:first-child {
     width: 100% !important;
     display: flex !important;
+    flex-direction: column !important;
     align-items: center !important;
     justify-content: flex-start !important;
     gap: 20px !important;
@@ -389,7 +393,7 @@ section#guilds div[class*="jsx-"] {
     main div[class*="passport"] div[class*="Grid"],
     main div[class*="Passport"] div[class*="Grid"] {
         display: flex !important;
-        flex-direction: column !important;
+        flex-direction: row !important;
         width: 100% !important;
         gap: 12px !important;
     }
@@ -401,4 +405,3 @@ section#guilds div[class*="jsx-"] {
         max-width: 100% !important;
     }
 } 
-
