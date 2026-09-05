@@ -191,35 +191,25 @@ div[style*="justifyContent: \"space-between\""] {
     gap: 8px !important;
 }
 
-/*  ПОЗДНИЙ ВАРИАНТ: Исправление наложения блока "Найти игрока"
- /* Находим главный контейнер разметки и возвращаем относительное позиционирование */
+/* Отвязываем блок поиска от карточек и сдвигаем его СТРОГО под них */
 div[style*="justifyContent: \"space-between\""] {
-    position: relative !important;
     display: flex !important;
     flex-direction: column !important;
-    gap: 75px !important; /* Увеличенный отступ, чтобы блок не заезжал под паспорт */
-    width: 100% !important;
-}
-
-/* Стилизация и центрирование блока поиска "Найти игрока" */
-div[style*="justifyContent: \"space-between\""] > div:last-child {
-    position: relative !important;
-    width: 100% !important;
-    margin-top: 30px !important;
-    display: flex !important;
-    flex-direction: column !important;
+    justify-content: flex-start !important;
     align-items: center !important;
-    justify-content: center !important;
-}
-
-/* Корректировка полей ввода (placeholder "Holy Paladin") */
-div[style*="justifyContent: \"space-between\""] input[placeholder*="Holy Paladin"] {
     width: 100% !important;
-    max-width: 500px !important; /* Чтобы инпут не растягивался на весь экран */
-    margin: 0 auto !important;
+    position: relative !important;
 }
 
-/* Перенос длинной строки Shaman... World of Warcraft */
+/* Находим сам текстовый блок "Найти игрока" и даём ему отступ сверху от карточек KSM */
+div[style*="justifyContent: \"space-between\""] > div:last-child {
+    margin-top: 140px !important; /* Этот отступ вытолкнет текст и инпут из-под карточек KSM вниз */
+    width: 100% !important;
+    position: relative !important;
+    z-index: 10 !important;
+}
+
+/* 1. Перенос длинной строки Shaman... World of Warcraft */
 #passport .grid2 > div:first-child > div:last-child p,
 #passport .grid2 > div:first-child > div:last-child span,
 #passport .grid2 > div:first-child > div:last-child div:nth-child(2) {
