@@ -122,12 +122,18 @@ div[style*="justifyContent: \"space-between\""] {
     box-sizing: border-box !important;
 }
 
-/* 2. «Исправь расположение карточек 2850, CE и 2.4k+. Они должны находиться под Vladimir в один горизонтальный ряд. Не изменяй шапку и остальные блоки».
+/* 2. Блок с ТРЕМЯ цифрами (2850, CE, 2.4k+) — строго в ОДНУ СТРОКУ */
 #passport .grid2 > div:nth-child(2) {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 12px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    gap: 30px !important;
     width: 100% !important;
+    margin-bottom: 15px !important;
+}
+
+#passport .stats {
+    grid-template-columns: repeat(3, 1fr) !important;
 }
 
 /* 3. Блок с НИЖНИМИ карточками ачивок — строго в ОДНУ СТРОКУ */
