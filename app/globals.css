@@ -189,27 +189,29 @@ div[style*="justifyContent: \"space-between\""] {
     margin: 0 auto 22px !important;
 }
 
-/* Шаг 3. Выстраиваем карточки игроков в один горизонтальный ряд внутри уменьшенного блока */
+/* 3. КАРТОЧКИ ИГРОКОВ — Сужаем только их и выстраиваем в горизонтальный ряд */
 #players .players {
     display: flex !important;
-    flex-direction: row !important; /* Строго горизонтальная линия */
-    justify-content: center !important; /* Центрируем карточки */
+    flex-direction: row !important;  /* Выстраиваем карточки в одну линию */
+    justify-content: center !important; 
     align-items: stretch !important;
-    flex-wrap: nowrap !important; /* Запрещаем перенос в столбик */
-    gap: 12px !important; /* Отступы между карточками */
+    flex-wrap: nowrap !important;  /* Запрещаем перенос на вторую строку */
+    gap: 14px !important;          /* Отступ между карточками игроков */
+    max-width: 650px !important;   /* Намертво сжимаем область карточек до 650px */
     width: 100% !important;
-    margin-top: 25px !important;
+    margin: 25px auto 0 auto !important; /* Центрируем сам ряд карточек на странице */
 }
 
-/* Настройки для каждой карточки, чтобы внутри них исчезла пустота */
+/* Настройки для каждой карточки игрока, чтобы убрать пустоту внутри */
 #players .players > div,
 #players .players > a {
     display: flex !important;
-    flex-direction: column !important; /* Внутри карточки текст идет сверху вниз */
+    flex-direction: column !important; /* Текст внутри карточки идет сверху вниз */
     width: auto !important;
-    flex: 1 !important; /* Распределяем карточки поровну */
-    max-width: 100px !important; /* Ограничиваем ширину отдельной карточки */
+    flex: 1 !important;            /* Делим свободное пространство поровну */
+    max-width: 200px !important;   /* Ограничиваем максимальную ширину одной карточки */
     box-sizing: border-box !important;
+    padding: 12px !important;      /* Уменьшаем внутренние отступы для аккуратности */
 }
 
 /* 1. ПРОВЕРИТЬ ИГРОКА ЧЕРЕЗ RAIDER.IO */
