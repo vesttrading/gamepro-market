@@ -183,7 +183,7 @@ div[style*="justifyContent: \"space-between\""] {
 #players .searchbox {
     display: flex !important;
     gap: 10px !important;
-    max-width: 760px !important;
+    max-width: 5000px !important;
     margin: 0 auto 22px !important;
 }
 
