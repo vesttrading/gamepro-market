@@ -177,13 +177,14 @@ div[style*="justifyContent: \"space-between\""] {
 /* 1. НАЙТИ ИГРОКА */
 #players {
     width: 100% !important;
-    margin-top: 40px !important;
+    max-width: 500px !important;  /* Намертво уменьшаем весь блок до размера поиска */
+    margin: 40px auto 0 auto !important; /* Свойство auto принудительно ставит весь блок по центру экрана */
 }
 
 #players .searchbox {
     display: flex !important;
     gap: 10px !important;
-    max-width: 500px !important;
+    max-width: 100px !important;
     margin: 0 auto 22px !important;
 }
 
@@ -198,17 +199,13 @@ div[style*="justifyContent: \"space-between\""] {
 #players .players {
     display: flex !important;
     flex-direction: column !important;
-    align-items: center !important;
     gap: 16px !important;
-    margin: 25px auto 0 auto !important; /* Центрирует контейнер на странице */
-    max-width: 500px !important;        /* Намертво сжимает всю область карточек до размера поиска */
+    margin-top: 25px !important;
     width: 100% !important;
 }
-
-/* Принудительно заставляем каждую карточку внутри занять 100% от этой новой узкой ширины */
-#players .players * {
+#players .players > div,
+#players .players > a {
     width: 100% !important;
-    box-sizing: border-box !important;
 }
 
 /* 1. ПРОВЕРИТЬ ИГРОКА ЧЕРЕЗ RAIDER.IO */
