@@ -174,8 +174,7 @@ div[style*="justifyContent: \"space-between\""] {
     box-sizing: border-box !important;
 }
 
-/* 1. НАЙТИ ИГРОКА */
-   Намертво уменьшаем весь общий блок до аккуратных 800px */
+/* 1. НАЙТИ ИГРОКА  Намертво уменьшаем весь общий блок до аккуратных 800px */
 #players {
     width: 100% !important;
     max-width: 800px !important;  
@@ -184,7 +183,7 @@ div[style*="justifyContent: \"space-between\""] {
 
 /* Шаг 2. Саму строку поиска внутри делаем еще чуть компактнее */
 #players .searchbox {
-    display: flex !important;
+    display: flex !important; 
     gap: 10px !important;
     max-width: 500px !important; 
     margin: 0 auto 22px !important;
