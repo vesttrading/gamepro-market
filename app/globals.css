@@ -122,26 +122,25 @@ div[style*="justifyContent: \"space-between\""] {
     box-sizing: border-box !important;
 }
 
-/* Перебиваем вертикальный столбик и выстраиваем ТРИ карточки горизонтально */
-#passport .grid2 > div:first-child > div:last-child {
+/* Полный сброс вертикального контейнера в паспорте */
+#passport div[class*="grid"] > div:first-child > div:last-child {
     display: flex !important;
-    flex-direction: row !important; /* Меняем column на row (в ряд) */
-    align-items: center !important; /* Центрируем карточки по вертикали */
-    justify-content: center !important; /* Центрируем карточки по горизонтали */
-    gap: 16px !important; /* Делаем красивый отступ между ними */
+    flex-direction: row !important; /* Намертво заставляем встать в ряд */
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 16px !important;
     width: 100% !important;
-    text-align: center !important;
 }
 
-/* Настройки для самих трех карточек внутри этого контейнера */
-#passport .grid2 > div:first-child > div:last-child > div,
-#passport .grid2 > div:first-child > div:last-child > a {
+/* Принудительная настройка для самих карточек, чтобы они не растягивались */
+#passport div[class*="grid"] > div:first-child > div:last-child > div,
+#passport div[class*="grid"] > div:first-child > div:last-child > a {
     display: flex !important;
-    flex-direction: column !important; /* Текст внутри самой карточки пусть будет в столбик */
+    flex-direction: column !important; /* Текст внутри карточки оставляем столбиком */
     align-items: center !important;
     justify-content: center !important;
     width: auto !important;
-    flex: 1 !important; /* Чтобы карточки были одинаковой ширины */
+    flex: 1 !important;
 }
 
 /* 3. Блок с НИЖНИМИ карточками ачивок — строго в ОДНУ СТРОКУ */
