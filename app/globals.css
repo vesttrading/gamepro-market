@@ -89,6 +89,7 @@ div[style*="justifyContent: \"space-between\""] {
   gap: 20px !important;
   width: 100% !important;
 }
+
 /* 1. Уменьшаем размер заголовка Achievement Passport */
 #passport h2, 
 .sectionHead h2 {
@@ -110,7 +111,7 @@ div[style*="justifyContent: \"space-between\""] {
   align-items: center !important;   /* Центрирует описание под заголовком */
 }
 
-/* 1. Настраиваем и центрируем главный контейнер */
+/* Настраиваем и центрируем главный контейнер */
 #passport .grid2 {
     display: grid !important;
     grid-template-columns: 1fr !important;
@@ -122,7 +123,7 @@ div[style*="justifyContent: \"space-between\""] {
     box-sizing: border-box !important;
 }
 
-/* Полный сброс вертикального контейнера в паспорте */
+/* 1. Полный сброс вертикального контейнера в паспорте */
 #passport div[class*="grid"] > div:first-child > div:last-child {
     display: flex !important;
     flex-direction: row !important; /* Намертво заставляем встать в ряд */
@@ -172,7 +173,7 @@ div[style*="justifyContent: \"space-between\""] {
     box-sizing: border-box !important;
 }
 
-/* 5. Исправление для блока "Найти игрока", чтобы он встал ровно под ними */
+/* 1. Исправление для блока "Найти игрока", чтобы он встал ровно под ними */
 div[style*="justifyContent: \"space-between\""] > div:last-child {
     display: flex !important;
     flex-direction: column !important;
@@ -181,6 +182,8 @@ div[style*="justifyContent: \"space-between\""] > div:last-child {
     width: 100% !important;
     margin-top: 0 !important;
 }
+
+
 
 /* 5. Возвращаем правильные стили для блока Vladimir (div:first-child) */
 #passport .grid2 > div:first-child {
