@@ -132,7 +132,7 @@ div[style*="justifyContent: \"space-between\""] {
     width: 100% !important;
 }
 
-/* Принудительная настройка для самих карточек, чтобы они не растягивались */
+/* 2. Принудительная настройка для самих карточек, чтобы они не растягивались */
 #passport div[class*="grid"] > div:first-child > div:last-child > div,
 #passport div[class*="grid"] > div:first-child > div:last-child > a {
     display: flex !important;
@@ -189,6 +189,18 @@ div[style*="justifyContent: \"space-between\""] {
     align-items: center !important;
     justify-content: flex-start !important;
     gap: 8px !important;
+}
+
+/* Отодвигаем блок поиска ниже, чтобы он не наезжал на карточки паспорта */
+#passport + div, 
+section + div:has([placeholder*="Holy Paladin"]),
+div:has(> h2:contains("Найти игрока")) {
+    margin-top: 50px !important;
+}
+
+/* Если у блока поиска есть стандартный класс формы */
+input[placeholder*="Holy Paladin"] {
+    margin-top: 20px !important;
 }
 
 /* Перенос длинной строки Shaman... World of Warcraft */
