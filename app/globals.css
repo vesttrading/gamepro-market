@@ -32,7 +32,7 @@ section#raiderio button {
 /* 3. Восстановление сетки для карточек игроков (строка 259) */
 .cards {
   display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)) !important;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)) !important;
   gap: 16px !important;
   width: 100% !important;
 }
@@ -122,7 +122,7 @@ div[style*="justifyContent: \"space-between\""] {
     box-sizing: border-box !important;
 }
 
-/* 2. Блок с ТРЕМЯ цифрами (2850, CE, 2.4k+) — строго в ОДНУ СТРОКУ */
+/* 2. Блок с ТРЕМЯ цифрами (2850, CE, 2.4k+) - строго в ОДНУ СТРОКУ */
 #passport .grid2 > div:nth-child(2) {
     display: flex !important;
     flex-direction: row !important;
@@ -133,7 +133,10 @@ div[style*="justifyContent: \"space-between\""] {
 }
 
 #passport .stats {
-    grid-template-columns: repeat(3, 1fr) !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important; /* Жестко задаем 3 колонки */
+    gap: 16px !important;
+    width: 100% !important;
 }
 
 /* 3. Блок с НИЖНИМИ карточками ачивок — строго в ОДНУ СТРОКУ */
