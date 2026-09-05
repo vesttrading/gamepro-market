@@ -174,47 +174,84 @@ div[style*="justifyContent: \"space-between\""] {
     box-sizing: border-box !important;
 }
 
-/* 1. НАЙТИ ИГРОКА */
+/* 1. НАЙТИ ИГРОКА  Намертво уменьшаем весь общий блок до аккуратных 800px */
 #players {
     width: 100% !important;
-    margin-top: 40px !important;
+    max-width: 500px !important;  
+    margin: 40px auto 0 auto !important; /* Центрируем весь этот блок на экране */
 }
 
+/* Шаг 2. Саму строку поиска внутри делаем еще чуть компактнее */
 #players .searchbox {
-    display: flex !important;
+    display: flex !important; 
     gap: 10px !important;
-    max-width: 760px !important;
+    max-width: 100px !important; 
     margin: 0 auto 22px !important;
 }
 
-#players .filters {
-    display: flex !important;
-    gap: 10px !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-}
-
+/* 3. КАРТОЧКИ ИГРОКОВ — Сужаем только их и выстраиваем в горизонтальный ряд */
 #players .players {
+    display: flex !important;
+    flex-direction: row !important;  /* Выстраиваем карточки в одну линию */
+    justify-content: center !important; 
+    align-items: stretch !important;
+    flex-wrap: nowrap !important;  /* Запрещаем перенос на вторую строку */
+    gap: 14px !important;          /* Отступ между карточками игроков */
+    max-width: 650px !important;   /* Намертво сжимаем область карточек до 650px */
+    width: 100% !important;
+    margin: 25px auto 0 auto !important; /* Центрируем сам ряд карточек на странице */
+}
+
+/* Настройки для каждой карточки игрока, чтобы убрать пустоту внутри */
+#players .players > div,
+#players .players > a {
+    display: flex !important;
+    flex-direction: column !important; /* Текст внутри карточки идет сверху вниз */
+    width: auto !important;
+    flex: 1 !important;            /* Делим свободное пространство поровну */
+    max-width: 200px !important;   /* Ограничиваем максимальную ширину одной карточки */
+    box-sizing: border-box !important;
+    padding: 12px !important;      /* Уменьшаем внутренние отступы для аккуратности */
+}
+
+/* 1. ПРОВЕРИТЬ ИГРОКА ЧЕРЕЗ RAIDER.IO */
+#raiderio {
+    width: 100% !important;
+    max-width: 650px !important; /* Уменьшаем всю синюю карточку до аккуратных 650px */
+    margin: 40px auto !important; /* Свойство auto принудительно центрирует блок на экране */
+    padding: 0 0 40px !important;
+    box-sizing: border-box !important;
+}
+
+#raiderio .rioForm {
     display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 16px !important;
-    margin-top: 25px !important;
+    grid-template-columns: 1fr 1fr 90px auto !important; /* Возвращаем поля ввода в одну строку на ПК */
+    gap: 10px !important;
+    margin-top: 18px !important;
+    width: 100% !important;
 }
 
-/* ПРОВЕРКА ИГРОКА ЧЕРЕЗ RAIDER.IO */
-.rioForm {
-    display: grid;
-    grid-template-columns: 1fr 1fr 90px auto;
-    gap: 10px;
-    margin-top: 18px;
+#raiderio .rioForm input,
+#raiderio .rioForm select {
+    width: 100% !important;
+    box-sizing: border-box !important;
 }
 
+#raiderio .rioForm button {
+    white-space: nowrap !important;
+}
+
+/* Телефон (адаптивность для смартфонов оставляем) */
 @media (max-width: 700px) {
-    .rioForm {
-        grid-template-columns: 1fr !important;
+    #raiderio {
+        width: 92% !important;
+    }
+    
+    #raiderio .rioForm {
+        grid-template-columns: 1fr !important; /* На телефонах поля встанут друг под друга */
     }
 
-    .rioForm button {
+    #raiderio .rioForm button {
         width: 100% !important;
     }
 }
