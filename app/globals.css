@@ -124,19 +124,21 @@ div[style*="justifyContent: \"space-between\""] {
 
 /* 2. Блок с ТРЕМЯ цифрами (2850, CE, 2.4k+) - строго в ОДНУ СТРОКУ */
 #passport .grid2 > div:nth-child(2) {
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: center !important;
-    gap: 30px !important;
-    width: auto !important; /* Здесь теперь auto вместо 100% */
+    display: block !important;
+    width: 100% !important;
     margin-bottom: 15px !important;
 }
 
 #passport .stats {
     display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
+    grid-template-columns: repeat(3, 1fr) !important; /* Ровно 3 колонки в ряд */
     gap: 16px !important;
     width: 100% !important;
+    justify-items: center !important; /* Центрируем каждую цифру внутри её колонки */
+}
+
+#passport .stats > div {
+    width: auto !important; /* Убираем растяжение отдельных карточек */
 }
 
 /* 3. Блок с НИЖНИМИ карточками ачивок — строго в ОДНУ СТРОКУ */
