@@ -191,16 +191,32 @@ div[style*="justifyContent: \"space-between\""] {
     gap: 8px !important;
 }
 
-/* Отодвигаем блок поиска ниже, чтобы он не наезжал на карточки паспорта */
-#passport + div, 
-section + div:has([placeholder*="Holy Paladin"]),
-div:has(> h2:contains("Найти игрока")) {
-    margin-top: 50px !important;
+/*  ПОЗДНИЙ ВАРИАНТ: Исправление наложения блока "Найти игрока"
+ /* Находим главный контейнер разметки и возвращаем относительное позиционирование */
+div[style*="justifyContent: \"space-between\""] {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 75px !important; /* Увеличенный отступ, чтобы блок не заезжал под паспорт */
+    width: 100% !important;
 }
 
-/* Если у блока поиска есть стандартный класс формы */
-input[placeholder*="Holy Paladin"] {
-    margin-top: 20px !important;
+/* Стилизация и центрирование блока поиска "Найти игрока" */
+div[style*="justifyContent: \"space-between\""] > div:last-child {
+    position: relative !important;
+    width: 100% !important;
+    margin-top: 30px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* Корректировка полей ввода (placeholder "Holy Paladin") */
+div[style*="justifyContent: \"space-between\""] input[placeholder*="Holy Paladin"] {
+    width: 100% !important;
+    max-width: 500px !important; /* Чтобы инпут не растягивался на весь экран */
+    margin: 0 auto !important;
 }
 
 /* Перенос длинной строки Shaman... World of Warcraft */
