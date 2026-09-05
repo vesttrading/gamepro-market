@@ -175,46 +175,41 @@ div[style*="justifyContent: \"space-between\""] {
 }
 
 /* 1. НАЙТИ ИГРОКА */
+   Намертво уменьшаем весь общий блок до аккуратных 800px */
 #players {
     width: 100% !important;
-    max-width: 1160px !important;  /* Намертво уменьшаем весь блок до размера поиска */
-    margin: 40px auto 0 auto !important; /* Свойство auto принудительно ставит весь блок по центру экрана */
+    max-width: 800px !important;  
+    margin: 40px auto 0 auto !important; /* Центрируем весь этот блок на экране */
 }
 
+/* Шаг 2. Саму строку поиска внутри делаем еще чуть компактнее */
 #players .searchbox {
     display: flex !important;
     gap: 10px !important;
-    max-width: 500px !important;
+    max-width: 500px !important; 
     margin: 0 auto 22px !important;
 }
 
-#players .filters {
-    display: flex !important;
-    gap: 10px !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-}
-
-/* Выстраиваем карточки игроков строго в один горизонтальный ряд */
+/* Шаг 3. Выстраиваем карточки игроков в один горизонтальный ряд внутри уменьшенного блока */
 #players .players {
     display: flex !important;
-    flex-direction: row !important; /* Намертво выстраиваем в одну линию */
-    justify-content: center !important; /* Центрируем ряд на экране */
+    flex-direction: row !important; /* Строго горизонтальная линия */
+    justify-content: center !important; /* Центрируем карточки */
     align-items: stretch !important;
-    flex-wrap: nowrap !important; /* Запрещаем переносить карточки вниз */
-    gap: 16px !important; /* Отступ между карточками игроков */
+    flex-wrap: nowrap !important; /* Запрещаем перенос в столбик */
+    gap: 16px !important; /* Отступы между карточками */
     width: 100% !important;
     margin-top: 25px !important;
 }
 
-/* Настройки для каждой карточки игрока внутри этого горизонтального ряда */
+/* Настройки для каждой карточки, чтобы внутри них исчезла пустота */
 #players .players > div,
 #players .players > a {
     display: flex !important;
-    flex-direction: column !important; /* Внутри самой карточки текст идет сверху вниз */
+    flex-direction: column !important; /* Внутри карточки текст идет сверху вниз */
     width: auto !important;
-    flex: 1 !important; /* Распределяем карточки поровну, убирая лишнюю пустоту */
-    max-width: 280px !important; /* Задаем им аккуратную максимальную ширину */
+    flex: 1 !important; /* Распределяем карточки поровну */
+    max-width: 250px !important; /* Ограничиваем ширину отдельной карточки */
     box-sizing: border-box !important;
 }
 
