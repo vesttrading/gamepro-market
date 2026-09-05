@@ -201,24 +201,44 @@ div[style*="justifyContent: \"space-between\""] {
     margin-top: 25px !important;
 }
 
-/* Проверить игрока через Raider.IO — уменьшаем и центрируем */
-.rioForm {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr 90px auto; /* Возвращаем поля в одну строку на ПК */
-    gap: 12px;
-    max-width: 650px !important;  /* Жестко ограничиваем ширину блока */
+/* 1. ПРОВЕРИТЬ ИГРОКА ЧЕРЕЗ RAIDER.IO */
+#raiderio {
     width: 100% !important;
-    margin: 30px auto 0 auto !important; /* Авто-отступы по бокам принудительно поставят блок по центру */
-    padding: 20px !important;    /* Добавляем внутренний отступ для красоты */
+    max-width: 650px !important; /* Уменьшаем всю синюю карточку до аккуратных 650px */
+    margin: 40px auto !important; /* Свойство auto принудительно центрирует блок на экране */
+    padding: 0 0 40px !important;
     box-sizing: border-box !important;
 }
 
+#raiderio .rioForm {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 90px auto !important; /* Возвращаем поля ввода в одну строку на ПК */
+    gap: 10px !important;
+    margin-top: 18px !important;
+    width: 100% !important;
+}
+
+#raiderio .rioForm input,
+#raiderio .rioForm select {
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+#raiderio .rioForm button {
+    white-space: nowrap !important;
+}
+
+/* Телефон (адаптивность для смартфонов оставляем) */
 @media (max-width: 700px) {
-    .rioForm {
-        grid-template-columns: 1fr !important;
+    #raiderio {
+        width: 92% !important;
+    }
+    
+    #raiderio .rioForm {
+        grid-template-columns: 1fr !important; /* На телефонах поля встанут друг под друга */
     }
 
-    .rioForm button {
+    #raiderio .rioForm button {
         width: 100% !important;
     }
 }
