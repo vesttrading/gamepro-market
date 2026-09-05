@@ -206,7 +206,9 @@ div[style*="justifyContent: \"space-between\""] {
     display: grid;
     grid-template-columns: 1fr 1fr 90px auto;
     gap: 10px;
-    margin-top: 18px;
+    max-width: 600px !important;  /* Уменьшаем ширину блока до аккуратных 600px */
+    margin: 18px auto 0 auto !important; /* Центрируем блок по центру экрана */
+    width: 100%;
 }
 
 @media (max-width: 700px) {
