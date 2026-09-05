@@ -177,7 +177,7 @@ div[style*="justifyContent: \"space-between\""] {
 /* 1. НАЙТИ ИГРОКА  Намертво уменьшаем весь общий блок до аккуратных 800px */
 #players {
     width: 100% !important;
-    max-width: 800px !important;  
+    max-width: 500px !important;  
     margin: 40px auto 0 auto !important; /* Центрируем весь этот блок на экране */
 }
 
@@ -185,7 +185,7 @@ div[style*="justifyContent: \"space-between\""] {
 #players .searchbox {
     display: flex !important; 
     gap: 10px !important;
-    max-width: 500px !important; 
+    max-width: 100px !important; 
     margin: 0 auto 22px !important;
 }
 
@@ -196,7 +196,7 @@ div[style*="justifyContent: \"space-between\""] {
     justify-content: center !important; /* Центрируем карточки */
     align-items: stretch !important;
     flex-wrap: nowrap !important; /* Запрещаем перенос в столбик */
-    gap: 16px !important; /* Отступы между карточками */
+    gap: 12px !important; /* Отступы между карточками */
     width: 100% !important;
     margin-top: 25px !important;
 }
@@ -208,7 +208,7 @@ div[style*="justifyContent: \"space-between\""] {
     flex-direction: column !important; /* Внутри карточки текст идет сверху вниз */
     width: auto !important;
     flex: 1 !important; /* Распределяем карточки поровну */
-    max-width: 250px !important; /* Ограничиваем ширину отдельной карточки */
+    max-width: 150px !important; /* Ограничиваем ширину отдельной карточки */
     box-sizing: border-box !important;
 }
 
