@@ -194,23 +194,19 @@ div[style*="justifyContent: \"space-between\""] {
     justify-content: center !important;
 }
 
-/* Пробиваемся сквозь изоляцию классов к контейнеру карточек */
-div[class*="players_players"], 
-#players div[class*="players"] {
+/* Сжимаем сам контейнер до 500px и центрируем его */
+#players .players {
     display: flex !important;
-    flex-direction: column !important; /* Строго друг под другом */
-    align-items: center !important;     /* Жестко по центру страницы */
+    flex-direction: column !important;
+    align-items: center !important;
     gap: 16px !important;
-    margin-top: 25px !important;
+    margin: 25px auto 0 auto !important; /* Центрирует контейнер на странице */
+    max-width: 500px !important;        /* Намертво сжимает всю область карточек до размера поиска */
     width: 100% !important;
 }
 
-/* Находим сами карточки внутри и принудительно убираем пустоту */
-div[class*="players_players"] > div,
-div[class*="players_players"] > a,
-#players div[class*="players"] > div,
-#players div[class*="players"] > a {
-    max-width: 500px !important;  /* Сжимаем карточку до размера поиска */
+/* Принудительно заставляем каждую карточку внутри занять 100% от этой новой узкой ширины */
+#players .players * {
     width: 100% !important;
     box-sizing: border-box !important;
 }
