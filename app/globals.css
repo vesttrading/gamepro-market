@@ -174,7 +174,7 @@ div[style*="justifyContent: \"space-between\""] {
     box-sizing: border-box !important;
 }
 
-/* НАЙТИ ИГРОКА */
+/* 1. НАЙТИ ИГРОКА */
 #players {
     width: 100% !important;
     margin-top: 40px !important;
@@ -238,14 +238,6 @@ div[style*="justifyContent: \"space-between\""] {
     align-items: center !important;
     width: 100% !important;
     position: relative !important;
-}
-
-/* Находим сам текстовый блок "Найти игрока" и даём ему отступ сверху от карточек KSM */
-div[style*="justifyContent: \"space-between\""] > div:last-child {
-    margin-top: 140px !important; /* Этот отступ вытолкнет текст и инпут из-под карточек KSM вниз */
-    width: 100% !important;
-    position: relative !important;
-    z-index: 10 !important;
 }
 
 /* 1. Перенос длинной строки Shaman... World of Warcraft */
