@@ -44,6 +44,7 @@ section#raiderio button {
   border-radius: 16px !important;
   padding: 24px !important;
 }
+
 /* 1. Возвращаем секции правильный блочный вид, чтобы карточка Владимира была по центру */
 #passport {
   display: block !important;
@@ -173,16 +174,32 @@ div[style*="justifyContent: \"space-between\""] {
     box-sizing: border-box !important;
 }
 
-/* 1. Исправление для блока "Найти игрока", чтобы он встал ровно под ними */
-div[style*="justifyContent: \"space-between\""] > div:last-child {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
+/* НАЙТИ ИГРОКА */
+#players {
     width: 100% !important;
-    margin-top: 0 !important;
+    margin-top: 40px !important;
 }
 
+#players .searchbox {
+    display: flex !important;
+    gap: 10px !important;
+    max-width: 760px !important;
+    margin: 0 auto 22px !important;
+}
+
+#players .filters {
+    display: flex !important;
+    gap: 10px !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+}
+
+#players .players {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 16px !important;
+    margin-top: 25px !important;
+}
 
 
 /* 5. Возвращаем правильные стили для блока Vladimir (div:first-child) */
