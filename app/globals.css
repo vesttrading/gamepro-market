@@ -143,24 +143,43 @@ div[style*="justifyContent: \"space-between\""] {
     flex: 1 !important;
 }
 
-/* 3. Блок с НИЖНИМИ карточками ачивок — строго в ОДНУ СТРОКУ */
-#passport .grid2 > div:last-child {
+/* 3. Блок с НИЖНИМИ карточками ачивок (4 штуки) - строго в ОДНУ СТРОКУ */
+#passport div[class*="grid"] > div:first-child > div:last-child + div,
+#passport .cards {
     display: flex !important;
-    flex-direction: row !important;
+    flex-direction: row !important; /* В одну линию */
     justify-content: center !important;
-    flex-wrap: nowrap !important;
+    flex-wrap: nowrap !important; /* Запрещаем перенос в 2 ряда */
     gap: 10px !important;
     width: 100% !important;
-    margin-top: -35px !important;
+    margin-top: 20px !important;
+    margin-bottom: 30px !important; /* Делаем отступ СНИЗУ от карточек до поиска */
 }
 
-/* 4. Делаем нижние карточки аккуратными и одинаковыми */
-#passport .grid2 > div:last-child > div {
+/* 4. Делаем нижние 4 карточки аккуратными и одинаковыми */
+#passport div[class*="grid"] > div:first-child > div:last-child + div > div,
+#passport div[class*="grid"] > div:first-child > div:last-child + div > a,
+#passport .cards > div,
+#passport .cards > a {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
     flex: 1 1 0px !important;
     max-width: 130px !important;
-    min-width: 95px !important;
+    min-width: 85px !important; /* Чтобы 4 карточки точно влезли в ряд */
     padding: 8px !important;
     box-sizing: border-box !important;
+}
+
+/* 5. Исправление для блока "Найти игрока", чтобы он встал ровно под ними */
+div[style*="justifyContent: \"space-between\""] > div:last-child {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    margin-top: 0 !important;
 }
 
 /* 5. Возвращаем правильные стили для блока Vladimir (div:first-child) */
