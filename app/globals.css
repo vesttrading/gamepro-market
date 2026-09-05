@@ -123,23 +123,15 @@ div[style*="justifyContent: \"space-between\""] {
 }
 
 /* 2. Блок с ТРЕМЯ цифрами (2850, CE, 2.4k+) - строго в ОДНУ СТРОКУ */
-#passport .grid2, 
-#passport [class*="stats"], 
-#passport [class*="cards"] {
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: center !important;
-    align-items: stretch !important;
-    gap: 16px !important;
+#passport .grid2 > div:nth-child(2) {
+    display: block !important;
     width: 100% !important;
+    margin-bottom: 15px !important;
 }
 
-/* Убираем фиксированную и стопроцентную ширину у самих карточек */
-#passport .grid2 > div, 
-#passport [class*="stats"] > div,
-#passport [class*="cards"] > div {
-    width: auto !important;
-    flex: 1 !important;
+#passport .stats {
+    display: block !important;
+    width: 100% !important;
 }
 
 /* 3. Блок с НИЖНИМИ карточками ачивок — строго в ОДНУ СТРОКУ */
