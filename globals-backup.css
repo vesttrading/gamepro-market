@@ -32,7 +32,7 @@ section#raiderio button {
 /* 3. Восстановление сетки для карточек игроков (строка 259) */
 .cards {
   display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)) !important;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)) !important;
   gap: 16px !important;
   width: 100% !important;
 }
@@ -122,18 +122,25 @@ div[style*="justifyContent: \"space-between\""] {
     box-sizing: border-box !important;
 }
 
-/* 2. Блок с ТРЕМЯ цифрами (2850, CE, 2.4k+) — строго в ОДНУ СТРОКУ */
-#passport .grid2 > div:nth-child(2) {
+/* Полный сброс вертикального контейнера в паспорте */
+#passport div[class*="grid"] > div:first-child > div:last-child {
     display: flex !important;
-    flex-direction: row !important;
+    flex-direction: row !important; /* Намертво заставляем встать в ряд */
+    align-items: center !important;
     justify-content: center !important;
-    gap: 30px !important;
+    gap: 16px !important;
     width: 100% !important;
-    margin-bottom: 15px !important;
 }
 
-#passport .stats {
-    grid-template-columns: repeat(3, 1fr) !important;
+/* Принудительная настройка для самих карточек, чтобы они не растягивались */
+#passport div[class*="grid"] > div:first-child > div:last-child > div,
+#passport div[class*="grid"] > div:first-child > div:last-child > a {
+    display: flex !important;
+    flex-direction: column !important; /* Текст внутри карточки оставляем столбиком */
+    align-items: center !important;
+    justify-content: center !important;
+    width: auto !important;
+    flex: 1 !important;
 }
 
 /* 3. Блок с НИЖНИМИ карточками ачивок — строго в ОДНУ СТРОКУ */
