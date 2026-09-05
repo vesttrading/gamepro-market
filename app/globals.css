@@ -128,13 +128,13 @@ div[style*="justifyContent: \"space-between\""] {
     flex-direction: row !important;
     justify-content: center !important;
     gap: 30px !important;
-    width: 100% !important;
+    width: auto !important; /* Здесь теперь auto вместо 100% */
     margin-bottom: 15px !important;
 }
 
 #passport .stats {
     display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important; /* Жестко задаем 3 колонки */
+    grid-template-columns: repeat(3, 1fr) !important;
     gap: 16px !important;
     width: 100% !important;
 }
