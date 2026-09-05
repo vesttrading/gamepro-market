@@ -201,6 +201,23 @@ div[style*="justifyContent: \"space-between\""] {
     margin-top: 25px !important;
 }
 
+/* ПРОВЕРКА ИГРОКА ЧЕРЕЗ RAIDER.IO */
+.rioForm {
+    display: grid;
+    grid-template-columns: 1fr 1fr 90px auto;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+@media (max-width: 700px) {
+    .rioForm {
+        grid-template-columns: 1fr !important;
+    }
+
+    .rioForm button {
+        width: 100% !important;
+    }
+}
 
 /* 5. Возвращаем правильные стили для блока Vladimir (div:first-child) */
 #passport .grid2 > div:first-child {
