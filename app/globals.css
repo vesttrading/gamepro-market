@@ -208,7 +208,7 @@ div[style*="justifyContent: \"space-between\""] {
     flex-direction: column !important; /* Внутри карточки текст идет сверху вниз */
     width: auto !important;
     flex: 1 !important; /* Распределяем карточки поровну */
-    max-width: 150px !important; /* Ограничиваем ширину отдельной карточки */
+    max-width: 100px !important; /* Ограничиваем ширину отдельной карточки */
     box-sizing: border-box !important;
 }
 
