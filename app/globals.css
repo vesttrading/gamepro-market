@@ -201,14 +201,16 @@ div[style*="justifyContent: \"space-between\""] {
     margin-top: 25px !important;
 }
 
-/* ПРОВЕРКА ИГРОКА ЧЕРЕЗ RAIDER.IO */
+/* Проверить игрока через Raider.IO — уменьшаем и центрируем */
 .rioForm {
-    display: grid;
-    grid-template-columns: 1fr 1fr 90px auto;
-    gap: 10px;
-    max-width: 600px !important;  /* Уменьшаем ширину блока до аккуратных 600px */
-    margin: 18px auto 0 auto !important; /* Центрируем блок по центру экрана */
-    width: 100%;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 90px auto; /* Возвращаем поля в одну строку на ПК */
+    gap: 12px;
+    max-width: 650px !important;  /* Жестко ограничиваем ширину блока */
+    width: 100% !important;
+    margin: 30px auto 0 auto !important; /* Авто-отступы по бокам принудительно поставят блок по центру */
+    padding: 20px !important;    /* Добавляем внутренний отступ для красоты */
+    box-sizing: border-box !important;
 }
 
 @media (max-width: 700px) {
