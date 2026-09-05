@@ -177,14 +177,14 @@ div[style*="justifyContent: \"space-between\""] {
 /* 1. НАЙТИ ИГРОКА */
 #players {
     width: 100% !important;
-    max-width: 500px !important;  /* Намертво уменьшаем весь блок до размера поиска */
+    max-width: 1160px !important;  /* Намертво уменьшаем весь блок до размера поиска */
     margin: 40px auto 0 auto !important; /* Свойство auto принудительно ставит весь блок по центру экрана */
 }
 
 #players .searchbox {
     display: flex !important;
     gap: 10px !important;
-    max-width: 100px !important;
+    max-width: 500px !important;
     margin: 0 auto 22px !important;
 }
 
@@ -195,17 +195,27 @@ div[style*="justifyContent: \"space-between\""] {
     justify-content: center !important;
 }
 
-/* Сжимаем сам контейнер до 500px и центрируем его */
+/* Выстраиваем карточки игроков строго в один горизонтальный ряд */
 #players .players {
     display: flex !important;
-    flex-direction: column !important;
-    gap: 16px !important;
-    margin-top: 25px !important;
+    flex-direction: row !important; /* Намертво выстраиваем в одну линию */
+    justify-content: center !important; /* Центрируем ряд на экране */
+    align-items: stretch !important;
+    flex-wrap: nowrap !important; /* Запрещаем переносить карточки вниз */
+    gap: 16px !important; /* Отступ между карточками игроков */
     width: 100% !important;
+    margin-top: 25px !important;
 }
+
+/* Настройки для каждой карточки игрока внутри этого горизонтального ряда */
 #players .players > div,
 #players .players > a {
-    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important; /* Внутри самой карточки текст идет сверху вниз */
+    width: auto !important;
+    flex: 1 !important; /* Распределяем карточки поровну, убирая лишнюю пустоту */
+    max-width: 280px !important; /* Задаем им аккуратную максимальную ширину */
+    box-sizing: border-box !important;
 }
 
 /* 1. ПРОВЕРИТЬ ИГРОКА ЧЕРЕЗ RAIDER.IO */
