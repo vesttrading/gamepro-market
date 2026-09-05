@@ -122,28 +122,26 @@ div[style*="justifyContent: \"space-between\""] {
     box-sizing: border-box !important;
 }
 
-/* 2. Блок с ТРЕМЯ цифрами (2850, CE, 2.4k+) - строго в ОДНУ СТРОКУ */
-#passport .stats, 
-#passport .cards {
+/* Перебиваем вертикальный столбик и выстраиваем ТРИ карточки горизонтально */
+#passport .grid2 > div:first-child > div:last-child {
     display: flex !important;
-    flex-direction: row !important;
-    justify-content: center !important;
-    flex-wrap: nowrap !important; /* Запрещаем перенос на новую строку */
-    gap: 12px !important;         /* Небольшой отступ между карточками */
+    flex-direction: row !important; /* Меняем column на row (в ряд) */
+    align-items: center !important; /* Центрируем карточки по вертикали */
+    justify-content: center !important; /* Центрируем карточки по горизонтали */
+    gap: 16px !important; /* Делаем красивый отступ между ними */
     width: 100% !important;
+    text-align: center !important;
 }
 
-/* Настройки для элементов внутри этих блоков */
-#passport .stats > div, 
-#passport .cards > div,
-#passport .stats > a, 
-#passport .cards > a {
+/* Настройки для самих трех карточек внутри этого контейнера */
+#passport .grid2 > div:first-child > div:last-child > div,
+#passport .grid2 > div:first-child > div:last-child > a {
     display: flex !important;
-    flex-direction: column !important;
+    flex-direction: column !important; /* Текст внутри самой карточки пусть будет в столбик */
     align-items: center !important;
     justify-content: center !important;
     width: auto !important;
-    flex: 1 !important;           /* Распределяет карточки равномерно */
+    flex: 1 !important; /* Чтобы карточки были одинаковой ширины */
 }
 
 /* 3. Блок с НИЖНИМИ карточками ачивок — строго в ОДНУ СТРОКУ */
