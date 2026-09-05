@@ -44,6 +44,7 @@ section#raiderio button {
   border-radius: 16px !important;
   padding: 24px !important;
 }
+
 /* 1. Возвращаем секции правильный блочный вид, чтобы карточка Владимира была по центру */
 #passport {
   display: block !important;
@@ -89,6 +90,7 @@ div[style*="justifyContent: \"space-between\""] {
   gap: 20px !important;
   width: 100% !important;
 }
+
 /* 1. Уменьшаем размер заголовка Achievement Passport */
 #passport h2, 
 .sectionHead h2 {
@@ -110,7 +112,7 @@ div[style*="justifyContent: \"space-between\""] {
   align-items: center !important;   /* Центрирует описание под заголовком */
 }
 
-/* 1. Настраиваем и центрируем главный контейнер */
+/* Настраиваем и центрируем главный контейнер */
 #passport .grid2 {
     display: grid !important;
     grid-template-columns: 1fr !important;
@@ -122,7 +124,7 @@ div[style*="justifyContent: \"space-between\""] {
     box-sizing: border-box !important;
 }
 
-/* Полный сброс вертикального контейнера в паспорте */
+/* 1. Полный сброс вертикального контейнера в паспорте */
 #passport div[class*="grid"] > div:first-child > div:last-child {
     display: flex !important;
     flex-direction: row !important; /* Намертво заставляем встать в ряд */
@@ -132,7 +134,7 @@ div[style*="justifyContent: \"space-between\""] {
     width: 100% !important;
 }
 
-/* Принудительная настройка для самих карточек, чтобы они не растягивались */
+/* 2. Принудительная настройка для самих карточек, чтобы они не растягивались */
 #passport div[class*="grid"] > div:first-child > div:last-child > div,
 #passport div[class*="grid"] > div:first-child > div:last-child > a {
     display: flex !important;
@@ -143,24 +145,78 @@ div[style*="justifyContent: \"space-between\""] {
     flex: 1 !important;
 }
 
-/* 3. Блок с НИЖНИМИ карточками ачивок — строго в ОДНУ СТРОКУ */
-#passport .grid2 > div:last-child {
+/* 3. Блок с НИЖНИМИ карточками ачивок (4 штуки) - строго в ОДНУ СТРОКУ */
+#passport div[class*="grid"] > div:first-child > div:last-child + div,
+#passport .cards {
     display: flex !important;
-    flex-direction: row !important;
+    flex-direction: row !important; /* В одну линию */
     justify-content: center !important;
-    flex-wrap: nowrap !important;
+    flex-wrap: nowrap !important; /* Запрещаем перенос в 2 ряда */
     gap: 10px !important;
     width: 100% !important;
-    margin-top: -35px !important;
+    margin-top: 20px !important;
+    margin-bottom: 30px !important; /* Делаем отступ СНИЗУ от карточек до поиска */
 }
 
-/* 4. Делаем нижние карточки аккуратными и одинаковыми */
-#passport .grid2 > div:last-child > div {
+/* 4. Делаем нижние 4 карточки аккуратными и одинаковыми */
+#passport div[class*="grid"] > div:first-child > div:last-child + div > div,
+#passport div[class*="grid"] > div:first-child > div:last-child + div > a,
+#passport .cards > div,
+#passport .cards > a {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
     flex: 1 1 0px !important;
     max-width: 130px !important;
-    min-width: 95px !important;
+    min-width: 85px !important; /* Чтобы 4 карточки точно влезли в ряд */
     padding: 8px !important;
     box-sizing: border-box !important;
+}
+
+/* 1. НАЙТИ ИГРОКА */
+#players {
+    width: 100% !important;
+    margin-top: 40px !important;
+}
+
+#players .searchbox {
+    display: flex !important;
+    gap: 10px !important;
+    max-width: 760px !important;
+    margin: 0 auto 22px !important;
+}
+
+#players .filters {
+    display: flex !important;
+    gap: 10px !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+}
+
+#players .players {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 16px !important;
+    margin-top: 25px !important;
+}
+
+/* ПРОВЕРКА ИГРОКА ЧЕРЕЗ RAIDER.IO */
+.rioForm {
+    display: grid;
+    grid-template-columns: 1fr 1fr 90px auto;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+@media (max-width: 700px) {
+    .rioForm {
+        grid-template-columns: 1fr !important;
+    }
+
+    .rioForm button {
+        width: 100% !important;
+    }
 }
 
 /* 5. Возвращаем правильные стили для блока Vladimir (div:first-child) */
@@ -191,7 +247,17 @@ div[style*="justifyContent: \"space-between\""] {
     gap: 8px !important;
 }
 
-/* Перенос длинной строки Shaman... World of Warcraft */
+/* Отвязываем блок поиска от карточек и сдвигаем его СТРОГО под них */
+div[style*="justifyContent: \"space-between\""] {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    width: 100% !important;
+    position: relative !important;
+}
+
+/* 1. Перенос длинной строки Shaman... World of Warcraft */
 #passport .grid2 > div:first-child > div:last-child p,
 #passport .grid2 > div:first-child > div:last-child span,
 #passport .grid2 > div:first-child > div:last-child div:nth-child(2) {
