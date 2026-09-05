@@ -195,10 +195,20 @@ div[style*="justifyContent: \"space-between\""] {
 }
 
 #players .players {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 16px !important;
+    display: flex !important;
+    flex-direction: column !important; /* Выстраиваем карточки игроков друг под другом */
+    align-items: center !important;     /* Центрируем карточки на странице */
+    gap: 16px !important;              /* Отступ между карточками */
     margin-top: 25px !important;
+    width: 100% !important;
+}
+
+/* Ограничиваем ширину самих карточек игроков, чтобы убрать пустоту внутри */
+#players .players > div,
+#players .players > a {
+    max-width: 500px !important;  /* Делаем ширину точно такой же, как у поиска на строке 186 */
+    width: 100% !important;
+    box-sizing: border-box !important;
 }
 
 /* 1. ПРОВЕРИТЬ ИГРОКА ЧЕРЕЗ RAIDER.IO */
