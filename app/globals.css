@@ -531,3 +531,7 @@ section#guilds div[class*="jsx-"] {
         max-width: 100% !important;
     }
 } 
+
+body {
+    padding-bottom: 150px !important;
+}
