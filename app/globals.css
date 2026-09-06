@@ -392,126 +392,94 @@ section#games div[class*="gameGrid"] > div h2 {
     font-size: 1.1rem !important;
 }
 
-/* =========================
-   ОТЗЫВЫ GAMEPRO
-   ========================= */
+/* ==========================================================
+   БЛОК ОТЗЫВОВ — УМЕНЬШЕНИЕ И СБОРКА К ЦЕНТРУ
+   ========================================================== */
 
-.reviews-section {
-  width: 100%;
-  max-width: 980px;
-  margin: 45px auto;
-  padding: 0 16px;
+/* 1. Намертво сжимаем всю секцию отзывов до аккуратных 850px */
+section#reviews {
+    width: 100% !important;
+    max-width: 850px !important;    
+    margin: 60px auto 0 auto !important; /* Центрируем весь блок по центру экрана */
+    padding: 20px !important;
+    box-sizing: border-box !important;
 }
 
-.reviews-section-title {
-  margin: 0 0 22px;
-  text-align: center;
-  font-size: 26px;
-  font-weight: 800;
-  color: #fff;
+/* 2. Убираем пустоту между оценкой и отзывами, собирая их в горизонтальный ряд */
+section#reviews [class*="gameGrid"],
+section#reviews [class*="Grid"] {
+    display: flex !important;
+    flex-direction: row !important;     /* Строго в одну линию */
+    justify-content: center !important; /* Прижимаем карточки кучно к центру */
+    align-items: stretch !important;    /* Выравниваем их по высоте */
+    gap: 35px !important;               /* Аккуратный отступ между оценкой и отзывами */
+    width: 100% !important;
+    margin-top: 30px !important;
 }
 
-.reviews-cards {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
+section#reviews {
+    width: 100% !important;
+    max-width: 1000px !important;
+    margin: 45px auto !important;
+    padding: 0 16px !important;
+    box-sizing: border-box !important;
 }
 
-.reviews-card {
-  min-width: 0;
-  padding: 18px;
-  border-radius: 16px;
-  border: 1px solid rgba(59, 130, 246, 0.18);
-  background: rgba(15, 23, 42, 0.75);
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+/* Контейнер трёх карточек */
+section#reviews [class*="gameGrid"],
+section#reviews [class*="Grid"] {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: stretch !important;
+    justify-content: center !important;
+    gap: 16px !important;
+    width: 100% !important;
 }
 
-.reviews-card-title {
-  margin: 0 0 12px;
-  color: #fff;
-  font-size: 17px;
-  font-weight: 800;
+/* Каждая карточка */
+section#reviews [class*="gameGrid"] > div,
+section#reviews [class*="Grid"] > div {
+    flex: 1 1 0 !important;
+    width: 0 !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    padding: 18px !important;
 }
 
-.reviews-card-text {
-  margin: 0;
-  color: #94a3b8;
-  font-size: 13px;
-  line-height: 1.5;
+/* Внутренности НЕ растягиваем в отдельные колонки */
+section#reviews [class*="gameGrid"] > div > div,
+section#reviews [class*="Grid"] > div > div {
+    width: 100% !important;
+    max-width: none !important;
+    box-sizing: border-box !important;
 }
 
-/* Оценка GamePro */
-
-.gamepro-rating {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  margin-bottom: 10px;
+/* Заголовки */
+section#reviews h3 {
+    width: auto !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
 }
 
-.gamepro-rating-number {
-  color: #fff;
-  font-size: 30px;
-  font-weight: 900;
+/* Текст */
+section#reviews p {
+    width: auto !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
 }
 
-.gamepro-rating-stars {
-  color: #fbbf24;
-  font-size: 16px;
-  letter-spacing: 1px;
-}
-
-.gamepro-rating-label {
-  color: #64748b;
-  font-size: 12px;
-}
-
-/* Отзывы игроков */
-
-.players-reviews-count {
-  margin-bottom: 10px;
-  color: #3b82f6;
-  font-size: 13px;
-  font-weight: 700;
-}
-
-/* VERIFIED */
-
-.verified-reviews-title {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.verified-check {
-  color: #3b82f6;
-  font-size: 16px;
-  font-weight: 900;
-}
-
-.verified-reviews-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  margin-bottom: 10px;
-  padding: 5px 8px;
-  border-radius: 999px;
-  background: rgba(59, 130, 246, 0.1);
-  color: #3b82f6;
-  font-size: 11px;
-  font-weight: 800;
-}
-
-/* Телефон */
-
+/* Мобильная версия */
 @media (max-width: 700px) {
-  .reviews-section {
-    max-width: 100%;
-  }
+    section#reviews [class*="gameGrid"],
+    section#reviews [class*="Grid"] {
+        flex-direction: column !important;
+    }
 
-  .reviews-cards {
-    grid-template-columns: 1fr;
-  }
+    section#reviews [class*="gameGrid"] > div,
+    section#reviews [class*="Grid"] > div {
+        width: 100% !important;
+    }
 }
 
 /* 1. Этот код изменит только блок гильдий и ничего больше */
