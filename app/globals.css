@@ -253,6 +253,49 @@ div[style*="justifyContent: \"space-between\""] {
     }
 }
 
+/* КАК РАБОТАЕТ ПРОВЕРКА */
+#how {
+    width: 100% !important;
+    max-width: 1160px !important;
+    margin: 0 auto !important;
+    padding: 60px 0 !important;
+}
+
+#how .steps {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 16px !important;
+    margin-top: 25px !important;
+}
+
+#how .step {
+    padding: 20px !important;
+    border: 1px solid #1e2540 !important;
+    border-radius: 16px !important;
+    background: #0b1020 !important;
+}
+
+#how .num {
+    color: #3de1d5 !important;
+    font-weight: 700 !important;
+}
+
+#how .step h3 {
+    margin: 15px 0 8px !important;
+}
+
+#how .step p {
+    color: #9da6c0 !important;
+    line-height: 1.6 !important;
+    margin: 0 !important;
+}
+
+@media (max-width: 900px) {
+    #how .steps {
+        grid-template-columns: 1fr !important;
+    }
+}
+
 /* 5. Возвращаем правильные стили для блока Vladimir (div:first-child) */
 #passport .grid2 > div:first-child {
     width: 100% !important;
