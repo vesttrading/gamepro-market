@@ -256,7 +256,7 @@ div[style*="justifyContent: \"space-between\""] {
 /* КАК РАБОТАЕТ ПРОВЕРКА */
 #how {
     width: 100% !important;
-    max-width: 600px !important;
+    max-width: 700px !important;
     margin: 0 auto !important;
     padding: 60px 20px !important;
 }
@@ -267,7 +267,7 @@ div[style*="justifyContent: \"space-between\""] {
     display: grid !important;
     grid-template-columns: repeat(3, minmax(0, 190px)) !important; /* Ровно 3 колонки, каждая жестко по 190px — пустота уйдет! */
     justify-content: center !important; /* Центрируем весь этот ряд на экране */
-    gap: 24px !important;               /* Аккуратный отступ между карточками */
+    gap: 30px !important;               /* Аккуратный отступ между карточками */
     width: 100% !important;
     margin-top: 40px !important;
 }
