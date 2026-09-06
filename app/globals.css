@@ -356,11 +356,10 @@ div[style*="justifyContent: \"space-between\""] {
 /* Настройки для блока ИГР — уменьшаем весь блок и ставим по центру */
 section#games {
     padding-top: 0px !important;
-    padding-left: 60px !important; /* Сдвигает заголовок вправо, центрируя над Dota 2 и CS2 */
     width: 100% !important;
     max-width: 850px !important;  
     margin: 40px auto !important; 
-    text-align: center !important; 
+    text-align: center !important; /* Эта строчка принудительно поставит заголовок и описание по центру */
     box-sizing: border-box !important;
 }
 
