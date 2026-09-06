@@ -439,24 +439,32 @@ section#reviews [class*="Grid"] > div:first-child + div {
     width: auto !important;
 }
 
-/* 5. ФИНАЛЬНЫЙ ТАРАН: Пробиваем внутреннюю структуру карточек, чтобы вернуть текст на место */
-section#reviews [class*="Grid"] div div,
-section#reviews [class*="gameGrid"] div div,
-section#reviews .step,
-section#reviews div[class*="card"] {
+/* 5. УЛЬТИМАТИВНЫЙ ПЕРЕНОС: Заставляем заголовки карточек выталкивать текст вниз */
+section#reviews [class*="Grid"] h3,
+section#reviews [class*="gameGrid"] h3,
+section#reviews [class*="Grid"] div > span,
+section#reviews [class*="Grid"] div > strong {
+    display: block !important;
+    width: 100% !important;
+    clear: both !important;
+    margin-bottom: 8px !important; /* Делаем аккуратный отступ от заголовка до текста отзыва */
+}
+
+/* Принудительно сбрасываем строчный режим у внутренних контейнеров */
+section#reviews [class*="Grid"] div:first-child + div > div > div,
+section#reviews [class*="gameGrid"] div:first-child + div > div > div {
     display: flex !important;
-    flex-direction: column !important; /* Принудительно складываем заголовок и цитату в столбик */
+    flex-direction: column !important; /* Картинка/иконка, заголовок и текст ложатся строго друг под друга */
     align-items: flex-start !important;
     width: 100% !important;
 }
 
-/* Сбрасываем горизонтальные отступы у иконок и заголовков внутри карточки */
-section#reviews [class*="Grid"] h3,
-section#reviews [class*="Grid"] p {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+/* Делаем сам текст отзыва свободным, чтобы он занимал всю ширину и не улетал вправо */
+section#reviews [class*="Grid"] p,
+section#reviews [class*="gameGrid"] p {
     display: block !important;
     width: 100% !important;
+    margin: 0 !important;
 }
 
 /* 1. Этот код изменит только блок гильдий и ничего больше */
