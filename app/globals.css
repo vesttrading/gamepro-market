@@ -189,29 +189,26 @@ div[style*="justifyContent: \"space-between\""] {
     margin: 0 auto 22px !important;
 }
 
-/* 3. КАРТОЧКИ ИГРОКОВ — Сужаем только их и выстраиваем в горизонтальный ряд */
-#players .players {
-    display: flex !important;
-    flex-direction: row !important;  /* Выстраиваем карточки в одну линию */
-    justify-content: center !important; 
-    align-items: stretch !important;
-    flex-wrap: nowrap !important;  /* Запрещаем перенос на вторую строку */
-    gap: 14px !important;          /* Отступ между карточками игроков */
-    max-width: 650px !important;   /* Намертво сжимаем область карточек до 650px */
+/* 3. КАРТОЧКИ ИГРОКОВ — Намертво перебиваем инлайн-сетку и выстраиваем 3 штуки в один горизонтальный ряд */
+#players .cards,
+#players div[class*="cards"] {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 190px)) !important; /* Выстраиваем ровно 3 карточки в ряд и сжимаем каждую до 190px, убирая пустоту! */
+    justify-content: center !important; /* Центрируем этот горизонтальный ряд на экране */
+    gap: 14px !important;               /* Отступ между карточками игроков */
     width: 100% !important;
-    margin: 25px auto 0 auto !important; /* Центрируем сам ряд карточек на странице */
+    max-width: 650px !important;        /* Сжимаем общую ширину блока под карточками */
+    margin: 25px auto 0 auto !important; /* Центрируем сам контейнер с карточками */
 }
 
-/* Настройки для каждой карточки игрока, чтобы убрать пустоту внутри */
-#players .players > div,
-#players .players > a {
-    display: flex !important;
-    flex-direction: column !important; /* Текст внутри карточки идет сверху вниз */
-    width: auto !important;
-    flex: 1 !important;            /* Делим свободное пространство поровну */
-    max-width: 200px !important;   /* Ограничиваем максимальную ширину одной карточки */
+/* Настройки для элементов внутри каждой отдельной карточки */
+#players .cards > div,
+#players .cards > a,
+#players div[class*="cards"] > div,
+#players div[class*="cards"] > a {
+    width: 100% !important;
+    max-width: 190px !important;
     box-sizing: border-box !important;
-    padding: 12px !important;      /* Уменьшаем внутренние отступы для аккуратности */
 }
 
 /* 1. ПРОВЕРИТЬ ИГРОКА ЧЕРЕЗ RAIDER.IO */
