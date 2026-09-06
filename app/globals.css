@@ -354,47 +354,42 @@ div[style*="justifyContent: \"space-between\""] {
 }
 
 
- /*  1. БЛОК ИГР — ЦЕНТРИРОВАНИЕ И ПЕРЕНОС ТРЕХ КАРТОЧЕК ВНИЗ */
- section#games {
-    display: flex !important;
-    flex-direction: column !important; /* Всё строится сверху вниз: заголовок, WoW, затем 3 карточки */
-    align-items: center !important;     /* Центрируем элементы по горизонтали */
-    text-align: center !important;
-    width: 100% !important;
-    max-width: 1160px !important;
-    margin: 60px auto !important;
-    padding-top: 0 !important;
+/* Настройки для блока ИГР */
+section#games {
+    padding-top: 0px !important;
 }
 
-/* 2. Настраиваем общий контейнер для самих карточек */
 section#games div[class*="gameGrid"] {
     display: flex !important;
-    flex-direction: column !important; /* Ставим главную карточку WoW, а под неё — ряд из 3-х карточек */
-    align-items: center !important;
-    gap: 30px !important;              /* Отступ между верхней карточкой WoW и нижним рядом */
-    width: 100% !important;
-    margin-top: 30px !important;
+    flex-direction: row !important;
+    justify-content: flex-end !important;
+    align-items: stretch !important; /* Выравнивает все */
+    flex-wrap: nowrap !important; /* Запрещает перенос */
+    gap: 16px !important;
+    margin-top: -10px !important;
 }
 
-/* 3. Ставим карточку World of Warcraft строго по центру */
+/* Делаем ВСЕ карточки (включая первую) одинакового размера */
+section#games div[class*="gameGrid"] > div {
+    flex: 1 !important;
+    max-width: 200px !important;
+    width: 100% !important;
+    min-width: 150px !important;
+    padding: 12px !important;
+}
+
 section#games div[class*="gameGrid"] > div:first-child {
-    max-width: 320px !important;       /* Ограничиваем ширину главной карточки, чтобы она была аккуратной */
-    width: 100% !important;
-    margin: 0 auto !important;         /* Центрируем её */
+    max-width: 380px !important; /* Делает карточку WoW шире */
+    margin-bottom: 0px !important;
 }
 
-/* 4. Опускаем оставшиеся три карточки (Dota 2, CS2, PoE 2) вниз и выстраиваем горизонтально в ряд */
-section#games div[class*="gameGrid"] > div:first-child + div {
-    display: flex !important;
-    flex-direction: row !important;     /* Выстраиваем в одну горизонтальную линию */
-    justify-content: center !important; /* Центрируем этот ряд под карточкой WoW */
-    align-items: stretch !important;    /* Выравниваем все 3 нижние карточки по высоте */
-    gap: 20px !important;               /* Отступы между тремя карточками */
-    width: 100% !important;
-    max-width: 850px !important;        /* Ограничиваем общую ширину нижнего ряда */
+/* Выпрямляем World of Warcraft в одну строку */
+section#games div[class*="gameGrid"] > div h2 {
+    white-space: nowrap !important;
+    font-size: 1.1rem !important;
 }
 
-/* 5. Настройки для каждой из трех нижних карточек по отдельности */
+/* 1. Настройки для каждой из трех нижних карточек по отдельности */
 section#games div[class*="gameGrid"] > div:first-child + div > div {
     flex: 1 !important;                 /* Распределяем их поровну в ширину */
     max-width: 250px !important;        /* Делаем их компактными, убирая лишнюю пустоту внутри */
