@@ -353,13 +353,12 @@ div[style*="justifyContent: \"space-between\""] {
     position: relative !important;
 }
 
-/* Настройки для блока ИГР — уменьшаем весь блок и ставим по центру */
+/* 1. Настройки для блока ИГР — уменьшаем весь блок и ставим по центру */
 section#games {
     padding-top: 0px !important;
     width: 100% !important;
     max-width: 850px !important;  
     margin: 40px auto !important; 
-    text-align: center !important; /* Эта строчка принудительно поставит заголовок и описание по центру */
     box-sizing: border-box !important;
 }
 
@@ -393,29 +392,44 @@ section#games div[class*="gameGrid"] > div h2 {
     font-size: 1.1rem !important;
 }
 
-/* 1. Настройки для каждой из трех нижних карточек по отдельности */
-section#games div[class*="gameGrid"] > div:first-child + div > div {
-    flex: 1 !important;                 /* Распределяем их поровну в ширину */
-    max-width: 250px !important;        /* Делаем их компактными, убирая лишнюю пустоту внутри */
+/* 1. БЛОК ОТЗЫВОВ — УМЕНЬШЕНИЕ И СБОРКА К ЦЕНТРУ  */
+section#reviews {
     width: 100% !important;
+    max-width: 850px !important;    
+    margin: 60px auto 0 auto !important; /* Центрируем весь блок по центру экрана */
+    padding: 20px !important;
+    box-sizing: border-box !important;
 }
 
-/* Первую карточку (4.9/5) заставляем занимать всё оставшееся место */
+/* 2. Убираем пустоту между оценкой и отзывами, собирая их в горизонтальный ряд */
+section#reviews [class*="gameGrid"],
+section#reviews [class*="Grid"] {
+    display: flex !important;
+    flex-direction: row !important;     /* Строго в одну линию */
+    justify-content: center !important; /* Прижимаем карточки кучно к центру */
+    align-items: stretch !important;    /* Выравниваем их по высоте */
+    gap: 35px !important;               /* Аккуратный отступ между оценкой и отзывами */
+    width: 100% !important;
+    margin-top: 30px !important;
+}
+
+/* 3. Делаем карточку с оценкой 4.9/5 компактной */
 section#reviews [class*="gameGrid"] > div:first-child,
 section#reviews [class*="Grid"] > div:first-child {
-    flex: 1 1 auto !important;
+    flex: 0 1 220px !important;         
+    width: 100% !important;
+    box-sizing: border-box !important;
 }
 
-/* Уменьшаем верхний отступ для всей секции отзывов */
-section#reviews {
-    padding-top: 20px !important; /* Уменьшает внутренний отступ сверху */
-    margin-top: 60px !important;   /* Убирает внешний отступ, если он есть */
-}
-
-/* Уменьшаем отступ над самим заголовком «Отзывы» */
-section#reviews h2,
-section#reviews h1 {
-    margin-top: 10px !important;
+/* 4. Настраиваем правый контейнер с текстовыми отзывами */
+section#reviews [class*="gameGrid"] > div:first-child + div,
+section#reviews [class*="Grid"] > div:first-child + div {
+    flex: 1 !important;
+    max-width: 550px !important;        
+    display: flex !important;
+    flex-direction: column !important;  /* Сами отзывы внутри идут друг под другом */
+    gap: 20px !important;
+    width: 100% !important;
 }
 
 /* Этот код изменит только блок гильдий и ничего больше */
