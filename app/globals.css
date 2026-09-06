@@ -419,24 +419,47 @@ section#reviews [class*="Grid"] > div,
 section#reviews [class*="gameGrid"] > div:first-child + div > div,
 section#reviews [class*="Grid"] > div:first-child + div > div {
     display: flex !important;
-    flex-direction: column !important;
-    flex: 1 1 0px !important;       /* Намертво делит ширину блока поровну между тремя карточками */
-    max-width: 250px !important;    /* Ограничиваем максимальную ширину каждой карточки */
+    flex-direction: column !important; /* Намертво заставляем текст идти сверху вниз */
+    align-items: flex-start !important; 
+    justify-content: flex-start !important;
+    flex: 1 1 0px !important;       
+    max-width: 250px !important;    
     width: 100% !important;
     box-sizing: border-box !important;
+    padding: 16px !important;       
 }
 
-/* 4. Настраиваем правый контейнер, чтобы он не выстраивал отзывы друг под друга, а пускал их в общую линию */
+/* 4. Настраиваем правый контейнер для удержания рамок в одну линию */
 section#reviews [class*="gameGrid"] > div:first-child + div,
 section#reviews [class*="Grid"] > div:first-child + div {
     display: flex !important;
-    flex-direction: row !important; /* Меняем column на row, чтобы отзывы встали в одну линию с оценкой */
+    flex-direction: row !important; 
     gap: 35px !important;
-    flex: 2 !important;             /* Позволяет двум правым карточкам занять свои законные места */
+    flex: 2 !important;             
     width: auto !important;
 }
 
-/* Этот код изменит только блок гильдий и ничего больше */
+/* 5. ФИНАЛЬНЫЙ ТАРАН: Пробиваем внутреннюю структуру карточек, чтобы вернуть текст на место */
+section#reviews [class*="Grid"] div div,
+section#reviews [class*="gameGrid"] div div,
+section#reviews .step,
+section#reviews div[class*="card"] {
+    display: flex !important;
+    flex-direction: column !important; /* Принудительно складываем заголовок и цитату в столбик */
+    align-items: flex-start !important;
+    width: 100% !important;
+}
+
+/* Сбрасываем горизонтальные отступы у иконок и заголовков внутри карточки */
+section#reviews [class*="Grid"] h3,
+section#reviews [class*="Grid"] p {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    display: block !important;
+    width: 100% !important;
+}
+
+/* 1. Этот код изменит только блок гильдий и ничего больше */
 .guilds-container {
     max-width: 750px !important;  /* Уменьшаем ширину карточки */
     width: 100% !important;
