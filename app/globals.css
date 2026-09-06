@@ -358,8 +358,9 @@ div[style*="justifyContent: \"space-between\""] {
 section#games {
     padding-top: 0px !important;
     width: 100% !important;
-    max-width: 850px !important;  /* Сжимаем общую ширину блока до аккуратных 850px */
-    margin: 40px auto !important; /* Намертво центрируем всю эту секцию на экране */
+    max-width: 850px !important;  
+    margin: 40px auto !important; 
+    text-align: center !important; /* Эта строчка принудительно поставит заголовок и описание по центру */
     box-sizing: border-box !important;
 }
 
