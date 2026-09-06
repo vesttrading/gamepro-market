@@ -261,23 +261,25 @@ div[style*="justifyContent: \"space-between\""] {
     padding: 60px 20px !important;
 }
 
-/* 4. Выравниваем карточки шагов строго по центру без пустот */
-#how .steps {
-    display: flex !important;
-    flex-direction: row !important;     /* Строго горизонтальный ряд */
-    justify-content: center !important; /* Намертво центрирует карточки и убирает пустоту справа */
-    align-items: flex-start !important;
-    gap: 24px !important;               /* Аккуратный плотный отступ между карточками */
+/* Намертво перебиваем инлайн-стили и выстраиваем 3 шага в ОДИН горизонтальный ряд */
+#how .steps,
+#how div[class*="steps"] {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 190px)) !important; /* Ровно 3 колонки, каждая жестко по 190px — пустота уйдет! */
+    justify-content: center !important; /* Центрируем весь этот ряд на экране */
+    gap: 24px !important;               /* Аккуратный отступ между карточками */
     width: 100% !important;
     margin-top: 40px !important;
 }
 
-/* Настройки для каждого отдельного шага */
-#how .step {
-    flex: 0 1 200px !important;         /* Задаем фиксированную аккуратную ширину для карточки */
+/* Настройки для элементов внутри каждой отдельной карточки шага */
+#how .steps > div,
+#how .steps > a,
+#how div[class*="steps"] > div,
+#how div[class*="steps"] > a {
     width: 100% !important;
+    max-width: 190px !important; /* Сжимаем саму карточку, чтобы убрать пустоту справа */
     box-sizing: border-box !important;
-    text-align: left !important;
 }
 
 #how .step {
