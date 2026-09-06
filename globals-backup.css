@@ -189,29 +189,26 @@ div[style*="justifyContent: \"space-between\""] {
     margin: 0 auto 22px !important;
 }
 
-/* 3. КАРТОЧКИ ИГРОКОВ — Сужаем только их и выстраиваем в горизонтальный ряд */
-#players .players {
-    display: flex !important;
-    flex-direction: row !important;  /* Выстраиваем карточки в одну линию */
-    justify-content: center !important; 
-    align-items: stretch !important;
-    flex-wrap: nowrap !important;  /* Запрещаем перенос на вторую строку */
-    gap: 14px !important;          /* Отступ между карточками игроков */
-    max-width: 650px !important;   /* Намертво сжимаем область карточек до 650px */
+/* 3. КАРТОЧКИ ИГРОКОВ — Намертво перебиваем инлайн-сетку и выстраиваем 3 штуки в один горизонтальный ряд */
+#players .cards,
+#players div[class*="cards"] {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 190px)) !important; /* Выстраиваем ровно 3 карточки в ряд и сжимаем каждую до 190px, убирая пустоту! */
+    justify-content: center !important; /* Центрируем этот горизонтальный ряд на экране */
+    gap: 14px !important;               /* Отступ между карточками игроков */
     width: 100% !important;
-    margin: 25px auto 0 auto !important; /* Центрируем сам ряд карточек на странице */
+    max-width: 650px !important;        /* Сжимаем общую ширину блока под карточками */
+    margin: 25px auto 0 auto !important; /* Центрируем сам контейнер с карточками */
 }
 
-/* Настройки для каждой карточки игрока, чтобы убрать пустоту внутри */
-#players .players > div,
-#players .players > a {
-    display: flex !important;
-    flex-direction: column !important; /* Текст внутри карточки идет сверху вниз */
-    width: auto !important;
-    flex: 1 !important;            /* Делим свободное пространство поровну */
-    max-width: 200px !important;   /* Ограничиваем максимальную ширину одной карточки */
+/* Настройки для элементов внутри каждой отдельной карточки */
+#players .cards > div,
+#players .cards > a,
+#players div[class*="cards"] > div,
+#players div[class*="cards"] > a {
+    width: 100% !important;
+    max-width: 190px !important;
     box-sizing: border-box !important;
-    padding: 12px !important;      /* Уменьшаем внутренние отступы для аккуратности */
 }
 
 /* 1. ПРОВЕРИТЬ ИГРОКА ЧЕРЕЗ RAIDER.IO */
@@ -253,6 +250,1720 @@ div[style*="justifyContent: \"space-between\""] {
 
     #raiderio .rioForm button {
         width: 100% !important;
+    }
+}
+
+/* КАК РАБОТАЕТ ПРОВЕРКА */
+#how {
+    width: 100% !important;
+    max-width: 1160px !important;
+    margin: 0 auto !important;
+    padding: 60px 0 !important;
+}
+
+#how .steps {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 16px !important;
+    margin-top: 25px !important;
+}
+
+#how .step {
+    padding: 20px !important;
+    border: 1px solid #1e2540 !important;
+    border-radius: 16px !important;
+    background: #0b1020 !important;
+}
+
+#how .num {
+    color: #3de1d5 !important;
+    font-weight: 700 !important;
+}
+
+#how .step h3 {
+    margin: 15px 0 8px !important;
+}
+
+#how .step p {
+    color: #9da6c0 !important;
+    line-height: 1.6 !important;
+    margin: 0 !important;
+}
+
+@media (max-width: 900px) {
+    #how .steps {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* 5. Возвращаем правильные стили для блока Vladimir (div:first-child) */
+#passport .grid2 > div:first-child {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 20px !important;
+}
+
+/* Контейнер для текста справа от аватарки */
+#passport .grid2 > div:first-child > div:last-child {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    gap: 10px !important;
+    height: auto !important;
+}
+
+/* Прижимаем имя Vladimir вплотную вправо к молнии */
+#passport .grid2 > div:first-child > div:last-child > div:first-child {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 8px !important;
+}
+
+/* Отвязываем блок поиска от карточек и сдвигаем его СТРОГО под них */
+div[style*="justifyContent: \"space-between\""] {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    width: 100% !important;
+    position: relative !important;
+}
+
+/* 1. Перенос длинной строки Shaman... World of Warcraft */
+#passport .grid2 > div:first-child > div:last-child p,
+#passport .grid2 > div:first-child > div:last-child span,
+#passport .grid2 > div:first-child > div:last-child div:nth-child(2) {
+    display: block !important;
+    width: 100% !important;
+    white-space: normal !important;
+    margin-bottom: 5px !important;
+  }
+
+    div[class*="stats"] > div {
+    width: 85px !important;
+    max-width: 85px !important;
+    min-width: 85px !important;
+    height: 85px !important;
+    max-height: 85px !important;
+    min-height: 85px !important;
+    aspect-ratio: 1 / 1 !important; 
+    padding: 4px 2px !important; 
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+}
+
+/* Шрифты внутри трех квадратов */
+div[class*="stats"] > div h2,
+div[class*="stats"] > div h3,
+div[class*="stats"] > div p:first-child {
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    line-height: 1.1 !important;
+    margin: 0 0 2px 0 !important;
+}
+
+div[class*="stats"] > div p,
+div[class*="stats"] > div span {
+    font-size: 9px !important;
+    line-height: 1.1 !important;
+    margin: 0 !important;
+    white-space: normal !important;
+   }
+
+/* Выстраиваем блоки «01 Источник», «02 Проверка» и «03» в один ряд */
+main section:has(h2) + div,
+main h2 + p + div {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    flex-wrap: wrap !important;
+    gap: 40px !important; /* Отступ между тремя колонками */
+}
+
+/* Ограничиваем ширину каждого блока, чтобы они не растягивались во весь экран */
+main section:has(h2) + div > div,
+main h2 + p + div > div {
+    flex: 1 !important;
+    min-width: 250px !important;
+    max-width: 320px !important;
+}
+
+/* Настройки для блока ИГРЫ */
+section#games {
+    padding-top: 0px !important;
+}
+
+section#games div[class*="gameGrid"] {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: Flex-end !important;
+    align-items: stretch !important; /* Выравнивает все карточки по одной высоте */
+    flex-wrap: nowrap !important;    /* Запрещает перенос карточек на новую строку */
+    gap: 16px !important;
+    margin-top: -10px !important;
+}
+
+/* Делаем ВСЕ карточки (включая первую) одинакового компактного размера в один ряд */
+section#games div[class*="gameGrid"] > div {
+    flex: 1 !important;
+    max-width: 200px !important;
+    width: 100% !important;
+    min-width: 150px !important;
+    padding: 12px !important;
+}
+
+section#games div[class*="gameGrid"] > div:first-child {
+    max-width: 380px !important; /* Делает карточку WoW шире остальных */
+    margin-bottom: 0px !important;
+}
+
+/* Выпрямляем World of Warcraft в одну строку */
+section#games div[class*="gameGrid"] > div h2 {
+    white-space: nowrap !important;
+    font-size: 1.1rem !important;
+}
+
+/* Настраиваем контейнер, чтобы карточки встали в одну строку */
+section#reviews [class*="gameGrid"], 
+section#reviews [class*="Grid"] {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: space-between !important;
+    align-items: stretch !important;
+    gap: 20px !important;
+    width: 100% !important;
+}
+
+/* Делаем две правые карточки маленькими */
+section#reviews [class*="gameGrid"] > div:not(:first-child),
+section#reviews [class*="Grid"] > div:not(:first-child) {
+    flex: 0 0 280px !important; /* Жестко фиксируем ширину 280px */
+    width: 280px !important;
+    max-width: 280px !important;
+}
+
+/* Первую карточку (4.9/5) заставляем занимать всё оставшееся место */
+section#reviews [class*="gameGrid"] > div:first-child,
+section#reviews [class*="Grid"] > div:first-child {
+    flex: 1 1 auto !important;
+}
+
+/* Уменьшаем верхний отступ для всей секции отзывов */
+section#reviews {
+    padding-top: 20px !important; /* Уменьшает внутренний отступ сверху */
+    margin-top: 60px !important;   /* Убирает внешний отступ, если он есть */
+}
+
+/* Уменьшаем отступ над самим заголовком «Отзывы» */
+section#reviews h2,
+section#reviews h1 {
+    margin-top: 10px !important;
+}
+
+/* Этот код изменит только блок гильдий и ничего больше */
+.guilds-container {
+    max-width: 750px !important;  /* Уменьшаем ширину карточки */
+    width: 100% !important;
+    margin-left: auto !important;  /* Центрируем её на экране */
+    margin-right: auto !important;
+    padding: 40px 24px !important; /* Делаем внутренние отступы аккуратнее */
+    box-sizing: border-box !important;
+}
+
+/* Уменьшаем ширину внутренней карточки в блоке гильдий */
+section#guilds > div {
+    max-width: 750px !important;  /* Задаем аккуратную ширину */
+    width: 100% !important;
+    margin-left: auto !important;  /* Центрируем карточку на экране */
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+}
+
+/* На всякий случай дублируем для вложенного div, если структура сложнее */
+section#guilds div[class*="jsx-"] {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+/* Настройки для мобильных экранов (телефонов) */
+@media (max-width: 768px) {
+    /* 1. Выстраиваем карточки отзывов вертикально в одну колонку */
+    section#reviews [class*="gameGrid"], 
+    section#reviews [class*="Grid"] {
+        flex-direction: column !important;
+        gap: 15px !important;
+    }
+
+    /* 2. Сбрасываем фиксированную ширину карточек */
+    section#reviews [class*="gameGrid"] > div,
+    section#reviews [class*="Grid"] > div {
+        flex: 1 1 auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* 3. Уменьшаем гигантские отступы сверху для телефона */
+    section#reviews {
+        margin-top: 40px !important; 
+    }
+    
+    section#guilds > div {
+        padding: 20px 16px !important;
+    }
+
+    /* 1. Выстраиваем главные блоки паспорта (профиль и ачивки) друг под друга */
+    main div[class*="passport"], 
+    main div[class*="Passport"],
+    section#passport > div {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 20px !important;
+        width: 100% !important;
+    }
+
+    /* 2. Растягиваем левую карточку с ником Vladimir во всю ширину телефона */
+    main div[class*="passport"] > div:first-child,
+    main div[class*="Passport"] > div:first-child {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* 3. Маленькие карточки (KSM, Cutting Edge) тоже выстраиваем в одну колонку */
+    main div[class*="passport"] div[class*="Grid"],
+    main div[class*="Passport"] div[class*="Grid"] {
+        display: flex !important;
+        flex-direction: row !important;
+        width: 100% !important;
+        gap: 12px !important;
+    }
+
+    /* 4. Делаем каждую плашку ачивки адаптивной */
+    main div[class*="passport"] div[class*="Grid"] > div,
+    main div[class*="Passport"] div[class*="Grid"] > div {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+} 
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* 1. Центрирование и фиксация ширины основных секций */
+#passport, #players {
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: 1160px !important;
+  width: 92% !important;
+}
+
+/* 2. Восстановление сетки для паспорта (строка 246) */
+.grid2 {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
+  gap: 20px !important;
+  width: 100% !important;
+}
+section#raiderio button {
+    display: inline-flex !important;
+    width: auto !important;
+    flex-shrink: 0 !important;
+}
+/* 3. Восстановление сетки для карточек игроков (строка 259) */
+.cards {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)) !important;
+  gap: 16px !important;
+  width: 100% !important;
+}
+
+/* 4. Возвращение оформления кастомным карточкам (строка 247) */
+.card {
+  background-color: #10162b !important;
+  border: 1px solid #171c31 !important;
+  border-radius: 16px !important;
+  padding: 24px !important;
+}
+
+/* 1. Возвращаем секции правильный блочный вид, чтобы карточка Владимира была по центру */
+#passport {
+  display: block !important;
+  margin: 0 auto !important;
+  max-width: 1160px !important;
+  width: 92% !important;
+}
+
+/* 2. Сближаем заголовок и кнопку, убирая растяжение по краям экрана */
+.sectionHead, 
+div[style*="justifyContent: \"space-between\""] {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: flex-start !important; /* 🌟 Прижимает кнопку вплотную к тексту слева */
+  align-items: center !important;         /* Выравнивает их ровно по высоте */
+  flex-wrap: wrap !important;
+  gap: 20px !important;                   /* Расстояние между текстом описания и кнопкой */
+  margin-bottom: 20px !important;
+  width: 100% !important;
+}
+
+/* 3. Описание под заголовком оставляем обычным блоком, чтобы оно не ломало строку */
+.sectionHead > div:first-child {
+  display: block !important;
+}
+
+/* 4. Делаем саму кнопку "Поделиться" компактной и убираем у неё лишние отступы */
+#passport button {
+  width: auto !important;
+  min-width: 100px !important;
+  max-width: 230px !important;
+  margin-left: 40px !important; /* Отодвинет кнопку вправо от текста на 40 пикселей */
+  padding: 10px 12px !important;
+  background-color: #14b8a6 !important; /* Насыщенный бирюзовый цвет фона */
+    border-color: #14b8a6 !important;     /* Бирюзовая рамка */
+    color: #000000 !important;            /* Белый цвет текста для контраста */
+}
+
+/* 5. Восстанавливаем сетку для паспорта, чтобы карточка была на всю ширину */
+.grid2 {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
+  gap: 20px !important;
+  width: 100% !important;
+}
+
+/* 1. Уменьшаем размер заголовка Achievement Passport */
+#passport h2, 
+.sectionHead h2 {
+  font-size: 28px !important; /* Делает заголовок аккуратным и компактным */
+  margin: 0 !important;
+}
+
+/* 2. Центрируем всю верхнюю строку (заголовок, описание и кнопку) */
+.sectionHead {
+  justify-content: center !important; /* 🌟 Ставит всю строку строго по центру */
+  text-align: center !important;     /* Центрирует текст внутри */
+  margin: 0 auto 20px auto !important;
+}
+
+/* 3. Выравниваем элементы внутри строки, чтобы они стояли красиво */
+.sectionHead > div:first-child {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;   /* Центрирует описание под заголовком */
+}
+
+/* Настраиваем и центрируем главный контейнер */
+#passport .grid2 {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    width: 100% !important;
+    max-width: 500px !important;
+    margin: 20px auto !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+}
+
+/* 1. Полный сброс вертикального контейнера в паспорте */
+#passport div[class*="grid"] > div:first-child > div:last-child {
+    display: flex !important;
+    flex-direction: row !important; /* Намертво заставляем встать в ряд */
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 16px !important;
+    width: 100% !important;
+}
+
+/* 2. Принудительная настройка для самих карточек, чтобы они не растягивались */
+#passport div[class*="grid"] > div:first-child > div:last-child > div,
+#passport div[class*="grid"] > div:first-child > div:last-child > a {
+    display: flex !important;
+    flex-direction: column !important; /* Текст внутри карточки оставляем столбиком */
+    align-items: center !important;
+    justify-content: center !important;
+    width: auto !important;
+    flex: 1 !important;
+}
+
+/* 3. Блок с НИЖНИМИ карточками ачивок (4 штуки) - строго в ОДНУ СТРОКУ */
+#passport div[class*="grid"] > div:first-child > div:last-child + div,
+#passport .cards {
+    display: flex !important;
+    flex-direction: row !important; /* В одну линию */
+    justify-content: center !important;
+    flex-wrap: nowrap !important; /* Запрещаем перенос в 2 ряда */
+    gap: 10px !important;
+    width: 100% !important;
+    margin-top: 20px !important;
+    margin-bottom: 30px !important; /* Делаем отступ СНИЗУ от карточек до поиска */
+}
+
+/* 4. Делаем нижние 4 карточки аккуратными и одинаковыми */
+#passport div[class*="grid"] > div:first-child > div:last-child + div > div,
+#passport div[class*="grid"] > div:first-child > div:last-child + div > a,
+#passport .cards > div,
+#passport .cards > a {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: 1 1 0px !important;
+    max-width: 130px !important;
+    min-width: 85px !important; /* Чтобы 4 карточки точно влезли в ряд */
+    padding: 8px !important;
+    box-sizing: border-box !important;
+}
+
+/* 1. НАЙТИ ИГРОКА  Намертво уменьшаем весь общий блок до аккуратных 800px */
+#players {
+    width: 100% !important;
+    max-width: 500px !important;  
+    margin: 40px auto 0 auto !important; /* Центрируем весь этот блок на экране */
+}
+
+/* Шаг 2. Саму строку поиска внутри делаем еще чуть компактнее */
+#players .searchbox {
+    display: flex !important; 
+    gap: 10px !important;
+    max-width: 100px !important; 
+    margin: 0 auto 22px !important;
+}
+
+/* 3. КАРТОЧКИ ИГРОКОВ — Намертво перебиваем инлайн-сетку и выстраиваем 3 штуки в один горизонтальный ряд */
+#players .cards,
+#players div[class*="cards"] {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 190px)) !important; /* Выстраиваем ровно 3 карточки в ряд и сжимаем каждую до 190px, убирая пустоту! */
+    justify-content: center !important; /* Центрируем этот горизонтальный ряд на экране */
+    gap: 14px !important;               /* Отступ между карточками игроков */
+    width: 100% !important;
+    max-width: 650px !important;        /* Сжимаем общую ширину блока под карточками */
+    margin: 25px auto 0 auto !important; /* Центрируем сам контейнер с карточками */
+}
+
+/* Настройки для элементов внутри каждой отдельной карточки */
+#players .cards > div,
+#players .cards > a,
+#players div[class*="cards"] > div,
+#players div[class*="cards"] > a {
+    width: 100% !important;
+    max-width: 190px !important;
+    box-sizing: border-box !important;
+}
+
+/* 1. ПРОВЕРИТЬ ИГРОКА ЧЕРЕЗ RAIDER.IO */
+#raiderio {
+    width: 100% !important;
+    max-width: 650px !important; /* Уменьшаем всю синюю карточку до аккуратных 650px */
+    margin: 40px auto !important; /* Свойство auto принудительно центрирует блок на экране */
+    padding: 0 0 40px !important;
+    box-sizing: border-box !important;
+}
+
+#raiderio .rioForm {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 90px auto !important; /* Возвращаем поля ввода в одну строку на ПК */
+    gap: 10px !important;
+    margin-top: 18px !important;
+    width: 100% !important;
+}
+
+#raiderio .rioForm input,
+#raiderio .rioForm select {
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+#raiderio .rioForm button {
+    white-space: nowrap !important;
+}
+
+/* Телефон (адаптивность для смартфонов оставляем) */
+@media (max-width: 700px) {
+    #raiderio {
+        width: 92% !important;
+    }
+    
+    #raiderio .rioForm {
+        grid-template-columns: 1fr !important; /* На телефонах поля встанут друг под друга */
+    }
+
+    #raiderio .rioForm button {
+        width: 100% !important;
+    }
+}
+
+/* КАК РАБОТАЕТ ПРОВЕРКА */
+#how {
+    width: 100% !important;
+    max-width: 1160px !important;
+    margin: 0 auto !important;
+    padding: 60px 0 !important;
+}
+
+#how .steps {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 16px !important;
+    margin-top: 25px !important;
+}
+
+#how .step {
+    padding: 20px !important;
+    border: 1px solid #1e2540 !important;
+    border-radius: 16px !important;
+    background: #0b1020 !important;
+}
+
+#how .num {
+    color: #3de1d5 !important;
+    font-weight: 700 !important;
+}
+
+#how .step h3 {
+    margin: 15px 0 8px !important;
+}
+
+#how .step p {
+    color: #9da6c0 !important;
+    line-height: 1.6 !important;
+    margin: 0 !important;
+}
+
+@media (max-width: 900px) {
+    #how .steps {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* 5. Возвращаем правильные стили для блока Vladimir (div:first-child) */
+#passport .grid2 > div:first-child {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 20px !important;
+}
+
+/* Контейнер для текста справа от аватарки */
+#passport .grid2 > div:first-child > div:last-child {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    gap: 10px !important;
+    height: auto !important;
+}
+
+/* Прижимаем имя Vladimir вплотную вправо к молнии */
+#passport .grid2 > div:first-child > div:last-child > div:first-child {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 8px !important;
+}
+
+/* Отвязываем блок поиска от карточек и сдвигаем его СТРОГО под них */
+div[style*="justifyContent: \"space-between\""] {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    width: 100% !important;
+    position: relative !important;
+}
+
+/* 1. Перенос длинной строки Shaman... World of Warcraft */
+#passport .grid2 > div:first-child > div:last-child p,
+#passport .grid2 > div:first-child > div:last-child span,
+#passport .grid2 > div:first-child > div:last-child div:nth-child(2) {
+    display: block !important;
+    width: 100% !important;
+    white-space: normal !important;
+    margin-bottom: 5px !important;
+  }
+
+    div[class*="stats"] > div {
+    width: 85px !important;
+    max-width: 85px !important;
+    min-width: 85px !important;
+    height: 85px !important;
+    max-height: 85px !important;
+    min-height: 85px !important;
+    aspect-ratio: 1 / 1 !important; 
+    padding: 4px 2px !important; 
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+}
+
+/* Шрифты внутри трех квадратов */
+div[class*="stats"] > div h2,
+div[class*="stats"] > div h3,
+div[class*="stats"] > div p:first-child {
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    line-height: 1.1 !important;
+    margin: 0 0 2px 0 !important;
+}
+
+div[class*="stats"] > div p,
+div[class*="stats"] > div span {
+    font-size: 9px !important;
+    line-height: 1.1 !important;
+    margin: 0 !important;
+    white-space: normal !important;
+   }
+
+/* Выстраиваем блоки «01 Источник», «02 Проверка» и «03» в один ряд */
+main section:has(h2) + div,
+main h2 + p + div {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    flex-wrap: wrap !important;
+    gap: 40px !important; /* Отступ между тремя колонками */
+}
+
+/* Ограничиваем ширину каждого блока, чтобы они не растягивались во весь экран */
+main section:has(h2) + div > div,
+main h2 + p + div > div {
+    flex: 1 !important;
+    min-width: 250px !important;
+    max-width: 320px !important;
+}
+
+/* Настройки для блока ИГРЫ */
+section#games {
+    padding-top: 0px !important;
+}
+
+section#games div[class*="gameGrid"] {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: Flex-end !important;
+    align-items: stretch !important; /* Выравнивает все карточки по одной высоте */
+    flex-wrap: nowrap !important;    /* Запрещает перенос карточек на новую строку */
+    gap: 16px !important;
+    margin-top: -10px !important;
+}
+
+/* Делаем ВСЕ карточки (включая первую) одинакового компактного размера в один ряд */
+section#games div[class*="gameGrid"] > div {
+    flex: 1 !important;
+    max-width: 200px !important;
+    width: 100% !important;
+    min-width: 150px !important;
+    padding: 12px !important;
+}
+
+section#games div[class*="gameGrid"] > div:first-child {
+    max-width: 380px !important; /* Делает карточку WoW шире остальных */
+    margin-bottom: 0px !important;
+}
+
+/* Выпрямляем World of Warcraft в одну строку */
+section#games div[class*="gameGrid"] > div h2 {
+    white-space: nowrap !important;
+    font-size: 1.1rem !important;
+}
+
+/* Настраиваем контейнер, чтобы карточки встали в одну строку */
+section#reviews [class*="gameGrid"], 
+section#reviews [class*="Grid"] {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: space-between !important;
+    align-items: stretch !important;
+    gap: 20px !important;
+    width: 100% !important;
+}
+
+/* Делаем две правые карточки маленькими */
+section#reviews [class*="gameGrid"] > div:not(:first-child),
+section#reviews [class*="Grid"] > div:not(:first-child) {
+    flex: 0 0 280px !important; /* Жестко фиксируем ширину 280px */
+    width: 280px !important;
+    max-width: 280px !important;
+}
+
+/* Первую карточку (4.9/5) заставляем занимать всё оставшееся место */
+section#reviews [class*="gameGrid"] > div:first-child,
+section#reviews [class*="Grid"] > div:first-child {
+    flex: 1 1 auto !important;
+}
+
+/* Уменьшаем верхний отступ для всей секции отзывов */
+section#reviews {
+    padding-top: 20px !important; /* Уменьшает внутренний отступ сверху */
+    margin-top: 60px !important;   /* Убирает внешний отступ, если он есть */
+}
+
+/* Уменьшаем отступ над самим заголовком «Отзывы» */
+section#reviews h2,
+section#reviews h1 {
+    margin-top: 10px !important;
+}
+
+/* Этот код изменит только блок гильдий и ничего больше */
+.guilds-container {
+    max-width: 750px !important;  /* Уменьшаем ширину карточки */
+    width: 100% !important;
+    margin-left: auto !important;  /* Центрируем её на экране */
+    margin-right: auto !important;
+    padding: 40px 24px !important; /* Делаем внутренние отступы аккуратнее */
+    box-sizing: border-box !important;
+}
+
+/* Уменьшаем ширину внутренней карточки в блоке гильдий */
+section#guilds > div {
+    max-width: 750px !important;  /* Задаем аккуратную ширину */
+    width: 100% !important;
+    margin-left: auto !important;  /* Центрируем карточку на экране */
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+}
+
+/* На всякий случай дублируем для вложенного div, если структура сложнее */
+section#guilds div[class*="jsx-"] {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+/* Настройки для мобильных экранов (телефонов) */
+@media (max-width: 768px) {
+    /* 1. Выстраиваем карточки отзывов вертикально в одну колонку */
+    section#reviews [class*="gameGrid"], 
+    section#reviews [class*="Grid"] {
+        flex-direction: column !important;
+        gap: 15px !important;
+    }
+
+    /* 2. Сбрасываем фиксированную ширину карточек */
+    section#reviews [class*="gameGrid"] > div,
+    section#reviews [class*="Grid"] > div {
+        flex: 1 1 auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* 3. Уменьшаем гигантские отступы сверху для телефона */
+    section#reviews {
+        margin-top: 40px !important; 
+    }
+    
+    section#guilds > div {
+        padding: 20px 16px !important;
+    }
+
+    /* 1. Выстраиваем главные блоки паспорта (профиль и ачивки) друг под друга */
+    main div[class*="passport"], 
+    main div[class*="Passport"],
+    section#passport > div {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 20px !important;
+        width: 100% !important;
+    }
+
+    /* 2. Растягиваем левую карточку с ником Vladimir во всю ширину телефона */
+    main div[class*="passport"] > div:first-child,
+    main div[class*="Passport"] > div:first-child {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* 3. Маленькие карточки (KSM, Cutting Edge) тоже выстраиваем в одну колонку */
+    main div[class*="passport"] div[class*="Grid"],
+    main div[class*="Passport"] div[class*="Grid"] {
+        display: flex !important;
+        flex-direction: row !important;
+        width: 100% !important;
+        gap: 12px !important;
+    }
+
+    /* 4. Делаем каждую плашку ачивки адаптивной */
+    main div[class*="passport"] div[class*="Grid"] > div,
+    main div[class*="Passport"] div[class*="Grid"] > div {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+} 
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* 1. Центрирование и фиксация ширины основных секций */
+#passport, #players {
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: 1160px !important;
+  width: 92% !important;
+}
+
+/* 2. Восстановление сетки для паспорта (строка 246) */
+.grid2 {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
+  gap: 20px !important;
+  width: 100% !important;
+}
+section#raiderio button {
+    display: inline-flex !important;
+    width: auto !important;
+    flex-shrink: 0 !important;
+}
+/* 3. Восстановление сетки для карточек игроков (строка 259) */
+.cards {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)) !important;
+  gap: 16px !important;
+  width: 100% !important;
+}
+
+/* 4. Возвращение оформления кастомным карточкам (строка 247) */
+.card {
+  background-color: #10162b !important;
+  border: 1px solid #171c31 !important;
+  border-radius: 16px !important;
+  padding: 24px !important;
+}
+
+/* 1. Возвращаем секции правильный блочный вид, чтобы карточка Владимира была по центру */
+#passport {
+  display: block !important;
+  margin: 0 auto !important;
+  max-width: 1160px !important;
+  width: 92% !important;
+}
+
+/* 2. Сближаем заголовок и кнопку, убирая растяжение по краям экрана */
+.sectionHead, 
+div[style*="justifyContent: \"space-between\""] {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: flex-start !important; /* 🌟 Прижимает кнопку вплотную к тексту слева */
+  align-items: center !important;         /* Выравнивает их ровно по высоте */
+  flex-wrap: wrap !important;
+  gap: 20px !important;                   /* Расстояние между текстом описания и кнопкой */
+  margin-bottom: 20px !important;
+  width: 100% !important;
+}
+
+/* 3. Описание под заголовком оставляем обычным блоком, чтобы оно не ломало строку */
+.sectionHead > div:first-child {
+  display: block !important;
+}
+
+/* 4. Делаем саму кнопку "Поделиться" компактной и убираем у неё лишние отступы */
+#passport button {
+  width: auto !important;
+  min-width: 100px !important;
+  max-width: 230px !important;
+  margin-left: 40px !important; /* Отодвинет кнопку вправо от текста на 40 пикселей */
+  padding: 10px 12px !important;
+  background-color: #14b8a6 !important; /* Насыщенный бирюзовый цвет фона */
+    border-color: #14b8a6 !important;     /* Бирюзовая рамка */
+    color: #000000 !important;            /* Белый цвет текста для контраста */
+}
+
+/* 5. Восстанавливаем сетку для паспорта, чтобы карточка была на всю ширину */
+.grid2 {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
+  gap: 20px !important;
+  width: 100% !important;
+}
+
+/* 1. Уменьшаем размер заголовка Achievement Passport */
+#passport h2, 
+.sectionHead h2 {
+  font-size: 28px !important; /* Делает заголовок аккуратным и компактным */
+  margin: 0 !important;
+}
+
+/* 2. Центрируем всю верхнюю строку (заголовок, описание и кнопку) */
+.sectionHead {
+  justify-content: center !important; /* 🌟 Ставит всю строку строго по центру */
+  text-align: center !important;     /* Центрирует текст внутри */
+  margin: 0 auto 20px auto !important;
+}
+
+/* 3. Выравниваем элементы внутри строки, чтобы они стояли красиво */
+.sectionHead > div:first-child {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;   /* Центрирует описание под заголовком */
+}
+
+/* Настраиваем и центрируем главный контейнер */
+#passport .grid2 {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    width: 100% !important;
+    max-width: 500px !important;
+    margin: 20px auto !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+}
+
+/* 1. Полный сброс вертикального контейнера в паспорте */
+#passport div[class*="grid"] > div:first-child > div:last-child {
+    display: flex !important;
+    flex-direction: row !important; /* Намертво заставляем встать в ряд */
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 16px !important;
+    width: 100% !important;
+}
+
+/* 2. Принудительная настройка для самих карточек, чтобы они не растягивались */
+#passport div[class*="grid"] > div:first-child > div:last-child > div,
+#passport div[class*="grid"] > div:first-child > div:last-child > a {
+    display: flex !important;
+    flex-direction: column !important; /* Текст внутри карточки оставляем столбиком */
+    align-items: center !important;
+    justify-content: center !important;
+    width: auto !important;
+    flex: 1 !important;
+}
+
+/* 3. Блок с НИЖНИМИ карточками ачивок (4 штуки) - строго в ОДНУ СТРОКУ */
+#passport div[class*="grid"] > div:first-child > div:last-child + div,
+#passport .cards {
+    display: flex !important;
+    flex-direction: row !important; /* В одну линию */
+    justify-content: center !important;
+    flex-wrap: nowrap !important; /* Запрещаем перенос в 2 ряда */
+    gap: 10px !important;
+    width: 100% !important;
+    margin-top: 20px !important;
+    margin-bottom: 30px !important; /* Делаем отступ СНИЗУ от карточек до поиска */
+}
+
+/* 4. Делаем нижние 4 карточки аккуратными и одинаковыми */
+#passport div[class*="grid"] > div:first-child > div:last-child + div > div,
+#passport div[class*="grid"] > div:first-child > div:last-child + div > a,
+#passport .cards > div,
+#passport .cards > a {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: 1 1 0px !important;
+    max-width: 130px !important;
+    min-width: 85px !important; /* Чтобы 4 карточки точно влезли в ряд */
+    padding: 8px !important;
+    box-sizing: border-box !important;
+}
+
+/* 1. НАЙТИ ИГРОКА  Намертво уменьшаем весь общий блок до аккуратных 800px */
+#players {
+    width: 100% !important;
+    max-width: 500px !important;  
+    margin: 40px auto 0 auto !important; /* Центрируем весь этот блок на экране */
+}
+
+/* Шаг 2. Саму строку поиска внутри делаем еще чуть компактнее */
+#players .searchbox {
+    display: flex !important; 
+    gap: 10px !important;
+    max-width: 100px !important; 
+    margin: 0 auto 22px !important;
+}
+
+/* 3. КАРТОЧКИ ИГРОКОВ — Намертво перебиваем инлайн-сетку и выстраиваем 3 штуки в один горизонтальный ряд */
+#players .cards,
+#players div[class*="cards"] {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 190px)) !important; /* Выстраиваем ровно 3 карточки в ряд и сжимаем каждую до 190px, убирая пустоту! */
+    justify-content: center !important; /* Центрируем этот горизонтальный ряд на экране */
+    gap: 14px !important;               /* Отступ между карточками игроков */
+    width: 100% !important;
+    max-width: 650px !important;        /* Сжимаем общую ширину блока под карточками */
+    margin: 25px auto 0 auto !important; /* Центрируем сам контейнер с карточками */
+}
+
+/* Настройки для элементов внутри каждой отдельной карточки */
+#players .cards > div,
+#players .cards > a,
+#players div[class*="cards"] > div,
+#players div[class*="cards"] > a {
+    width: 100% !important;
+    max-width: 190px !important;
+    box-sizing: border-box !important;
+}
+
+/* 1. ПРОВЕРИТЬ ИГРОКА ЧЕРЕЗ RAIDER.IO */
+#raiderio {
+    width: 100% !important;
+    max-width: 650px !important; /* Уменьшаем всю синюю карточку до аккуратных 650px */
+    margin: 40px auto !important; /* Свойство auto принудительно центрирует блок на экране */
+    padding: 0 0 40px !important;
+    box-sizing: border-box !important;
+}
+
+#raiderio .rioForm {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 90px auto !important; /* Возвращаем поля ввода в одну строку на ПК */
+    gap: 10px !important;
+    margin-top: 18px !important;
+    width: 100% !important;
+}
+
+#raiderio .rioForm input,
+#raiderio .rioForm select {
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+#raiderio .rioForm button {
+    white-space: nowrap !important;
+}
+
+/* Телефон (адаптивность для смартфонов оставляем) */
+@media (max-width: 700px) {
+    #raiderio {
+        width: 92% !important;
+    }
+    
+    #raiderio .rioForm {
+        grid-template-columns: 1fr !important; /* На телефонах поля встанут друг под друга */
+    }
+
+    #raiderio .rioForm button {
+        width: 100% !important;
+    }
+}
+
+/* КАК РАБОТАЕТ ПРОВЕРКА */
+#how {
+    width: 100% !important;
+    max-width: 1160px !important;
+    margin: 0 auto !important;
+    padding: 60px 0 !important;
+}
+
+#how .steps {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 16px !important;
+    margin-top: 25px !important;
+}
+
+#how .step {
+    padding: 20px !important;
+    border: 1px solid #1e2540 !important;
+    border-radius: 16px !important;
+    background: #0b1020 !important;
+}
+
+#how .num {
+    color: #3de1d5 !important;
+    font-weight: 700 !important;
+}
+
+#how .step h3 {
+    margin: 15px 0 8px !important;
+}
+
+#how .step p {
+    color: #9da6c0 !important;
+    line-height: 1.6 !important;
+    margin: 0 !important;
+}
+
+@media (max-width: 900px) {
+    #how .steps {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* 5. Возвращаем правильные стили для блока Vladimir (div:first-child) */
+#passport .grid2 > div:first-child {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 20px !important;
+}
+
+/* Контейнер для текста справа от аватарки */
+#passport .grid2 > div:first-child > div:last-child {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    gap: 10px !important;
+    height: auto !important;
+}
+
+/* Прижимаем имя Vladimir вплотную вправо к молнии */
+#passport .grid2 > div:first-child > div:last-child > div:first-child {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 8px !important;
+}
+
+/* Отвязываем блок поиска от карточек и сдвигаем его СТРОГО под них */
+div[style*="justifyContent: \"space-between\""] {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    width: 100% !important;
+    position: relative !important;
+}
+
+/* 1. Перенос длинной строки Shaman... World of Warcraft */
+#passport .grid2 > div:first-child > div:last-child p,
+#passport .grid2 > div:first-child > div:last-child span,
+#passport .grid2 > div:first-child > div:last-child div:nth-child(2) {
+    display: block !important;
+    width: 100% !important;
+    white-space: normal !important;
+    margin-bottom: 5px !important;
+  }
+
+    div[class*="stats"] > div {
+    width: 85px !important;
+    max-width: 85px !important;
+    min-width: 85px !important;
+    height: 85px !important;
+    max-height: 85px !important;
+    min-height: 85px !important;
+    aspect-ratio: 1 / 1 !important; 
+    padding: 4px 2px !important; 
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+}
+
+/* Шрифты внутри трех квадратов */
+div[class*="stats"] > div h2,
+div[class*="stats"] > div h3,
+div[class*="stats"] > div p:first-child {
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    line-height: 1.1 !important;
+    margin: 0 0 2px 0 !important;
+}
+
+div[class*="stats"] > div p,
+div[class*="stats"] > div span {
+    font-size: 9px !important;
+    line-height: 1.1 !important;
+    margin: 0 !important;
+    white-space: normal !important;
+   }
+
+/* Выстраиваем блоки «01 Источник», «02 Проверка» и «03» в один ряд */
+main section:has(h2) + div,
+main h2 + p + div {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    flex-wrap: wrap !important;
+    gap: 40px !important; /* Отступ между тремя колонками */
+}
+
+/* Ограничиваем ширину каждого блока, чтобы они не растягивались во весь экран */
+main section:has(h2) + div > div,
+main h2 + p + div > div {
+    flex: 1 !important;
+    min-width: 250px !important;
+    max-width: 320px !important;
+}
+
+/* Настройки для блока ИГРЫ */
+section#games {
+    padding-top: 0px !important;
+}
+
+section#games div[class*="gameGrid"] {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: Flex-end !important;
+    align-items: stretch !important; /* Выравнивает все карточки по одной высоте */
+    flex-wrap: nowrap !important;    /* Запрещает перенос карточек на новую строку */
+    gap: 16px !important;
+    margin-top: -10px !important;
+}
+
+/* Делаем ВСЕ карточки (включая первую) одинакового компактного размера в один ряд */
+section#games div[class*="gameGrid"] > div {
+    flex: 1 !important;
+    max-width: 200px !important;
+    width: 100% !important;
+    min-width: 150px !important;
+    padding: 12px !important;
+}
+
+section#games div[class*="gameGrid"] > div:first-child {
+    max-width: 380px !important; /* Делает карточку WoW шире остальных */
+    margin-bottom: 0px !important;
+}
+
+/* Выпрямляем World of Warcraft в одну строку */
+section#games div[class*="gameGrid"] > div h2 {
+    white-space: nowrap !important;
+    font-size: 1.1rem !important;
+}
+
+/* Настраиваем контейнер, чтобы карточки встали в одну строку */
+section#reviews [class*="gameGrid"], 
+section#reviews [class*="Grid"] {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: space-between !important;
+    align-items: stretch !important;
+    gap: 20px !important;
+    width: 100% !important;
+}
+
+/* Делаем две правые карточки маленькими */
+section#reviews [class*="gameGrid"] > div:not(:first-child),
+section#reviews [class*="Grid"] > div:not(:first-child) {
+    flex: 0 0 280px !important; /* Жестко фиксируем ширину 280px */
+    width: 280px !important;
+    max-width: 280px !important;
+}
+
+/* Первую карточку (4.9/5) заставляем занимать всё оставшееся место */
+section#reviews [class*="gameGrid"] > div:first-child,
+section#reviews [class*="Grid"] > div:first-child {
+    flex: 1 1 auto !important;
+}
+
+/* Уменьшаем верхний отступ для всей секции отзывов */
+section#reviews {
+    padding-top: 20px !important; /* Уменьшает внутренний отступ сверху */
+    margin-top: 60px !important;   /* Убирает внешний отступ, если он есть */
+}
+
+/* Уменьшаем отступ над самим заголовком «Отзывы» */
+section#reviews h2,
+section#reviews h1 {
+    margin-top: 10px !important;
+}
+
+/* Этот код изменит только блок гильдий и ничего больше */
+.guilds-container {
+    max-width: 750px !important;  /* Уменьшаем ширину карточки */
+    width: 100% !important;
+    margin-left: auto !important;  /* Центрируем её на экране */
+    margin-right: auto !important;
+    padding: 40px 24px !important; /* Делаем внутренние отступы аккуратнее */
+    box-sizing: border-box !important;
+}
+
+/* Уменьшаем ширину внутренней карточки в блоке гильдий */
+section#guilds > div {
+    max-width: 750px !important;  /* Задаем аккуратную ширину */
+    width: 100% !important;
+    margin-left: auto !important;  /* Центрируем карточку на экране */
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+}
+
+/* На всякий случай дублируем для вложенного div, если структура сложнее */
+section#guilds div[class*="jsx-"] {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+/* Настройки для мобильных экранов (телефонов) */
+@media (max-width: 768px) {
+    /* 1. Выстраиваем карточки отзывов вертикально в одну колонку */
+    section#reviews [class*="gameGrid"], 
+    section#reviews [class*="Grid"] {
+        flex-direction: column !important;
+        gap: 15px !important;
+    }
+
+    /* 2. Сбрасываем фиксированную ширину карточек */
+    section#reviews [class*="gameGrid"] > div,
+    section#reviews [class*="Grid"] > div {
+        flex: 1 1 auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* 3. Уменьшаем гигантские отступы сверху для телефона */
+    section#reviews {
+        margin-top: 40px !important; 
+    }
+    
+    section#guilds > div {
+        padding: 20px 16px !important;
+    }
+
+    /* 1. Выстраиваем главные блоки паспорта (профиль и ачивки) друг под друга */
+    main div[class*="passport"], 
+    main div[class*="Passport"],
+    section#passport > div {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 20px !important;
+        width: 100% !important;
+    }
+
+    /* 2. Растягиваем левую карточку с ником Vladimir во всю ширину телефона */
+    main div[class*="passport"] > div:first-child,
+    main div[class*="Passport"] > div:first-child {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* 3. Маленькие карточки (KSM, Cutting Edge) тоже выстраиваем в одну колонку */
+    main div[class*="passport"] div[class*="Grid"],
+    main div[class*="Passport"] div[class*="Grid"] {
+        display: flex !important;
+        flex-direction: row !important;
+        width: 100% !important;
+        gap: 12px !important;
+    }
+
+    /* 4. Делаем каждую плашку ачивки адаптивной */
+    main div[class*="passport"] div[class*="Grid"] > div,
+    main div[class*="Passport"] div[class*="Grid"] > div {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+} 
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* 1. Центрирование и фиксация ширины основных секций */
+#passport, #players {
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: 1160px !important;
+  width: 92% !important;
+}
+
+/* 2. Восстановление сетки для паспорта (строка 246) */
+.grid2 {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
+  gap: 20px !important;
+  width: 100% !important;
+}
+section#raiderio button {
+    display: inline-flex !important;
+    width: auto !important;
+    flex-shrink: 0 !important;
+}
+/* 3. Восстановление сетки для карточек игроков (строка 259) */
+.cards {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)) !important;
+  gap: 16px !important;
+  width: 100% !important;
+}
+
+/* 4. Возвращение оформления кастомным карточкам (строка 247) */
+.card {
+  background-color: #10162b !important;
+  border: 1px solid #171c31 !important;
+  border-radius: 16px !important;
+  padding: 24px !important;
+}
+
+/* 1. Возвращаем секции правильный блочный вид, чтобы карточка Владимира была по центру */
+#passport {
+  display: block !important;
+  margin: 0 auto !important;
+  max-width: 1160px !important;
+  width: 92% !important;
+}
+
+/* 2. Сближаем заголовок и кнопку, убирая растяжение по краям экрана */
+.sectionHead, 
+div[style*="justifyContent: \"space-between\""] {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: flex-start !important; /* 🌟 Прижимает кнопку вплотную к тексту слева */
+  align-items: center !important;         /* Выравнивает их ровно по высоте */
+  flex-wrap: wrap !important;
+  gap: 20px !important;                   /* Расстояние между текстом описания и кнопкой */
+  margin-bottom: 20px !important;
+  width: 100% !important;
+}
+
+/* 3. Описание под заголовком оставляем обычным блоком, чтобы оно не ломало строку */
+.sectionHead > div:first-child {
+  display: block !important;
+}
+
+/* 4. Делаем саму кнопку "Поделиться" компактной и убираем у неё лишние отступы */
+#passport button {
+  width: auto !important;
+  min-width: 100px !important;
+  max-width: 230px !important;
+  margin-left: 40px !important; /* Отодвинет кнопку вправо от текста на 40 пикселей */
+  padding: 10px 12px !important;
+  background-color: #14b8a6 !important; /* Насыщенный бирюзовый цвет фона */
+    border-color: #14b8a6 !important;     /* Бирюзовая рамка */
+    color: #000000 !important;            /* Белый цвет текста для контраста */
+}
+
+/* 5. Восстанавливаем сетку для паспорта, чтобы карточка была на всю ширину */
+.grid2 {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
+  gap: 20px !important;
+  width: 100% !important;
+}
+
+/* 1. Уменьшаем размер заголовка Achievement Passport */
+#passport h2, 
+.sectionHead h2 {
+  font-size: 28px !important; /* Делает заголовок аккуратным и компактным */
+  margin: 0 !important;
+}
+
+/* 2. Центрируем всю верхнюю строку (заголовок, описание и кнопку) */
+.sectionHead {
+  justify-content: center !important; /* 🌟 Ставит всю строку строго по центру */
+  text-align: center !important;     /* Центрирует текст внутри */
+  margin: 0 auto 20px auto !important;
+}
+
+/* 3. Выравниваем элементы внутри строки, чтобы они стояли красиво */
+.sectionHead > div:first-child {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;   /* Центрирует описание под заголовком */
+}
+
+/* Настраиваем и центрируем главный контейнер */
+#passport .grid2 {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    width: 100% !important;
+    max-width: 500px !important;
+    margin: 20px auto !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+}
+
+/* 1. Полный сброс вертикального контейнера в паспорте */
+#passport div[class*="grid"] > div:first-child > div:last-child {
+    display: flex !important;
+    flex-direction: row !important; /* Намертво заставляем встать в ряд */
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 16px !important;
+    width: 100% !important;
+}
+
+/* 2. Принудительная настройка для самих карточек, чтобы они не растягивались */
+#passport div[class*="grid"] > div:first-child > div:last-child > div,
+#passport div[class*="grid"] > div:first-child > div:last-child > a {
+    display: flex !important;
+    flex-direction: column !important; /* Текст внутри карточки оставляем столбиком */
+    align-items: center !important;
+    justify-content: center !important;
+    width: auto !important;
+    flex: 1 !important;
+}
+
+/* 3. Блок с НИЖНИМИ карточками ачивок (4 штуки) - строго в ОДНУ СТРОКУ */
+#passport div[class*="grid"] > div:first-child > div:last-child + div,
+#passport .cards {
+    display: flex !important;
+    flex-direction: row !important; /* В одну линию */
+    justify-content: center !important;
+    flex-wrap: nowrap !important; /* Запрещаем перенос в 2 ряда */
+    gap: 10px !important;
+    width: 100% !important;
+    margin-top: 20px !important;
+    margin-bottom: 30px !important; /* Делаем отступ СНИЗУ от карточек до поиска */
+}
+
+/* 4. Делаем нижние 4 карточки аккуратными и одинаковыми */
+#passport div[class*="grid"] > div:first-child > div:last-child + div > div,
+#passport div[class*="grid"] > div:first-child > div:last-child + div > a,
+#passport .cards > div,
+#passport .cards > a {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: 1 1 0px !important;
+    max-width: 130px !important;
+    min-width: 85px !important; /* Чтобы 4 карточки точно влезли в ряд */
+    padding: 8px !important;
+    box-sizing: border-box !important;
+}
+
+/* 1. НАЙТИ ИГРОКА  Намертво уменьшаем весь общий блок до аккуратных 800px */
+#players {
+    width: 100% !important;
+    max-width: 500px !important;  
+    margin: 40px auto 0 auto !important; /* Центрируем весь этот блок на экране */
+}
+
+/* Шаг 2. Саму строку поиска внутри делаем еще чуть компактнее */
+#players .searchbox {
+    display: flex !important; 
+    gap: 10px !important;
+    max-width: 100px !important; 
+    margin: 0 auto 22px !important;
+}
+
+/* 3. КАРТОЧКИ ИГРОКОВ — Намертво перебиваем инлайн-сетку и выстраиваем 3 штуки в один горизонтальный ряд */
+#players .cards,
+#players div[class*="cards"] {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 190px)) !important; /* Выстраиваем ровно 3 карточки в ряд и сжимаем каждую до 190px, убирая пустоту! */
+    justify-content: center !important; /* Центрируем этот горизонтальный ряд на экране */
+    gap: 14px !important;               /* Отступ между карточками игроков */
+    width: 100% !important;
+    max-width: 650px !important;        /* Сжимаем общую ширину блока под карточками */
+    margin: 25px auto 0 auto !important; /* Центрируем сам контейнер с карточками */
+}
+
+/* Настройки для элементов внутри каждой отдельной карточки */
+#players .cards > div,
+#players .cards > a,
+#players div[class*="cards"] > div,
+#players div[class*="cards"] > a {
+    width: 100% !important;
+    max-width: 190px !important;
+    box-sizing: border-box !important;
+}
+
+/* 1. ПРОВЕРИТЬ ИГРОКА ЧЕРЕЗ RAIDER.IO */
+#raiderio {
+    width: 100% !important;
+    max-width: 650px !important; /* Уменьшаем всю синюю карточку до аккуратных 650px */
+    margin: 40px auto !important; /* Свойство auto принудительно центрирует блок на экране */
+    padding: 0 0 40px !important;
+    box-sizing: border-box !important;
+}
+
+#raiderio .rioForm {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 90px auto !important; /* Возвращаем поля ввода в одну строку на ПК */
+    gap: 10px !important;
+    margin-top: 18px !important;
+    width: 100% !important;
+}
+
+#raiderio .rioForm input,
+#raiderio .rioForm select {
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+#raiderio .rioForm button {
+    white-space: nowrap !important;
+}
+
+/* Телефон (адаптивность для смартфонов оставляем) */
+@media (max-width: 700px) {
+    #raiderio {
+        width: 92% !important;
+    }
+    
+    #raiderio .rioForm {
+        grid-template-columns: 1fr !important; /* На телефонах поля встанут друг под друга */
+    }
+
+    #raiderio .rioForm button {
+        width: 100% !important;
+    }
+}
+
+/* КАК РАБОТАЕТ ПРОВЕРКА */
+#how {
+    width: 100% !important;
+    max-width: 1160px !important;
+    margin: 0 auto !important;
+    padding: 60px 0 !important;
+}
+
+#how .steps {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 16px !important;
+    margin-top: 25px !important;
+}
+
+#how .step {
+    padding: 20px !important;
+    border: 1px solid #1e2540 !important;
+    border-radius: 16px !important;
+    background: #0b1020 !important;
+}
+
+#how .num {
+    color: #3de1d5 !important;
+    font-weight: 700 !important;
+}
+
+#how .step h3 {
+    margin: 15px 0 8px !important;
+}
+
+#how .step p {
+    color: #9da6c0 !important;
+    line-height: 1.6 !important;
+    margin: 0 !important;
+}
+
+@media (max-width: 900px) {
+    #how .steps {
+        grid-template-columns: 1fr !important;
     }
 }
 
