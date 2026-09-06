@@ -256,16 +256,28 @@ div[style*="justifyContent: \"space-between\""] {
 /* КАК РАБОТАЕТ ПРОВЕРКА */
 #how {
     width: 100% !important;
-    max-width: 550px !important;
+    max-width: 600px !important;
     margin: 0 auto !important;
     padding: 60px 20px !important;
 }
 
+/* 4. Выравниваем карточки шагов строго по центру без пустот */
 #how .steps {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 16px !important;
-    margin-top: 25px !important;
+    display: flex !important;
+    flex-direction: row !important;     /* Строго горизонтальный ряд */
+    justify-content: center !important; /* Намертво центрирует карточки и убирает пустоту справа */
+    align-items: flex-start !important;
+    gap: 24px !important;               /* Аккуратный плотный отступ между карточками */
+    width: 100% !important;
+    margin-top: 40px !important;
+}
+
+/* Настройки для каждого отдельного шага */
+#how .step {
+    flex: 0 1 200px !important;         /* Задаем фиксированную аккуратную ширину для карточки */
+    width: 100% !important;
+    box-sizing: border-box !important;
+    text-align: left !important;
 }
 
 #how .step {
