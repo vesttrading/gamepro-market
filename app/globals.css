@@ -256,9 +256,9 @@ div[style*="justifyContent: \"space-between\""] {
 /* КАК РАБОТАЕТ ПРОВЕРКА */
 #how {
     width: 100% !important;
-    max-width: 600px !important;
+    max-width: 550px !important;
     margin: 0 auto !important;
-    padding: 60px 10px !important;
+    padding: 60px 20px !important;
 }
 
 #how .steps {
