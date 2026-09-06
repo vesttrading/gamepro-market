@@ -71,19 +71,7 @@ div[style*="justifyContent: \"space-between\""] {
   display: block !important;
 }
 
-/* 4. Делаем саму кнопку "Поделиться" компактной и убираем у неё лишние отступы */
-#passport button {
-  width: auto !important;
-  min-width: 100px !important;
-  max-width: 230px !important;
-  margin-left: 40px !important; /* Отодвинет кнопку вправо от текста на 40 пикселей */
-  padding: 10px 12px !important;
-  background-color: #14b8a6 !important; /* Насыщенный бирюзовый цвет фона */
-    border-color: #14b8a6 !important;     /* Бирюзовая рамка */
-    color: #000000 !important;            /* Белый цвет текста для контраста */
-}
-
-/* 5. Восстанавливаем сетку для паспорта, чтобы карточка была на всю ширину */
+/* 4. Восстанавливаем сетку для паспорта, чтобы карточка была на всю ширину */
 .grid2 {
   display: grid !important;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
