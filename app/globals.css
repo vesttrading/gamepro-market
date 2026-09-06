@@ -392,79 +392,146 @@ section#games div[class*="gameGrid"] > div h2 {
     font-size: 1.1rem !important;
 }
 
-/* 1. БЛОК ОТЗЫВОВ — УМЕНЬШЕНИЕ И СБОРКА К ЦЕНТРУ  */
-section#reviews {
-    width: 100% !important;
-    max-width: 850px !important;    
-    margin: 60px auto 0 auto !important; /* Центрируем весь блок по центру экрана */
-    padding: 20px !important;
-    box-sizing: border-box !important;
+/* =========================
+   ОТЗЫВЫ GAMEPRO
+   ========================= */
+
+.reviews-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
 }
 
-/* 2. Убираем пустоту между оценкой и отзывами, собирая их в горизонтальный ряд */
-section#reviews [class*="gameGrid"],
-section#reviews [class*="Grid"] {
-    display: flex !important;
-    flex-direction: row !important;     /* Строго в одну линию */
-    justify-content: center !important; /* Прижимаем карточки кучно к центру */
-    align-items: stretch !important;    /* Выравниваем их по высоте */
-    gap: 35px !important;               /* Аккуратный отступ между оценкой и отзывами */
-    width: 100% !important;
-    margin-top: 30px !important;
+.reviews-section-title {
+  margin: 0 0 30px;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 800;
+  color: #fff;
 }
 
-/* 3. Делаем абсолютно ВСЕ карточки отзывов одинаковыми по ширине */
-section#reviews [class*="gameGrid"] > div,
-section#reviews [class*="Grid"] > div,
-section#reviews [class*="gameGrid"] > div:first-child + div > div,
-section#reviews [class*="Grid"] > div:first-child + div > div {
-    display: flex !important;
-    flex-direction: column !important; /* Намертво заставляем текст идти сверху вниз */
-    align-items: flex-start !important; 
-    justify-content: flex-start !important;
-    flex: 1 1 0px !important;       
-    max-width: 250px !important;    
-    width: 100% !important;
-    box-sizing: border-box !important;
-    padding: 16px !important;       
+.reviews-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 
-/* 4. Настраиваем правый контейнер для удержания рамок в одну линию */
-section#reviews [class*="gameGrid"] > div:first-child + div,
-section#reviews [class*="Grid"] > div:first-child + div {
-    display: flex !important;
-    flex-direction: row !important; 
-    gap: 35px !important;
-    flex: 2 !important;             
-    width: auto !important;
+.reviews-card {
+  padding: 26px;
+  border-radius: 20px;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  background: rgba(15, 23, 42, 0.75);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-/* 5. УЛЬТИМАТИВНЫЙ ПЕРЕНОС: Заставляем заголовки карточек выталкивать текст вниз */
-section#reviews [class*="Grid"] h3,
-section#reviews [class*="gameGrid"] h3,
-section#reviews [class*="Grid"] div > span,
-section#reviews [class*="Grid"] div > strong {
-    display: block !important;
-    width: 100% !important;
-    clear: both !important;
-    margin-bottom: 8px !important; /* Делаем аккуратный отступ от заголовка до текста отзыва */
+.reviews-card-title {
+  margin: 0 0 18px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 800;
 }
 
-/* Принудительно сбрасываем строчный режим у внутренних контейнеров */
-section#reviews [class*="Grid"] div:first-child + div > div > div,
-section#reviews [class*="gameGrid"] div:first-child + div > div > div {
-    display: flex !important;
-    flex-direction: column !important; /* Картинка/иконка, заголовок и текст ложатся строго друг под друга */
-    align-items: flex-start !important;
-    width: 100% !important;
+.reviews-card-text {
+  margin: 0;
+  color: #94a3b8;
+  font-size: 15px;
+  line-height: 1.6;
 }
 
-/* Делаем сам текст отзыва свободным, чтобы он занимал всю ширину и не улетал вправо */
-section#reviews [class*="Grid"] p,
-section#reviews [class*="gameGrid"] p {
-    display: block !important;
-    width: 100% !important;
-    margin: 0 !important;
+/* Оценка GamePro */
+
+.gamepro-rating {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.gamepro-rating-number {
+  color: #fff;
+  font-size: 38px;
+  font-weight: 900;
+}
+
+.gamepro-rating-stars {
+  color: #fbbf24;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+.gamepro-rating-label {
+  color: #64748b;
+  font-size: 13px;
+}
+
+/* Отзывы игроков */
+
+.players-reviews-count {
+  margin-bottom: 15px;
+  color: #3b82f6;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* VERIFIED отзывы */
+
+.verified-reviews-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.verified-check {
+  color: #3b82f6;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.verified-reviews-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 15px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+/* Планшет */
+
+@media (max-width: 900px) {
+  .reviews-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .reviews-card:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Телефон */
+
+@media (max-width: 600px) {
+  .reviews-section {
+    margin: 45px auto;
+    padding: 0 16px;
+  }
+
+  .reviews-section-title {
+    font-size: 26px;
+  }
+
+  .reviews-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .reviews-card:last-child {
+    grid-column: auto;
+  }
 }
 
 /* 1. Этот код изменит только блок гильдий и ничего больше */
