@@ -417,68 +417,69 @@ section#reviews [class*="Grid"] {
     margin-top: 30px !important;
 }
 
-section#reviews {
+/* 3. Делаем карточку с оценкой 4.9/5 компактной */
+section#reviews [class*="gameGrid"] > div:first-child,
+section#reviews [class*="Grid"] > div:first-child {
+    flex: 0 1 220px !important;         
     width: 100% !important;
-    max-width: 1000px !important;
-    margin: 45px auto !important;
-    padding: 0 16px !important;
     box-sizing: border-box !important;
 }
 
-/* Контейнер трёх карточек */
+/* 4. Настраиваем правый контейнер с текстовыми отзывами */
+section#reviews [class*="gameGrid"] > div:first-child + div,
+section#reviews [class*="Grid"] > div:first-child + div {
+    flex: 1 !important;
+    max-width: 550px !important;        
+    display: flex !important;
+    flex-direction: column !important;  /* Сами отзывы внутри идут друг под другом */
+    gap: 20px !important;
+    width: 100% !important;
+}
+
+/* Компактные карточки отзывов */
+section#reviews [class*="gameGrid"] > div,
+section#reviews [class*="Grid"] > div {
+    flex: 0 1 270px !important;
+    width: 270px !important;
+    max-width: 270px !important;
+    min-width: 0 !important;
+    padding: 14px !important;
+    box-sizing: border-box !important;
+}
+
+/* Три карточки в одну линию */
 section#reviews [class*="gameGrid"],
 section#reviews [class*="Grid"] {
     display: flex !important;
     flex-direction: row !important;
-    align-items: stretch !important;
     justify-content: center !important;
-    gap: 16px !important;
-    width: 100% !important;
+    align-items: stretch !important;
+    gap: 12px !important;
 }
 
-/* Каждая карточка */
-section#reviews [class*="gameGrid"] > div,
-section#reviews [class*="Grid"] > div {
-    flex: 1 1 0 !important;
-    width: 0 !important;
-    max-width: none !important;
-    min-width: 0 !important;
-    box-sizing: border-box !important;
-    padding: 18px !important;
-}
-
-/* Внутренности НЕ растягиваем в отдельные колонки */
-section#reviews [class*="gameGrid"] > div > div,
-section#reviews [class*="Grid"] > div > div {
-    width: 100% !important;
-    max-width: none !important;
-    box-sizing: border-box !important;
-}
-
-/* Заголовки */
+/* Внутренний текст */
 section#reviews h3 {
-    width: auto !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+    font-size: 15px !important;
+    margin-bottom: 8px !important;
 }
 
-/* Текст */
 section#reviews p {
-    width: auto !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+    font-size: 13px !important;
+    line-height: 1.45 !important;
 }
 
-/* Мобильная версия */
+/* На телефоне */
 @media (max-width: 700px) {
     section#reviews [class*="gameGrid"],
     section#reviews [class*="Grid"] {
         flex-direction: column !important;
+        align-items: center !important;
     }
 
     section#reviews [class*="gameGrid"] > div,
     section#reviews [class*="Grid"] > div {
         width: 100% !important;
+        max-width: 320px !important;
     }
 }
 
