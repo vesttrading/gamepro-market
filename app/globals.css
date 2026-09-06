@@ -398,45 +398,46 @@ section#games div[class*="gameGrid"] > div h2 {
 
 .reviews-section {
   width: 100%;
-  max-width: 1200px;
-  margin: 60px auto;
-  padding: 0 20px;
+  max-width: 980px;
+  margin: 45px auto;
+  padding: 0 16px;
 }
 
 .reviews-section-title {
-  margin: 0 0 30px;
+  margin: 0 0 22px;
   text-align: center;
-  font-size: 32px;
+  font-size: 26px;
   font-weight: 800;
   color: #fff;
 }
 
 .reviews-cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
 }
 
 .reviews-card {
-  padding: 26px;
-  border-radius: 20px;
-  border: 1px solid rgba(59, 130, 246, 0.2);
+  min-width: 0;
+  padding: 18px;
+  border-radius: 16px;
+  border: 1px solid rgba(59, 130, 246, 0.18);
   background: rgba(15, 23, 42, 0.75);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
 }
 
 .reviews-card-title {
-  margin: 0 0 18px;
+  margin: 0 0 12px;
   color: #fff;
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 800;
 }
 
 .reviews-card-text {
   margin: 0;
   color: #94a3b8;
-  font-size: 15px;
-  line-height: 1.6;
+  font-size: 13px;
+  line-height: 1.5;
 }
 
 /* Оценка GamePro */
@@ -444,93 +445,72 @@ section#games div[class*="gameGrid"] > div h2 {
 .gamepro-rating {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 15px;
+  gap: 9px;
+  margin-bottom: 10px;
 }
 
 .gamepro-rating-number {
   color: #fff;
-  font-size: 38px;
+  font-size: 30px;
   font-weight: 900;
 }
 
 .gamepro-rating-stars {
   color: #fbbf24;
-  font-size: 20px;
-  letter-spacing: 2px;
+  font-size: 16px;
+  letter-spacing: 1px;
 }
 
 .gamepro-rating-label {
   color: #64748b;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 /* Отзывы игроков */
 
 .players-reviews-count {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   color: #3b82f6;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
 }
 
-/* VERIFIED отзывы */
+/* VERIFIED */
 
 .verified-reviews-title {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 }
 
 .verified-check {
   color: #3b82f6;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 900;
 }
 
 .verified-reviews-badge {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  margin-bottom: 15px;
-  padding: 6px 10px;
+  gap: 5px;
+  margin-bottom: 10px;
+  padding: 5px 8px;
   border-radius: 999px;
   background: rgba(59, 130, 246, 0.1);
   color: #3b82f6;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 800;
-}
-
-/* Планшет */
-
-@media (max-width: 900px) {
-  .reviews-cards {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .reviews-card:last-child {
-    grid-column: 1 / -1;
-  }
 }
 
 /* Телефон */
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .reviews-section {
-    margin: 45px auto;
-    padding: 0 16px;
-  }
-
-  .reviews-section-title {
-    font-size: 26px;
+    max-width: 100%;
   }
 
   .reviews-cards {
     grid-template-columns: 1fr;
-  }
-
-  .reviews-card:last-child {
-    grid-column: auto;
   }
 }
 
