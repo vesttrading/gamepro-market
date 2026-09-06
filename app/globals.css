@@ -268,7 +268,7 @@ div[style*="justifyContent: \"space-between\""] {
     display: flex !important;
     flex-direction: row !important;     /* Строго в одну линию */
     justify-content: center !important; /* Центрируем карточки на экране */
-    align-items: flex-start !important;
+    align-items: stretch !important;
     gap: 30px !important;               /* Делаем свободный отступ между карточками */
     width: 100% !important;
     margin-top: 40px !important;
