@@ -253,32 +253,37 @@ div[style*="justifyContent: \"space-between\""] {
     }
 }
 
-/* КАК РАБОТАЕТ ПРОВЕРКА */
+/* 1. КАК РАБОТАЕТ ПРОВЕРКА  Увеличиваем общую ширину блока шагов, чтобы они не натыкались друг на друга */
 #how {
     width: 100% !important;
-    max-width: 700px !important;
-    margin: 0 auto !important;
+    max-width: 850px !important;  /* Увеличили с 650px до 850px, чтобы дать карточкам простор */
+    margin: 0 auto !important;    /* Держим по центру */
     padding: 60px 20px !important;
+    box-sizing: border-box !important;
 }
 
-/* Намертво перебиваем инлайн-стили и выстраиваем 3 шага в ОДИН горизонтальный ряд */
+/* 2. Настраиваем идеальный горизонтальный ряд с автоматической шириной */
 #how .steps,
 #how div[class*="steps"] {
-    display: grid !important;
-    grid-template-columns: repeat(3, minmax(0, 190px)) !important; /* Ровно 3 колонки, каждая жестко по 190px — пустота уйдет! */
-    justify-content: center !important; /* Центрируем весь этот ряд на экране */
-    gap: 30px !important;               /* Аккуратный отступ между карточками */
+    display: flex !important;
+    flex-direction: row !important;     /* Строго в одну линию */
+    justify-content: center !important; /* Центрируем карточки на экране */
+    align-items: flex-start !important;
+    gap: 30px !important;               /* Делаем свободный отступ между карточками */
     width: 100% !important;
     margin-top: 40px !important;
 }
 
-/* Настройки для элементов внутри каждой отдельной карточки шага */
+/* 3. Убираем пустоту справа и даем тексту нормально распределиться */
 #how .steps > div,
 #how .steps > a,
 #how div[class*="steps"] > div,
 #how div[class*="steps"] > a {
-    width: 100% !important;
-    max-width: 190px !important; /* Сжимаем саму карточку, чтобы убрать пустоту справа */
+    display: flex !important;
+    flex-direction: column !important;
+    width: auto !important;
+    flex: 1 !important;           /* Распределяем карточки поровну, чтобы убрать пустоту справа */
+    max-width: 250px !important;  /* Разрешаем карточке быть чуть шире под размер текста */
     box-sizing: border-box !important;
 }
 
