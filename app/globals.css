@@ -420,9 +420,9 @@ section#reviews [class*="Grid"] {
 /* Компактные карточки отзывов */
 section#reviews [class*="gameGrid"] > div,
 section#reviews [class*="Grid"] > div {
-    flex: 0 1 270px !important;
-    width: 270px !important;
-    max-width: 270px !important;
+    flex: 0 1 210px !important;
+    width: 210px !important;
+    max-width: 210px !important;
     min-width: 0 !important;
     padding: 14px !important;
     box-sizing: border-box !important;
