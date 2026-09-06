@@ -464,25 +464,65 @@ section#reviews p {
     }
 }
 
-/* 1. Этот код изменит только блок гильдий и ничего больше */
-.guilds-container {
-    max-width: 750px !important;  /* Уменьшаем ширину карточки */
+[06.09.2026 14:20] Vladimir: /* ==========================================================
+   БЛОК ОТЗЫВОВ — УМЕНЬШЕНИЕ И СБОРКА К ЦЕНТРУ
+   ========================================================== */
+
+/* 1. Намертво сжимаем всю секцию отзывов до аккуратных 850px */
+section#reviews {
     width: 100% !important;
-    margin-left: auto !important;  /* Центрируем её на экране */
+    max-width: 850px !important;    
+    margin: 60px auto 0 auto !important; /* Центрируем весь блок по центру экрана */
+    padding: 20px !important;
+    box-sizing: border-box !important;
+}
+
+/* 2. Убираем пустоту между оценкой и отзывами, собирая их в горизонтальный ряд */
+section#reviews [class*="gameGrid"],
+section#reviews [class*="Grid"] {
+    display: flex !important;
+    flex-direction: row !important;     /* Строго в одну линию */
+    justify-content: center !important; /* Прижимаем карточки кучно к центру */
+    align-items: stretch !important;    /* Выравниваем их по высоте */
+    gap: 35px !important;               /* Аккуратный отступ между оценкой и отзывами */
+    width: 100% !important;
+    margin-top: 30px !important;
+}
+
+/* 3. Делаем карточку с оценкой 4.9/5 компактной */
+section#reviews [class*="gameGrid"] > div:first-child,
+section#reviews [class*="Grid"] > div:first-child {
+    flex: 0 1 220px !important;         
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* 4. Настраиваем правый контейнер с текстовыми отзывами */
+section#reviews [class*="gameGrid"] > div:first-child + div,
+section#reviews [class*="Grid"] > div:first-child + div {
+    flex: 1 !important;
+    max-width: 550px !important;        
+    display: flex !important;
+    flex-direction: column !important;  /* Сами отзывы внутри идут друг под другом */
+    gap: 20px !important;
+    width: 100% !important;
+}
+ 1. Этот код изменит только блок гильдий и ничего больше */
+.guilds-container {
+    max-width: 550px !important; /* Уменьшили с 750px до 550px */
+    margin-left: auto !important; 
     margin-right: auto !important;
-    padding: 40px 24px !important; /* Делаем внутренние отступы аккуратнее */
+    padding: 40px 24px !important; 
     box-sizing: border-box !important;
 }
 
 /* Уменьшаем ширину внутренней карточки в блоке гильдий */
 section#guilds > div {
-    max-width: 750px !important;  /* Задаем аккуратную ширину */
+    max-width: 550px !important; /* Значение должно совпадать с внешним контейнером */
     width: 100% !important;
-    margin-left: auto !important;  /* Центрируем карточку на экране */
+    margin-left: auto !important; 
     margin-right: auto !important;
-    box-sizing: border-box !important;
 }
-
 /* На всякий случай дублируем для вложенного div, если структура сложнее */
 section#guilds div[class*="jsx-"] {
     max-width: 750px;
