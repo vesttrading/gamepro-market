@@ -417,25 +417,6 @@ section#reviews [class*="Grid"] {
     margin-top: 30px !important;
 }
 
-/* 3. Делаем карточку с оценкой 4.9/5 компактной */
-section#reviews [class*="gameGrid"] > div:first-child,
-section#reviews [class*="Grid"] > div:first-child {
-    flex: 0 1 220px !important;         
-    width: 100% !important;
-    box-sizing: border-box !important;
-}
-
-/* 4. Настраиваем правый контейнер с текстовыми отзывами */
-section#reviews [class*="gameGrid"] > div:first-child + div,
-section#reviews [class*="Grid"] > div:first-child + div {
-    flex: 1 !important;
-    max-width: 550px !important;        
-    display: flex !important;
-    flex-direction: column !important;  /* Сами отзывы внутри идут друг под другом */
-    gap: 20px !important;
-    width: 100% !important;
-}
-
 /* Компактные карточки отзывов */
 section#reviews [class*="gameGrid"] > div,
 section#reviews [class*="Grid"] > div {
