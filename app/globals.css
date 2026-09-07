@@ -130,7 +130,7 @@ div[style*="justifyContent: \"space-between\""] {
 /* 1. НАЙТИ ИГРОКА  Намертво уменьшаем весь общий блок до аккуратных 800px */
 #players {
     width: 100% !important;
-    max-width: 500px !important;  
+    max-width: 800px !important;  
     margin: 40px auto 0 auto !important; /* Центрируем весь этот блок на экране */
 }
 
