@@ -138,7 +138,7 @@ div[style*="justifyContent: \"space-between\""] {
 #players .searchbox {
     display: flex !important; 
     gap: 10px !important;
-    max-width: 500px !important; 
+    max-width: 650px !important; 
     margin: 0 auto 22px !important;
 }
 
@@ -162,15 +162,6 @@ div[style*="justifyContent: \"space-between\""] {
     width: 100% !important;
     max-width: 260px !important;
     box-sizing: border-box !important;
-}
-
-/* Делаем кнопку Поиск ещё длиннее */
-#players .searchbox button,
-#players .searchbox input[type="submit"] {
-    min-width: 180px !important;    /* Увеличили со 140px до 180px, чтобы она стала длиннее */
-    padding: 12px 30px !important;  /* Немного увеличили боковые отступы */
-    font-size: 16px !important;     
-    font-weight: 600 !important;    
 }
 
 /* 1. ПРОВЕРИТЬ ИГРОКА ЧЕРЕЗ RAIDER.IO */
