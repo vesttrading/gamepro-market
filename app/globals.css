@@ -504,10 +504,6 @@ section#guilds div[class*="jsx-"] {
     }
 }
 
-body {
-    padding-bottom: 150px !important;
-}
-
 /* Настройки для мобильных экранов (телефонов) */
 @media (max-width: 768px) {
     /* 1. Выстраиваем карточки отзывов вертикально в одну колонку */
