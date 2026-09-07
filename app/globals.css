@@ -190,7 +190,6 @@ div[style*="justifyContent: \"space-between\""] {
 #raiderio .rioForm button {
     white-space: nowrap !important;
   }
-}
 
 /* 1. КАК РАБОТАЕТ ПРОВЕРКА  Увеличиваем общую ширину блока шагов, чтобы они не натыкались друг на друга */
 #how {
