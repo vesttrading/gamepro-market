@@ -422,113 +422,116 @@ section#guilds div[class*="jsx-"] {
     color: #9da6c0 !important;
 }
 
-/* =========================================
-   GAMEPRO — МОБИЛЬНАЯ АДАПТАЦИЯ
+/* =======================================================
+   GAMEPRO — МОБИЛЬНАЯ АДАПТАЦИЯ (СТРОГО ДЛЯ СМАРТФОНОВ)
    Не изменяет версию для ноутбука
-   ========================================= */
+   ======================================================= */
+@media (max-width: 1023px) {
 
-@media (max-width: 768px) {
+    /* Основные секции */
+    #passport, #players, #raiderio, #guilds, #reviews {
+        width: 100% !important;
+        max-width: 100vw !important;
+        min-width: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 16px !important;  /* Аккуратные отступы по краям экрана смартфона */
+        padding-right: 16px !important;
+        box-sizing: border-box !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
 
-  /* Основные секции */
-  #passport,
-  #players,
-  #raiderio {
-    width: 94% !important;
-    max-width: 100% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
+    /* Паспорт - карточки одна под другой */
+    #passport .grid2 {
+        grid-template-columns: 1fr !important;
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 16px !important;
+    }
 
-  /* Паспорт — карточки одна под другой */
-  #passport .grid2 {
-    grid-template-columns: 1fr !important;
-    width: 100% !important;
-  }
+    /* Карточки паспорта */
+    #passport .card {
+        width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+        padding: 18px !important;
+    }
 
-  /* Карточки паспорта */
-  #passport .card {
-    width: 100% !important;
-    min-width: 0 !important;
-    box-sizing: border-box !important;
-    padding: 18px !important;
-  }
+    /* Заголовок паспорта */
+    #passport .sectionHead {
+        width: 100% !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        gap: 10px !important;
+    }
 
-  /* Заголовок паспорта */
-  #passport .sectionHead {
-    width: 100% !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    text-align: center !important;
-    gap: 10px !important;
-  }
+    #passport .sectionHead > div {
+        width: 100% !important;
+        min-width: 0 !important;
+    }
 
-  #passport .sectionHead > div {
-    width: 100% !important;
-    min-width: 0 !important;
-  }
+    #passport h2 {
+        font-size: 25px !important;
+        line-height: 1.2 !important;
+    }
 
-  #passport h2 {
-    font-size: 25px !important;
-    line-height: 1.2 !important;
-  }
+    /* Статистика 2850 / CE / M+ Runs */
+    #passport .stats {
+        grid-template-columns: 1fr !important;
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+    }
 
-  /* Статистика 2850 / CE / M+ Runs */
-  #passport .stats {
-    grid-template-columns: 1fr !important;
-    width: 100% !important;
-  }
+    /* Поиск игроков */
+    #players .cards {
+        grid-template-columns: 1fr !important;
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+    }
 
-  /* Бейджи KSM / 2850 M+ / CE / AOTC */
-  #passport .badges {
-    grid-template-columns: 1fr !important;
-    width: 100% !important;
-  }
+    /* Поисковая строка */
+    #players .searchbar {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
 
-  /* Поиск игроков */
-  #players .cards {
-    grid-template-columns: 1fr !important;
-    width: 100% !important;
-  }
+    #players .searchbar input {
+        min-width: 0 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
 
-  /* Поисковая строка */
-  #players .searchbar {
-    width: 100% !important;
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-  }
+    #players .searchbar button {
+        flex-shrink: 0 !important;
+    }
 
-  #players .searchbar input {
-    min-width: 0 !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-  }
+    /* Расстояния между крупными блоками на телефоне */
+    #reviews {
+        margin-bottom: 50px !important;
+    }
 
-  #players .searchbar button {
-    flex-shrink: 0 !important;
-  }
+    #guilds {
+        margin-top: 50px !important;
+    }
 
-  /* Убираем горизонтальный выход элементов */
-  #passport *,
-  #players *,
-  #raiderio * {
-    max-width: 100%;
-    box-sizing: border-box;
-  }
+    #guilds + section {
+        margin-top: 40px !important;
+    }
 
-/* GAMEPRO — расстояние между блоками на телефоне */
+    /* Глобальный сброс для защиты от горизонтального вылета */
+    #passport *, #players *, #raiderio *, #guilds *, #reviews * {
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
 
-@media (max-width: 560px) {
-  #reviews {
-    margin-bottom: 70px !important;
-  }
-
-  #guilds {
-    margin-top: 70px !important;
-  }
-
-  #guilds + section {
-    margin-top: 40px !important;
-  }
-}
+} /* ВОТ ЭТА САМАЯ ВАЖНАЯ СКОБКА, КОТОРАЯ ТЕПЕРЬ ЗАКРЫВАЕТ @media БЛОК! */
 
