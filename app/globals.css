@@ -190,7 +190,11 @@ div[style*="justifyContent: \"space-between\""] {
 }
 
 #raiderio .rioForm button {
-    width: 100% !important;             /* Растягиваем кнопку на 100% ширины */
+    grid-column: 1 / -1 !important;
+    justify-self: center !important; /* Центрирует кнопку */
+    width: auto !important;
+    min-width: 160px !important;    /* Задает аккуратную ширину */
+    margin-top: 10px !important;    /* Делает отступ от инпутов сверху */
     white-space: nowrap !important;
 }
 
