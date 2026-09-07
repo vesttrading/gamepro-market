@@ -246,6 +246,15 @@ div[style*="justifyContent: \"space-between\""] {
     line-height: 1.4 !important;   /* Делаем межстрочный интервал более компактным */
 }
 
+/* Опускаем заголовок ближе к подзаголовку */
+#how h2 {
+    margin-bottom: 10px !important;
+}
+
+#how p {
+    margin-top: 0px !important;
+}
+
 /* 1. Возвращаем правильные стили для блока Vladimir (div:first-child) */
 #passport .grid2 > div:first-child {
     width: 100% !important;
