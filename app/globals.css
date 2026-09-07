@@ -175,11 +175,12 @@ div[style*="justifyContent: \"space-between\""] {
 
 #raiderio .rioForm {
     display: grid !important;
-    /* Создаем 3 равные колонки для инпутов, а для кнопки сделаем перенос ниже */
-    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-    gap: 16px !important; /* Удобный отступ между элементами */
+    /* Первые две колонки (Имя, Реалм) делят место поровну, а третья под EU подстраивается автоматически */
+    grid-template-columns: 1fr 1fr auto !important; 
+    gap: 16px !important; 
     margin-top: 18px !important;
     width: 100% !important;
+    align-items: end !important; /* Выравнивает все элементы по нижней линии */
 }
 
 #raiderio .rioForm input,
