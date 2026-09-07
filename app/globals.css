@@ -225,8 +225,8 @@ div[style*="justifyContent: \"space-between\""] {
 #how div[class*="steps"] > div {
     display: flex !important;
     flex-direction: column !important;
-    align-items: center !important;        /* Центрируем все элементы */
-    justify-content: center !important;
+    align-items: flex-start !important;        /* Центрируем все элементы */
+    justify-content: normal !important;
     
     width: 260px !important;               /* Увеличили ширину квадрата */
     height: 260px !important;              /* Увеличили высоту квадрата, чтобы всё влезло */
