@@ -146,7 +146,7 @@ div[style*="justifyContent: \"space-between\""] {
 #players .searchbox a,
 #players .searchbox input[type="submit"] {
     min-width: 160px !important; /* Делаем кнопку длиннее */
-    padding: 12px 25px !important;
+    padding: 6px 20px !important;
 }
 
 /* 3. КАРТОЧКИ ИГРОКОВ — Намертво перебиваем инлайн-сетку и выстраиваем 3 штуки в один горизонтальный ряд */
