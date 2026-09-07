@@ -239,12 +239,6 @@ div[style*="justifyContent: \"space-between\""] {
     background: #0b1020 !important;
 }
 
-#how .step h3,
-#how .step p {
-    text-align: center !important; /* Удерживает заголовки и описание по центру, пока кружки слева */
-    width: 100% !important;
-}
-
 /* 4. Уменьшаем светящийся кружок с цифрой, чтобы он не выталкивал текст */
 #how .step [class*="num"], 
 #how .num {
