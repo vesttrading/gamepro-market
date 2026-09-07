@@ -213,7 +213,7 @@ div[style*="justifyContent: \"space-between\""] {
     display: flex !important;
     flex-direction: row !important;     /* Строго в одну линию */
     justify-content: center !important; /* Центрируем карточки на экране */
-    align-items: stretch !important;
+    align-items: flex-start !important;
     gap: 30px !important;               /* Делаем свободный отступ между карточками */
     width: 100% !important;
     margin-top: 40px !important;
@@ -233,7 +233,7 @@ div[style*="justifyContent: \"space-between\""] {
 }
 
 #how .step {
-    padding: 20px !important;
+    padding: 12px !important;
     border: 1px solid #1e2540 !important;
     border-radius: 16px !important;
     background: #0b1020 !important;
@@ -245,7 +245,7 @@ div[style*="justifyContent: \"space-between\""] {
 }
 
 #how .step h3 {
-    margin: 15px 0 8px !important;
+    margin: 10px 0 6px !important;
 }
 
 #how .step p {
