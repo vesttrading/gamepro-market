@@ -219,44 +219,62 @@ div[style*="justifyContent: \"space-between\""] {
     margin-top: 40px !important;
 }
 
-/* 3. Убираем пустоту справа и даем тексту нормально распределиться */
+/* 3. Делаем идеальный просторный квадрат для карточки */
+#how .step,
 #how .steps > div,
-#how .steps > a,
-#how div[class*="steps"] > div,
-#how div[class*="steps"] > a {
+#how div[class*="steps"] > div {
     display: flex !important;
     flex-direction: column !important;
-    align-items: center !important;    /* Центрируем иконку и текст по горизонтали */
-    justify-content: center !important; /* Центрируем контент по вертикали внутри квадрата */
-    width: 200px !important;            /* Жесткая ширина квадрата */
-    height: 200px !important;           /* Жесткая высота квадрата */
-    flex: none !important;              /* Запрещаем ломать размеры */
+    align-items: center !important;        /* Центрируем все элементы */
+    justify-content: center !important;
+    
+    width: 260px !important;               /* Увеличили ширину квадрата */
+    height: 260px !important;              /* Увеличили высоту квадрата, чтобы всё влезло */
     box-sizing: border-box !important;
-}
-
-#how .step {
-    padding: 12px !important;
+    
+    padding: 20px 14px !important;         /* Оптимальные внутренние отступы */
+    
     border: 1px solid #1e2540 !important;
     border-radius: 16px !important;
     background: #0b1020 !important;
 }
 
+/* 4. Уменьшаем светящийся кружок с цифрой, чтобы он не выталкивал текст */
+#how .step [class*="num"], 
 #how .num {
-    color: #3de1d5 !important;
+    font-size: 13px !important;            /* Делаем цифру компактнее */
     font-weight: 700 !important;
+    margin-bottom: 5px !important;         /* Прижимаем ближе к заголовку */
+    /* Если у вас кружок сделан через фиксированные размеры, сожмем и их: */
+    width: auto !important;
+    height: auto !important;
 }
 
+/* 5. Отрезаем лишние отступы у иконки/картинки (если она есть между цифрой и текстом) */
+#how .step img,
+#how .step svg {
+    margin: 5px 0 !important;
+    max-height: 24px !important;           /* Ограничиваем высоту иконки */
+}
+
+/* 6. Настраиваем заголовок (Источник, Проверка, Verified) */
 #how .step h3 {
-    margin: 10px 0 6px !important;
+    text-align: center !important;
+    font-size: 16px !important;            /* Аккуратный читаемый размер */
+    font-weight: 600 !important;
+    margin: 8px 0 10px 0 !important;       /* Компактные отступы вокруг */
 }
 
+/* 7. Ужимаем описание, чтобы оно аккуратно легло на дно квадрата */
 #how .step p {
+    text-align: center !important;
+    font-size: 12px !important;            /* Уменьшаем шрифт описания до 12px */
+    line-height: 1.4 !important;           /* Делаем строки плотнее */
     color: #9da6c0 !important;
-    line-height: 1.6 !important;
-    margin: 0 !important;
+    margin: 0 !important;                  /* Обнуляем внешние отступы текста */
 }
 
-/* 5. Возвращаем правильные стили для блока Vladimir (div:first-child) */
+/* 1. Возвращаем правильные стили для блока Vladimir (div:first-child) */
 #passport .grid2 > div:first-child {
     width: 100% !important;
     display: flex !important;
