@@ -239,60 +239,6 @@ div[style*="justifyContent: \"space-between\""] {
     background: #0b1020 !important;
 }
 
-/* Прижимаем кружочки и локатор вплотную вниз к названиям */
-#how .num,
-#how [class*="num"] {
-    margin-bottom: 2px !important; /* Уменьшаем отступ снизу, чтобы опустить кружок к тексту */
-}
-
-/* На всякий случай убираем верхний отступ у самих названий */
-#how .step h3 {
-    margin-top: 4px !important;    /* Притягивает название вверх к кружку */
-}
-
-#how .step p,
-#how div[class*="steps"] p {
-    font-size: 13px !important;    /* Уменьшаем размер шрифта (подберите 12px или 13px как лучше) */
-    line-height: 1.4 !important;   /* Делаем строки чуть плотнее друг к другу */
-    margin-top: 8px !important;    /* Небольшой аккуратный отступ от заголовка ("Источник", "Проверка") */
-    color: #9da6c0 !important;     /* Делаем цвет текста чуть мягче, чтобы он не сливался */
-}
-
-/* 4. Уменьшаем светящийся кружок с цифрой, чтобы он не выталкивал текст */
-#how .step [class*="num"], 
-#how .num {
-    font-size: 13px !important;            /* Делаем цифру компактнее */
-    font-weight: 700 !important;
-    margin-bottom: 5px !important;         /* Прижимаем ближе к заголовку */
-    /* Если у вас кружок сделан через фиксированные размеры, сожмем и их: */
-    width: auto !important;
-    height: auto !important;
-}
-
-/* 5. Отрезаем лишние отступы у иконки/картинки (если она есть между цифрой и текстом) */
-#how .step img,
-#how .step svg {
-    margin: 5px 0 !important;
-    max-height: 24px !important;           /* Ограничиваем высоту иконки */
-}
-
-/* 6. Настраиваем заголовок (Источник, Проверка, Verified) */
-#how .step h3 {
-    text-align: center !important;
-    font-size: 16px !important;            /* Аккуратный читаемый размер */
-    font-weight: 600 !important;
-    margin: 8px 0 10px 0 !important;       /* Компактные отступы вокруг */
-}
-
-/* 7. Ужимаем описание, чтобы оно аккуратно легло на дно квадрата */
-#how .step p {
-    text-align: center !important;
-    font-size: 12px !important;            /* Уменьшаем шрифт описания до 12px */
-    line-height: 1.4 !important;           /* Делаем строки плотнее */
-    color: #9da6c0 !important;
-    margin: 0 !important;                  /* Обнуляем внешние отступы текста */
-}
-
 /* 1. Возвращаем правильные стили для блока Vladimir (div:first-child) */
 #passport .grid2 > div:first-child {
     width: 100% !important;
