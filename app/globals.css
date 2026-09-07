@@ -460,6 +460,54 @@ section#guilds div[class*="jsx-"] {
     margin: 0 auto;
 }
 
+/* =========================
+   ТВОЙ ИГРОВОЙ ПРОФИЛЬ
+   ========================= */
+
+#passport {
+    width: 100% !important;
+}
+
+#passport .profileShare,
+#passport .sharePassport,
+#passport [class*="share"] {
+    width: 100% !important;
+    max-width: 1160px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+#passport .profileShare {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 20px !important;
+}
+
+#passport .profileShare h2 {
+    margin: 0 !important;
+}
+
+#passport .profileShare p {
+    margin: 6px 0 0 !important;
+    color: #9da6c0 !important;
+}
+
+@media (max-width: 700px) {
+    #passport .profileShare {
+        flex-direction: column !important;
+        align-items: stretch !important;
+    }
+
+    #passport .profileShare button {
+        width: 100% !important;
+    }
+}
+
+body {
+    padding-bottom: 150px !important;
+}
+
 /* Настройки для мобильных экранов (телефонов) */
 @media (max-width: 768px) {
     /* 1. Выстраиваем карточки отзывов вертикально в одну колонку */
