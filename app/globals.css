@@ -422,11 +422,12 @@ section#guilds div[class*="jsx-"] {
     color: #9da6c0 !important;
 }
 
-   ИТОГОВАЯ ТОЧЕЧНАЯ МОБИЛЬНАЯ АДАПТАЦИЯ (С ЖЕСТКИМИ ОТСТУПАМИ)
+/* =======================================================
+   ИТОГОВАЯ БЕЗОПАСНАЯ МОБИЛЬНАЯ АДАПТАЦИЯ (БЕЗ ОШИБОК)
    ======================================================= */
 @media (max-width: 1023px) {
 
-    /* 1. Железная база для главных секций и гридов */
+    /* 1. Стандартная проверенная база для всех главных блоков */
     div[style*="display: grid"], 
     div[style*="display:grid"],
     .grid2, .cards, .stats, #passport .stats {
@@ -458,20 +459,18 @@ section#guilds div[class*="jsx-"] {
         box-sizing: border-box !important;
     }
 
-    /* 2. Жесткий перехват формы Raider.IO */
-    button:has(text), button, input[placeholder*="Имя"], select, div:has(> input), div:has(> select) {
-        width: 100% !important;
+    /* 2. Стандартный перехват формы Raider.IO */
+    button, input, select, div:has(> input), div:has(> select) {
         max-width: 100% !important;
         min-width: 0 !important;
-        flex: 1 1 100% !important;
         box-sizing: border-box !important;
     }
 
-    div:has(> input) + div, div:has(> select) + button, section:has(input) div[style*="display: flex"], section:has(input) div[style*="display:flex"] {
+    section:has(input) div[style*="display: flex"], 
+    section:has(input) div[style*="display:flex"] {
         flex-direction: column !important;
         align-items: stretch !important;
         width: 100% !important;
-        max-width: 100% !important;
         gap: 12px !important;
     }
 
@@ -496,7 +495,7 @@ section#guilds div[class*="jsx-"] {
         gap: 16px !important;
     }
 
-    .sectionHead, #passport .sectionHead, section div[style*="justifyContent"] {
+    .sectionHead, #passport .sectionHead {
         flex-direction: column !important;
         text-align: center !important;
         align-items: center !important;
@@ -504,49 +503,31 @@ section#guilds div[class*="jsx-"] {
     }
 
     /* =======================================================
-       4. БРОНЕБОЙНОЕ ДОБАВЛЕНИЕ ОТСТУПОВ МЕЖДУ СЛИПШИМИСЯ БЛОКАМИ
+       4. ДОБАВЛЕНИЕ ОТСТУПОВ МЕЖДУ ВСЕМИ НИЖНИМИ СЕКЦИЯМИ
        ======================================================= */
-    
-    /* Находим секцию «Игры» и расталкиваем её */
-    section:has(h2:contains("Игры")), 
-    section:has(h1:contains("Игры")),
-    div:has(> h2:contains("Игры")) {
-        margin-top: 60px !important;
-        margin-bottom: 60px !important;
-        padding-top: 20px !important;
-        padding-bottom: 20px !important;
+    /* Добавляем внешние отступы ко всем крупным секциям на странице, 
+       чтобы они на мобильном телефоне принудительно растолкнулись */
+    main > section, 
+    main > div,
+    section {
+        margin-top: 55px !important;
+        margin-bottom: 55px !important;
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
     }
 
-    /* Находим секцию «Отзывы» и расталкиваем её */
-    section:has(h2:contains("Отзывы")), 
-    section:has(h1:contains("Отзывы")),
-    div:has(> h2:contains("Отзывы")),
-    #reviews {
-        margin-top: 60px !important;
-        margin-bottom: 60px !important;
-        padding-top: 20px !important;
-        padding-bottom: 20px !important;
+    /* Для самой первой секции (сверху страницы) убираем лишний отступ */
+    main > section:first-of-type,
+    section:first-of-type {
+        margin-top: 0px !important;
     }
 
-    /* Находим секцию «Гильдии и команды» и расталкиваем её */
-    section:has(h2:contains("Гильдии")), 
-    section:has(h1:contains("Гильдии")),
-    div:has(> h2:contains("Гильдии")),
-    #guilds {
-        margin-top: 60px !important;
-        margin-bottom: 60px !important;
-        padding-top: 20px !important;
-        padding-bottom: 20px !important;
+    /* Для самой последней секции (профиль со ссылкой) делаем гигантский отступ снизу */
+    main > section:last-of-type,
+    main > div:last-child,
+    section:last-of-type {
+        margin-bottom: 0px !important;
+        padding-bottom: 90px !important; /* Отступ до самого нижнего края экрана телефона */
     }
- /* Находим самый нижний блок «Твой игровой профиль — одной ссылкой» */
-    section:has(h2:contains("Твой игровой")), 
-    section:has(h1:contains("Твой игровой")),
-    div:has(> h2:contains("Твой игровой")) {
-        margin-top: 80px !important;
-        margin-bottom: 40px !important;
-        padding-top: 20px !important;
-        padding-bottom: 80px !important; /* Мощный отступ в самом низу до края экрана */
-    }
-
-} /* Конец мобильного блока */
+}
 
