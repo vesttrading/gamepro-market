@@ -226,9 +226,11 @@ div[style*="justifyContent: \"space-between\""] {
 #how div[class*="steps"] > a {
     display: flex !important;
     flex-direction: column !important;
-    width: auto !important;
-    flex: 1 !important;           /* Распределяем карточки поровну, чтобы убрать пустоту справа */
-    max-width: 250px !important;  /* Разрешаем карточке быть чуть шире под размер текста */
+    align-items: center !important;    /* Центрируем иконку и текст по горизонтали */
+    justify-content: center !important; /* Центрируем контент по вертикали внутри квадрата */
+    width: 200px !important;            /* Жесткая ширина квадрата */
+    height: 200px !important;           /* Жесткая высота квадрата */
+    flex: none !important;              /* Запрещаем ломать размеры */
     box-sizing: border-box !important;
 }
 
