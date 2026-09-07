@@ -515,30 +515,20 @@ section#guilds div[class*="jsx-"] {
     max-width: 100%;
     box-sizing: border-box;
   }
-}
 
-/* =========================================
-   GAMEPRO — РАССТОЯНИЕ МЕЖДУ БЛОКАМИ НА МОБИЛЬНОМ
-   ========================================= */
+/* GAMEPRO — расстояние между блоками на телефоне */
 
-@media (max-width: 768px) {
-
-  /* Блок Гильдии */
-  #guilds {
-    margin-top: 60px !important;
-    margin-bottom: 60px !important;
-  }
-
-  /* Блок Отзывы */
+@media (max-width: 560px) {
   #reviews {
-    margin-top: 60px !important;
-    padding-top: 30px !important;
+    margin-bottom: 70px !important;
   }
 
-  /* Увеличиваем расстояние между основными нижними секциями */
-  #guilds + section,
-  #reviews + section {
-    margin-top: 60px !important;
+  #guilds {
+    margin-top: 70px !important;
+  }
+
+  #guilds + section {
+    margin-top: 40px !important;
   }
 }
 
