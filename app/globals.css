@@ -167,16 +167,16 @@ div[style*="justifyContent: \"space-between\""] {
 /* 1. ПРОВЕРИТЬ ИГРОКА ЧЕРЕЗ RAIDER.IO */
 #raiderio {
     width: 100% !important;
-    max-width: 650px !important; /* Уменьшаем всю синюю карточку до аккуратных 650px */
+    max-width: 450px !important; /* Уменьшаем всю синюю карточку до аккуратных 650px */
     margin: 40px auto !important; /* Свойство auto принудительно центрирует блок на экране */
     padding: 0 0 40px !important;
     box-sizing: border-box !important;
 }
 
 #raiderio .rioForm {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr 90px auto !important; /* Возвращаем поля ввода в одну строку на ПК */
-    gap: 10px !important;
+    display: flex !important;           /* Меняем grid на flex */
+    flex-direction: column !important;  /* Выстраиваем элементы вертикально */
+    gap: 12px !important;               /* Делаем аккуратные отступы между полями */
     margin-top: 18px !important;
     width: 100% !important;
 }
@@ -188,8 +188,9 @@ div[style*="justifyContent: \"space-between\""] {
 }
 
 #raiderio .rioForm button {
+    width: 100% !important;             /* Растягиваем кнопку на 100% ширины */
     white-space: nowrap !important;
-  }
+}
 
 /* 1. КАК РАБОТАЕТ ПРОВЕРКА  Увеличиваем общую ширину блока шагов, чтобы они не натыкались друг на друга */
 #how {
