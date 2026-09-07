@@ -167,7 +167,7 @@ div[style*="justifyContent: \"space-between\""] {
 /* 1. ПРОВЕРИТЬ ИГРОКА ЧЕРЕЗ RAIDER.IO */
 #raiderio {
     width: 100% !important;
-    max-width: 650px !important; /* Уменьшаем всю синюю карточку до аккуратных 650px */
+    max-width: 550px !important; /* Уменьшаем всю синюю карточку до аккуратных 650px */
     margin: 40px auto !important; /* Свойство auto принудительно центрирует блок на экране */
     padding: 0 0 40px !important;
     box-sizing: border-box !important;
