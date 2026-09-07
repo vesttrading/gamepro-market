@@ -229,7 +229,7 @@ div[style*="justifyContent: \"space-between\""] {
     justify-content: normal !important;
     
     width: 260px !important;               /* Увеличили ширину квадрата */
-    height: 260px !important;              /* Увеличили высоту квадрата, чтобы всё влезло */
+    height: 200px !important;              /* Увеличили высоту квадрата, чтобы всё влезло */
     box-sizing: border-box !important;
     
     padding: 20px 14px !important;         /* Оптимальные внутренние отступы */
@@ -237,6 +237,14 @@ div[style*="justifyContent: \"space-between\""] {
     border: 1px solid #1e2540 !important;
     border-radius: 16px !important;
     background: #0b1020 !important;
+}
+
+#how .step p,
+#how div[class*="steps"] p {
+    font-size: 13px !important;    /* Уменьшаем размер шрифта (подберите 12px или 13px как лучше) */
+    line-height: 1.4 !important;   /* Делаем строки чуть плотнее друг к другу */
+    margin-top: 8px !important;    /* Небольшой аккуратный отступ от заголовка ("Источник", "Проверка") */
+    color: #9da6c0 !important;     /* Делаем цвет текста чуть мягче, чтобы он не сливался */
 }
 
 /* 4. Уменьшаем светящийся кружок с цифрой, чтобы он не выталкивал текст */
