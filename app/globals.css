@@ -422,7 +422,7 @@ section#guilds div[class*="jsx-"] {
     color: #9da6c0 !important;
 }
 
-/* =======================================================
+[07.09.2026 14:18] Vladimir: /* =======================================================
    БЕЗОПАСНАЯ ТОЧЕЧНАЯ МОБИЛЬНАЯ АДАПТАЦИЯ
    ======================================================= */
 @media (max-width: 1023px) {
@@ -511,4 +511,110 @@ section#guilds div[class*="jsx-"] {
         gap: 12px !important;
     }
 }
+
+   ИТОГОВАЯ ТОЧЕЧНАЯ МОБИЛЬНАЯ АДАПТАЦИЯ (С ОТСТУПАМИ В КОНЦЕ)
+   ======================================================= */
+@media (max-width: 1023px) {
+
+    /* 1. Железная база для главных секций и гридов (работает для блока Владимира) */
+    div[style*="display: grid"], 
+    div[style*="display:grid"],
+    .grid2, .cards, .stats, #passport .stats {
+        display: flex !important;
+        flex-direction: column !important;
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    #passport, #players, #raiderio, #guilds, #reviews, section, main {
+        width: 100% !important;
+        max-width: 100vw !important;
+        min-width: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 14px !important;
+        padding-right: 14px !important;
+        box-sizing: border-box !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    .card, [style*="card"], div[style*="background"], #passport .grid2 > div { 
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 2. Жесткий перехват формы Raider.IO */
+    button:has(text), button, input[placeholder*="Имя"], select, div:has(> input), div:has(> select) {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        flex: 1 1 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    div:has(> input) + div, div:has(> select) + button, section:has(input) div[style*="display: flex"], section:has(input) div[style*="display:flex"] {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        gap: 12px !important;
+    }
+
+    /* 3. Адаптация для шагов, игр и отзывов */
+    .steps, #how .steps, div:has(> .step) {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+        width: 100% !important;
+    }
+    .step, #how .step, .steps > div {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 0 10px 0 !important;
+    }
+
+    section h2 + div, section p + div, #reviews > div, #guilds > div {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100% !important;
+        gap: 16px !important;
+    }
+
+    .sectionHead, #passport .sectionHead, section div[style*="justifyContent"] {
+        flex-direction: column !important;
+        text-align: center !important;
+        align-items: center !important;
+        gap: 12px !important;
+    }
+
+    /* =======================================================
+       4. ДОБАВЛЕНИЕ ОТСТУПОВ МЕЖДУ СЛИПШИМИСЯ БЛОКАМИ В КОНЦЕ СТРАНИЦЫ
+       ======================================================= */
+    /* Добавляем мощные отступы сверху и снизу для секций Игр, Отзывов и Гильдий */
+    section:has(#reviews), #reviews, .reviews-section {
+        margin-top: 60px !important;
+        margin-bottom: 60px !important;
+    }
+
+    section:has(#guilds), #guilds, .guilds-section {
+        margin-top: 60px !important;
+        margin-bottom: 60px !important;
+    }
+
+    /* Отодвигаем самый нижний блок профиля "Твой игровой профиль — одной ссылкой" от Гильдий */
+    div:has(> button:contains("Поделиться")), 
+    section:has(.searchbar) + section,
+    main > div:last-child,
+    footer {
+        margin-top: 80px !important;
+        padding-bottom: 60px !important; /* Чтобы футер не прижимался к низу экрана телефона */
+    }
+
+} /* Конец мобильного блока */
 
