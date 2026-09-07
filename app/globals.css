@@ -239,6 +239,17 @@ div[style*="justifyContent: \"space-between\""] {
     background: #0b1020 !important;
 }
 
+/* Прижимаем кружочки и локатор вплотную вниз к названиям */
+#how .num,
+#how [class*="num"] {
+    margin-bottom: 2px !important; /* Уменьшаем отступ снизу, чтобы опустить кружок к тексту */
+}
+
+/* На всякий случай убираем верхний отступ у самих названий */
+#how .step h3 {
+    margin-top: 4px !important;    /* Притягивает название вверх к кружку */
+}
+
 #how .step p,
 #how div[class*="steps"] p {
     font-size: 13px !important;    /* Уменьшаем размер шрифта (подберите 12px или 13px как лучше) */
