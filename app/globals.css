@@ -142,6 +142,13 @@ div[style*="justifyContent: \"space-between\""] {
     margin: 0 auto 22px !important;
 }
 
+#players .searchbox button,
+#players .searchbox a,
+#players .searchbox input[type="submit"] {
+    min-width: 160px !important; /* Делаем кнопку длиннее */
+    padding: 12px 25px !important;
+}
+
 /* 3. КАРТОЧКИ ИГРОКОВ — Намертво перебиваем инлайн-сетку и выстраиваем 3 штуки в один горизонтальный ряд */
 #players .cards,
 #players div[class*="cards"] {
