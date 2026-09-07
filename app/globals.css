@@ -422,12 +422,11 @@ section#guilds div[class*="jsx-"] {
     color: #9da6c0 !important;
 }
 
-/* =======================================================
-   ИТОГОВАЯ ТОЧЕЧНАЯ МОБИЛЬНАЯ АДАПТАЦИЯ (С ОТСТУПАМИ В КОНЦЕ)
+   ИТОГОВАЯ ТОЧЕЧНАЯ МОБИЛЬНАЯ АДАПТАЦИЯ (С ЖЕСТКИМИ ОТСТУПАМИ)
    ======================================================= */
 @media (max-width: 1023px) {
 
-    /* 1. Железная база для главных секций и гридов (работает для блока Владимира) */
+    /* 1. Железная база для главных секций и гридов */
     div[style*="display: grid"], 
     div[style*="display:grid"],
     .grid2, .cards, .stats, #passport .stats {
@@ -505,26 +504,48 @@ section#guilds div[class*="jsx-"] {
     }
 
     /* =======================================================
-       4. ДОБАВЛЕНИЕ ОТСТУПОВ МЕЖДУ СЛИПШИМИСЯ БЛОКАМИ В КОНЦЕ СТРАНИЦЫ
+       4. БРОНЕБОЙНОЕ ДОБАВЛЕНИЕ ОТСТУПОВ МЕЖДУ СЛИПШИМИСЯ БЛОКАМИ
        ======================================================= */
-    /* Добавляем мощные отступы сверху и снизу для секций Игр, Отзывов и Гильдий */
-    section:has(#reviews), #reviews, .reviews-section {
+    
+    /* Находим секцию «Игры» и расталкиваем её */
+    section:has(h2:contains("Игры")), 
+    section:has(h1:contains("Игры")),
+    div:has(> h2:contains("Игры")) {
         margin-top: 60px !important;
         margin-bottom: 60px !important;
+        padding-top: 20px !important;
+        padding-bottom: 20px !important;
     }
 
-    section:has(#guilds), #guilds, .guilds-section {
+    /* Находим секцию «Отзывы» и расталкиваем её */
+    section:has(h2:contains("Отзывы")), 
+    section:has(h1:contains("Отзывы")),
+    div:has(> h2:contains("Отзывы")),
+    #reviews {
         margin-top: 60px !important;
         margin-bottom: 60px !important;
+        padding-top: 20px !important;
+        padding-bottom: 20px !important;
     }
 
-    /* Отодвигаем самый нижний блок профиля "Твой игровой профиль — одной ссылкой" от Гильдий */
-    div:has(> button:contains("Поделиться")), 
-    section:has(.searchbar) + section,
-    main > div:last-child,
-    footer {
+    /* Находим секцию «Гильдии и команды» и расталкиваем её */
+    section:has(h2:contains("Гильдии")), 
+    section:has(h1:contains("Гильдии")),
+    div:has(> h2:contains("Гильдии")),
+    #guilds {
+        margin-top: 60px !important;
+        margin-bottom: 60px !important;
+        padding-top: 20px !important;
+        padding-bottom: 20px !important;
+    }
+ /* Находим самый нижний блок «Твой игровой профиль — одной ссылкой» */
+    section:has(h2:contains("Твой игровой")), 
+    section:has(h1:contains("Твой игровой")),
+    div:has(> h2:contains("Твой игровой")) {
         margin-top: 80px !important;
-        padding-bottom: 60px !important; /* Чтобы футер не прижимался к низу экрана телефона */
+        margin-bottom: 40px !important;
+        padding-top: 20px !important;
+        padding-bottom: 80px !important; /* Мощный отступ в самом низу до края экрана */
     }
 
 } /* Конец мобильного блока */
