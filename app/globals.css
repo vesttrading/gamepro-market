@@ -239,6 +239,13 @@ div[style*="justifyContent: \"space-between\""] {
     background: #0b1020 !important;
 }
 
+/* Уменьшаем текст описания и поднимаем его к заголовку */
+#how .steps > div p {
+    font-size: 13px !important;    /* Уменьшаем размер шрифта (подберите под себя) */
+    margin-top: 8px !important;    /* Уменьшаем отступ сверху, чтобы прижать к заголовку */
+    line-height: 1.4 !important;   /* Делаем межстрочный интервал более компактным */
+}
+
 /* 1. Возвращаем правильные стили для блока Vladimir (div:first-child) */
 #passport .grid2 > div:first-child {
     width: 100% !important;
