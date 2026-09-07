@@ -8,42 +8,7 @@ body {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* 1. Центрирование и фиксация ширины основных секций */
-#passport, #players {
-  display: block !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  max-width: 1160px !important;
-  width: 92% !important;
-}
 
-/* 2. Восстановление сетки для паспорта (строка 246) */
-.grid2 {
-  display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
-  gap: 20px !important;
-  width: 100% !important;
-}
-section#raiderio button {
-    display: inline-flex !important;
-    width: auto !important;
-    flex-shrink: 0 !important;
-}
-/* 3. Восстановление сетки для карточек игроков (строка 259) */
-.cards {
-  display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)) !important;
-  gap: 16px !important;
-  width: 100% !important;
-}
-
-/* 4. Возвращение оформления кастомным карточкам (строка 247) */
-.card {
-  background-color: #10162b !important;
-  border: 1px solid #171c31 !important;
-  border-radius: 16px !important;
-  padding: 24px !important;
-}
 
 /* 1. Возвращаем секции правильный блочный вид, чтобы карточка Владимира была по центру */
 #passport {
@@ -504,63 +469,83 @@ section#guilds div[class*="jsx-"] {
     }
 }
 
-/* Настройки для мобильных экранов (телефонов) */
-@media (max-width: 768px) {
-    /* 1. Выстраиваем карточки отзывов вертикально в одну колонку */
-    section#reviews [class*="gameGrid"], 
-    section#reviews [class*="Grid"] {
+/* =======================================================
+   1. АДАПТАЦИЯ ДЛЯ ТЕЛЕФОНОВ (Экраны меньше 1024px)
+   ======================================================= */
+@media (max-width: 1023px) {
+    /* Сжимаем секции в экран телефона и выстраиваем всё друг за другом */
+    #passport, #players {
+        display: flex !important;
         flex-direction: column !important;
-        gap: 15px !important;
+        width: 100% !important;
+        max-width: 100vw !important;
+        margin: 0 auto !important;
+        padding: 40px 12px 20px !important; /* Уменьшили верхний отступ для мобильных */
+        box-sizing: border-box !important;
     }
 
-    /* 2. Сбрасываем фиксированную ширину карточек */
-    section#reviews [class*="gameGrid"] > div,
-    section#reviews [class*="Grid"] > div {
-        flex: 1 1 auto !important;
+    /* Выстраиваем карточки в сетке строго в одну колонку (одна под другой) */
+    .grid2 {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 16px !important;
         width: 100% !important;
         max-width: 100% !important;
     }
 
-    /* 3. Уменьшаем гигантские отступы сверху для телефона */
-    section#reviews {
-        margin-top: 40px !important; 
-    }
-    
-    section#guilds > div {
-        padding: 20px 16px !important;
+    /* Карточки игроков (строка 259) на мобилках тоже выстраиваем в колонку */
+    .cards {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+        width: 100% !important;
     }
 
-    /* 1. Выстраиваем главные блоки паспорта (профиль и ачивки) друг под друга */
-    main div[class*="passport"], 
-    main div[class*="Passport"],
-    section#passport > div {
-        flex-direction: column !important;
-        align-items: center !important;
+    /* Адаптируем карточки, чтобы они не растягивали экран по ширине */
+    .card, [style*="card"] { 
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+        padding: 16px !important; /* Слегка уменьшили внутренние отступы */
+        background-color: #10162b !important;
+        border: 1px solid #171c31 !important;
+        border-radius: 16px !important;
+    }
+}
+
+/* =======================================================
+   2. ДЛЯ КОМПЬЮТЕРОВ И НОУТБУКОВ (Экраны от 1024px)
+   ======================================================= */
+@media (min-width: 1024px) {
+    /* Возвращаем ваши исходные настройки для больших мониторов */
+    #passport, #players {
+        display: block !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        max-width: 1160px !important;
+        width: 92% !important;
+    }
+
+    .grid2 {
+        display: grid !important;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
         gap: 20px !important;
         width: 100% !important;
     }
 
-    /* 2. Растягиваем левую карточку с ником Vladimir во всю ширину телефона */
-    main div[class*="passport"] > div:first-child,
-    main div[class*="Passport"] > div:first-child {
+    .cards {
+        display: grid !important;
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)) !important;
+        gap: 16px !important;
         width: 100% !important;
-        max-width: 100% !important;
     }
 
-    /* 3. Маленькие карточки (KSM, Cutting Edge) тоже выстраиваем в одну колонку */
-    main div[class*="passport"] div[class*="Grid"],
-    main div[class*="Passport"] div[class*="Grid"] {
-        display: flex !important;
-        flex-direction: row !important;
-        width: 100% !important;
-        gap: 12px !important;
+    .card {
+        background-color: #10162b !important;
+        border: 1px solid #171c31 !important;
+        border-radius: 16px !important;
+        padding: 24px !important;
     }
-
-    /* 4. Делаем каждую плашку ачивки адаптивной */
-    main div[class*="passport"] div[class*="Grid"] > div,
-    main div[class*="Passport"] div[class*="Grid"] > div {
-        width: 100% !important;
-        max-width: 100% !important;
-    }
-} 
+}
 
