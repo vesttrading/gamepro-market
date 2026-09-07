@@ -517,3 +517,28 @@ section#guilds div[class*="jsx-"] {
   }
 }
 
+/* =========================================
+   GAMEPRO — РАССТОЯНИЕ МЕЖДУ БЛОКАМИ НА МОБИЛЬНОМ
+   ========================================= */
+
+@media (max-width: 768px) {
+
+  /* Блок Гильдии */
+  #guilds {
+    margin-top: 60px !important;
+    margin-bottom: 60px !important;
+  }
+
+  /* Блок Отзывы */
+  #reviews {
+    margin-top: 60px !important;
+    padding-top: 30px !important;
+  }
+
+  /* Увеличиваем расстояние между основными нижними секциями */
+  #guilds + section,
+  #reviews + section {
+    margin-top: 60px !important;
+  }
+}
+
