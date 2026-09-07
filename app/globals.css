@@ -423,115 +423,81 @@ section#guilds div[class*="jsx-"] {
 }
 
 /* =======================================================
-   GAMEPRO — МОБИЛЬНАЯ АДАПТАЦИЯ (СТРОГО ДЛЯ СМАРТФОНОВ)
-   Не изменяет версию для ноутбука
+   УСИЛЕННАЯ МОБИЛЬНАЯ АДАПТАЦИЯ ДЛЯ СМАРТФОНОВ
    ======================================================= */
 @media (max-width: 1023px) {
 
-    /* Основные секции */
-    #passport, #players, #raiderio, #guilds, #reviews {
+    /* 1. Глобальный сброс для ВСЕХ grid и flex рядов на странице */
+    div[style*="display: grid"], 
+    div[style*="display:grid"],
+    div[style*="display: flex"],
+    div[style*="display:flex"],
+    .grid2, .cards, .steps, .stats {
+        display: flex !important;
+        flex-direction: column !important; /* Принудительно выстраиваем всё сверху вниз */
+        grid-template-columns: 1fr !important; 
+        gap: 16px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* 2. Растягиваем абсолютно все секции и крупные обертки на 100% ширины экрана */
+    #passport, #players, #raiderio, #guilds, #reviews, section, main, header, footer,
+    div[style*="maxWidth"], div[style*="max-width"] {
         width: 100% !important;
         max-width: 100vw !important;
         min-width: 0 !important;
         margin-left: 0 !important;
         margin-right: 0 !important;
-        padding-left: 16px !important;  /* Аккуратные отступы по краям экрана смартфона */
-        padding-right: 16px !important;
+        padding-left: 14px !important; /* Чтобы контент по бокам не прилипал к стеклу телефона */
+        padding-right: 14px !important;
         box-sizing: border-box !important;
         display: flex !important;
         flex-direction: column !important;
     }
 
-    /* Паспорт - карточки одна под другой */
-    #passport .grid2 {
-        grid-template-columns: 1fr !important;
+    /* 3. Делаем все внутренние карточки (включая игры, отзывы и шаги) резиновыми */
+    .card, .step, [style*="card"], div[style*="background"], 
+    #passport .grid2 > div, section > div > div { 
         width: 100% !important;
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 16px !important;
-    }
-
-    /* Карточки паспорта */
-    #passport .card {
-        width: 100% !important;
+        max-width: 100% !important;
         min-width: 0 !important;
         box-sizing: border-box !important;
-        padding: 18px !important;
+        padding: 16px !important;
     }
 
-    /* Заголовок паспорта */
-    #passport .sectionHead {
+    /* 4. Полная вытяжка для формы проверки Raider.IO и поиска игроков */
+    #raiderio form, #raiderio .searchbar, #players .searchbar,
+    div[style*="justifyContent: \"space-between\""],
+    div[style*="justifyContent:\"space-between\""] {
+        flex-direction: column !important; /* Ломаем горизонтальную строку с инпутами и кнопками */
+        align-items: stretch !important;
         width: 100% !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
+        gap: 12px !important;
+    }
+
+    /* Растягиваем поля ввода, выпадающие списки и кнопки на всю ширину экрана */
+    #raiderio input, #raiderio select, #raiderio button,
+    #players input, #players button, .searchbar input, .searchbar button,
+    input[type="text"], button {
+        width: 100% !important; /* Теперь они гарантированно вытянутся, а не сузятся */
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 5. Исправление шагов «Как работает проверка» и карточек «Игры» */
+    #how .steps > div, .steps > div, section div[style*="border"] {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 0 12px 0 !important; /* Убираем боковые сдвиги, оставляем отступ только вниз */
+    }
+
+    /* Оптимизация заголовков под мобильные экраны */
+    h1, h2, h3, .sectionHead {
         text-align: center !important;
-        gap: 10px !important;
+        font-size: 24px !important;
+        line-height: 1.3 !important;
     }
-
-    #passport .sectionHead > div {
-        width: 100% !important;
-        min-width: 0 !important;
-    }
-
-    #passport h2 {
-        font-size: 25px !important;
-        line-height: 1.2 !important;
-    }
-
-    /* Статистика 2850 / CE / M+ Runs */
-    #passport .stats {
-        grid-template-columns: 1fr !important;
-        width: 100% !important;
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 12px !important;
-    }
-
-    /* Поиск игроков */
-    #players .cards {
-        grid-template-columns: 1fr !important;
-        width: 100% !important;
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 12px !important;
-    }
-
-    /* Поисковая строка */
-    #players .searchbar {
-        width: 100% !important;
-        max-width: 100% !important;
-        box-sizing: border-box !important;
-    }
-
-    #players .searchbar input {
-        min-width: 0 !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-    }
-
-    #players .searchbar button {
-        flex-shrink: 0 !important;
-    }
-
-    /* Расстояния между крупными блоками на телефоне */
-    #reviews {
-        margin-bottom: 50px !important;
-    }
-
-    #guilds {
-        margin-top: 50px !important;
-    }
-
-    #guilds + section {
-        margin-top: 40px !important;
-    }
-
-    /* Глобальный сброс для защиты от горизонтального вылета */
-    #passport *, #players *, #raiderio *, #guilds *, #reviews * {
-        max-width: 100% !important;
-        box-sizing: border-box !important;
-    }
-
-} /* ВОТ ЭТА САМАЯ ВАЖНАЯ СКОБКА, КОТОРАЯ ТЕПЕРЬ ЗАКРЫВАЕТ @media БЛОК! */
+}
 
