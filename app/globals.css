@@ -191,21 +191,6 @@ div[style*="justifyContent: \"space-between\""] {
     white-space: nowrap !important;
 }
 
-/* Телефон (адаптивность для смартфонов оставляем) */
-@media (max-width: 700px) {
-    #raiderio {
-        width: 92% !important;
-    }
-    
-    #raiderio .rioForm {
-        grid-template-columns: 1fr !important; /* На телефонах поля встанут друг под друга */
-    }
-
-    #raiderio .rioForm button {
-        width: 100% !important;
-    }
-}
-
 /* 1. КАК РАБОТАЕТ ПРОВЕРКА  Увеличиваем общую ширину блока шагов, чтобы они не натыкались друг на друга */
 #how {
     width: 100% !important;
