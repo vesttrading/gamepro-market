@@ -554,3 +554,13 @@ section#guilds div[class*="jsx-"] {
         padding-bottom: 90px !important; /* Отступ до самого нижнего края экрана телефона */
     }
 }
+
+/* Добавляем свободное место снизу сайта ТОЛЬКО для компьютеров */
+@media (min-width: 769px) {
+    main > section:last-of-type,
+    main > div:last-child,
+    body {
+        padding-bottom: 200px !important;
+    }
+}
+
