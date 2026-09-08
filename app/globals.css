@@ -142,16 +142,15 @@ div[style*="justifyContent: \"space-between\""] {
     margin: 0 auto 22px !important;
 }
 
-/* 3. КАРТОЧКИ ИГРОКОВ — Намертво перебиваем инлайн-сетку и выстраиваем 3 штуки в один горизонтальный ряд */
 #players .cards,
 #players div[class*="cards"] {
-    display: grid !important;
-    grid-template-columns: repeat(3, minmax(0, 190px)) !important; /* Выстраиваем ровно 3 карточки в ряд и сжимаем каждую до 190px, убирая пустоту! */
-    justify-content: center !important; /* Центрируем этот горизонтальный ряд на экране */
-    gap: 14px !important;               /* Отступ между карточками игроков */
+    display: flex !important;
+    justify-content: center !important;
+    gap: 14px !important;
     width: 100% !important;
-    max-width: 850px !important;        /* Сжимаем общую ширину блока под карточками */
-    margin: 25px auto 0 auto !important; /* Центрируем сам контейнер с карточками */
+    max-width: 850px !important;
+    margin: 25px auto !important;
+    flex-direction: row !important; /* На ПК — в ряд */
 }
 
 /* А это правило сработает ТОЛЬКО на экранах телефонов (меньше 768px) */
