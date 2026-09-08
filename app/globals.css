@@ -479,8 +479,8 @@ section#guilds div[class*="jsx-"] {
 [class*="profileShare"] button,
 #passport .profileShare a,
 [class*="profileShare"] a {
-    font-size: 10px !important;        /* Крупный читаемый текст на кнопке */
-    padding: 8px 14px !important;     /* Сделали саму кнопку массивной и широкой */
+    font-size: 12px !important;        /* Крупный читаемый текст на кнопке */
+    padding: 16px 24px !important;     /* Сделали саму кнопку массивной и широкой */
     font-weight: 600 !important;
     display: inline-block !important;
 }
@@ -498,8 +498,8 @@ main > div:last-child button,
 section:last-of-type button,
 main > section:last-of-type a,
 section:last-of-type a {
-    font-size: 18px !important;
-    padding: 12px 34px !important;
+    font-size: 15px !important;
+    padding: 10px 24px !important;
 }
 
 /* =======================================================
