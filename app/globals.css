@@ -355,6 +355,9 @@ section#reviews [class*="Grid"] > div {
     min-width: 0 !important;
     padding: 14px !important;
     box-sizing: border-box !important;
+    border: 1px solid #00f2fe !important;
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.12) !important;
+
 }
 
 /* Три карточки в одну линию */
@@ -364,7 +367,7 @@ section#reviews [class*="Grid"] {
     flex-direction: row !important;
     justify-content: center !important;
     align-items: stretch !important;
-    gap: 12px !important;
+    gap: 32px !important;
 }
 
 /* Внутренний текст */
