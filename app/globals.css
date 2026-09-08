@@ -159,7 +159,19 @@ div[style*="justifyContent: \"space-between\""] {
     #players div[class*="cards"] {
         flex-direction: column !important; /* На смартфонах перестраиваем в столбец */
         align-items: center !important;
-        gap: 20px !important;              /* ДОБАВИТЬ: это сделает красивый отступ между карточками */
+        gap: 20px !important;              /* Отступ между карточками */
+    }
+    
+    /* ИСПРАВЛЕНИЕ: Возвращаем карточкам нормальную высоту по вертикали на телефоне */
+    #players .cards > div,
+    #players .cards > a,
+    #players div[class*="cards"] > div,
+    #players div[class*="cards"] > a {
+        width: 100% !important;
+        max-width: 320px !important;       /* Оптимальная ширина для экрана смартфона */
+        height: auto !important;           /* Разрешаем карточке растягиваться по вертикали */
+        min-height: 200px !important;      /* Минимальная высота, чтобы они не были слишком мелкими */
+        padding: 20px 16px !important;     /* Делаем отступы свободнее, чтобы контент не зажимался */
     }
 }
 
