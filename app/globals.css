@@ -107,7 +107,7 @@ div[style*="justifyContent: \"space-between\""] {
     flex-wrap: nowrap !important; /* Запрещаем перенос в 2 ряда */
     gap: 10px !important;
     width: 100% !important;
-    margin-top: 20px !important;
+    margin-top: 60px !important;
     margin-bottom: 30px !important; /* Делаем отступ СНИЗУ от карточек до поиска */
 }
 
