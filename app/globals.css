@@ -615,4 +615,22 @@ section:last-of-type {
     margin-top: 150px !important;
 }
 
+/* Адаптация шапки сайта под экраны телефонов */
+@media (max-width: 768px) {
+    header, 
+    div[class*="header"], 
+    header > div {
+        flex-wrap: wrap !important;       /* Разрешаем элементам (лого, меню, языки) переноситься */
+        gap: 12px !important;             /* Компактный отступ между элементами */
+        padding: 10px 16px !important;    /* Уменьшаем боковые поля, чтобы освободить место */
+        justify-content: space-between !important;
+    }
 
+    /* Навигационные ссылки (меню) делаем чуть компактнее */
+    header nav, 
+    header div[class*="nav"],
+    header .navlinks {
+        gap: 10px !important;             /* Сближаем пункты меню (Игры, Отзывы и т.д.) */
+        font-size: 14px !important;       /* Слегка уменьшаем шрифт ссылок */
+    }
+}
