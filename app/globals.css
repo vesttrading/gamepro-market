@@ -167,6 +167,9 @@ div[style*="justifyContent: \"space-between\""] {
     flex-direction: column !important;
     justify-content: space-between !important;
     padding: 16px !important;
+    border: 1px solid #00f2fe !important;
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.12) !important;
+
 }
 
 /* А это правило сработает ТОЛЬКО на экранах телефонов (меньше 768px) */
