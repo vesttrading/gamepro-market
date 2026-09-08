@@ -13,7 +13,7 @@ body {
 /* 1. Возвращаем секции правильный блочный вид, чтобы карточка Владимира была по центру */
 #passport {
   display: block !important;
-  margin: 0 auto !important;
+  margin: -35px auto 0 auto !important;
   max-width: 1160px !important;
   width: 92% !important;
 }
@@ -55,7 +55,7 @@ div[style*="justifyContent: \"space-between\""] {
 .sectionHead {
   justify-content: center !important; /* 🌟 Ставит всю строку строго по центру */
   text-align: center !important;     /* Центрирует текст внутри */
-  margin: 0 auto 20px auto !important;
+  margin: 0 auto 0 auto !important;
 }
 
 /* 3. Выравниваем элементы внутри строки, чтобы они стояли красиво */
@@ -72,7 +72,7 @@ div[style*="justifyContent: \"space-between\""] {
     gap: 20px !important;
     width: 100% !important;
     max-width: 500px !important;
-    margin: 20px auto !important;
+    margin: 20px auto 140px auto !important;
     padding: 0 !important;
     box-sizing: border-box !important;
 }
@@ -107,7 +107,7 @@ div[style*="justifyContent: \"space-between\""] {
     flex-wrap: nowrap !important; /* Запрещаем перенос в 2 ряда */
     gap: 10px !important;
     width: 100% !important;
-    margin-top: 20px !important;
+    margin-top: 60px !important;
     margin-bottom: 30px !important; /* Делаем отступ СНИЗУ от карточек до поиска */
 }
 
@@ -127,11 +127,20 @@ div[style*="justifyContent: \"space-between\""] {
     box-sizing: border-box !important;
 }
 
+/* Прямое увеличение отступа над блоком VERIFIED */
+    #passport div[class*="grid"] > div:nth-child(2),
+    #passport [class*="verified"],
+    #passport .verified-section {
+    margin-top: 60px !important;
+    margin-bottom: 20px !important;
+    display: block !important;
+}
+
 /* 1. НАЙТИ ИГРОКА  Намертво уменьшаем весь общий блок до аккуратных 800px */
 #players {
     width: 100% !important;
     max-width: 800px !important;  
-    margin: 40px auto 0 auto !important; /* Центрируем весь этот блок на экране */
+    margin: 100px auto 0 auto !important; /* Центрируем весь этот блок на экране */
 }
 
 /* Шаг 2. Саму строку поиска внутри делаем еще чуть компактнее */
@@ -142,45 +151,60 @@ div[style*="justifyContent: \"space-between\""] {
     margin: 0 auto 22px !important;
 }
 
-/* 3. КАРТОЧКИ ИГРОКОВ — Намертво перебиваем инлайн-сетку и выстраиваем 3 штуки в один горизонтальный ряд */
 #players .cards,
 #players div[class*="cards"] {
-    display: grid !important;
-    grid-template-columns: repeat(3, minmax(0, 190px)) !important; /* Выстраиваем ровно 3 карточки в ряд и сжимаем каждую до 190px, убирая пустоту! */
-    justify-content: center !important; /* Центрируем этот горизонтальный ряд на экране */
-    gap: 14px !important;               /* Отступ между карточками игроков */
+    display: flex !important;
+    justify-content: center !important;
+    gap: 24px !important;
     width: 100% !important;
-    max-width: 850px !important;        /* Сжимаем общую ширину блока под карточками */
-    margin: 25px auto 0 auto !important; /* Центрируем сам контейнер с карточками */
+    max-width: 1200px !important;
+    margin: 20px auto !important;
+    flex-direction: row !important; /* На ПК — в ряд */
 }
 
-/* Настройки для элементов внутри каждой отдельной карточки */
+/* 4. Настройки для элементов внутри каждой отдельной карточки (ПК версия) */
 #players .cards > div,
 #players .cards > a,
 #players div[class*="cards"] > div,
 #players div[class*="cards"] > a {
-    width: 100% !important;
-    max-width: 260px !important;
+    width: 240px !important;
+    max-width: 240px !important;
+    height: auto !important;           /* Убираем жесткую высоту */
+    min-height: 180px !important;      /* Карточка сама подстроится по вертикали */
     box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    padding: 16px !important;
+    border: 1px solid #00f2fe !important;
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.12) !important;
+
+}
+
+/* А это правило сработает ТОЛЬКО на экранах телефонов (меньше 768px) */
+@media (max-width: 768px) {
+    #players .cards,
+    #players div[class*="cards"] {
+        flex-direction: column !important; /* На телефонах — вертикально */
+        align-items: center !important;
+    }
 }
 
 /* 1. ПРОВЕРИТЬ ИГРОКА ЧЕРЕЗ RAIDER.IO */
 #raiderio {
     width: 100% !important;
     max-width: 580px !important; /* Уменьшаем всю синюю карточку до аккуратных 650px */
-    margin: 40px auto !important; /* Свойство auto принудительно центрирует блок на экране */
+    margin: 90px auto !important; /* Свойство auto принудительно центрирует блок на экране */
     padding: 0 0 40px !important;
     box-sizing: border-box !important;
 }
 
 #raiderio .rioForm {
-    display: grid !important;
-    /* Первые две колонки (Имя, Реалм) делят место поровну, а третья под EU подстраивается автоматически */
-    grid-template-columns: 1fr 1fr auto !important; 
-    gap: 16px !important; 
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
     margin-top: 18px !important;
     width: 100% !important;
-    align-items: end !important; /* Выравнивает все элементы по нижней линии */
 }
 
 #raiderio .rioForm input,
@@ -234,7 +258,7 @@ div[style*="justifyContent: \"space-between\""] {
     
     padding: 20px 14px !important;         /* Оптимальные внутренние отступы */
     
-    border: 1px solid #1e2540 !important;
+    border: 1px solid #00f2fe !important;
     border-radius: 16px !important;
     background: #0b1020 !important;
 }
@@ -253,6 +277,15 @@ div[style*="justifyContent: \"space-between\""] {
 
 #how p {
     margin-top: 0px !important;
+}
+
+/* Правило сработает ТОЛЬКО на экранах телефонов (меньше 768px) */
+@media (max-width: 768px) {
+    #how .steps,
+    #how div[class*="steps"] {
+        flex-direction: column !important; /* На телефонах — вертикально */
+        align-items: center !important;    /* Центрируем карточки по горизонтали */
+    }
 }
 
 /* 1. Настройки для блока ИГР — уменьшаем весь блок и ставим по центру */
@@ -281,6 +314,24 @@ section#games div[class*="gameGrid"] > div {
     width: 100% !important;
     min-width: 150px !important;
     padding: 12px !important;
+    border: 1px solid #00f2fe !important;
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.12) !important;
+
+}
+
+/* Правило для мобильного отображения: строго по одной карточке в ряд */
+@media (max-width: 768px) {
+    section#games div[class*="gameGrid"] {
+        flex-direction: column !important; /* Выстраиваем карточки вертикально */
+        align-items: center !important;    /* Центрируем их на экране */
+        gap: 16px !important;              /* Комфортный отступ между карточками */
+    }
+
+    section#games div[class*="gameGrid"] > div {
+        width: 100% !important;            /* Растягиваем карточку на доступную ширину */
+        max-width: 340px !important;       /* Ограничиваем максимальную ширину, чтобы они не были слишком огромными */
+        min-width: 280px !important;       /* Минимальный порог под узкие экраны */
+    }
 }
 
 /* 1. Намертво сжимаем всю секцию отзывов до аккуратных 850px */
@@ -307,12 +358,15 @@ section#reviews [class*="Grid"] {
 /* Компактные карточки отзывов */
 section#reviews [class*="gameGrid"] > div,
 section#reviews [class*="Grid"] > div {
-    flex: 0 1 210px !important;
-    width: 210px !important;
-    max-width: 210px !important;
+    flex: 0 1 260px !important;
+    width: 260px !important;
+    max-width: 260px !important;
     min-width: 0 !important;
-    padding: 14px !important;
+    padding: 20px !important;
     box-sizing: border-box !important;
+    border: 1px solid #00f2fe !important;
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.12) !important;
+
 }
 
 /* Три карточки в одну линию */
@@ -322,17 +376,17 @@ section#reviews [class*="Grid"] {
     flex-direction: row !important;
     justify-content: center !important;
     align-items: stretch !important;
-    gap: 12px !important;
+    gap: 32px !important;
 }
 
 /* Внутренний текст */
 section#reviews h3 {
-    font-size: 15px !important;
+    font-size: 18px !important;
     margin-bottom: 8px !important;
 }
 
 section#reviews p {
-    font-size: 13px !important;
+    font-size: 15px !important;
     line-height: 1.45 !important;
 }
 
@@ -342,9 +396,10 @@ section#reviews p {
     margin-left: auto !important; 
     margin-right: auto !important;
     padding: 10px 24px !important; /* Уменьшили внутренний отступ сверху и снизу с 40px до 10px */
-    margin-top: 30px !important;  /* Сдвигает блок вверх, ближе к отзывам */
+    margin-top: -35px !important;  /* Сдвигает блок вверх, ближе к отзывам */
+    margin-bottom: 80px !important;
     box-sizing: border-box !important;
-}
+ }
 
 /* Уменьшаем ширину внутренней карточки в блоке гильдий */
 section#guilds > div {
@@ -352,6 +407,7 @@ section#guilds > div {
     width: 100% !important;
     margin-left: auto !important; 
     margin-right: auto !important;
+    margin-top: 100px !important;
 }
 /* На всякий случай дублируем для вложенного div, если структура сложнее */
 section#guilds div[class*="jsx-"] {
@@ -374,22 +430,62 @@ section#guilds div[class*="jsx-"] {
     max-width: 1160px !important;
     margin-left: auto !important;
     margin-right: auto !important;
+    margin-top: 140px !important;
 }
 
-#passport .profileShare {
+/* Полное обновление и увеличение блока профиля */
+#passport .profileShare,
+[class*="profileShare"] {
     display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    gap: 20px !important;
+    flex-direction: column !important; /* Выстраиваем заголовок и кнопку вертикально, чтобы им было просторно */
+    align-items: center !important;    /* Центрируем всё по середине */
+    justify-content: center !important;
+    gap: 24px !important;              /* Увеличиваем расстояние между текстом и кнопкой */
+    width: 100% !important;
 }
 
-#passport .profileShare h2 {
+/* Увеличиваем заголовок */
+#passport .profileShare h2,
+[class*="profileShare"] h2 {
+    margin: 0 0 10px 0 !important;
+    font-size: 42px !important;        /* Сделали заголовок огромным и солидным */
+    text-align: center !important;
+}
+
+/* Увеличиваем подзаголовки/описание */
+#passport .profileShare p,
+[class*="profileShare"] p {
+    font-size: 18px !important;        /* Сделали текст описания крупнее */
     margin: 0 !important;
+    text-align: center !important;
 }
 
-#passport .profileShare p {
-    margin: 6px 0 0 !important;
-    color: #9da6c0 !important;
+/* Увеличиваем бирюзовую кнопку */
+#passport .profileShare button,
+[class*="profileShare"] button,
+#passport .profileShare a,
+[class*="profileShare"] a {
+    font-size: 20px !important;        /* Крупный читаемый текст на кнопке */
+    padding: 16px 40px !important;     /* Сделали саму кнопку массивной и широкой */
+    font-weight: 600 !important;
+    display: inline-block !important;
+}
+
+/* Увеличиваем заголовок внутри финального блока профиля */
+main > section:last-of-type h2,
+main > div:last-child h2,
+section:last-of-type h2 {
+    font-size: 34px !important;
+}
+
+/* Увеличиваем кнопку внутри финального блока профиля */
+main > section:last-of-type button,
+main > div:last-child button,
+section:last-of-type button,
+main > section:last-of-type a,
+section:last-of-type a {
+    font-size: 18px !important;
+    padding: 12px 34px !important;
 }
 
 /* =======================================================
@@ -499,4 +595,22 @@ section#guilds div[class*="jsx-"] {
         margin-bottom: 0px !important;
         padding-bottom: 90px !important; /* Отступ до самого нижнего края экрана телефона */
     }
+}
+
+/* Просто опускаем надписи в самый низ на родном сине-голубом фоне */
+@media (min-width: 769px) {
+    footer,
+    main + footer,
+    div[class*="footer"] {
+        margin-top: 140px !important;    /* Отодвигаем надписи ниже от Гильдий */
+        padding-bottom: 60px !important;  /* Делаем аккуратный отступ до самого края экрана */
+        border-top: none !important;     /* Убираем ту самую тонкую разделительную линию */
+    }
+}
+
+/* Пробиваем инлайновые стили и опускаем финальный блок профиля вниз */
+main > section:last-of-type,
+main > div:last-child,
+section:last-of-type {
+    margin-top: 150px !important;
 }
