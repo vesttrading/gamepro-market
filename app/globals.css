@@ -481,7 +481,7 @@ section#guilds div[class*="jsx-"] {
 [class*="profileShare"] a {
     font-size: 13px !important;        /* Крупный читаемый текст на кнопке */
     padding: 10px 24px !important;     /* Сделали саму кнопку массивной и широкой */
-    font-weight: 600 !important;
+    font-weight: 400 !important;
     display: inline-block !important;
 }
 
