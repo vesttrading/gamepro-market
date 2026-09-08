@@ -153,15 +153,6 @@ div[style*="justifyContent: \"space-between\""] {
     flex-direction: row !important; /* На ПК — в ряд */
 }
 
-/* А это правило автоматически сработает только на экранах телефонов */
-@media (max-width: 768px) {
-    #players .cards,
-    #players div[class*="cards"] {
-        flex-direction: column !important; /* На смартфонах перестраиваем в столбец */
-        align-items: center !important;
-        gap: 20px !important;              /* Отступ между карточками */
-    }
-    
 /* 4. Настройки для элементов внутри каждой отдельной карточки (ПК версия) */
 #players .cards > div,
 #players .cards > a,
