@@ -148,8 +148,8 @@ div[style*="justifyContent: \"space-between\""] {
     justify-content: center !important;
     gap: 24px !important;
     width: 100% !important;
-    max-width: 960px !important;
-    margin: 25px auto !important;
+    max-width: 100px !important;
+    margin: 20px auto !important;
     flex-direction: row !important; /* На ПК — в ряд */
 }
 
@@ -167,9 +167,9 @@ div[style*="justifyContent: \"space-between\""] {
 #players .cards > a,
 #players div[class*="cards"] > div,
 #players div[class*="cards"] > a {
-    width: 220px !important;
-    max-width: 220px !important;
-    height: 200px !important;
+    width: 250px !important;
+    max-width: 250px !important;
+    height: 100px !important;
     box-sizing: border-box !important;
     display: flex !important;
     flex-direction: column !important;
