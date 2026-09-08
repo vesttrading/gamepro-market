@@ -127,6 +127,15 @@ div[style*="justifyContent: \"space-between\""] {
     box-sizing: border-box !important;
 }
 
+/* Прямое увеличение отступа над блоком VERIFIED */
+#passport h2,
+#passport .verified-title,
+#passport div[class*="grid"] h2 {
+    margin-top: 60px !important;
+    margin-bottom: 20px !important;
+    display: block !important;
+}
+
 /* 1. НАЙТИ ИГРОКА  Намертво уменьшаем весь общий блок до аккуратных 800px */
 #players {
     width: 100% !important;
