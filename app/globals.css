@@ -471,6 +471,22 @@ section#guilds div[class*="jsx-"] {
     display: inline-block !important;
 }
 
+/* Увеличиваем заголовок внутри финального блока профиля */
+main > section:last-of-type h2,
+main > div:last-child h2,
+section:last-of-type h2 {
+    font-size: 42px !important;
+}
+
+/* Увеличиваем кнопку внутри финального блока профиля */
+main > section:last-of-type button,
+main > div:last-child button,
+section:last-of-type button,
+main > section:last-of-type a,
+section:last-of-type a {
+    font-size: 20px !important;
+    padding: 16px 40px !important;
+}
 
 /* =======================================================
    ИТОГОВАЯ БЕЗОПАСНАЯ МОБИЛЬНАЯ АДАПТАЦИЯ (БЕЗ ОШИБОК)
