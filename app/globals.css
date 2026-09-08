@@ -566,3 +566,12 @@ section#guilds div[class*="jsx-"] {
         border-top: none !important;     /* Убираем ту самую тонкую разделительную линию */
     }
 }
+
+/* Пробиваем инлайновые стили и опускаем финальный блок профиля вниз */
+main > section:last-of-type,
+main > div:last-child,
+section:last-of-type {
+    margin-top: 150px !important;
+}
+
+
