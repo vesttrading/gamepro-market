@@ -161,7 +161,7 @@ div[style*="justifyContent: \"space-between\""] {
     width: 240px !important;
     max-width: 240px !important;
     height: auto !important;           /* Убираем жесткую высоту */
-    min-height: 210px !important;      /* Карточка сама подстроится по вертикали */
+    min-height: 180px !important;      /* Карточка сама подстроится по вертикали */
     box-sizing: border-box !important;
     display: flex !important;
     flex-direction: column !important;
@@ -196,7 +196,10 @@ div[style*="justifyContent: \"space-between\""] {
         max-width: 320px !important;       /* Отличная ширина на телефоне */
         height: auto !important;           /* Разрешаем растягиваться вниз */
         min-height: 200px !important;      
-        padding: 20px 16px !important;     
+        padding: 20px 16px !important; 
+        flex-direction: column !important; /* Выстраивает элементы сверху вниз */
+        flex-wrap: wrap !important;        /* Позволяет тексту переноситься */
+        align-items: flex-start !important; /* Выравнивает всё по левому краю */
     }
 
     /* Исправление для телефона: заставляем бейджи послушно переноситься внутри */
