@@ -310,19 +310,18 @@ section#games div[class*="gameGrid"] > div {
 
 }
 
-/* Правило для мобильной сетки игр 2х2 */
+/* Правило для мобильного отображения: строго по одной карточке в ряд */
 @media (max-width: 768px) {
     section#games div[class*="gameGrid"] {
-        flex-wrap: wrap !important; /* Разрешаем карточкам переноситься на новую строку */
-        justify-content: center !important; /* Центрируем ряды на экране */
-        gap: 12px !important; /* Уменьшаем отступ между карточками под мобильные */
+        flex-direction: column !important; /* Выстраиваем карточки вертикально */
+        align-items: center !important;    /* Центрируем их на экране */
+        gap: 16px !important;              /* Комфортный отступ между карточками */
     }
 
     section#games div[class*="gameGrid"] > div {
-        /* Рассчитываем ширину: 50% экрана минус половина отступа gap, чтобы встали ровно 2 в ряд */
-        flex: 1 1 calc(50% - 6px) !important; 
-        max-width: 180px !important; /* Ограничиваем максимальную ширину на телефоне */
-        min-width: 130px !important; /* Снижаем минимальный порог, чтобы они поместились */
+        width: 100% !important;            /* Растягиваем карточку на доступную ширину */
+        max-width: 340px !important;       /* Ограничиваем максимальную ширину, чтобы они не были слишком огромными */
+        min-width: 280px !important;       /* Минимальный порог под узкие экраны */
     }
 }
 
