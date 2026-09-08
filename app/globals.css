@@ -194,8 +194,7 @@ div[style*="justifyContent: \"space-between\""] {
     gap: 16px !important; 
     margin-top: 18px !important;
     width: 100% !important;
-    align-items: end !important; /* Выравнивает все элементы по нижней линии */
-}
+  }
 
 #raiderio .rioForm input,
 #raiderio .rioForm select {
