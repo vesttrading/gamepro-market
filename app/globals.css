@@ -164,14 +164,15 @@ div[style*="justifyContent: \"space-between\""] {
     box-sizing: border-box !important;
 }
 
-/* Пробиваем внутренние стили и делаем рамку карточкам игроков */
+/* Делаем рамку карточек игроков яркой бирюзовой */
 div#players div[class*="cards"] > div,
 div#players .cards > div,
 div#players div[class*="cards"] > a,
 div#players .cards > a {
-    background: #0b1020 !important;
-    border: 1px solid #1e2540 !important;
-    border-radius: 16px !important;
+    background: #0b1020 !important;      /* Чистый темный фон без градиентов */
+    background-image: none !important;  /* Полностью принудительно отключаем старый градиент */
+    border: 1px solid #1e2540 !important; /* Яркий бирюзовый цвет рамки */
+    border-radius: 16px !important;      /* Скругление углов */
 }
 
 /* 1. ПРОВЕРИТЬ ИГРОКА ЧЕРЕЗ RAIDER.IO */
