@@ -246,7 +246,7 @@ div[style*="justifyContent: \"space-between\""] {
     
     padding: 20px 14px !important;         /* Оптимальные внутренние отступы */
     
-    border: 1px solid #1e2540 !important;
+    border: 1px solid #00f2fe !important;
     border-radius: 16px !important;
     background: #0b1020 !important;
 }
