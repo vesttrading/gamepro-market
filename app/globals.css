@@ -72,7 +72,7 @@ div[style*="justifyContent: \"space-between\""] {
     gap: 20px !important;
     width: 100% !important;
     max-width: 500px !important;
-    margin: 20px auto !important;
+    margin: 20px auto 140px auto !important;
     padding: 0 !important;
     box-sizing: border-box !important;
 }
