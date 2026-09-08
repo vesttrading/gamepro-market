@@ -146,18 +146,32 @@ div[style*="justifyContent: \"space-between\""] {
 #players div[class*="cards"] {
     display: flex !important;
     justify-content: center !important;
-    gap: 14px !important;
+    gap: 16px !important;
     width: 100% !important;
-    max-width: 850px !important;
+    max-width: 900px !important;
     margin: 25px auto !important;
-    flex-direction: row !important; /* На ПК — в ряд */
+    flex-direction: row !important; /* На ПК выстраиваем в ряд */
 }
 
-/* А это правило сработает ТОЛЬКО на экранах телефонов (меньше 768px) */
+/* 3. Настройки для элементов внутри каждой отдельной карточки — делаем квадраты */
+#players .cards > div,
+#players .cards > a,
+#players div[class*="cards"] > div,
+#players div[class*="cards"] > a {
+    width: 250px !important;           /* Фиксированная ширина */
+    height: 250px !important;          /* Такая же высота для формы квадрата */
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important; /* Текст прижмется к верху, бейджи — к низу */
+    padding: 22px !important;          /* Красивые внутренние отступы */
+}
+
+/* А это правило автоматически сработает только на экранах телефонов */
 @media (max-width: 768px) {
     #players .cards,
     #players div[class*="cards"] {
-        flex-direction: column !important; /* На телефонах — вертикально */
+        flex-direction: column !important; /* На смартфонах перестраиваем в столбец */
         align-items: center !important;
     }
 }
