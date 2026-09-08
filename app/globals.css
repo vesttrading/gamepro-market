@@ -442,11 +442,19 @@ section#guilds div[class*="jsx-"] {
 
 #passport .profileShare h2 {
     margin: 0 !important;
+    font-size: 42px !important; /* Добавьте эту строку. Настройте пиксели (например, 36px, 42px, 48px), чтобы подобрать нужный размер */
 }
 
 #passport .profileShare p {
     margin: 6px 0 0 !important;
     color: #9da6c0 !important;
+} 
+
+/* Теперь отдельно открываем блок для кнопок и ссылок */
+#passport .profileShare button, 
+#passport .profileShare a {
+    font-size: 18px !important; 
+    padding: 14px 28px !important; 
 }
 
 /* =======================================================
