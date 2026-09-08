@@ -148,7 +148,7 @@ div[style*="justifyContent: \"space-between\""] {
     justify-content: center !important;
     gap: 24px !important;
     width: 100% !important;
-    max-width: 850px !important;
+    max-width: 960px !important;
     margin: 25px auto !important;
     flex-direction: row !important; /* На ПК — в ряд */
 }
