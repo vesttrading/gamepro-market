@@ -475,7 +475,7 @@ section#guilds div[class*="jsx-"] {
 main > section:last-of-type h2,
 main > div:last-child h2,
 section:last-of-type h2 {
-    font-size: 42px !important;
+    font-size: 34px !important;
 }
 
 /* Увеличиваем кнопку внутри финального блока профиля */
@@ -484,8 +484,8 @@ main > div:last-child button,
 section:last-of-type button,
 main > section:last-of-type a,
 section:last-of-type a {
-    font-size: 20px !important;
-    padding: 16px 40px !important;
+    font-size: 18px !important;
+    padding: 12px 34px !important;
 }
 
 /* =======================================================
