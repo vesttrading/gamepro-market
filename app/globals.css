@@ -209,7 +209,25 @@ div[style*="justifyContent: \"space-between\""] {
         justify-content: flex-start !important;
         width: 100% !important;
     }
-}
+/* Выстраиваем контент внутри карточки на мобильном сверху вниз */
+    #players div[class*="cards"] > div,
+    #players div[class*="cards"] > a,
+    #players .cards > div,
+    #players .cards > a {
+        display: flex !important;
+        flex-direction: column !important; /* Строго сверху вниз: аватарка -> имя -> EU */
+        align-items: flex-start !important; /* Прижимаем к левому краю */
+    }
+
+    /* Возвращаем строчку с EU строго под имя игрока */
+    #players div[class*="cards"] h3 + p,
+    #players .cards h3 + p,
+    #players div[class*="cards"] p {
+        display: block !important;
+        width: 100% !important;
+        margin-top: 4px !important; /* Аккуратный отступ сверху */
+    }
+  }
 
 /* 1. ПРОВЕРИТЬ ИГРОКА ЧЕРЕЗ RAIDER.IO */
 #raiderio {
