@@ -175,13 +175,9 @@ div#players .cards > a {
     mask-image: none !important;
     -webkit-mask-image: none !important;
     
-    /* Делаем рамку толще и красивого ярко-бирюзового цвета */
-    border: 2px solid #00f0ff !important;
-    border-radius: 16px !important;
-    box-shadow: 0 0 8px rgba(0, 240, 255, 0.3) !important;
-}
+ body { background: red !important; }
 
-/* 1. ПРОВЕРИТЬ ИГРОКА ЧЕРЕЗ RAIDER.IO */
+  /* 1. ПРОВЕРИТЬ ИГРОКА ЧЕРЕЗ RAIDER.IO */
 #raiderio {
     width: 100% !important;
     max-width: 580px !important; /* Уменьшаем всю синюю карточку до аккуратных 650px */
