@@ -390,6 +390,13 @@ section#reviews p {
     line-height: 1.45 !important;
 }
 
+@media (max-width: 768px) {
+  section#reviews [class*="gameGrid"],
+  section#reviews [class*="Grid"] {
+    flex-direction: column !important;
+  }
+}
+
 /* 1. Этот код изменит только блок гильдий и ничего больше */
 .guilds-container {
     max-width: 550px !important; 
