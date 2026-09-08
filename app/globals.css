@@ -128,9 +128,9 @@ div[style*="justifyContent: \"space-between\""] {
 }
 
 /* Прямое увеличение отступа над блоком VERIFIED */
-#passport h2,
-#passport .verified-title,
-#passport div[class*="grid"] h2 {
+    #passport div[class*="grid"] > div:nth-child(2),
+    #passport [class*="verified"],
+    #passport .verified-section {
     margin-top: 60px !important;
     margin-bottom: 20px !important;
     display: block !important;
