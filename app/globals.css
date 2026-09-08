@@ -142,16 +142,15 @@ div[style*="justifyContent: \"space-between\""] {
     margin: 0 auto 22px !important;
 }
 
-/* 3. КАРТОЧКИ ИГРОКОВ — Намертво перебиваем инлайн-сетку и выстраиваем 3 штуки в один горизонтальный ряд */
 #players .cards,
 #players div[class*="cards"] {
-    display: grid !important;
-    grid-template-columns: repeat(3, minmax(0, 190px)) !important; /* Выстраиваем ровно 3 карточки в ряд и сжимаем каждую до 190px, убирая пустоту! */
-    justify-content: center !important; /* Центрируем этот горизонтальный ряд на экране */
-    gap: 14px !important;               /* Отступ между карточками игроков */
+    display: flex !important;
+    flex-direction: column !important; /* Выстраиваем карточки сверху вниз */
+    align-items: center !important;    /* Центрируем карточки по горизонтали */
+    gap: 20px !important;              /* Отступ между карточками по вертикали */
     width: 100% !important;
-    max-width: 850px !important;        /* Сжимаем общую ширину блока под карточками */
-    margin: 25px auto 0 auto !important; /* Центрируем сам контейнер с карточками */
+    max-width: 850px !important;       /* Сжимаем общую ширину блока под карточками */
+    margin: 25px auto !important;      /* Центрируем сам контейнер с карточками */
 }
 
 /* 4. Настройки для элементов внутри каждой отдельной карточки */
@@ -164,7 +163,7 @@ div[style*="justifyContent: \"space-between\""] {
     box-sizing: border-box !important;
 }
 
-/* Полное перекрытие встроенных стилей для яркой рамки */
+/* 5. Полное перекрытие встроенных стилей для яркой рамки */
 div#players div[class*="cards"] > div,
 div#players .cards > div,
 div#players div[class*="cards"] > a,
@@ -174,9 +173,7 @@ div#players .cards > a {
     background-color: #0b1020 !important;
     mask-image: none !important;
     -webkit-mask-image: none !important;
-    
- body { background: red !important; }
-}
+ }
 
 /* 1. ПРОВЕРИТЬ ИГРОКА ЧЕРЕЗ RAIDER.IO */
 #raiderio {
