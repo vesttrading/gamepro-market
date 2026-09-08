@@ -193,9 +193,16 @@ div[style*="justifyContent: \"space-between\""] {
 /* 1. ПРОВЕРИТЬ ИГРОКА ЧЕРЕЗ RAIDER.IO */
 #raiderio {
     width: 100% !important;
-    max-width: 580px !important; /* Уменьшаем всю синюю карточку до аккуратных 650px */
-    margin: 90px auto !important; /* Свойство auto принудительно центрирует блок на экране */
-    padding: 0 0 40px !important;
+    max-width: 580px !important;
+    
+    /* ИЗМЕНИТЕ ЭТИ СТРОКИ: */
+    margin-top: 90px !important;    /* Оставляем отступ сверху */
+    margin-bottom: 0px !important;  /* Убираем отступ снизу до нуля */
+    margin-left: auto !important;   /* Центрируем по горизонтали */
+    margin-right: auto !important;  /* Центрируем по горизонтали */
+    
+    padding: 0px !important;        /* Полностью убираем внутренние отступы */
+    
     box-sizing: border-box !important;
 }
 
