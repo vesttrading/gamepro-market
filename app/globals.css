@@ -164,16 +164,21 @@ div[style*="justifyContent: \"space-between\""] {
     box-sizing: border-box !important;
 }
 
-/* Делаем рамку карточек игроков яркой бирюзовой */
+/* Полное перекрытие встроенных стилей для яркой рамки */
 div#players div[class*="cards"] > div,
 div#players .cards > div,
 div#players div[class*="cards"] > a,
 div#players .cards > a {
-    background: #0b1020 !important;              /* Настоящий темный фон */
-    background-image: none !important;          /* Убиваем старый градиент полностью */
-    border: 2px solid #00f0ff !important;       /* Делаем рамку толще и красивого ярко-бирюзового цвета */
-    box-shadow: 0 0 10px rgba(0, 240, 255, 0.2) !important; /* Добавляем легкое неоновое свечение */
-    border-radius: 16px !important;              /* Скругление углов */
+    background: #0b1020 !important;
+    background-image: none !important;
+    background-color: #0b1020 !important;
+    mask-image: none !important;
+    -webkit-mask-image: none !important;
+    
+    /* Делаем рамку толще и красивого ярко-бирюзового цвета */
+    border: 2px solid #00f0ff !important;
+    border-radius: 16px !important;
+    box-shadow: 0 0 8px rgba(0, 240, 255, 0.3) !important;
 }
 
 /* 1. ПРОВЕРИТЬ ИГРОКА ЧЕРЕЗ RAIDER.IO */
