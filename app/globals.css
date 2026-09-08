@@ -349,11 +349,11 @@ section#reviews [class*="Grid"] {
 /* Компактные карточки отзывов */
 section#reviews [class*="gameGrid"] > div,
 section#reviews [class*="Grid"] > div {
-    flex: 0 1 210px !important;
-    width: 210px !important;
-    max-width: 210px !important;
+    flex: 0 1 260px !important;
+    width: 260px !important;
+    max-width: 260px !important;
     min-width: 0 !important;
-    padding: 14px !important;
+    padding: 20px !important;
     box-sizing: border-box !important;
     border: 1px solid #00f2fe !important;
     box-shadow: 0 0 15px rgba(0, 242, 254, 0.12) !important;
@@ -372,12 +372,12 @@ section#reviews [class*="Grid"] {
 
 /* Внутренний текст */
 section#reviews h3 {
-    font-size: 15px !important;
+    font-size: 18px !important;
     margin-bottom: 8px !important;
 }
 
 section#reviews p {
-    font-size: 13px !important;
+    font-size: 15px !important;
     line-height: 1.45 !important;
 }
 
