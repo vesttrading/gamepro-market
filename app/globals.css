@@ -310,6 +310,22 @@ section#games div[class*="gameGrid"] > div {
 
 }
 
+/* Правило для мобильной сетки игр 2х2 */
+@media (max-width: 768px) {
+    section#games div[class*="gameGrid"] {
+        flex-wrap: wrap !important; /* Разрешаем карточкам переноситься на новую строку */
+        justify-content: center !important; /* Центрируем ряды на экране */
+        gap: 12px !important; /* Уменьшаем отступ между карточками под мобильные */
+    }
+
+    section#games div[class*="gameGrid"] > div {
+        /* Рассчитываем ширину: 50% экрана минус половина отступа gap, чтобы встали ровно 2 в ряд */
+        flex: 1 1 calc(50% - 6px) !important; 
+        max-width: 180px !important; /* Ограничиваем максимальную ширину на телефоне */
+        min-width: 130px !important; /* Снижаем минимальный порог, чтобы они поместились */
+    }
+}
+
 /* 1. Намертво сжимаем всю секцию отзывов до аккуратных 850px */
 section#reviews {
     width: 100% !important;
