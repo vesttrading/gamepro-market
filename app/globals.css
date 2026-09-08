@@ -634,3 +634,33 @@ section:last-of-type {
         font-size: 14px !important;       /* Слегка уменьшаем шрифт ссылок */
     }
 }
+
+/* Пробиваем инлайновые стили шапки на мобильных устройствах */
+@media (max-width: 768px) {
+    header[style], 
+    header, 
+    header > div[style],
+    header div {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        flex-wrap: wrap !important;        /* Принудительно разрешаем перенос элементов */
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        gap: 10px !important;              /* Компактные отступы */
+        padding: 12px 14px !important;     /* Минимальные поля по бокам */
+        box-sizing: border-box !important;
+    }
+
+    /* Делаем логотип и меню более компактными, чтобы они помещались */
+    header img, header svg {
+        max-height: 32px !important;       /* Слегка уменьшаем логотип на телефонах */
+        width: auto !important;
+    }
+
+    header nav, header .navlinks, header a {
+        font-size: 13px !important;        /* Снижаем размер шрифта ссылок до компактного */
+        gap: 8px !important;               /* Сближаем пункты меню */
+    }
+}
