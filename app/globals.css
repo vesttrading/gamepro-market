@@ -154,7 +154,7 @@ div[style*="justifyContent: \"space-between\""] {
     margin: 25px auto 0 auto !important; /* Центрируем сам контейнер с карточками */
 }
 
-/* Настройки для элементов внутри каждой отдельной карточки */
+/* 4. Настройки для элементов внутри каждой отдельной карточки */
 #players .cards > div,
 #players .cards > a,
 #players div[class*="cards"] > div,
@@ -164,12 +164,14 @@ div[style*="justifyContent: \"space-between\""] {
     box-sizing: border-box !important;
 }
 
-/* Делаем бирюзовую рамку для карточек игроков */
-#players .cards > div,
-#players div[class*="cards"] > div {
-    border: 1px solid #1e2540 !important; /* Бирюзовая рамка */
-    border-radius: 16px !important;       /* Скругление углов */
-    background: #0b1020 !important;       /* Темный фон внутри */
+/* Пробиваем внутренние стили и делаем рамку карточкам игроков */
+div#players div[class*="cards"] > div,
+div#players .cards > div,
+div#players div[class*="cards"] > a,
+div#players .cards > a {
+    background: #0b1020 !important;
+    border: 1px solid #1e2540 !important;
+    border-radius: 16px !important;
 }
 
 /* 1. ПРОВЕРИТЬ ИГРОКА ЧЕРЕЗ RAIDER.IO */
