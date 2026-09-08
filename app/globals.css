@@ -188,13 +188,12 @@ div[style*="justifyContent: \"space-between\""] {
 }
 
 #raiderio .rioForm {
-    display: grid !important;
-    /* Первые две колонки (Имя, Реалм) делят место поровну, а третья под EU подстраивается автоматически */
-    grid-template-columns: 1fr 1fr auto !important; 
-    gap: 16px !important; 
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
     margin-top: 18px !important;
     width: 100% !important;
-  }
+}
 
 #raiderio .rioForm input,
 #raiderio .rioForm select {
