@@ -161,6 +161,8 @@ div[style*="justifyContent: \"space-between\""] {
     width: 100% !important;
     max-width: 455px !important;
     box-sizing: border-box !important;
+    height: 75px !important;       /* ДОБАВИТЬ: фиксированная компактная высота */
+    padding: 10px 15px !important;  /* ДОБАВИТЬ: маленькие внутренние отступы */
 }
 
 /* 5. Полное перекрытие встроенных стилей для яркой рамки */
