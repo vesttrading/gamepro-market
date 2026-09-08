@@ -194,7 +194,7 @@ div[style*="justifyContent: \"space-between\""] {
 #raiderio {
     width: 100% !important;
     max-width: 580px !important; /* Уменьшаем всю синюю карточку до аккуратных 650px */
-    margin: 40px auto !important; /* Свойство auto принудительно центрирует блок на экране */
+    margin: 90px auto !important; /* Свойство auto принудительно центрирует блок на экране */
     padding: 0 0 40px !important;
     box-sizing: border-box !important;
 }
