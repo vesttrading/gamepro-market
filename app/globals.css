@@ -147,7 +147,7 @@ div[style*="justifyContent: \"space-between\""] {
     display: flex !important;
     flex-direction: column !important; /* Выстраиваем карточки сверху вниз */
     align-items: center !important;    /* Центрируем карточки по горизонтали */
-    gap: 20px !important;              /* Отступ между карточками по вертикали */
+    gap: 10px !important;              /* Отступ между карточками по вертикали */
     width: 100% !important;
     max-width: 850px !important;       /* Сжимаем общую ширину блока под карточками */
     margin: 25px auto !important;      /* Центрируем сам контейнер с карточками */
@@ -159,7 +159,7 @@ div[style*="justifyContent: \"space-between\""] {
 #players div[class*="cards"] > div,
 #players div[class*="cards"] > a {
     width: 100% !important;
-    max-width: 260px !important;
+    max-width: 500px !important;
     box-sizing: border-box !important;
 }
 
