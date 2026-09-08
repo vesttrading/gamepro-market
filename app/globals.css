@@ -176,8 +176,9 @@ div#players .cards > a {
     -webkit-mask-image: none !important;
     
  body { background: red !important; }
+}
 
-  /* 1. ПРОВЕРИТЬ ИГРОКА ЧЕРЕЗ RAIDER.IO */
+/* 1. ПРОВЕРИТЬ ИГРОКА ЧЕРЕЗ RAIDER.IO */
 #raiderio {
     width: 100% !important;
     max-width: 580px !important; /* Уменьшаем всю синюю карточку до аккуратных 650px */
