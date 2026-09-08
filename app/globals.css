@@ -140,7 +140,7 @@ div[style*="justifyContent: \"space-between\""] {
 #players {
     width: 100% !important;
     max-width: 800px !important;  
-    margin: 80px auto 0 auto !important; /* Центрируем весь этот блок на экране */
+    margin: 90px auto 0 auto !important; /* Центрируем весь этот блок на экране */
 }
 
 /* Шаг 2. Саму строку поиска внутри делаем еще чуть компактнее */
