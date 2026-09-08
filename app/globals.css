@@ -555,16 +555,16 @@ section#guilds div[class*="jsx-"] {
     }
 }
 
-/* Просто опускаем надписи в самый низ на родном сине-голубом фоне */
+/* Добавляем свободное место снизу сайта ТОЛЬКО для компьютеров */
 @media (min-width: 769px) {
-    footer,
-    main + footer,
-    div[class*="footer"] {
-        margin-top: 140px !important;    /* Отодвигаем надписи ниже от Гильдий */
-        padding-bottom: 60px !important;  /* Делаем аккуратный отступ до самого края экрана */
+    body {
+        background-color: #000000 !important; /* Делаем весь фон в самом низу строго черным */
+        padding-bottom: 220px !important;    /* Запас высоты */
+        position: relative !important;
+        min-height: 100vh !important;
     }
 
- /* Намертво прижимаем футер с копирайтом и ссылками к самому низу страницы */
+    /* Намертво прижимаем футер с копирайтом и ссылками к самому низу страницы */
     footer,
     main + footer,
     div[class*="footer"] {
