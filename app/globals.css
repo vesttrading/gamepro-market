@@ -13,7 +13,7 @@ body {
 /* 1. Возвращаем секции правильный блочный вид, чтобы карточка Владимира была по центру */
 #passport {
   display: block !important;
-  margin: 0 auto !important;
+  margin: -35px auto 0 auto !important;
   max-width: 1160px !important;
   width: 92% !important;
 }
@@ -55,7 +55,7 @@ div[style*="justifyContent: \"space-between\""] {
 .sectionHead {
   justify-content: center !important; /* 🌟 Ставит всю строку строго по центру */
   text-align: center !important;     /* Центрирует текст внутри */
-  margin: 0 auto 20px auto !important;
+  margin: 0 auto 0 auto !important;
 }
 
 /* 3. Выравниваем элементы внутри строки, чтобы они стояли красиво */
