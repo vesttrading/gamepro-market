@@ -146,7 +146,7 @@ div[style*="justifyContent: \"space-between\""] {
 #players div[class*="cards"] {
     display: flex !important;
     justify-content: center !important;
-    gap: 14px !important;
+    gap: 12px !important;
     width: 100% !important;
     max-width: 850px !important;
     margin: 25px auto !important;
