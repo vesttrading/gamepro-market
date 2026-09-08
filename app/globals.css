@@ -154,6 +154,15 @@ div[style*="justifyContent: \"space-between\""] {
     margin: 25px auto 0 auto !important; /* Центрируем сам контейнер с карточками */
 }
 
+/* А это правило сработает ТОЛЬКО на экранах телефонов (меньше 768px) */
+@media (max-width: 768px) {
+    #players .cards,
+    #players div[class*="cards"] {
+        flex-direction: column !important; /* На телефонах — вертикально */
+        align-items: center !important;
+    }
+}
+
 /* Настройки для элементов внутри каждой отдельной карточки */
 #players .cards > div,
 #players .cards > a,
