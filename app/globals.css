@@ -267,6 +267,15 @@ div[style*="justifyContent: \"space-between\""] {
     margin-top: 0px !important;
 }
 
+/* Правило сработает ТОЛЬКО на экранах телефонов (меньше 768px) */
+@media (max-width: 768px) {
+    #how .steps,
+    #how div[class*="steps"] {
+        flex-direction: column !important; /* На телефонах — вертикально */
+        align-items: center !important;    /* Центрируем карточки по горизонтали */
+    }
+}
+
 /* 1. Настройки для блока ИГР — уменьшаем весь блок и ставим по центру */
 section#games {
     padding-top: 0px !important;
