@@ -164,6 +164,14 @@ div[style*="justifyContent: \"space-between\""] {
     box-sizing: border-box !important;
 }
 
+/* Добавляем бирюзовую рамку для карточек игроков */
+#search-player .cards > div, 
+main section:nth-of-type(3) .cards > div { 
+    border: 1px solid #1e2540 !important; /* Тонкая рамка (цвет как у верхних карточек) */
+    border-radius: 16px !important;       /* Закругление углов */
+    background: #0b1020 !important;       /* Темный фон карточки */
+}
+
 /* 1. ПРОВЕРИТЬ ИГРОКА ЧЕРЕЗ RAIDER.IO */
 #raiderio {
     width: 100% !important;
