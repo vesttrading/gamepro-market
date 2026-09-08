@@ -428,6 +428,7 @@ section#guilds div[class*="jsx-"] {
     max-width: 1160px !important;
     margin-left: auto !important;
     margin-right: auto !important;
+    margin-top: 140px !important;
 }
 
 #passport .profileShare {
