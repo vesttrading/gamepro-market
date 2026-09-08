@@ -311,7 +311,7 @@ section#games div[class*="gameGrid"] {
     align-items: stretch !important; /* Выравнивает все */
     flex-wrap: nowrap !important; /* Запрещает перенос */
     gap: 16px !important;
-    margin-top: -10px !important;
+    margin-top: -20px !important;
 }
 
 /* Делаем ВСЕ карточки (включая первую) одинакового размера */
