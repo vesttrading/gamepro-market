@@ -167,14 +167,14 @@ div[style*="justifyContent: \"space-between\""] {
 #players .cards > a,
 #players div[class*="cards"] > div,
 #players div[class*="cards"] > a {
-    width: 165px !important;
-    max-width: 165px !important;
-    height: 190px !important;
+    width: 185px !important;
+    max-width: 185px !important;
+    height: 200px !important;
     box-sizing: border-box !important;
     display: flex !important;
     flex-direction: column !important;
     justify-content: space-between !important;
-    padding: 14px !important;
+    padding: 16px !important;
 }
 
 /* 1. ПРОВЕРИТЬ ИГРОКА ЧЕРЕЗ RAIDER.IO */
