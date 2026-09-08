@@ -225,8 +225,9 @@ div[style*="justifyContent: \"space-between\""] {
 /* 1. КАК РАБОТАЕТ ПРОВЕРКА  Увеличиваем общую ширину блока шагов, чтобы они не натыкались друг на друга */
 #how {
     width: 100% !important;
-    max-width: 850px !important;  /* Увеличили с 650px до 850px, чтобы дать карточкам простор */
-    margin: 0 auto !important;    /* Держим по центру */
+    max-width: 850px !important;
+    margin: 0 auto !important;
+    margin-top: -35px !important; /* Добавьте эту строку для подъема */
     padding: 60px 20px !important;
     box-sizing: border-box !important;
 }
