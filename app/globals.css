@@ -227,7 +227,7 @@ div[style*="justifyContent: \"space-between\""] {
     width: 100% !important;
     max-width: 850px !important;
     margin: 0 auto !important;
-    margin-top: -35px !important; /* Добавьте эту строку для подъема */
+    margin-top: -50px !important; /* Добавьте эту строку для подъема */
     padding: 60px 20px !important;
     box-sizing: border-box !important;
 }
