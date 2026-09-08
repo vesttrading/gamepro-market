@@ -167,8 +167,8 @@ div[style*="justifyContent: \"space-between\""] {
 #players .cards > a,
 #players div[class*="cards"] > div,
 #players div[class*="cards"] > a {
-    width: 180px !important;
-    max-width: 300px !important;
+    width: 280px !important;
+    max-width: 280px !important;
     height: 190px !important;
     box-sizing: border-box !important;
     display: flex !important;
