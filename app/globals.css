@@ -557,10 +557,21 @@ section#guilds div[class*="jsx-"] {
 
 /* Добавляем свободное место снизу сайта ТОЛЬКО для компьютеров */
 @media (min-width: 769px) {
-    main > section:last-of-type,
-    main > div:last-child,
     body {
-        padding-bottom: 200px !important;
+        background-color: #000000 !important; /* Делаем весь фон в самом низу строго черным */
+        padding-bottom: 220px !important;    /* Запас высоты */
+        position: relative !important;
+        min-height: 100vh !important;
+    }
+
+    /* Намертво прижимаем футер с копирайтом и ссылками к самому низу страницы */
+    footer,
+    main + footer,
+    div[class*="footer"] {
+        position: absolute !important;
+        bottom: 20px !important;
+        left: 0 !important;
+        width: 100% !important;
+        background: transparent !important;
     }
 }
-
