@@ -479,9 +479,9 @@ section#guilds div[class*="jsx-"] {
 [class*="profileShare"] button,
 #passport .profileShare a,
 [class*="profileShare"] a {
-    font-size: 13px !important;        /* Крупный читаемый текст на кнопке */
-    padding: 10px 24px !important;     /* Сделали саму кнопку массивной и широкой */
-    font-weight: 400 !important;
+    font-size: 10px !important;        /* Крупный читаемый текст на кнопке */
+    padding: 8px 14px !important;     /* Сделали саму кнопку массивной и широкой */
+    font-weight: 600 !important;
     display: inline-block !important;
 }
 
