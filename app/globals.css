@@ -162,14 +162,19 @@ div[style*="justifyContent: \"space-between\""] {
     }
 }
 
-/* Настройки для элементов внутри каждой отдельной карточки */
+/* 4. Настройки для элементов внутри каждой отдельной карточки */
 #players .cards > div,
 #players .cards > a,
 #players div[class*="cards"] > div,
 #players div[class*="cards"] > a {
-    width: 100% !important;
-    max-width: 260px !important;
+    width: 165px !important;
+    max-width: 165px !important;
+    height: 190px !important;
     box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    padding: 14px !important;
 }
 
 /* 1. ПРОВЕРИТЬ ИГРОКА ЧЕРЕЗ RAIDER.IO */
