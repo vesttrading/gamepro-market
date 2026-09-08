@@ -169,10 +169,11 @@ div#players div[class*="cards"] > div,
 div#players .cards > div,
 div#players div[class*="cards"] > a,
 div#players .cards > a {
-    background: #0b1020 !important;      /* Чистый темный фон без градиентов */
-    background-image: none !important;  /* Полностью принудительно отключаем старый градиент */
-    border: 1px solid #1e2540 !important; /* Яркий бирюзовый цвет рамки */
-    border-radius: 16px !important;      /* Скругление углов */
+    background: #0b1020 !important;              /* Настоящий темный фон */
+    background-image: none !important;          /* Убиваем старый градиент полностью */
+    border: 2px solid #00f0ff !important;       /* Делаем рамку толще и красивого ярко-бирюзового цвета */
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.2) !important; /* Добавляем легкое неоновое свечение */
+    border-radius: 16px !important;              /* Скругление углов */
 }
 
 /* 1. ПРОВЕРИТЬ ИГРОКА ЧЕРЕЗ RAIDER.IO */
