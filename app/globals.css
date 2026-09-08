@@ -397,8 +397,9 @@ section#reviews p {
     margin-right: auto !important;
     padding: 10px 24px !important; /* Уменьшили внутренний отступ сверху и снизу с 40px до 10px */
     margin-top: 160px !important;  /* Сдвигает блок вверх, ближе к отзывам */
+    margin-bottom: 80px !important;
     box-sizing: border-box !important;
-}
+ }
 
 /* Уменьшаем ширину внутренней карточки в блоке гильдий */
 section#guilds > div {
@@ -406,6 +407,7 @@ section#guilds > div {
     width: 100% !important;
     margin-left: auto !important; 
     margin-right: auto !important;
+    margin-top: 160px !important;
 }
 /* На всякий случай дублируем для вложенного div, если структура сложнее */
 section#guilds div[class*="jsx-"] {
