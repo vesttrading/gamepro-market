@@ -433,29 +433,44 @@ section#guilds div[class*="jsx-"] {
     margin-top: 140px !important;
 }
 
-#passport .profileShare {
+/* Полное обновление и увеличение блока профиля */
+#passport .profileShare,
+[class*="profileShare"] {
     display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    gap: 20px !important;
+    flex-direction: column !important; /* Выстраиваем заголовок и кнопку вертикально, чтобы им было просторно */
+    align-items: center !important;    /* Центрируем всё по середине */
+    justify-content: center !important;
+    gap: 24px !important;              /* Увеличиваем расстояние между текстом и кнопкой */
+    width: 100% !important;
 }
 
-#passport .profileShare h2 {
+/* Увеличиваем заголовок */
+#passport .profileShare h2,
+[class*="profileShare"] h2 {
+    margin: 0 0 10px 0 !important;
+    font-size: 42px !important;        /* Сделали заголовок огромным и солидным */
+    text-align: center !important;
+}
+
+/* Увеличиваем подзаголовки/описание */
+#passport .profileShare p,
+[class*="profileShare"] p {
+    font-size: 18px !important;        /* Сделали текст описания крупнее */
     margin: 0 !important;
-    font-size: 42px !important; /* Добавьте эту строку. Настройте пиксели (например, 36px, 42px, 48px), чтобы подобрать нужный размер */
+    text-align: center !important;
 }
 
-#passport .profileShare p {
-    margin: 6px 0 0 !important;
-    color: #9da6c0 !important;
-} 
-
-/* Теперь отдельно открываем блок для кнопок и ссылок */
-#passport .profileShare button, 
-#passport .profileShare a {
-    font-size: 18px !important; 
-    padding: 14px 28px !important; 
+/* Увеличиваем бирюзовую кнопку */
+#passport .profileShare button,
+[class*="profileShare"] button,
+#passport .profileShare a,
+[class*="profileShare"] a {
+    font-size: 20px !important;        /* Крупный читаемый текст на кнопке */
+    padding: 16px 40px !important;     /* Сделали саму кнопку массивной и широкой */
+    font-weight: 600 !important;
+    display: inline-block !important;
 }
+
 
 /* =======================================================
    ИТОГОВАЯ БЕЗОПАСНАЯ МОБИЛЬНАЯ АДАПТАЦИЯ (БЕЗ ОШИБОК)
