@@ -468,6 +468,20 @@ section#guilds div[class*="jsx-"] {
     width: 100% !important;
 }
 
+/* Убираем зазор между заголовком и строкой с именем игрока */
+#passport h1,
+section h1,
+[class*="profileTitle"] {
+    margin-bottom: 0 !important; /* Убираем стандартный нижний отступ заголовка */
+}
+
+/* Принудительно подтягиваем строчку с именем вверх */
+#passport h1 + p,
+#passport .profileShare p,
+[class*="profileShare"] p {
+    margin-top: -10px !important; /* Отрицательный отступ сблизит элементы вопреки общему gap */
+}
+
 /* Увеличиваем заголовок */
 #passport .profileShare h2,
 [class*="profileShare"] h2 {
