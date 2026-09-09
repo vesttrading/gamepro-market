@@ -468,24 +468,10 @@ section#guilds div[class*="jsx-"] {
     width: 100% !important;
 }
 
-/* 1. Сжимаем расстояние между заголовком и именем Vladimir */
-section [class*="profileShare"],
-#passport [class*="profileShare"],
-.profileShare {
-    gap: 4px !important;
-}
-
-/* 2. Отодвигаем кнопку «Поделиться паспортом» чуть ниже, чтобы не слипалась */
-.profileShare button,
-.profileShare a,
-[class*="profileShare"] button {
-    margin-top: 15px !important;
-}
-
 /* Увеличиваем заголовок */
 #passport .profileShare h2,
 [class*="profileShare"] h2 {
-    margin: 0 0 10px 0 !important;
+    margin: 0 0 0px 0 !important;
     font-size: 45px !important;        /* Сделали заголовок огромным и солидным */
     text-align: center !important;
 }
