@@ -373,7 +373,7 @@ section#reviews [class*="Grid"] > div {
     box-sizing: border-box !important;
     border: 1px solid #00f2fe !important;
     box-shadow: 0 0 15px rgba(0, 242, 254, 0.12) !important;
-
+    margin-top: 50px !important;
 }
 
 /* Три карточки в одну линию */
