@@ -13,7 +13,7 @@ body {
 /* 1. Возвращаем секции правильный блочный вид, чтобы карточка Владимира была по центру */
 #passport {
   display: block !important;
-  margin: -150px auto 0 auto !important;
+  margin: -35px auto 0 auto !important;
   max-width: 1160px !important;
   width: 92% !important;
 }
@@ -134,6 +134,11 @@ div[style*="justifyContent: \"space-between\""] {
     margin-top: 60px !important;
     margin-bottom: 20px !important;
     display: block !important;
+}
+
+#passport {
+    position: relative !important;
+    top: -160px !important; 
 }
 
 /* 1. НАЙТИ ИГРОКА  Намертво уменьшаем весь общий блок до аккуратных 800px */
