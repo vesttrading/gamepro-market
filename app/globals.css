@@ -443,7 +443,7 @@ section#guilds div[class*="jsx-"] {
 main h2, 
 div[class*="jsx-"] h2,
 #passport h2 {
-    margin-bottom: -10px !important;
+    margin-bottom: -5px !important;
 }
 
 /* =========================
