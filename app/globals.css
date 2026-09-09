@@ -431,19 +431,12 @@ section#guilds > div {
     width: 100% !important;
     margin-left: auto !important; 
     margin-right: auto !important;
-    margin-top: 100px !important;
+    margin-top: 30px !important;
 }
 /* На всякий случай дублируем для вложенного div, если структура сложнее */
 section#guilds div[class*="jsx-"] {
     max-width: 750px;
     margin: 0 auto;
-}
-
-/* Принудительный сдвиг заголовка h2 вниз или урезание его внешнего поля */
-main h2, 
-div[class*="jsx-"] h2,
-#passport h2 {
-    margin-bottom: 50px !important;
 }
 
 /* =========================
