@@ -512,22 +512,11 @@ section:last-of-type a {
     padding: 10px 24px !important;
 }
 
-/* Пробиваем локальные стили Next.js для заголовка */
-:global(#passport h2), 
-#passport h2,
-main h2 {
-    margin-top: -60px !important;    /* Агрессивно тянем заголовок вверх */
-    margin-bottom: 2px !important;   /* Прижимаем паспорт */
-}
-
-/* Пробиваем локальные стили для кнопки */
-:global(#passport button), 
-:global(#passport a),
-#passport button,
-#passport a,
-main button,
-main a {
-    margin-top: 40px !important;     /* Сильно толкаем кнопку вниз */
+/* Принудительный сдвиг заголовка h2 вниз или урезание его внешнего поля */
+main h2, 
+div[class*="jsx-"] h2,
+#passport h2 {
+    margin-bottom: -25px !important;
 }
 
 /* =======================================================
