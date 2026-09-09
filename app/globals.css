@@ -226,7 +226,7 @@ div[style*="justifyContent: \"space-between\""] {
 #how {
     width: 100% !important;
     max-width: 850px !important;  /* Увеличили с 650px до 850px, чтобы дать карточкам простор */
-    margin-top: -50 auto !important;    /* Держим по центру */
+    margin-top: -35 auto !important;    /* Держим по центру */
     padding: 60px 20px !important;
     box-sizing: border-box !important;
 }
@@ -486,6 +486,11 @@ main > section:last-of-type a,
 section:last-of-type a {
     font-size: 18px !important;
     padding: 12px 34px !important;
+}
+
+#passport {
+    position: relative !important;
+    top: 140px !important; /* Опускает весь блок профиля ниже */
 }
 
 /* =======================================================
