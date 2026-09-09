@@ -414,7 +414,7 @@ section#reviews p {
   }
 }
 
-/* 1. Этот код изменит только блок гильдий и ничего больше */
+/* 1. Этот код изменит только блок Гильдий и ничего больше */
 .guilds-container {
     max-width: 550px !important; 
     margin-left: auto !important; 
@@ -437,6 +437,13 @@ section#guilds > div {
 section#guilds div[class*="jsx-"] {
     max-width: 750px;
     margin: 0 auto;
+}
+
+/* Принудительный сдвиг заголовка h2 вниз или урезание его внешнего поля */
+main h2, 
+div[class*="jsx-"] h2,
+#passport h2 {
+    margin-bottom: -20px !important;
 }
 
 /* =========================
