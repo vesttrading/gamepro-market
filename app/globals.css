@@ -464,7 +464,7 @@ section#guilds div[class*="jsx-"] {
     flex-direction: column !important; /* Выстраиваем заголовок и кнопку вертикально, чтобы им было просторно */
     align-items: center !important;    /* Центрируем всё по середине */
     justify-content: center !important;
-    gap: 14px !important;              /* Увеличиваем расстояние между текстом и кнопкой */
+    gap: 5px !important;              /* Увеличиваем расстояние между текстом и кнопкой */
     width: 100% !important;
 }
 
