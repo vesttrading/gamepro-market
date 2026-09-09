@@ -516,7 +516,7 @@ section:last-of-type a {
 main h2, 
 div[class*="jsx-"] h2,
 #passport h2 {
-    margin-bottom: -20px !important;
+    margin-bottom: -6px !important;
 }
 
 /* =======================================================
