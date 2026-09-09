@@ -439,6 +439,15 @@ section#guilds div[class*="jsx-"] {
     margin: 0 auto;
 }
 
+/* Жестко поднимаем иконку и заголовок внутри блока гильдий */
+section#guilds img, 
+section#guilds h1, 
+section#guilds h2,
+section#guilds div {
+    margin-top: 10px !important;
+    padding-top: 0 !important;
+}
+
 /* =========================
    ТВОЙ ИГРОВОЙ ПРОФИЛЬ
    ========================= */
