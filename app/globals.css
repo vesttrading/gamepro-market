@@ -512,11 +512,25 @@ section:last-of-type a {
     padding: 10px 24px !important;
 }
 
-/* Принудительный сдвиг заголовка h2 вниз или урезание его внешнего поля */
-main h2, 
-div[class*="jsx-"] h2,
-#passport h2 {
-    margin-bottom: -20px !important;
+/* 1. Держим паспорт близко к заголовку и поднимаем заголовок выше */
+#passport h2, 
+[class*="profileShare"] h2 {
+    margin-top: -40px !important;    /* Поднимает заголовок вверх */
+    margin-bottom: 2px !important;    /* Удерживает паспорт близко под ним */
+}
+
+/* 2. Сбрасываем лишние верхние отступы у паспорта */
+#passport p, 
+[class*="profileShare"] p {
+    margin-top: 0 !important;
+}
+
+/* 3. Опускаем кнопку «Поделиться паспортом» ниже */
+#passport button, 
+#passport a,
+[class*="profileShare"] button,
+[class*="profileShare"] a {
+    margin-top: 30px !important;    /* Отодвигает кнопку вниз от паспорта */
 }
 
 /* =======================================================
