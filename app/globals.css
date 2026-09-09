@@ -439,6 +439,23 @@ section#guilds div[class*="jsx-"] {
     margin: 0 auto;
 }
 
+/* Принудительно задаем большую высоту для карточки гильдий */
+.guilds-container, 
+section#guilds [class*="container"] {
+    padding-top: 120px !important;
+    padding-bottom: 120px !important;
+    min-height: 450px !important; /* Устанавливаем минимальную высоту блока */
+}
+
+/* Центрируем все элементы внутри карточки */
+section#guilds > div {
+    margin-top: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
 /* =========================
    ТВОЙ ИГРОВОЙ ПРОФИЛЬ
    ========================= */
