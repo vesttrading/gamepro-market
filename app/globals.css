@@ -449,7 +449,7 @@ section#reviews p {
 
 #guilds {
     position: relative !important;
-    top: 120px !important; /* Сдвигает блок на 120 пикселей вниз */
+    top: 60px !important; /* Сдвигает блок на 120 пикселей вниз */
 }
 
 @media (max-width: 700px) {
