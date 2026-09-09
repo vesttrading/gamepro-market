@@ -468,18 +468,18 @@ section#guilds div[class*="jsx-"] {
     width: 100% !important;
 }
 
-/* Убираем зазор между заголовком и строкой с именем игрока */
-#passport h1,
-section h1,
-[class*="profileTitle"] {
-    margin-bottom: 0 !important; /* Убираем стандартный нижний отступ заголовка */
+/* 1. Сжимаем расстояние между заголовком и именем Vladimir */
+section [class*="profileShare"],
+#passport [class*="profileShare"],
+.profileShare {
+    gap: 4px !important;
 }
 
-/* Принудительно подтягиваем строчку с именем вверх */
-#passport h1 + p,
-#passport .profileShare p,
-[class*="profileShare"] p {
-    margin-top: -10px !important; /* Отрицательный отступ сблизит элементы вопреки общему gap */
+/* 2. Отодвигаем кнопку «Поделиться паспортом» чуть ниже, чтобы не слипалась */
+.profileShare button,
+.profileShare a,
+[class*="profileShare"] button {
+    margin-top: 15px !important;
 }
 
 /* Увеличиваем заголовок */
