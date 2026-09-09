@@ -140,7 +140,7 @@ div[style*="justifyContent: \"space-between\""] {
 #players {
     width: 100% !important;
     max-width: 800px !important;  
-    margin: 100px auto 0 auto !important; /* Центрируем весь этот блок на экране */
+    margin-top: -35px !important; /* Центрируем весь этот блок на экране */
 }
 
 /* Шаг 2. Саму строку поиска внутри делаем еще чуть компактнее */
@@ -193,9 +193,16 @@ div[style*="justifyContent: \"space-between\""] {
 /* 1. ПРОВЕРИТЬ ИГРОКА ЧЕРЕЗ RAIDER.IO */
 #raiderio {
     width: 100% !important;
-    max-width: 580px !important; /* Уменьшаем всю синюю карточку до аккуратных 650px */
-    margin: 90px auto !important; /* Свойство auto принудительно центрирует блок на экране */
-    padding: 0 0 40px !important;
+    max-width: 580px !important;
+    
+    /* ИЗМЕНИТЕ ЭТИ СТРОКИ: */
+    margin-top: 90px !important;    /* Оставляем отступ сверху */
+    margin-bottom: 0px !important;  /* Убираем отступ снизу до нуля */
+    margin-left: auto !important;   /* Центрируем по горизонтали */
+    margin-right: auto !important;  /* Центрируем по горизонтали */
+    
+    padding: 0px !important;        /* Полностью убираем внутренние отступы */
+    
     box-sizing: border-box !important;
 }
 
@@ -225,8 +232,8 @@ div[style*="justifyContent: \"space-between\""] {
 /* 1. КАК РАБОТАЕТ ПРОВЕРКА  Увеличиваем общую ширину блока шагов, чтобы они не натыкались друг на друга */
 #how {
     width: 100% !important;
-    max-width: 850px !important;  /* Увеличили с 650px до 850px, чтобы дать карточкам простор */
-    margin: 0 auto !important;    /* Держим по центру */
+    max-width: 850px !important;
+    margin-top: -20px !important;
     padding: 60px 20px !important;
     box-sizing: border-box !important;
 }
@@ -304,7 +311,7 @@ section#games div[class*="gameGrid"] {
     align-items: stretch !important; /* Выравнивает все */
     flex-wrap: nowrap !important; /* Запрещает перенос */
     gap: 16px !important;
-    margin-top: -10px !important;
+    margin-top: -20px !important;
 }
 
 /* Делаем ВСЕ карточки (включая первую) одинакового размера */
@@ -366,7 +373,7 @@ section#reviews [class*="Grid"] > div {
     box-sizing: border-box !important;
     border: 1px solid #00f2fe !important;
     box-shadow: 0 0 15px rgba(0, 242, 254, 0.12) !important;
-
+    margin-top: -8px !important;
 }
 
 /* Три карточки в одну линию */
@@ -388,6 +395,13 @@ section#reviews h3 {
 section#reviews p {
     font-size: 15px !important;
     line-height: 1.45 !important;
+}
+
+@media (max-width: 768px) {
+  section#reviews [class*="gameGrid"],
+  section#reviews [class*="Grid"] {
+    flex-direction: column !important;
+  }
 }
 
 /* 1. Этот код изменит только блок гильдий и ничего больше */
@@ -465,8 +479,8 @@ section#guilds div[class*="jsx-"] {
 [class*="profileShare"] button,
 #passport .profileShare a,
 [class*="profileShare"] a {
-    font-size: 20px !important;        /* Крупный читаемый текст на кнопке */
-    padding: 16px 40px !important;     /* Сделали саму кнопку массивной и широкой */
+    font-size: 12px !important;        /* Крупный читаемый текст на кнопке */
+    padding: 16px 24px !important;     /* Сделали саму кнопку массивной и широкой */
     font-weight: 600 !important;
     display: inline-block !important;
 }
@@ -484,8 +498,8 @@ main > div:last-child button,
 section:last-of-type button,
 main > section:last-of-type a,
 section:last-of-type a {
-    font-size: 18px !important;
-    padding: 12px 34px !important;
+    font-size: 15px !important;
+    padding: 10px 24px !important;
 }
 
 /* =======================================================
@@ -613,4 +627,72 @@ main > section:last-of-type,
 main > div:last-child,
 section:last-of-type {
     margin-top: 150px !important;
+}
+
+/* Адаптация шапки сайта под экраны телефонов */
+@media (max-width: 768px) {
+    header, 
+    div[class*="header"], 
+    header > div {
+        flex-wrap: wrap !important;       /* Разрешаем элементам (лого, меню, языки) переноситься */
+        gap: 12px !important;             /* Компактный отступ между элементами */
+        padding: 10px 16px !important;    /* Уменьшаем боковые поля, чтобы освободить место */
+        justify-content: space-between !important;
+    }
+
+    /* Навигационные ссылки (меню) делаем чуть компактнее */
+    header nav, 
+    header div[class*="nav"],
+    header .navlinks {
+        gap: 10px !important;             /* Сближаем пункты меню (Игры, Отзывы и т.д.) */
+        font-size: 14px !important;       /* Слегка уменьшаем шрифт ссылок */
+    }
+}
+
+@media (max-width: 768px) {
+    /* Сбрасываем инлайновые стили шапки и главного контейнера */
+    header, 
+    header[style], 
+    header > div, 
+    header > div[style] {
+        display: flex !important;
+        flex-direction: column !important; /* Выстраиваем логотип и меню друг под другом */
+        align-items: center !important;    /* Центрируем всё по горизонтали */
+        justify-content: center !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        gap: 12px !important;              /* Расстояние между логотипом и ссылками */
+        padding: 12px 8px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Настройки для блока с навигационными ссылками */
+    header nav, 
+    header .navlinks,
+    header div div:has(a) { 
+        display: flex !important;
+        flex-wrap: wrap !important;        /* Если ссылок много, они перенесутся на новую строку */
+        justify-content: center !important;/* Центрируем ссылки внутри блока */
+        align-items: center !important;
+        gap: 10px 14px !important;         /* Отступы между ссылками */
+        width: 100% !important;
+    }
+
+    /* Настройки самих ссылок и текста меню */
+    header nav a, 
+    header .navlinks a, 
+    header a,
+    header span,
+    header button {
+        font-size: 13px !important;        /* Компактный размер шрифта */
+        white-space: nowrap !important;    /* Запрещаем перенос одного слова */
+    }
+
+    /* Ограничиваем логотип, чтобы он не был огромным */
+    header img, 
+    header svg {
+        max-height: 28px !important;
+        width: auto !important;
+    }
 }
