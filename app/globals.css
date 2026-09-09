@@ -341,11 +341,11 @@ section#games div[class*="gameGrid"] > div {
     }
 }
 
-/* 1. Намертво сжимаем всю секцию отзывов до аккуратных 850px */
+/* 1. Намертво сжимаем всю секцию Отзывов до аккуратных 850px */
 section#reviews {
     width: 100% !important;
     max-width: 850px !important;    
-    margin: -35px auto 0 auto !important; /* Центрируем весь блок по центру экрана */
+    margin: -35px auto 100 auto !important; /* Центрируем весь блок по центру экрана */
     padding: 20px !important;
     box-sizing: border-box !important;
 }
