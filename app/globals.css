@@ -454,7 +454,7 @@ section#guilds div[class*="jsx-"] {
     max-width: 1160px !important;
     margin-left: auto !important;
     margin-right: auto !important;
-    margin-top: -45px !important;
+    margin-top: -35px !important;
 }
 
 /* Полное обновление и увеличение блока профиля */
@@ -464,7 +464,7 @@ section#guilds div[class*="jsx-"] {
     flex-direction: column !important; /* Выстраиваем заголовок и кнопку вертикально, чтобы им было просторно */
     align-items: center !important;    /* Центрируем всё по середине */
     justify-content: center !important;
-    gap: 34px !important;              /* Увеличиваем расстояние между текстом и кнопкой */
+    gap: 14px !important;              /* Увеличиваем расстояние между текстом и кнопкой */
     width: 100% !important;
 }
 
