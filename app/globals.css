@@ -345,7 +345,7 @@ section#games div[class*="gameGrid"] > div {
 section#reviews {
     width: 100% !important;
     max-width: 850px !important;    
-    margin: -35px auto 100 auto !important; /* Центрируем весь блок по центру экрана */
+    margin: -35px auto 0 auto !important; /* Центрируем весь блок по центру экрана */
     padding: 20px !important;
     box-sizing: border-box !important;
 }
@@ -445,6 +445,11 @@ section#reviews p {
 #guilds p {
     color: #9da6c0;
     line-height: 1.6;
+}
+
+#guilds {
+    position: relative !important;
+    top: 120px !important; /* Сдвигает блок на 120 пикселей вниз */
 }
 
 @media (max-width: 700px) {
