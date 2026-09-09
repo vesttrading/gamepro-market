@@ -419,7 +419,7 @@ section#reviews p {
     max-width: 550px !important; 
     margin-left: auto !important; 
     margin-right: auto !important;
-    padding: 0px 24px !important; /* Уменьшили внутренний отступ сверху и снизу с 40px до 10px */
+    padding: 10px 24px !important; /* Уменьшили внутренний отступ сверху и снизу с 40px до 10px */
     margin-top: 15px !important;  /* Сдвигает блок вверх, ближе к отзывам */
     margin-bottom: 10px !important;
     box-sizing: border-box !important;
@@ -431,7 +431,7 @@ section#guilds > div {
     width: 100% !important;
     margin-left: auto !important; 
     margin-right: auto !important;
-    margin-top: 20px !important;
+    margin-top: 100px !important;
 }
 /* На всякий случай дублируем для вложенного div, если структура сложнее */
 section#guilds div[class*="jsx-"] {
@@ -464,7 +464,7 @@ section#guilds div[class*="jsx-"] {
     flex-direction: column !important; /* Выстраиваем заголовок и кнопку вертикально, чтобы им было просторно */
     align-items: center !important;    /* Центрируем всё по середине */
     justify-content: center !important;
-    gap: 5px !important;              /* Увеличиваем расстояние между текстом и кнопкой */
+    gap: 14px !important;              /* Увеличиваем расстояние между текстом и кнопкой */
     width: 100% !important;
 }
 
@@ -510,13 +510,6 @@ main > section:last-of-type a,
 section:last-of-type a {
     font-size: 15px !important;
     padding: 10px 24px !important;
-}
-
-/* Принудительный сдвиг заголовка h2 вниз или урезание его внешнего поля */
-main h2, 
-div[class*="jsx-"] h2,
-#passport h2 {
-    margin-bottom: -5px !important;
 }
 
 /* =======================================================
