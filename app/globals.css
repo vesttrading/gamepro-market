@@ -512,25 +512,22 @@ section:last-of-type a {
     padding: 10px 24px !important;
 }
 
-/* 1. Держим паспорт близко к заголовку и поднимаем заголовок выше */
-#passport h2, 
-[class*="profileShare"] h2 {
-    margin-top: -40px !important;    /* Поднимает заголовок вверх */
-    margin-bottom: 2px !important;    /* Удерживает паспорт близко под ним */
+/* Пробиваем локальные стили Next.js для заголовка */
+:global(#passport h2), 
+#passport h2,
+main h2 {
+    margin-top: -60px !important;    /* Агрессивно тянем заголовок вверх */
+    margin-bottom: 2px !important;   /* Прижимаем паспорт */
 }
 
-/* 2. Сбрасываем лишние верхние отступы у паспорта */
-#passport p, 
-[class*="profileShare"] p {
-    margin-top: 0 !important;
-}
-
-/* 3. Опускаем кнопку «Поделиться паспортом» ниже */
-#passport button, 
+/* Пробиваем локальные стили для кнопки */
+:global(#passport button), 
+:global(#passport a),
+#passport button,
 #passport a,
-[class*="profileShare"] button,
-[class*="profileShare"] a {
-    margin-top: 30px !important;    /* Отодвигает кнопку вниз от паспорта */
+main button,
+main a {
+    margin-top: 40px !important;     /* Сильно толкаем кнопку вниз */
 }
 
 /* =======================================================
