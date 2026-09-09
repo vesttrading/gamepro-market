@@ -226,7 +226,7 @@ div[style*="justifyContent: \"space-between\""] {
 #how {
     width: 100% !important;
     max-width: 850px !important;  /* Увеличили с 650px до 850px, чтобы дать карточкам простор */
-    margin: 0 auto !important;    /* Держим по центру */
+    margin-top: -35 auto !important;    /* Держим по центру */
     padding: 60px 20px !important;
     box-sizing: border-box !important;
 }
