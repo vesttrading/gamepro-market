@@ -439,19 +439,6 @@ section#guilds div[class*="jsx-"] {
     margin: 0 auto;
 }
 
-/* Поднимаем только заголовок и иконку внутри блока гильдий, не ломая сетку */
-section#guilds h2, 
-section#guilds .guilds-container h2,
-section#guilds [class*="title"] {
-    margin-top: -40px !important; 
-}
-
-/* Если над заголовком есть иконка (синие человечки), поднимаем и её */
-section#guilds img,
-section#guilds svg {
-    margin-top: -20px !important;
-}
-
 /* =========================
    ТВОЙ ИГРОВОЙ ПРОФИЛЬ
    ========================= */
