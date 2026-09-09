@@ -419,7 +419,7 @@ section#reviews p {
     max-width: 550px !important; 
     margin-left: auto !important; 
     margin-right: auto !important;
-    padding: 10px 24px !important; /* Уменьшили внутренний отступ сверху и снизу с 40px до 10px */
+    padding: 60px 24px !important; /* Уменьшили внутренний отступ сверху и снизу с 40px до 10px */
     margin-top: 15px !important;  /* Сдвигает блок вверх, ближе к отзывам */
     margin-bottom: 10px !important;
     box-sizing: border-box !important;
