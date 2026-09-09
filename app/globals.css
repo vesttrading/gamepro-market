@@ -353,7 +353,7 @@ section#reviews {
 /* Убираем отступы между заголовком и подзаголовком */
 section#reviews h2, 
 section#reviews .title {
-    margin-bottom: 10px !important; /* Настройте значение под себя */
+    margin-bottom: 8px !important; /* Настройте значение под себя */
 }
 
 section#reviews p, 
