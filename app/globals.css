@@ -224,7 +224,7 @@ div[style*="justifyContent: \"space-between\""] {
     max-width: 580px !important;
     
     /* ИЗМЕНИТЕ ЭТИ СТРОКИ: */
-    margin-top: 90px !important;    /* Оставляем отступ сверху */
+    margin-top: 20px !important;    /* Оставляем отступ сверху */
     margin-bottom: 0px !important;  /* Убираем отступ снизу до нуля */
     margin-left: auto !important;   /* Центрируем по горизонтали */
     margin-right: auto !important;  /* Центрируем по горизонтали */
