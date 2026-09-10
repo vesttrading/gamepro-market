@@ -163,6 +163,7 @@ div[style*="justifyContent: \"space-between\""] {
     padding-left: 45px !important;   /* Расширяем по бокам */
     padding-right: 45px !important;
     min-width: 170px !important;     /* Задаем ширину */
+    margin-left: 30px !important;
     
     padding-top: 0 !important;       /* Убираем лишние отступы сверху/снизу */
     padding-bottom: 0 !important;
