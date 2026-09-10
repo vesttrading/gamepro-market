@@ -36,6 +36,13 @@ div[style*="justifyContent: \"space-between\""] {
   display: block !important;
 }
 
+/* Отодвигаем подзаголовок ниже от главного заголовка */
+#passport h1, 
+#passport h2,
+#passport div[class*="title"] h1 {
+    margin-bottom: 25px !important; /* Увеличивайте это число, если нужно ещё больше пространства */
+}
+
 /* 4. Восстанавливаем сетку для паспорта, чтобы карточка была на всю ширину */
 .grid2 {
   display: grid !important;
@@ -56,13 +63,6 @@ div[style*="justifyContent: \"space-between\""] {
   justify-content: center !important; /* 🌟 Ставит всю строку строго по центру */
   text-align: center !important;     /* Центрирует текст внутри */
   margin: 0 auto 0 auto !important;
-}
-
-/* Отодвигаем подзаголовок ниже от главного заголовка */
-#passport h1, 
-#passport h2,
-#passport div[class*="title"] h1 {
-    margin-bottom: 25px !important; /* Увеличивайте это число, если нужно ещё больше пространства */
 }
 
 /* 3. Выравниваем элементы внутри строки, чтобы они стояли красиво */
