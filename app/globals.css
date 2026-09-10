@@ -36,13 +36,6 @@ div[style*="justifyContent: \"space-between\""] {
   display: block !important;
 }
 
-/* Отодвигаем подзаголовок ниже от главного заголовка */
-#passport h1, 
-#passport h2,
-#passport div[class*="title"] h1 {
-    margin-bottom: 25px !important; /* Увеличивайте это число, если нужно ещё больше пространства */
-}
-
 /* 4. Восстанавливаем сетку для паспорта, чтобы карточка была на всю ширину */
 .grid2 {
   display: grid !important;
@@ -52,10 +45,11 @@ div[style*="justifyContent: \"space-between\""] {
 }
 
 /* 1. Уменьшаем размер заголовка Achievement Passport */
-#passport h2, 
+#passport h2,
 .sectionHead h2 {
-  font-size: 28px !important; /* Делает заголовок аккуратным и компактным */
-  margin: 0 !important;
+    font-size: 28px !important;
+    margin: 0 !important;
+    margin-bottom: 20px !important; /* ДОБАВЬТЕ ЭТУ СТРОКУ */
 }
 
 /* 2. Центрируем всю верхнюю строку (заголовок, описание и кнопку) */
