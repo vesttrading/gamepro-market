@@ -58,6 +58,13 @@ div[style*="justifyContent: \"space-between\""] {
   margin: 0 auto 0 auto !important;
 }
 
+/* Отодвигаем подзаголовок ниже от главного заголовка */
+#passport h1, 
+#passport h2,
+#passport div[class*="title"] h1 {
+    margin-bottom: 25px !important; /* Увеличивайте это число, если нужно ещё больше пространства */
+}
+
 /* 3. Выравниваем элементы внутри строки, чтобы они стояли красиво */
 .sectionHead > div:first-child {
   display: flex !important;
