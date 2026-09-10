@@ -151,30 +151,31 @@ div[style*="justifyContent: \"space-between\""] {
     margin: 0 auto 22px !important;
 }
 
-/* Делаем кнопку выше (толще), шире и двигаем вправо */
+/* Применяем стили ко ВСЕМ кнопкам внутри всего блока #players */
 #players button,
 #players input[type="button"],
 #players input[type="submit"],
 #players [role="button"] {
-    height: 46px !important;         /* СДЕЛАЛИ ВЫШЕ (было 34px, теперь она плотная и крупная) */
-    min-height: 46px !important;
-    max-height: 46px !important;
+    height: 34px !important;         /* Делаем узкой по высоте */
+    min-height: 34px !important;
+    max-height: 34px !important;
     
-    min-width: 220px !important;     /* Сделали широкой по горизонтали */
-    padding-left: 40px !important;   
-    padding-right: 40px !important;
+    padding-left: 45px !important;   /* Расширяем по бокам */
+    padding-right: 45px !important;
+    min-width: 170px !important;     /* Задаем ширину */
     
-    margin-left: 30px !important;    /* Сдвинули вправо (отодвинули от инпута) */
+    padding-top: 0 !important;       /* Убираем лишние отступы сверху/снизу */
+    padding-bottom: 0 !important;
     
-    display: inline-flex !important;  
+    display: inline-flex !important;  /* Выравниваем текст и лупу внутри */
     align-items: center !important;
     justify-content: center !important;
 }
 
-/* Возвращаем нормальный размер элементов внутри кнопки */
+/* На всякий случай сжимаем иконку и текст внутри, чтобы они не вылезали */
 #players button *,
 #players [role="button"] * {
-    line-height: normal !important;
+    line-height: 1 !important;
 }
 
 /* На всякий случай сжимаем иконку и текст внутри, чтобы они не вылезали */
