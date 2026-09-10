@@ -27,7 +27,7 @@ div[style*="justifyContent: \"space-between\""] {
   align-items: center !important;         /* Выравнивает их ровно по высоте */
   flex-wrap: wrap !important;
   gap: 20px !important;                   /* Расстояние между текстом описания и кнопкой */
-  margin-bottom: 20px !important;
+  margin-bottom: 0px !important;
   width: 100% !important;
 }
 
@@ -72,7 +72,7 @@ div[style*="justifyContent: \"space-between\""] {
     gap: 20px !important;
     width: 100% !important;
     max-width: 500px !important;
-    margin: 20px auto 140px auto !important;
+    margin-top: 10px auto 140px auto !important;
     padding: 0 !important;
     box-sizing: border-box !important;
 }
