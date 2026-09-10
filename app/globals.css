@@ -156,9 +156,9 @@ div[style*="justifyContent: \"space-between\""] {
 #players input[type="button"],
 #players input[type="submit"],
 #players [role="button"] {
-    height: 44px !important;         /* Делаем узкой по высоте */
-    min-height: 44px !important;
-    max-height: 44px !important;
+    height: 40px !important;         /* Делаем узкой по высоте */
+    min-height: 40px !important;
+    max-height: 40px !important;
     
     padding-left: 45px !important;   /* Расширяем по бокам */
     padding-right: 45px !important;
