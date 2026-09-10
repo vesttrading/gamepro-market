@@ -373,7 +373,7 @@ section#games div[class*="gameGrid"] > div {
 section#reviews {
     width: 100% !important;
     max-width: 850px !important;    
-    margin: -9px auto 0 auto !important; /* Центрируем весь блок по центру экрана */
+    margin: -8px auto 0 auto !important; /* Центрируем весь блок по центру экрана */
     padding: 20px !important;
     box-sizing: border-box !important;
 }
