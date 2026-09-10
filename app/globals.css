@@ -151,15 +151,24 @@ div[style*="justifyContent: \"space-between\""] {
     margin: 0 auto 22px !important;
 }
 
-/* Делаем кнопку шире и уже */
+/* Пробиваем любые сторонние компоненты кнопки */
+#players .searchbox [class*="button"],
+#players .searchbox [class*="btn"],
 #players .searchbox button,
 #players .searchbox button * {
-    padding-top: 2px !important;    /* Уменьшаем высоту (сверху) */
-    padding-bottom: 2px !important; /* Уменьшаем высоту (снизу) */
-    height: 36px !important;        /* Жестко задаем небольшую высоту самого элемента */
-    padding-left: 40px !important;  /* Делаем шире влево */
-    padding-right: 40px !important; /* Делаем шире вправо */
-    min-width: 180px !important;    /* Задаем уверенную минимальную ширину */
+    height: 34px !important;        /* Жестко сжимаем высоту */
+    min-height: 34px !important;    
+    max-height: 34px !important;
+    padding-top: 0px !important;    /* Обнуляем внутренние отступы по высоте */
+    padding-bottom: 0px !important;
+    
+    padding-left: 45px !important;  /* Сильно растягиваем в ширину */
+    padding-right: 45px !important;
+    min-width: 180px !important;    /* Задаем минимальную ширину */
+    
+    display: inline-flex !important; /* Центрируем иконку и текст внутри сжатой кнопки */
+    align-items: center !important;
+    justify-content: center !important;
 }
 
 #players .cards,
