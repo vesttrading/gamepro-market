@@ -151,24 +151,31 @@ div[style*="justifyContent: \"space-between\""] {
     margin: 0 auto 22px !important;
 }
 
-/* Пробиваем любые сторонние компоненты кнопки */
-#players .searchbox [class*="button"],
-#players .searchbox [class*="btn"],
-#players .searchbox button,
-#players .searchbox button * {
-    height: 34px !important;        /* Жестко сжимаем высоту */
-    min-height: 34px !important;    
+/* Применяем стили ко ВСЕМ кнопкам внутри всего блока #players */
+#players button,
+#players input[type="button"],
+#players input[type="submit"],
+#players [role="button"] {
+    height: 34px !important;         /* Делаем узкой по высоте */
+    min-height: 34px !important;
     max-height: 34px !important;
-    padding-top: 0px !important;    /* Обнуляем внутренние отступы по высоте */
-    padding-bottom: 0px !important;
     
-    padding-left: 45px !important;  /* Сильно растягиваем в ширину */
+    padding-left: 45px !important;   /* Расширяем по бокам */
     padding-right: 45px !important;
-    min-width: 180px !important;    /* Задаем минимальную ширину */
+    min-width: 170px !important;     /* Задаем ширину */
     
-    display: inline-flex !important; /* Центрируем иконку и текст внутри сжатой кнопки */
+    padding-top: 0 !important;       /* Убираем лишние отступы сверху/снизу */
+    padding-bottom: 0 !important;
+    
+    display: inline-flex !important;  /* Выравниваем текст и лупу внутри */
     align-items: center !important;
     justify-content: center !important;
+}
+
+/* На всякий случай сжимаем иконку и текст внутри, чтобы они не вылезали */
+#players button *,
+#players [role="button"] * {
+    line-height: 1 !important;
 }
 
 #players .cards,
