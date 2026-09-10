@@ -571,23 +571,6 @@ div[class*="jsx-"] h2,
     margin-bottom: -8px !important;
 }
 
-/* Жестко сдвигаем весь блок профиля вниз */
-#passport,
-main section:last-of-type,
-section[class*="passport"] {
-    margin-top: 100px !important;
-    padding-top: 50px !important;
-}
-
-/* Дополнительно двигаем сам заголовок внутри этой секции */
-#passport h2,
-#passport div h2,
-main section:last-of-type h2 {
-    margin-top: 60px !important;
-    position: relative !important;
-    top: 40px !important; /* Принудительный физический сдвиг вниз */
-}
-
 /* =======================================================
    ИТОГОВАЯ БЕЗОПАСНАЯ МОБИЛЬНАЯ АДАПТАЦИЯ (БЕЗ ОШИБОК)
    ======================================================= */
