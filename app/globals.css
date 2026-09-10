@@ -156,9 +156,9 @@ div[style*="justifyContent: \"space-between\""] {
 #players input[type="button"],
 #players input[type="submit"],
 #players [role="button"] {
-    height: 34px !important;         /* Делаем узкой по высоте */
-    min-height: 34px !important;
-    max-height: 34px !important;
+    height: 44px !important;         /* Делаем узкой по высоте */
+    min-height: 44px !important;
+    max-height: 44px !important;
     
     padding-left: 45px !important;   /* Расширяем по бокам */
     padding-right: 45px !important;
@@ -170,12 +170,6 @@ div[style*="justifyContent: \"space-between\""] {
     display: inline-flex !important;  /* Выравниваем текст и лупу внутри */
     align-items: center !important;
     justify-content: center !important;
-}
-
-/* На всякий случай сжимаем иконку и текст внутри, чтобы они не вылезали */
-#players button *,
-#players [role="button"] * {
-    line-height: 1 !important;
 }
 
 /* На всякий случай сжимаем иконку и текст внутри, чтобы они не вылезали */
