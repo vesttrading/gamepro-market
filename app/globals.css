@@ -143,12 +143,19 @@ div[style*="justifyContent: \"space-between\""] {
     margin-top: -35px !important; /* Центрируем весь этот блок на экране */
 }
 
-/* Шаг 2. Саму строку поиска внутри делаем еще чуть компактнее */
+/* Шаг 2. Саму строку поиска внутри делаем еще... */
 #players .searchbox {
-    display: flex !important; 
-    gap: 10px !important;
-    max-width: 500px !important; 
+    display: flex !important;
+    gap: 24px !important;            /* Увеличили расстояние, чтобы отодвинуть вправо */
+    max-width: 500px !important;
     margin: 0 auto 22px !important;
+    align-items: center !important;  /* Сделает кнопку уже (не даст ей растягиваться по высоте) */
+}
+
+/* Добавляем уменьшение высоты для самой кнопки */
+#players .searchbox button {
+    padding: 8px 20px !important;    /* Делает кнопку аккуратной и узкой */
+    height: auto !important;
 }
 
 #players .cards,
