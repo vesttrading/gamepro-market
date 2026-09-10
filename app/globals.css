@@ -341,7 +341,7 @@ section#games div[class*="gameGrid"] > div {
     }
 }
 
-/* 1. Намертво сжимаем всю секцию отзывов до аккуратных 850px */
+/* 1. Намертво сжимаем всю секцию Отзывов до аккуратных 850px */
 section#reviews {
     width: 100% !important;
     max-width: 850px !important;    
@@ -420,8 +420,8 @@ section#reviews p {
 
 #guilds {
     width: 100% !important;
-    max-width: 1160px !important;
-    margin: 0 auto !important;
+    max-width: 700px !important;
+    margin: 100 auto 0 auto !important;
     padding: 60px 0 !important;
 }
 
@@ -445,6 +445,11 @@ section#reviews p {
 #guilds p {
     color: #9da6c0;
     line-height: 1.6;
+}
+
+#guilds {
+    position: relative !important;
+    top: 75px !important; /* Сдвигает блок на 120 пикселей вниз */
 }
 
 @media (max-width: 700px) {
@@ -536,6 +541,14 @@ main h2,
 div[class*="jsx-"] h2,
 #passport h2 {
     margin-bottom: -10px !important;
+}
+
+#passport, 
+#passport .profileShare, 
+#passport [class*="sharePassport"] {
+    position: relative !important;
+    top: 150px !important;
+    margin-top: 150px !important; /* Принудительно компенсируем отрицательный отступ */
 }
 
 /* =======================================================
