@@ -543,12 +543,9 @@ div[class*="jsx-"] h2,
     margin-bottom: -10px !important;
 }
 
-#passport, 
-#passport .profileShare, 
-#passport [class*="sharePassport"] {
+#passport {
     position: relative !important;
-    top: 150px !important;
-    margin-top: 150px !important; /* Принудительно компенсируем отрицательный отступ */
+    top: 160px !important; /* Опускает весь блок профиля ниже */
 }
 
 /* =======================================================
