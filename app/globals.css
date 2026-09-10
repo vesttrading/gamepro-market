@@ -373,7 +373,7 @@ section#games div[class*="gameGrid"] > div {
 section#reviews {
     width: 100% !important;
     max-width: 850px !important;    
-    margin: -8px auto 0 auto !important; /* Центрируем весь блок по центру экрана */
+    margin: -5px auto 0 auto !important; /* Центрируем весь блок по центру экрана */
     padding: 20px !important;
     box-sizing: border-box !important;
 }
@@ -398,7 +398,7 @@ section#reviews [class*="Grid"] {
     align-items: stretch !important;    /* Выравниваем их по высоте */
     gap: 35px !important;               /* Аккуратный отступ между оценкой и отзывами */
     width: 100% !important;
-    margin-top: 60px !important;
+    margin-top: 70px !important;
 }
 
 /* Компактные карточки отзывов */
