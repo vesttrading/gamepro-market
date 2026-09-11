@@ -552,7 +552,7 @@ section#reviews p {
 #passport .profileShare p,
 [class*="profileShare"] p {
     font-size: 18px !important;        /* Сделали текст описания крупнее */
-    margin: 0 !important;
+    margin: 30 !important;
     text-align: center !important;
 }
 
@@ -561,7 +561,6 @@ section#reviews p {
 [class*="profileShare"] button,
 #passport .profileShare a,
 [class*="profileShare"] a {
-    margin-top: 35px !important;
     display: inline-block !important;
 }
 
