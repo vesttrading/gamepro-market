@@ -347,8 +347,9 @@ section#games {
 }
 
 section#games > p,
-section#games > div > p:first-of-type {
-    display: none !important;
+section#games h2 + p {
+    margin-top: 15px !important;
+    color: rgba(255, 255, 255, 0.7) !important; /* Делает текст чуть мягче для глаз */
 }
 
 section#games div[class*="gameGrid"] {
