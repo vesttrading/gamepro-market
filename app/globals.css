@@ -69,7 +69,7 @@ div[style*="justifyContent: \"space-between\""] {
 
 .sectionHead > div:first-child > p, 
 .sectionHead p {
-    margin-top: 25px !important;
+    margin-top: 15px !important;
 }
 
 #passport .grid2 {
