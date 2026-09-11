@@ -9,6 +9,13 @@ const handler = NextAuth({
      issuer: "https://eu.battle.net/oauth",
     }),
   ],
+
+callbacks: {
+  async redirect({ url, baseUrl }) {
+    return baseUrl;
+  },
+},
+  
   secret: process.env.NEXTAUTH_SECRET || "gamepro-secret-key-2026-prod",
 });
 
