@@ -43,7 +43,7 @@ div[style*="justifyContent: \"space-between\""] {
     gap: 20px !important;
     width: 100% !important;
     padding-top: 0 !important;       /* Убираем лишний внутренний отступ сверху */
-    margin-top: -35px !important;    /* Принудительно подтягиваем блок вверх */
+    margin-top: -45px !important;    /* Принудительно подтягиваем блок вверх */
 }
 
 /* 1. Уменьшаем размер заголовка Achievement Passport */
@@ -51,7 +51,7 @@ div[style*="justifyContent: \"space-between\""] {
 .sectionHead h2 {
     font-size: 28px !important;
     margin: 0 !important;
-    margin-bottom: 40px !important; /* ДОБАВЬТЕ ЭТУ СТРОКУ */
+    margin-bottom: 5px !important; /* ДОБАВЬТЕ ЭТУ СТРОКУ */
 }
 
 /* 2. Центрируем всю верхнюю строку (заголовок, описание и кнопку) */
