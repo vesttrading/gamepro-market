@@ -505,7 +505,7 @@ section#reviews p {
 .guilds,
 section[class*="guild"],
 div[class*="guild"] {
-    margin-top: 80px !important;
+    margin-top: 70px !important;
 }
 
 @media (max-width: 700px) {
