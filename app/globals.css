@@ -418,7 +418,7 @@ section#reviews [class*="Grid"] {
     align-items: stretch !important;    /* Выравниваем их по высоте */
     gap: 35px !important;               /* Аккуратный отступ между оценкой и отзывами */
     width: 100% !important;
-    margin-top: 70px !important;
+    margin-top: 30px !important;
 }
 
 /* Компактные карточки отзывов */
