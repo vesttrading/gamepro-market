@@ -500,6 +500,14 @@ section#reviews p {
     top: 75px !important; /* Сдвигает блок на 120 пикселей вниз */
 }
 
+/* Увеличиваем пространство сверху над блоком гильдий */
+#guilds, 
+.guilds,
+section[class*="guild"],
+div[class*="guild"] {
+    margin-top: 80px !important;
+}
+
 @media (max-width: 700px) {
     #guilds {
         width: 92% !important;
