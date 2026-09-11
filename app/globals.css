@@ -346,6 +346,10 @@ section#games {
     box-sizing: border-box !important;
 }
 
+section#games p {
+    display: none !important;
+}
+
 section#games div[class*="gameGrid"] {
     display: flex !important;
     flex-direction: row !important;
