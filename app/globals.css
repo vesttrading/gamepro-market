@@ -43,7 +43,7 @@ div[style*="justifyContent: \"space-between\""] {
     gap: 20px !important;
     width: 100% !important;
     padding-top: 0 !important;       /* Убираем лишний внутренний отступ сверху */
-    margin-top: -30px !important;    /* Принудительно подтягиваем блок вверх */
+    margin-top: -35px !important;    /* Принудительно подтягиваем блок вверх */
 }
 
 /* 1. Уменьшаем размер заголовка Achievement Passport */
