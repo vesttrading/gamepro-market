@@ -556,10 +556,13 @@ section#reviews p {
     text-align: center !important;
 }
 
+/* Увеличиваем бирюзовую кнопку */
 #passport .profileShare button,
 [class*="profileShare"] button,
+#passport .profileShare a,
 [class*="profileShare"] a {
-    margin-top: 25px !important;
+    margin-top: 35px !important;
+    display: inline-block !important;
 }
 
 /* Увеличиваем бирюзовую кнопку */
