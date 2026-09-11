@@ -346,7 +346,8 @@ section#games {
     box-sizing: border-box !important;
 }
 
-section#games p {
+section#games > p,
+section#games > div > p:first-of-type {
     display: none !important;
 }
 
