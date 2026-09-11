@@ -265,8 +265,10 @@ div[style*="justifyContent: \"space-between\""] {
     white-space: nowrap !important;
 }
 
-#raiderio h2 {
-    margin-bottom: 24px !important;
+#raiderio p {
+    text-align: center !important;
+    margin-top: 15px !important;
+    width: 100% !important;
 }
 
 /* 1. КАК РАБОТАЕТ ПРОВЕРКА  Увеличиваем общую ширину блока шагов, чтобы они не натыкались друг на друга */
