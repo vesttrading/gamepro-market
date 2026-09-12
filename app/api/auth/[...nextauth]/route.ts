@@ -7,10 +7,17 @@ const authOptions = {
     BattleNetProvider({
       clientId: process.env.BATTLE_NET_CLIENT_ID!,
       clientSecret: process.env.BATTLE_NET_CLIENT_SECRET!,
-      issuer: "https://eu.battle.net/oauth",
+      issuer: "https://battle.net",
     }),
   ],
   secret: process.env.NEXTAUTH_SECRET,
+  callbacks: {
+    async redirect({ url, baseUrl }) {
+      if (url.startsWith("/")) return ${baseUrl}${url};
+      else if (new URL(url).origin === baseUrl) return url;
+      return baseUrl;
+    },
+  },
 };
 
 const handler = NextAuth(authOptions);
