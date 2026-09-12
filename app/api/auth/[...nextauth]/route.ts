@@ -1,4 +1,5 @@
 
+
 import NextAuth from "next-auth";
 import BattleNetProvider from "next-auth/providers/battlenet";
 
@@ -10,14 +11,24 @@ const handler = NextAuth({
       issuer: "https://eu.battle.net/oauth",
     }),
   ],
-  // Жёстко указываем секрет шифрования
-  secret: process.env.BATTLE_NET_CLIENT_SECRET, 
-  
-  // Принудительно настраиваем внутренние ссылки возврата для вашего домена vercel.app
-  pages: {
-    signIn: '/',
-    error: '/',
-  }
+  // Добавляем обработчики (Callbacks) для сохранения данных игрока в сессию
+  callbacks: {
+    async jwt({ token, account, profile }) {
+      // Если пользователь только что залогинился, сохраняем его BattleTag и Access Token
+      if (account && profile) {
+        token.accessToken = account.access_token;
+        token.battleTag = (profile as any).battle_tag;
+      }
+      return token;
+    },
+    async session({ session, token }) {
+      // Передаем данные из токена в сессию фронтенда
+      (session as any).accessToken = token.accessToken;
+      (session as any).battleTag = token.battleTag;
+      return session;
+    },
+  },
+  secret: process.env.NEXTAUTH_SECRET || "gamepro-secret-key-2026-prod",
 });
 
 export { handler as GET, handler as POST };
