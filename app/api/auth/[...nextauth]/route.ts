@@ -6,7 +6,7 @@ const handler = NextAuth({
     BattleNetProvider({
       clientId: process.env.BATTLE_NET_CLIENT_ID!,
       clientSecret: process.env.BATTLE_NET_CLIENT_SECRET!,
-      issuer: "https://battle.net", // Европейский регион для СНГ
+      issuer: "https://eu.battle.net/oauth", // Европейский регион для СНГ
     }),
   ],
   // Секретный ключ для шифрования сессий NextAuth
