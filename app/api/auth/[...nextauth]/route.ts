@@ -10,9 +10,14 @@ const handler = NextAuth({
       issuer: "https://eu.battle.net/oauth",
     }),
   ],
+  // Жёстко указываем секрет шифрования
   secret: process.env.BATTLE_NET_CLIENT_SECRET, 
-  trustHost: true, 
+  
+  // Принудительно настраиваем внутренние ссылки возврата для вашего домена vercel.app
+  pages: {
+    signIn: '/',
+    error: '/',
+  }
 });
 
-// Строка экспорта должна быть строго в самом конце файла!
 export { handler as GET, handler as POST };
