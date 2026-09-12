@@ -11,7 +11,7 @@ const handler = NextAuth({
     }),
   ],
   // Жёстко указываем секрет шифрования
-  secret: process.env.BATTLE_NET_CLIENT_SECRET, 
+  secret: process.env.AUTH_SECRET,
   
   // Принудительно настраиваем внутренние ссылки возврата для вашего домена vercel.app
   pages: {
