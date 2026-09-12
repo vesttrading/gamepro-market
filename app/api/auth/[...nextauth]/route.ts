@@ -2,12 +2,12 @@
 import NextAuth from "next-auth";
 import BattleNetProvider from "next-auth/providers/battlenet";
 
-export const authOptions = {
+const authOptions = {
   providers: [
     BattleNetProvider({
       clientId: process.env.BATTLE_NET_CLIENT_ID!,
       clientSecret: process.env.BATTLE_NET_CLIENT_SECRET!,
-      issuer: "https://eu.battle.net/oauth",
+      issuer: "https://battle.net",
     }),
   ],
   secret: process.env.NEXTAUTH_SECRET,
