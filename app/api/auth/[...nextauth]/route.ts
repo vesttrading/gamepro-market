@@ -1,5 +1,4 @@
 
-export { handler as GET, handler as POST };
 import NextAuth from "next-auth";
 import BattleNetProvider from "next-auth/providers/battlenet";
 
@@ -11,11 +10,9 @@ const handler = NextAuth({
       issuer: "https://eu.battle.net/oauth",
     }),
   ],
-  // Явно указываем библиотеке использовать секрет из Vercel
   secret: process.env.BATTLE_NET_CLIENT_SECRET, 
-  
-  // Принудительно заставляем доверять прокси-серверам Vercel
   trustHost: true, 
 });
 
+// Строка экспорта должна быть строго в самом конце файла!
 export { handler as GET, handler as POST };
