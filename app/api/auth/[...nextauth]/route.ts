@@ -9,7 +9,6 @@ const handler = NextAuth({
       issuer: "https://eu.battle.net/oauth", // Европейский регион для СНГ
     }),
   ],
-  // Секретный ключ для шифрования сессий NextAuth
   secret: process.env.NEXTAUTH_SECRET || "gamepro-secret-key-2026-prod",
 });
 
