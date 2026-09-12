@@ -8,7 +8,7 @@ const handler = NextAuth({
       clientId: process.env.BATTLE_NET_CLIENT_ID!,
       clientSecret: process.env.BATTLE_NET_CLIENT_SECRET!,
       issuer: "https://eu.battle.net/oauth",
-      // 👇 Этот параметр отключает циклическую проверку состояния кук, из-за которой вылетает OAuthCallback в Vercel
+      // 👇 ВОТ ЭТА СТРОКА ОЖИВИТ КНОПКУ НА ОСНОВНОМ ДОМЕНЕ
       checks: ["none"],
       profile(profile) {
         return {
