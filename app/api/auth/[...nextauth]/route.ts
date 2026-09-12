@@ -6,7 +6,7 @@ const handler = NextAuth({
     BattleNetProvider({
       clientId: process.env.BATTLE_NET_CLIENT_ID!,
       clientSecret: process.env.BATTLE_NET_CLIENT_SECRET!,
-      region: "eu", // Указываем европейский регион для СНГ и Европы напрямую
+      issuer: "https://eu.battle.net/oauth",
     }),
   ],
   secret: process.env.NEXTAUTH_SECRET || "gamepro-secret-key-2026-prod",
