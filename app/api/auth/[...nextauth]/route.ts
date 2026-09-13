@@ -1,7 +1,8 @@
+
 import NextAuth from "next-auth";
 import BattleNetProvider from "next-auth/providers/battlenet";
 
-const handler = NextAuth({
+const authOptions = {
   providers: [
     BattleNetProvider({
       clientId: process.env.BATTLE_NET_CLIENT_ID!,
@@ -11,6 +12,8 @@ const handler = NextAuth({
   ],
   secret: process.env.NEXTAUTH_SECRET,
   debug: true,
-});
+};
+
+const handler = NextAuth(authOptions);
 
 export { handler as GET, handler as POST };
