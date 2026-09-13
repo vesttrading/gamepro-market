@@ -7,7 +7,6 @@ const handler = NextAuth({
     BattleNetProvider({
       clientId: process.env.BATTLE_NET_CLIENT_ID!,
       clientSecret: process.env.BATTLE_NET_CLIENT_SECRET!,
-      issuer: "https://eu.battle.net/oaut",
     }),
   ],
   secret: process.env.NEXTAUTH_SECRET,
@@ -22,7 +21,6 @@ const handler = NextAuth({
       return token;
     },
     async session({ session, token }) {
-      // Передаём токен в сессию, чтобы клиентская часть его видела
       (session as any).accessToken = token.accessToken;
       return session;
     },
