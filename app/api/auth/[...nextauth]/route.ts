@@ -1,5 +1,5 @@
 
-import NextAuth from "next-auth";
+import NextAuth from "next-auth/next";
 import BattleNetProvider from "next-auth/providers/battlenet";
 
 const authOptions = {
