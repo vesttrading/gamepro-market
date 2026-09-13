@@ -7,8 +7,8 @@ process.env.NEXTAUTH_URL = "https://vercel.app";
 const handler = NextAuth({
   providers: [
     BattleNetProvider({
-      clientId: process.env.BATTLENET_CLIENT_ID,
-      clientSecret: process.env.BATTLENET_CLIENT_SECRET,
+      clientId: process.env.BATTLE_NET_CLIENT_ID,
+      clientSecret: process.env.BATTLE_NET_CLIENT_SECRET,
       issuer: "https://eu.battle.net/oauth",
     }),
   ],
