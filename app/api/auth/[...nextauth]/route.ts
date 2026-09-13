@@ -4,7 +4,7 @@ import BattleNetProvider from "next-auth/providers/battlenet";
 
 // Переопределяем переменную окружения для NextAuth на лету до инициализации
 if (process.env.VERCEL_URL) {
-  process.env.NEXTAUTH_URL = https://${process.env.VERCEL_URL};
+  process.env.NEXTAUTH_URL = `https://${process.env.VERCEL_URL}`;
 }
 
 const handler = NextAuth({
