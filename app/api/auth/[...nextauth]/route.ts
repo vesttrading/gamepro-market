@@ -1,9 +1,11 @@
+
 import NextAuth from "next-auth";
 import BattleNetProvider from "next-auth/providers/battlenet";
 
-const customUrl = process.env.VERCEL_URL
-  ?`https://${process.env.VERCEL_URL}`
-  : process.env.NEXTAUTH_URL;
+// Переопределяем переменную окружения для NextAuth на лету до инициализации
+if (process.env.VERCEL_URL) {
+  process.env.NEXTAUTH_URL = https://${process.env.VERCEL_URL};
+}
 
 const handler = NextAuth({
   providers: [
@@ -14,9 +16,6 @@ const handler = NextAuth({
     }),
   ],
   secret: process.env.NEXTAUTH_SECRET,
-  env: {
-    NEXTAUTH_URL: customUrl,
-  },
 });
 
 export { handler as GET, handler as POST };
