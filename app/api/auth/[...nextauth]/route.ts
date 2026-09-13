@@ -1,5 +1,4 @@
 
-
 import NextAuth from "next-auth";
 import BattleNetProvider from "next-auth/providers/battlenet";
 
@@ -8,7 +7,8 @@ const handler = NextAuth({
     BattleNetProvider({
       clientId: process.env.BATTLE_NET_CLIENT_ID!,
       clientSecret: process.env.BATTLE_NET_CLIENT_SECRET!,
-      region: "eu", // Указываем европейский регион
+      region: "EU", // Указываем регион для Battle.net
+      issuer: "https://eu.battle.net/oauth", // Принудительно передаем строку для типов NextAuth
     }),
   ],
   secret: process.env.NEXTAUTH_SECRET,
