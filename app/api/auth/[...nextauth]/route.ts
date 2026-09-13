@@ -11,7 +11,7 @@ const handler = NextAuth({
   providers: [
     BattleNetProvider({
       clientId: process.env.BATTLENET_CLIENT_ID,
-      clientSecret: process.env.BATTLENET_CLIENT_SECRE!,
+      clientSecret: process.env.BATTLENET_CLIENT_SECRET,
       issuer: "https://eu.battle.net/oauth",
     }),
   ],
