@@ -1,6 +1,8 @@
-
 import NextAuth from "next-auth";
 import BattleNetProvider from "next-auth/providers/battlenet";
+
+// Принудительно заставляем NextAuth использовать основной домен
+process.env.NEXTAUTH_URL = "https://vercel.app";
 
 const handler = NextAuth({
   providers: [
@@ -11,6 +13,7 @@ const handler = NextAuth({
     }),
   ],
   secret: process.env.NEXTAUTH_SECRET,
+  debug: true,
 });
 
 export { handler as GET, handler as POST };
