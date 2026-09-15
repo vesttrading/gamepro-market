@@ -1,4 +1,5 @@
 
+
 import NextAuth from "next-auth";
 import BattleNetProvider from "next-auth/providers/battlenet";
 
@@ -16,22 +17,6 @@ const handler = NextAuth({
 
   session: {
     strategy: "jwt",
-  },
-
-  callbacks: {
-    async jwt({ token, profile }) {
-      if (profile) {
-        token.battleTag = profile.battle_tag;
-      }
-      return token;
-    },
-
-    async session({ session, token }) {
-      if (session.user && token.battleTag) {
-        session.user.name = token.battleTag as string;
-      }
-      return session;
-    },
   },
 
   debug: false,
