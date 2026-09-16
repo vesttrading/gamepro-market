@@ -1,11 +1,8 @@
 
-
-
-
 import NextAuth from "next-auth";
 import BattleNetProvider from "next-auth/providers/battlenet";
 
-export const authOptions = {
+const handler = NextAuth({
   providers: [
     BattleNetProvider({
       clientId: process.env.BATTLE_NET_CLIENT_ID!,
@@ -18,26 +15,12 @@ export const authOptions = {
   secret: process.env.NEXTAUTH_SECRET,
 
   session: {
-    strategy: "jwt" as const,
-  },
-
-  callbacks: {
-    async jwt({ token, account }: any) {
-      if (account?.access_token) {
-        token.accessToken = account.access_token;
-      }
-      return token;
-    },
-
-    async session({ session, token }: any) {
-      session.accessToken = token.accessToken;
-      return session;
-    },
+    strategy: "jwt",
   },
 
   debug: false,
-};
-
-const handler = NextAuth(authOptions);
+});
 
 export { handler as GET, handler as POST };
+
+
