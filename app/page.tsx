@@ -1,7 +1,7 @@
 "use client";
 import Header from "../components/Header";
 import { useState } from "react";
-import { signIn,signOut,useSession } from "next-auth/react";
+import { signIn,signOut } from "next-auth/react";
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
