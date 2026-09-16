@@ -19,7 +19,7 @@ const handler = NextAuth({
     strategy: "jwt",
   },
 
-  debug: true,
+  debug: false,
 });
 
 export { handler as GET, handler as POST };
