@@ -1,6 +1,6 @@
 import { NextRequest } from "next/server";
 import { getServerSession } from "next-auth";
-import { BattleNetProvider } from "next-auth"/providers/battlenet";
+import BattleNetProvider from "next-auth"/providers/battlenet";
 import { createClient } from "@supabase/supabase-js";
 
 
