@@ -17,7 +17,7 @@ export async function GET(request: NextRequest) {
   const realm = realmParam.toLowerCase().replace(/ /g, "-");
   const name = nameParam.toLowerCase();
 
-  const raiderIoUrl = https://raider.io.{realm}&name=${name}`;/api/v1/characters/profile?region=eu&realm=${realm}&name=${name}&fields=mythic_plus_scores_by_season:current,raid_progression;
+  const raiderIoUrl = `https://raider.io.{realm}&name=${name}`;/api/v1/characters/profile?region=eu&realm=${realm}&name=${name}&fields=mythic_plus_scores_by_season:current,raid_progression;
 
   try {
     const response = await fetch(raiderIoUrl);
