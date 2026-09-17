@@ -1,16 +1,14 @@
 import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/lib/auth"; // Наш успешно созданный конфиг
+import { authOptions } from "@/app/lib/auth";
 
 export async function GET() {
   const session = await getServerSession(authOptions);
 
-  // 1. Проверяем, авторизован ли пользователь
   if (!session || !(session as any).accessToken) {
     return Response.json({ error: "Не авторизован" }, { status: 401 });
   }
 
   try {
-    // 2. Запрашиваем у Blizzard список WoW-персонажей игрока
     const response = await fetch(
       "https://blizzard.com",
       {
@@ -21,20 +19,12 @@ export async function GET() {
     );
 
     if (!response.ok) {
-      return Response.json(
-        { error: "Ошибка при запросе к Blizzard API" },
-        { status: response.status }
-      );
+      return Response.json({ error: "Ошибка Blizzard API" }, { status: response.status });
     }
 
     const data = await response.json();
-
-    // 3. Возвращаем аккаунты и персонажей на фронтенд
-    return Response.json({
-      wowAccounts: data.wow_accounts || [],
-    });
-
+    return Response.json({ wowAccounts: data.wow_accounts || [] });
   } catch (error) {
-    return Response.json({ error: "Внутренняя ошибка сервера" }, { status: 500 });
+    return Response.json({ error: "Ошибка сервера" }, { status: 500 });
   }
 }
