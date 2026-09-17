@@ -1,31 +1,28 @@
-import { getServerSession } from "next-auth";
-import { authOptions } from "../../../app/lib/auth";
+import { AuthOptions } from "next-auth";
+import BattleNetProvider from "next-auth/providers/battlenet";
 
-export async function GET() {
-  const session = await getServerSession(authOptions);
+export const authOptions: AuthOptions = {
+  providers: [
+    BattleNetProvider({
+      clientId: process.env.BATTLENET_CLIENT_ID!,
+      clientSecret: process.env.BATTLENET_CLIENT_SECRET!,
+      issuer: "https://eu.battle.net/oauth",
+      checks: ["state", "pkce", "nonce"],
+    }),
+  ],
 
-  if (!session || !(session as any).accessToken) {
-    return Response.json({ error: "Unauthorized" }, { status: 401 });
-  }
-
-  try {
-    const token = (session as any).accessToken;
-    const url = "https://blizzard.com";
-    
-    const response = await fetch(url, {
-      headers: {
-        "Authorization": "Bearer " + token
+  callbacks: {
+    async jwt({ token, account }) {
+      if (account) {
+        token.accessToken = account.access_token;
       }
-    });
 
-    if (!response.ok) {
-      return Response.json({ error: "Blizzard Error" }, { status: response.status });
-    }
+      return token;
+    },
 
-    const data = await response.json();
-    return Response.json({ wowAccounts: data.wow_accounts || [] });
-
-  } catch (error) {
-    return Response.json({ error: "Server Error" }, { status: 500 });
-  }
-}
+    async session({ session, token }: any) {
+      session.accessToken = token.accessToken;
+      return session;
+    },
+  },
+};
