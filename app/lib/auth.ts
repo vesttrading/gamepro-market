@@ -1,13 +1,14 @@
 
-import { NextAuthOptions } from "next-auth";
+import { AuthOptions } from "next-auth";
 import BattleNetProvider from "next-auth/providers/battlenet";
 
-export const authOptions: NextAuthOptions = {
+export const authOptions: AuthOptions = {
   providers: [
     BattleNetProvider({
-      clientId: process.env.BATTLENET_CLIENT_ID!,
-      clientSecret: process.env.BATTLENET_CLIENT_SECRET!,
-      issuer: "https://battle.net",
+      clientId: process.env.BATTLE_NET_CLIENT_ID!,
+      clientSecret: process.env.BATTLE_NET_CLIENT_SECRET!,
+      issuer: "https://eu.battle.net/oauth",
+      checks: ["state", "pkce", "nonce"],
     }),
   ],
   callbacks: {
@@ -17,9 +18,13 @@ export const authOptions: NextAuthOptions = {
       }
       return token;
     },
-    async session({ session, token }: any) {
+    async session({ session, token }) {
       session.accessToken = token.accessToken;
       return session;
     },
+  },
+  secret: process.env.NEXTAUTH_SECRET,
+  session: {
+    strategy: "jwt",
   },
 };
