@@ -18,7 +18,7 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const { playerName, realm, region, score, rawData } = body;
 
-    if (!playerName  !realm  !region) {
+    if (!playerName || !realm || !region) {
       return Response.json({ error: "Пропущены обязательные поля" }, { status: 400 });
     }
 
