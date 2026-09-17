@@ -1,7 +1,8 @@
-import NextAuth from "next-auth";
+
+import { NextAuthOptions } from "next-auth";
 import BattleNetProvider from "next-auth/providers/battlenet";
 
-export const { handlers, auth, signIn, signOut } = NextAuth({
+export const authOptions: NextAuthOptions = {
   providers: [
     BattleNetProvider({
       clientId: process.env.BATTLENET_CLIENT_ID!,
@@ -21,4 +22,4 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       return session;
     },
   },
-});
+};
