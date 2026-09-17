@@ -17,8 +17,7 @@ export async function GET() {
         headers: {
           Authorization: Bearer ${(session as any).accessToken},
         },
-      }
-   }
+      );
 
     if (!response.ok) {
       return Response.json(
