@@ -17,7 +17,7 @@ export async function GET(request: NextRequest) {
       "https://blizzard.com",
       {
         headers: {
-          "Authorization": "Bearer " + session.accessToken,
+          "Authorization": "Bearer " + (session as any).accessToken,
         },
       }
     );
