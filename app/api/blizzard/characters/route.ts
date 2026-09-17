@@ -5,7 +5,7 @@ import { authOptions } from "../../../lib/auth";
 export async function GET(request: NextRequest) {
   const session = await getServerSession(authOptions);
   
-  if (!session || !session.accessToken) {
+  if (!session || !(session as any).accessToken) {
     return Response.json(
       { error: "Необходима авторизация через Battle.net" },
       { status: 401 }
