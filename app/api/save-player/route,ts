@@ -1,0 +1,49 @@
+import { NextRequest } from "next/server";
+import { createClient } from "@supabase/supabase-js";
+
+// Подключаем ключи, которые мы сохранили на Vercel
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
+const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+const supabase = createClient(supabaseUrl, supabaseKey);
+
+export async function POST(request: NextRequest) {
+  try {
+    const body = await request.json();
+    const { playerName, realm, region, score, isVerified, rawData } = body;
+
+    // Проверяем, что фронтенд прислал обязательные текстовые поля
+    if (!playerName  !realm  !region) {
+      return Response.json(
+        { error: "Пропущены обязательные поля (имя, реалм или регион)" },
+        { status: 400 }
+      );
+    }
+
+    // Вставляем запись в вашу таблицу player_verifications
+    const { data, error } = await supabase
+      .from("player_verifications")
+      .insert([
+        {
+          player_name: playerName,
+          realm: realm,
+          region: region.toLowerCase(),
+          mythic_plus_score: score || 0,
+          source_verified: isVerified || false,
+          raw_data: rawData || {},
+        }
+      ])
+      .select();
+
+    // Если Supabase вернул ошибку базы данных, выбрасываем её в блок catch
+    if (error) throw error;
+
+    // Возвращаем успешный ответ на фронтенд
+    return Response.json({ success: true, data });
+
+  } catch (error: any) {
+    return Response.json(
+      { error: error.message || "Ошибка при сохранении в базу данных" },
+      { status: 500 }
+    );
+  }
+}
