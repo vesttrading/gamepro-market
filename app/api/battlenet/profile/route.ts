@@ -4,20 +4,19 @@ import { authOptions } from "@/app/lib/auth";
 export async function GET() {
   const session = await getServerSession(authOptions);
 
-  // 1. Проверяем, авторизован ли пользователь
   if (!session || !(session as any).accessToken) {
     return Response.json({ error: "Не авторизован" }, { status: 401 });
   }
 
   try {
-    // 2. Запрашиваем у Blizzard список WoW-персонажей игрока
     const response = await fetch(
       "https://blizzard.com",
       {
         headers: {
           Authorization: Bearer ${(session as any).accessToken},
         },
-      );
+      }
+    );
 
     if (!response.ok) {
       return Response.json(
@@ -28,7 +27,6 @@ export async function GET() {
 
     const data = await response.json();
 
-    // 3. Возвращаем аккаунты и персонажей на фронтенд
     return Response.json({
       wowAccounts: data.wow_accounts || [],
     });
