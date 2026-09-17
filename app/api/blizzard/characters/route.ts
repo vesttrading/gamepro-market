@@ -1,5 +1,5 @@
 import { NextRequest } from "next/server";
-import { auth } from "@/lib/auth";
+import { auth } from "../../../lib/auth";
 
 export async function GET(request: NextRequest) {
   const session = await auth();
