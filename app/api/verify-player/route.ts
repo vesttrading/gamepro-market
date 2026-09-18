@@ -4,7 +4,6 @@ import { createClient } from "@supabase/supabase-js";
 import BattleNetProvider from "next-auth/providers/battlenet";
 import { AuthOptions } from "next-auth";
 
-// 1. Конфигурация NextAuth остается внутри файла для гарантированной сборки на Vercel
 const authOptions: AuthOptions = {
   providers: [
     BattleNetProvider({
@@ -18,7 +17,7 @@ const authOptions: AuthOptions = {
     async jwt({ token, account }) {
       if (account) {
         token.accessToken = account.access_token;
-        token.sub = account.providerAccountId; // Уникальный ID аккаунта Blizzard (Bnet ID)
+        token.sub = account.providerAccountId;
       }
       return token;
     },
@@ -32,121 +31,276 @@ const authOptions: AuthOptions = {
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 export async function POST(request: NextRequest) {
   try {
-    // Получаем переданные из формы имя персонажа и реалм
-    const { characterName, realmSlug } = await request.json();
+    const { characterName, realmSlug, region = "eu" } =
+      await request.json();
 
     if (!characterName || !realmSlug) {
-      return NextResponse.json({ error: "Не указаны имя персонажа или сервер" }, { status: 400 });
+      return NextResponse.json(
+        { error: "Не указаны имя персонажа или реалм." },
+        { status: 400 }
+      );
     }
 
-    // ШАГ 1: Извлекаем сессию и accessToken авторизованного пользователя
     const session = await getServerSession(authOptions);
     const accessToken = (session as any)?.accessToken;
     const bnetAccountId = (session as any)?.user?.id;
 
     if (!session || !accessToken) {
       return NextResponse.json(
-        { error: "Пожалуйста, сначала войдите через Battle.net на сайте!" },
+        {
+          error:
+            "Пожалуйста, сначала войдите через Battle.net на сайте.",
+        },
         { status: 401 }
       );
     }
 
-    // ШАГ 2: Подключаем Blizzard API для проверки владения персонажем
-    // Запрашиваем у Blizzard список всех персонажей, привязанных к этому токену в регионе EU
-    const blizzardProfileRes = await fetch(
-      `https://blizzard.com`,
-      {
-        headers: { Authorization: `Bearer ${accessToken}` },
-      }
-    );
+    /*
+     * 1. Получаем профиль WoW аккаунта через Blizzard API.
+     */
+    const profileUrl =
+      "https://eu.api.blizzard.com/profile/user/wow";
 
-    if (!blizzardProfileRes.ok) {
+    const blizzardResponse = await fetch(profileUrl, {
+      headers: {
+        Authorization: Bearer ${accessToken},
+      },
+      cache: "no-store",
+    });
+
+    if (!blizzardResponse.ok) {
+      const errorText = await blizzardResponse.text();
+
+      console.error(
+        "Blizzard API error:",
+        blizzardResponse.status,
+        errorText
+      );
+
       return NextResponse.json(
-        { error: "Не удалось получить список персонажей от Blizzard. Проверьте права приложения." },
+        {
+          error:
+            "Blizzard API не вернул список персонажей. Проверьте авторизацию Battle.net.",
+        },
         { status: 502 }
       );
     }
 
-    const blizzardData = await blizzardProfileRes.json();
-    
-    // Собираем всех персонажей со всех WoW-аккаунтов этой учетной записи
-    const allCharacters = blizzardData.wow_accounts?.flatMap((acc: any) => acc.characters) || [];
+    const blizzardData = await blizzardResponse.json();
 
-    // ШАГ 3: Сверяем данные формы с реальными данными от Blizzard
-    const isRealOwner = allCharacters.some(
-      (char: any) =>
-        char.name.toLowerCase() === characterName.toLowerCase() &&
-        char.realm.slug === realmSlug.toLowerCase()
+    /*
+     * 2. Собираем персонажей со всех WoW аккаунтов.
+     */
+    const allCharacters =
+      blizzardData.wow_accounts?.flatMap(
+        (account: any) =>
+          account.characters || []
+      ) || [];
+
+    /*
+     * 3. Проверяем, есть ли указанный персонаж
+     *    среди персонажей авторизованного Battle.net аккаунта.
+     */
+    const normalizedName = String(characterName)
+      .trim()
+      .toLowerCase();
+
+    const normalizedRealm = String(realmSlug)
+      .trim()
+      .toLowerCase()
+      .replace(/\s+/g, "-");
+
+    const ownedCharacter = allCharacters.find(
+      (character: any) => {
+        const name = String(character.name || "")
+          .trim()
+          .toLowerCase();
+
+        const realm = String(
+          character.realm?.slug || ""
+        )
+          .trim()
+          .toLowerCase();
+
+        return (
+          name === normalizedName &&
+          realm === normalizedRealm
+        );
+      }
     );
 
-    // Если персонаж не найден в списке от Blizzard — запрещаем верификацию
-    if (!isRealOwner) {
+    if (!ownedCharacter) {
       return NextResponse.json(
-        { error: "Верификация отклонена: персонаж не принадлежит вашему аккаунту" },
+        {
+          error:
+            "Верификация отклонена: этот персонаж не найден среди персонажей вашего Battle.net аккаунта.",
+        },
         { status: 403 }
       );
     }
 
-    // ШАГ 4: Если проверка пройдена, запрашиваем актуальный прогресс с Raider.IO
-    const raiderIoRes = await fetch(
-      `https://raider.io{realmSlug.toLowerCase()}&name=${encodeURIComponent(characterName)}&fields=mythic_plus_scores_by_season:current,raid_progression`
+    /*
+     * 4. Получаем актуальные данные Raider.IO.
+     */
+    const rioParams = new URLSearchParams({
+      region: String(region).toLowerCase(),
+      realm: normalizedRealm,
+      name: String(characterName).trim(),
+      fields:
+        "mythic_plus_scores_by_season:current,gear,raid_progression",
+    });
+      const raiderIoResponse = await fetch(
+      https://raider.io/api/v1/characters/profile?${rioParams.toString()},
+      {
+        cache: "no-store",
+      }
     );
 
-    let rioScore = 0;
-    let characterClass = "Unknown";
-    let activeSpec = "Unknown";
+    if (!raiderIoResponse.ok) {
+      const errorText = await raiderIoResponse.text();
+
+      console.error(
+        "Raider.IO error:",
+        raiderIoResponse.status,
+        errorText
+      );
+
+      return NextResponse.json(
+        {
+          error:
+            "Персонаж подтверждён Battle.net, но данные Raider.IO получить не удалось.",
+        },
+        { status: 502 }
+      );
+    }
+
+    const rioData = await raiderIoResponse.json();
+
+    const score =
+      rioData.mythic_plus_scores_by_season?.[0]?.scores?.all ??
+      null;
+
+    const characterClass =
+      rioData.class?.name ||
+      rioData.class ||
+      "Unknown";
+
+    const activeSpec =
+      rioData.active_spec_name ||
+      "Unknown";
+
     let raidProgress = "No Data";
 
-    if (raiderIoRes.ok) {
-      const rioData = await raiderIoRes.json();
-      characterClass = rioData.class || "Unknown";
-      activeSpec = rioData.active_spec_name || "Unknown";
-      
-      const currentSeasonScores = rioData.mythic_plus_scores_by_season?.scores;
-      rioScore = currentSeasonScores?.all ? Math.round(currentSeasonScores.all) : 0;
-        if (rioData.raid_progression) {
-        const latestRaidKey = Object.keys(rioData.raid_progression)[0];
-        if (latestRaidKey) {
-          raidProgress = rioData.raid_progression[latestRaidKey].summary || "No Data";
-        }
+    if (rioData.raid_progression) {
+      const raidKeys = Object.keys(
+        rioData.raid_progression
+      );
+
+      const latestRaidKey =
+        raidKeys[raidKeys.length - 1];
+
+      if (latestRaidKey) {
+        raidProgress =
+          rioData.raid_progression[latestRaidKey]
+            ?.summary || "No Data";
       }
     }
 
-    // ШАГ 5: Сохраняем проверенного игрока в Supabase с флагом is_verified = true
-    const { data: profile, error: supabaseError } = await supabase
-      .from("players")
-      .upsert({
-        bnet_id: bnetAccountId,
-        character_name: characterName,
-        realm: realmSlug,
-        class: characterClass,
-        spec: activeSpec,
-        mplus_score: rioScore,
+    /*
+     * 5. Сохраняем в СУЩЕСТВУЮЩУЮ таблицу
+     *    player_verifications.
+     *
+     *    Ничего не переносим в новую таблицу players.
+     */
+    const payload = {
+      player_name: rioData.name || characterName,
+      realm:
+        rioData.realm?.name ||
+        realmSlug,
+      region: String(
+        rioData.region?.name ||
+          region
+      ).toUpperCase(),
+      mythic_plus_score: score,
+      source: "raider.io",
+      source_verified: true,
+      raw_data: {
+        ...rioData,
+        gamepro_bnet_id: bnetAccountId,
+        verified_by: "battle.net",
+        character_class: characterClass,
+        active_spec: activeSpec,
         raid_progress: raidProgress,
-        is_verified: true, // Устанавливаем статус VERIFIED железобетонно
-        updated_at: new Date().toISOString(),
-      }, { onConflict: "bnet_id" }) 
+      },
+    };
+
+    const { data, error } = await supabase
+      .from("player_verifications")
+      .upsert(payload, {
+        onConflict:
+          "player_name,realm",
+      })
       .select()
       .single();
 
-    if (supabaseError) {
-      console.error("Supabase Error:", supabaseError);
-      return NextResponse.json({ error: "Ошибка сохранения в базу данных" }, { status: 500 });
+    if (error) {
+      console.error(
+        "Supabase Error:",
+        error
+      );
+
+      return NextResponse.json(
+        {
+          error:
+            "Battle.net и Raider.IO проверку прошли, но сохранить данные в Supabase не удалось.",
+        },
+        { status: 500 }
+      );
     }
 
-    // Возвращаем фронтенду подтвержденный профиль
+    /*
+     * 6. Возвращаем результат фронтенду.
+     */
     return NextResponse.json({
       success: true,
-      message: "Персонаж успешно верифицирован через Battle.net!",
-      player: profile
+      verified: true,
+      message:
+        "Персонаж успешно подтверждён через Battle.net.",
+      player: data,
+      character: {
+        name:
+          rioData.name ||
+          characterName,
+        realm:
+          rioData.realm?.name ||
+          realmSlug,
+        region: String(
+          rioData.region?.name ||
+            region
+        ).toUpperCase(),
+        class: characterClass,
+        spec: activeSpec,
+        mythicPlusScore: score,
+        raidProgress,
+      },
     });
-
   } catch (error) {
-    console.error("Critical Route Error:", error);
-    return NextResponse.json({ error: "Внутренняя ошибка сервера" }, { status: 500 });
+    console.error(
+      "Critical verify-player error:",
+      error
+    );
+
+    return NextResponse.json(
+      {
+        error:
+          "Внутренняя ошибка сервера при проверке игрока.",
+      },
+      { status: 500 }
+    );
   }
 }
