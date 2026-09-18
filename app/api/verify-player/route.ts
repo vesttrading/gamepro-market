@@ -86,7 +86,7 @@ export async function POST(request: NextRequest) {
     // Если персонаж не найден в списке от Blizzard — запрещаем верификацию
     if (!isRealOwner) {
       return NextResponse.json(
-        { error: Верификация отклонена: персонаж ${characterName}-${realmSlug} не принадлежит вашей учетной записи Battle.net! },
+        { error: "Верификация отклонена: персонаж не принадлежит вашему аккаунту" },
         { status: 403 }
       );
     }
