@@ -129,12 +129,11 @@ export default function HomePage() {
     ["🔥","FireMage","Fire Mage · EU","2710","AOTC"]
   ].filter(x => !q || x.join(" ").toLowerCase().includes(q.toLowerCase()));
 
- const sharePassport = async () => {
-    const mainDomain = "https://gamepr-market.vercel.app";
-    const url = ${mainDomain}/players/${verifiedId || "vladimir"};
+  const sharePassport = async () => {
+    const url = typeof window !== "undefined" ? window.location.href + "#passport" : "";
     try {
-      if (navigator.share) await navigator.share({ title: "GamePro Achievement Passport", url });
-      else { await navigator.clipboard.writeText(url); setCopied(true); setTimeout(() => setCopied(false), 2000); }
+      if (navigator.share) await navigator.share({ title:"GamePro Achievement Passport", url });
+      else { await navigator.clipboard.writeText(url); setCopied(true); setTimeout(()=>setCopied(false),2200); }
     } catch {}
   };
 
