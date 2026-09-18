@@ -22,7 +22,7 @@ export default function GuildApplicationPage() {
     }
     setGuildLoading(true); setGuildStatus("");
     try {
-      const response = await fetch(${process.env.NEXT_PUBLIC_SUPABASE_URL}/rest/v1/guild_applications, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_SUPABASE_URL}/rest/v1/guild_applications`, {
         method: "POST",
         headers: {
           apikey: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
