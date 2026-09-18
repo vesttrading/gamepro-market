@@ -28,7 +28,7 @@ export default function GuildApplicationPage() {
           apikey: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
           Authorization: Bearer ${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!},
           "Content-Type": "application/json",
-          Prefer: "return=minimal"
+          "Prefer": "return=minimal"
         },
         body: JSON.stringify({
           guild_name: guildName,
