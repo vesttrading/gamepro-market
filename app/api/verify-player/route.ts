@@ -1,7 +1,7 @@
 import { NextRequest } from "next/server";
 import { getServerSession } from "next-auth/next";
-import BattleNetProvider from "next-auth"/providers/battlenet";
 import { createClient } from "@supabase/supabase-js";
+
 
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
