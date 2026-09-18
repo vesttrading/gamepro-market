@@ -1,10 +1,9 @@
-import { NextRequest } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { getServerSession } from "next-auth/next";
 import { createClient } from "@supabase/supabase-js";
 import BattleNetProvider from "next-auth/providers/battlenet";
 import { AuthOptions } from "next-auth";
 
-// Переносим настройки прямо сюда, чтобы не зависеть от путей импорта
 const authOptions: AuthOptions = {
   providers: [
     BattleNetProvider({
@@ -34,8 +33,17 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 
 export async function POST(request: NextRequest) {
   try {
-    // Теперь authOptions доступен локально в этом файле!
     const session = await getServerSession(authOptions);
     
     if (!session || !(session as any).accessToken) {
-      // ваш дальнейший код проверки сессии...
+      return NextResponse.json({ error: "Не авторизован" }, { status: 401 });
+    }
+
+    // Если у вас тут была логика работы с Supabase — можете вернуть её сюда.
+    // Пока оставляем базовый рабочий ответ для успешной сборки:
+    return NextResponse.json({ success: true, message: "Сессия проверена" });
+
+  } catch (error) {
+    return NextResponse.json({ error: "Ошибка сервера" }, { status: 500 });
+  }
+}
