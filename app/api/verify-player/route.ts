@@ -151,11 +151,10 @@ export async function POST(request: NextRequest) {
       region: String(region).toLowerCase(),
       realm: normalizedRealm,
       name: String(characterName).trim(),
-      fields:
-        "mythic_plus_scores_by_season:current,gear,raid_progression",
+      fields: ["mythic_plus_scores_by_season:current,gear,raid_progression"],
     });
       const raiderIoResponse = await fetch(
-      https://raider.io/api/v1/characters/profile?${rioParams.toString()},
+      `https://raider.io/api/v1/characters/profile?${rioParams.toString()}`,
       {
         cache: "no-store",
       }
