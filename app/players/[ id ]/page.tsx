@@ -30,7 +30,7 @@ export default async function PlayerProfilePage({ params }: PlayerPageProps) {
         
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "24px" }}>
           <div>
-            <span style={{ fontSize: "12px", color: "#00b4d8", fontWeight: "bold", trackingLetter: "1px", textTransform: "uppercase" }}>
+            <span style={{ fontSize: "12px", color: "#00b4d8", fontWeight: "bold", textTransform: "uppercase", letterSpacing: "1px" }}>
               GAMEPRO ACHIEVEMENT PASSPORT
             </span>
             <h1 style={{ fontSize: "32px", margin: "8px 0 4px 0", fontWeight: "bold" }}>
