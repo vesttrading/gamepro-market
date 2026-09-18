@@ -147,12 +147,13 @@ export async function POST(request: NextRequest) {
     /*
      * 4. Получаем актуальные данные Raider.IO.
      */
-    const rioParams = new URLSearchParams({
-      region: String(region).toLowerCase(),
-      realm: normalizedRealm,
-      name: String(characterName).trim(),
-      fields: ["mythic_plus_scores_by_season:current,gear,raid_progression"],
-    });
+   const rioParams = new URLSearchParams({
+  region: String(region).toLowerCase(),
+  realm: normalizedRealm,
+  name: String(characterName).trim(),
+  // Объединяем массив в одну строку через запятую:
+  fields: ["mythic_plus_scores_by_season:current", "gear", "raid_progression"].join(','),
+});
       const raiderIoResponse = await fetch(
       `https://raider.io/api/v1/characters/profile?${rioParams.toString()}`,
       {
