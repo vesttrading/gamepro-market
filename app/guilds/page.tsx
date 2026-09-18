@@ -16,7 +16,7 @@ export default function GuildApplicationPage() {
 
   const handleGuildSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!guildName  !guildRealm  !guildDiscord) {
+    if (!guildName || !guildRealm || !guildDiscord) {
       setGuildStatus("❌ Заполните обязательные поля: Название, Реалм и Discord.");
       return;
     }
