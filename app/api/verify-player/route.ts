@@ -93,7 +93,7 @@ export async function POST(request: NextRequest) {
 
     // ШАГ 4: Если проверка пройдена, запрашиваем актуальный прогресс с Raider.IO
     const raiderIoRes = await fetch(
-      https://raider.io{realmSlug.toLowerCase()}&name=${encodeURIComponent(characterName)}&fields=mythic_plus_scores_by_season:current,raid_progression
+      `https://raider.io{realmSlug.toLowerCase()}&name=${encodeURIComponent(characterName)}&fields=mythic_plus_scores_by_season:current,raid_progression`
     );
 
     let rioScore = 0;
@@ -106,7 +106,7 @@ export async function POST(request: NextRequest) {
       characterClass = rioData.class || "Unknown";
       activeSpec = rioData.active_spec_name || "Unknown";
       
-      const currentSeasonScores = rioData.mythic_plus_scores_by_season?.[0]?.scores;
+      const currentSeasonScores = rioData.mythic_plus_scores_by_season?.scores;
       rioScore = currentSeasonScores?.all ? Math.round(currentSeasonScores.all) : 0;
         if (rioData.raid_progression) {
         const latestRaidKey = Object.keys(rioData.raid_progression)[0];
