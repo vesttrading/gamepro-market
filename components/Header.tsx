@@ -68,7 +68,7 @@ export default function Header({ lang, setLang, t }: HeaderProps) {
           <a href="#reviews" style={{ color: "#bdc4da" }}>
             {t.reviews}
           </a>
-          <a href="#guilds" style={{ color: "#bdc4da" }}>
+          <a href="guilds" style={{ color: "#bdc4da" }}>
             {t.guilds}
           </a>
         </div>
