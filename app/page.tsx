@@ -2,7 +2,6 @@
 import Header from "../components/Header";
 import { useState } from "react";
 import { signIn,signOut } from "next-auth/react";
-import Link from "next/link";
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
@@ -131,7 +130,7 @@ export default function HomePage() {
   ].filter(x => !q || x.join(" ").toLowerCase().includes(q.toLowerCase()));
 
  const sharePassport = async () => {
-    const mainDomain = "https://vercel.app";
+    const mainDomain = "https://gamepr-market.vercel.app";
     const url = ${mainDomain}/players/${verifiedId || "vladimir"};
     try {
       if (navigator.share) await navigator.share({ title: "GamePro Achievement Passport", url });
