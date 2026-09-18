@@ -58,9 +58,9 @@ export async function POST(request: NextRequest) {
     // ШАГ 2: Подключаем Blizzard API для проверки владения персонажем
     // Запрашиваем у Blizzard список всех персонажей, привязанных к этому токену в регионе EU
     const blizzardProfileRes = await fetch(
-      https://blizzard.com,
+      `https://blizzard.com`,
       {
-        headers: { Authorization: Bearer ${accessToken} },
+        headers: { Authorization: `Bearer ${accessToken}` },
       }
     );
 
