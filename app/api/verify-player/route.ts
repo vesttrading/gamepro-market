@@ -68,7 +68,7 @@ export async function POST(request: NextRequest) {
 
     const blizzardResponse = await fetch(profileUrl, {
       headers: {
-        Authorization: Bearer ${accessToken},
+        Authorization: `Bearer ${accessToken}`,
       },
       cache: "no-store",
     });
