@@ -304,8 +304,6 @@ export default function HomePage() {
 
       <section id="reviews" style={{maxWidth:1160,width:"92%",margin:"auto",padding:"60px 0"}}><h2 style={{textAlign:"center",fontSize:36}}>{t.reviews}</h2><p style={{textAlign:"center",color:"#9da6c0"}}>GamePro — доверие, подтверждённое игроками.</p><div className="reviewGrid" style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:16,marginTop:25}}>{[["⭐ 4.9/5",t.gameproRating,"★★★★★"],["💬",t.playerReviews,"«Удобно показать прогресс и быстро найти подходящую команду.»"],["✓ VERIFIED",t.verifiedReviews,"«Наконец понятно, какие достижения действительно подтверждены.»"]].map(x=><div key={x[1]} style={card}><div style={{fontSize:25,fontWeight:900}}>{x[0]}</div><h3>{x[1]}</h3><p style={{color:"#9da6c0",lineHeight:1.6,marginBottom:0}}>{x[2]}</p></div>)}</div></section>
 
-<section id="guilds" style={{maxWidth:1160,width:"92%",margin:"auto",padding:"40px 0 80px"}}><div style={{...card,textAlign:"center",borderColor:"#17bcb2",background:"radial-gradient(circle at 50% 0,#0c3335,transparent 60%),linear-gradient(145deg,#10162b,#080d1b)"}}><div style={{fontSize:35}}>👥</div><h2 style={{fontSize:34}}>{t.guild}</h2><p style={{maxWidth:700,margin:"0 auto 24px",color:"#9da6c0",lineHeight:1.7}}>{t.guildText}</p><a href="#players" style={btn}>{t.open}</a></div></section>
-
       <section style={{maxWidth:760,width:"92%",margin:"auto",padding:"0 0 80px",textAlign:"center"}}><h2>{t.shareTitle}</h2><p style={{color:"#9da6c0"}}>{t.passportLink}: Vladimir · 2850 M+ · CE · VERIFIED</p><button onClick={sharePassport} style={btn}>🔗 {copied ? t.copied : t.share}</button></section>
     </main>
 
