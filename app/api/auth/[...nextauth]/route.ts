@@ -32,9 +32,10 @@ const handler = NextAuth({
       
       return token;
     },
-    async session({ session, token }) {
+  async session({ session, token }) {
       // Если токен вернул ошибку просроченности, сигнализируем фронтенду
       if (token.error) {
+        // @ts-ignore
         session.error = token.error;
       }
       return session;
