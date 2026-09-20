@@ -14,11 +14,11 @@ const handler = NextAuth({
 
   secret: process.env.NEXTAUTH_SECRET,
 
-  session: {
+session: {
     strategy: "jwt",
   },
 
-  debug: false,
+  debug: true,
 });
 
 export { handler as GET, handler as POST };
