@@ -24,21 +24,12 @@ const handler = NextAuth({
         token.expiresAt = account.expires_at;
       }
 
-      if (
-        token.expiresAt &&
-        Date.now() > (token.expiresAt as number) * 1000
-      ) {
-        token.error = "RefreshAccessTokenError";
-      }
-
       return token;
     },
 
     async session({ session, token }) {
-      if (token.error) {
-        // @ts-ignore
-        session.error = token.error;
-      }
+      // @ts-ignore
+      session.accessToken = token.accessToken;
 
       return session;
     },
