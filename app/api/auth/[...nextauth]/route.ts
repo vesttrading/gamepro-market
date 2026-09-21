@@ -1,5 +1,6 @@
 import NextAuth from "next-auth";
 import BattleNetProvider from "next-auth/providers/battlenet";
+export const dynamic = "force-dynamic";
 
 const handler = NextAuth({
   providers: [
