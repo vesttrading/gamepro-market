@@ -251,7 +251,7 @@ if (!battlenetId) {
   };
 
   return <div style={{minHeight:"100vh",background:"radial-gradient(circle at 80% 0,#28105b 0,transparent 34%),radial-gradient(circle at 15% 35%,#073c42 0,transparent 25%),#050713",color:"#f7f8ff",fontFamily:"Arial,sans-serif"}}>
-  <Header lang={lang} setLang={setLang} t={{...t, register: t.register || "Регистрация"}} />
+    <Header lang={lang} setLang={setLang} t={Object.assign({}, t, { register: "Регистрация" }) as any} />
     <main>
       <section style={{maxWidth:1000,width:"92%",margin:"auto",textAlign:"center",padding:"62px 0 50px"}}>
         <span style={{color:"#72fff4",border:"1px solid #168f88",background:"#0b292b",padding:"8px 13px",borderRadius:99,fontSize:12,fontWeight:800}}>🏆 ACHIEVEMENT PASSPORT</span>
