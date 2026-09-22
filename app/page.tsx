@@ -195,7 +195,14 @@ export default function HomePage() {
     setSupabaseSaving(true); setSupabaseStatus("");
     try {
       const score = rioData.mythic_plus_scores_by_season?.[0]?.scores?.all ?? null;
+      const battlenetId = (session as any)?.battlenetId;
+
+if (!battlenetId) {
+  setSupabaseStatus("Сначала войди через Battle.net.");
+  return;
+}
       const payload = {
+        battlenet_id: battlenetId,
         player_name: rioData.name,
         realm: rioData.realm?.name || rioRealm,
         region: String(rioData.region?.name || rioRegion).toUpperCase(),
