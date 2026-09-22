@@ -126,6 +126,13 @@ export default function HomePage() {
   const [verifiedId,setVerifiedId] = useState<string>("");
   const [verifying,setVerifying] = useState(false);
   const t=L[lang];
+  const headerT = {
+  how: t.how,
+  players: t.players,
+  reviews: t.reviews,
+  register: t.register,
+  guilds: t.guilds,
+};
 
   const players=[
     ["🛡️","PlayerOne","Holy Paladin · EU","2920","CE"],
@@ -244,7 +251,7 @@ if (!battlenetId) {
   };
 
   return <div style={{minHeight:"100vh",background:"radial-gradient(circle at 80% 0,#28105b 0,transparent 34%),radial-gradient(circle at 15% 35%,#073c42 0,transparent 25%),#050713",color:"#f7f8ff",fontFamily:"Arial,sans-serif"}}>
-  <Header lang={lang} setLang={setLang} t={t} />
+  <Header lang={lang} setLang={setLang} t={headerT} />
     <main>
       <section style={{maxWidth:1000,width:"92%",margin:"auto",textAlign:"center",padding:"62px 0 50px"}}>
         <span style={{color:"#72fff4",border:"1px solid #168f88",background:"#0b292b",padding:"8px 13px",borderRadius:99,fontSize:12,fontWeight:800}}>🏆 ACHIEVEMENT PASSPORT</span>
