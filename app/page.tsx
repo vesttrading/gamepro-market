@@ -202,12 +202,13 @@ if (!battlenetId) {
   return;
 }
     const payload = {
-  battlenet_id: battlenetId,
-  character_name: rioData.name,
-  realm: rioData.realm?.name || rioRealm,
-  region: String(rioData.region?.name || rioRegion).toUpperCase(),
-  mythic_plus_score: score,
-  is_cerified: false
+        player_name: rioData.name,
+        realm: rioData.realm?.name || rioRealm,
+        region: String(rioData.region?.name || rioRegion).toUpperCase(),
+        mythic_plus_score: score,
+        source: "raider.io",
+        source_verified: false,
+        raw_data: rioData
 };
       const response = await fetch(`${SUPABASE_URL}/rest/v1/player_verifications`, {
         method: "POST",
