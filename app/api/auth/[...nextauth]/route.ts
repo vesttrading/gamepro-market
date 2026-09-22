@@ -22,6 +22,7 @@ const handler = NextAuth({
       if (account) {
         token.accessToken = account.access_token;
         token.expiresAt = account.expires_at;
+        token.battlenetId = account.providerAccountId;
 
         try {
           const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -54,12 +55,15 @@ const handler = NextAuth({
       return token;
     },
 
-    async session({ session, token }) {
-      // @ts-ignore
-      session.accessToken = token.accessToken;
+   async session({ session, token }) {
+  // @ts-ignore
+  session.accessToken = token.accessToken;
 
-      return session;
-    },
+  // @ts-ignore
+  session.battlenetId = token.battlenetId;
+
+  return session;
+   },
   },
 });
 
