@@ -30,7 +30,7 @@ const handler = NextAuth({
 
         if (supabaseUrl && supabaseKey && account.providerAccountId) {
           await fetch(
-            ${supabaseUrl}/rest/v1/gamepro_users?on_conflict=battlenet_id,
+            `${supabaseUrl}/rest/v1/gamepro_users?on_conflict=battlenet_id`, 
             {
               method: "POST",
               headers: {
