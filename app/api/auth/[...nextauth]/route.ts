@@ -61,4 +61,4 @@ const handler = NextAuth({
 
     return session;
   },
-},
+}
