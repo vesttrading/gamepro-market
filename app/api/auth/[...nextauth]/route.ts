@@ -34,10 +34,10 @@ const handler = NextAuth({
             {
               method: "POST",
               headers: {
-                apikey: supabaseKey,
-                Authorization: Bearer ${supabaseKey},
+                "apikey": supabaseKey,
+                "Authorization": `Bearer ${supabaseKey}`,
                 "Content-Type": "application/json",
-                Prefer: "resolution=merge-duplicates,return=minimal",
+                "Prefer": "resolution=merge-duplicates,return=minimal",
               },
               body: JSON.stringify({
                 battlenet_id: account.providerAccountId,
