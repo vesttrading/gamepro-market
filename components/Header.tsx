@@ -6,10 +6,11 @@ type HeaderProps = {
   lang: Lang;
   setLang: (lang: Lang) => void;
   t: {
-    how: string;
+  how: string;
     players: string;
     reviews: string;
     guilds: string;
+    register: string; // <-- Добавьте эту строку
   };
 };
 
@@ -67,6 +68,9 @@ export default function Header({ lang, setLang, t }: HeaderProps) {
           </a>
           <a href="#reviews" style={{ color: "#bdc4da" }}>
             {t.reviews}
+          </a>
+          <a href="#register" style={{ color: "#bdc4da" }}>
+            {t.register}
           </a>
           <a href="guilds" style={{ color: "#bdc4da" }}>
             {t.guilds}
