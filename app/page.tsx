@@ -107,8 +107,8 @@ const L = {
 type Lang = keyof typeof L;
 
 export default function HomePage() {
-  const { data: session } = useSession();
-  console.log("GAMEPRO SESSION:", session);
+  const { data: session, status } = useSession();
+  console.log("GAMEPRO SESSION:", session, "STATUS:", status);
   const [lang,setLang] = useState<Lang>("RU");
   const [q,setQ] = useState("");
   const [copied,setCopied] = useState(false);
