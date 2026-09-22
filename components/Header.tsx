@@ -10,7 +10,7 @@ type HeaderProps = {
     players: string;
     reviews: string;
     guilds: string;
-    register: string; // <-- Добавьте эту строку
+    register?: string; // <-- Добавьте эту строку
   };
 };
 
