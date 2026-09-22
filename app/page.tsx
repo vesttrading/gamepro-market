@@ -202,6 +202,7 @@ if (!battlenetId) {
   return;
 }
     const payload = {
+        battlenet_id: battlenetId,
         player_name: rioData.name,
         realm: rioData.realm?.name || rioRealm,
         region: String(rioData.region?.name || rioRegion).toUpperCase(),
