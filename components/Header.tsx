@@ -10,8 +10,7 @@ type HeaderProps = {
     players: string;
     reviews: string;
     guilds: string;
-    register?: string; // <-- Добавьте эту строку
-  };
+    };
 };
 
 export default function Header({ lang, setLang, t }: HeaderProps) {
