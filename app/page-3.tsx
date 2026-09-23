@@ -1,14 +1,14 @@
 "use client";
 import Header from "../components/Header";
 import { useState } from "react";
-import { signIn } from "next-auth/react";
+import { signIn,signOut,useSession } from "next-auth/react";
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
 const L = {
   RU: {
-    games:"Игры", players:"Игроки", guilds:"Гильдии", how:"Как это работает",
+    games:"Игры", players:"Игроки", guilds:"Гильдии", how:"Как это работает", 
     h1:"Докажи свой скилл.", h2:"Покажи свои достижения.",
     intro:"Игровой профиль с подтверждёнными достижениями. Собери свой Achievement Passport и покажи гильдиям и командам, на что ты способен.",
     create:"Создать игровой паспорт", find:"Найти игрока", passport:"Achievement Passport",
@@ -25,7 +25,7 @@ const L = {
     passportLink:"Паспорт игрока", shareTitle:"Твой игровой профиль — одной ссылкой", login:"Войти через Battle.net", reviews:"Отзывы", gameproRating:"Оценка GamePro", playerReviews:"Отзывы игроков", verifiedReviews:"Отзывы о системе VERIFIED"
   },
   EN: {
-    games:"Games", players:"Players", guilds:"Guilds", how:"How it works",
+    games:"Games", players:"Players", guilds:"Guilds", how:"How it works", 
     h1:"Prove your skill.", h2:"Show your achievements.",
     intro:"A gaming profile with verified achievements. Build your Achievement Passport and show guilds and teams what you can do.",
     create:"Create gaming passport", find:"Find a player", passport:"Achievement Passport",
@@ -42,7 +42,7 @@ const L = {
     passportLink:"Player passport", shareTitle:"Your gaming profile — one link", login:"Login with Battle.net", reviews:"Reviews", gameproRating:"GamePro rating", playerReviews:"Player reviews", verifiedReviews:"VERIFIED system reviews"
   },
   TR: {
-    games:"Oyunlar", players:"Oyuncular", guilds:"Loncalar", how:"Nasıl çalışır",
+    games:"Oyunlar", players:"Oyuncular", guilds:"Loncalar", how:"Nasıl çalışır", 
     h1:"Yeteneğini kanıtla.", h2:"Başarılarını göster.",
     intro:"Doğrulanmış başarılarla oyun profili. Achievement Passport'unu oluştur ve yeteneğini loncalara ve takımlara göster.",
     create:"Oyuncu pasaportu oluştur", find:"Oyuncu bul", passport:"Achievement Passport",
@@ -59,7 +59,7 @@ const L = {
     passportLink:"Oyuncu pasaportu", shareTitle:"Oyun profilin — tek bağlantı", login:"Battle.net ile giriş", reviews:"Yorumlar", gameproRating:"GamePro puanı", playerReviews:"Oyuncu yorumları", verifiedReviews:"VERIFIED sistemi yorumları"
   },
   DE: {
-    games:"Spiele", players:"Spieler", guilds:"Gilden", how:"So funktioniert es",
+    games:"Spiele", players:"Spieler", guilds:"Gilden", how:"So funktioniert es", 
     h1:"Beweise dein Können.", h2:"Zeige deine Erfolge.",
     intro:"Gaming-Profil mit verifizierten Erfolgen. Erstelle deinen Achievement Passport und zeige Gilden und Teams, was du kannst.",
     create:"Spielerpass erstellen", find:"Spieler finden", passport:"Achievement Passport",
@@ -76,7 +76,7 @@ const L = {
     passportLink:"Spielerpass", shareTitle:"Dein Gaming-Profil — ein Link", login:"Mit Battle.net einloggen", reviews:"Bewertungen", gameproRating:"GamePro-Bewertung", playerReviews:"Spielerbewertungen", verifiedReviews:"Bewertungen zum VERIFIED-System"
   },
   ES: {
-    games:"Juegos", players:"Jugadores", guilds:"Gremios", how:"Cómo funciona",
+    games:"Juegos", players:"Jugadores", guilds:"Gremios", how:"Cómo funciona", 
     h1:"Demuestra tu habilidad.", h2:"Muestra tus logros.",
     intro:"Perfil gaming con logros verificados. Crea tu Achievement Passport y demuestra a gremios y equipos lo que puedes hacer.",
     create:"Crear pasaporte gamer", find:"Buscar jugador", passport:"Achievement Passport", sub:"No palabras — resultados verificados.", verified:"Perfil verificado", verifiedShort:"VERIFIED",
@@ -85,7 +85,7 @@ const L = {
     current:"Disponible ahora", future:"Próximamente", wow:"World of Warcraft", wowText:"Mythic+, raids y PvP — el primer juego de GamePro.", futureText:"Dota 2, CS2 y Path of Exile 2 están en la hoja de ruta.", source:"Fuente", sourceText:"GamePro compara los datos del juego con fuentes compatibles.", check:"Verificación", checkText:"Los datos se comprueban antes de recibir el estado VERIFIED.", badge:"VERIFIED", badgeText:"Solo los logros verificados reciben la insignia verde.", passportLink:"Pasaporte del jugador", shareTitle:"Tu perfil gaming — un solo enlace", login:"Entrar con Battle.net", reviews:"Opiniones", gameproRating:"Valoración de GamePro", playerReviews:"Opiniones de jugadores", verifiedReviews:"Opiniones sobre el sistema VERIFIED"
   },
   FR: {
-    games:"Jeux", players:"Joueurs", guilds:"Guildes", how:"Comment ça marche",
+    games:"Jeux", players:"Joueurs", guilds:"Guildes", how:"Comment ça marche", 
     h1:"Prouve ton niveau.", h2:"Montre tes accomplissements.",
     intro:"Profil gaming avec accomplissements vérifiés. Crée ton Achievement Passport et montre aux guildes et équipes ce que tu sais faire.",
     create:"Créer mon passeport", find:"Trouver un joueur", passport:"Achievement Passport", sub:"Pas de paroles — des résultats vérifiés.", verified:"Profil vérifié", verifiedShort:"VERIFIED",
@@ -94,7 +94,7 @@ const L = {
     current:"Disponible maintenant", future:"Bientôt", wow:"World of Warcraft", wowText:"Mythic+, raids et PvP — le premier jeu de GamePro.", futureText:"Dota 2, CS2 et Path of Exile 2 sont sur la feuille de route.", source:"Source", sourceText:"GamePro vérifie les données du jeu avec les sources prises en charge.", check:"Vérification", checkText:"Les données sont vérifiées avant l'attribution du statut VERIFIED.", badge:"VERIFIED", badgeText:"Seuls les accomplissements vérifiés obtiennent le badge vert.", passportLink:"Passeport joueur", shareTitle:"Ton profil gaming — un seul lien", login:"Se connecter avec Battle.net", reviews:"Avis", gameproRating:"Note GamePro", playerReviews:"Avis des joueurs", verifiedReviews:"Avis sur le système VERIFIED"
   },
   PL: {
-    games:"Gry", players:"Gracze", guilds:"Gildie", how:"Jak to działa",
+    games:"Gry", players:"Gracze", guilds:"Gildie", how:"Jak to działa", 
     h1:"Udowodnij swój skill.", h2:"Pokaż swoje osiągnięcia.",
     intro:"Profil gracza ze zweryfikowanymi osiągnięciami. Stwórz Achievement Passport i pokaż gildiom oraz drużynom, co potrafisz.",
     create:"Utwórz paszport gracza", find:"Znajdź gracza", passport:"Achievement Passport", sub:"Nie słowa — zweryfikowane wyniki.", verified:"Profil zweryfikowany", verifiedShort:"VERIFIED",
@@ -107,6 +107,10 @@ const L = {
 type Lang = keyof typeof L;
 
 export default function HomePage() {
+  const { data: session, status } = useSession();
+ if (status === "authenticated") {
+  console.log("ПОЛЬЗОВАТЕЛЬ ВОШЁЛ:", session?.user?.name);
+}
   const [lang,setLang] = useState<Lang>("RU");
   const [q,setQ] = useState("");
   const [copied,setCopied] = useState(false);
@@ -122,6 +126,12 @@ export default function HomePage() {
   const [verifiedId,setVerifiedId] = useState<string>("");
   const [verifying,setVerifying] = useState(false);
   const t=L[lang];
+  const headerT = {
+  how: t.how,
+  players: t.players,
+  reviews: t.reviews,
+  guilds: t.guilds,
+};
 
   const players=[
     ["🛡️","PlayerOne","Holy Paladin · EU","2920","CE"],
@@ -191,7 +201,14 @@ export default function HomePage() {
     setSupabaseSaving(true); setSupabaseStatus("");
     try {
       const score = rioData.mythic_plus_scores_by_season?.[0]?.scores?.all ?? null;
-      const payload = {
+      const battlenetId = (session as any)?.battlenetId;
+
+if (!battlenetId) {
+  setSupabaseStatus("Сначала войди через Battle.net.");
+  return;
+}
+    const payload = {
+        battlenet_id: battlenetId,
         player_name: rioData.name,
         realm: rioData.realm?.name || rioRealm,
         region: String(rioData.region?.name || rioRegion).toUpperCase(),
@@ -199,7 +216,7 @@ export default function HomePage() {
         source: "raider.io",
         source_verified: false,
         raw_data: rioData
-      };
+};
       const response = await fetch(`${SUPABASE_URL}/rest/v1/player_verifications`, {
         method: "POST",
         headers: {
@@ -233,13 +250,13 @@ export default function HomePage() {
   };
 
   return <div style={{minHeight:"100vh",background:"radial-gradient(circle at 80% 0,#28105b 0,transparent 34%),radial-gradient(circle at 15% 35%,#073c42 0,transparent 25%),#050713",color:"#f7f8ff",fontFamily:"Arial,sans-serif"}}>
-  <Header lang={lang} setLang={setLang} t={t} />
+   <Header lang={lang} setLang={setLang} t={t} />
     <main>
       <section style={{maxWidth:1000,width:"92%",margin:"auto",textAlign:"center",padding:"62px 0 50px"}}>
         <span style={{color:"#72fff4",border:"1px solid #168f88",background:"#0b292b",padding:"8px 13px",borderRadius:99,fontSize:12,fontWeight:800}}>🏆 ACHIEVEMENT PASSPORT</span>
         <h1 style={{fontSize:"clamp(30px,5vw,55px)",lineHeight:.98,margin:"22px 0 18px"}}>{t.h1}<br/><span style={{background:"linear-gradient(90deg,#fff,#e832ff,#16ddff)",WebkitBackgroundClip:"text",color:"transparent"}}>{t.h2}</span></h1>
         <p style={{maxWidth:690,margin:"auto",color:"#9da6c0",fontSize:18,lineHeight:1.65}}>{t.intro}</p>
-        <div style={{marginTop:28,display:"flex",justifyContent:"center",gap:12,flexWrap:"wrap"}}><button style={btn} onClick={()=>signIn("battlenet",{callbackUrl: "/" })}><span>🎮</span> {t.login}</button></div><div className="achievementRow" style={{marginTop:22,display:"flex",justifyContent:"center",gap:10,flexWrap:"wrap"}}>{["KSM","AOTC","CE","2400+ PvP"].map(x=><span key={x} className="achievementBadge">✓ {x} <b>VERIFIED</b></span>)}</div>
+        <div style={{marginTop:28,display:"flex",justifyContent:"center",gap:12,flexWrap:"wrap"}}><button style={btn} onClick={()=>signIn("battlenet",{callbackUrl:"/"},{prompt:"login"})}><span>🎮</span> {t.login}</button><button style={btn}onClick={()=>signOut({ callbackUrl: "/" })}>Выйти</button></div><div className="achievementRow" style={{marginTop:22,display:"flex",justifyContent:"center",gap:10,flexWrap:"wrap"}}>{["KSM","AOTC","CE","2400+ PvP"].map(x=><span key={x} className="achievementBadge">✓ {x} <b>VERIFIED</b></span>)}</div>
       </section>
 
       <section id="passport" style={{maxWidth:1160,width:"92%",margin:"auto",padding:"80px 0 0px"}}>
