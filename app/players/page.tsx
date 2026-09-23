@@ -1,8 +1,14 @@
  'use client';
 
 import { useEffect, useState } from 'react';
-// Импортируйте ваш готовый клиент Supabase из папки lib
-import { supabase } from '../lib/supabase';
+// Импортируем официальный метод создания клиента напрямую
+import { createClient } from '@supabase/supabase-js'; 
+
+// Инициализируем клиент прямо здесь, используя глобальные переменные окружения Next.js
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+);
 
 interface VerifiedPlayer {
   id: number;
@@ -26,7 +32,6 @@ export default function PlayersSearchPage() {
   const fetchPlayers = async () => {
     setLoading(true);
     try {
-      // Запрос к нашей обновленной таблице
       let query = supabase
         .from('player_verifications')
         .select('id, battlenet_id, character_name, realm, role, class, rating');
@@ -56,7 +61,6 @@ export default function PlayersSearchPage() {
     }
   };
 
-  // Перезапускаем поиск при изменении фильтров
   useEffect(() => {
     fetchPlayers();
   }, [selectedRole, selectedClass, minRating]);
@@ -111,7 +115,7 @@ export default function PlayersSearchPage() {
       </div>
       {/* Список игроков */}
       {loading ? (
-        <div className="text-center py-10 text-slate-400">Загрузка...</div>
+        <div className="text-center py-10 text-slate-400">Загрузка данных...</div>
       ) : players.length === 0 ? (
         <div className="text-center py-10 text-slate-500 border border-dashed border-slate-700 rounded-xl">
           Игроки по заданным критериям не найдены.
