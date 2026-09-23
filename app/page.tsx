@@ -169,7 +169,7 @@ useEffect(() => {
   return [
     icon,                                              // x[0] - Иконка
     p.character_name || "Без имени",                    // x[1] - Никнейм
-    ${p.role || ""} ${p.class || ""} - ${p.realm || "EU"}, // x[2] - Роль, Класс и Сервер
+    `${p.role || ""} ${p.class || ""} - ${p.realm || "EU"}`, // x[2] - Роль, Класс и Сервер
     String(p.rating || 0),                             // x[3] - Рейтинг (переводим число в строку)
     p.source?.toUpperCase() || "VERIFIED"              // x[4] - Источник верификации (например, RAIDER.IO)
   ];
