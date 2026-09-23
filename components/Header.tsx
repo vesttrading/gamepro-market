@@ -10,7 +10,7 @@ type HeaderProps = {
     players: string;
     reviews: string;
     guilds: string;
-    };
+  };
 };
 
 export default function Header({ lang, setLang, t }: HeaderProps) {
@@ -67,6 +67,7 @@ export default function Header({ lang, setLang, t }: HeaderProps) {
           </a>
           <a href="#reviews" style={{ color: "#bdc4da" }}>
             {t.reviews}
+          </a>
           <a href="guilds" style={{ color: "#bdc4da" }}>
             {t.guilds}
           </a>
