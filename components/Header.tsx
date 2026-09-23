@@ -68,13 +68,6 @@ export default function Header({ lang, setLang, t }: HeaderProps) {
           </a>
           <a href="#reviews" style={{ color: "#bdc4da" }}>
             {t.reviews}
-          </a>
-         <a href="#" onClick={(e) => { e.preventDefault();
-            window.location.href = "/api/auth/signin/battlenet";
-          }}
-           style={{ color: "#bdc4da" }}>
-           {t.register}
-         </a>
           <a href="guilds" style={{ color: "#bdc4da" }}>
             {t.guilds}
           </a>
