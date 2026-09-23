@@ -16,7 +16,7 @@ type HeaderProps = {
 
 export default function Header({ lang, setLang, t }: HeaderProps) {
   return (
-    <header
+    <header>
       style={{
         position: "sticky",
         top: 0,
