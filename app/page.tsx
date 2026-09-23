@@ -144,8 +144,7 @@ useEffect(() => {
         if (selectedClass) params.append('class', selectedClass);
         if (minRating) params.append('minRating', minRating);
 
-        // Используем правильные косые кавычки   для интерполяции строки
-        const response = await fetch(/api/players?${params.toString()});
+        const response = await fetch(`/api/players?${params.toString()}`);
         const resData = await response.json();
 
         if (resData.success) {
