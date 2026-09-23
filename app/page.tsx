@@ -1,6 +1,6 @@
 "use client";
 import Header from "../components/Header";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { signIn,signOut,useSession } from "next-auth/react";
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -121,6 +121,10 @@ export default function HomePage() {
   const [rioLoading,setRioLoading] = useState(false);
   const [rioError,setRioError] = useState("");
   const [supabaseSaving,setSupabaseSaving] = useState(false);
+  const [selectedRole, setSelectedRole] = useState("");
+  const [selectedClass, setSelectedClass] = useState("");
+  const [minRating, setMinRating] = useState("");
+  const [dbPlayers, setDbPlayers] = useState<any[]>([]); // Для хранения данных из бэкенда
   const [supabaseStatus,setSupabaseStatus] = useState("");
   const [verified,setVerified] = useState(false);
   const [verifiedId,setVerifiedId] = useState<string>("");
@@ -132,13 +136,44 @@ export default function HomePage() {
   reviews: t.reviews,
   guilds: t.guilds,
 };
+  useEffect(() => {
+    const fetchPlayers = async () => {
+      try {
+        const params = new URLSearchParams();
+        if (selectedRole) params.append('role', selectedRole);
+        if (selectedClass) params.append('class', selectedClass);
+        if (minRating) params.append('minRating', minRating);
 
-  const players=[
-    ["🛡️","PlayerOne","Holy Paladin · EU","2920","CE"],
-    ["🌙","MoonHeal","Restoration Druid · EU","2780","KSM"],
-    ["🔥","FireMage","Fire Mage · EU","2710","AOTC"]
-  ].filter(x => !q || x.join(" ").toLowerCase().includes(q.toLowerCase()));
+        const response = await fetch(/api/players?${params.toString()});
+        const resData = await response.json();
 
+        if (resData.success) {
+          setDbPlayers(resData.data || []);
+        }
+      } catch (err) {
+        console.error("Ошибка при запросе к API игроков:", err);
+      }
+    };
+
+    fetchPlayers();
+  }, [selectedRole, selectedClass, minRating]);
+
+ const players = dbPlayers.map(p => {
+  // 1. Подбираем иконку под класс персонажа
+  let icon = "⚔️"; 
+  if (p.class?.toLowerCase() === "mage") icon = "🧙‍♂️";
+  if (p.class?.toLowerCase() === "paladin") icon = "🛡️";
+  if (p.class?.toLowerCase() === "druid") icon = "🧝‍♀️";
+
+  // 2. Возвращаем массив из 5 элементов, который ожидает ваша верстка
+  return [
+    icon,                                              // x[0] - Иконка
+    p.character_name || "Без имени",                    // x[1] - Никнейм
+    ${p.role || ""} ${p.class || ""} - ${p.realm || "EU"}, // x[2] - Роль, Класс и Сервер
+    String(p.rating || 0),                             // x[3] - Рейтинг (переводим число в строку)
+    p.source?.toUpperCase() || "VERIFIED"              // x[4] - Источник верификации (например, RAIDER.IO)
+  ];
+}).filter(x => !q || x.join(" ").toLowerCase().includes(q.toLowerCase()));
   const sharePassport = async () => {
     const url = typeof window !== "undefined" ? window.location.href + "#passport" : "";
     try {
@@ -258,8 +293,47 @@ if (!battlenetId) {
         <h1 style={{fontSize:"clamp(30px,5vw,55px)",lineHeight:.98,margin:"22px 0 18px"}}>{t.h1}<br/><span style={{background:"linear-gradient(90deg,#fff,#e832ff,#16ddff)",WebkitBackgroundClip:"text",color:"transparent"}}>{t.h2}</span></h1>
         <p style={{maxWidth:690,margin:"auto",color:"#9da6c0",fontSize:18,lineHeight:1.65}}>{t.intro}</p>
         <div style={{marginTop:28,display:"flex",justifyContent:"center",gap:12,flexWrap:"wrap"}}><button style={btn} onClick={()=>signIn("battlenet",{callbackUrl:"/"}, { prompt: "login" })}><span>🎮</span> {t.login}</button><button style={btn} onClick={() => signOut({ callbackUrl: "/" })}>Выйти</button></div><div className="achievementRow" style={{marginTop:22,display:"flex",justifyContent:"center",gap:10,flexWrap:"wrap"}}>{["KSM","AOTC","CE","2400+ PvP"].map(x=><span key={x} className="achievementBadge">✓ {x} <b>VERIFIED</b></span>)}</div>
-      </section>
+       
+        
+        <div style={{ marginTop: 16, display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
+  {/* Выбор роли */}
+  <select
+    value={selectedRole}
+    onChange={(e) => setSelectedRole(e.target.value)}
+    style={{ padding: "8px 12px", background: "#1e293b", border: "1px solid #334155", borderRadius: 8, color: "#fff", fontSize: 14, outline: "none", cursor: "pointer" }}
+  >
+    <option value="">Все роли</option>
+    <option value="Tank">Танк</option>
+    <option value="Healer">Хилер</option>
+    <option value="DPS">ДД (DPS)</option>
+  </select>
 
+  {/* Выбор класса */}
+  <select
+    value={selectedClass}
+    onChange={(e) => setSelectedClass(e.target.value)}
+    style={{ padding: "8px 12px", background: "#1e293b", border: "1px solid #334155", borderRadius: 8, color: "#fff", fontSize: 14, outline: "none", cursor: "pointer" }}
+  >
+    <option value="">Все классы</option>
+    <option value="Mage">Маг</option>
+    <option value="Paladin">Паладин</option>
+    <option value="Druid">Друид</option>
+    <option value="Warrior">Воин</option>
+    <option value="Priest">Жрец</option>
+    <option value="Rogue">Разбойник</option>
+  </select>
+
+  {/* Ввод минимального рейтинга */}
+  <input
+    type="number"
+    placeholder="Мин. рейтинг"
+    value={minRating}
+    onChange={(e) => setMinRating(e.target.value)}
+    style={{ padding: "8px 12px", background: "#1e293b", border: "1px solid #334155", borderRadius: 8, color: "#fff", fontSize: 14, outline: "none", width: 130 }}
+  />
+</div>
+</section>
+     
       <section id="passport" style={{maxWidth:1160,width:"92%",margin:"auto",padding:"80px 0 0px"}}>
         <div className="sectionHead"><div><h2 style={{fontSize:36,marginBottom:8}}>{t.passport}</h2><p style={{color:"#9da6c0",marginTop:0}}>{t.sub}</p></div></div>
         <div className="grid2" style={{display:"grid",gridTemplateColumns:"1.05fr .95fr",gap:20}}>
