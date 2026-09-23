@@ -36,14 +36,14 @@ const handler = NextAuth({
 
           if (supabaseUrl && supabaseKey && account.providerAccountId) {
             await fetch(
-              ${supabaseUrl}/rest/v1/gamepro_users?on_conflict=battlenet_id,
+              `${supabaseUrl}/rest/v1/gamepro_users?on_conflict=battlenet_id`,
               {
                 method: "POST",
                 headers: {
-                  apikey: supabaseKey,
+                  "apikey": supabaseKey,
                   Authorization: Bearer ${supabaseKey},
                   "Content-Type": "application/json",
-                  Prefer: "resolution=merge-duplicates,return=minimal",
+                  "Prefer": "resolution=merge-duplicates,return=minimal",
                 },
                 body: JSON.stringify({
                   battlenet_id: account.providerAccountId,
