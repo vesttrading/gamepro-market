@@ -295,7 +295,7 @@ if (!battlenetId) {
         <div style={{marginTop:28,display:"flex",justifyContent:"center",gap:12,flexWrap:"wrap"}}><button style={btn} onClick={()=>signIn("battlenet",{callbackUrl:"/"}, { prompt: "login" })}><span>🎮</span> {t.login}</button><button style={btn} onClick={() => signOut({ callbackUrl: "/" })}>Выйти</button></div><div className="achievementRow" style={{marginTop:22,display:"flex",justifyContent:"center",gap:10,flexWrap:"wrap"}}>{["KSM","AOTC","CE","2400+ PvP"].map(x=><span key={x} className="achievementBadge">✓ {x} <b>VERIFIED</b></span>)}</div>
        
         
-        <div style={{ marginTop: 16, display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
+        <div style={{ marginTop: 16, display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap", width: "100%" }}>
   {/* Выбор роли */}
   <select
     value={selectedRole}
@@ -329,12 +329,11 @@ if (!battlenetId) {
     placeholder="Мин. рейтинг"
     value={minRating}
     onChange={(e) => setMinRating(e.target.value)}
-    style={{ padding: "8px 12px", background: "#1e293b", border: "1px solid #334155", borderRadius: 8, color: "#fff", fontSize: 14, outline: "none", width: 130 }}
+    style={{ padding: "8px 12px", background: "#1e293b", border: "1px solid #334155", borderRadius: 8, color: "#fff", fontSize: 14, outline: "none", width: 130 }} /></div>
   />
 </div>
-</section>
-     
-      <section id="passport" style={{maxWidth:1160,width:"92%",margin:"auto",padding:"80px 0 0px"}}>
+
+       <section id="passport" style={{maxWidth:1160,width:"92%",margin:"auto",padding:"80px 0 0px"}}>
         <div className="sectionHead"><div><h2 style={{fontSize:36,marginBottom:8}}>{t.passport}</h2><p style={{color:"#9da6c0",marginTop:0}}>{t.sub}</p></div></div>
         <div className="grid2" style={{display:"grid",gridTemplateColumns:"1.05fr .95fr",gap:20}}>
           <div style={card}>
