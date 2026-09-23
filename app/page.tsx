@@ -130,7 +130,6 @@ export default function HomePage() {
   how: t.how,
   players: t.players,
   reviews: t.reviews,
-  register: t.register,
   guilds: t.guilds,
 };
 
