@@ -281,59 +281,89 @@ if (!battlenetId) {
   };
  
   const outline={...btn,background:"transparent",color:"#4de8dd",boxShadow:"none",border:"1px solid #19cfc5"};
-  const card:React.CSSProperties={
-    background:"linear-gradient(145deg,#10162b,#080d1b)",border:"1px solid #262d49",borderRadius:20,padding:25
-  };
+const card: React.CSSProperties = {
+  background: "linear-gradient(145deg, #10162b, #1e293b)", // Ваш градиент
+};
 
-  return; 
-   <div style={{minHeight:"100vh",background:"radial-gradient(circle at 80% 0,#28105b 0,transparent 34%),radial-gradient(circle at 15% 35%,#073c42 0,transparent 25%),#050713",color:"#f7f8ff",fontFamily:"Arial,sans-serif"}}>
-   <Header lang={lang} setLang={setLang} t={t} />
+return (
+  <div style={{ minHeight: "100vh", background: "radial-gradient(circle, #0f172a, #020617)", color: "#fff" }}>
+    <Header lang={lang} setLang={setLang} t={t} />
     <main>
-      <section style={{maxWidth:1000,width:"92%",margin:"auto",textAlign:"center",padding:"62px 0 50px"}}>
-        <span style={{color:"#72fff4",border:"1px solid #168f88",background:"#0b292b",padding:"8px 13px",borderRadius:99,fontSize:12,fontWeight:800}}>🏆 ACHIEVEMENT PASSPORT</span>
-        <h1 style={{fontSize:"clamp(30px,5vw,55px)",lineHeight:.98,margin:"22px 0 18px"}}>{t.h1}<br/><span style={{background:"linear-gradient(90deg,#fff,#e832ff,#16ddff)",WebkitBackgroundClip:"text",color:"transparent"}}>{t.h2}</span></h1>
-        <p style={{maxWidth:690,margin:"auto",color:"#9da6c0",fontSize:18,lineHeight:1.65}}>{t.intro}</p>
-        <div style={{marginTop:28,display:"flex",justifyContent:"center",gap:12,flexWrap:"wrap"}}><button style={btn} onClick={()=>signIn("battlenet",{callbackUrl:"/"}, { prompt: "login" })}><span>🎮</span> {t.login}</button><button style={btn} onClick={() => signOut({ callbackUrl: "/" })}>Выйти</button></div><div className="achievementRow" style={{marginTop:22,display:"flex",justifyContent:"center",gap:10,flexWrap:"wrap"}}>{["KSM","AOTC","CE","2400+ PvP"].map(x=><span key={x} className="achievementBadge">✓ {x} <b>VERIFIED</b></span>)}</div>
-       
+      <section style={{ maxWidth: 1000, width: "92%", margin: "0 auto", padding: "40px 0" }}>
+        <span style={{ color: "#72fff4", border: "1px solid #72fff4", padding: "4px 12px", borderRadius: 20, fontSize: 12 }}>База данных</span>
+        <h1 style={{ fontSize: "clamp(30px, 5vw, 55px)", fontWeight: "bold", marginTop: 16 }}>{t.title}</h1>
+        <p style={{ maxWidth: 690, margin: "auto", color: "#94a3b8" }}>{t.subtitle}</p>
         
-        <div style={{ marginTop: 16, display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap", width: "100%" }}>
-  {/* Выбор роли */}
-  <select
-    value={selectedRole}
-    onChange={(e) => setSelectedRole(e.target.value)}
-    style={{ padding: "8px 12px", background: "#1e293b", border: "1px solid #334155", borderRadius: 8, color: "#fff", fontSize: 14, outline: "none", cursor: "pointer" }}
-  >
-    <option value="">Все роли</option>
-    <option value="Tank">Танк</option>
-    <option value="Healer">Хилер</option>
-    <option value="DPS">ДД (DPS)</option>
-  </select>
+        {/* Контейнер для фильтров */}
+        <div style={{ marginTop: 28, display: "flex", gap: 16, flexWrap: "wrap" }}>
+          
+          {/* Выбор роли */}
+          <div style={{ marginTop: 16, display: "flex", flexDirection: "column", gap: 6 }}>
+            <select
+              value={selectedRole}
+              onChange={(e) => setSelectedRole(e.target.value)}
+              style={{ padding: "8px 12px", background: "#1e293b", border: "1px solid #334155", borderRadius: 8, color: "#fff" }}
+            >
+              <option value="">Все роли</option>
+              <option value="Tank">Танк</option>
+              <option value="Healer">Хилер</option>
+              <option value="DPS">ДД (DPS)</option>
+            </select>
+          </div>
 
-  {/* Выбор класса */}
-  <select
-    value={selectedClass}
-    onChange={(e) => setSelectedClass(e.target.value)}
-    style={{ padding: "8px 12px", background: "#1e293b", border: "1px solid #334155", borderRadius: 8, color: "#fff", fontSize: 14, outline: "none", cursor: "pointer" }}
-  >
-    <option value="">Все классы</option>
-    <option value="Mage">Маг</option>
-    <option value="Paladin">Паладин</option>
-    <option value="Druid">Друид</option>
-    <option value="Warrior">Воин</option>
-    <option value="Priest">Жрец</option>
-    <option value="Rogue">Разбойник</option>
-  </select>
+          {/* Выбор класса */}
+          <div style={{ marginTop: 16, display: "flex", flexDirection: "column", gap: 6 }}>
+            <select
+              value={selectedClass}
+              onChange={(e) => setSelectedClass(e.target.value)}
+              style={{ padding: "8px 12px", background: "#1e293b", border: "1px solid #334155", borderRadius: 8, color: "#fff" }}
+            >
+              <option value="">Все классы</option>
+              <option value="Mage">Маг</option>
+              <option value="Paladin">Паладин</option>
+              <option value="Druid">Друид</option>
+              <option value="Warrior">Воин</option>
+              <option value="Priest">Жрец</option>
+              <option value="Rogue">Разбойник</option>
+            </select>
+          </div>
 
-  {/* Ввод минимального рейтинга */}
-  <input
-    type="number"
-    placeholder="Мин. рейтинг"
-    value={minRating}
-    onChange={(e) => setMinRating(e.target.value)}
-    style={{ padding: "8px 12px", background: "#1e293b", border: "1px solid #334155", borderRadius: 8, color: "#fff", fontSize: 14, outline: "none", width: 130 }} /></div>
-   />
- </div>
-</section>
+          {/* Ввод минимального рейтинга */}
+          <div style={{ marginTop: 16, display: "flex", flexDirection: "column", gap: 6 }}>
+            <input
+              type="number"
+              placeholder="Мин. рейтинг"
+              value={minRating}
+              onChange={(e) => setMinRating(e.target.value)}
+              style={{ padding: "8px 12px", background: "#1e293b", border: "1px solid #334155", borderRadius: 8, color: "#fff" }}
+            />
+          </div>
+
+        </div>
+      </section>
+
+      {/* Секция паспорта / списка игроков */}
+      <section id="passport" style={{ maxWidth: 1160, margin: "0 auto", padding: "0 20px" }}>
+        <div className="sectionHead">
+          <div>
+            <h2 style={{ fontSize: 24, fontWeight: "bold" }}>{t.playersTitle}</h2>
+          </div>
+        </div>
+        
+        <div className="grid2" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 20, marginTop: 24 }}>
+          {/* Ниже пойдет ваш маппинг карточек */}
+          <div style={card}>
+            <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+              <div className="stats" style={{ display: "flex", flexDirection: "column" }}>
+                {/* Содержимое карточки */}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+);
 
        <section id="passport" style={{maxWidth:1160,width:"92%",margin:"auto",padding:"80px 0 0px"}}>
         <div className="sectionHead"><div><h2 style={{fontSize:36,marginBottom:8}}>{t.passport}</h2><p style={{color:"#9da6c0",marginTop:0}}>{t.sub}</p></div></div>
