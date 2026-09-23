@@ -330,8 +330,9 @@ if (!battlenetId) {
     value={minRating}
     onChange={(e) => setMinRating(e.target.value)}
     style={{ padding: "8px 12px", background: "#1e293b", border: "1px solid #334155", borderRadius: 8, color: "#fff", fontSize: 14, outline: "none", width: 130 }} /></div>
-  />
-</div>
+   />
+ </div>
+</section>
 
        <section id="passport" style={{maxWidth:1160,width:"92%",margin:"auto",padding:"80px 0 0px"}}>
         <div className="sectionHead"><div><h2 style={{fontSize:36,marginBottom:8}}>{t.passport}</h2><p style={{color:"#9da6c0",marginTop:0}}>{t.sub}</p></div></div>
