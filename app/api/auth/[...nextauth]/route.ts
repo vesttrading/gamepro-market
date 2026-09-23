@@ -2,19 +2,30 @@ import NextAuth from "next-auth";
 import BattleNetProvider from "next-auth/providers/battlenet";
 
 const handler = NextAuth({
-  providers: [
-BattleNetProvider({
-  clientId: process.env.BATTLE_NET_CLIENT_ID!,
-  clientSecret: process.env.BATTLE_NET_CLIENT_SECRET!,
-  issuer: "https://eu.battle.net/oauth",
-  checks: ["state", "pkce", "nonce"],
-  authorization: {
-    params: {
-      prompt: "login",
+providers: [
+    BattleNetProvider({
+      clientId: process.env.BATTLE_NET_CLIENT_ID!,
+      clientSecret: process.env.BATTLE_NET_CLIENT_SECRET!,
+      issuer: "https://eu.battle.net/oauth",
+      checks: ["state", "pkce", "nonce"],
+      authorization: { params: { prompt: "login", scope: "wow.profile openid" } }
+    }),
+  ],
+  // ДОБАВЬТЕ ЭТОТ БЛОК КОДА:
+  callbacks: {
+    async jwt({ token, account }) {
+      // Сохраняем токен от Blizzard внутрь JWT-сессии сайта
+      if (account) {
+        token.accessToken = account.access_token;
+      }
+      return token;
     },
-   },
- }),
-],
+    async session({ session, token }: any) {
+      // Прокидываем токен на фронтенд, чтобы его видел клиентский код
+      session.accessToken = token.accessToken;
+      return session;
+    }
+  }
 
   secret: process.env.NEXTAUTH_SECRET,
 
