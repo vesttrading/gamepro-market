@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 // Импортируйте ваш готовый клиент Supabase из папки lib
-import { supabase } from '@/lib/supabase'; 
+import { supabase } from '../lib/supabase';
 
 interface VerifiedPlayer {
   id: number;
