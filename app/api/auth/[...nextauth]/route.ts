@@ -12,8 +12,9 @@ const handler = NextAuth({
     params: {
       prompt: "login",
     },
-  },
-}),
+   },
+ }),
+],
 
   secret: process.env.NEXTAUTH_SECRET,
 
