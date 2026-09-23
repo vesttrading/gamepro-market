@@ -136,7 +136,7 @@ export default function HomePage() {
   reviews: t.reviews,
   guilds: t.guilds,
 };
-  useEffect(() => {
+useEffect(() => {
     const fetchPlayers = async () => {
       try {
         const params = new URLSearchParams();
@@ -144,6 +144,7 @@ export default function HomePage() {
         if (selectedClass) params.append('class', selectedClass);
         if (minRating) params.append('minRating', minRating);
 
+        // Используем правильные косые кавычки   для интерполяции строки
         const response = await fetch(/api/players?${params.toString()});
         const resData = await response.json();
 
