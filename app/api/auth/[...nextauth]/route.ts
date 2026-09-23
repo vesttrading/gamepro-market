@@ -25,10 +25,9 @@ providers: [
       session.accessToken = token.accessToken;
       return session;
     }
-  }
+  },
 
   secret: process.env.NEXTAUTH_SECRET,
-
   session: {
     strategy: "jwt",
   },
