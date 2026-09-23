@@ -8,12 +8,7 @@ const handler = NextAuth({
   clientSecret: process.env.BATTLE_NET_CLIENT_SECRET!,
   issuer: "https://eu.battle.net/oauth",
   checks: ["state", "pkce", "nonce"],
-  authorization: {
-    params: {
-      prompt: "login",
-    },
-   },
- }),
+  }),
 ],
 
   secret: process.env.NEXTAUTH_SECRET,
