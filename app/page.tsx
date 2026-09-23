@@ -244,7 +244,7 @@ if (!battlenetId) {
     background:"linear-gradient(135deg,#18e0d1,#12bfb6)",color:"#021312",fontWeight:900,border:0,cursor:"pointer",
     textDecoration:"none",boxShadow:"0 0 30px #16d8cf38",transition:"transform .2s,box-shadow .2s"
   };
-  const outline={...btn,background:"transparent",color:"#4de8dd",boxShadow:"none",border:"1px solid #19cfc5"};
+  const outline={...btn,background:"transparent"};color:"#4de8dd",boxShadow:"none",border:"1px solid #19cfc5"};
   const card:React.CSSProperties={
     background:"linear-gradient(145deg,#10162b,#080d1b)",border:"1px solid #262d49",borderRadius:20,padding:25
   };
