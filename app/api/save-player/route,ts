@@ -9,6 +9,7 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
+    console.log("ПОЛУЧЕННЫЙ BODY:", body);
     const { playerName, realm, region, score, isVerified, rawData } = body;
 
     // Проверяем, что фронтенд прислал обязательные текстовые поля
