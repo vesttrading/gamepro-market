@@ -245,13 +245,16 @@ if (!battlenetId) {
 }
     console.log(rioData);
   
-    const payload = {
+ const payload = {
   battlenet_id: battlenetId,
   player_name: rioData.name,
   realm: rioRealm,
   region: String(rioData.region?.name || rioRegion).toUpperCase(),
-  role: rioData.role || null,
-  class: rioData.class?.name || null,
+  
+  // Исправленные строки для роли и класса:
+  role: rioData.active_spec_role || null,
+  class: rioData.class || null,
+  
   rating: Math.round(score),
   mythic_plus_score: Math.round(score),
   source: "raider.io",
