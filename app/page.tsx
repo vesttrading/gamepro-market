@@ -265,7 +265,7 @@ useEffect(() => {
       const checkResponse = await fetch(`${SUPABASE_URL}/rest/v1/player_verifications?player_name=eq.${nameParam}&realm=eq.${realmParam}&select=id`, { headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` } });
          headers: {
            apikey: SUPABASE_KEY, 
-             Authorization: `Bearer ${SUPABASE_KEY}` }
+             Authorization: `Bearer ${SUPABASE_KEY}` 
         }
       );
 
