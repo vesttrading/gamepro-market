@@ -168,9 +168,9 @@ useEffect(() => {
   // 2. Возвращаем массив из 5 элементов, который ожидает ваша верстка
   return [
     icon,                                              // x[0] - Иконка
-    p.character_name || "Без имени",                    // x[1] - Никнейм
+    p.player_name || p.character_name || "Без имени",                    // x[1] - Никнейм
     `${p.role || ""} ${p.class || ""} - ${p.realm || "EU"}`, // x[2] - Роль, Класс и Сервер
-    String(p.rating || 0),                             // x[3] - Рейтинг (переводим число в строку)
+    String(p.mythic_plus_score || 0),                             // x[3] - Рейтинг (переводим число в строку)
     p.source?.toUpperCase() || "VERIFIED"              // x[4] - Источник верификации (например, RAIDER.IO)
   ];
 }).filter(x => !q || x.join(" ").toLowerCase().includes(q.toLowerCase()));
