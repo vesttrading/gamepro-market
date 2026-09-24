@@ -159,7 +159,7 @@ useEffect(() => {
   }, [selectedRole, selectedClass, minRating]);
 
  const players = dbPlayers.map(p => {
-   console.log("PLAYER FROM SUPABASE:", p);
+   console.log("PLAYER NAME:", p.character_name, "REALM:", p.realm);
   // 1. Подбираем иконку под класс персонажа
   let icon = "⚔️"; 
   if (p.class?.toLowerCase() === "mage") icon = "🧙‍♂️";
