@@ -242,7 +242,7 @@ if (!battlenetId) {
   setSupabaseStatus("Сначала войди через Battle.net.");
   return;
 }
-      console.log("RAIDER DATA:", rioData);
+      console.log("RAIDER NAME:", rioData?.name, "REALM:", rioData?.realm?.name);
   
       const payload = {
         battlenet_id: battlenetId,
