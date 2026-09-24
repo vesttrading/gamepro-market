@@ -218,7 +218,7 @@ export async function POST(request: NextRequest) {
      *    Ничего не переносим в новую таблицу players.
      */
     const payload = {
-      player_name: rioData.name || characterName,
+      character_name: rioData.name || characterName,
       realm:
         rioData.realm?.name ||
         realmSlug,
@@ -243,7 +243,7 @@ export async function POST(request: NextRequest) {
       .from("player_verifications")
       .upsert(payload, {
         onConflict:
-          "player_name,realm",
+          "character_name,realm",
       })
       .select()
       .single();
