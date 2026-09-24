@@ -258,7 +258,7 @@ if (!battlenetId) {
   source_verified: false,
   raw_data: rioData
 };
-    const response = await fetch(${SUPABASE_URL}/rest/v1/player_verifications, {
+    const response = await fetch(`${SUPABASE_URL}/rest/v1/player_verifications`, {
       method: "POST",
       headers: {
         apikey: SUPABASE_KEY,
