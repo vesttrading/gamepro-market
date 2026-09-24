@@ -258,53 +258,67 @@ useEffect(() => {
         raw_data: rioData
       };
 
-      const nameParam = encodeURIComponent(rioData.name);
-      const realmParam = encodeURIComponent(rioRealm);
+    const nameParam = encodeURIComponent(rioData.name);
+const realmParam = encodeURIComponent(rioRealm);
 
-      // 1. Проверяем, существует ли уже такой игрок
-      const checkResponse = await fetch(`${SUPABASE_URL}/rest/v1/player_verifications?player_name=eq.${nameParam}&realm=eq.${realmParam}&select=id`, { headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` } });
-         headers: {
-           apikey: SUPABASE_KEY, 
-             Authorization: `Bearer ${SUPABASE_KEY}` 
-        }
-      );
+// 1. Проверяем, существует ли уже такой игрок
+const checkResponse = await fetch(
+  `${SUPABASE_URL}/rest/v1/player_verifications?player_name=eq.${nameParam}&realm=eq.${realmParam}&select=id`,
+  {
+    headers: {
+      apikey: SUPABASE_KEY,
+      Authorization: `Bearer ${SUPABASE_KEY}`
+    }
+  }
+);
 
-      if (!checkResponse.ok) throw new Error("Не удалось проверить наличие игрока в базе.");
-      const existingRows = await checkResponse.json();
+if (!checkResponse.ok) {
+  throw new Error("Не удалось проверить наличие игрока в базе.");
+}
 
-      let response;
+const existingRows = await checkResponse.json();
 
-      if (existingRows && existingRows.length > 0) {
-        // 2. Игрок найден -> Обновляем его (PATCH) по его id
-        const existingId = existingRows[0].id;
-        response = await fetch(${SUPABASE_URL}/rest/v1/player_verifications?id=eq.${existingId}, {
-          method: "PATCH",
-          headers: {
-            apikey: SUPABASE_KEY,
-            Authorization: Bearer ${SUPABASE_KEY},
-            "Content-Type": "application/json",
-            "Prefer": "return=minimal"
-          },
-          body: JSON.stringify(payload)
-        });
-      } else {
-        // 3. Игрока нет -> Создаем новую запись (POST)
-        response = await fetch(${SUPABASE_URL}/rest/v1/player_verifications, {
-          method: "POST",
-          headers: {
-            apikey: SUPABASE_KEY,
-            Authorization: Bearer ${SUPABASE_KEY},
-            "Content-Type": "application/json",
-            "Prefer": "return=minimal"
-          },
-          body: JSON.stringify(payload)
-        });
-      }
+let response;
 
-      if (!response.ok) {
-        const text = await response.text();
-        throw new Error(text || "Supabase не принял данные.");
-      }
+if (existingRows && existingRows.length > 0) {
+  // Игрок уже есть → обновляем существующую запись
+  const existingId = existingRows[0].id;
+
+  response = await fetch(
+    `${SUPABASE_URL}/rest/v1/player_verifications?id=eq.${existingId}`,
+    {
+      method: "PATCH",
+      headers: {
+        apikey: SUPABASE_KEY,
+        Authorization: `Bearer ${SUPABASE_KEY}`,
+        "Content-Type": "application/json",
+        "Prefer": "return=minimal"
+      },
+      body: JSON.stringify(payload)
+    }
+  );
+}
+  else {
+  // Игрока нет → создаём новую запись
+  response = await fetch(
+    `${SUPABASE_URL}/rest/v1/player_verifications`,
+    {
+      method: "POST",
+      headers: {
+        apikey: SUPABASE_KEY,
+        Authorization: `Bearer ${SUPABASE_KEY}`,
+        "Content-Type": "application/json",
+        "Prefer": "return=minimal"
+      },
+      body: JSON.stringify(payload)
+    }
+  );
+}
+
+if (!response.ok) {
+  const text = await response.text();
+  throw new Error(text || "Supabase не принял данные.");
+}
 
       setSupabaseStatus("✓ Данные сохранены в Supabase. Пока это DATA FOUND, не VERIFIED.");
     }
