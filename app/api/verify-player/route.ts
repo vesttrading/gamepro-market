@@ -36,7 +36,7 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 
 export async function POST(request: NextRequest) {
   try {
-    const { characterName, realmSlug, region = "eu" } =
+    const { playerName: characterName, realmSlug, region = "eu" } =
       await request.json();
 
     if (!characterName || !realmSlug) {
