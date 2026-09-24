@@ -258,16 +258,17 @@ if (!battlenetId) {
   source_verified: false,
   raw_data: rioData
 };
-     const response = await fetch(${SUPABASE_URL}/rest/v1/player_verifications, {
-        method: "POST",
-        headers: {
-          apikey: SUPABASE_KEY,
-          Authorization: Bearer ${SUPABASE_KEY},
-          "Content-Type": "application/json",
-          Prefer: "return=minimal"
-        },
-        body: JSON.stringify(payload)
-      });
+    const response = await fetch(${SUPABASE_URL}/rest/v1/player_verifications, {
+      method: "POST",
+      headers: {
+        apikey: SUPABASE_KEY,
+        Authorization: Bearer ${SUPABASE_KEY},
+        "Content-Type": "application/json",
+        "Prefer": "return=minimal,resolution=merge",
+        "On-Conflict": "player_name,realm"
+      },
+      body: JSON.stringify(payload)
+    });
     
       if (!response.ok) {
         const text = await response.text();
