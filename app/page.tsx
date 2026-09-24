@@ -262,8 +262,7 @@ useEffect(() => {
       const realmParam = encodeURIComponent(rioRealm);
 
       // 1. Проверяем, существует ли уже такой игрок
-      const checkResponse = await fetch(
-        ${SUPABASE_URL}/rest/v1/player_verifications?player_name=eq.${nameParam}&realm=eq.${realmParam}&select=id,
+      const checkResponse = await fetch(`${SUPABASE_URL}/rest/v1/player_verifications?player_name=eq.${nameParam}&realm=eq.${realmParam}&select=id`, { headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` } });
         {
           headers: { apikey: SUPABASE_KEY, Authorization: Bearer ${SUPABASE_KEY} }
         }
