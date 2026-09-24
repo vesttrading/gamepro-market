@@ -24,7 +24,7 @@ export async function POST(request: NextRequest) {
       .from("player_verifications")
       .insert([
         {
-          player_name: playerName,
+          character_name: playerName,
           realm: realm,
           region: region.toLowerCase(),
           mythic_plus_score: score || 0,
