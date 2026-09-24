@@ -217,8 +217,10 @@ export async function POST(request: NextRequest) {
      *
      *    Ничего не переносим в новую таблицу players.
      */
-    const payload = {
-      character_name: rioData.name || characterName,
+  const payload = {
+  character_name: rioData.name || characterName,
+  player_name: rioData.name || characterName, // Добавьте эту строчку прямо сюда!
+  // ... ваши остальные поля (realm, region и т.д.)
       realm:
         rioData.realm?.name ||
         realmSlug,
