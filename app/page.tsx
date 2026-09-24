@@ -327,8 +327,7 @@ try {
     } finally {
       setSupabaseSaving(false);
     }
-  };
-
+  
   const btn:React.CSSProperties={
     display:"inline-flex",alignItems:"center",justifyContent:"center",gap:8,padding:"10px 20px",borderRadius:12,
     background:"linear-gradient(135deg,#18e0d1,#12bfb6)",color:"#021312",fontWeight:900,border:0,cursor:"pointer",
