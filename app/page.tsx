@@ -259,12 +259,12 @@ if (!battlenetId) {
   raw_data: rioData
 };
     const response = await fetch(`${SUPABASE_URL}/rest/v1/player_verifications`, {
-      method: "RUT",
+      method: "POST",
       headers: {
         apikey: SUPABASE_KEY,
         Authorization: `Bearer ${SUPABASE_KEY}`,
         "Content-Type": "application/json",
-        "Prefer": "return=minimal",
+        "Prefer": "resolution=megre-dublicates",
         "On-Conflict": "player_name,realm"
       },
       body: JSON.stringify(payload)
