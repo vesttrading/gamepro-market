@@ -247,7 +247,7 @@ if (!battlenetId) {
       const payload = {
         battlenet_id: battlenetId,
         player_name: rioData.name,
-        realm: rioData.realm?.name || rioRealm,
+        realm: rioRealm,
         region: String(rioData.region?.name || rioRegion).toUpperCase(),
         mythic_plus_score: score,
         source: "raider.io",
