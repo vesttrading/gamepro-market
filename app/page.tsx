@@ -262,7 +262,7 @@ if (!battlenetId) {
       method: "POST",
       headers: {
         apikey: SUPABASE_KEY,
-        Authorization: Bearer ${SUPABASE_KEY},
+        Authorization: `Bearer ${SUPABASE_KEY}`,
         "Content-Type": "application/json",
         "Prefer": "return=minimal,resolution=merge",
         "On-Conflict": "player_name,realm"
