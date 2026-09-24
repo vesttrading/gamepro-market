@@ -315,13 +315,13 @@ if (existingRows && existingRows.length > 0) {
   );
 }
 
-if (!response.ok) {
-  const text = await response.text();
-  throw new Error(text || "Supabase не принял данные.");
+try {
+  if (!response.ok) {
+    const text = await response.text();
+    throw new Error(text || "Supabase не принял данные.");
 }
 
       setSupabaseStatus("✓ Данные сохранены в Supabase. Пока это DATA FOUND, не VERIFIED.");
-    }
     } catch (error) {
       setSupabaseStatus(error instanceof Error ? `Ошибка Supabase: ${error.message}` : "Не удалось сохранить данные.");
     } finally {
