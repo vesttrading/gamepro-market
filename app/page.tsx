@@ -245,15 +245,18 @@ if (!battlenetId) {
 }
       console.log("RAIDER NAME:", rioData?.name, "REALM:", rioData?.realm?.name);
   
-      const payload = {
-        battlenet_id: battlenetId,
-        player_name: rioData.name,
-        realm: rioRealm,
-        region: String(rioData.region?.name || rioRegion).toUpperCase(),
-        mythic_plus_score: score,
-        source: "raider.io",
-        source_verified: false,
-        raw_data: rioData
+    const payload = {
+  battlenet_id: battlenetId,
+  player_name: rioData.name,
+  realm: rioRealm,
+  region: String(rioData.region?.name || rioRegion).toUpperCase(),
+  role: rioData.role || null,
+  class: rioData.class?.name  rioData.class  null,
+  rating: score,
+  mythic_plus_score: score,
+  source: "raider.io",
+  source_verified: false,
+  raw_data: rioData
 };
       const response = await fetch(`${SUPABASE_URL}/rest/v1/player_verifications`, {
         method: "POST",
