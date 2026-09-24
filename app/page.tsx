@@ -159,7 +159,6 @@ useEffect(() => {
   }, [selectedRole, selectedClass, minRating]);
 
  const players = dbPlayers.map(p => {
-   console.log("PLAYER NAME:", p.character_name, "REALM:", p.realm);
   // 1. Подбираем иконку под класс персонажа
   let icon = "⚔️"; 
   if (p.class?.toLowerCase() === "mage") icon = "🧙‍♂️";
@@ -169,9 +168,9 @@ useEffect(() => {
   // 2. Возвращаем массив из 5 элементов, который ожидает ваша верстка
   return [
     icon,                                              // x[0] - Иконка
-    p.player_name || p.character_name || "Без имени",                    // x[1] - Никнейм
+    p.character_name || "Без имени",                    // x[1] - Никнейм
     `${p.role || ""} ${p.class || ""} - ${p.realm || "EU"}`, // x[2] - Роль, Класс и Сервер
-    String(p.mythic_plus_score || 0),                             // x[3] - Рейтинг (переводим число в строку)
+    String(p.rating || 0),                             // x[3] - Рейтинг (переводим число в строку)
     p.source?.toUpperCase() || "VERIFIED"              // x[4] - Источник верификации (например, RAIDER.IO)
   ];
 }).filter(x => !q || x.join(" ").toLowerCase().includes(q.toLowerCase()));
@@ -235,100 +234,46 @@ useEffect(() => {
       return;
     }
     setSupabaseSaving(true); setSupabaseStatus("");
-  try {
+    try {
       const score = rioData.mythic_plus_scores_by_season?.[0]?.scores?.all ?? null;
       const battlenetId = (session as any)?.battlenetId;
 
-      if (!battlenetId) {
-        setSupabaseStatus("Сначала войди через Battle.net.");
-        return;
-      }
-
-      const payload = {
+if (!battlenetId) {
+  setSupabaseStatus("Сначала войди через Battle.net.");
+  return;
+}
+    const payload = {
         battlenet_id: battlenetId,
         player_name: rioData.name,
-        realm: rioRealm,
+        realm: rioData.realm?.name || rioRealm,
         region: String(rioData.region?.name || rioRegion).toUpperCase(),
-        role: rioData.active_spec_role || null,
-        class: rioData.class || null,
-        rating: Math.round(score),
-        mythic_plus_score: Math.round(score),
+        mythic_plus_score: score,
         source: "raider.io",
         source_verified: false,
         raw_data: rioData
-      };
-
-    const nameParam = encodeURIComponent(rioData.name);
-const realmParam = encodeURIComponent(rioRealm);
-
-// 1. Проверяем, существует ли уже такой игрок
-const checkResponse = await fetch(
-  `${SUPABASE_URL}/rest/v1/player_verifications?player_name=eq.${nameParam}&realm=eq.${realmParam}&select=id`,
-  {
-    headers: {
-      apikey: SUPABASE_KEY,
-      Authorization: `Bearer ${SUPABASE_KEY}`
-    }
-  }
-);
-
-if (!checkResponse.ok) {
-  throw new Error("Не удалось проверить наличие игрока в базе.");
-}
-
-const existingRows = await checkResponse.json();
-
-let response;
-
-if (existingRows && existingRows.length > 0) {
-  // Игрок уже есть → обновляем существующую запись
-  const existingId = existingRows[0].id;
-
-  response = await fetch(
-    `${SUPABASE_URL}/rest/v1/player_verifications?id=eq.${existingId}`,
-    {
-      method: "PATCH",
-      headers: {
-        apikey: SUPABASE_KEY,
-        Authorization: `Bearer ${SUPABASE_KEY}`,
-        "Content-Type": "application/json",
-        "Prefer": "return=minimal"
-      },
-      body: JSON.stringify(payload)
-    }
-  );
-}
-  else {
-  // Игрока нет → создаём новую запись
-  response = await fetch(
-    `${SUPABASE_URL}/rest/v1/player_verifications`,
-    {
-      method: "POST",
-      headers: {
-        apikey: SUPABASE_KEY,
-        Authorization: `Bearer ${SUPABASE_KEY}`,
-        "Content-Type": "application/json",
-        "Prefer": "return=minimal"
-      },
-      body: JSON.stringify(payload)
-    }
-  );
-}
-
-try {
-  if (!response.ok)
-  {
-    const text = await response.text();
-    throw new Error(text || "Supabase не принял данные.");
-  }
-
+};
+      const response = await fetch(`${SUPABASE_URL}/rest/v1/player_verifications`, {
+        method: "POST",
+        headers: {
+          apikey: SUPABASE_KEY,
+          Authorization: `Bearer ${SUPABASE_KEY}`,
+          "Content-Type": "application/json",
+          Prefer: "return=minimal"
+        },
+        body: JSON.stringify(payload)
+      });
+      if (!response.ok) {
+        const text = await response.text();
+        throw new Error(text || "Supabase не принял данные.");
+      }
       setSupabaseStatus("✓ Данные сохранены в Supabase. Пока это DATA FOUND, не VERIFIED.");
     } catch (error) {
       setSupabaseStatus(error instanceof Error ? `Ошибка Supabase: ${error.message}` : "Не удалось сохранить данные.");
     } finally {
       setSupabaseSaving(false);
     }
-  
+  };
+
   const btn:React.CSSProperties={
     display:"inline-flex",alignItems:"center",justifyContent:"center",gap:8,padding:"10px 20px",borderRadius:12,
     background:"linear-gradient(135deg,#18e0d1,#12bfb6)",color:"#021312",fontWeight:900,border:0,cursor:"pointer",
@@ -457,9 +402,6 @@ try {
     <footer style={{borderTop:"1px solid #171c31",padding:28,color:"#737c98"}}><div className="footer" style={{maxWidth:1160,width:"92%",margin:"auto",display:"flex",justifyContent:"space-between",gap:15}}><span>© 2026 GamePro Market</span><span>Achievement Passport · WoW MVP · Dota 2 · CS2 · PoE2</span></div></footer>
 
     <style jsx>{`a,button{font-family:inherit}      .navlinks a:hover{color:#58eee5!important}.navlinks a:active,.navlinks a:focus-visible{color:#58eee5!important;text-shadow:0 0 14px #19e0d5}.achievementBadge{display:inline-flex;align-items:center;gap:6px;padding:9px 12px;border:1px solid #1c8f82;border-radius:999px;background:#0a1d24;color:#52eee3;font-size:12px;font-weight:900;box-shadow:0 0 16px #16d8cf18}.achievementBadge b{font-size:9px;color:#8afff7}.achievementBadge:active{box-shadow:0 0 24px #16d8cfaa,0 0 50px #16d8cf55;transform:translateY(1px)}button:active,a:active{box-shadow:0 0 28px #16d8cfaa,0 0 60px #16d8cf44!important;transform:translateY(1px)}button:focus-visible,select:focus-visible,a:focus-visible{outline:2px solid #19e0d5;outline-offset:3px;box-shadow:0 0 24px #16d8cf88}.reviewGrid{}
-    .navlinks a{text-decoration:none;transition:color .2s}.navlinks a:hover{color:#58eee5!important}.sectionHead,.gameHeader{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:25px}.verifiedPill,.status{display:inline-flex;padding:7px 10px;border-radius:999px;background:#0c302f;color:#52eee3;border:1px solid #168f88;font-size:11px;font-weight:900}.futureStatus{display:inline-flex;padding:6px 9px;border-radius:999px;background:#171d31;color:#8994af;font-size:10px;font-weight:800}.greenTag{background:#0d2929;padding:7px;border-radius:7px;color:#45e0a1;font-size:11px;border:1px solid #174f49}\n      @media(max-width:900px){.navlinks{display:none!important}.grid2,.cards,.steps,.gameGrid,.reviewGrid{grid-template-columns:1fr!important}.gameGrid>div{min-height:0}.sectionHead,.gameHeader{align-items:flex-start;flex-direction:column}.sectionHead button{width:100%}}\n      @media(max-width:700px){.rioForm{grid-template-columns:1fr!important}.rioForm button{width:100%}}
+.navlinks a{text-decoration:none;transition:color .2s}.navlinks a:hover{color:#58eee5!important}.sectionHead,.gameHeader{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:25px}.verifiedPill,.status{display:inline-flex;padding:7px 10px;border-radius:999px;background:#0c302f;color:#52eee3;border:1px solid #168f88;font-size:11px;font-weight:900}.futureStatus{display:inline-flex;padding:6px 9px;border-radius:999px;background:#171d31;color:#8994af;font-size:10px;font-weight:800}.greenTag{background:#0d2929;padding:7px;border-radius:7px;color:#45e0a1;font-size:11px;border:1px solid #174f49}\n      @media(max-width:900px){.navlinks{display:none!important}.grid2,.cards,.steps,.gameGrid,.reviewGrid{grid-template-columns:1fr!important}.gameGrid>div{min-height:0}.sectionHead,.gameHeader{align-items:flex-start;flex-direction:column}.sectionHead button{width:100%}}\n      @media(max-width:700px){.rioForm{grid-template-columns:1fr!important}.rioForm button{width:100%}}
       @media(max-width:560px){.nav{min-height:68px}.nav select{margin-left:auto}.stats{grid-template-columns:1fr!important}.badges{grid-template-columns:1fr!important}.searchbar{flex-direction:column}.searchbar button{width:100%}.footer{display:block!important;text-align:center}.footer span{display:block;margin:7px 0}.hero{} }`}</style> </div>;
-  }
- 
-
-
+}
