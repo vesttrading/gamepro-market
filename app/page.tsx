@@ -251,7 +251,7 @@ if (!battlenetId) {
   realm: rioRealm,
   region: String(rioData.region?.name || rioRegion).toUpperCase(),
   role: rioData.role || null,
-  class: rioData.class?.name  rioData.class  null,
+  class: rioData.class?.name || null,
   rating: score,
   mythic_plus_score: score,
   source: "raider.io",
