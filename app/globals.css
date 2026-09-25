@@ -489,6 +489,7 @@ section#reviews p {
     justify-content: center !important;
     gap: 14px !important;              /* Увеличиваем расстояние между текстом и кнопкой */
     width: 100% !important;
+    border: 1px solid #19cfc5 !important;
 }
 
 /* Увеличиваем заголовок */
