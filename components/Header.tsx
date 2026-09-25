@@ -10,6 +10,7 @@ type HeaderProps = {
     players: string;
     reviews: string;
     guilds: string;
+    contact: string;
   };
 };
 
