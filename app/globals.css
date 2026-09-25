@@ -466,87 +466,29 @@ section#reviews p {
    ТВОЙ ИГРОВОЙ ПРОФИЛЬ
    ========================= */
 
-#passport {
-    width: 100% !important;
+.game-profile-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 24px;
+  border-radius: 12px;
+  background: #00e5ff;
+  color: #050713;
+  border: 1px solid #00e5ff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 16px;
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.25);
+  transition: all 0.2s ease;
 }
 
-#passport .profileShare,
-#passport .sharePassport,
-#passport [class*="share"] {
-    width: 100% !important;
-    max-width: 1160px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    margin-top: 50px !important;
+.game-profile-link:hover {
+  background: transparent;
+  color: #00e5ff;
+  border: 1px solid #00e5ff;
+  box-shadow: 0 0 25px rgba(0, 229, 255, 0.45);
+  transform: translateY(-2px);
 }
-
-/* Полное обновление и увеличение блока профиля */
-#passport .profileShare,
-[class*="profileShare"] {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 14px !important;
-    width: 100% !important;
-    max-width: 480px !important;
-    margin: 0 auto !important;
-    border: 2px solid #00d2ff !important;
-    border-radius: 16px !important;
-    padding: 24px !important;
-}
-
-/* Увеличиваем заголовок */
-#passport .profileShare h2,
-[class*="profileShare"] h2 {
-    margin: 0 0 0px 0 !important;
-    font-size: 45px !important;        /* Сделали заголовок огромным и солидным */
-    text-align: center !important;
-}
-
-/* Увеличиваем подзаголовки/описание */
-#passport .profileShare p,
-[class*="profileShare"] p {
-    font-size: 18px !important;        /* Сделали текст описания крупнее */
-    margin: 30 !important;
-    text-align: center !important;
-}
-
-/* Увеличиваем бирюзовую кнопку */
-#passport .profileShare button,
-[class*="profileShare"] button,
-#passport .profileShare a,
-[class*="profileShare"] a {
-    font-size: 14px !important;        /* Крупный читаемый текст на кнопке */
-    padding: 8px 16px !important;     /* Сделали саму кнопку массивной и широкой */
-    font-weight: 600 !important;
-    display: inline-block !important;
-}
-
-/* Увеличиваем заголовок внутри финального блока профиля */
-main > section:last-of-type h2,
-main > div:last-child h2,
-section:last-of-type h2 {
-    font-size: 34px !important;
-}
-
-/* Увеличиваем кнопку внутри финального блока профиля */
-main > section:last-of-type button,
-main > div:last-child button,
-section:last-of-type button,
-main > section:last-of-type a,
-section:last-of-type a {
-    font-size: 15px !important;
-    padding: 10px 24px !important;
-}
-
-/* Принудительный сдвиг заголовка h2 вниз или урезание его внешнего поля */
-main h2, 
-div[class*="jsx-"] h2,
-#passport h2 {
-    margin-bottom: -8px !important;
-}
-
        /* КОНТАКТЫ */
 .contact-box {
   max-width: 600px;
