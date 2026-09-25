@@ -489,6 +489,13 @@ section#reviews p {
     justify-content: center !important;
     gap: 14px !important;              
     width: 100% !important;
+}
+
+#passport {
+    border: 2px solid #00CED1 !important; /* Создает бирюзовую рамку толщиной 2px */
+    border-radius: 12px !important;       /* Опционально: скругляет углы рамки, чтобы выглядело аккуратно */
+    box-sizing: border-box !important;    /* Гарантирует, что рамка не "разожмет" размеры блока */
+}
 
     /* ИЗМЕНИТЕ И ДОБАВЬТЕ ЭТИ СТРОКИ: */
     border: 2px solid #00d2ff !important;       /* Делаем рамку толще (2px) и ярче */
@@ -510,14 +517,6 @@ section#reviews p {
     font-size: 18px !important;        /* Сделали текст описания крупнее */
     margin: 30 !important;
     text-align: center !important;
-}
-
-/* Увеличиваем бирюзовую кнопку */
-#passport .profileShare button,
-[class*="profileShare"] button,
-#passport .profileShare a,
-[class*="profileShare"] a {
-    display: inline-block !important;
 }
 
 /* Увеличиваем бирюзовую кнопку */
@@ -555,7 +554,7 @@ div[class*="jsx-"] h2,
     margin-bottom: -8px !important;
 }
 
-/* КОНТАКТЫ */
+       /* КОНТАКТЫ */
 .contact-box {
   max-width: 600px;
   width: 90%;
