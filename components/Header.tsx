@@ -6,7 +6,7 @@ type HeaderProps = {
   lang: Lang;
   setLang: (lang: Lang) => void;
   t: {
-  how: string;
+    how: string;
     players: string;
     reviews: string;
     guilds: string;
@@ -16,7 +16,7 @@ type HeaderProps = {
 
 export default function Header({ lang, setLang, t }: HeaderProps) {
   return (
-    <header 
+    <header
       style={{
         position: "sticky",
         top: 0,
@@ -48,7 +48,11 @@ export default function Header({ lang, setLang, t }: HeaderProps) {
             flexShrink: 0,
           }}
         >
-         <img src="/gamepro-logo.png" alt="GamePro Market" style={{ height: "45px", width: "auto" }} />
+          <img
+            src="/gamepro-logo.png"
+            alt="GamePro Market"
+            style={{ height: "45px", width: "auto" }}
+          />
         </a>
 
         <div
@@ -75,8 +79,9 @@ export default function Header({ lang, setLang, t }: HeaderProps) {
           <a href="#contact" style={{ color: "#bdc4da" }}>
             {t.contact}
           </a>
-       
-          <div
+        </div>
+
+        <div
           className="language"
           style={{
             display: "flex",
