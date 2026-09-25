@@ -465,7 +465,14 @@ section#reviews p {
 /* =========================
    ТВОЙ ИГРОВОЙ ПРОФИЛЬ
    ========================= */
-  .game-profile-link {
+ .game-profile-box {
+  border: 2px solid #00e5ff;
+  border-radius: 20px;
+  padding: 25px;
+  background: #080d1b;
+}
+
+.game-profile-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -478,13 +485,8 @@ section#reviews p {
   font-size: 16px;
   border: 2px solid #00e5ff;
 }
-
-.game-profile-link:hover {
-  background: #050713;
-  color: #00e5ff;
-  border: 2px solid #00e5ff;
-}
-       /* КОНТАКТЫ */
+     
+     /* КОНТАКТЫ */
 .contact-box {
   max-width: 600px;
   width: 90%;
