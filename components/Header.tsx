@@ -75,8 +75,7 @@ export default function Header({ lang, setLang, t }: HeaderProps) {
            </a>
         </div>
 
-        <div
-          className="language"
+         className="language"
           style={{
             display: "flex",
             alignItems: "center",
