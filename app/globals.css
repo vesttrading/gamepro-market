@@ -552,12 +552,12 @@ div[class*="jsx-"] h2,
 
 /* КОНТАКТЫ */
 .contact-box {
-  max-width: 1160px;
-  width: 92%;
+  max-width: 600px;
+  width: 90%;
   margin: 0 auto 70px;
   padding: 22px;
   background: #000000;
-  border: none;
+  border: 1px solid #262d49;
   border-radius: 16px;
   text-align: center;
 }
