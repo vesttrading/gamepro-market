@@ -70,11 +70,12 @@ export default function Header({ lang, setLang, t }: HeaderProps) {
           </a>
           <a href="#guilds" style={{ color: "#bdc4da" }}>
             {t.guilds}
+          </a>
           <a href="#contact" style={{ color: "#bdc4da" }}>
             {t.contact}
-           </a>
+          </a>
        
-           <div
+          <div
           className="language"
           style={{
             display: "flex",
