@@ -556,8 +556,8 @@ div[class*="jsx-"] h2,
   width: 92%;
   margin: 0 auto 70px;
   padding: 22px;
-  background: #111a2e;
-  border: 1px solid #1b2645;
+  background: #000000;
+  border: none;
   border-radius: 16px;
   text-align: center;
 }
