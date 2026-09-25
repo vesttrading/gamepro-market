@@ -402,10 +402,10 @@ if (!battlenetId) {
       <section style={{maxWidth:760,width:"92%",margin:"auto",padding:"0 0 80px",textAlign:"center"}}><h2>{t.shareTitle}</h2><p style={{color:"#9da6c0"}}>{t.passportLink}: Vladimir · 2850 M+ · CE · VERIFIED</p><button onClick={sharePassport} style={btn}>🔗 {copied ? t.copied : t.share}</button></section>
     </main>
 
-    <section id="contact" style={{maxWidth:1160,width:"92%",margin:"0 auto 50px"}}>
+    <section id="contact" style={{maxWidth:500,width:"90%",margin:"0 auto 50px"}}>
   <div style={{
     background:"linear-gradient(145deg,#10162b,#080d1b)",
-    border:"1px solid #262d49",
+    border:"1px solid #19cfc5",
     borderRadius:20,
     padding:25,
     textAlign:"center"
