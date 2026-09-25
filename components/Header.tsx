@@ -73,9 +73,9 @@ export default function Header({ lang, setLang, t }: HeaderProps) {
           <a href="#contact" style={{ color: "#bdc4da" }}>
             {t.contact}
            </a>
-        </div>
-
-         className="language"
+       
+           <div
+          className="language"
           style={{
             display: "flex",
             alignItems: "center",
