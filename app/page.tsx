@@ -135,6 +135,7 @@ export default function HomePage() {
   players: t.players,
   reviews: t.reviews,
   guilds: t.guilds,
+  contact: t.contact,
 };
 useEffect(() => {
     const fetchPlayers = async () => {
