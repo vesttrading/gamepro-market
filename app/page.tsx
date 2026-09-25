@@ -412,7 +412,7 @@ if (!battlenetId) {
   }}>
     <h2 style={{margin:"0 0 18px",fontSize:24}}>Контакты</h2>
 
-    <p style={{color:"#9aa3bd",margin:"0 0 18px 0 18px"}}>
+    <p style={{color:"#9aa3bd",margin:"18px 0 18px"}}>
       По вопросам GamePro и сотрудничества
     </p>
 
