@@ -484,24 +484,17 @@ section#reviews p {
 #passport .profileShare,
 [class*="profileShare"] {
     display: flex !important;
-    flex-direction: column !important; 
-    align-items: center !important;    
+    flex-direction: column !important;
+    align-items: center !important;
     justify-content: center !important;
-    gap: 14px !important;              
+    gap: 14px !important;
     width: 100% !important;
+    max-width: 480px !important;
+    margin: 0 auto !important;
+    border: 2px solid #00d2ff !important;
+    border-radius: 16px !important;
+    padding: 24px !important;
 }
-
-#passport {
-    border: 2px solid #00CED1 !important; /* Создает бирюзовую рамку толщиной 2px */
-    border-radius: 12px !important;       /* Опционально: скругляет углы рамки, чтобы выглядело аккуратно */
-    box-sizing: border-box !important;    /* Гарантирует, что рамка не "разожмет" размеры блока */
-}
-
-    /* ИЗМЕНИТЕ И ДОБАВЬТЕ ЭТИ СТРОКИ: */
-    border: 2px solid #00d2ff !important;       /* Делаем рамку толще (2px) и ярче */
-    border-radius: 16px !important;             /* Скругляем углы рамки */
-    padding: 30px 20px !important;              /* Добавляем внутренние отступы, чтобы текст не лип к краям */
-
 
 /* Увеличиваем заголовок */
 #passport .profileShare h2,
