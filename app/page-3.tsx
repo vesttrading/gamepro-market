@@ -242,15 +242,18 @@ if (!battlenetId) {
   setSupabaseStatus("Сначала войди через Battle.net.");
   return;
 }
-    const payload = {
-        battlenet_id: battlenetId,
-        player_name: rioData.name,
-        realm: rioData.realm?.name || rioRealm,
-        region: String(rioData.region?.name || rioRegion).toUpperCase(),
-        mythic_plus_score: score,
-        source: "raider.io",
-        source_verified: false,
-        raw_data: rioData
+   const payload = {
+  battlenet_id: battlenetId,
+  player_name: rioData.name,
+  realm: rioRealm,
+  region: String(rioData.region?.name || rioRegion).toUpperCase(),
+  role: rioData.active_spec_role || null,
+  class: typeof rioData.class === "string" ? rioData.class: rioData.class?.name || "UNKNOWN",
+  rating: score !== null ? Math.round(score) : null,
+  mythic_plus_score: score !== null ? Math.round(score) : null,
+  source: "raider.io",
+  source_verified: false,
+  raw_data: rioData
 };
       const response = await fetch(`${SUPABASE_URL}/rest/v1/player_verifications`, {
         method: "POST",
