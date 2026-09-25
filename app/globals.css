@@ -554,7 +554,7 @@ div[class*="jsx-"] h2,
 .contact-box {
   max-width: 1160px;
   width: 92%;
-  margin: 0 auto 50px;
+  margin: 0 auto 70px;
   padding: 22px;
   background: #080d1b;
   border: 1px solid #1b2645;
@@ -563,12 +563,12 @@ div[class*="jsx-"] h2,
 }
 
 .contact-box h2 {
-  margin: 0 0 15px;
+  margin: 0 0 8px;
   color: #f7f8ff;
 }
 
 .contact-box p {
-  margin: 0 0 -35px;
+  margin: 0 0 15px;
   color: #737c98;
 }
 
