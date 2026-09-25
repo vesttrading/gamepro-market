@@ -501,7 +501,7 @@ section#reviews p {
     border: 2px solid #00d2ff !important;       /* Делаем рамку толще (2px) и ярче */
     border-radius: 16px !important;             /* Скругляем углы рамки */
     padding: 30px 20px !important;              /* Добавляем внутренние отступы, чтобы текст не лип к краям */
-}
+
 
 /* Увеличиваем заголовок */
 #passport .profileShare h2,
