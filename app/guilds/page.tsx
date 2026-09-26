@@ -61,19 +61,19 @@ const btnBack: React.CSSProperties = {
   alignItems: "center",
   justifyContent: "center",
   gap: "8px",
-  padding: "12px 24px",
-  background: "#19cfc5", // Бирюзовый цвет (замените на ваш точный хекс, если нужен другой)
-  color: "#00173d",      // Темно-синий/черный цвет текста для читаемости
+  padding: "10px 20px",    // Уменьшили внутренние отступы
+  background: "#19cfc5",   // Сплошной бирюзовый цвет фона
+  color: "#00173d",        // Темно-синий цвет текста для читаемости
   fontWeight: "bold",
-  borderRadius: "15px",
-  width: "100%",
+  fontSize: "14px",        // Чуть уменьшили размер шрифта
+  borderRadius: "12px",    // Аккуратное скругление углов
   marginTop: "16px",
   textDecoration: "none",
   cursor: "pointer",
   transition: "all 0.2s ease"
 };
  
-  return (
+ return (
     <div style={{ minHeight: "100vh", background: "#050713", color: "#f7f8ff", fontFamily: "Arial,sans-serif", display: "flex", alignItems: "center", justifyContent: "center", padding: "40px 20px" }}>
       <div style={{ maxWidth: 650, width: "100%", background: "linear-gradient(145deg,#10162b,#080d1b)", border: "1px solid #17bcb2", borderRadius: 20, padding: 30, boxShadow: "0 0 35px #16d8cf12" }}>
         
@@ -129,15 +129,16 @@ const btnBack: React.CSSProperties = {
               {guildStatus}
             </p>
           )}
-        </form>
-     
-      {/* Бирюзовая кнопка возврата */}
-      <a href="/" style={btnBack}>
-       ← Вернуться в GamePro
-      </a>
+      </form>
 
-      </div>
-    </div>
+  {/* Контейнер для центрирования маленькой кнопки */}
+  <div style={{ textAlign: "center" }}>
+    <a href="/" style={btnBack}>
+      ← Вернуться в GamePro
+    </a>
+  </div>
+
+</div>
   );
 }
 
