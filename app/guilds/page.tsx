@@ -50,36 +50,36 @@ export default function GuildApplicationPage() {
     } finally { setGuildLoading(false); }
   };
 
-  const btn: React.CSSProperties = {
+const btn: React.CSSProperties = {
   display: "inline-flex",
   alignItems: "center",
-  justifyContent: "center",
-  padding: "10px 20px",    // Уменьшили высоту и ширину кнопки
-  background: "#19cfc5",   // Ваш бирюзовый цвет фона
-  color: "#00173d",        // Темно-синий текст, чтобы хорошо читался
+  justifyContent: "center", // Текст встанет ровно по центру кнопки
+  padding: "12px 24px",     // Одинаковые отступы
+  background: "#5ce1e6",    // Тот самый бирюзовый цвет
+  color: "#00173d",         // Темно-синий читаемый текст
   fontWeight: "bold",
-  fontSize: "14px",        // Компактный размер шрифта
-  borderRadius: "12px",    // Аккуратные углы
+  fontSize: "14px",
+  borderRadius: "15px",     // Одинаковое красивое скругление
   border: "none",
   cursor: "pointer",
-  transition: "all 0.2s ease"
+  boxSizing: "border-box",  
+  height: "44px"            // Фиксированная высота для идеальной симметрии
 };
   
-const btnBack: React.CSSProperties = {
+Вconst btnBack: React.CSSProperties = {
   display: "inline-flex",
   alignItems: "center",
   justifyContent: "center",
-  gap: "8px",
-  padding: "10px 20px",
-  background: "#19cfc5", // Бирюзовый цвет (замените на ваш точный хекс, если нужен другой)
-  color: "#00173d",      // Темно-синий/черный цвет текста для читаемости
+  padding: "12px 24px",     // Одинаковые отступы
+  background: "#5ce1e6",    // Тот самый бирюзовый цвет
+  color: "#00173d",         // Темно-синий читаемый текст
   fontWeight: "bold",
-  borderRadius: "15px",
   fontSize: "14px",
-  marginTop: "16px",
+  borderRadius: "15px",     // Одинаковое красивое скругление
   textDecoration: "none",
   cursor: "pointer",
-  transition: "all 0.2s ease"
+  boxSizing: "border-box",  
+  height: "44px"            // Точно такая же высота
 };
  
  return (
