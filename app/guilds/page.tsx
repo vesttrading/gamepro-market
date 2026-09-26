@@ -131,7 +131,7 @@ const btnBack: React.CSSProperties = {
           )}
      </form>
 
-{/* Бирюзовая кнопка возврата */}
+   /* Бирюзовая кнопка возврата */
   <div style={{ textAlign: "center" }}>
     <a href="/" style={btnBack}>
       ← Вернуться в GamePro
