@@ -62,7 +62,7 @@ const btnBack: React.CSSProperties = {
   justifyContent: "center",
   gap: "8px",
   padding: "12px 24px",
-  background: "#5ce1e6", // Бирюзовый цвет (замените на ваш точный хекс, если нужен другой)
+  background: "#19cfc5", // Бирюзовый цвет (замените на ваш точный хекс, если нужен другой)
   color: "#00173d",      // Темно-синий/черный цвет текста для читаемости
   fontWeight: "bold",
   borderRadius: "15px",
