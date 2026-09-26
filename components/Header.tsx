@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 
 type Lang = "RU" | "EN" | "TR" | "DE" | "ES" | "FR" | "PL";
 
@@ -69,6 +70,7 @@ export default function Header({ lang, setLang, t }: HeaderProps) {
           </a>
           <a href="#/guilds" style={{ color: "#bdc4da" }}>
             {t.guilds}
+          </a>Link>
           </a>
           <a href="#contact" style={{ color: "#bdc4da" }}>
             {t.contact}
