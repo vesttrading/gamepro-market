@@ -349,30 +349,10 @@ if (!battlenetId) {
         </div>
       </section>
 
-     <section id="players" style={{maxWidth:1160,width:"92%",margin:"auto",padding:"0px 0 30px"}}>
-        <h2 style={{textAlign:"center",fontSize:32}}>{t.searchTitle}</h2>
-        <p style={{textAlign:"center",color:"#9da6c0"}}>{t.searchSub}</p>
-        <div className="searchbar" style={{display:"flex",gap:10,maxWidth:460,margin:"25px auto"}}>
-          <input value={q} onChange={e=>setQ(e.target.value)} placeholder={t.placeholder} style={{flex:1,minWidth:0,background:"#090e1d",border:"1px solid #26364b",borderRadius:12,padding:15,color:"white",outline:"none"}}/>
-          <button style={btn}>🔎 {t.search}</button>
-        </div>
-        <div className="cards" style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:16}}>
-          {players.map(x => (
-            <div key={x[1]} style={{...card,cursor:"pointer"}} onClick={()=>window.location.href=`/player/${x[5]}`}>
-              <div style={{display:"flex",gap:12,alignItems:"center"}}>
-                <div style={{width:48,height:48,borderRadius:12,display:"grid",placeItems:"center",background:"linear-gradient(135deg,#6126e9,#e92ad4)",fontSize:22}}>{x[0]}</div>
-                <div>
-                  <h3 style={{margin:"0 0 4px"}}>{x[1]}</h3>
-                  <small style={{color:"#9da6c0"}}>{x[2]}</small>
-                </div>
-              </div>
-             <div style={{display:"flex",gap:7,marginTop:15,flexWrap:"wrap"}}>
-               <span className="greenTag"> {x[6] ? `✓ ${x[3]} VERIFIED` : `${x[3]} · NOT VERIFIED`}
-                <span className="greenTag">✓ {x[4]}</span>
-              </div>
-            </div>
-          ))}
-        </div>
+      <section id="players" style={{maxWidth:1160,width:"92%",margin:"auto",padding:"0px 0 30px",marginTop:-150}}>
+        <h2 style={{textAlign:"center",fontSize:32}}>{t.searchTitle}</h2><p style={{textAlign:"center",color:"#9da6c0"}}>{t.searchSub}</p>
+        <div className="searchbar" style={{display:"flex",gap:10,maxWidth:460,margin:"25px auto"}}><input value={q} onChange={e=>setQ(e.target.value)} placeholder={t.placeholder} style={{flex:1,minWidth:0,background:"#090e1d",border:"1px solid #26364b",borderRadius:12,padding:15,color:"white",outline:"none"}}/><button style={btn}>🔎 {t.search}</button></div>
+        <div className="cards" style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:16}}>{players.map(x=><div key={x[1]} style={{...card,cursor:"pointer"}}onClick={()=>window.location.href=`/player/${x[5]}`}><div style={{display:"flex",gap:12,alignItems:"center"}}><div style={{width:48,height:48,borderRadius:12,display:"grid",placeItems:"center",background:"linear-gradient(135deg,#6126e9,#e92ad4)",fontSize:22}}>{x[0]}</div><div><h3 style={{margin:"0 0 4px"}}>{x[1]}</h3><small style={{color:"#9da6c0"}}>{x[2]}</small></div></div><div style={{display:"flex",gap:7,marginTop:15,flexWrap:"wrap"}}><span className="greenTag">✓ {x[3]} VERIFIED</span><span className="greenTag">✓ {x[4]}</span></div></div>)}</div>
       </section>
 
       <section id="raiderio" style={{maxWidth:1160,width:"92%",margin:"auto",padding:"0 0 60px"}}>
@@ -461,6 +441,5 @@ if (!battlenetId) {
 .navlinks a{text-decoration:none;transition:color .2s}.navlinks a:hover{color:#58eee5!important}.sectionHead,.gameHeader{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:25px}.verifiedPill,.status{display:inline-flex;padding:7px 10px;border-radius:999px;background:#0c302f;color:#52eee3;border:1px solid #168f88;font-size:11px;font-weight:900}.futureStatus{display:inline-flex;padding:6px 9px;border-radius:999px;background:#171d31;color:#8994af;font-size:10px;font-weight:800}.greenTag{background:#0d2929;padding:7px;border-radius:7px;color:#45e0a1;font-size:11px;border:1px solid #174f49}\n      @media(max-width:900px){.navlinks{display:none!important}.grid2,.cards,.steps,.gameGrid,.reviewGrid{grid-template-columns:1fr!important}.gameGrid>div{min-height:0}.sectionHead,.gameHeader{align-items:flex-start;flex-direction:column}.sectionHead button{width:100%}}\n      @media(max-width:700px){.rioForm{grid-template-columns:1fr!important}.rioForm button{width:100%}}
       @media(max-width:560px){.nav{min-height:68px}.nav select{margin-left:auto}.stats{grid-template-columns:1fr!important}.badges{grid-template-columns:1fr!important}.searchbar{flex-direction:column}.searchbar button{width:100%}.footer{display:block!important;text-align:center}.footer span{display:block;margin:7px 0}.hero{} }`}</style> </div>;
 }
-
 
 
