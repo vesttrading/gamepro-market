@@ -358,7 +358,7 @@ if (!battlenetId) {
         </div>
         <div className="cards" style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:16}}>
           {players.map(x => (
-            <div key={x[1]} style={{...card,cursor:"pointer"}} onClick={()=>window.location.href=/player/${x[5]}}>
+            <div key={x[1]} style={{...card,cursor:"pointer"}} onClick={()=>window.location.href=`/player/${x[5]}`}>
               <div style={{display:"flex",gap:12,alignItems:"center"}}>
                 <div style={{width:48,height:48,borderRadius:12,display:"grid",placeItems:"center",background:"linear-gradient(135deg,#6126e9,#e92ad4)",fontSize:22}}>{x[0]}</div>
                 <div>
@@ -366,8 +366,8 @@ if (!battlenetId) {
                   <small style={{color:"#9da6c0"}}>{x[2]}</small>
                 </div>
               </div>
-              <div style={{display:"flex",gap:7,marginTop:15,flexWrap:"wrap"}}>
-                <span className="greenTag">✓ {x[3]} VERIFIED</span>
+             <div style={{display:"flex",gap:7,marginTop:15,flexWrap:"wrap"}}>
+               <span className="greenTag"> {x[6] ? `✓ ${x[3]} VERIFIED` : `${x[3]} · NOT VERIFIED`}
                 <span className="greenTag">✓ {x[4]}</span>
               </div>
             </div>
