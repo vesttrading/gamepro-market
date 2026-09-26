@@ -5,13 +5,8 @@ type Lang = "RU" | "EN" | "TR" | "DE" | "ES" | "FR" | "PL";
 type HeaderProps = {
   lang: Lang;
   setLang: (lang: Lang) => void;
-  t: {
-    how: string;
-    players: string;
-    reviews: string;
-    guilds: string;
-    contact: string;
-  };
+  t: any;
+   };
 };
 
 export default function Header({ lang, setLang, t }: HeaderProps) {
