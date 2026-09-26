@@ -129,9 +129,22 @@ const btnBack: React.CSSProperties = {
             </select>
           </div>
 
-          <button type="submit" disabled={guildLoading} style={btn}>
-            {guildLoading ? "Отправка..." : "Оставить заявку"}
-          </button>
+        <div style={{ 
+  display: "flex", 
+  justifyContent: "center", 
+  alignItems: "center", 
+  gap: "16px", 
+  marginTop: "24px",
+  width: "100%" 
+}}>
+  <button type="submit" disabled={guildLoading} style={btn}>
+    {guildLoading ? "Отправка..." : "Оставить заявку"}
+  </button>
+
+  <a href="/" style={btnBack}>
+    ← Вернуться в GamePro
+  </a>
+</div>
 
           {guildStatus && (
             <p style={{ textAlign: "center", color: guildStatus.startsWith("🎉") ? "#45e0a1" : "#ff8e9e", fontSize: 14, margin: "10px 0 0", fontWeight: "bold" }}>
@@ -139,11 +152,6 @@ const btnBack: React.CSSProperties = {
             </p>
           )}
     </form>
-
-  {/* Бирюзовая кнопка возврата */}
-  <a href="/" style={btnBack}>
-    ← Вернуться в GamePro
-  </a>
 
      </div>
    </div>
