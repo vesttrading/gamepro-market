@@ -61,12 +61,12 @@ const btnBack: React.CSSProperties = {
   alignItems: "center",
   justifyContent: "center",
   gap: "8px",
-  padding: "10px 20px",    // Уменьшили внутренние отступы
-  background: "#19cfc5",   // Сплошной бирюзовый цвет фона
-  color: "#00173d",        // Темно-синий цвет текста для читаемости
+  padding: "12px 24px",
+  background: "#19cfc5", // Бирюзовый цвет (замените на ваш точный хекс, если нужен другой)
+  color: "#00173d",      // Темно-синий/черный цвет текста для читаемости
   fontWeight: "bold",
-  fontSize: "14px",        // Чуть уменьшили размер шрифта
-  borderRadius: "12px",    // Аккуратное скругление углов
+  borderRadius: "15px",
+  width: "100%",
   marginTop: "16px",
   textDecoration: "none",
   cursor: "pointer",
@@ -129,15 +129,16 @@ const btnBack: React.CSSProperties = {
               {guildStatus}
             </p>
           )}
-      </form>
+     </form>
 
-  {/* Контейнер для центрирования маленькой кнопки */}
-  <div style={{ textAlign: "center" }}>
-    <a href="/" style={btnBack}>
-      ← Вернуться в GamePro
+  {/* Бирюзовая кнопка возврата */}
+  <a href="/" style={btnBack}>
+    ← Вернуться в GamePro
     </a>
-  </div>
-</div>
+
+      </div>
+
+    </div>
   );
 }
 
