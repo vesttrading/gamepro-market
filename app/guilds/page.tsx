@@ -66,7 +66,7 @@ const btnBack: React.CSSProperties = {
   color: "#00173d",      // Темно-синий/черный цвет текста для читаемости
   fontWeight: "bold",
   borderRadius: "15px",
-  width: "100%",
+  fontSize: "14px",
   marginTop: "16px",
   textDecoration: "none",
   cursor: "pointer",
