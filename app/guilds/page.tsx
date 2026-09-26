@@ -55,7 +55,7 @@ const btn: React.CSSProperties = {
   alignItems: "center",
   justifyContent: "center", // Текст встанет ровно по центру кнопки
   padding: "12px 24px",     // Одинаковые отступы
-  background: "#5ce1e6",    // Тот самый бирюзовый цвет
+  background: "#2bebfa",    // Тот самый бирюзовый цвет
   color: "#00173d",         // Темно-синий читаемый текст
   fontWeight: "bold",
   fontSize: "14px",
@@ -71,7 +71,7 @@ const btnBack: React.CSSProperties = {
   alignItems: "center",
   justifyContent: "center",
   padding: "12px 24px",     // Одинаковые отступы
-  background: "#5ce1e6",    // Тот самый бирюзовый цвет
+  background: "#2bebfa",    // Тот самый бирюзовый цвет
   color: "#00173d",         // Темно-синий читаемый текст
   fontWeight: "bold",
   fontSize: "14px",
