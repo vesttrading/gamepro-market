@@ -7,7 +7,6 @@ type HeaderProps = {
   setLang: (lang: Lang) => void;
   t: any;
    };
-};
 
 export default function Header({ lang, setLang, t }: HeaderProps) {
   return (
