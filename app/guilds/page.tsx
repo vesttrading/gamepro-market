@@ -66,7 +66,7 @@ const btn: React.CSSProperties = {
   height: "44px"            // Фиксированная высота для идеальной симметрии
 };
   
-Вconst btnBack: React.CSSProperties = {
+const btnBack: React.CSSProperties = {
   display: "inline-flex",
   alignItems: "center",
   justifyContent: "center",
