@@ -129,17 +129,15 @@ const btnBack: React.CSSProperties = {
               {guildStatus}
             </p>
           )}
-     </form>
+    </form>
 
-   /* Бирюзовая кнопка возврата */
-  <div style={{ textAlign: "center" }}>
-    <a href="/" style={btnBack}>
-      ← Вернуться в GamePro
-     </a>
+  {/* Бирюзовая кнопка возврата */}
+  <a href="/" style={btnBack}>
+    ← Вернуться в GamePro
+  </a>
 
-      </div>
-
-    </div>
+     </div>
+   </div>
   );
 }
 
