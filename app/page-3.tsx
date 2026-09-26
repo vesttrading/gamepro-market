@@ -8,7 +8,7 @@ const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
 const L = {
   RU: {
-    games:"Игры", players:"Игроки", guilds:"Гильдии", how:"Как это работает", 
+    games:"Игры", players:"Игроки", guilds:"Гильдии", how:"Как это работает", contact:"Контакты",
     h1:"Докажи свой скилл.", h2:"Покажи свои достижения.",
     intro:"Игровой профиль с подтверждёнными достижениями. Собери свой Achievement Passport и покажи гильдиям и командам, на что ты способен.",
     create:"Создать игровой паспорт", find:"Найти игрока", passport:"Achievement Passport",
@@ -25,7 +25,7 @@ const L = {
     passportLink:"Паспорт игрока", shareTitle:"Твой игровой профиль — одной ссылкой", login:"Войти через Battle.net", reviews:"Отзывы", gameproRating:"Оценка GamePro", playerReviews:"Отзывы игроков", verifiedReviews:"Отзывы о системе VERIFIED"
   },
   EN: {
-    games:"Games", players:"Players", guilds:"Guilds", how:"How it works", 
+    games:"Games", players:"Players", guilds:"Guilds", how:"How it works", contact:"Contact",
     h1:"Prove your skill.", h2:"Show your achievements.",
     intro:"A gaming profile with verified achievements. Build your Achievement Passport and show guilds and teams what you can do.",
     create:"Create gaming passport", find:"Find a player", passport:"Achievement Passport",
@@ -42,7 +42,7 @@ const L = {
     passportLink:"Player passport", shareTitle:"Your gaming profile — one link", login:"Login with Battle.net", reviews:"Reviews", gameproRating:"GamePro rating", playerReviews:"Player reviews", verifiedReviews:"VERIFIED system reviews"
   },
   TR: {
-    games:"Oyunlar", players:"Oyuncular", guilds:"Loncalar", how:"Nasıl çalışır", 
+    games:"Oyunlar", players:"Oyuncular", guilds:"Loncalar", how:"Nasıl çalışır", contact:"İletişim",
     h1:"Yeteneğini kanıtla.", h2:"Başarılarını göster.",
     intro:"Doğrulanmış başarılarla oyun profili. Achievement Passport'unu oluştur ve yeteneğini loncalara ve takımlara göster.",
     create:"Oyuncu pasaportu oluştur", find:"Oyuncu bul", passport:"Achievement Passport",
@@ -59,7 +59,7 @@ const L = {
     passportLink:"Oyuncu pasaportu", shareTitle:"Oyun profilin — tek bağlantı", login:"Battle.net ile giriş", reviews:"Yorumlar", gameproRating:"GamePro puanı", playerReviews:"Oyuncu yorumları", verifiedReviews:"VERIFIED sistemi yorumları"
   },
   DE: {
-    games:"Spiele", players:"Spieler", guilds:"Gilden", how:"So funktioniert es", 
+    games:"Spiele", players:"Spieler", guilds:"Gilden", how:"So funktioniert es", contact:"Kontakt",
     h1:"Beweise dein Können.", h2:"Zeige deine Erfolge.",
     intro:"Gaming-Profil mit verifizierten Erfolgen. Erstelle deinen Achievement Passport und zeige Gilden und Teams, was du kannst.",
     create:"Spielerpass erstellen", find:"Spieler finden", passport:"Achievement Passport",
@@ -76,7 +76,7 @@ const L = {
     passportLink:"Spielerpass", shareTitle:"Dein Gaming-Profil — ein Link", login:"Mit Battle.net einloggen", reviews:"Bewertungen", gameproRating:"GamePro-Bewertung", playerReviews:"Spielerbewertungen", verifiedReviews:"Bewertungen zum VERIFIED-System"
   },
   ES: {
-    games:"Juegos", players:"Jugadores", guilds:"Gremios", how:"Cómo funciona", 
+    games:"Juegos", players:"Jugadores", guilds:"Gremios", how:"Cómo funciona", contact:"Contacto",
     h1:"Demuestra tu habilidad.", h2:"Muestra tus logros.",
     intro:"Perfil gaming con logros verificados. Crea tu Achievement Passport y demuestra a gremios y equipos lo que puedes hacer.",
     create:"Crear pasaporte gamer", find:"Buscar jugador", passport:"Achievement Passport", sub:"No palabras — resultados verificados.", verified:"Perfil verificado", verifiedShort:"VERIFIED",
@@ -85,7 +85,7 @@ const L = {
     current:"Disponible ahora", future:"Próximamente", wow:"World of Warcraft", wowText:"Mythic+, raids y PvP — el primer juego de GamePro.", futureText:"Dota 2, CS2 y Path of Exile 2 están en la hoja de ruta.", source:"Fuente", sourceText:"GamePro compara los datos del juego con fuentes compatibles.", check:"Verificación", checkText:"Los datos se comprueban antes de recibir el estado VERIFIED.", badge:"VERIFIED", badgeText:"Solo los logros verificados reciben la insignia verde.", passportLink:"Pasaporte del jugador", shareTitle:"Tu perfil gaming — un solo enlace", login:"Entrar con Battle.net", reviews:"Opiniones", gameproRating:"Valoración de GamePro", playerReviews:"Opiniones de jugadores", verifiedReviews:"Opiniones sobre el sistema VERIFIED"
   },
   FR: {
-    games:"Jeux", players:"Joueurs", guilds:"Guildes", how:"Comment ça marche", 
+    games:"Jeux", players:"Joueurs", guilds:"Guildes", how:"Comment ça marche", contact:"Contact",
     h1:"Prouve ton niveau.", h2:"Montre tes accomplissements.",
     intro:"Profil gaming avec accomplissements vérifiés. Crée ton Achievement Passport et montre aux guildes et équipes ce que tu sais faire.",
     create:"Créer mon passeport", find:"Trouver un joueur", passport:"Achievement Passport", sub:"Pas de paroles — des résultats vérifiés.", verified:"Profil vérifié", verifiedShort:"VERIFIED",
@@ -94,7 +94,7 @@ const L = {
     current:"Disponible maintenant", future:"Bientôt", wow:"World of Warcraft", wowText:"Mythic+, raids et PvP — le premier jeu de GamePro.", futureText:"Dota 2, CS2 et Path of Exile 2 sont sur la feuille de route.", source:"Source", sourceText:"GamePro vérifie les données du jeu avec les sources prises en charge.", check:"Vérification", checkText:"Les données sont vérifiées avant l'attribution du statut VERIFIED.", badge:"VERIFIED", badgeText:"Seuls les accomplissements vérifiés obtiennent le badge vert.", passportLink:"Passeport joueur", shareTitle:"Ton profil gaming — un seul lien", login:"Se connecter avec Battle.net", reviews:"Avis", gameproRating:"Note GamePro", playerReviews:"Avis des joueurs", verifiedReviews:"Avis sur le système VERIFIED"
   },
   PL: {
-    games:"Gry", players:"Gracze", guilds:"Gildie", how:"Jak to działa", 
+    games:"Gry", players:"Gracze", guilds:"Gildie", how:"Jak to działa", contact:"Kontakt",
     h1:"Udowodnij swój skill.", h2:"Pokaż swoje osiągnięcia.",
     intro:"Profil gracza ze zweryfikowanymi osiągnięciami. Stwórz Achievement Passport i pokaż gildiom oraz drużynom, co potrafisz.",
     create:"Utwórz paszport gracza", find:"Znajdź gracza", passport:"Achievement Passport", sub:"Nie słowa — zweryfikowane wyniki.", verified:"Profil zweryfikowany", verifiedShort:"VERIFIED",
@@ -135,6 +135,7 @@ export default function HomePage() {
   players: t.players,
   reviews: t.reviews,
   guilds: t.guilds,
+  contact: t.contact,
 };
 useEffect(() => {
     const fetchPlayers = async () => {
@@ -168,10 +169,10 @@ useEffect(() => {
   // 2. Возвращаем массив из 5 элементов, который ожидает ваша верстка
   return [
     icon,                                              // x[0] - Иконка
-    p.character_name || "Без имени",                    // x[1] - Никнейм
+    p.player_name || "Без имени",                    // x[1] - Никнейм
     `${p.role || ""} ${p.class || ""} - ${p.realm || "EU"}`, // x[2] - Роль, Класс и Сервер
     String(p.rating || 0),                             // x[3] - Рейтинг (переводим число в строку)
-    p.source?.toUpperCase() || "VERIFIED"              // x[4] - Источник верификации (например, RAIDER.IO)
+    p.source?.toUpperCase() || "VERIFIED", p.id              // x[4] - Источник верификации (например, RAIDER.IO)
   ];
 }).filter(x => !q || x.join(" ").toLowerCase().includes(q.toLowerCase()));
   const sharePassport = async () => {
@@ -289,7 +290,7 @@ if (!battlenetId) {
   };
 
   return <div style={{minHeight:"100vh",background:"radial-gradient(circle at 80% 0,#28105b 0,transparent 34%),radial-gradient(circle at 15% 35%,#073c42 0,transparent 25%),#050713",color:"#f7f8ff",fontFamily:"Arial,sans-serif"}}>
-   <Header lang={lang} setLang={setLang} t={t} />
+   <Header lang={lang} setLang={setLang} t={headerT} />
     <main>
       <section style={{maxWidth:1000,width:"92%",margin:"auto",textAlign:"center",padding:"62px 0 50px"}}>
         <span style={{color:"#72fff4",border:"1px solid #168f88",background:"#0b292b",padding:"8px 13px",borderRadius:99,fontSize:12,fontWeight:800}}>🏆 ACHIEVEMENT PASSPORT</span>
@@ -340,19 +341,18 @@ if (!battlenetId) {
       <section id="passport" style={{maxWidth:1160,width:"92%",margin:"auto",padding:"80px 0 0px"}}>
         <div className="sectionHead"><div><h2 style={{fontSize:36,marginBottom:8}}>{t.passport}</h2><p style={{color:"#9da6c0",marginTop:0}}>{t.sub}</p></div></div>
         <div className="grid2" style={{display:"grid",gridTemplateColumns:"1.05fr .95fr",gap:20}}>
-          <div style={card}>
-            <div style={{display:"flex",alignItems:"center",gap:15}}><div style={{width:72,height:72,borderRadius:18,display:"grid",placeItems:"center",fontSize:32,background:"linear-gradient(135deg,#7e2cff,#ec2ad4)"}}>⚡</div><div><div style={{fontSize:11,fontWeight:900,letterSpacing:1.5,color:"#52eee3",marginBottom:5}}>GAMEPRO ACHIEVEMENT PASSPORT</div><h3 style={{fontSize:24,margin:"0 0 5px"}}>{rioData?.name || "Vladimir"}</h3><div style={{color:"#9da6c0"}}>{rioData?.class?.name || "Restoration Shaman"} · {rioData?.realm?.name || rioRealm || "EU"} · {String(rioData?.region?.name || rioRegion).toUpperCase()} · World of Warcraft</div><div style={{display:"flex",alignItems:"center",gap:8,marginTop:8,flexWrap:"wrap"}}><span className="verifiedPill">✓ VERIFIED</span><span style={{color:"#71809e",fontSize:11}}>VERIFIED ID: {verifiedId || "—"}</span></div></div></div>
-            <div className="stats" style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:10,marginTop:25}}>{[[rioData?.mythic_plus_scores_by_season?.[0]?.scores?.all ?? "2850","Mythic+ Rating"],["CE","Raid Progress"],["2.4k+","M+ Runs"]].map(x=><div key={x[0]} style={{padding:15,background:"#080d1b",border:"1px solid #1e2540",borderRadius:12}}><b style={{fontSize:21}}>{x[0]}</b><small style={{display:"block",color:"#9da6c0",marginTop:4}}>{x[1]}</small></div>)}</div>
+          <div style={{...card,border:"1px solid #19cfc5"}}><div style={{display:"flex",alignItems:"center",gap:15}}><div style={{width:72,height:72,borderRadius:18,display:"grid",placeItems:"center",fontSize:32,background:"linear-gradient(135deg,#7e2cff,#ec2ad4)"}}>⚡</div><div><div style={{fontSize:11,fontWeight:900,letterSpacing:1.5,color:"#52eee3",marginBottom:5}}>GAMEPRO ACHIEVEMENT PASSPORT</div><h3 style={{fontSize:24,margin:"0 0 5px"}}>{rioData?.name || "Vladimir"}</h3><div style={{color:"#9da6c0"}}>{rioData?.class?.name || "Restoration Shaman"} · {rioData?.realm?.name || rioRealm || "EU"} · {String(rioData?.region?.name || rioRegion).toUpperCase()} · World of Warcraft</div><div style={{display:"flex",alignItems:"center",gap:8,marginTop:8,flexWrap:"wrap"}}><span className="verifiedPill">✓ VERIFIED</span><span style={{color:"#71809e",fontSize:11}}>VERIFIED ID: {verifiedId || "—"}</span></div></div></div>
+            <div className="stats" style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:10,marginTop:25}}>{[[rioData?.mythic_plus_scores_by_season?.[0]?.scores?.all ?? "2850","Mythic+ Rating"],["CE","Raid Progress"],["2.4k+","M+ Runs"]].map(x=><div key={x[0]} style={{padding:15,background:"#080d1b",border:"1px solid #19cfc5",borderRadius:12}}><b style={{fontSize:21}}>{x[0]}</b><small style={{display:"block",color:"#9da6c0",marginTop:4}}>{x[1]}</small></div>)}</div>
          
           </div>
-          <div style={card}><div style={{display:"flex",justifyContent:"space-between",alignItems:"center",gap:10}}><h3 style={{marginTop:0}}>🏆 {t.verifiedShort}</h3><span className="verifiedPill">✓ VERIFIED</span></div><div className="badges" style={{display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:12}}>{["KSM","2850 M+","Cutting Edge","AOTC"].map(x=><div key={x} style={{padding:17,borderRadius:14,background:"#0a1021",border:"1px solid #1c8f82"}}><b>🏆 {x}</b><small style={{display:"block",color:"#45e0a1",marginTop:6}}>✓ {t.verifiedShort}</small></div>)}</div></div>
+          <div style={{...card,border:"1px solid #19cfc5"}}><div style={{display:"flex",justifyContent:"space-between",alignItems:"center",gap:10}}><h3 style={{marginTop:0}}>🏆 {t.verifiedShort}</h3><span className="verifiedPill">✓ VERIFIED</span></div><div className="badges" style={{display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:12}}>{["KSM","2850 M+","Cutting Edge","AOTC"].map(x=><div key={x} style={{padding:17,borderRadius:14,background:"#0a1021",border:"1px solid #1c8f82"}}><b>🏆 {x}</b><small style={{display:"block",color:"#45e0a1",marginTop:6}}>✓ {t.verifiedShort}</small></div>)}</div></div>
         </div>
       </section>
 
       <section id="players" style={{maxWidth:1160,width:"92%",margin:"auto",padding:"0px 0 30px",marginTop:-150}}>
         <h2 style={{textAlign:"center",fontSize:32}}>{t.searchTitle}</h2><p style={{textAlign:"center",color:"#9da6c0"}}>{t.searchSub}</p>
         <div className="searchbar" style={{display:"flex",gap:10,maxWidth:460,margin:"25px auto"}}><input value={q} onChange={e=>setQ(e.target.value)} placeholder={t.placeholder} style={{flex:1,minWidth:0,background:"#090e1d",border:"1px solid #26364b",borderRadius:12,padding:15,color:"white",outline:"none"}}/><button style={btn}>🔎 {t.search}</button></div>
-        <div className="cards" style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:16}}>{players.map(x=><div key={x[1]} style={card}><div style={{display:"flex",gap:12,alignItems:"center"}}><div style={{width:48,height:48,borderRadius:12,display:"grid",placeItems:"center",background:"linear-gradient(135deg,#6126e9,#e92ad4)",fontSize:22}}>{x[0]}</div><div><h3 style={{margin:"0 0 4px"}}>{x[1]}</h3><small style={{color:"#9da6c0"}}>{x[2]}</small></div></div><div style={{display:"flex",gap:7,marginTop:15,flexWrap:"wrap"}}><span className="greenTag">✓ {x[3]} VERIFIED</span><span className="greenTag">✓ {x[4]}</span></div></div>)}</div>
+        <div className="cards" style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:16}}>{players.map(x=><div key={x[1]} style={{...card,cursor:"pointer"}}onClick={()=>window.location.href=`/player/${x[5]}`}><div style={{display:"flex",gap:12,alignItems:"center"}}><div style={{width:48,height:48,borderRadius:12,display:"grid",placeItems:"center",background:"linear-gradient(135deg,#6126e9,#e92ad4)",fontSize:22}}>{x[0]}</div><div><h3 style={{margin:"0 0 4px"}}>{x[1]}</h3><small style={{color:"#9da6c0"}}>{x[2]}</small></div></div><div style={{display:"flex",gap:7,marginTop:15,flexWrap:"wrap"}}><span className="greenTag">✓ {x[3]} VERIFIED</span><span className="greenTag">✓ {x[4]}</span></div></div>)}</div>
       </section>
 
       <section id="raiderio" style={{maxWidth:1160,width:"92%",margin:"auto",padding:"0 0 60px"}}>
@@ -399,8 +399,41 @@ if (!battlenetId) {
 
       <section id="reviews" style={{maxWidth:1160,width:"92%",margin:"auto",padding:"60px 0"}}><h2 style={{textAlign:"center",fontSize:36}}>{t.reviews}</h2><p style={{textAlign:"center",color:"#9da6c0"}}>GamePro — доверие, подтверждённое игроками.</p><div className="reviewGrid" style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:16,marginTop:25}}>{[["⭐ 4.9/5",t.gameproRating,"★★★★★"],["💬",t.playerReviews,"«Удобно показать прогресс и быстро найти подходящую команду.»"],["✓ VERIFIED",t.verifiedReviews,"«Наконец понятно, какие достижения действительно подтверждены.»"]].map(x=><div key={x[1]} style={card}><div style={{fontSize:25,fontWeight:900}}>{x[0]}</div><h3>{x[1]}</h3><p style={{color:"#9da6c0",lineHeight:1.6,marginBottom:0}}>{x[2]}</p></div>)}</div></section>
 
-      <section style={{maxWidth:760,width:"92%",margin:"auto",padding:"0 0 80px",textAlign:"center"}}><h2>{t.shareTitle}</h2><p style={{color:"#9da6c0"}}>{t.passportLink}: Vladimir · 2850 M+ · CE · VERIFIED</p><button onClick={sharePassport} style={btn}>🔗 {copied ? t.copied : t.share}</button></section>
+      <section style={{maxWidth:550,width:"92%",margin:"0 auto 80px",padding: 25,textAlign:"center",border: "1px solid #19cfc5",borderRadius:20,background:"#080d1b"}}><h2 style={{fontSize:32}}>{t.shareTitle}</h2><p style={{color:"#9da6c0"}}>{t.passportLink}: Vladimir · 2850 M+ · CE · VERIFIED</p><button onClick={sharePassport} style={btn}>🔗 {copied ? t.copied : t.share}</button></section>
     </main>
+
+    <section id="contact" style={{maxWidth:400,width:"90%",margin:"0 auto 50px"}}>
+  <div style={{
+    background:"linear-gradient(145deg,#10162b,#080d1b)",
+    border:"1px solid #19cfc5",
+    borderRadius:20,
+    padding:25,
+    textAlign:"center"
+  }}>
+    <h2 style={{margin:"0 0 18px",fontSize:32}}>Контакты</h2>
+
+    <p style={{color:"#9aa3bd",margin:"18px 0 18px"}}>
+      По вопросам GamePro и сотрудничества
+    </p>
+
+    <a
+      href="mailto:gamepro.market@gmail.com"
+      style={{
+        display:"inline-flex",
+        alignItems:"center",
+        justifyContent:"center",
+        padding:"11px 22px",
+        borderRadius:12,
+        background:"linear-gradient(135deg,#18e0d1,#12bfb6)",
+        color:"#021312",
+        fontWeight:900,
+        textDecoration:"none"
+      }}
+    >
+      ✉️ gamepro.market@gmail.com
+    </a>
+  </div>
+</section>
 
     <footer style={{borderTop:"1px solid #171c31",padding:28,color:"#737c98"}}><div className="footer" style={{maxWidth:1160,width:"92%",margin:"auto",display:"flex",justifyContent:"space-between",gap:15}}><span>© 2026 GamePro Market</span><span>Achievement Passport · WoW MVP · Dota 2 · CS2 · PoE2</span></div></footer>
 
@@ -408,3 +441,5 @@ if (!battlenetId) {
 .navlinks a{text-decoration:none;transition:color .2s}.navlinks a:hover{color:#58eee5!important}.sectionHead,.gameHeader{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:25px}.verifiedPill,.status{display:inline-flex;padding:7px 10px;border-radius:999px;background:#0c302f;color:#52eee3;border:1px solid #168f88;font-size:11px;font-weight:900}.futureStatus{display:inline-flex;padding:6px 9px;border-radius:999px;background:#171d31;color:#8994af;font-size:10px;font-weight:800}.greenTag{background:#0d2929;padding:7px;border-radius:7px;color:#45e0a1;font-size:11px;border:1px solid #174f49}\n      @media(max-width:900px){.navlinks{display:none!important}.grid2,.cards,.steps,.gameGrid,.reviewGrid{grid-template-columns:1fr!important}.gameGrid>div{min-height:0}.sectionHead,.gameHeader{align-items:flex-start;flex-direction:column}.sectionHead button{width:100%}}\n      @media(max-width:700px){.rioForm{grid-template-columns:1fr!important}.rioForm button{width:100%}}
       @media(max-width:560px){.nav{min-height:68px}.nav select{margin-left:auto}.stats{grid-template-columns:1fr!important}.badges{grid-template-columns:1fr!important}.searchbar{flex-direction:column}.searchbar button{width:100%}.footer{display:block!important;text-align:center}.footer span{display:block;margin:7px 0}.hero{} }`}</style> </div>;
 }
+
+
