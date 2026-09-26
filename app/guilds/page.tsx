@@ -51,7 +51,6 @@ export default function GuildApplicationPage() {
   };
 
   const btn: React.CSSProperties = {
-  Даconst btn: React.CSSProperties = {
   display: "inline-flex",
   alignItems: "center",
   justifyContent: "center",
