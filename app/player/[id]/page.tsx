@@ -27,9 +27,8 @@ export default async function PlayerProfilePage({
 
   const verified = player.source_verified === true;
  
- return (
-    
-   <div
+  return (
+     <div
       style={{
         minHeight: "100vh",
         background:
