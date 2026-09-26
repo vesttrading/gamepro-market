@@ -85,7 +85,7 @@ export default async function PlayerProfilePage({
                 fontSize: 15,
               }}
             >
-              {player.role  ""} {player.class  ""} ·{" "}
+              {player.role || ""} {player.class || ""} ·{" "}
               {player.realm || "Unknown"} ·{" "}
               {player.region || "EU"}
             </div>
