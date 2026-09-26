@@ -137,7 +137,6 @@ const btnBack: React.CSSProperties = {
       ← Вернуться в GamePro
     </a>
   </div>
-
 </div>
   );
 }
