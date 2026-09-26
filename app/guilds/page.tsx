@@ -61,7 +61,7 @@ const btnBack: React.CSSProperties = {
   alignItems: "center",
   justifyContent: "center",
   gap: "8px",
-  padding: "12px 24px",
+  padding: "10px 20px",
   background: "#19cfc5", // Бирюзовый цвет (замените на ваш точный хекс, если нужен другой)
   color: "#00173d",      // Темно-синий/черный цвет текста для читаемости
   fontWeight: "bold",
@@ -131,10 +131,11 @@ const btnBack: React.CSSProperties = {
           )}
      </form>
 
-  {/* Бирюзовая кнопка возврата */}
-  <a href="/" style={btnBack}>
-    ← Вернуться в GamePro
-    </a>
+{/* Бирюзовая кнопка возврата */}
+  <div style={{ textAlign: "center" }}>
+    <a href="/" style={btnBack}>
+      ← Вернуться в GamePro
+     </a>
 
       </div>
 
