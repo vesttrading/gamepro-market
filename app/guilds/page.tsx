@@ -51,11 +51,21 @@ export default function GuildApplicationPage() {
   };
 
   const btn: React.CSSProperties = {
-    display: "inline-flex", alignItems: "center", justifyContent: "center", padding: "14px 20px", borderRadius: 12,
-    background: "linear-gradient(135deg,#18e0d1,#12bfb6)", color: "#021312", fontWeight: 900, border: 0, cursor: "pointer",
-    boxShadow: "0 0 30px #16d8cf38", fontSize: "14px", marginTop: 10
-  };
-
+  Даconst btn: React.CSSProperties = {
+  display: "inline-flex",
+  alignItems: "center",
+  justifyContent: "center",
+  padding: "10px 20px",    // Уменьшили высоту и ширину кнопки
+  background: "#19cfc5",   // Ваш бирюзовый цвет фона
+  color: "#00173d",        // Темно-синий текст, чтобы хорошо читался
+  fontWeight: "bold",
+  fontSize: "14px",        // Компактный размер шрифта
+  borderRadius: "12px",    // Аккуратные углы
+  border: "none",
+  cursor: "pointer",
+  transition: "all 0.2s ease"
+};
+  
 const btnBack: React.CSSProperties = {
   display: "inline-flex",
   alignItems: "center",
