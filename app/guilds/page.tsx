@@ -53,7 +53,7 @@ export default function GuildApplicationPage() {
   const btn: React.CSSProperties = {
     display: "inline-flex", alignItems: "center", justifyContent: "center", padding: "14px 20px", borderRadius: 12,
     background: "linear-gradient(135deg,#18e0d1,#12bfb6)", color: "#021312", fontWeight: 900, border: 0, cursor: "pointer",
-    boxShadow: "0 0 30px #16d8cf38", fontSize: "15px", width: "100%", marginTop: 10
+    boxShadow: "0 0 30px #16d8cf38", fontSize: "14px", marginTop: 10
   };
 
 const btnBack: React.CSSProperties = {
