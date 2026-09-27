@@ -151,15 +151,6 @@ div[style*="justifyContent: \"space-between\""] {
     margin-top: -35px !important;
 }
 
-#players h1 {
-    margin-bottom: 8px !important; /* Уменьшает отступ снизу от заголовка */
-}
-
-#players p {
-    margin-top: 0 !important;      /* Убирает лишний отступ сверху у подзаголовка */
-    margin-bottom: 24px !important; /* Задает комфортный зазор до строки поиска */
-}
-
 /* Шаг 2. Саму строку поиска внутри делаем еще чуть компактнее */
 #players .searchbox {
     display: flex !important; 
@@ -223,7 +214,16 @@ div[style*="justifyContent: \"space-between\""] {
     padding: 16px !important;
     border: 1px solid #00f2fe !important;
     box-shadow: 0 0 15px rgba(0, 242, 254, 0.12) !important;
+}
 
+/* Принудительное уменьшение зазоров внутри блока поиска */
+#players > div:first-child > *, 
+#players h1, 
+#players h2, 
+#players p,
+#players span {
+    margin-top: 2px !important;
+    margin-bottom: 8px !important;
 }
 
 /* А это правило сработает ТОЛЬКО на экранах телефонов (меньше 768px) */
