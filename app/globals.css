@@ -62,46 +62,42 @@ div[style*="justifyContent: \"space-between\""] {
 }
 
 /* =======================================================
-   ФИНАЛЬНЫЙ ЧИСТЫЙ КОД ДЛЯ КАРТОЧКИ PASSPORT
+   КОРРЕКТИРОВКА ЕДИНОГО БЛОКА КАРТОЧКИ
    ======================================================= */
 
-/* 1. Собираем иконку и весь текст в одну ровную строку по центру карточки */
-.sectionHead, 
-#passport > div:first-child {
+/* 1. Настраиваем сам единый контейнер */
+#passport > div:first-child,
+.sectionHead {
     display: flex !important;
-    flex-direction: row !important;     /* Иконка слева, текст справа */
-    align-items: center !important;     /* Выравнивание по высоте */
-    justify-content: center !important; /* Вся конструкция строго по центру карточки */
-    gap: 24px !important;               /* Аккуратный зазор между иконкой и текстом */
-    width: 100% !important;
+    flex-direction: column !important; /* Сохраняем вертикальную структуру блока */
+    align-items: flex-start !important; /* Сдвигает Vladimir и VERIFIED к левому краю */
+    padding-left: 32px !important;     /* Красивый отступ от левого края карточки */
+    padding-right: 32px !important;
 }
 
-/* 2. Наводим порядок внутри текстового блока */
-.sectionHead > div,
-#passport > div:first-child > div {
-    display: flex !important;
-    flex-direction: column !important;  /* Имя, описание и кнопка идут друг под другом */
-    align-items: flex-start !important; /* Прижимаем всё внутри блока к ЛЕВОМУ краю */
-    text-align: left !important;        /* Текст выравнивается по левой стороне */
-    margin: 0 !important;               /* Сбрасываем старые поломанные отступы */
-}
-
-/* 3. Корректируем кнопку VERIFIED, чтобы она стояла строго слева под текстом */
-.sectionHead button, 
-#passport button,
-.sectionHead [class*="verified"],
-#passport [class*="verified"] {
+/* 2. Выстраиваем имя Vladimir и описание ровно по левой линии */
+#passport h1, .sectionHead h1,
+#passport p, .sectionHead p {
+    text-align: left !important;
     margin-left: 0 !important;
     margin-right: auto !important;
-    margin-top: 12px !important;        /* Небольшой красивый отступ сверху от текста */
 }
 
-/* 4. Оставляем нижние три плитки с рейтингом ровно по центру карточки */
+/* 3. Прижимаем плашку VERIFIED строго влево под имя */
+#passport button, .sectionHead button,
+#passport [class*="verified"], .sectionHead [class*="verified"] {
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    margin-top: 12px !important;      /* Небольшой зазор под текстом */
+}
+
+/* 4. Возвращаем три нижние плитки (2850, CE...) обратно по центру карточки */
 #passport div[class*="grid"],
 .grid {
-    justify-content: center !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important; /* Принудительно центрируем только плитки */
+    margin-top: 24px !important;        /* Отступ между текстом и плитками */
 }
 
 /* 3. Блок с НИЖНИМИ карточками ачивок (4 штуки) - строго в ОДНУ СТРОКУ */
