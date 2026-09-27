@@ -73,17 +73,16 @@ body {
 /* ---------- ОСНОВНАЯ СЕТКА ПАСПОРТА ---------- */
 
 #passport .grid2 {
+  display: grid !important;
+  grid-template-columns: 450px 450px !important;
+  justify-content: center !important;
+  gap: 20px !important;
+
   width: 100% !important;
-  max-width: 1160px !important;
+  max-width: 100% !important;
 
   margin: 0 auto !important;
   padding: 0 !important;
-
-  display: grid !important;
-  grid-template-columns: 480px 480px !important;
-
-  gap: 24px !important;
-  align-items: stretch !important;
 
   box-sizing: border-box !important;
 }
