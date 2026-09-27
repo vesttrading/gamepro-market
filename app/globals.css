@@ -80,7 +80,7 @@ body {
   padding: 0 !important;
 
   display: grid !important;
-  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  grid-template-columns: 480px 480px !important;
 
   gap: 24px !important;
   align-items: stretch !important;
