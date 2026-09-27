@@ -61,12 +61,26 @@ div[style*="justifyContent: \"space-between\""] {
   margin: 0 auto 0 auto !important;
 }
 
-/* 3. Выравниваем элементы внутри строки, чтобы они стояли красиво */
-.sectionHead > div:first-child {
+/* Выравниваем контент внутри верхней панели по левому краю */
+.sectionHead {
     display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    margin-top: 0 !important;  /* ДОБАВЬТЕ ЭТУ СТРОКУ */
+    align-items: center !important;     /* Центрирует иконку и текст по горизонтальной оси */
+    justify-content: center !important; /* Удерживает всю группу по центру карточки */
+}
+
+/* Прижимаем текст внутри текстового блока влево */
+.sectionHead > div {
+    text-align: left !important;
+}
+
+/* Выстраиваем имя, описание и кнопку VERIFIED строго друг под другом по левой линии */
+.sectionHead h1,
+.sectionHead p,
+.sectionHead button,
+.sectionHead [class*="verified"] {
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    text-align: left !important;
 }
 
 .sectionHead > div:first-child > p, 
@@ -83,22 +97,6 @@ div[style*="justifyContent: \"space-between\""] {
     margin: 20px auto 140px auto !important;
     padding: 0 !important;
     box-sizing: border-box !important;
-}
-
-/* Работаем точечно с элементами внутри одной карточки */
-.sectionHead > div:first-child h1,
-.sectionHead > div:first-child p,
-.sectionHead > div:first-child button,
-.sectionHead > div:first-child div {
-    align-self: flex-start !important; /* Принудительно прижимает элемент к левому краю */
-    text-align: left !important;        /* Выравнивает текст внутри элемента по левому краю */
-}
-
-/* Сдвигаем саму галочку VERIFIED влево, если она обернута в кнопку или ссылку */
-.sectionHead button,
-.sectionHead a {
-    margin-left: 0 !important;
-    margin-right: auto !important;
 }
 
 /* 1. Полный сброс вертикального контейнера в паспорте */
