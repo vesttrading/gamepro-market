@@ -61,56 +61,63 @@ div[style*="justifyContent: \"space-between\""] {
   margin: 0 auto 0 auto !important;
 }
 
-/* =======================================================
-   ГЛОБАЛЬНОЕ РАЗВЕДЕНИЕ БЛОКОВ ПАСПОРТА ПО КРАЯМ
+Да/* =======================================================
+   РАЗВОДИМ КАРТОЧКИ В ОДИН РЯД И ВЫРАВНИВАЕМ КОНТЕНТ
    ======================================================= */
 
-/* 1. Главный контейнер паспорта: превращаем в строку и раздвигаем лево/право */
-#passport, 
-.passport-container,
-div:has(> #passport) {
+/* 1. Находим самый главный контейнер, в котором лежат обе карточки, и ставим их в ряд */
+main div:has(> div > h1), 
+div[class*="container"]:has(h1),
+.flex.flex-col:has(h1) {
     display: flex !important;
-    flex-direction: row !important;       /* Ставим блок Владимира и блок верификаций в одну строку */
-    justify-content: space-between !important; /* Выталкивает левый блок влево, а правый — вправо */
+    flex-direction: row !important;       /* Выстраивает левую и нижнюю карточки в ОДИН ряд */
+    justify-content: center !important;   /* Центрирует всю эту пару на экране */
     align-items: flex-start !important;    /* Выравнивает их по верхнему краю */
+    gap: 32px !important;                 /* Зазор между левой и правой карточками */
     width: 100% !important;
-    max-width: 1200px !important;         /* Ограничиваем максимальную ширину карточки */
-    margin: 0 auto !important;            /* Центрируем всю эту большую конструкцию на экране */
-    gap: 40px !important;                 /* Расстояние между левым и правым блоком */
-    box-sizing: border-box !important;
+    max-width: 1400px !important;
+    margin: 0 auto !important;
 }
 
-/* 2. ЛЕВЫЙ БЛОК (Иконка, Vladimir, Рейтинги 2850, CE) */
-#passport > div:first-child,
-.sectionHead {
+/* 2. ЛЕВАЯ КАРТОЧКА (Блок Владимира) */
+main div:has(> h1),
+div[class*="card"]:has(h1) {
     display: flex !important;
-    flex-direction: column !important;    /* Элементы внутри левой части идут сверху вниз */
-    align-items: flex-start !important;   /* Прижимаем Vladimir и его кнопку VERIFIED влево */
+    flex-direction: column !important;
+    align-items: flex-start !important;   /* Сдвигает имя Vladimir и его кнопку VERIFIED влево */
     text-align: left !important;
-    width: 50% !important;                /* Отдаем левой части половину ширины */
+    min-width: 450px !important;          /* Удерживаем ширину карточки */
 }
 
-/* Принудительно выравниваем текст и левую кнопку по левому краю */
-#passport > div:first-child h1,
-#passport > div:first-child p,
-#passport > div:first-child button {
+/* Принудительно прижимаем имя, текст и маленькую кнопку влево внутри левой карточки */
+main div:has(> h1) h1,
+main div:has(> h1) p,
+main div:has(> h1) button {
     text-align: left !important;
     margin-left: 0 !important;
     margin-right: auto !important;
 }
 
-/* 3. ПРАВЫЙ БЛОК (Большая панель VERIFIED, KSM, AOTC) */
-#passport > div:last-child,
-div:has(> .verified-badge) {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: flex-end !important;     /* Прижимаем весь блок и галочки к правому краю */
-    width: 50% !important;                /* Отдаем правой части вторую половину */
+/* Принудительно держим три плитки рейтинга по центру внутри левой карточки */
+main div:has(> h1) div[class*="grid"] {
+    justify-content: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 100% !important;
 }
 
-/* Принудительно выравниваем карточки внутри правого блока по правому краю */
-#passport > div:last-child div,
-#passport > div:last-child button {
+/* 3. ПРАВАЯ КАРТОЧКА (Блок с галочками KSM, AOTC...) */
+main div:has(> div > button[class*="verified"]),
+div[class*="card"]:has(button[class*="verified"]) {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-end !important;     /* Сдвигает правый VERIFIED в самый правый край */
+    min-width: 450px !important;          /* Удерживаем ширину карточки */
+}
+
+/* Принудительно выталкиваем кнопки внутри правой карточки к правому краю */
+main div:has(> div > button[class*="verified"]) button,
+main div:has(> div > button[class*="verified"]) div {
     margin-right: 0 !important;
     margin-left: auto !important;
 }
