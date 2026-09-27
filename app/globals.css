@@ -98,7 +98,7 @@ body {
   gap: 10px !important;
 
   width: 100% !important;
-  margin-top: auto !important;
+  margin-top: 40px !important;
 }
 
 #passport .grid2 > div:nth-child(2) .cards > div,
