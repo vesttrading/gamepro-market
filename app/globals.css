@@ -139,9 +139,16 @@ div[style*="justifyContent: \"space-between\""] {
     #passport div[class*="grid"] > div:nth-child(2),
     #passport [class*="verified"],
     #passport .verified-section {
-    margin-top: 120px !important;
+    margin-top: 50px !important;
     margin-bottom: 20px !important;
     display: block !important;
+}
+
+/* Безопасное увеличение расстояния до нижнего блока */
+#passport {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 40px !important; /* Регулируйте этот зазор, чтобы раздвинуть блоки (например: 50px, 60px) */
 }
 
 /* 1. НАЙТИ ИГРОКА  Намертво уменьшаем весь общий блок до аккуратных 800px */
