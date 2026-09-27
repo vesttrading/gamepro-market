@@ -99,22 +99,6 @@ div:has(> #passport) {
     margin-right: auto !important;
 }
 
-/* 3. ПРАВЫЙ БЛОК (Большая панель VERIFIED, KSM, AOTC) */
-#passport > div:last-child,
-div:has(> .verified-badge) {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: flex-end !important;     /* Прижимаем весь блок и галочки к правому краю */
-    width: 50% !important;                /* Отдаем правой части вторую половину */
-}
-
-/* Принудительно выравниваем карточки внутри правого блока по правому краю */
-#passport > div:last-child div,
-#passport > div:last-child button {
-    margin-right: 0 !important;
-    margin-left: auto !important;
-}
-
 /* 3. Блок с НИЖНИМИ карточками ачивок (4 штуки) - строго в ОДНУ СТРОКУ */
 #passport div[class*="grid"] > div:first-child > div:last-child + div,
 #passport .cards {
