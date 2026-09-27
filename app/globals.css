@@ -236,7 +236,7 @@ div[style*="justifyContent: \"space-between\""] {
 /* Приближаем карточку игрока к поисковой строке */
 #players form,
 #players .search-container {
-    margin-bottom: 20px !important; /* Уменьшаем отступ снизу от поисковой строки */
+    margin-bottom: 5px !important; /* Уменьшаем отступ снизу от поисковой строки */
 }
 
 #players .card, 
