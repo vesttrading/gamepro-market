@@ -89,20 +89,20 @@ body {
 
 /* ---------- КАРТОЧКИ ПАСПОРТА ---------- */
 
-#passport .grid2 > div {
-  box-sizing: border-box !important;
-
-  min-width: 0 !important;
+#passport .grid2 > div:nth-child(2) {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 20px !important;
+  flex-wrap: nowrap !important;
 }
 
-/* Не даём карточкам становиться огромными */
-
-#passport .grid2 > div:first-child,
-#passport .grid2 > div:nth-child(2) {
-  width: 100% !important;
-  max-width: none !important;
-
-  box-sizing: border-box !important;
+#passport .grid2 > div:nth-child(2) [class*="verified"] {
+  display: inline-flex !important;
+  width: auto !important;
+  margin: 0 !important;
+  white-space: nowrap !important;
 }
 
 /* ---------- НЕОН/ТЁМНЫЙ GAMEPRO СТИЛЬ ---------- */
