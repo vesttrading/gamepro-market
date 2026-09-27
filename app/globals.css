@@ -241,7 +241,7 @@ div[style*="justifyContent: \"space-between\""] {
 
 #players .card, 
 #players [class*="card"] {
-    margin-top: 0 !important; /* Убираем лишний отступ сверху у карточки */
+    margin-top: -35 !important; /* Убираем лишний отступ сверху у карточки */
 }
 
 /* А это правило сработает ТОЛЬКО на экранах телефонов (меньше 768px) */
