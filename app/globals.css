@@ -233,6 +233,17 @@ div[style*="justifyContent: \"space-between\""] {
     margin-bottom: 32px !important;
 }
 
+/* Приближаем карточку игрока к поисковой строке */
+#players form,
+#players .search-container {
+    margin-bottom: 20px !important; /* Уменьшаем отступ снизу от поисковой строки */
+}
+
+#players .card, 
+#players [class*="card"] {
+    margin-top: 0 !important; /* Убираем лишний отступ сверху у карточки */
+}
+
 /* А это правило сработает ТОЛЬКО на экранах телефонов (меньше 768px) */
 @media (max-width: 768px) {
     #players .cards,
