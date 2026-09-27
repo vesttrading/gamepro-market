@@ -149,10 +149,15 @@ div[style*="justifyContent: \"space-between\""] {
     width: 100% !important;
     max-width: 800px !important;
     margin-top: -35px !important;
+}
 
-    /* ДОБАВЬТЕ ЭТИ ДВЕ ЦИФРОВЫЕ СТРОКИ СЮДА: */
-    line-height: 1.1 !important;    /* Уменьшает высоту текстового поля заголовка */
-    gap: 4px !important;            /* Если внутри используется flex, это уменьшит зазор между строками до 4px */
+#players h1 {
+    margin-bottom: 8px !important; /* Уменьшает отступ снизу от заголовка */
+}
+
+#players p {
+    margin-top: 0 !important;      /* Убирает лишний отступ сверху у подзаголовка */
+    margin-bottom: 24px !important; /* Задает комфортный зазор до строки поиска */
 }
 
 /* Шаг 2. Саму строку поиска внутри делаем еще чуть компактнее */
