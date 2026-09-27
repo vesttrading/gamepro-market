@@ -62,42 +62,57 @@ div[style*="justifyContent: \"space-between\""] {
 }
 
 /* =======================================================
-   КОРРЕКТИРОВКА ЕДИНОГО БЛОКА КАРТОЧКИ
+   ГЛОБАЛЬНОЕ РАЗВЕДЕНИЕ БЛОКОВ ПАСПОРТА ПО КРАЯМ
    ======================================================= */
 
-/* 1. Настраиваем сам единый контейнер */
+/* 1. Главный контейнер паспорта: превращаем в строку и раздвигаем лево/право */
+#passport, 
+.passport-container,
+div:has(> #passport) {
+    display: flex !important;
+    flex-direction: row !important;       /* Ставим блок Владимира и блок верификаций в одну строку */
+    justify-content: space-between !important; /* Выталкивает левый блок влево, а правый — вправо */
+    align-items: flex-start !important;    /* Выравнивает их по верхнему краю */
+    width: 100% !important;
+    max-width: 1200px !important;         /* Ограничиваем максимальную ширину карточки */
+    margin: 0 auto !important;            /* Центрируем всю эту большую конструкцию на экране */
+    gap: 40px !important;                 /* Расстояние между левым и правым блоком */
+    box-sizing: border-box !important;
+}
+
+/* 2. ЛЕВЫЙ БЛОК (Иконка, Vladimir, Рейтинги 2850, CE) */
 #passport > div:first-child,
 .sectionHead {
     display: flex !important;
-    flex-direction: column !important; /* Сохраняем вертикальную структуру блока */
-    align-items: flex-start !important; /* Сдвигает Vladimir и VERIFIED к левому краю */
-    padding-left: 32px !important;     /* Красивый отступ от левого края карточки */
-    padding-right: 32px !important;
+    flex-direction: column !important;    /* Элементы внутри левой части идут сверху вниз */
+    align-items: flex-start !important;   /* Прижимаем Vladimir и его кнопку VERIFIED влево */
+    text-align: left !important;
+    width: 50% !important;                /* Отдаем левой части половину ширины */
 }
 
-/* 2. Выстраиваем имя Vladimir и описание ровно по левой линии */
-#passport h1, .sectionHead h1,
-#passport p, .sectionHead p {
+/* Принудительно выравниваем текст и левую кнопку по левому краю */
+#passport > div:first-child h1,
+#passport > div:first-child p,
+#passport > div:first-child button {
     text-align: left !important;
     margin-left: 0 !important;
     margin-right: auto !important;
 }
 
-/* 3. Прижимаем плашку VERIFIED строго влево под имя */
-#passport button, .sectionHead button,
-#passport [class*="verified"], .sectionHead [class*="verified"] {
-    margin-left: 0 !important;
-    margin-right: auto !important;
-    margin-top: 12px !important;      /* Небольшой зазор под текстом */
+/* 3. ПРАВЫЙ БЛОК (Большая панель VERIFIED, KSM, AOTC) */
+#passport > div:last-child,
+div:has(> .verified-badge) {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-end !important;     /* Прижимаем весь блок и галочки к правому краю */
+    width: 50% !important;                /* Отдаем правой части вторую половину */
 }
 
-/* 4. Возвращаем три нижние плитки (2850, CE...) обратно по центру карточки */
-#passport div[class*="grid"],
-.grid {
-    width: 100% !important;
-    display: flex !important;
-    justify-content: center !important; /* Принудительно центрируем только плитки */
-    margin-top: 24px !important;        /* Отступ между текстом и плитками */
+/* Принудительно выравниваем карточки внутри правого блока по правому краю */
+#passport > div:last-child div,
+#passport > div:last-child button {
+    margin-right: 0 !important;
+    margin-left: auto !important;
 }
 
 /* 3. Блок с НИЖНИМИ карточками ачивок (4 штуки) - строго в ОДНУ СТРОКУ */
