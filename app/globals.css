@@ -226,6 +226,13 @@ div[style*="justifyContent: \"space-between\""] {
     margin-bottom: 8px !important;
 }
 
+/* Увеличиваем зазор между подзаголовком и поисковой строкой */
+#players p, 
+#players span,
+#players .subtitle {
+    margin-bottom: 32px !important;
+}
+
 /* А это правило сработает ТОЛЬКО на экранах телефонов (меньше 768px) */
 @media (max-width: 768px) {
     #players .cards,
