@@ -85,6 +85,23 @@ div[style*="justifyContent: \"space-between\""] {
     box-sizing: border-box !important;
 }
 
+/* Перебиваем центрирование элементов внутри верхней части паспорта */
+#passport .sectionHead > div:first-child,
+#passport [class*="sectionHead"] > div:first-child {
+    align-items: flex-start !important; /* Сдвигает Vladimir, текст и кнопку влево */
+    text-align: left !important;
+    max-width: fit-content !important;  /* Ограничивает ширину блока по контенту */
+    margin-left: auto !important;       /* Магическое комбо из auto центрирует */
+    margin-right: auto !important;      /* сам блок внутри всей большой карточки */
+}
+
+/* Принудительно убираем центрирование у кнопки VERIFIED, если она смещается */
+#passport .sectionHead button,
+#passport .sectionHead [class*="verified"] {
+    margin-left: 0 !important;
+    margin-right: auto !important;
+}
+
 /* 1. Полный сброс вертикального контейнера в паспорте */
 #passport div[class*="grid"] > div:first-child > div:last-child {
     display: flex !important;
@@ -148,7 +165,7 @@ div[style*="justifyContent: \"space-between\""] {
 #passport {
     display: flex !important;
     flex-direction: column !important;
-    gap: 40px !important; /* Регулируйте этот зазор, чтобы раздвинуть блоки (например: 50px, 60px) */
+    gap: 60px !important; /* Регулируйте этот зазор, чтобы раздвинуть блоки (например: 50px, 60px) */
 }
 
 /* 1. НАЙТИ ИГРОКА  Намертво уменьшаем весь общий блок до аккуратных 800px */
