@@ -114,6 +114,11 @@ div[class*="passport"] + div {
     margin-left: auto !important;
 }
 
+/* Отодвигаем заголовок "Найти игрока" вниз от блока верификаций */
+div:has(> div > button[class*="verified"]):not(:has(h1)) {
+    margin-bottom: 50px !important; /* Увеличивает зазор снизу карточки до 50 пикселей */
+}
+
 /* 3. Блок с НИЖНИМИ карточками ачивок (4 штуки) - строго в ОДНУ СТРОКУ */
 #passport div[class*="grid"] > div:first-child > div:last-child + div,
 #passport .cards {
