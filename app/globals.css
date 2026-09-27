@@ -61,63 +61,55 @@ div[style*="justifyContent: \"space-between\""] {
   margin: 0 auto 0 auto !important;
 }
 
-Да/* =======================================================
-   РАЗВОДИМ КАРТОЧКИ В ОДИН РЯД И ВЫРАВНИВАЕМ КОНТЕНТ
+/* =======================================================
+   ПРИНУДИТЕЛЬНО ДЕЛАЕМ ДВА БЛОКА КВАДРАТНЫМИ
    ======================================================= */
 
-/* 1. Находим самый главный контейнер, в котором лежат обе карточки, и ставим их в ряд */
-main div:has(> div > h1), 
-div[class*="container"]:has(h1),
-.flex.flex-col:has(h1) {
-    display: flex !important;
-    flex-direction: row !important;       /* Выстраивает левую и нижнюю карточки в ОДИН ряд */
-    justify-content: center !important;   /* Центрирует всю эту пару на экране */
-    align-items: flex-start !important;    /* Выравнивает их по верхнему краю */
-    gap: 32px !important;                 /* Зазор между левой и правой карточками */
-    width: 100% !important;
-    max-width: 1400px !important;
-    margin: 0 auto !important;
-}
-
-/* 2. ЛЕВАЯ КАРТОЧКА (Блок Владимира) */
-main div:has(> h1),
-div[class*="card"]:has(h1) {
+/* 1. Находим левый блок (Паспорт Владимира) */
+#passport,
+[id="passport"],
+div[class*="passport"] {
     display: flex !important;
     flex-direction: column !important;
-    align-items: flex-start !important;   /* Сдвигает имя Vladimir и его кнопку VERIFIED влево */
+    
+    /* Делаем блок квадратным */
+    width: 500px !important;
+    height: 500px !important;
+    
+    /* Выравниваем элементы */
+    align-items: flex-start !important;
     text-align: left !important;
-    min-width: 450px !important;          /* Удерживаем ширину карточки */
+    padding: 32px !important;
+    box-sizing: border-box !important;
 }
 
-/* Принудительно прижимаем имя, текст и маленькую кнопку влево внутри левой карточки */
-main div:has(> h1) h1,
-main div:has(> h1) p,
-main div:has(> h1) button {
+/* 2. Находим правый блок (с верификациями), который идет сразу после левого */
+#passport + div,
+[id="passport"] + div,
+div[class*="passport"] + div {
+    display: flex !important;
+    flex-direction: column !important;
+    
+    /* Делаем точно такой же квадрат */
+    width: 500px !important;
+    height: 500px !important;
+    
+    /* Выравниваем элементы */
+    align-items: flex-end !important;
+    text-align: right !important;
+    padding: 32px !important;
+    box-sizing: border-box !important;
+}
+
+/* 3. Принудительное выравнивание текстов и кнопок внутри левого квадрата */
+#passport h1, #passport p, #passport button {
     text-align: left !important;
     margin-left: 0 !important;
     margin-right: auto !important;
 }
 
-/* Принудительно держим три плитки рейтинга по центру внутри левой карточки */
-main div:has(> h1) div[class*="grid"] {
-    justify-content: center !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    width: 100% !important;
-}
-
-/* 3. ПРАВАЯ КАРТОЧКА (Блок с галочками KSM, AOTC...) */
-main div:has(> div > button[class*="verified"]),
-div[class*="card"]:has(button[class*="verified"]) {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: flex-end !important;     /* Сдвигает правый VERIFIED в самый правый край */
-    min-width: 450px !important;          /* Удерживаем ширину карточки */
-}
-
-/* Принудительно выталкиваем кнопки внутри правой карточки к правому краю */
-main div:has(> div > button[class*="verified"]) button,
-main div:has(> div > button[class*="verified"]) div {
+/* 4. Принудительное выравнивание кнопок внутри правого квадрата */
+#passport + div button, #passport + div div {
     margin-right: 0 !important;
     margin-left: auto !important;
 }
