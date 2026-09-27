@@ -85,19 +85,18 @@ div[style*="justifyContent: \"space-between\""] {
     box-sizing: border-box !important;
 }
 
-/* Перебиваем центрирование элементов внутри верхней части паспорта */
-#passport .sectionHead > div:first-child,
-#passport [class*="sectionHead"] > div:first-child {
-    align-items: flex-start !important; /* Сдвигает Vladimir, текст и кнопку влево */
-    text-align: left !important;
-    max-width: fit-content !important;  /* Ограничивает ширину блока по контенту */
-    margin-left: auto !important;       /* Магическое комбо из auto центрирует */
-    margin-right: auto !important;      /* сам блок внутри всей большой карточки */
+/* Работаем точечно с элементами внутри одной карточки */
+.sectionHead > div:first-child h1,
+.sectionHead > div:first-child p,
+.sectionHead > div:first-child button,
+.sectionHead > div:first-child div {
+    align-self: flex-start !important; /* Принудительно прижимает элемент к левому краю */
+    text-align: left !important;        /* Выравнивает текст внутри элемента по левому краю */
 }
 
-/* Принудительно убираем центрирование у кнопки VERIFIED, если она смещается */
-#passport .sectionHead button,
-#passport .sectionHead [class*="verified"] {
+/* Сдвигаем саму галочку VERIFIED влево, если она обернута в кнопку или ссылку */
+.sectionHead button,
+.sectionHead a {
     margin-left: 0 !important;
     margin-right: auto !important;
 }
