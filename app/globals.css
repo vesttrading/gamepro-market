@@ -148,7 +148,7 @@ div[style*="justifyContent: \"space-between\""] {
 #players {
     width: 100% !important;
     max-width: 800px !important;  
-    margin-top: -35px !important; /* Центрируем весь этот блок на экране */
+    margin-top: -55px !important; /* Центрируем весь этот блок на экране */
 }
 
 /* Шаг 2. Саму строку поиска внутри делаем еще чуть компактнее */
@@ -214,12 +214,7 @@ div[style*="justifyContent: \"space-between\""] {
     padding: 16px !important;
     border: 1px solid #00f2fe !important;
     box-shadow: 0 0 15px rgba(0, 242, 254, 0.12) !important;
-  #players h1, #players h2, #players h3, #players div:first-child {
-    margin-bottom: 4px !important;
-}
 
-#players p, #players span, #players .subtitle {
-    margin-top: 0px !important;
 }
 
 /* А это правило сработает ТОЛЬКО на экранах телефонов (меньше 768px) */
