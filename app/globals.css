@@ -10,161 +10,305 @@ body {
 @tailwind utilities;
 
 
-/* 1. Возвращаем секции правильный блочный вид, чтобы карточка Владимира была по центру */
+ /* =========================================================
+   GAMEPRO — ACHIEVEMENT PASSPORT / PLAYERS
+   ЧИСТАЯ ВЕРСИЯ
+   ========================================================= */
+
+/* ---------- ACHIEVEMENT PASSPORT ---------- */
+
 #passport {
-  display: block !important;
-  margin: -35px auto 0 auto !important;
-  max-width: 1160px !important;
   width: 92% !important;
-}
+  max-width: 1160px !important;
+  margin: 0 auto !important;
+  padding: 40px 0 !important;
 
-/* 2. Сближаем заголовок и кнопку, убирая растяжение по краям экрана */
-.sectionHead, 
-div[style*="justifyContent: \"space-between\""] {
-  display: flex !important;
-  flex-direction: row !important;
-  justify-content: flex-start !important; /* 🌟 Прижимает кнопку вплотную к тексту слева */
-  align-items: center !important;         /* Выравнивает их ровно по высоте */
-  flex-wrap: wrap !important;
-  gap: 20px !important;                   /* Расстояние между текстом описания и кнопкой */
-  margin-bottom: 20px !important;
-  width: 100% !important;
-}
-
-/* 3. Описание под заголовком оставляем обычным блоком, чтобы оно не ломало строку */
-.sectionHead > div:first-child {
   display: block !important;
+  box-sizing: border-box !important;
 }
 
-/* 4. Восстанавливаем сетку для паспорта, чтобы карточка была на всю ширину */
-.grid2 {
-    display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
-    gap: 20px !important;
-    width: 100% !important;
-    padding-top: 0 !important;       /* Убираем лишний внутренний отступ сверху */
-    margin-top: -45px !important;    /* Принудительно подтягиваем блок вверх */
+/* Заголовок секции */
+
+#passport .sectionHead {
+  width: 100% !important;
+  max-width: 900px !important;
+
+  margin: 0 auto 30px auto !important;
+  padding: 0 !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  text-align: center !important;
+  gap: 8px !important;
 }
 
-/* 1. Уменьшаем размер заголовка Achievement Passport */
+/* Achievement Passport */
+
+#passport .sectionHead h2,
+#passport h2 {
+  margin: 0 !important;
+  padding: 0 !important;
+
+  font-size: 28px !important;
+  line-height: 1.2 !important;
+  font-weight: 800 !important;
+
+  text-align: center !important;
+}
+
+/* Описание */
+
+#passport .sectionHead p {
+  margin: 0 !important;
+  padding: 0 !important;
+
+  max-width: 700px !important;
+
+  text-align: center !important;
+}
+
+/* ---------- ОСНОВНАЯ СЕТКА ПАСПОРТА ---------- */
+
+#passport .grid2 {
+  width: 100% !important;
+  max-width: 1160px !important;
+
+  margin: 0 auto !important;
+  padding: 0 !important;
+
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+
+  gap: 24px !important;
+  align-items: stretch !important;
+
+  box-sizing: border-box !important;
+}
+
+/* ---------- КАРТОЧКИ ПАСПОРТА ---------- */
+
+#passport .grid2 > div {
+  box-sizing: border-box !important;
+
+  min-width: 0 !important;
+}
+
+/* Не даём карточкам становиться огромными */
+
+#passport .grid2 > div:first-child,
+#passport .grid2 > div:nth-child(2) {
+  width: 100% !important;
+  max-width: none !important;
+
+  box-sizing: border-box !important;
+}
+
+/* ---------- НЕОН/ТЁМНЫЙ GAMEPRO СТИЛЬ ---------- */
+
+#passport .grid2 > div {
+  background:
+    linear-gradient(
+      145deg,
+      #10162b 0%,
+      #080d1b 100%
+    ) !important;
+
+  border: 1px solid #262d49 !important;
+  border-radius: 20px !important;
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* ---------- ТЕКСТ В ПАСПОРТЕ ---------- */
+
+#passport h1,
 #passport h2,
-.sectionHead h2 {
-    font-size: 28px !important;
-    margin: 0 !important;
-    margin-bottom: 5px !important; /* ДОБАВЬТЕ ЭТУ СТРОКУ */
+#passport h3,
+#passport p {
+  box-sizing: border-box !important;
 }
 
-/* 2. Центрируем всю верхнюю строку (заголовок, описание и кнопку) */
-.sectionHead {
-  justify-content: center !important; /* 🌟 Ставит всю строку строго по центру */
-  text-align: center !important;     /* Центрирует текст внутри */
-  margin: 0 auto 0 auto !important;
+/* Владимир */
+
+#passport h1 {
+  margin-top: 0 !important;
 }
 
-/* =======================================================
-   ПРИНУДИТЕЛЬНО ДЕЛАЕМ ДВА БЛОКА КВАДРАТНЫМИ
-   ======================================================= */
+/* VERIFIED */
 
-/* 1. Находим левый блок (Паспорт Владимира) */
-#passport,
-[id="passport"],
-div[class*="passport"] {
-    display: flex !important;
-    flex-direction: column !important;
-    
-    /* Делаем блок квадратным */
-    width: 500px !important;
-    height: 500px !important;
-    
-    /* Выравниваем элементы */
-    align-items: flex-start !important;
-    text-align: left !important;
-    padding: 32px !important;
-    box-sizing: border-box !important;
+#passport [class*="verified"] {
+  box-sizing: border-box !important;
 }
 
-/* 2. Находим правый блок (с верификациями), который идет сразу после левого */
-#passport + div,
-[id="passport"] + div,
-div[class*="passport"] + div {
-    display: flex !important;
-    flex-direction: column !important;
-    
-    /* Делаем точно такой же квадрат */
-    width: 500px !important;
-    height: 500px !important;
-    
-    /* Выравниваем элементы */
-    align-items: flex-end !important;
-    text-align: right !important;
-    padding: 32px !important;
-    box-sizing: border-box !important;
-}
+/* ---------- КАРТОЧКИ ДОСТИЖЕНИЙ ---------- */
 
-/* 3. Принудительное выравнивание текстов и кнопок внутри левого квадрата */
-#passport h1, #passport p, #passport button {
-    text-align: left !important;
-    margin-left: 0 !important;
-    margin-right: auto !important;
-}
+/*
+   Любой блок с четырьмя нижними карточками
+   стараемся собрать в одну строку.
+*/
 
-/* 4. Принудительное выравнивание кнопок внутри правого квадрата */
-#passport + div button, #passport + div div {
-    margin-right: 0 !important;
-    margin-left: auto !important;
-}
-
-/* Отодвигаем заголовок "Найти игрока" вниз от верхнего блока */
-#players h1, 
-#players h2,
-#players .title,
-div:has(> input) - h1 {
-    margin-top: 60px !important; /* Было 0 или стандартный отступ — увеличиваем до 60px */
-}
-
-/* 3. Блок с НИЖНИМИ карточками ачивок (4 штуки) - строго в ОДНУ СТРОКУ */
-#passport div[class*="grid"] > div:first-child > div:last-child + div,
 #passport .cards {
-    display: flex !important;
-    flex-direction: row !important; /* В одну линию */
-    justify-content: center !important;
-    flex-wrap: nowrap !important; /* Запрещаем перенос в 2 ряда */
-    gap: 10px !important;
-    width: 100% !important;
-    margin-top: 60px !important;
-    margin-bottom: 30px !important; /* Делаем отступ СНИЗУ от карточек до поиска */
+  width: 100% !important;
+
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+
+  gap: 10px !important;
+
+  margin: 30px 0 0 0 !important;
+  padding: 0 !important;
+
+  box-sizing: border-box !important;
 }
 
-/* 4. Делаем нижние 4 карточки аккуратными и одинаковыми */
-#passport div[class*="grid"] > div:first-child > div:last-child + div > div,
-#passport div[class*="grid"] > div:first-child > div:last-child + div > a,
+/* Сами achievement cards */
+
 #passport .cards > div,
 #passport .cards > a {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    flex: 1 1 0px !important;
-    max-width: 130px !important;
-    min-width: 85px !important; /* Чтобы 4 карточки точно влезли в ряд */
-    padding: 8px !important;
-    box-sizing: border-box !important;
+  min-width: 0 !important;
+  width: 100% !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+
+  align-items: center !important;
+  justify-content: center !important;
+
+  text-align: center !important;
+
+  box-sizing: border-box !important;
 }
 
-/* Прямое увеличение отступа над блоком VERIFIED */
-    #passport div[class*="grid"] > div:nth-child(2),
-    #passport [class*="verified"],
-    #passport .verified-section {
-    margin-top: 50px !important;
-    margin-bottom: 20px !important;
-    display: block !important;
+/* ---------- ПОИСК ИГРОКА ---------- */
+
+#players {
+  width: 92% !important;
+  max-width: 1000px !important;
+
+  margin: 45px auto 0 auto !important;
+  padding: 40px 0 !important;
+
+  box-sizing: border-box !important;
 }
 
-/* Безопасное увеличение расстояния до нижнего блока */
-#passport {
-    display: flex !important;
+/* Заголовок Найти игрока */
+
+#players h1,
+#players h2,
+#players .title {
+  margin-top: 0 !important;
+}
+
+/* Search box */
+
+#players .searchbox {
+  width: 100% !important;
+  max-width: 650px !important;
+
+  margin: 20px auto 30px auto !important;
+
+  display: flex !important;
+  align-items: center !important;
+
+  gap: 10px !important;
+
+  box-sizing: border-box !important;
+}
+
+/* Поле поиска */
+
+#players input {
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* Кнопка поиска */
+
+#players button {
+  box-sizing: border-box !important;
+}
+ /* ---------- КАРТОЧКИ ИГРОКОВ ---------- */
+
+#players .grid,
+#players [class*="grid"] {
+  box-sizing: border-box !important;
+}
+
+/* ---------- МОБИЛЬНАЯ ВЕРСИЯ ---------- */
+
+@media (max-width: 800px) {
+
+  #passport {
+    width: 94% !important;
+    padding-top: 25px !important;
+  }
+
+  #passport .sectionHead {
+    margin-bottom: 24px !important;
+  }
+
+  #passport .sectionHead h2,
+  #passport h2 {
+    font-size: 24px !important;
+  }
+
+  /* Две карточки паспорта → одна колонка */
+
+  #passport .grid2 {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+
+  /* Четыре достижения → две колонки */
+
+  #passport .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  /* Поиск */
+
+  #players {
+    width: 94% !important;
+    margin-top: 30px !important;
+    padding-top: 25px !important;
+  }
+
+  #players .searchbox {
     flex-direction: column !important;
-    gap: 60px !important; /* Регулируйте этот зазор, чтобы раздвинуть блоки (например: 50px, 60px) */
+    align-items: stretch !important;
+  }
+
+  #players .searchbox input,
+  #players .searchbox button {
+    width: 100% !important;
+  }
+}
+
+/* ---------- МАЛЕНЬКИЙ ТЕЛЕФОН ---------- */
+
+@media (max-width: 480px) {
+
+  #passport {
+    width: 94% !important;
+  }
+
+  #passport .sectionHead h2,
+  #passport h2 {
+    font-size: 22px !important;
+  }
+
+  #passport .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+  }
+
+  #players {
+    width: 94% !important;
+  }
 }
 
 /* 1. НАЙТИ ИГРОКА  Намертво уменьшаем весь общий блок до аккуратных 800px */
