@@ -61,63 +61,47 @@ div[style*="justifyContent: \"space-between\""] {
   margin: 0 auto 0 auto !important;
 }
 
-/* Выравниваем контент внутри верхней панели по левому краю */
-.sectionHead {
+/* =======================================================
+   ФИНАЛЬНЫЙ ЧИСТЫЙ КОД ДЛЯ КАРТОЧКИ PASSPORT
+   ======================================================= */
+
+/* 1. Собираем иконку и весь текст в одну ровную строку по центру карточки */
+.sectionHead, 
+#passport > div:first-child {
     display: flex !important;
-    align-items: center !important;     /* Центрирует иконку и текст по горизонтальной оси */
-    justify-content: center !important; /* Удерживает всю группу по центру карточки */
+    flex-direction: row !important;     /* Иконка слева, текст справа */
+    align-items: center !important;     /* Выравнивание по высоте */
+    justify-content: center !important; /* Вся конструкция строго по центру карточки */
+    gap: 24px !important;               /* Аккуратный зазор между иконкой и текстом */
+    width: 100% !important;
 }
 
-/* Прижимаем текст внутри текстового блока влево */
-.sectionHead > div {
-    text-align: left !important;
+/* 2. Наводим порядок внутри текстового блока */
+.sectionHead > div,
+#passport > div:first-child > div {
+    display: flex !important;
+    flex-direction: column !important;  /* Имя, описание и кнопка идут друг под другом */
+    align-items: flex-start !important; /* Прижимаем всё внутри блока к ЛЕВОМУ краю */
+    text-align: left !important;        /* Текст выравнивается по левой стороне */
+    margin: 0 !important;               /* Сбрасываем старые поломанные отступы */
 }
 
-/* Выстраиваем имя, описание и кнопку VERIFIED строго друг под другом по левой линии */
-.sectionHead h1,
-.sectionHead p,
-.sectionHead button,
-.sectionHead [class*="verified"] {
+/* 3. Корректируем кнопку VERIFIED, чтобы она стояла строго слева под текстом */
+.sectionHead button, 
+#passport button,
+.sectionHead [class*="verified"],
+#passport [class*="verified"] {
     margin-left: 0 !important;
     margin-right: auto !important;
-    text-align: left !important;
+    margin-top: 12px !important;        /* Небольшой красивый отступ сверху от текста */
 }
 
-.sectionHead > div:first-child > p, 
-.sectionHead p {
-    margin-top: 10px !important;
-}
-
-#passport .grid2 {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 20px !important;
-    width: 100% !important;
-    max-width: 500px !important;
-    margin: 20px auto 140px auto !important;
-    padding: 0 !important;
-    box-sizing: border-box !important;
-}
-
-/* 1. Полный сброс вертикального контейнера в паспорте */
-#passport div[class*="grid"] > div:first-child > div:last-child {
-    display: flex !important;
-    flex-direction: row !important; /* Намертво заставляем встать в ряд */
-    align-items: center !important;
+/* 4. Оставляем нижние три плитки с рейтингом ровно по центру карточки */
+#passport div[class*="grid"],
+.grid {
     justify-content: center !important;
-    gap: 16px !important;
-    width: 100% !important;
-}
-
-/* 2. Принудительная настройка для самих карточек, чтобы они не растягивались */
-#passport div[class*="grid"] > div:first-child > div:last-child > div,
-#passport div[class*="grid"] > div:first-child > div:last-child > a {
-    display: flex !important;
-    flex-direction: column !important; /* Текст внутри карточки оставляем столбиком */
-    align-items: center !important;
-    justify-content: center !important;
-    width: auto !important;
-    flex: 1 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
 }
 
 /* 3. Блок с НИЖНИМИ карточками ачивок (4 штуки) - строго в ОДНУ СТРОКУ */
