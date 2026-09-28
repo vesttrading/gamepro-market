@@ -335,6 +335,7 @@ body {
 
   display: flex !important;
   flex-direction: column !important;
+  gap: 18px !important; /* Увеличьте число, если нужно больше места */
 
   justify-content: center !important;
   align-items: center !important;
@@ -356,10 +357,6 @@ body {
     0 0 15px rgba(0, 242, 254, 0.12) !important;
 
   overflow: hidden !important;
-}
-
-gap: 18px !important; /* Увеличьте число, если нужно больше места */
-
 }
 
 /* =========================================================
