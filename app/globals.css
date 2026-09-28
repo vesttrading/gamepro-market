@@ -362,7 +362,7 @@ body {
 #players .cards > div,
 #players .cards > a {
   justify-content: flex-start !important;
-  padding-top: 15px !important;
+  padding-top: 8px !important;
 }
 
 /* =========================================================
