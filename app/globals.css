@@ -202,6 +202,18 @@ body {
 
   box-sizing: border-box !important;
 }
+
+/* Бирюзовая обводка двух основных блоков Achievement Passport */
+
+#passport .grid2 > div {
+  border: 1px solid #00f2fe !important;
+  border-radius: 20px !important;
+
+  box-shadow:
+    0 0 12px rgba(0, 242, 254, 0.18),
+    0 0 30px rgba(0, 242, 254, 0.08) !important;
+}
+
 /* ---------- МОБИЛЬНАЯ ВЕРСИЯ ---------- */
 
 @media (max-width: 800px) {
