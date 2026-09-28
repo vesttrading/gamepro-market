@@ -191,18 +191,6 @@ body {
   box-sizing: border-box !important;
 }
 
-/* ---------- ПОИСК ИГРОКА ---------- */
-
-#players {
-  width: 92% !important;
-  max-width: 1000px !important;
-
-  margin: 45px auto 0 auto !important;
-  padding: 40px 0 !important;
-
-  box-sizing: border-box !important;
-}
-
 /* Бирюзовая обводка двух основных блоков Achievement Passport */
 
 #passport .grid2 > div {
