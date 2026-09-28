@@ -356,22 +356,21 @@ flex: 0 0 240px !important;
   overflow: hidden !important;
 }
 
-/* Поднимаем только верхнюю часть карточки */
-#players .cards > div > *,
-#players .cards > a > * {
-  transform: none !important;
-}
+#players .cards > div,
+#players .cards > a,
+#players div[class*="cards"] > div,
+#players div[class*="cards"] > a {
+  width: 240px !important;
+  min-width: 240px !important;
+  max-width: 240px !important;
 
-/* Omenyx + DPS Demon + иконка */
-#players .cards > div > h1,
-#players .cards > div > h2,
-#players .cards > div > h3,
-#players .cards > div > p:first-of-type,
-#players .cards > a > h1,
-#players .cards > a > h2,
-#players .cards > a > h3,
-#players .cards > a > p:first-of-type {
-  transform: translateY(-25px) !important;
+  height: 240px !important;
+  min-height: 240px !important;
+  max-height: 240px !important;
+
+  aspect-ratio: 1 / 1 !important;
+
+  box-sizing: border-box !important;
 }
 
 /* =========================================================
