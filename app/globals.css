@@ -845,7 +845,7 @@ section#reviews p {
 main > section:last-of-type,
 main > div:last-child,
 section:last-of-type {
-    margin-top: 100px !important;
+    margin-top: 200px !important;
 }
 
 /* Адаптация шапки сайта под экраны телефонов */
