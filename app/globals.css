@@ -836,7 +836,7 @@ section#reviews p {
     main + footer,
     div[class*="footer"] {
         margin-top: 140px !important;    /* Отодвигаем надписи ниже от Гильдий */
-        padding-bottom: 60px !important;  /* Делаем аккуратный отступ до самого края экрана */
+        padding-bottom: 90px !important;  /* Делаем аккуратный отступ до самого края экрана */
         border-top: none !important;     /* Убираем ту самую тонкую разделительную линию */
     }
 }
