@@ -332,6 +332,7 @@ body {
 
   display: flex !important;
   flex-direction: column !important;
+  gap: 12px !important; /* Увеличьте число, если нужно больше места */
 
   justify-content: center !important;
   align-items: center !important;
