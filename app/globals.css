@@ -320,21 +320,27 @@ body {
 }
 
 /* =========================================================
-   НАЙТИ ИГРОКА
+   КАРТОЧКИ — НАЙТИ ИГРОКА
    ========================================================= */
 
 #players .cards,
 #players div[class*="cards"] {
   display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+
   justify-content: center !important;
   align-items: center !important;
+
   gap: 24px !important;
 
   width: 100% !important;
   max-width: 1200px !important;
 
   margin: 50px auto !important;
-  flex-direction: row !important;
+  padding: 0 !important;
+
+  box-sizing: border-box !important;
 }
 
 #players .cards > div,
@@ -346,20 +352,35 @@ body {
 
   height: 240px !important;
   min-height: 240px !important;
+  max-height: 240px !important;
+
+  flex: 0 0 240px !important;
 
   box-sizing: border-box !important;
 
   display: flex !important;
   flex-direction: column !important;
+
   justify-content: center !important;
   align-items: center !important;
 
-  padding: 16px !important;
+  text-align: center !important;
+
+  padding: 20px !important;
+
+  background: linear-gradient(
+    145deg,
+    #10162b,
+    #080d1b
+  ) !important;
 
   border: 1px solid #00f2fe !important;
   border-radius: 20px !important;
 
-  box-shadow: 0 0 15px rgba(0, 242, 254, 0.12) !important;
+  box-shadow:
+    0 0 15px rgba(0, 242, 254, 0.12) !important;
+
+  overflow: hidden !important;
 }
 
 /* =========================================================
