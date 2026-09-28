@@ -335,7 +335,7 @@ body {
 
   display: flex !important;
   flex-direction: column !important;
-  gap: 25px !important; /* Увеличьте число, если нужно больше места */
+  gap: 15px !important; /* Увеличьте число, если нужно больше места */
 
   justify-content: center !important;
   align-items: center !important;
