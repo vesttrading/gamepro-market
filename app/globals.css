@@ -202,50 +202,6 @@ body {
 
   box-sizing: border-box !important;
 }
-
-/* Заголовок Найти игрока */
-
-#players h1,
-#players h2,
-#players .title {
-  margin-top: 0 !important;
-}
-
-/* Search box */
-
-#players .searchbox {
-  width: 100% !important;
-  max-width: 650px !important;
-
-  margin: 20px auto 30px auto !important;
-
-  display: flex !important;
-  align-items: center !important;
-
-  gap: 10px !important;
-
-  box-sizing: border-box !important;
-}
-
-/* Поле поиска */
-
-#players input {
-  min-width: 0 !important;
-  box-sizing: border-box !important;
-}
-
-/* Кнопка поиска */
-
-#players button {
-  box-sizing: border-box !important;
-}
- /* ---------- КАРТОЧКИ ИГРОКОВ ---------- */
-
-#players .grid,
-#players [class*="grid"] {
-  box-sizing: border-box !important;
-}
-
 /* ---------- МОБИЛЬНАЯ ВЕРСИЯ ---------- */
 
 @media (max-width: 800px) {
@@ -383,10 +339,21 @@ body {
   overflow: hidden !important;
 }
 
+/* Поднимаем только верхнюю часть карточки */
 #players .cards > div > *,
-#players .cards > a > *,
-#players div[class*="cards"] > div > *,
-#players div[class*="cards"] > a > * {
+#players .cards > a > * {
+  transform: none !important;
+}
+
+/* Omenyx + DPS Demon + иконка */
+#players .cards > div > h1,
+#players .cards > div > h2,
+#players .cards > div > h3,
+#players .cards > div > p:first-of-type,
+#players .cards > a > h1,
+#players .cards > a > h2,
+#players .cards > a > h3,
+#players .cards > a > p:first-of-type {
   transform: translateY(-25px) !important;
 }
 
