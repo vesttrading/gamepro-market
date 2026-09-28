@@ -323,10 +323,10 @@ body {
   max-width: 240px !important;
 
   height: 240px !important;
-  min-height: 240px !important;
-  max-height: 240px !important;
-
-  flex: 0 0 240px !important;
+min-height: 240px !important;
+max-height: 240px !important;
+width: 240px !important; /* Добавляем фиксированную ширину */
+flex: 0 0 240px !important;
 
   box-sizing: border-box !important;
 
