@@ -214,6 +214,10 @@ body {
     0 0 30px rgba(0, 242, 254, 0.08) !important;
 }
 
+#passport {
+  margin-top: 40px !important;
+}
+
 /* ---------- МОБИЛЬНАЯ ВЕРСИЯ ---------- */
 
 @media (max-width: 800px) {
