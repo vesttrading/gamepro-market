@@ -337,7 +337,7 @@ body {
 
   text-align: center !important;
 
-  padding: 15px !important;
+  padding: 30px 15px !important;
   margin: 0 !important;
 
   background: linear-gradient(
@@ -368,11 +368,8 @@ body {
 #players .cards > div > div:nth-child(2),
 #players .cards > a > div:nth-child(2) {
   width: 100% !important;
-
   margin-top: auto !important;
-  margin-bottom: 0 !important;
-
-  justify-content: center !important;
+  margin-bottom: 10px !important;
 }
 
 /* =========================================================
