@@ -323,42 +323,43 @@ body {
    НАЙТИ ИГРОКА
    ========================================================= */
 
-#players {
-  width: 100% !important;
-  max-width: 800px !important;
-
-  margin: 45px auto 0 !important;
-  padding: 20px 0 !important;
-
-  box-sizing: border-box !important;
-}
-
-#players h1,
-#players h2,
-#players .title {
-  margin-top: 0 !important;
-}
-
-/* Строка поиска */
-
-#players .searchbox {
+#players .cards,
+#players div[class*="cards"] {
   display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 24px !important;
 
   width: 100% !important;
-  max-width: 500px !important;
+  max-width: 1200px !important;
 
-  margin: 20px auto 22px !important;
-
-  gap: 10px !important;
-
-  box-sizing: border-box !important;
+  margin: 50px auto !important;
+  flex-direction: row !important;
 }
 
-/* Поле поиска */
+#players .cards > div,
+#players .cards > a,
+#players div[class*="cards"] > div,
+#players div[class*="cards"] > a {
+  width: 240px !important;
+  max-width: 240px !important;
 
-#players .searchbox input {
-  min-width: 0 !important;
+  height: 240px !important;
+  min-height: 240px !important;
+
   box-sizing: border-box !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+
+  padding: 16px !important;
+
+  border: 1px solid #00f2fe !important;
+  border-radius: 20px !important;
+
+  box-shadow: 0 0 15px rgba(0, 242, 254, 0.12) !important;
 }
 
 /* =========================================================
