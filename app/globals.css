@@ -383,6 +383,13 @@ body {
   overflow: hidden !important;
 }
 
+#players .cards > div > *,
+#players .cards > a > *,
+#players div[class*="cards"] > div > *,
+#players div[class*="cards"] > a > * {
+  transform: translateY(-25px) !important;
+}
+
 /* =========================================================
    МОБИЛЬНАЯ ВЕРСИЯ
    ========================================================= */
