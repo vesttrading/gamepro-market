@@ -835,8 +835,8 @@ section#reviews p {
     footer,
     main + footer,
     div[class*="footer"] {
-        margin-top: 200px !important;    /* Отодвигаем надписи ниже от Гильдий */
-        padding-bottom: 90px !important;  /* Делаем аккуратный отступ до самого края экрана */
+        margin-top: 150px !important;    /* Отодвигаем надписи ниже от Гильдий */
+        padding-bottom: 60px !important;  /* Делаем аккуратный отступ до самого края экрана */
         border-top: none !important;     /* Убираем ту самую тонкую разделительную линию */
     }
 }
@@ -845,7 +845,7 @@ section#reviews p {
 main > section:last-of-type,
 main > div:last-child,
 section:last-of-type {
-    margin-top: 150px !important;
+    margin-top: 100px !important;
 }
 
 /* Адаптация шапки сайта под экраны телефонов */
