@@ -292,7 +292,7 @@ body {
 }
 
 /* =========================================================
-   КАРТОЧКИ — НАЙТИ ИГРОКА
+   НАЙТИ ИГРОКА — КВАДРАТНЫЕ КАРТОЧКИ
    ========================================================= */
 
 #players .cards,
@@ -302,14 +302,14 @@ body {
   flex-wrap: wrap !important;
 
   justify-content: center !important;
-  align-items: center !important;
+  align-items: flex-start !important;
 
   gap: 16px !important;
 
   width: 100% !important;
   max-width: 1200px !important;
 
-  margin: 50px auto !important;
+  margin: 15px auto !important;
   padding: 0 !important;
 
   box-sizing: border-box !important;
@@ -335,14 +335,14 @@ body {
 
   display: flex !important;
   flex-direction: column !important;
-  gap: 15px !important; /* Увеличьте число, если нужно больше места */
 
-  justify-content: center !important;
+  justify-content: flex-start !important;
   align-items: center !important;
 
   text-align: center !important;
 
   padding: 15px !important;
+  margin: 0 !important;
 
   background: linear-gradient(
     145deg,
@@ -359,10 +359,18 @@ body {
   overflow: hidden !important;
 }
 
-#players .cards > div,
-#players .cards > a {
-  justify-content: flex-start !important;
-  padding-top: 8px !important;
+/* Верхняя часть карточки */
+
+#players .cards > div > div:first-child,
+#players .cards > a > div:first-child {
+  margin-top: 0 !important;
+}
+
+/* Информация и VERIFIED */
+
+#players .cards > div > div:nth-child(2),
+#players .cards > a > div:nth-child(2) {
+  margin-top: 15px !important;
 }
 
 /* =========================================================
