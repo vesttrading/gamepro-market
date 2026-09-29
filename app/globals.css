@@ -619,7 +619,11 @@ section#reviews > p {
   margin: 0 0 25px !important;
 }
 
-/* Убираем отдельный блок вокруг "Оставить отзыв" */
+/* ==========================================
+   ПОЛНОЕ ОБНОВЛЕНИЕ БЛОКА ОСТАВИТЬ ОТЗЫВ
+   ========================================== */
+
+/* 1. Находим главный контейнер формы (первый div в секции) */
 section#reviews > div:first-of-type {
   max-width: 850px !important;
   width: 100% !important;
@@ -627,57 +631,54 @@ section#reviews > div:first-of-type {
   padding: 0 !important;
   background: transparent !important;
   border: 0 !important;
-  border-radius: 0 !important;
   box-shadow: none !important;
 }
 
-/* Заголовок "Оставить отзыв" */
+/* 2. Полностью скрываем старый заголовок "Оставить отзыв" */
 section#reviews > div:first-of-type h3 {
-  text-align: center !important;
-  font-size: 22px !important;
-  margin: 0 0 12px !important;
+  display: none !important;
 }
 
-/* Звёзды */
+/* 3. Блок со звёздами рейтинга */
 section#reviews > div:first-of-type h3 + div {
   display: flex !important;
   flex-direction: row !important;
   justify-content: center !important;
   align-items: center !important;
   gap: 6px !important;
-  margin-bottom: 12px !important;
+  margin-bottom: 20px !important;
 }
 
-/* Поле отзыва */
+/* 4. Выравниваем поле ввода и кнопку в одну идеальную строку */
+section#reviews > div:first-of-type form {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important; /* Отступ между полем и кнопкой */
+  width: 100% !important;
+}
+
+/* 5. Стили для поля ввода */
 section#reviews textarea {
-  width: calc(100% - 195px) !important;
+  flex-grow: 1 !important; /* Поле занимает всё свободное место */
   height: 46px !important;
   min-height: 46px !important;
   resize: none !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  color: #fff !important;
+  border-radius: 8px !important;
+  padding: 10px 14px !important;
   box-sizing: border-box !important;
-  vertical-align: middle !important;
+  outline: none !important; /* Убирает белое свечение вокруг */
 }
 
-section#reviews div:first-of-type form,
-section#reviews textarea {
-  display: inline-block !important;
-  vertical-align: middle !important;
-}
-
-section#reviews textarea {
-  width: calc(100% - 195px) !important;
-  outline: none !important; /* Убирает лишний белый/синий контур при клике */
-}
-
-/* Кнопка рядом */
+/* 6. Стили для кнопки */
 section#reviews textarea + button {
   width: 180px !important;
   height: 46px !important;
-  margin-top: 0 !important;
-  margin-left: 10px !important;
-  padding: 0 12px !important;
-  vertical-align: middle !important;
+  margin: 0 !important; /* Сбрасываем лишние отступы */
   white-space: nowrap !important;
+  flex-shrink: 0 !important; /* Кнопка не будет сжиматься */
 }
 
 /* Карточки отзывов */
