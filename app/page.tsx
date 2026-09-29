@@ -591,15 +591,15 @@ if (!battlenetId) {
     Отзывы игроков
   </h3>
 
-  <div
-    className="reviewGrid"
-    style={{
-      display:"grid",
-      gridTemplateColumns:"repeat(3,1fr)",
-      gap:16,
-      marginTop:0
-    }}
-  >
+ <div
+  className="reviewGrid"
+  style={{
+    display:"grid",
+    gridTemplateColumns:"repeat(3,1fr)",
+    gap:16,
+    marginTop:25
+  }}
+>
     {reviews.length === 0 ? (
       <div
         style={{
