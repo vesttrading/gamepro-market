@@ -650,10 +650,11 @@ section#reviews > div:first-of-type h3 + div {
 
 /* Поле отзыва */
 section#reviews textarea {
-  width: calc(100% - 175px) !important;
+  width: calc(70% - 195px) !important;
   height: 46px !important;
   min-height: 46px !important;
   resize: none !important;
+  margin-left: auto !important;
   box-sizing: border-box !important;
   vertical-align: middle !important;
 }
