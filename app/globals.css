@@ -662,6 +662,7 @@ section#reviews textarea {
     outline: none !important;           /* Убирает подсветку поля при клике */
     border: 1px solid #3b82f6 !important; 
     border-radius: 8px !important;
+    box-shadow: none !important;
 }
 
 /* Кнопка рядом */
