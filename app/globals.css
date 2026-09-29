@@ -684,6 +684,11 @@ section#reviews .reviewGrid > div {
   box-sizing: border-box !important;
 }
 
+1#reviews textarea {
+  resize: none !important;
+  overflow: hidden !important;
+}
+
 /* =========================
    МОБИЛЬНАЯ ВЕРСИЯ
    ========================= */
