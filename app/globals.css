@@ -725,21 +725,6 @@ section#reviews .reviewGrid > div {
     box-shadow: 0 0 15px #19cfc522 !important;
     overflow: hidden !important;
   }
-
-  /* ЗВЁЗДЫ ВНУТРИ КАРТОЧКИ */
-  section#reviews .reviewGrid > div > div {
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    font-size: 20px !important;
-  }
-
-  section#reviews .reviewGrid h3,
-  section#reviews .reviewGrid p {
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-  }
 }
 
 /* =========================
