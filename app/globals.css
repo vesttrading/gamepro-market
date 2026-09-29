@@ -620,65 +620,50 @@ section#reviews > p {
 }
 
 /* ==========================================
-   ПОЛНОЕ ОБНОВЛЕНИЕ БЛОКА ОСТАВИТЬ ОТЗЫВ
+   ФИНАЛЬНОЕ ИСПРАВЛЕНИЕ СТРОКИ ОТЗЫВА
    ========================================== */
 
-/* 1. Находим главный контейнер формы (первый div в секции) */
-section#reviews > div:first-of-type {
-  max-width: 850px !important;
-  width: 100% !important;
-  margin: 0 auto 30px !important;
-  padding: 0 !important;
-  background: transparent !important;
-  border: 0 !important;
-  box-shadow: none !important;
+/* 1. Находим контейнер, в котором непосредственно лежат поле и кнопка */
+section#reviews textarea,
+section#reviews textarea + button {
+  display: inline-block !important;
 }
 
-/* 2. Полностью скрываем старый заголовок "Оставить отзыв" */
-section#reviews > div:first-of-type h3 {
-  display: none !important;
-}
-
-/* 3. Блок со звёздами рейтинга */
-section#reviews > div:first-of-type h3 + div {
+/* 2. Заставляем родительский блок выстроить элементы в ряд по центру */
+section#reviews form,
+section#reviews div:has(> textarea) {
   display: flex !important;
   flex-direction: row !important;
+  align-items: center !important;
   justify-content: center !important;
-  align-items: center !important;
-  gap: 6px !important;
-  margin-bottom: 20px !important;
-}
-
-/* 4. Выравниваем поле ввода и кнопку в одну идеальную строку */
-section#reviews > div:first-of-type form {
-  display: flex !important;
-  align-items: center !important;
-  gap: 12px !important; /* Отступ между полем и кнопкой */
+  gap: 12px !important;         /* Отступ между полем и кнопкой */
+  max-width: 650px !important;   /* Уменьшенная компактная ширина строки */
+  margin: 0 auto 30px !important; /* Центрируем строку по экрану */
   width: 100% !important;
 }
 
-/* 5. Стили для поля ввода */
+/* 3. Стили для укороченного поля ввода */
 section#reviews textarea {
-  flex-grow: 1 !important; /* Поле занимает всё свободное место */
+  flex-grow: 1 !important;       /* Поле занимает все место слева от кнопки */
   height: 46px !important;
   min-height: 46px !important;
   resize: none !important;
   border: 1px solid rgba(255, 255, 255, 0.2) !important;
-  background: rgba(255, 255, 255, 0.05) !important;
-  color: #fff !important;
+  background: rgba(255, 255, 255, 0.08) !important; /* Делаем поле чуть заметнее на темном фоне */
+  color: #ffffff !important;
   border-radius: 8px !important;
-  padding: 10px 14px !important;
+  padding: 12px 14px !important;
   box-sizing: border-box !important;
-  outline: none !important; /* Убирает белое свечение вокруг */
+  outline: none !important;      /* Полностью убирает белую полосу/рамку */
 }
 
-/* 6. Стили для кнопки */
+/* 4. Стили для кнопки рядом */
 section#reviews textarea + button {
-  width: 180px !important;
+  width: 180px !important;       /* Фиксированная ширина кнопки */
   height: 46px !important;
-  margin: 0 !important; /* Сбрасываем лишние отступы */
+  margin: 0 !important;          /* Сбрасываем перенос отступа */
   white-space: nowrap !important;
-  flex-shrink: 0 !important; /* Кнопка не будет сжиматься */
+  flex-shrink: 0 !important;     /* Кнопка не будет сжиматься */
 }
 
 /* Карточки отзывов */
