@@ -1,6 +1,6 @@
 import { getServerSession } from "next-auth";
 import { createClient } from "@supabase/supabase-js";
-import { authOptions } from "../../../lib/auth";
+import { authOptions } from "../../../../lib/auth";
 
 export const dynamic = "force-dynamic";
 
