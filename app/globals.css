@@ -650,7 +650,7 @@ section#reviews > div:first-of-type h3 + div {
 
 /* Поле отзыва */
 section#reviews textarea {
-  width: calc(100% - 195px) !important;
+  width: calc(100% - 155px) !important;
   height: 46px !important;
   min-height: 46px !important;
   resize: none !important;
@@ -660,7 +660,7 @@ section#reviews textarea {
 
 /* Кнопка рядом */
 section#reviews textarea + button {
-  width: 180px !important;
+  width: 140px !important;
   height: 46px !important;
   margin-top: 0 !important;
   margin-left: 10px !important;
