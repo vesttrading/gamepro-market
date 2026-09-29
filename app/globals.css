@@ -696,22 +696,26 @@ section#reviews .reviewGrid > div {
 }
 
 @media (max-width: 768px) {
-  section#reviews .reviewGrid {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
+  section#reviews > div:first-of-type h3 + div {
+    display: flex !important;
+    flex-direction: row !important;
     justify-content: center !important;
-    gap: 16px !important;
+    align-items: center !important;
+    gap: 6px !important;
     width: 100% !important;
+    margin: 0 0 12px !important;
   }
 
-  section#reviews .reviewGrid > div {
-    width: 100% !important;
-    height: 260px !important;
-    min-width: 0 !important;
-    max-width: none !important;
-    min-height: 260px !important;
-    max-height: 260px !important;
-    box-sizing: border-box !important;
+  section#reviews > div:first-of-type h3 + div button {
+    display: inline-flex !important;
+    width: auto !important;
+    min-width: 40px !important;
+    height: 40px !important;
+    padding: 4px !important;
+    margin: 0 !important;
+    font-size: 28px !important;
+    background: transparent !important;
+    border: 0 !important;
   }
 }
 
