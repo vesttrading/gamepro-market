@@ -689,7 +689,7 @@ section#reviews .reviewGrid {
 }
 
 section#reviews .reviewGrid > div {
-  width: 280px !important;
+  width: 250px !important;
   height: 280px !important;
   min-width: 280px !important;
   max-width: 280px !important;
