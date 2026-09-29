@@ -684,9 +684,10 @@ section#reviews .reviewGrid > div {
   box-sizing: border-box !important;
 }
 
-1#reviews textarea {
-  resize: none !important;
-  overflow: hidden !important;
+/* Бирюзовая рамка карточек отзывов */
+section#reviews .reviewGrid > div {
+  border: 1px solid #19cfc5 !important;
+  box-shadow: 0 0 15px #19cfc522 !important;
 }
 
 /* =========================
