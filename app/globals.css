@@ -660,6 +660,8 @@ section#reviews textarea {
     background: transparent !important; /* Делает фон поля полностью прозрачным */
     border: none !important;            /* Убирает любые стандартные белые рамки */
     outline: none !important;           /* Убирает подсветку поля при клике */
+    border: 1px solid #3b82f6 !important; 
+    border-radius: 8px !important;
 }
 
 /* Кнопка рядом */
