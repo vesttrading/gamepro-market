@@ -12,17 +12,18 @@ export const authOptions: AuthOptions = {
   ],
 
   callbacks: {
-    async jwt({ token, account }) {
-      if (account) {
-        token.accessToken = account.access_token;
-      }
+  async jwt({ token, account }) {
+  if (account) {
+    token.accessToken = account.access_token;
+    token.battlenetId = account.providerAccountId;
+  }
 
-      return token;
-    },
-
+  return token;
+},
     async session({ session, token }: any) {
-      session.accessToken = token.accessToken;
-      return session;
-    },
+  session.accessToken = token.accessToken;
+  session.battlenetId = token.battlenetId;
+  return session;
+   },
   },
 };
