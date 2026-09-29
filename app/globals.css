@@ -620,51 +620,54 @@ section#reviews > p {
 }
 
 /* ==========================================
-   ИСПРАВЛЕНИЕ: УДАЛЯЕМ БЕЛОЕ ПОЛЕ И ВЫРАВНИВАЕМ СТРОКУ
+   КОНЕЧНЫЙ ВАРИАНТ: КРАСИВОЕ ПОЛЕ ВВОДА И КНОПКА
    ========================================== */
 
-/* 1. Находим и полностью уничтожаем белое мини-поле с буквами "На" */
-section#reviews form input:not([type="submit"]), 
-section#reviews form span:not(.star),
-section#reviews div:has(> textarea) > input {
-  display: none !important;
-}
-
-/* 2. Настраиваем общую строку: делаем её компактной и по центру */
+/* 1. Настройка строки-контейнера, где лежит форма */
 section#reviews form,
 section#reviews div:has(> textarea) {
   display: flex !important;
   flex-direction: row !important;
   align-items: center !important;
   justify-content: center !important;
-  gap: 15px !important;           /* Отступ между полем и кнопкой */
-  max-width: 700px !important;     /* Удобная общая ширина строки */
-  margin: 0 auto 40px !important;  /* Центрируем и делаем отступ снизу до карточек */
+  gap: 15px !important;           /* Отступ между полем ввода и кнопкой */
+  max-width: 650px !important;     /* Ограничиваем общую ширину строки */
+  margin: 0 auto 40px !important;  /* Центрируем строку на экране */
   width: 100% !important;
 }
 
-/* 3. Возвращаем текстовому поле нормальный длинный размер */
+/* 2. Делаем поле ввода широким и красивым */
 section#reviews textarea {
-  flex-grow: 1 !important;         /* Поле растянется на всю свободную ширину */
+  flex-grow: 1 !important;         /* Поле занимает ВСЁ свободное место слева от кнопки */
+  width: auto !important;          /* Сбрасываем старую фиксированную ширину */
   height: 46px !important;
   min-height: 46px !important;
+  max-height: 46px !important;
   resize: none !important;
-  border: 1px solid rgba(255, 255, 255, 0.2) !important;
-  background: rgba(255, 255, 255, 0.08) !important; /* Легкий темный фон */
-  color: #ffffff !important;
-  border-radius: 8px !important;
-  padding: 12px 14px !important;
+  
+  /* Цветовое оформление под темную тему */
+  background: rgba(255, 255, 255, 0.07) !important; /* Прозрачный темный фон */
+  border: 1px solid rgba(255, 255, 255, 0.2) !important; /* Аккуратная рамка */
+  color: #ffffff !important;       /* Белый цвет текста внутри */
+  border-radius: 8px !important;   /* Скругление углов */
+  padding: 12px 16px !important;   /* Внутренние отступы для текста */
   box-sizing: border-box !important;
-  outline: none !important;        /* Убирает любые рамки фокуса */
+  outline: none !important;        /* Убираем стандартную синюю/белую обводку */
 }
 
-/* 4. Кнопка "Оставить отзыв" справа */
+/* Эффект при клике на поле ввода */
+section#reviews textarea:focus {
+  border-color: rgba(255, 255, 255, 0.4) !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* 3. Кнопка "Оставить отзыв" */
 section#reviews textarea + button,
 section#reviews form button {
   width: 180px !important;         /* Фиксированная ширина кнопки */
   height: 46px !important;
-  margin: 0 !important;
-  white-space: nowrap !important;
+  margin: 0 !important;            /* Убираем лишние внешние отступы */
+  white-space: nowrap !important;  /* Текст на кнопке в одну строку */
   flex-shrink: 0 !important;       /* Запрещаем кнопке сжиматься */
 }
 
