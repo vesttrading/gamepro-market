@@ -163,6 +163,26 @@ useEffect(() => {
 
     fetchPlayers();
   }, [selectedRole, selectedClass, minRating]);
+  
+   useEffect(() => {
+  const fetchReviews = async () => {
+    try {
+      const response = await fetch("/api/reviews", {
+        cache: "no-store"
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setReviews(data.reviews || []);
+      }
+    } catch (err) {
+      console.error("Ошибка при загрузке отзывов:", err);
+    }
+  };
+
+  fetchReviews();
+}, []);
 
  const players = dbPlayers.map(p => {
   // 1. Подбираем иконку под класс персонажа
