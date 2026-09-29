@@ -582,24 +582,16 @@ if (!battlenetId) {
     )}
   </div>
 
- {/* Отзывы игроков */}
-  <h3 style={{
-    textAlign:"center",
-    fontSize:24,
-    margin:"10px 0 20px"
-  }}>
-    Отзывы игроков
-  </h3>
-
- <div
-  className="reviewGrid"
-  style={{
-    display:"grid",
-    gridTemplateColumns:"repeat(3,1fr)",
-    gap:16,
-    marginTop:25
-  }}
->
+  {/* Отзывы игроков */}
+  <div
+    className="reviewGrid"
+    style={{
+      display:"grid",
+      gridTemplateColumns:"repeat(3,1fr)",
+      gap:16,
+      marginTop:25
+    }}
+  >
     {reviews.length === 0 ? (
       <div
         style={{
@@ -615,11 +607,7 @@ if (!battlenetId) {
       reviews.map(review => (
         <div
           key={review.id}
-          style={{
-            ...card,
-            width:"100%",
-            boxSizing:"border-box"
-          }}
+          style={card}
         >
           <div style={{
             fontSize:20,
