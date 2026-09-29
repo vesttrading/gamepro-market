@@ -681,10 +681,10 @@ section#reviews .reviewGrid {
 }
 
 section#reviews .reviewGrid > div {
-  width: 240px !important;
+  width: 230px !important;
   height: 200px !important;
-  min-width: 240px !important;
-  max-width: 240px !important;
+  min-width: 230px !important;
+  max-width: 230px !important;
   min-height: 200px !important;
   max-height: 200px !important;
   box-sizing: border-box !important;
