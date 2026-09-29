@@ -657,6 +657,9 @@ section#reviews textarea {
     box-sizing: border-box !important;
     vertical-align: middle !important;
     margin-left: 12% !important;     /* Этот отступ сдвигает всю строку к центру */
+    background: transparent !important; /* Делает фон поля полностью прозрачным */
+    border: none !important;            /* Убирает любые стандартные белые рамки */
+    outline: none !important;           /* Убирает подсветку поля при клике */
 }
 
 /* Кнопка рядом */
