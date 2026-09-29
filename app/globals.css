@@ -679,9 +679,17 @@ section#reviews .reviewGrid {
 }
 
 section#reviews .reviewGrid > div {
-  width: 100% !important;
-  min-width: 0 !important;
+  width: 280px !important;
+  height: 280px !important;
+  min-width: 280px !important;
+  max-width: 280px !important;
   box-sizing: border-box !important;
+  padding: 25px !important;
+  border: 1px solid #19cfc5 !important;
+  border-radius: 20px !important;
+  background: linear-gradient(145deg,#10162b,#080d1b) !important;
+  box-shadow: 0 0 15px #19cfc522 !important;
+  justify-self: center !important;
 }
 
 /* Бирюзовая рамка карточек отзывов */
