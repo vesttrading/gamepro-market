@@ -658,6 +658,13 @@ section#reviews textarea {
   vertical-align: middle !important;
 }
 
+/* Найдите селектор контейнера, где лежат textarea и button */
+section#reviews .review-form-container { 
+  display: flex !important;
+  align-items: center !important; /* Выравнивает поле и кнопку по центру вертикально */
+  gap: 10px !important;           /* Задаёт нужный вам отступ между полем и кнопкой */
+}
+
 /* Кнопка рядом */
 section#reviews textarea + button {
   width: 180px !important;
@@ -681,10 +688,10 @@ section#reviews .reviewGrid {
 }
 
 section#reviews .reviewGrid > div {
-  width: 230px !important;
+  width: 220px !important;
   height: 200px !important;
-  min-width: 230px !important;
-  max-width: 230px !important;
+  min-width: 220px !important;
+  max-width: 220px !important;
   min-height: 200px !important;
   max-height: 200px !important;
   box-sizing: border-box !important;
