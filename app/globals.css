@@ -696,26 +696,49 @@ section#reviews .reviewGrid > div {
 }
 
 @media (max-width: 768px) {
-  section#reviews > div:first-of-type h3 + div {
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: center !important;
-    align-items: center !important;
-    gap: 6px !important;
+
+  /* КАРТОЧКИ ОТЗЫВОВ */
+  section#reviews .reviewGrid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
     width: 100% !important;
-    margin: 0 0 12px !important;
+    margin: 25px auto 0 !important;
+    padding: 0 !important;
+    gap: 16px !important;
   }
 
-  section#reviews > div:first-of-type h3 + div button {
-    display: inline-flex !important;
-    width: auto !important;
-    min-width: 40px !important;
-    height: 40px !important;
-    padding: 4px !important;
-    margin: 0 !important;
-    font-size: 28px !important;
-    background: transparent !important;
-    border: 0 !important;
+  section#reviews .reviewGrid > div {
+    display: block !important;
+    width: 100% !important;
+    height: 260px !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    min-height: 260px !important;
+    max-height: 260px !important;
+    box-sizing: border-box !important;
+
+    padding: 25px !important;
+    border: 1px solid #19cfc5 !important;
+    border-radius: 20px !important;
+
+    background: linear-gradient(145deg,#10162b,#080d1b) !important;
+    box-shadow: 0 0 15px #19cfc522 !important;
+    overflow: hidden !important;
+  }
+
+  /* ЗВЁЗДЫ ВНУТРИ КАРТОЧКИ */
+  section#reviews .reviewGrid > div > div {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    font-size: 20px !important;
+  }
+
+  section#reviews .reviewGrid h3,
+  section#reviews .reviewGrid p {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 }
 
