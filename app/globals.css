@@ -660,7 +660,7 @@ section#reviews textarea {
 
 /* Кнопка рядом */
 section#reviews textarea + button {
-  width: 140px !important;
+  width: 160px !important;
   height: 46px !important;
   margin-top: 0 !important;
   margin-left: 10px !important;
