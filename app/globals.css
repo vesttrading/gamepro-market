@@ -684,13 +684,14 @@ section#reviews textarea + button {
 
 /* Карточки отзывов */
 section#reviews .reviewGrid {
-  display: grid !important;
-  grid-template-columns: repeat(3, 280px) !important;
-  justify-content: center !important;
-  align-items: start !important;
-  gap: 25px !important;
-  width: 100% !important;
-  margin-top: 25px !important;
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important; /* Авто-колонки вместо фиксированных трех */
+    justify-content: center !important;
+    justify-items: center !important;     /* Центрирует карточки внутри колонок */
+    align-items: start !important;
+    gap: 25px !important;
+    width: 100% !important;
+    margin-top: 25px !important;
 }
 
 section#reviews .reviewGrid > div {
