@@ -594,8 +594,8 @@ section#games div[class*="gameGrid"] > div {
 }
 
 /* =========================
-   ОТЗЫВЫ — GAMEPRO
-   ========================= */
+    ОТЗЫВЫ — GAMEPRO
+    ========================= */
 
 section#reviews {
   width: 92% !important;
@@ -616,26 +616,26 @@ section#reviews h2 {
 section#reviews > p {
   text-align: center !important;
   color: #9da6c0 !important;
-  margin: 0 0 30px !important;
+  margin: 0 0 25px !important;
 }
 
-/* Форма */
+/* Убираем отдельный блок вокруг "Оставить отзыв" */
 section#reviews > div:first-of-type {
-  max-width: 650px !important;
+  max-width: 850px !important;
   width: 100% !important;
-  margin: 0 auto 35px !important;
-  padding: 25px !important;
-  box-sizing: border-box !important;
-  background: linear-gradient(145deg,#10162b,#080d1b) !important;
-  border: 1px solid #262d49 !important;
-  border-radius: 20px !important;
+  margin: 0 auto 30px !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
 }
 
-/* Заголовок формы */
+/* Заголовок "Оставить отзыв" */
 section#reviews > div:first-of-type h3 {
-  margin: 0 0 15px !important;
   text-align: center !important;
-  font-size: 24px !important;
+  font-size: 22px !important;
+  margin: 0 0 12px !important;
 }
 
 /* Звёзды */
@@ -644,11 +644,11 @@ section#reviews > div:first-of-type h3 + div {
   flex-direction: row !important;
   justify-content: center !important;
   align-items: center !important;
-  gap: 8px !important;
-  margin-bottom: 15px !important;
+  gap: 6px !important;
+  margin-bottom: 12px !important;
 }
 
-/* Строка с отзывом */
+/* Поле отзыва */
 section#reviews textarea {
   width: calc(100% - 195px) !important;
   height: 46px !important;
@@ -656,13 +656,6 @@ section#reviews textarea {
   resize: none !important;
   box-sizing: border-box !important;
   vertical-align: middle !important;
-  background: #090e1d !important;
-  border: 1px solid #26364b !important;
-  border-radius: 12px !important;
-  padding: 12px 14px !important;
-  color: white !important;
-  outline: none !important;
-  font-family: inherit !important;
 }
 
 /* Кнопка рядом */
@@ -674,7 +667,6 @@ section#reviews textarea + button {
   padding: 0 12px !important;
   vertical-align: middle !important;
   white-space: nowrap !important;
-  box-sizing: border-box !important;
 }
 
 /* Карточки отзывов */
@@ -686,31 +678,10 @@ section#reviews .reviewGrid {
   margin-top: 25px !important;
 }
 
-/* Отдельная карточка */
 section#reviews .reviewGrid > div {
   width: 100% !important;
   min-width: 0 !important;
   box-sizing: border-box !important;
-  padding: 25px !important;
-  background: linear-gradient(145deg,#10162b,#080d1b) !important;
-  border: 1px solid #262d49 !important;
-  border-radius: 20px !important;
-}
-
-/* Имя */
-section#reviews .reviewGrid h3 {
-  text-align: left !important;
-  font-size: 18px !important;
-  margin: 0 0 8px !important;
-}
-
-/* Текст */
-section#reviews .reviewGrid p {
-  text-align: left !important;
-  font-size: 15px !important;
-  line-height: 1.45 !important;
-  color: #9da6c0 !important;
-  margin: 0 !important;
 }
 
 /* =========================
@@ -724,19 +695,8 @@ section#reviews .reviewGrid p {
     padding: 45px 14px !important;
   }
 
-  section#reviews h2 {
-    font-size: 30px !important;
-  }
-
-  section#reviews > div:first-of-type {
-    width: 100% !important;
-    padding: 20px !important;
-  }
-
   section#reviews textarea {
     width: 100% !important;
-    height: 46px !important;
-    min-height: 46px !important;
     margin-bottom: 10px !important;
   }
 
@@ -747,7 +707,6 @@ section#reviews .reviewGrid p {
 
   section#reviews .reviewGrid {
     grid-template-columns: 1fr !important;
-    gap: 16px !important;
   }
 }
 
