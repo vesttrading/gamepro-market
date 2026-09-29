@@ -672,14 +672,6 @@ section#reviews textarea + button {
 /* Карточки отзывов */
 section#reviews .reviewGrid {
   display: grid !important;
-  grid-template-columns: repeat(3, 1fr) !important;
-  gap: 16px !important;
-  width: 100% !important;
-  margin-top: 25px !important;
-}
-
-section#reviews .reviewGrid {
-  display: grid !important;
   grid-template-columns: repeat(3, 280px) !important;
   justify-content: center !important;
   align-items: start !important;
@@ -703,12 +695,22 @@ section#reviews .reviewGrid > div {
   box-shadow: 0 0 15px #19cfc522 !important;
 }
 
-@media (max-width: 768px) {
+ @media (max-width: 768px) {
   section#reviews .reviewGrid {
     display: grid !important;
-    grid-template-columns: 280px !important;
+    grid-template-columns: 240px !important;
     justify-content: center !important;
     gap: 16px !important;
+  }
+
+  section#reviews .reviewGrid > div {
+    width: 240px !important;
+    height: 200px !important;
+    min-width: 240px !important;
+    max-width: 240px !important;
+    min-height: 200px !important;
+    max-height: 200px !important;
+    box-sizing: border-box !important;
   }
 }
 
