@@ -650,19 +650,25 @@ section#reviews > div:first-of-type h3 + div {
 
 /* Поле отзыва */
 section#reviews textarea {
-    width: 55% !important;           /* Уменьшили ширину самого поля */
+    width: 55% !important;             
     height: 46px !important;
     min-height: 46px !important;
     resize: none !important;
     box-sizing: border-box !important;
     vertical-align: middle !important;
-    margin-left: 12% !important;     /* Этот отступ сдвигает всю строку к центру */
-    background: transparent !important; /* Делает фон поля полностью прозрачным */
-    border: none !important;            /* Убирает любые стандартные белые рамки */
-    outline: none !important;           /* Убирает подсветку поля при клике */
-    border: 1px solid rgba(255, 255, 255, 0.15) !important;
-    background-color: transparent !important;
+    margin-left: 8% !important;        
+    padding: 10px 14px !important;
+    color: #ffffff !important;
+
+    /* Полностью уничтожаем белый фон и стандартные тени */
+    background: none !important;
+    background-color: rgba(0, 0, 0, 0) !important;
     box-shadow: none !important;
+    outline: none !important;
+
+    /* Делаем рамку еле заметной (белая полупрозрачная) */
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: 8px !important;
 }
 
 /* Кнопка рядом */
