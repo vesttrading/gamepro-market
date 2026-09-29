@@ -132,6 +132,8 @@ export default function HomePage() {
   const [reviewText,setReviewText] = useState("");
   const [reviewRating,setReviewRating] = useState(5);
   const [reviewStatus,setReviewStatus] = useState("");
+  const [reviewSending,setReviewSending] = useState(false);
+  const [reviews,setReviews] = useState<any[]>([]);
   const t=L[lang];
   const headerT = {
   how: t.how,
