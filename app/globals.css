@@ -650,24 +650,24 @@ section#reviews > div:first-of-type h3 + div {
 
 /* Поле отзыва */
 section#reviews textarea {
-  width: calc(70% - 195px) !important;
-  height: 46px !important;
-  min-height: 46px !important;
-  resize: none !important;
-  margin-left: auto !important;
-  box-sizing: border-box !important;
-  vertical-align: middle !important;
+    width: 55% !important;           /* Уменьшили ширину самого поля */
+    height: 46px !important;
+    min-height: 46px !important;
+    resize: none !important;
+    box-sizing: border-box !important;
+    vertical-align: middle !important;
+    margin-left: 12% !important;     /* Этот отступ сдвигает всю строку к центру */
 }
 
 /* Кнопка рядом */
 section#reviews textarea + button {
-  width: 160px !important;
-  height: 46px !important;
-  margin-top: 0 !important;
-  margin-left: 10px !important;
-  padding: 0 12px !important;
-  vertical-align: middle !important;
-  white-space: nowrap !important;
+    width: 160px !important;         /* Уменьшили ширину кнопки */
+    height: 46px !important;
+    margin-top: 0 !important;
+    margin-left: 15px !important;    /* Расстояние между полем и кнопкой */
+    padding: 0 12px !important;
+    vertical-align: middle !important;
+    white-space: nowrap !important;
 }
 
 /* Карточки отзывов */
