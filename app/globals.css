@@ -619,47 +619,54 @@ section#reviews > p {
   margin: 0 0 25px !important;
 }
 
-/* ==========================================
-   УЛЬТРА-ТОЧНОЕ РАСШИРЕНИЕ ПОЛЯ ОТЗЫВА
-   ========================================== */
-
-/* Полностью сбрасываем любые ограничения и красим поле */
-section#reviews textarea,
-section#reviews [class*="review"] textarea,
-.review-form-container textarea,
-textarea[placeholder*="Напиши"] {
-  display: inline-block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  
-  /* Делаем поле широким */
-  width: 100% !important; 
-  max-width: 450px !important; /* Задаем нормальную длину для поля */
-  min-width: 300px !important;
-  height: 46px !important;
-  
-  /* Меняем белый цвет на стильный темный */
-  background-color: rgba(255, 255, 255, 0.08) !important;
-  background: rgba(255, 255, 255, 0.08) !important;
-  border: 1px solid rgba(255, 255, 255, 0.2) !important;
-  color: #ffffff !important;
-  border-radius: 8px !important;
-  padding: 12px !important;
-  box-sizing: border-box !important;
-  outline: none !important;
+/* Убираем отдельный блок вокруг "Оставить отзыв" */
+section#reviews > div:first-of-type {
+  max-width: 850px !important;
+  width: 100% !important;
+  margin: 0 auto 30px !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
 }
 
-/* Кнопка строго справа */
-section#reviews button,
-section#reviews textarea + button,
-.review-form-container button {
-  display: inline-block !important;
+/* Заголовок "Оставить отзыв" */
+section#reviews > div:first-of-type h3 {
+  text-align: center !important;
+  font-size: 22px !important;
+  margin: 0 0 12px !important;
+}
+
+/* Звёзды */
+section#reviews > div:first-of-type h3 + div {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 6px !important;
+  margin-bottom: 12px !important;
+}
+
+/* Поле отзыва */
+section#reviews textarea {
+  width: calc(100% - 195px) !important;
+  height: 46px !important;
+  min-height: 46px !important;
+  resize: none !important;
+  box-sizing: border-box !important;
   vertical-align: middle !important;
-  margin-left: 15px !important;
-  margin-top: 0 !important;
+}
+
+/* Кнопка рядом */
+section#reviews textarea + button {
   width: 180px !important;
   height: 46px !important;
-  flex-shrink: 0 !important;
+  margin-top: 0 !important;
+  margin-left: 10px !important;
+  padding: 0 12px !important;
+  vertical-align: middle !important;
+  white-space: nowrap !important;
 }
 
 /* Карточки отзывов */
