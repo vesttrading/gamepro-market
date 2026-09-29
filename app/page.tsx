@@ -492,7 +492,6 @@ if (!battlenetId) {
       ...card,
       maxWidth:650,
       margin:"0 auto 35px",
-      border:"1px solid #19cfc5"
     }}
   >
     <h3 style={{
