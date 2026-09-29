@@ -703,12 +703,30 @@ section#reviews .reviewGrid > div {
   box-shadow: 0 0 15px #19cfc522 !important;
 }
 
+/* ===== ПОИСК ИГРОКА — ТЕЛЕФОН ===== */
 @media (max-width: 768px) {
-  section#reviews .reviewGrid {
-    display: grid !important;
-    grid-template-columns: 280px !important;
-    justify-content: center !important;
-    gap: 16px !important;
+  #players input {
+    width: 100% !important;
+    height: 46px !important;
+    box-sizing: border-box !important;
+    background: #090e1d !important;
+    border: 2px solid #19cfc5 !important;
+    border-radius: 12px !important;
+    color: #ffffff !important;
+    padding: 0 14px !important;
+    font-size: 16px !important;
+    outline: none !important;
+    opacity: 1 !important;
+  }
+
+  #players input::placeholder {
+    color: #8f9ab5 !important;
+    opacity: 1 !important;
+  }
+
+  #players input:focus {
+    border-color: #4de8dd !important;
+    box-shadow: 0 0 12px #19cfc544 !important;
   }
 }
 
