@@ -77,7 +77,7 @@ export async function POST(request: Request) {
       );
     }
 
-    if (!Number.isInteger(rating)  rating < 1  rating > 5) {
+    if (!Number.isInteger(rating) || rating < 1 || rating > 5) {
       return Response.json(
         { error: "Оценка должна быть от 1 до 5." },
         { status: 400 }
