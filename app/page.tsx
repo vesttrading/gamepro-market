@@ -582,14 +582,22 @@ if (!battlenetId) {
     )}
   </div>
 
-  {/* Отзывы игроков */}
+ {/* Отзывы игроков */}
+  <h3 style={{
+    textAlign:"center",
+    fontSize:24,
+    margin:"10px 0 20px"
+  }}>
+    Отзывы игроков
+  </h3>
+
   <div
     className="reviewGrid"
     style={{
       display:"grid",
       gridTemplateColumns:"repeat(3,1fr)",
       gap:16,
-      marginTop:25
+      marginTop:0
     }}
   >
     {reviews.length === 0 ? (
@@ -607,7 +615,11 @@ if (!battlenetId) {
       reviews.map(review => (
         <div
           key={review.id}
-          style={card}
+          style={{
+            ...card,
+            width:"100%",
+            boxSizing:"border-box"
+          }}
         >
           <div style={{
             fontSize:20,
@@ -634,7 +646,7 @@ if (!battlenetId) {
     )}
   </div>
 </section>
-
+    
       <section style={{maxWidth:550,width:"92%",margin:"0 auto 80px",padding: 25,textAlign:"center",border: "1px solid #19cfc5",borderRadius:20,background:"#080d1b"}}><h2 style={{fontSize:32}}>{t.shareTitle}</h2><p style={{color:"#9da6c0"}}>{t.passportLink}: Vladimir · 2850 M+ · CE · VERIFIED</p><button onClick={sharePassport} style={btn}>🔗 {copied ? t.copied : t.share}</button></section>
     </main>
 
