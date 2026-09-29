@@ -658,11 +658,15 @@ section#reviews textarea {
   vertical-align: middle !important;
 }
 
-/* Найдите селектор контейнера, где лежат textarea и button */
-section#reviews .review-form-container { 
-  display: flex !important;
-  align-items: center !important; /* Выравнивает поле и кнопку по центру вертикально */
-  gap: 10px !important;           /* Задаёт нужный вам отступ между полем и кнопкой */
+section#reviews div:first-of-type form,
+section#reviews textarea {
+  display: inline-block !important;
+  vertical-align: middle !important;
+}
+
+section#reviews textarea {
+  width: calc(100% - 195px) !important;
+  outline: none !important; /* Убирает лишний белый/синий контур при клике */
 }
 
 /* Кнопка рядом */
