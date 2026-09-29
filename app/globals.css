@@ -593,76 +593,161 @@ section#games div[class*="gameGrid"] > div {
     }
 }
 
-/* 1. Намертво сжимаем всю секцию Отзывов до аккуратных 850px */
+/* =========================
+   ОТЗЫВЫ — GAMEPRO
+   ========================= */
+
 section#reviews {
-    width: 100% !important;
-    max-width: 850px !important;    
-    margin: -5px auto 0 auto !important; /* Центрируем весь блок по центру экрана */
-    padding: 20px !important;
-    box-sizing: border-box !important;
+  width: 92% !important;
+  max-width: 1160px !important;
+  margin: 0 auto !important;
+  padding: 60px 0 !important;
+  box-sizing: border-box !important;
 }
 
-/* Убираем отступы между заголовком и подзаголовком */
-section#reviews h2, 
-section#reviews .title {
-    margin-bottom: 0 !important; /* Настройте значение под себя */
+/* Заголовок */
+section#reviews h2 {
+  text-align: center !important;
+  font-size: 36px !important;
+  margin: 0 0 10px !important;
 }
 
-section#reviews p, 
-section#reviews .subtitle {
-    margin-top: 0 !important;
+/* Подзаголовок */
+section#reviews > p {
+  text-align: center !important;
+  color: #9da6c0 !important;
+  margin: 0 0 30px !important;
 }
 
-/* 2. Убираем пустоту между оценкой и отзывами, собирая их в горизонтальный ряд */
-section#reviews [class*="gameGrid"],
-section#reviews [class*="Grid"] {
-    display: flex !important;
-    flex-direction: row !important;     /* Строго в одну линию */
-    justify-content: center !important; /* Прижимаем карточки кучно к центру */
-    align-items: stretch !important;    /* Выравниваем их по высоте */
-    gap: 35px !important;               /* Аккуратный отступ между оценкой и отзывами */
-    width: 100% !important;
-    margin-top: 40px !important;
+/* Форма */
+section#reviews > div:first-of-type {
+  max-width: 650px !important;
+  width: 100% !important;
+  margin: 0 auto 35px !important;
+  padding: 25px !important;
+  box-sizing: border-box !important;
+  background: linear-gradient(145deg,#10162b,#080d1b) !important;
+  border: 1px solid #262d49 !important;
+  border-radius: 20px !important;
 }
 
-/* Компактные карточки отзывов */
-section#reviews [class*="gameGrid"] > div,
-section#reviews [class*="Grid"] > div {
-    flex: 0 1 260px !important;
-    width: 260px !important;
-    max-width: 260px !important;
-    min-width: 0 !important;
-    padding: 20px !important;
-    box-sizing: border-box !important;
-    border: 1px solid #00f2fe !important;
-    box-shadow: 0 0 15px rgba(0, 242, 254, 0.12) !important;
+/* Заголовок формы */
+section#reviews > div:first-of-type h3 {
+  margin: 0 0 15px !important;
+  text-align: center !important;
+  font-size: 24px !important;
 }
 
-/* Три карточки в одну линию */
-section#reviews [class*="gameGrid"],
-section#reviews [class*="Grid"] {
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: center !important;
-    align-items: stretch !important;
-    gap: 32px !important;
+/* Звёзды */
+section#reviews > div:first-of-type h3 + div {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 8px !important;
+  margin-bottom: 15px !important;
 }
 
-/* Внутренний текст */
-section#reviews h3 {
-    font-size: 18px !important;
-    margin-bottom: 8px !important;
+/* Строка с отзывом */
+section#reviews textarea {
+  width: calc(100% - 195px) !important;
+  height: 46px !important;
+  min-height: 46px !important;
+  resize: none !important;
+  box-sizing: border-box !important;
+  vertical-align: middle !important;
+  background: #090e1d !important;
+  border: 1px solid #26364b !important;
+  border-radius: 12px !important;
+  padding: 12px 14px !important;
+  color: white !important;
+  outline: none !important;
+  font-family: inherit !important;
 }
 
-section#reviews p {
-    font-size: 15px !important;
-    line-height: 1.45 !important;
+/* Кнопка рядом */
+section#reviews textarea + button {
+  width: 180px !important;
+  height: 46px !important;
+  margin-top: 0 !important;
+  margin-left: 10px !important;
+  padding: 0 12px !important;
+  vertical-align: middle !important;
+  white-space: nowrap !important;
+  box-sizing: border-box !important;
 }
+
+/* Карточки отзывов */
+section#reviews .reviewGrid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 16px !important;
+  width: 100% !important;
+  margin-top: 25px !important;
+}
+
+/* Отдельная карточка */
+section#reviews .reviewGrid > div {
+  width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+  padding: 25px !important;
+  background: linear-gradient(145deg,#10162b,#080d1b) !important;
+  border: 1px solid #262d49 !important;
+  border-radius: 20px !important;
+}
+
+/* Имя */
+section#reviews .reviewGrid h3 {
+  text-align: left !important;
+  font-size: 18px !important;
+  margin: 0 0 8px !important;
+}
+
+/* Текст */
+section#reviews .reviewGrid p {
+  text-align: left !important;
+  font-size: 15px !important;
+  line-height: 1.45 !important;
+  color: #9da6c0 !important;
+  margin: 0 !important;
+}
+
+/* =========================
+   МОБИЛЬНАЯ ВЕРСИЯ
+   ========================= */
 
 @media (max-width: 768px) {
-  section#reviews [class*="gameGrid"],
-  section#reviews [class*="Grid"] {
-    flex-direction: column !important;
+
+  section#reviews {
+    width: 100% !important;
+    padding: 45px 14px !important;
+  }
+
+  section#reviews h2 {
+    font-size: 30px !important;
+  }
+
+  section#reviews > div:first-of-type {
+    width: 100% !important;
+    padding: 20px !important;
+  }
+
+  section#reviews textarea {
+    width: 100% !important;
+    height: 46px !important;
+    min-height: 46px !important;
+    margin-bottom: 10px !important;
+  }
+
+  section#reviews textarea + button {
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
+
+  section#reviews .reviewGrid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
   }
 }
 
