@@ -9,6 +9,7 @@ const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 const L = {
   RU: {
     games:"Игры", players:"Игроки", guilds:"Гильдии", how:"Как это работает", contact:"Контакты",
+    reviewSent:"Отзыв отправлен.",
     reviewError:"Не удалось отправить отзыв.",
     saveError:"Не удалось сохранить данные.",
     rioNameRealm:"Укажи имя персонажа и реалм.",
@@ -52,6 +53,7 @@ const L = {
   },
   EN: {
     games:"Games", players:"Players", guilds:"Guilds", how:"How it works", contact:"Contact",
+    reviewSent:"Review submitted.",
     reviewError:"Failed to submit review.",
     saveError:"Failed to save data.",
     rioNameRealm:"Enter character name and realm.",
@@ -95,6 +97,7 @@ const L = {
   },
   TR: {
     games:"Oyunlar", players:"Oyuncular", guilds:"Loncalar", how:"Nasıl çalışır", contact:"İletişim",
+    reviewSent:"Yorum gönderildi.",
     reviewError:"Yorum gönderilemedi.",
     saveError:"Veriler kaydedilemedi.",
     rioNameRealm:"Karakter adını ve realmini gir.",
@@ -138,6 +141,7 @@ const L = {
   },
   DE: {
     games:"Spiele", players:"Spieler", guilds:"Gilden", how:"So funktioniert es", contact:"Kontakt",
+    reviewSent:"Bewertung wurde gesendet.",
     reviewError:"Bewertung konnte nicht gesendet werden.",
     saveError:"Daten konnten nicht gespeichert werden.",
     rioNameRealm:"Charakternamen und Realm eingeben.",
@@ -181,6 +185,7 @@ const L = {
   },
   ES: {
     games:"Juegos", players:"Jugadores", guilds:"Gremios", how:"Cómo funciona", contact:"Contacto",
+    reviewSent:"Opinión enviada.",
     reviewError:"No se pudo enviar la opinión.",
     saveError:"No se pudieron guardar los datos.",
     rioNameRealm:"Introduce el nombre del personaje y el reino.",
@@ -216,6 +221,7 @@ const L = {
   },
   FR: {
     games:"Jeux", players:"Joueurs", guilds:"Guildes", how:"Comment ça marche", contact:"Contact",
+    reviewSent:"Avis envoyé.",
     reviewError:"Impossible d'envoyer l'avis.",
     saveError:"Impossible d'enregistrer les données.",
     rioNameRealm:"Entre le nom du personnage et le royaume.",
@@ -251,6 +257,7 @@ const L = {
   },
   PL: {
     games:"Gry", players:"Gracze", guilds:"Gildie", how:"Jak to działa", contact:"Kontakt",
+    reviewSent:"Opinia została wysłana.",
     reviewError:"Nie udało się wysłać opinii.",
     saveError:"Nie udało się zapisać danych.",
     rioNameRealm:"Podaj nazwę postaci i realm.",
