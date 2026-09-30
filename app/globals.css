@@ -373,6 +373,7 @@ body {
 /* Сближаем заголовок и текст под ним в секции Найти игрока */
 #players h2 {
     margin-bottom: 8px !important; /* Уменьшаем отступ снизу у заголовка */
+    font-size: 38px !important;
 }
 
 #players p, #players .sectionHead p {
