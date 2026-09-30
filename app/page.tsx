@@ -7,23 +7,6 @@ const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
 const L = {
-  RU: {
-    games:"Игры", players:"Игроки", guilds:"Гильдии", how:"Как это работает", contact:"Контакты",
-    h1:"Докажи свой скилл.", h2:"Покажи свои достижения.",
-    intro:"Игровой профиль с подтверждёнными достижениями. Собери свой Achievement Passport и покажи гильдиям и командам, на что ты способен.",
-    create:"Создать игровой паспорт", find:"Найти игрока", passport:"Achievement Passport",
-    sub:"Не слова — подтверждённые результаты.", verified:"Профиль подтверждён", verifiedShort:"VERIFIED",
-    searchTitle:"Найти игрока", searchSub:"Ищи по роли, рейтингу и подтверждённым достижениям.",
-    placeholder:"Например: Holy Paladin 2700+", search:"Поиск",
-    howTitle:"Как работает проверка", howSub:"От игровых данных до зелёного VERIFIED-бейджа.",
-    guild:"Гильдии и команды", guildText:"Находите игроков по роли, рейтингу и подтверждённому прогрессу — без ручной проверки каждого скриншота.",
-    open:"Открыть поиск игроков", share:"Поделиться паспортом", copied:"Ссылка скопирована!",
-    current:"Сейчас доступно", future:"Скоро", wow:"World of Warcraft", wowText:"Mythic+, рейды и PvP — первая игра GamePro.",
-    futureText:"Dota 2, CS2 и Path of Exile 2 уже в плане развития.", source:"Источник", sourceText:"GamePro сверяет игровые данные с поддерживаемыми источниками.",
-    check:"Проверка", checkText:"Данные проходят проверку перед получением статуса VERIFIED.",
-    badge:"VERIFIED", badgeText:"Только подтверждённые достижения получают зелёный бейдж.",
-    passportLink:"Паспорт игрока", shareTitle:"Твой игровой профиль — одной ссылкой", login:"Войти через Battle.net", reviews:"Отзывы", gameproRating:"Оценка GamePro", playerReviews:"Отзывы игроков", verifiedReviews:"Отзывы о системе VERIFIED"
-  },
   EN: {
     games:"Games", players:"Players", guilds:"Guilds", how:"How it works", contact:"Contact",
     h1:"Prove your skill.", h2:"Show your achievements.",
@@ -93,7 +76,24 @@ const L = {
     howTitle:"Comment fonctionne la vérification", howSub:"Des données du jeu au badge VERIFIED.", guild:"Guildes et équipes", guildText:"Trouve des joueurs par rôle, rating et progression vérifiée.", open:"Ouvrir la recherche", share:"Partager le passeport", copied:"Lien copié !",
     current:"Disponible maintenant", future:"Bientôt", wow:"World of Warcraft", wowText:"Mythic+, raids et PvP — le premier jeu de GamePro.", futureText:"Dota 2, CS2 et Path of Exile 2 sont sur la feuille de route.", source:"Source", sourceText:"GamePro vérifie les données du jeu avec les sources prises en charge.", check:"Vérification", checkText:"Les données sont vérifiées avant l'attribution du statut VERIFIED.", badge:"VERIFIED", badgeText:"Seuls les accomplissements vérifiés obtiennent le badge vert.", passportLink:"Passeport joueur", shareTitle:"Ton profil gaming — un seul lien", login:"Se connecter avec Battle.net", reviews:"Avis", gameproRating:"Note GamePro", playerReviews:"Avis des joueurs", verifiedReviews:"Avis sur le système VERIFIED"
   },
-  PL: {
+   RU: {
+    games:"Игры", players:"Игроки", guilds:"Гильдии", how:"Как это работает", contact:"Контакты",
+    h1:"Докажи свой скилл.", h2:"Покажи свои достижения.",
+    intro:"Игровой профиль с подтверждёнными достижениями. Собери свой Achievement Passport и покажи гильдиям и командам, на что ты способен.",
+    create:"Создать игровой паспорт", find:"Найти игрока", passport:"Achievement Passport",
+    sub:"Не слова — подтверждённые результаты.", verified:"Профиль подтверждён", verifiedShort:"VERIFIED",
+    searchTitle:"Найти игрока", searchSub:"Ищи по роли, рейтингу и подтверждённым достижениям.",
+    placeholder:"Например: Holy Paladin 2700+", search:"Поиск",
+    howTitle:"Как работает проверка", howSub:"От игровых данных до зелёного VERIFIED-бейджа.",
+    guild:"Гильдии и команды", guildText:"Находите игроков по роли, рейтингу и подтверждённому прогрессу — без ручной проверки каждого скриншота.",
+    open:"Открыть поиск игроков", share:"Поделиться паспортом", copied:"Ссылка скопирована!",
+    current:"Сейчас доступно", future:"Скоро", wow:"World of Warcraft", wowText:"Mythic+, рейды и PvP — первая игра GamePro.",
+    futureText:"Dota 2, CS2 и Path of Exile 2 уже в плане развития.", source:"Источник", sourceText:"GamePro сверяет игровые данные с поддерживаемыми источниками.",
+    check:"Проверка", checkText:"Данные проходят проверку перед получением статуса VERIFIED.",
+    badge:"VERIFIED", badgeText:"Только подтверждённые достижения получают зелёный бейдж.",
+    passportLink:"Паспорт игрока", shareTitle:"Твой игровой профиль — одной ссылкой", login:"Войти через Battle.net", reviews:"Отзывы", gameproRating:"Оценка GamePro", playerReviews:"Отзывы игроков", verifiedReviews:"Отзывы о системе VERIFIED"
+  },
+   PL: {
     games:"Gry", players:"Gracze", guilds:"Gildie", how:"Jak to działa", contact:"Kontakt",
     h1:"Udowodnij swój skill.", h2:"Pokaż swoje osiągnięcia.",
     intro:"Profil gracza ze zweryfikowanymi osiągnięciami. Stwórz Achievement Passport i pokaż gildiom oraz drużynom, co potrafisz.",
