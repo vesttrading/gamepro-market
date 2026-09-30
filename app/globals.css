@@ -722,7 +722,7 @@ section#reviews .reviewGrid > div {
 
 /* Поднимаем блок Отзывы выше к блоку Игры */
 section#reviews {
-    margin-top: 60px !important; /* Эта цифра прижмет Отзывы повыше. Если нужно еще выше — поставьте 10px или 0px */
+    margin-top: 50px !important; /* Эта цифра прижмет Отзывы повыше. Если нужно еще выше — поставьте 10px или 0px */
     padding-top: 0px !important;
 }
 
