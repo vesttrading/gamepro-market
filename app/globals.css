@@ -558,7 +558,7 @@ section#games {
     max-width: 850px !important;  
     margin: 40px auto !important; 
     box-sizing: border-box !important;
-    margin-bottom: 0px !important; /* Убирает лишний отступ снизу у блока Игры */
+    margin-bottom: 10px !important; /* Убирает лишний отступ снизу у блока Игры */
 }
 
 section#games > p,
