@@ -707,11 +707,11 @@ section#reviews .reviewGrid {
 
 section#reviews .reviewGrid > div {
   width: 220px !important;
-  height: 200px !important;
+  height: 190px !important;
   min-width: 220px !important;
   max-width: 220px !important;
-  min-height: 200px !important;
-  max-height: 200px !important;
+  min-height: 190px !important;
+  max-height: 190px !important;
   box-sizing: border-box !important;
   border: 1px solid #19cfc5 !important;
   border-radius: 20px !important;
