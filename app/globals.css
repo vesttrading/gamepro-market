@@ -370,9 +370,13 @@ body {
   margin-bottom: 10px !important;
 }
 
-/* Опускаем заголовок секции "Найти игрока" ниже */
-#players {
-    padding-top: 50px !important; 
+/* Сближаем заголовок и текст под ним в секции Найти игрока */
+#players h2 {
+    margin-bottom: 8px !important; /* Уменьшаем отступ снизу у заголовка */
+}
+
+#players p, #players .sectionHead p {
+    margin-top: 0px !important;    /* Убираем отступ сверху у текста */
 }
 
 /* =========================================================
