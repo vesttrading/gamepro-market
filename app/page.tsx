@@ -9,6 +9,7 @@ const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 const L = {
   RU: {
     games:"Игры", players:"Игроки", guilds:"Гильдии", how:"Как это работает", contact:"Контакты",
+    verifyPlayer:"Проверить игрока",
     reviewSent:"Отзыв отправлен.",
     reviewError:"Не удалось отправить отзыв.",
     saveError:"Не удалось сохранить данные.",
@@ -53,6 +54,7 @@ const L = {
   },
   EN: {
     games:"Games", players:"Players", guilds:"Guilds", how:"How it works", contact:"Contact",
+    verifyPlayer:"Check player",
     reviewSent:"Review submitted.",
     reviewError:"Failed to submit review.",
     saveError:"Failed to save data.",
@@ -97,6 +99,7 @@ const L = {
   },
   TR: {
     games:"Oyunlar", players:"Oyuncular", guilds:"Loncalar", how:"Nasıl çalışır", contact:"İletişim",
+    verifyPlayer:"Oyuncuyu kontrol et",
     reviewSent:"Yorum gönderildi.",
     reviewError:"Yorum gönderilemedi.",
     saveError:"Veriler kaydedilemedi.",
@@ -141,6 +144,7 @@ const L = {
   },
   DE: {
     games:"Spiele", players:"Spieler", guilds:"Gilden", how:"So funktioniert es", contact:"Kontakt",
+    verifyPlayer:"Spieler prüfen",
     reviewSent:"Bewertung wurde gesendet.",
     reviewError:"Bewertung konnte nicht gesendet werden.",
     saveError:"Daten konnten nicht gespeichert werden.",
@@ -185,6 +189,7 @@ const L = {
   },
   ES: {
     games:"Juegos", players:"Jugadores", guilds:"Gremios", how:"Cómo funciona", contact:"Contacto",
+    verifyPlayer:"Comprobar jugador",
     reviewSent:"Opinión enviada.",
     reviewError:"No se pudo enviar la opinión.",
     saveError:"No se pudieron guardar los datos.",
@@ -221,6 +226,7 @@ const L = {
   },
   FR: {
     games:"Jeux", players:"Joueurs", guilds:"Guildes", how:"Comment ça marche", contact:"Contact",
+    verifyPlayer:"Vérifier le joueur",
     reviewSent:"Avis envoyé.",
     reviewError:"Impossible d'envoyer l'avis.",
     saveError:"Impossible d'enregistrer les données.",
@@ -257,6 +263,7 @@ const L = {
   },
   PL: {
     games:"Gry", players:"Gracze", guilds:"Gildie", how:"Jak to działa", contact:"Kontakt",
+    verifyPlayer:"Sprawdź gracza",
     reviewSent:"Opinia została wysłana.",
     reviewError:"Nie udało się wysłać opinii.",
     saveError:"Nie udało się zapisać danych.",
