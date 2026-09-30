@@ -377,21 +377,21 @@ useEffect(() => {
   };
 
   const searchRaiderIO = async () => {
-    if (!rioName.trim() || !rioRealm.trim()) { setRioError("Укажи имя персонажа и реалм."); setRioData(null); return; }
+    if (!rioName.trim() || !rioRealm.trim()) { setRioError(t.rioNameRealm); setRioData(null); return; }
     setRioLoading(true); setRioError(""); setRioData(null); setSupabaseStatus("");
     try {
       const params = new URLSearchParams({region:rioRegion,realm:rioRealm.trim().toLowerCase().replace(/\s+/g,"-"),name:rioName.trim(),fields:"mythic_plus_scores_by_season:current,gear"});
       const response = await fetch("https://raider.io/api/v1/characters/profile?"+params.toString());
-      if (!response.ok) throw new Error("Персонаж не найден в Raider.IO.");
+      if (!response.ok) throw new Error(t.rioNotFound);
       setRioData(await response.json());
-    } catch (error) { setRioError(error instanceof Error ? error.message : "Не удалось получить данные Raider.IO."); }
+    } catch (error) { setRioError(error instanceof Error ? error.message : t.rioError); }
     finally { setRioLoading(false); }
   };
 
   const verifyRaiderIO = async () => {
     if (!rioData) return;
     if (!SUPABASE_URL || !SUPABASE_KEY) {
-      setSupabaseStatus("Supabase не настроен в переменных Vercel.");
+      setSupabaseStatus(t.supabaseNotConfigured);
       return;
     }
     setVerifying(true);
@@ -402,20 +402,20 @@ useEffect(() => {
       const findResponse = await fetch(`${SUPABASE_URL}/rest/v1/player_verifications?player_name=eq.${name}&realm=eq.${realm}&select=id`, {
         headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` }
       });
-      if (!findResponse.ok) throw new Error("Не удалось найти сохранённую запись.");
+      if (!findResponse.ok) throw new Error(t.recordNotFound);
       const rows = await findResponse.json();
-      if (!rows.length) throw new Error("Сначала нажми «Сохранить в GamePro».");
+      if (!rows.length) throw new Error(t.saveFirst);
       const updateResponse = await fetch(`${SUPABASE_URL}/rest/v1/player_verifications?id=eq.${rows[0].id}`, {
         method: "PATCH",
         headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}`, "Content-Type": "application/json", Prefer: "return=minimal" },
         body: JSON.stringify({ source_verified: true })
       });
-      if (!updateResponse.ok) throw new Error(await updateResponse.text() || "Не удалось подтвердить VERIFIED.");
+      if (!updateResponse.ok) throw new Error(await updateResponse.text() || t.verifiedError);
       setVerified(true);
       setVerifiedId(String(rows[0].id || ""));
-      setSupabaseStatus("✓ VERIFIED подтверждён GamePro.");
+      setSupabaseStatus(t.verifiedGamePro);
     } catch (error) {
-      setSupabaseStatus(error instanceof Error ? error.message : "Не удалось подтвердить VERIFIED.");
+      setSupabaseStatus(error instanceof Error ? error.message : t.verifiedError);
     } finally {
       setVerifying(false);
     }
