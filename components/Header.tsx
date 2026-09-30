@@ -1,6 +1,6 @@
 "use client";
 
-type Lang = "RU" | "EN" | "TR" | "DE" | "ES" | "FR" | "PL";
+type Lang = "EN" | "TR" | "DE" | "ES" | "FR" | "RU" | "PL";
 
 type HeaderProps = {
   lang: Lang;
@@ -99,12 +99,12 @@ export default function Header({ lang, setLang, t }: HeaderProps) {
               cursor: "pointer",
             }}
           >
-            <option value="RU">RU</option>
             <option value="EN">EN</option>
             <option value="TR">TR</option>
             <option value="DE">DE</option>
             <option value="ES">ES</option>
             <option value="FR">FR</option>
+            <option value="RU">RU</option>
             <option value="PL">PL</option>
           </select>
         </div>
