@@ -129,6 +129,11 @@ export default function HomePage() {
   const [verified,setVerified] = useState(false);
   const [verifiedId,setVerifiedId] = useState<string>("");
   const [verifying,setVerifying] = useState(false);
+  const [reviewText,setReviewText] = useState("");
+  const [reviewRating,setReviewRating] = useState(5);
+  const [reviewStatus,setReviewStatus] = useState("");
+  const [reviewSending,setReviewSending] = useState(false);
+  const [reviews,setReviews] = useState<any[]>([]);
   const t=L[lang];
   const headerT = {
   how: t.how,
@@ -158,6 +163,26 @@ useEffect(() => {
 
     fetchPlayers();
   }, [selectedRole, selectedClass, minRating]);
+  
+   useEffect(() => {
+  const fetchReviews = async () => {
+    try {
+      const response = await fetch("/api/reviews", {
+        cache: "no-store"
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setReviews(data.reviews || []);
+      }
+    } catch (err) {
+      console.error("Ошибка при загрузке отзывов:", err);
+    }
+  };
+
+  fetchReviews();
+}, []);
 
  const players = dbPlayers.map(p => {
   // 1. Подбираем иконку под класс персонажа
@@ -278,6 +303,49 @@ if (!battlenetId) {
     }
   };
 
+  const submitReview = async () => {
+  if (status !== "authenticated") {
+    setReviewStatus("Сначала войди через Battle.net.");
+    return;
+  }
+
+  if (!reviewText.trim()) {
+    setReviewStatus("Напиши отзыв.");
+    return;
+  }
+
+  setReviewStatus("Отправляем…");
+
+  try {
+    const response = await fetch("/api/reviews", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        text: reviewText.trim(),
+        rating: reviewRating
+      })
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(data.error || "Не удалось отправить отзыв.");
+    }
+
+    setReviewText("");
+    setReviewRating(5);
+    setReviewStatus("✓ Отзыв отправлен.");
+  } catch (error) {
+    setReviewStatus(
+      error instanceof Error
+        ? error.message
+        : "Ошибка отправки."
+    );
+  }
+};
+
   const btn:React.CSSProperties={
     display:"inline-flex",alignItems:"center",justifyContent:"center",gap:8,padding:"10px 20px",borderRadius:12,
     background:"linear-gradient(135deg,#18e0d1,#12bfb6)",color:"#021312",fontWeight:900,border:0,cursor:"pointer",
@@ -397,8 +465,175 @@ if (!battlenetId) {
         </div>
       </section>
 
-      <section id="reviews" style={{maxWidth:1160,width:"92%",margin:"auto",padding:"60px 0"}}><h2 style={{textAlign:"center",fontSize:36}}>{t.reviews}</h2><p style={{textAlign:"center",color:"#9da6c0"}}>GamePro — доверие, подтверждённое игроками.</p><div className="reviewGrid" style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:16,marginTop:25}}>{[["⭐ 4.9/5",t.gameproRating,"★★★★★"],["💬",t.playerReviews,"«Удобно показать прогресс и быстро найти подходящую команду.»"],["✓ VERIFIED",t.verifiedReviews,"«Наконец понятно, какие достижения действительно подтверждены.»"]].map(x=><div key={x[1]} style={card}><div style={{fontSize:25,fontWeight:900}}>{x[0]}</div><h3>{x[1]}</h3><p style={{color:"#9da6c0",lineHeight:1.6,marginBottom:0}}>{x[2]}</p></div>)}</div></section>
+<section
+  id="reviews"
+  style={{
+    maxWidth:1160,
+    width:"92%",
+    margin:"auto",
+    padding:"60px 0"
+  }}
+>
+  <h2 style={{textAlign:"center",fontSize:36}}>
+    {t.reviews}
+  </h2>
 
+  <p style={{
+    textAlign:"center",
+    color:"#9da6c0",
+    marginBottom:30
+  }}>
+    GamePro — отзывы игроков.
+  </p>
+
+  {/* Форма отзыва */}
+  <div
+    style={{
+      ...card,
+      maxWidth:650,
+      margin:"0 auto 35px",
+    }}
+  >
+    <h3 style={{
+      marginTop:0,
+      textAlign:"center",
+      fontSize:24
+    }}>
+      Оставить отзыв
+    </h3>
+
+    {status !== "authenticated" ? (
+      <p style={{
+        color:"#9da6c0",
+        textAlign:"center",
+        marginBottom:0
+      }}>
+        Войди через Battle.net, чтобы оставить отзыв.
+      </p>
+    ) : (
+      <>
+        <div style={{
+          display:"flex",
+          justifyContent:"center",
+          gap:8,
+          marginBottom:15
+        }}>
+          {[1,2,3,4,5].map(star => (
+            <button
+              key={star}
+              type="button"
+              onClick={() => setReviewRating(star)}
+              style={{
+                background:"transparent",
+                border:0,
+                cursor:"pointer",
+                fontSize:28,
+                opacity:star <= reviewRating ? 1 : 0.35,
+                padding:4
+              }}
+            >
+              ⭐
+            </button>
+          ))}
+        </div>
+
+        <textarea
+          value={reviewText}
+          onChange={e => setReviewText(e.target.value)}
+          placeholder="Напиши свой отзыв о GamePro..."
+          maxLength={1000}
+          style={{
+            width:"100%",
+            minHeight:120,
+            boxSizing:"border-box",
+            resize:"vertical",
+            background:"#090e1d",
+            border:"1px solid #26364b",
+            borderRadius:12,
+            padding:15,
+            color:"white",
+            outline:"none",
+            fontFamily:"inherit"
+          }}
+        />
+
+        <button
+          onClick={submitReview}
+          style={{
+            ...btn,
+            width:"100%",
+            marginTop:12
+          }}
+        >
+          {reviewSending ? "Отправляем…" : "✍️ Оставить отзыв"}
+        </button>
+
+        {reviewStatus && (
+          <p style={{
+            textAlign:"center",
+            color:"#52eee3",
+            marginBottom:0
+          }}>
+            {reviewStatus}
+          </p>
+        )}
+      </>
+    )}
+  </div>
+
+  {/* Отзывы игроков */}
+  <div
+    className="reviewGrid"
+    style={{
+      display:"grid",
+      gridTemplateColumns:"repeat(3,1fr)",
+      gap:16,
+      marginTop:25
+    }}
+  >
+    {reviews.length === 0 ? (
+      <div
+        style={{
+          ...card,
+          gridColumn:"1 / -1",
+          textAlign:"center",
+          color:"#9da6c0"
+        }}
+      >
+        Пока нет отзывов. Будь первым игроком!
+      </div>
+    ) : (
+      reviews.map(review => (
+        <div
+          key={review.id}
+          style={card}
+        >
+          <div style={{
+            fontSize:20,
+            marginBottom:10
+          }}>
+            {"⭐".repeat(Number(review.rating) || 0)}
+          </div>
+
+          <h3 style={{
+            margin:"0 0 8px"
+          }}>
+            {review.author_name || "GamePro игрок"}
+          </h3>
+
+          <p style={{
+            color:"#9da6c0",
+            lineHeight:1.6,
+            margin:0
+          }}>
+            {review.text}
+          </p>
+        </div>
+      ))
+    )}
+  </div>
+</section>
+    
       <section style={{maxWidth:550,width:"92%",margin:"0 auto 80px",padding: 25,textAlign:"center",border: "1px solid #19cfc5",borderRadius:20,background:"#080d1b"}}><h2 style={{fontSize:32}}>{t.shareTitle}</h2><p style={{color:"#9da6c0"}}>{t.passportLink}: Vladimir · 2850 M+ · CE · VERIFIED</p><button onClick={sharePassport} style={btn}>🔗 {copied ? t.copied : t.share}</button></section>
     </main>
 
