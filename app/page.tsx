@@ -24,23 +24,6 @@ const L = {
     badge:"VERIFIED", badgeText:"Only verified achievements receive the green badge.",
     passportLink:"Player passport", shareTitle:"Your gaming profile — one link", login:"Login with Battle.net", reviews:"Reviews", gameproRating:"GamePro rating", playerReviews:"Player reviews", verifiedReviews:"VERIFIED system reviews"
   },
-  TR: {
-    games:"Oyunlar", players:"Oyuncular", guilds:"Loncalar", how:"Nasıl çalışır", contact:"İletişim",
-    h1:"Yeteneğini kanıtla.", h2:"Başarılarını göster.",
-    intro:"Doğrulanmış başarılarla oyun profili. Achievement Passport'unu oluştur ve yeteneğini loncalara ve takımlara göster.",
-    create:"Oyuncu pasaportu oluştur", find:"Oyuncu bul", passport:"Achievement Passport",
-    sub:"Söz değil — doğrulanmış sonuçlar.", verified:"Profil doğrulandı", verifiedShort:"VERIFIED",
-    searchTitle:"Oyuncu bul", searchSub:"Rol, puan ve doğrulanmış başarılara göre ara.",
-    placeholder:"Örneğin: Holy Paladin 2700+", search:"Ara",
-    howTitle:"Doğrulama nasıl çalışır", howSub:"Oyun verilerinden yeşil VERIFIED rozetine.",
-    guild:"Loncalar ve takımlar", guildText:"Oyuncuları rol, puan ve doğrulanmış ilerlemeye göre bulun.",
-    open:"Oyuncu aramayı aç", share:"Pasaportu paylaş", copied:"Bağlantı kopyalandı!",
-    current:"Şimdi mevcut", future:"Yakında", wow:"World of Warcraft", wowText:"Mythic+, raid ve PvP — GamePro'nun ilk oyunu.",
-    futureText:"Dota 2, CS2 ve Path of Exile 2 yol haritasında.", source:"Kaynak", sourceText:"GamePro oyun verilerini desteklenen kaynaklarla karşılaştırır.",
-    check:"Doğrulama", checkText:"Başarı VERIFIED olmadan önce veriler kontrol edilir.",
-    badge:"VERIFIED", badgeText:"Sadece doğrulanmış başarılar yeşil rozet alır.",
-    passportLink:"Oyuncu pasaportu", shareTitle:"Oyun profilin — tek bağlantı", login:"Battle.net ile giriş", reviews:"Yorumlar", gameproRating:"GamePro puanı", playerReviews:"Oyuncu yorumları", verifiedReviews:"VERIFIED sistemi yorumları"
-  },
   DE: {
     games:"Spiele", players:"Spieler", guilds:"Gilden", how:"So funktioniert es", contact:"Kontakt",
     h1:"Beweise dein Können.", h2:"Zeige deine Erfolge.",
@@ -76,7 +59,24 @@ const L = {
     howTitle:"Comment fonctionne la vérification", howSub:"Des données du jeu au badge VERIFIED.", guild:"Guildes et équipes", guildText:"Trouve des joueurs par rôle, rating et progression vérifiée.", open:"Ouvrir la recherche", share:"Partager le passeport", copied:"Lien copié !",
     current:"Disponible maintenant", future:"Bientôt", wow:"World of Warcraft", wowText:"Mythic+, raids et PvP — le premier jeu de GamePro.", futureText:"Dota 2, CS2 et Path of Exile 2 sont sur la feuille de route.", source:"Source", sourceText:"GamePro vérifie les données du jeu avec les sources prises en charge.", check:"Vérification", checkText:"Les données sont vérifiées avant l'attribution du statut VERIFIED.", badge:"VERIFIED", badgeText:"Seuls les accomplissements vérifiés obtiennent le badge vert.", passportLink:"Passeport joueur", shareTitle:"Ton profil gaming — un seul lien", login:"Se connecter avec Battle.net", reviews:"Avis", gameproRating:"Note GamePro", playerReviews:"Avis des joueurs", verifiedReviews:"Avis sur le système VERIFIED"
   },
-   RU: {
+  TR: {
+    games:"Oyunlar", players:"Oyuncular", guilds:"Loncalar", how:"Nasıl çalışır", contact:"İletişim",
+    h1:"Yeteneğini kanıtla.", h2:"Başarılarını göster.",
+    intro:"Doğrulanmış başarılarla oyun profili. Achievement Passport'unu oluştur ve yeteneğini loncalara ve takımlara göster.",
+    create:"Oyuncu pasaportu oluştur", find:"Oyuncu bul", passport:"Achievement Passport",
+    sub:"Söz değil — doğrulanmış sonuçlar.", verified:"Profil doğrulandı", verifiedShort:"VERIFIED",
+    searchTitle:"Oyuncu bul", searchSub:"Rol, puan ve doğrulanmış başarılara göre ara.",
+    placeholder:"Örneğin: Holy Paladin 2700+", search:"Ara",
+    howTitle:"Doğrulama nasıl çalışır", howSub:"Oyun verilerinden yeşil VERIFIED rozetine.",
+    guild:"Loncalar ve takımlar", guildText:"Oyuncuları rol, puan ve doğrulanmış ilerlemeye göre bulun.",
+    open:"Oyuncu aramayı aç", share:"Pasaportu paylaş", copied:"Bağlantı kopyalandı!",
+    current:"Şimdi mevcut", future:"Yakında", wow:"World of Warcraft", wowText:"Mythic+, raid ve PvP — GamePro'nun ilk oyunu.",
+    futureText:"Dota 2, CS2 ve Path of Exile 2 yol haritasında.", source:"Kaynak", sourceText:"GamePro oyun verilerini desteklenen kaynaklarla karşılaştırır.",
+    check:"Doğrulama", checkText:"Başarı VERIFIED olmadan önce veriler kontrol edilir.",
+    badge:"VERIFIED", badgeText:"Sadece doğrulanmış başarılar yeşil rozet alır.",
+    passportLink:"Oyuncu pasaportu", shareTitle:"Oyun profilin — tek bağlantı", login:"Battle.net ile giriş", reviews:"Yorumlar", gameproRating:"GamePro puanı", playerReviews:"Oyuncu yorumları", verifiedReviews:"VERIFIED sistemi yorumları"
+  },
+  RU: {
     games:"Игры", players:"Игроки", guilds:"Гильдии", how:"Как это работает", contact:"Контакты",
     h1:"Докажи свой скилл.", h2:"Покажи свои достижения.",
     intro:"Игровой профиль с подтверждёнными достижениями. Собери свой Achievement Passport и покажи гильдиям и командам, на что ты способен.",
