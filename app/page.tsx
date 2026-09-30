@@ -9,6 +9,7 @@ const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 const L = {
   RU: {
     games:"Игры", players:"Игроки", guilds:"Гильдии", how:"Как это работает", contact:"Контакты",
+    saveError:"Не удалось сохранить данные.",
     rioNameRealm:"Укажи имя персонажа и реалм.",
     rioNotFound:"Персонаж не найден в Raider.IO.",
     rioError:"Не удалось получить данные Raider.IO.",
@@ -50,6 +51,7 @@ const L = {
   },
   EN: {
     games:"Games", players:"Players", guilds:"Guilds", how:"How it works", contact:"Contact",
+    saveError:"Failed to save data.",
     rioNameRealm:"Enter character name and realm.",
     rioNotFound:"Character not found on Raider.IO.",
     rioError:"Failed to get Raider.IO data.",
@@ -91,6 +93,7 @@ const L = {
   },
   TR: {
     games:"Oyunlar", players:"Oyuncular", guilds:"Loncalar", how:"Nasıl çalışır", contact:"İletişim",
+    saveError:"Veriler kaydedilemedi.",
     rioNameRealm:"Karakter adını ve realmini gir.",
     rioNotFound:"Karakter Raider.IO'da bulunamadı.",
     rioError:"Raider.IO verileri alınamadı.",
@@ -132,6 +135,7 @@ const L = {
   },
   DE: {
     games:"Spiele", players:"Spieler", guilds:"Gilden", how:"So funktioniert es", contact:"Kontakt",
+    saveError:"Daten konnten nicht gespeichert werden.",
     rioNameRealm:"Charakternamen und Realm eingeben.",
     rioNotFound:"Charakter auf Raider.IO nicht gefunden.",
     rioError:"Raider.IO-Daten konnten nicht abgerufen werden.",
@@ -173,6 +177,7 @@ const L = {
   },
   ES: {
     games:"Juegos", players:"Jugadores", guilds:"Gremios", how:"Cómo funciona", contact:"Contacto",
+    saveError:"No se pudieron guardar los datos.",
     rioNameRealm:"Introduce el nombre del personaje y el reino.",
     rioNotFound:"Personaje no encontrado en Raider.IO.",
     rioError:"No se pudieron obtener los datos de Raider.IO.",
@@ -206,6 +211,7 @@ const L = {
   },
   FR: {
     games:"Jeux", players:"Joueurs", guilds:"Guildes", how:"Comment ça marche", contact:"Contact",
+    saveError:"Impossible d'enregistrer les données.",
     rioNameRealm:"Entre le nom du personnage et le royaume.",
     rioNotFound:"Personnage introuvable sur Raider.IO.",
     rioError:"Impossible de récupérer les données Raider.IO.",
@@ -239,6 +245,7 @@ const L = {
   },
   PL: {
     games:"Gry", players:"Gracze", guilds:"Gildie", how:"Jak to działa", contact:"Kontakt",
+    saveError:"Nie udało się zapisać danych.",
     rioNameRealm:"Podaj nazwę postaci i realm.",
     rioNotFound:"Nie znaleziono postaci na Raider.IO.",
     rioError:"Nie udało się pobrać danych z Raider.IO.",
@@ -465,7 +472,7 @@ if (!battlenetId) {
       }
       setSupabaseStatus("✓ Данные сохранены в Supabase. Пока это DATA FOUND, не VERIFIED.");
     } catch (error) {
-      setSupabaseStatus(error instanceof Error ? `Supabase: ${error.message}` : t.saveError);
+      setSupabaseStatus(error instanceof Error ? `Supabase: ${error.message}`: t.saveError);
     } finally {
       setSupabaseSaving(false);
     }
