@@ -465,7 +465,7 @@ if (!battlenetId) {
       }
       setSupabaseStatus("✓ Данные сохранены в Supabase. Пока это DATA FOUND, не VERIFIED.");
     } catch (error) {
-      setSupabaseStatus(error instanceof Error ? `Ошибка Supabase: ${error.message}` : "Не удалось сохранить данные.");
+      setSupabaseStatus(error instanceof Error ? `Supabase: ${error.message}` : t.saveError);
     } finally {
       setSupabaseSaving(false);
     }
@@ -473,16 +473,16 @@ if (!battlenetId) {
 
   const submitReview = async () => {
   if (status !== "authenticated") {
-    setReviewStatus("Сначала войди через Battle.net.");
+    setReviewStatus(t.loginFirst);
     return;
   }
 
   if (!reviewText.trim()) {
-    setReviewStatus("Напиши отзыв.");
+    setReviewStatus(t.reviewPlaceholder);
     return;
   }
 
-  setReviewStatus("Отправляем…");
+  setReviewStatus(t.sending);
 
   try {
     const response = await fetch("/api/reviews", {
@@ -499,17 +499,17 @@ if (!battlenetId) {
     const data = await response.json();
 
     if (!response.ok) {
-      throw new Error(data.error || "Не удалось отправить отзыв.");
+      throw new Error(data.error || t.reviewError);
     }
 
     setReviewText("");
     setReviewRating(5);
-    setReviewStatus("✓ Отзыв отправлен.");
+    setReviewStatus(t.reviewSent);
   } catch (error) {
     setReviewStatus(
       error instanceof Error
         ? error.message
-        : "Ошибка отправки."
+        : t.reviewError
     );
   }
 };
