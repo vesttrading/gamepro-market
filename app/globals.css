@@ -707,23 +707,17 @@ section#reviews .reviewGrid {
 
 section#reviews .reviewGrid > div {
   width: 220px !important;
-  height: 190px !important;
+  height: 180px !important;
   min-width: 220px !important;
   max-width: 220px !important;
-  min-height: 190px !important;
-  max-height: 190px !important;
+  min-height: 180px !important;
+  max-height: 180px !important;
   box-sizing: border-box !important;
   border: 1px solid #19cfc5 !important;
   border-radius: 20px !important;
   padding: 25px !important;
   background: linear-gradient(145deg,#10162b,#080d1b) !important;
   box-shadow: 0 0 15px #19cfc522 !important;
-}
-
-/* Поднимаем блок Отзывы выше к блоку Игры */
-section#reviews {
-    margin-top: 90px !important; /* Эта цифра прижмет Отзывы повыше. Если нужно еще выше — поставьте 10px или 0px */
-    padding-top: 0px !important;
 }
 
 @media (max-width: 768px) {
