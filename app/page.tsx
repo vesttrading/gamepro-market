@@ -545,9 +545,9 @@ if (!battlenetId) {
       });
       if (!response.ok) {
         const text = await response.text();
-        throw new Error(text || "Supabase не принял данные.");
+        throw new Error(text || t.supabaseError);
       }
-      setSupabaseStatus("✓ Данные сохранены в Supabase. Пока это DATA FOUND, не VERIFIED.");
+      setSupabaseStatus(t.dataSaved);
     } catch (error) {
       setSupabaseStatus(error instanceof Error ? `Supabase: ${error.message}`: t.saveError);
     } finally {
