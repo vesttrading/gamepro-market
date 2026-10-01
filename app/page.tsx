@@ -568,30 +568,31 @@ if (!battlenetId) {
 
   setReviewStatus(t.sending);
 
-  try {
+ try {
     const response = await fetch("/api/reviews", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        text: reviewText.trim(),
-        rating: reviewRating
-      })
-    });
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            text: reviewText.trim(),
+            rating: reviewRating
+        })
+    }); // <-- Здесь закрывается ТОЛЬКО сам fetch (круглая скобка и точка с запятой)
 
     const data = await response.json();
 
     if (!response.ok) {
-      throw new Error(data.error || t.reviewError);
+        throw new Error(data.error || t.reviewError);
     }
 
     setReviewText("");
     setReviewRating(5);
     setReviewStatus(t.reviewSent);
-  } catch (error) {
-    setReviewStatus(error instanceof Error ? error.message : t.reviewError);
-  }
+
+} catch (error) { // <-- Вот теперь эта скобка правильно закрывает блок try
+    setReviewStatus(error instanceof Error ? error.message : "An error occurred");
+ }
 };
 
   const btn:React.CSSProperties={
