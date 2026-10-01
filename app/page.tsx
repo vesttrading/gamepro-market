@@ -589,10 +589,10 @@ if (!battlenetId) {
     setReviewText("");
     setReviewRating(5);
     setReviewStatus(t.reviewSent);
-} catch (error) { // <-- Вот теперь эта скобка правильно закрывает блок try
+   catch (error) { // <-- Вот теперь эта скобка правильно закрывает блок try
     setReviewStatus(error instanceof Error ? error.message : "An error occurred");
    }
-  };
+  };  
 
 const btn:React.CSSProperties={
     display:"inline-flex",alignItems:"center",justifyContent:"center",gap:8,padding:"10px 20px",borderRadius:12,
