@@ -578,7 +578,7 @@ if (!battlenetId) {
         body: JSON.stringify({
             text: reviewText.trim(),
             rating: reviewRating
-        }); 
+        }), 
 
     const data = await response.json();
 
