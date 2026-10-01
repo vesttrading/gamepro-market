@@ -9,14 +9,6 @@ const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 const L = {
   RU: {
     games:"Игры", players:"Игроки", guilds:"Гильдии", how:"Как это работает", contact:"Контакты",
-    notVerifiedGamePro:"Данные из источника ещё не являются VERIFIED GamePro",
-    characterName:"Имя персонажа",
-    realmPlaceholder:"Реалм",
-    liveSourceText:"Первый живой источник GamePro для Mythic+ данных",
-    verify:"Проверить",
-    saving:"Сохраняем",
-    minRating:"Мин. рейтинг",
-    logout:"Выйти",
     verifyPlayer:"Проверить игрока",
     reviewSent:"Отзыв отправлен.",
     reviewError:"Не удалось отправить отзыв.",
@@ -62,14 +54,6 @@ const L = {
   },
   EN: {
     games:"Games", players:"Players", guilds:"Guilds", how:"How it works", contact:"Contact",
-    notVerifiedGamePro:"Data from the source is not yet VERIFIED by GamePro",
-    characterName:"Character name",
-    realmPlaceholder:"Realm",
-    liveSourceText:"The first live GamePro source for Mythic+ data",
-    verify:"Check",
-    saving:"Saving",
-    minRating:"Min. rating",
-    logout:"Log out",
     verifyPlayer:"Check player",
     reviewSent:"Review submitted.",
     reviewError:"Failed to submit review.",
@@ -115,14 +99,6 @@ const L = {
   },
   TR: {
     games:"Oyunlar", players:"Oyuncular", guilds:"Loncalar", how:"Nasıl çalışır", contact:"İletişim",
-    notVerifiedGamePro:"Kaynaktaki veriler henüz GamePro tarafından VERIFIED değil",
-    characterName:"Karakter adı",
-    realmPlaceholder:"Realmi",
-    liveSourceText:"Mythic+ verileri için ilk canlı GamePro kaynağı",
-    verify:"Kontrol et",
-    saving:"Kaydediliyor",
-    minRating:"Min. puan",
-    logout:"Çıkış yap",
     verifyPlayer:"Oyuncuyu kontrol et",
     reviewSent:"Yorum gönderildi.",
     reviewError:"Yorum gönderilemedi.",
@@ -168,14 +144,6 @@ const L = {
   },
   DE: {
     games:"Spiele", players:"Spieler", guilds:"Gilden", how:"So funktioniert es", contact:"Kontakt",
-    notVerifiedGamePro:"Daten aus der Quelle sind noch nicht von GamePro VERIFIED",
-    characterName:"Charaktername",
-    realmPlaceholder:"Realm",
-    liveSourceText:"Die erste Live-Quelle von GamePro für Mythic+-Daten",
-    verify:"Prüfen",
-    saving:"Speichern",
-    minRating:"Min. Wertung",
-    logout:"Abmelden",
     verifyPlayer:"Spieler prüfen",
     reviewSent:"Bewertung wurde gesendet.",
     reviewError:"Bewertung konnte nicht gesendet werden.",
@@ -221,14 +189,6 @@ const L = {
   },
   ES: {
     games:"Juegos", players:"Jugadores", guilds:"Gremios", how:"Cómo funciona", contact:"Contacto",
-    notVerifiedGamePro:"Los datos de la fuente aún no están VERIFIED por GamePro",
-    characterName:"Nombre del personaje",
-    realmPlaceholder:"Reino",
-    liveSourceText:"La primera fuente en vivo de GamePro para datos de Mythic+",
-    verify:"Comprobar",
-    Хsaving:"Guardando",
-    minRating:"Rating mín.",
-    logout:"Cerrar sesión",
     verifyPlayer:"Comprobar jugador",
     reviewSent:"Opinión enviada.",
     reviewError:"No se pudo enviar la opinión.",
@@ -266,14 +226,6 @@ const L = {
   },
   FR: {
     games:"Jeux", players:"Joueurs", guilds:"Guildes", how:"Comment ça marche", contact:"Contact",
-    notVerifiedGamePro:"Les données de la source ne sont pas encore VERIFIED par GamePro",
-    characterName:"Nom du personnage",
-    realmPlaceholder:"Royaume",
-    liveSourceText:"La première source live de GamePro pour les données Mythic+",
-    verify:"Vérifier",
-    saving:"Enregistrement",
-    minRating:"Rating min.",
-    logout:"Se déconnecter",
     verifyPlayer:"Vérifier le joueur",
     reviewSent:"Avis envoyé.",
     reviewError:"Impossible d'envoyer l'avis.",
@@ -311,14 +263,6 @@ const L = {
   },
   PL: {
     games:"Gry", players:"Gracze", guilds:"Gildie", how:"Jak to działa", contact:"Kontakt",
-    notVerifiedGamePro:"Dane ze źródła nie są jeszcze VERIFIED przez GamePro",
-    characterName:"Nazwa postaci",
-    realmPlaceholder:"Realm",
-    liveSourceText:"Pierwsze aktywne źródło GamePro dla danych Mythic+",
-    verify:"Sprawdź",
-    saving:"Zapisywanie",
-    minRating:"Min. rating",
-    logout:"Wyloguj się",
     verifyPlayer:"Sprawdź gracza",
     reviewSent:"Opinia została wysłana.",
     reviewError:"Nie udało się wysłać opinii.",
@@ -508,7 +452,7 @@ useEffect(() => {
   const saveRaiderIOToSupabase = async () => {
     if (!rioData) return;
     if (!SUPABASE_URL || !SUPABASE_KEY) {
-      setSupabaseStatus(t.supabaseNotConfigured);
+      setSupabaseStatus("Supabase не настроен в переменных Vercel.");
       return;
     }
     setSupabaseSaving(true); setSupabaseStatus("");
@@ -517,7 +461,7 @@ useEffect(() => {
       const battlenetId = (session as any)?.battlenetId;
 
 if (!battlenetId) {
-  setSupabaseStatus(t.loginFirst);
+  setSupabaseStatus("Сначала войди через Battle.net.");
   return;
 }
    const payload = {
@@ -545,9 +489,9 @@ if (!battlenetId) {
       });
       if (!response.ok) {
         const text = await response.text();
-        throw new Error(text || t.supabaseError);
+        throw new Error(text || "Supabase не принял данные.");
       }
-      setSupabaseStatus(t.dataSaved);
+      setSupabaseStatus("✓ Данные сохранены в Supabase. Пока это DATA FOUND, не VERIFIED.");
     } catch (error) {
       setSupabaseStatus(error instanceof Error ? `Supabase: ${error.message}`: t.saveError);
     } finally {
@@ -560,41 +504,45 @@ if (!battlenetId) {
     setReviewStatus(t.loginFirst);
     return;
   }
- 
+
   if (!reviewText.trim()) {
-    setReviewStatus(t.reviewRequired);
+    setReviewStatus(t.reviewPlaceholder);
     return;
   }
 
   setReviewStatus(t.sending);
 
- try {
+  try {
     const response = await fetch("/api/reviews", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            text: reviewText.trim(),
-            rating: reviewRating
-        }) 
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        text: reviewText.trim(),
+        rating: reviewRating
+      })
     });
 
     const data = await response.json();
 
     if (!response.ok) {
-        throw new Error(data.error || t.reviewError);
+      throw new Error(data.error || t.reviewError);
     }
 
     setReviewText("");
     setReviewRating(5);
     setReviewStatus(t.reviewSent);
- } catch (error) { // <-- Вот теперь эта скобка правильно закрывает блок try
-    setReviewStatus(error instanceof Error ? error.message : "An error occurred");
-   }
-  };  
+  } catch (error) {
+    setReviewStatus(
+      error instanceof Error
+        ? error.message
+        : t.reviewError
+    );
+  }
+};
 
-const btn:React.CSSProperties={
+  const btn:React.CSSProperties={
     display:"inline-flex",alignItems:"center",justifyContent:"center",gap:8,padding:"10px 20px",borderRadius:12,
     background:"linear-gradient(135deg,#18e0d1,#12bfb6)",color:"#021312",fontWeight:900,border:0,cursor:"pointer",
     textDecoration:"none",boxShadow:"0 0 30px #16d8cf38",transition:"transform .2s,box-shadow .2s"
@@ -612,7 +560,7 @@ const btn:React.CSSProperties={
         <span style={{color:"#72fff4",border:"1px solid #168f88",background:"#0b292b",padding:"8px 13px",borderRadius:99,fontSize:12,fontWeight:800}}>🏆 ACHIEVEMENT PASSPORT</span>
         <h1 style={{fontSize:"clamp(30px,5vw,55px)",lineHeight:.98,margin:"22px 0 18px"}}>{t.h1}<br/><span style={{background:"linear-gradient(90deg,#fff,#e832ff,#16ddff)",WebkitBackgroundClip:"text",color:"transparent"}}>{t.h2}</span></h1>
         <p style={{maxWidth:690,margin:"auto",color:"#9da6c0",fontSize:18,lineHeight:1.65}}>{t.intro}</p>
-        <div style={{marginTop:28,display:"flex",justifyContent:"center",gap:12,flexWrap:"wrap"}}><button style={btn} onClick={()=>signIn("battlenet",{callbackUrl:"/"}, { prompt: "login" })}><span>🎮</span> {t.login}</button><button style={btn} onClick={() => signOut({ callbackUrl: "/" })}>{t.logout}</button></div><div className="achievementRow" style={{marginTop:22,display:"flex",justifyContent:"center",gap:10,flexWrap:"wrap"}}>{["KSM","AOTC","CE","2400+ PvP"].map(x=><span key={x} className="achievementBadge">✓ {x} <b>VERIFIED</b></span>)}</div>
+        <div style={{marginTop:28,display:"flex",justifyContent:"center",gap:12,flexWrap:"wrap"}}><button style={btn} onClick={()=>signIn("battlenet",{callbackUrl:"/"}, { prompt: "login" })}><span>🎮</span> {t.login}</button><button style={btn} onClick={() => signOut({ callbackUrl: "/" })}>Выйти</button></div><div className="achievementRow" style={{marginTop:22,display:"flex",justifyContent:"center",gap:10,flexWrap:"wrap"}}>{["KSM","AOTC","CE","2400+ PvP"].map(x=><span key={x} className="achievementBadge">✓ {x} <b>VERIFIED</b></span>)}</div>
        
         
         <div style={{ marginTop: 16, display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
@@ -646,7 +594,7 @@ const btn:React.CSSProperties={
   {/* Ввод минимального рейтинга */}
   <input
     type="number"
-    placeholder={t.minRating}
+    placeholder="Мин. рейтинг"
     value={minRating}
     onChange={(e) => setMinRating(e.target.value)}
     style={{ padding: "8px 12px", background: "#1e293b", border: "1px solid #334155", borderRadius: 8, color: "#fff", fontSize: 14, outline: "none", width: 130 }}
@@ -674,14 +622,14 @@ const btn:React.CSSProperties={
       <section id="raiderio" style={{maxWidth:1160,width:"92%",margin:"auto",padding:"0 0 60px"}}>
         <div style={{...card,borderColor:"#17bcb2"}}>
           <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",gap:12,flexWrap:"wrap"}}>
-            <div><h2 style={{fontSize:28,margin:"0 0 7px"}}>{t.verifyPlayer} через Raider.IO</h2><p style={{color:"#9da6c0",margin:0}}>{t.liveSourceText}</p></div>
+            <div><h2 style={{fontSize:28,margin:"0 0 7px"}}>🔎 Проверить игрока через Raider.IO</h2><p style={{color:"#9da6c0",margin:0}}>Первый живой источник GamePro для Mythic+ данных.</p></div>
             <span className="verifiedPill">RAIDER.IO</span>
           </div>
           <div className="rioForm" style={{display:"grid",gridTemplateColumns:"1fr 1fr 90px auto",gap:10,marginTop:18}}>
-            <input value={rioName} onChange={e=>setRioName(e.target.value)} placeholder={t.characterName} style={{background:"#090e1d",border:"1px solid #26364b",borderRadius:12,padding:14,color:"white",outline:"none"}} />
-            <input value={rioRealm} onChange={e=>setRioRealm(e.target.value)} placeholder={t.realmPlaceholder}style={{background:"#090e1d",border:"1px solid #26364b",borderRadius:12,padding:14,color:"white",outline:"none"}} />
+            <input value={rioName} onChange={e=>setRioName(e.target.value)} placeholder="Имя персонажа" style={{background:"#090e1d",border:"1px solid #26364b",borderRadius:12,padding:14,color:"white",outline:"none"}} />
+            <input value={rioRealm} onChange={e=>setRioRealm(e.target.value)} placeholder="Реалм, например Kazzak" style={{background:"#090e1d",border:"1px solid #26364b",borderRadius:12,padding:14,color:"white",outline:"none"}} />
             <select value={rioRegion} onChange={e=>setRioRegion(e.target.value)} style={{background:"#090e1d",border:"1px solid #26364b",borderRadius:12,padding:14,color:"white"}}><option value="eu">EU</option><option value="us">US</option><option value="kr">KR</option><option value="tw">TW</option></select>
-            <button style={btn} onClick={searchRaiderIO} disabled={rioLoading}>{rioLoading ? t.verifying : t.verify}</button>
+            <button style={btn} onClick={searchRaiderIO} disabled={rioLoading}>{rioLoading ? "Проверяем…" : "Проверить"}</button>
           </div>
           {rioError && <p style={{color:"#ff8e9e",marginBottom:0}}>{rioError}</p>}
           {rioData && <div style={{marginTop:18,padding:18,borderRadius:16,background:"#080d1b",border:"1px solid #1c8f82"}}>
@@ -690,11 +638,11 @@ const btn:React.CSSProperties={
               <span className="verifiedPill">DATA FOUND · NOT VERIFIED</span>
             </div>
             <div style={{marginTop:14,padding:15,borderRadius:12,background:"#0a1021"}}><b style={{fontSize:22}}>{rioData.mythic_plus_scores_by_season?.[0]?.scores?.all ?? "—"}</b><small style={{display:"block",color:"#9da6c0",marginTop:4}}>Mythic+ Score</small></div>
-            <button onClick={saveRaiderIOToSupabase} disabled={supabaseSaving} style={{...btn,marginTop:14}}>💾 {supabaseSaving ? t.saving : t.saveToGamePro}</button>
-            <button onClick={verifyRaiderIO} disabled={verifying || verified} style={{...btn,marginTop:10,opacity:verified?0.75:1}}>{verified ? "✓ VERIFIED" : (verifying ? t.verifying : t.confirmVerified)}</button>
+            <button onClick={saveRaiderIOToSupabase} disabled={supabaseSaving} style={{...btn,marginTop:14}}>💾 {supabaseSaving ? "Сохраняем…" : "Сохранить в GamePro"}</button>
+            <button onClick={verifyRaiderIO} disabled={verifying || verified} style={{...btn,marginTop:10,opacity:verified?0.75:1}}>{verified ? "✓ VERIFIED" : (verifying ? "Проверяем…" : "✓ Подтвердить VERIFIED")}</button>
             {supabaseStatus && <p style={{color:supabaseStatus.startsWith("✓") ? "#45e0a1" : "#ffb3bf",fontSize:12,marginBottom:0}}>{supabaseStatus}</p>}
           </div>}
-          <p style={{color:"#65708d",fontSize:11,margin:"14px 0 0"}}>{t.source}: <a href="https://raider.io" target="_blank" rel="noreferrer" style={{color:"#52eee3"}}>Raider.IO</a>. {t.notVerifiedGamePro}</p>
+          <p style={{color:"#65708d",fontSize:11,margin:"14px 0 0"}}>Источник: <a href="https://raider.io" target="_blank" rel="noreferrer" style={{color:"#52eee3"}}>Raider.IO</a>. Данные из источника ещё не являются VERIFIED GamePro.</p>
         </div>
       </section>
 
@@ -731,7 +679,7 @@ const btn:React.CSSProperties={
     color:"#9da6c0",
     marginBottom:30
   }}>
-    {t.reviewIntro}
+    GamePro — отзывы игроков.
   </p>
 
   {/* Форма отзыва */}
@@ -747,7 +695,7 @@ const btn:React.CSSProperties={
       textAlign:"center",
       fontSize:24
     }}>
-      {t.leaveReview}
+      Оставить отзыв
     </h3>
 
     {status !== "authenticated" ? (
@@ -756,7 +704,7 @@ const btn:React.CSSProperties={
         textAlign:"center",
         marginBottom:0
       }}>
-        {t.loginToReview}
+        Войди через Battle.net, чтобы оставить отзыв.
       </p>
     ) : (
       <>
@@ -788,7 +736,7 @@ const btn:React.CSSProperties={
         <textarea
           value={reviewText}
           onChange={e => setReviewText(e.target.value)}
-          placeholder={t.reviewPlaceholder}
+          placeholder="Напиши свой отзыв о GamePro..."
           maxLength={1000}
           style={{
             width:"100%",
@@ -813,7 +761,7 @@ const btn:React.CSSProperties={
             marginTop:12
           }}
         >
-          {reviewSending ? t.seting : "✍️ t.submitReview}
+          {reviewSending ? "Отправляем…" : "✍️ Оставить отзыв"}
         </button>
 
         {reviewStatus && (
@@ -866,7 +814,7 @@ const btn:React.CSSProperties={
           <h3 style={{
             margin:"0 0 8px"
           }}>
-            {review.author_name || t.gameproPiayer}
+            {review.author_name || "GamePro игрок"}
           </h3>
 
           <p style={{
@@ -924,5 +872,4 @@ const btn:React.CSSProperties={
 .navlinks a{text-decoration:none;transition:color .2s}.navlinks a:hover{color:#58eee5!important}.sectionHead,.gameHeader{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:25px}.verifiedPill,.status{display:inline-flex;padding:7px 10px;border-radius:999px;background:#0c302f;color:#52eee3;border:1px solid #168f88;font-size:11px;font-weight:900}.futureStatus{display:inline-flex;padding:6px 9px;border-radius:999px;background:#171d31;color:#8994af;font-size:10px;font-weight:800}.greenTag{background:#0d2929;padding:7px;border-radius:7px;color:#45e0a1;font-size:11px;border:1px solid #174f49}\n      @media(max-width:900px){.navlinks{display:none!important}.grid2,.cards,.steps,.gameGrid,.reviewGrid{grid-template-columns:1fr!important}.gameGrid>div{min-height:0}.sectionHead,.gameHeader{align-items:flex-start;flex-direction:column}.sectionHead button{width:100%}}\n      @media(max-width:700px){.rioForm{grid-template-columns:1fr!important}.rioForm button{width:100%}}
       @media(max-width:560px){.nav{min-height:68px}.nav select{margin-left:auto}.stats{grid-template-columns:1fr!important}.badges{grid-template-columns:1fr!important}.searchbar{flex-direction:column}.searchbar button{width:100%}.footer{display:block!important;text-align:center}.footer span{display:block;margin:7px 0}.hero{} }`}</style> </div>;
 }
-
 
