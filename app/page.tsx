@@ -590,11 +590,7 @@ if (!battlenetId) {
     setReviewRating(5);
     setReviewStatus(t.reviewSent);
   } catch (error) {
-    setReviewStatus(
-      error instanceof Error
-        ? error.message
-        : t.reviewError
-    );
+    setReviewStatus(error instanceof Error ? error.message : t.reviewError);
   }
 };
 
