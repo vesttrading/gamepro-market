@@ -578,7 +578,7 @@ if (!battlenetId) {
         body: JSON.stringify({
             text: reviewText.trim(),
             rating: reviewRating
-         ); // <-- Здесь закрывается ТОЛЬКО сам fetch (круглая скобка и точка с запятой)
+        }); 
 
     const data = await response.json();
 
