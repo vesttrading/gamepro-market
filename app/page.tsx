@@ -560,10 +560,9 @@ if (!battlenetId) {
     setReviewStatus(t.loginFirst);
     return;
   }
- }
-
+ 
   if (!reviewText.trim()) {
-    setReviewStatus(t.reviewPlaceholder);
+    setReviewStatus(t.reviewRequired);
     return;
   }
 
