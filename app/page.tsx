@@ -589,7 +589,7 @@ if (!battlenetId) {
     setReviewText("");
     setReviewRating(5);
     setReviewStatus(t.reviewSent);
-   catch (error) { // <-- Вот теперь эта скобка правильно закрывает блок try
+ } catch (error) { // <-- Вот теперь эта скобка правильно закрывает блок try
     setReviewStatus(error instanceof Error ? error.message : "An error occurred");
    }
   };  
