@@ -9,6 +9,7 @@ const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 const L = {
   RU: {
     games:"Игры", players:"Игроки", guilds:"Гильдии", how:"Как это работает", contact:"Контакты",
+    notVerifiedGamePro:"Данные из источника ещё не являются VERIFIED GamePro",
     characterName:"Имя персонажа",
     realmPlaceholder:"Реалм, например Kazzak",
     liveSourceText:"Первый живой источник GamePro для Mythic+ данных",
@@ -61,6 +62,7 @@ const L = {
   },
   EN: {
     games:"Games", players:"Players", guilds:"Guilds", how:"How it works", contact:"Contact",
+    notVerifiedGamePro:"Data from the source is not yet VERIFIED by GamePro",
     characterName:"Character name",
     realmPlaceholder:"Realm, e.g. Kazzak",
     liveSourceText:"The first live GamePro source for Mythic+ data",
@@ -113,6 +115,7 @@ const L = {
   },
   TR: {
     games:"Oyunlar", players:"Oyuncular", guilds:"Loncalar", how:"Nasıl çalışır", contact:"İletişim",
+    notVerifiedGamePro:"Kaynaktaki veriler henüz GamePro tarafından VERIFIED değil",
     characterName:"Karakter adı",
     realmPlaceholder:"Realmi, örn. Kazzak",
     liveSourceText:"Mythic+ verileri için ilk canlı GamePro kaynağı",
@@ -165,6 +168,7 @@ const L = {
   },
   DE: {
     games:"Spiele", players:"Spieler", guilds:"Gilden", how:"So funktioniert es", contact:"Kontakt",
+    notVerifiedGamePro:"Daten aus der Quelle sind noch nicht von GamePro VERIFIED",
     characterName:"Charaktername",
     realmPlaceholder:"Realm, z. B. Kazzak",
     liveSourceText:"Die erste Live-Quelle von GamePro für Mythic+-Daten",
@@ -217,6 +221,7 @@ const L = {
   },
   ES: {
     games:"Juegos", players:"Jugadores", guilds:"Gremios", how:"Cómo funciona", contact:"Contacto",
+    notVerifiedGamePro:"Los datos de la fuente aún no están VERIFIED por GamePro",
     characterName:"Nombre del personaje",
     realmPlaceholder:"Reino, por ejemplo Kazzak",
     liveSourceText:"La primera fuente en vivo de GamePro para datos de Mythic+",
@@ -261,6 +266,7 @@ const L = {
   },
   FR: {
     games:"Jeux", players:"Joueurs", guilds:"Guildes", how:"Comment ça marche", contact:"Contact",
+    notVerifiedGamePro:"Les données de la source ne sont pas encore VERIFIED par GamePro",
     characterName:"Nom du personnage",
     realmPlaceholder:"Royaume, par ex. Kazzak",
     liveSourceText:"La première source live de GamePro pour les données Mythic+",
@@ -305,6 +311,7 @@ const L = {
   },
   PL: {
     games:"Gry", players:"Gracze", guilds:"Gildie", how:"Jak to działa", contact:"Kontakt",
+    notVerifiedGamePro:"Dane ze źródła nie są jeszcze VERIFIED przez GamePro",
     characterName:"Nazwa postaci",
     realmPlaceholder:"Realm, np. Kazzak",
     liveSourceText:"Pierwsze aktywne źródło GamePro dla danych Mythic+",
