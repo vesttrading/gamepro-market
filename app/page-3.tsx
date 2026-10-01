@@ -9,6 +9,34 @@ const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 const L = {
   RU: {
     games:"Игры", players:"Игроки", guilds:"Гильдии", how:"Как это работает", contact:"Контакты",
+    verifyPlayer:"Проверить игрока",
+    reviewSent:"Отзыв отправлен.",
+    reviewError:"Не удалось отправить отзыв.",
+    saveError:"Не удалось сохранить данные.",
+    rioNameRealm:"Укажи имя персонажа и реалм.",
+    rioNotFound:"Персонаж не найден в Raider.IO.",
+    rioError:"Не удалось получить данные Raider.IO.",
+    supabaseNotConfigured:"Supabase не настроен в переменных Vercel.",
+    recordNotFound:"Не удалось найти сохранённую запись.",
+    saveFirst:"Сначала нажми «Сохранить в GamePro».",
+    verifiedGamePro:"✓ VERIFIED подтверждён GamePro.",
+    loginFirst:"Сначала войди через Battle.net.",
+    dataSaved:"✓ Данные сохранены в Supabase. Пока это DATA FOUND, не VERIFIED.",
+    supabaseError:"Supabase не принял данные.",
+    verifiedError:"Не удалось подтвердить VERIFIED.",
+    noName:"Без имени",
+    reviewIntro:"GamePro — отзывы игроков.",
+    leaveReview:"Оставить отзыв",
+    loginToReview:"Войди через Battle.net, чтобы оставить отзыв.",
+    reviewPlaceholder:"Напиши свой отзыв о GamePro...",
+    sending:"Отправляем…",
+    submitReview:"✍️ Оставить отзыв",
+    noReviews:"Пока нет отзывов. Будь первым игроком!",
+    gameproPlayer:"GamePro игрок",
+    dataFound:"DATA FOUND",
+    notVerified:"NOT VERIFIED",
+    saveToGamePro:"Сохранить в GamePro",
+    confirmVerified:"Подтвердить VERIFIED",
     h1:"Докажи свой скилл.", h2:"Покажи свои достижения.",
     intro:"Игровой профиль с подтверждёнными достижениями. Собери свой Achievement Passport и покажи гильдиям и командам, на что ты способен.",
     create:"Создать игровой паспорт", find:"Найти игрока", passport:"Achievement Passport",
@@ -26,6 +54,34 @@ const L = {
   },
   EN: {
     games:"Games", players:"Players", guilds:"Guilds", how:"How it works", contact:"Contact",
+    verifyPlayer:"Check player",
+    reviewSent:"Review submitted.",
+    reviewError:"Failed to submit review.",
+    saveError:"Failed to save data.",
+    rioNameRealm:"Enter character name and realm.",
+    rioNotFound:"Character not found on Raider.IO.",
+    rioError:"Failed to get Raider.IO data.",
+    supabaseNotConfigured:"Supabase is not configured in Vercel environment variables.",
+    recordNotFound:"Could not find the saved record.",
+    saveFirst:"Click “Save to GamePro” first.",
+    verifiedGamePro:"✓ VERIFIED confirmed by GamePro.",
+    loginFirst:"Login with Battle.net first.",
+    dataSaved:"✓ Data saved to Supabase. Currently DATA FOUND, not VERIFIED.",
+    supabaseError:"Supabase did not accept the data.",
+    verifiedError:"Could not confirm VERIFIED.",
+    noName:"No name",
+    reviewIntro:"GamePro — player reviews.",
+    leaveReview:"Leave a review",
+    loginToReview:"Login with Battle.net to leave a review.",
+    reviewPlaceholder:"Write your review of GamePro...",
+    sending:"Sending…",
+    submitReview:"✍️ Leave a review",
+    noReviews:"No reviews yet. Be the first player!",
+    gameproPlayer:"GamePro player",
+    dataFound:"DATA FOUND",
+    notVerified:"NOT VERIFIED",
+    saveToGamePro:"Save to GamePro",
+    confirmVerified:"Confirm VERIFIED",
     h1:"Prove your skill.", h2:"Show your achievements.",
     intro:"A gaming profile with verified achievements. Build your Achievement Passport and show guilds and teams what you can do.",
     create:"Create gaming passport", find:"Find a player", passport:"Achievement Passport",
@@ -43,6 +99,34 @@ const L = {
   },
   TR: {
     games:"Oyunlar", players:"Oyuncular", guilds:"Loncalar", how:"Nasıl çalışır", contact:"İletişim",
+    verifyPlayer:"Oyuncuyu kontrol et",
+    reviewSent:"Yorum gönderildi.",
+    reviewError:"Yorum gönderilemedi.",
+    saveError:"Veriler kaydedilemedi.",
+    rioNameRealm:"Karakter adını ve realmini gir.",
+    rioNotFound:"Karakter Raider.IO'da bulunamadı.",
+    rioError:"Raider.IO verileri alınamadı.",
+    supabaseNotConfigured:"Supabase, Vercel ortam değişkenlerinde yapılandırılmamış.",
+    recordNotFound:"Kayıt bulunamadı.",
+    saveFirst:"Önce “GamePro'ya Kaydet” düğmesine bas.",
+    verifiedGamePro:"✓ VERIFIED GamePro tarafından onaylandı.",
+    loginFirst:"Önce Battle.net ile giriş yap.",
+    dataSaved:"✓ Veriler Supabase'e kaydedildi. Şu anda DATA FOUND, VERIFIED değil.",
+    supabaseError:"Supabase verileri kabul etmedi.",
+    verifiedError:"VERIFIED doğrulanamadı.",
+    noName:"İsimsiz",
+    reviewIntro:"GamePro — oyuncu yorumları.",
+    leaveReview:"Yorum bırak",
+    loginToReview:"Yorum bırakmak için Battle.net ile giriş yap.",
+    reviewPlaceholder:"GamePro hakkında yorumunu yaz...",
+    sending:"Gönderiliyor…",
+    submitReview:"✍️ Yorum bırak",
+    noReviews:"Henüz yorum yok. İlk oyuncu sen ol!",
+    gameproPlayer:"GamePro oyuncusu",
+    dataFound:"DATA FOUND",
+    notVerified:"NOT VERIFIED",
+    saveToGamePro:"GamePro'ya kaydet",
+    confirmVerified:"VERIFIED'ı doğrula",
     h1:"Yeteneğini kanıtla.", h2:"Başarılarını göster.",
     intro:"Doğrulanmış başarılarla oyun profili. Achievement Passport'unu oluştur ve yeteneğini loncalara ve takımlara göster.",
     create:"Oyuncu pasaportu oluştur", find:"Oyuncu bul", passport:"Achievement Passport",
@@ -60,6 +144,34 @@ const L = {
   },
   DE: {
     games:"Spiele", players:"Spieler", guilds:"Gilden", how:"So funktioniert es", contact:"Kontakt",
+    verifyPlayer:"Spieler prüfen",
+    reviewSent:"Bewertung wurde gesendet.",
+    reviewError:"Bewertung konnte nicht gesendet werden.",
+    saveError:"Daten konnten nicht gespeichert werden.",
+    rioNameRealm:"Charakternamen und Realm eingeben.",
+    rioNotFound:"Charakter auf Raider.IO nicht gefunden.",
+    rioError:"Raider.IO-Daten konnten nicht abgerufen werden.",
+    supabaseNotConfigured:"Supabase ist in den Vercel-Umgebungsvariablen nicht konfiguriert.",
+    recordNotFound:"Gespeicherter Eintrag nicht gefunden.",
+    saveFirst:"Klicke zuerst auf „In GamePro speichern“.",
+    verifiedGamePro:"✓ VERIFIED von GamePro bestätigt.",
+    loginFirst:"Melde dich zuerst mit Battle.net an.",
+    dataSaved:"✓ Daten in Supabase gespeichert. Aktuell DATA FOUND, nicht VERIFIED.",
+    supabaseError:"Supabase hat die Daten nicht akzeptiert.",
+    verifiedError:"VERIFIED konnte nicht bestätigt werden.",
+    noName:"Kein Name",
+    reviewIntro:"GamePro — Spielerbewertungen.",
+    leaveReview:"Bewertung abgeben",
+    loginToReview:"Melde dich mit Battle.net an, um eine Bewertung abzugeben.",
+    reviewPlaceholder:"Schreibe deine Bewertung über GamePro...",
+    sending:"Wird gesendet…",
+    submitReview:"✍️ Bewertung abgeben",
+    noReviews:"Noch keine Bewertungen. Sei der erste Spieler!",
+    gameproPlayer:"GamePro-Spieler",
+    dataFound:"DATA FOUND",
+    notVerified:"NOT VERIFIED",
+    saveToGamePro:"In GamePro speichern",
+    confirmVerified:"VERIFIED bestätigen",
     h1:"Beweise dein Können.", h2:"Zeige deine Erfolge.",
     intro:"Gaming-Profil mit verifizierten Erfolgen. Erstelle deinen Achievement Passport und zeige Gilden und Teams, was du kannst.",
     create:"Spielerpass erstellen", find:"Spieler finden", passport:"Achievement Passport",
@@ -77,6 +189,34 @@ const L = {
   },
   ES: {
     games:"Juegos", players:"Jugadores", guilds:"Gremios", how:"Cómo funciona", contact:"Contacto",
+    verifyPlayer:"Comprobar jugador",
+    reviewSent:"Opinión enviada.",
+    reviewError:"No se pudo enviar la opinión.",
+    saveError:"No se pudieron guardar los datos.",
+    rioNameRealm:"Introduce el nombre del personaje y el reino.",
+    rioNotFound:"Personaje no encontrado en Raider.IO.",
+    rioError:"No se pudieron obtener los datos de Raider.IO.",
+    supabaseNotConfigured:"Supabase no está configurado en las variables de entorno de Vercel.",
+    recordNotFound:"No se encontró el registro guardado.",
+    saveFirst:"Primero pulsa «Guardar en GamePro».",
+    verifiedGamePro:"✓ VERIFIED confirmado por GamePro.",
+    loginFirst:"Primero inicia sesión con Battle.net.",
+    dataSaved:"✓ Datos guardados en Supabase. Actualmente DATA FOUND, no VERIFIED.",
+    supabaseError:"Supabase no aceptó los datos.",
+    verifiedError:"No se pudo confirmar VERIFIED.",
+    noName:"Sin nombre",
+    reviewIntro:"GamePro — opiniones de jugadores.",
+    leaveReview:"Dejar una opinión",
+    loginToReview:"Inicia sesión con Battle.net para dejar una opinión.",
+    reviewPlaceholder:"Escribe tu opinión sobre GamePro...",
+    sending:"Enviando…",
+    submitReview:"✍️ Dejar una opinión",
+    noReviews:"Aún no hay opiniones. ¡Sé el primer jugador!",
+    gameproPlayer:"Jugador de GamePro",
+    dataFound:"DATA FOUND",
+    notVerified:"NOT VERIFIED",
+    saveToGamePro:"Guardar en GamePro",
+    confirmVerified:"Confirmar VERIFIED",
     h1:"Demuestra tu habilidad.", h2:"Muestra tus logros.",
     intro:"Perfil gaming con logros verificados. Crea tu Achievement Passport y demuestra a gremios y equipos lo que puedes hacer.",
     create:"Crear pasaporte gamer", find:"Buscar jugador", passport:"Achievement Passport", sub:"No palabras — resultados verificados.", verified:"Perfil verificado", verifiedShort:"VERIFIED",
@@ -86,6 +226,34 @@ const L = {
   },
   FR: {
     games:"Jeux", players:"Joueurs", guilds:"Guildes", how:"Comment ça marche", contact:"Contact",
+    verifyPlayer:"Vérifier le joueur",
+    reviewSent:"Avis envoyé.",
+    reviewError:"Impossible d'envoyer l'avis.",
+    saveError:"Impossible d'enregistrer les données.",
+    rioNameRealm:"Entre le nom du personnage et le royaume.",
+    rioNotFound:"Personnage introuvable sur Raider.IO.",
+    rioError:"Impossible de récupérer les données Raider.IO.",
+    supabaseNotConfigured:"Supabase n'est pas configuré dans les variables d'environnement Vercel.",
+    recordNotFound:"Enregistrement sauvegardé introuvable.",
+    saveFirst:"Clique d'abord sur « Enregistrer dans GamePro ».",
+    verifiedGamePro:"✓ VERIFIED confirmé par GamePro.",
+    loginFirst:"Connecte-toi d'abord avec Battle.net.",
+    dataSaved:"✓ Données enregistrées dans Supabase. Actuellement DATA FOUND, pas VERIFIED.",
+    supabaseError:"Supabase n'a pas accepté les données.",
+    verifiedError:"Impossible de confirmer VERIFIED.",
+    noName:"Sans nom",
+    reviewIntro:"GamePro — avis des joueurs.",
+    leaveReview:"Laisser un avis",
+    loginToReview:"Connecte-toi avec Battle.net pour laisser un avis.",
+    reviewPlaceholder:"Écris ton avis sur GamePro...",
+    sending:"Envoi…",
+    submitReview:"✍️ Laisser un avis",
+    noReviews:"Aucun avis pour le moment. Sois le premier joueur !",
+    gameproPlayer:"Joueur GamePro",
+    dataFound:"DATA FOUND",
+    notVerified:"NOT VERIFIED",
+    saveToGamePro:"Enregistrer dans GamePro",
+    confirmVerified:"Confirmer VERIFIED",
     h1:"Prouve ton niveau.", h2:"Montre tes accomplissements.",
     intro:"Profil gaming avec accomplissements vérifiés. Crée ton Achievement Passport et montre aux guildes et équipes ce que tu sais faire.",
     create:"Créer mon passeport", find:"Trouver un joueur", passport:"Achievement Passport", sub:"Pas de paroles — des résultats vérifiés.", verified:"Profil vérifié", verifiedShort:"VERIFIED",
@@ -95,6 +263,34 @@ const L = {
   },
   PL: {
     games:"Gry", players:"Gracze", guilds:"Gildie", how:"Jak to działa", contact:"Kontakt",
+    verifyPlayer:"Sprawdź gracza",
+    reviewSent:"Opinia została wysłana.",
+    reviewError:"Nie udało się wysłać opinii.",
+    saveError:"Nie udało się zapisać danych.",
+    rioNameRealm:"Podaj nazwę postaci i realm.",
+    rioNotFound:"Nie znaleziono postaci na Raider.IO.",
+    rioError:"Nie udało się pobrać danych z Raider.IO.",
+    supabaseNotConfigured:"Supabase nie jest skonfigurowany w zmiennych środowiskowych Vercel.",
+    recordNotFound:"Nie znaleziono zapisanego rekordu.",
+    saveFirst:"Najpierw kliknij „Zapisz w GamePro”.",
+    verifiedGamePro:"✓ VERIFIED potwierdzone przez GamePro.",
+    loginFirst:"Najpierw zaloguj się przez Battle.net.",
+    dataSaved:"✓ Dane zapisane w Supabase. Obecnie DATA FOUND, nie VERIFIED.",
+    supabaseError:"Supabase nie zaakceptował danych.",
+    verifiedError:"Nie udało się potwierdzić VERIFIED.",
+    noName:"Brak nazwy",
+    reviewIntro:"GamePro — opinie graczy.",
+    leaveReview:"Dodaj opinię",
+    loginToReview:"Zaloguj się przez Battle.net, aby dodać opinię.",
+    reviewPlaceholder:"Napisz swoją opinię o GamePro...",
+    sending:"Wysyłanie…",
+    submitReview:"✍️ Dodaj opinię",
+    noReviews:"Brak opinii. Bądź pierwszym graczem!",
+    gameproPlayer:"Gracz GamePro",
+    dataFound:"DATA FOUND",
+    notVerified:"NOT VERIFIED",
+    saveToGamePro:"Zapisz w GamePro",
+    confirmVerified:"Potwierdź VERIFIED",
     h1:"Udowodnij swój skill.", h2:"Pokaż swoje osiągnięcia.",
     intro:"Profil gracza ze zweryfikowanymi osiągnięciami. Stwórz Achievement Passport i pokaż gildiom oraz drużynom, co potrafisz.",
     create:"Utwórz paszport gracza", find:"Znajdź gracza", passport:"Achievement Passport", sub:"Nie słowa — zweryfikowane wyniki.", verified:"Profil zweryfikowany", verifiedShort:"VERIFIED",
@@ -209,21 +405,21 @@ useEffect(() => {
   };
 
   const searchRaiderIO = async () => {
-    if (!rioName.trim() || !rioRealm.trim()) { setRioError("Укажи имя персонажа и реалм."); setRioData(null); return; }
+    if (!rioName.trim() || !rioRealm.trim()) { setRioError(t.rioNameRealm); setRioData(null); return; }
     setRioLoading(true); setRioError(""); setRioData(null); setSupabaseStatus("");
     try {
       const params = new URLSearchParams({region:rioRegion,realm:rioRealm.trim().toLowerCase().replace(/\s+/g,"-"),name:rioName.trim(),fields:"mythic_plus_scores_by_season:current,gear"});
       const response = await fetch("https://raider.io/api/v1/characters/profile?"+params.toString());
-      if (!response.ok) throw new Error("Персонаж не найден в Raider.IO.");
+      if (!response.ok) throw new Error(t.rioNotFound);
       setRioData(await response.json());
-    } catch (error) { setRioError(error instanceof Error ? error.message : "Не удалось получить данные Raider.IO."); }
+    } catch (error) { setRioError(error instanceof Error ? error.message : t.rioError); }
     finally { setRioLoading(false); }
   };
 
   const verifyRaiderIO = async () => {
     if (!rioData) return;
     if (!SUPABASE_URL || !SUPABASE_KEY) {
-      setSupabaseStatus("Supabase не настроен в переменных Vercel.");
+      setSupabaseStatus(t.supabaseNotConfigured);
       return;
     }
     setVerifying(true);
@@ -234,20 +430,20 @@ useEffect(() => {
       const findResponse = await fetch(`${SUPABASE_URL}/rest/v1/player_verifications?player_name=eq.${name}&realm=eq.${realm}&select=id`, {
         headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` }
       });
-      if (!findResponse.ok) throw new Error("Не удалось найти сохранённую запись.");
+      if (!findResponse.ok) throw new Error(t.recordNotFound);
       const rows = await findResponse.json();
-      if (!rows.length) throw new Error("Сначала нажми «Сохранить в GamePro».");
+      if (!rows.length) throw new Error(t.saveFirst);
       const updateResponse = await fetch(`${SUPABASE_URL}/rest/v1/player_verifications?id=eq.${rows[0].id}`, {
         method: "PATCH",
         headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}`, "Content-Type": "application/json", Prefer: "return=minimal" },
         body: JSON.stringify({ source_verified: true })
       });
-      if (!updateResponse.ok) throw new Error(await updateResponse.text() || "Не удалось подтвердить VERIFIED.");
+      if (!updateResponse.ok) throw new Error(await updateResponse.text() || t.verifiedError);
       setVerified(true);
       setVerifiedId(String(rows[0].id || ""));
-      setSupabaseStatus("✓ VERIFIED подтверждён GamePro.");
+      setSupabaseStatus(t.verifiedGamePro);
     } catch (error) {
-      setSupabaseStatus(error instanceof Error ? error.message : "Не удалось подтвердить VERIFIED.");
+      setSupabaseStatus(error instanceof Error ? error.message : t.verifiedError);
     } finally {
       setVerifying(false);
     }
@@ -297,7 +493,7 @@ if (!battlenetId) {
       }
       setSupabaseStatus("✓ Данные сохранены в Supabase. Пока это DATA FOUND, не VERIFIED.");
     } catch (error) {
-      setSupabaseStatus(error instanceof Error ? `Ошибка Supabase: ${error.message}` : "Не удалось сохранить данные.");
+      setSupabaseStatus(error instanceof Error ? `Supabase: ${error.message}`: t.saveError);
     } finally {
       setSupabaseSaving(false);
     }
@@ -305,16 +501,16 @@ if (!battlenetId) {
 
   const submitReview = async () => {
   if (status !== "authenticated") {
-    setReviewStatus("Сначала войди через Battle.net.");
+    setReviewStatus(t.loginFirst);
     return;
   }
 
   if (!reviewText.trim()) {
-    setReviewStatus("Напиши отзыв.");
+    setReviewStatus(t.reviewPlaceholder);
     return;
   }
 
-  setReviewStatus("Отправляем…");
+  setReviewStatus(t.sending);
 
   try {
     const response = await fetch("/api/reviews", {
@@ -331,17 +527,17 @@ if (!battlenetId) {
     const data = await response.json();
 
     if (!response.ok) {
-      throw new Error(data.error || "Не удалось отправить отзыв.");
+      throw new Error(data.error || t.reviewError);
     }
 
     setReviewText("");
     setReviewRating(5);
-    setReviewStatus("✓ Отзыв отправлен.");
+    setReviewStatus(t.reviewSent);
   } catch (error) {
     setReviewStatus(
       error instanceof Error
         ? error.message
-        : "Ошибка отправки."
+        : t.reviewError
     );
   }
 };
