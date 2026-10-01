@@ -560,6 +560,7 @@ if (!battlenetId) {
     setReviewStatus(t.loginFirst);
     return;
   }
+ }
 
   if (!reviewText.trim()) {
     setReviewStatus(t.reviewPlaceholder);
@@ -577,8 +578,7 @@ if (!battlenetId) {
         body: JSON.stringify({
             text: reviewText.trim(),
             rating: reviewRating
-        })
-    }); // <-- Здесь закрывается ТОЛЬКО сам fetch (круглая скобка и точка с запятой)
+         }); // <-- Здесь закрывается ТОЛЬКО сам fetch (круглая скобка и точка с запятой)
 
     const data = await response.json();
 
@@ -589,12 +589,12 @@ if (!battlenetId) {
     setReviewText("");
     setReviewRating(5);
     setReviewStatus(t.reviewSent);
-
 } catch (error) { // <-- Вот теперь эта скобка правильно закрывает блок try
     setReviewStatus(error instanceof Error ? error.message : "An error occurred");
- }
+   }
+  };
 
-  const btn:React.CSSProperties={
+const btn:React.CSSProperties={
     display:"inline-flex",alignItems:"center",justifyContent:"center",gap:8,padding:"10px 20px",borderRadius:12,
     background:"linear-gradient(135deg,#18e0d1,#12bfb6)",color:"#021312",fontWeight:900,border:0,cursor:"pointer",
     textDecoration:"none",boxShadow:"0 0 30px #16d8cf38",transition:"transform .2s,box-shadow .2s"
