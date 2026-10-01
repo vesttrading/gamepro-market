@@ -307,7 +307,7 @@ export default function HomePage() {
  if (status === "authenticated") {
   console.log("ПОЛЬЗОВАТЕЛЬ ВОШЁЛ:", session?.user?.name);
 }
-  const [lang,setLang] = useState<Lang>("RU");
+  const [lang,setLang] = useState<Lang>("EN");
   const [q,setQ] = useState("");
   const [copied,setCopied] = useState(false);
   const [rioName,setRioName] = useState("");
