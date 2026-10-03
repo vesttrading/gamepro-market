@@ -11,6 +11,7 @@ const L = {
     games:"Игры", players:"Игроки", guilds:"Гильдии", how:"Как это работает", contact:"Контакты",
     allRoles:"Все роли",
     allClasses:"Все классы",
+    minRating:"Мин. рейтинг",
     verifyViaRaiderIO:"Проверить игрока через Raider.IO",
     characterName:"Имя персонажа",
     realmPlaceholder:"Реалм, например Kazzak",
@@ -65,6 +66,7 @@ const L = {
     games:"Games", players:"Players", guilds:"Guilds", how:"How it works", contact:"Contact",
     allRoles:"All roles",
     allClasses:"All classes",
+    minRating:"Min. rating",
     verifyViaRaiderIO:"Check player via Raider.IO",
     characterName:"Character name",
     realmPlaceholder:"Realm, e.g. Kazzak",
@@ -119,6 +121,7 @@ const L = {
     games:"Oyunlar", players:"Oyuncular", guilds:"Loncalar", how:"Nasıl çalışır", contact:"İletişim",
     allRoles:"Tüm roller",
     allClasses:"Tüm sınıflar",
+    minRating:"Min. puan",
     verifyViaRaiderIO:"Raider.IO üzerinden oyuncuyu kontrol et",
     characterName:"Karakter adı",
     realmPlaceholder:"Realmi, örn. Kazzak",
@@ -173,6 +176,7 @@ const L = {
     games:"Spiele", players:"Spieler", guilds:"Gilden", how:"So funktioniert es", contact:"Kontakt",
     allRoles:"Alle Rollen",
     allClasses:"Alle Klassen",
+    minRating:"Min. Wertung",
     verifyViaRaiderIO:"Spieler über Raider.IO prüfen",
     characterName:"Charaktername",
     realmPlaceholder:"Realm, z. B. Kazzak",
@@ -227,6 +231,7 @@ const L = {
     games:"Juegos", players:"Jugadores", guilds:"Gremios", how:"Cómo funciona", contact:"Contacto",
     allRoles:"Todos los roles",
     allClasses:"Todas las clases",
+    minRating:"Rating mín.",
     verifyViaRaiderIO:"Comprobar jugador mediante Raider.IO",
     characterName:"Nombre del personaje",
     realmPlaceholder:"Reino, por ejemplo Kazzak",
@@ -273,6 +278,7 @@ const L = {
     games:"Jeux", players:"Joueurs", guilds:"Guildes", how:"Comment ça marche", contact:"Contact",
     allRoles:"Tous les rôles",
     allClasses:"Toutes les classes",
+    minRating:"Rating min.",
     verifyViaRaiderIO:"Vérifier le joueur via Raider.IO",
     characterName:"Nom du personnage",
     realmPlaceholder:"Royaume, par ex. Kazzak",
@@ -319,6 +325,7 @@ const L = {
     games:"Gry", players:"Gracze", guilds:"Gildie", how:"Jak to działa", contact:"Kontakt",
     allRoles:"Wszystkie role",
     allClasses:"Wszystkie klasy",
+    minRating:"Min. rating",
     verifyViaRaiderIO:"Sprawdź gracza przez Raider.IO",
     characterName:"Nazwa postaci",
     realmPlaceholder:"Realm, np. Kazzak",
@@ -657,7 +664,7 @@ if (!battlenetId) {
   {/* Ввод минимального рейтинга */}
   <input
     type="number"
-    placeholder="Мин. рейтинг"
+    placeholder={t.minRating}
     value={minRating}
     onChange={(e) => setMinRating(e.target.value)}
     style={{ padding: "8px 12px", background: "#1e293b", border: "1px solid #334155", borderRadius: 8, color: "#fff", fontSize: 14, outline: "none", width: 130 }}
