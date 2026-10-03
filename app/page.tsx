@@ -9,6 +9,8 @@ const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 const L = {
   RU: {
     games:"Игры", players:"Игроки", guilds:"Гильдии", how:"Как это работает", contact:"Контакты",
+    allRoles:"Все роли",
+    allClasses:"Все классы",
     verifyViaRaiderIO:"Проверить игрока через Raider.IO",
     characterName:"Имя персонажа",
     realmPlaceholder:"Реалм, например Kazzak",
@@ -61,6 +63,8 @@ const L = {
   },
   EN: {
     games:"Games", players:"Players", guilds:"Guilds", how:"How it works", contact:"Contact",
+    allRoles:"All roles",
+    allClasses:"All classes",
     verifyViaRaiderIO:"Check player via Raider.IO",
     characterName:"Character name",
     realmPlaceholder:"Realm, e.g. Kazzak",
@@ -113,6 +117,8 @@ const L = {
   },
   TR: {
     games:"Oyunlar", players:"Oyuncular", guilds:"Loncalar", how:"Nasıl çalışır", contact:"İletişim",
+    allRoles:"Tüm roller",
+    allClasses:"Tüm sınıflar",
     verifyViaRaiderIO:"Raider.IO üzerinden oyuncuyu kontrol et",
     characterName:"Karakter adı",
     realmPlaceholder:"Realmi, örn. Kazzak",
@@ -165,6 +171,8 @@ const L = {
   },
   DE: {
     games:"Spiele", players:"Spieler", guilds:"Gilden", how:"So funktioniert es", contact:"Kontakt",
+    allRoles:"Alle Rollen",
+    allClasses:"Alle Klassen",
     verifyViaRaiderIO:"Spieler über Raider.IO prüfen",
     characterName:"Charaktername",
     realmPlaceholder:"Realm, z. B. Kazzak",
@@ -217,6 +225,8 @@ const L = {
   },
   ES: {
     games:"Juegos", players:"Jugadores", guilds:"Gremios", how:"Cómo funciona", contact:"Contacto",
+    allRoles:"Todos los roles",
+    allClasses:"Todas las clases",
     verifyViaRaiderIO:"Comprobar jugador mediante Raider.IO",
     characterName:"Nombre del personaje",
     realmPlaceholder:"Reino, por ejemplo Kazzak",
@@ -261,6 +271,8 @@ const L = {
   },
   FR: {
     games:"Jeux", players:"Joueurs", guilds:"Guildes", how:"Comment ça marche", contact:"Contact",
+    allRoles:"Tous les rôles",
+    allClasses:"Toutes les classes",
     verifyViaRaiderIO:"Vérifier le joueur via Raider.IO",
     characterName:"Nom du personnage",
     realmPlaceholder:"Royaume, par ex. Kazzak",
@@ -305,6 +317,8 @@ const L = {
   },
   PL: {
     games:"Gry", players:"Gracze", guilds:"Gildie", how:"Jak to działa", contact:"Kontakt",
+    allRoles:"Wszystkie role",
+    allClasses:"Wszystkie klasy",
     verifyViaRaiderIO:"Sprawdź gracza przez Raider.IO",
     characterName:"Nazwa postaci",
     realmPlaceholder:"Realm, np. Kazzak",
@@ -619,7 +633,7 @@ if (!battlenetId) {
     onChange={(e) => setSelectedRole(e.target.value)}
     style={{ padding: "8px 12px", background: "#1e293b", border: "1px solid #334155", borderRadius: 8, color: "#fff", fontSize: 14, outline: "none", cursor: "pointer" }}
   >
-    <option value="">Все роли</option>
+    <option value="">{t.allRoles}</option>
     <option value="Tank">Танк</option>
     <option value="Healer">Хилер</option>
     <option value="DPS">ДД (DPS)</option>
@@ -631,7 +645,7 @@ if (!battlenetId) {
     onChange={(e) => setSelectedClass(e.target.value)}
     style={{ padding: "8px 12px", background: "#1e293b", border: "1px solid #334155", borderRadius: 8, color: "#fff", fontSize: 14, outline: "none", cursor: "pointer" }}
   >
-    <option value="">Все классы</option>
+    <option value="">{t.allClasses}</option>
     <option value="Mage">Маг</option>
     <option value="Paladin">Паладин</option>
     <option value="Druid">Друид</option>
