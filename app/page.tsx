@@ -50,7 +50,7 @@ const L = {
     futureText:"Dota 2, CS2 и Path of Exile 2 уже в плане развития.", source:"Источник", sourceText:"GamePro сверяет игровые данные с поддерживаемыми источниками.",
     check:"Проверка", checkText:"Данные проходят проверку перед получением статуса VERIFIED.",
     badge:"VERIFIED", badgeText:"Только подтверждённые достижения получают зелёный бейдж.",
-    passportLink:"Паспорт игрока", shareTitle:"Твой игровой профиль — одной ссылкой", login:"Войти через Battle.net", reviews:"Отзывы", gameproRating:"Оценка GamePro", playerReviews:"Отзывы игроков", verifiedReviews:"Отзывы о системе VERIFIED"
+    passportLink:"Паспорт игрока", shareTitle:"Твой игровой профиль — одной ссылкой", login:"Войти через Battle.net", reviews:"Отзывы", gameproRating:"Оценка GamePro", playerReviews:"Отзывы игроков", verifiedReviews:"Отзывы о системе VERIFIED",
     logout:"Выйти",
   },
   EN: {
@@ -96,7 +96,7 @@ const L = {
     futureText:"Dota 2, CS2 and Path of Exile 2 are already on the roadmap.", source:"Source", sourceText:"GamePro checks game data against supported sources.",
     check:"Verification", checkText:"Data is checked before an achievement receives VERIFIED status.",
     badge:"VERIFIED", badgeText:"Only verified achievements receive the green badge.",
-    passportLink:"Player passport", shareTitle:"Your gaming profile — one link", login:"Login with Battle.net", reviews:"Reviews", gameproRating:"GamePro rating", playerReviews:"Player reviews", verifiedReviews:"VERIFIED system reviews"
+    passportLink:"Player passport", shareTitle:"Your gaming profile — one link", login:"Login with Battle.net", reviews:"Reviews", gameproRating:"GamePro rating", playerReviews:"Player reviews", verifiedReviews:"VERIFIED system reviews",
     logout:"Log out",
   },
   TR: {
@@ -142,7 +142,7 @@ const L = {
     futureText:"Dota 2, CS2 ve Path of Exile 2 yol haritasında.", source:"Kaynak", sourceText:"GamePro oyun verilerini desteklenen kaynaklarla karşılaştırır.",
     check:"Doğrulama", checkText:"Başarı VERIFIED olmadan önce veriler kontrol edilir.",
     badge:"VERIFIED", badgeText:"Sadece doğrulanmış başarılar yeşil rozet alır.",
-    passportLink:"Oyuncu pasaportu", shareTitle:"Oyun profilin — tek bağlantı", login:"Battle.net ile giriş", reviews:"Yorumlar", gameproRating:"GamePro puanı", playerReviews:"Oyuncu yorumları", verifiedReviews:"VERIFIED sistemi yorumları"
+    passportLink:"Oyuncu pasaportu", shareTitle:"Oyun profilin — tek bağlantı", login:"Battle.net ile giriş", reviews:"Yorumlar", gameproRating:"GamePro puanı", playerReviews:"Oyuncu yorumları", verifiedReviews:"VERIFIED sistemi yorumları",
     logout:"Çıkış yap",
   },
   DE: {
@@ -188,7 +188,7 @@ const L = {
     futureText:"Dota 2, CS2 und Path of Exile 2 stehen bereits auf der Roadmap.", source:"Quelle", sourceText:"GamePro gleicht Spieldaten mit unterstützten Quellen ab.",
     check:"Prüfung", checkText:"Die Daten werden geprüft, bevor ein Erfolg VERIFIED erhält.",
     badge:"VERIFIED", badgeText:"Nur verifizierte Erfolge erhalten das grüne Badge.",
-    passportLink:"Spielerpass", shareTitle:"Dein Gaming-Profil — ein Link", login:"Mit Battle.net einloggen", reviews:"Bewertungen", gameproRating:"GamePro-Bewertung", playerReviews:"Spielerbewertungen", verifiedReviews:"Bewertungen zum VERIFIED-System"
+    passportLink:"Spielerpass", shareTitle:"Dein Gaming-Profil — ein Link", login:"Mit Battle.net einloggen", reviews:"Bewertungen", gameproRating:"GamePro-Bewertung", playerReviews:"Spielerbewertungen", verifiedReviews:"Bewertungen zum VERIFIED-System",
     logout:"Abmelden",
   },
   ES: {
@@ -226,7 +226,7 @@ const L = {
     create:"Crear pasaporte gamer", find:"Buscar jugador", passport:"Achievement Passport", sub:"No palabras — resultados verificados.", verified:"Perfil verificado", verifiedShort:"VERIFIED",
     searchTitle:"Buscar jugador", searchSub:"Busca por rol, rating y logros verificados.", placeholder:"Por ejemplo: Holy Paladin 2700+", search:"Buscar",
     howTitle:"Cómo funciona la verificación", howSub:"De los datos del juego a la insignia VERIFIED.", guild:"Gremios y equipos", guildText:"Encuentra jugadores por rol, rating y progreso verificado.", open:"Abrir búsqueda de jugadores", share:"Compartir pasaporte", copied:"¡Enlace copiado!",
-    current:"Disponible ahora", future:"Próximamente", wow:"World of Warcraft", wowText:"Mythic+, raids y PvP — el primer juego de GamePro.", futureText:"Dota 2, CS2 y Path of Exile 2 están en la hoja de ruta.", source:"Fuente", sourceText:"GamePro compara los datos del juego con fuentes compatibles.", check:"Verificación", checkText:"Los datos se comprueban antes de recibir el estado VERIFIED.", badge:"VERIFIED", badgeText:"Solo los logros verificados reciben la insignia verde.", passportLink:"Pasaporte del jugador", shareTitle:"Tu perfil gaming — un solo enlace", login:"Entrar con Battle.net", reviews:"Opiniones", gameproRating:"Valoración de GamePro", playerReviews:"Opiniones de jugadores", verifiedReviews:"Opiniones sobre el sistema VERIFIED"
+    current:"Disponible ahora", future:"Próximamente", wow:"World of Warcraft", wowText:"Mythic+, raids y PvP — el primer juego de GamePro.", futureText:"Dota 2, CS2 y Path of Exile 2 están en la hoja de ruta.", source:"Fuente", sourceText:"GamePro compara los datos del juego con fuentes compatibles.", check:"Verificación", checkText:"Los datos se comprueban antes de recibir el estado VERIFIED.", badge:"VERIFIED", badgeText:"Solo los logros verificados reciben la insignia verde.", passportLink:"Pasaporte del jugador", shareTitle:"Tu perfil gaming — un solo enlace", login:"Entrar con Battle.net", reviews:"Opiniones", gameproRating:"Valoración de GamePro", playerReviews:"Opiniones de jugadores", verifiedReviews:"Opiniones sobre el sistema VERIFIED",
     logout:"Cerrar sesión",
   },
   FR: {
@@ -264,7 +264,7 @@ const L = {
     create:"Créer mon passeport", find:"Trouver un joueur", passport:"Achievement Passport", sub:"Pas de paroles — des résultats vérifiés.", verified:"Profil vérifié", verifiedShort:"VERIFIED",
     searchTitle:"Trouver un joueur", searchSub:"Recherche par rôle, rating et accomplissements vérifiés.", placeholder:"Par exemple : Holy Paladin 2700+", search:"Rechercher",
     howTitle:"Comment fonctionne la vérification", howSub:"Des données du jeu au badge VERIFIED.", guild:"Guildes et équipes", guildText:"Trouve des joueurs par rôle, rating et progression vérifiée.", open:"Ouvrir la recherche", share:"Partager le passeport", copied:"Lien copié !",
-    current:"Disponible maintenant", future:"Bientôt", wow:"World of Warcraft", wowText:"Mythic+, raids et PvP — le premier jeu de GamePro.", futureText:"Dota 2, CS2 et Path of Exile 2 sont sur la feuille de route.", source:"Source", sourceText:"GamePro vérifie les données du jeu avec les sources prises en charge.", check:"Vérification", checkText:"Les données sont vérifiées avant l'attribution du statut VERIFIED.", badge:"VERIFIED", badgeText:"Seuls les accomplissements vérifiés obtiennent le badge vert.", passportLink:"Passeport joueur", shareTitle:"Ton profil gaming — un seul lien", login:"Se connecter avec Battle.net", reviews:"Avis", gameproRating:"Note GamePro", playerReviews:"Avis des joueurs", verifiedReviews:"Avis sur le système VERIFIED"
+    current:"Disponible maintenant", future:"Bientôt", wow:"World of Warcraft", wowText:"Mythic+, raids et PvP — le premier jeu de GamePro.", futureText:"Dota 2, CS2 et Path of Exile 2 sont sur la feuille de route.", source:"Source", sourceText:"GamePro vérifie les données du jeu avec les sources prises en charge.", check:"Vérification", checkText:"Les données sont vérifiées avant l'attribution du statut VERIFIED.", badge:"VERIFIED", badgeText:"Seuls les accomplissements vérifiés obtiennent le badge vert.", passportLink:"Passeport joueur", shareTitle:"Ton profil gaming — un seul lien", login:"Se connecter avec Battle.net", reviews:"Avis", gameproRating:"Note GamePro", playerReviews:"Avis des joueurs", verifiedReviews:"Avis sur le système VERIFIED",
     logout:"Se déconnecter",
   },
   PL: {
