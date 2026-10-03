@@ -9,6 +9,10 @@ const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 const L = {
   RU: {
     games:"Игры", players:"Игроки", guilds:"Гильдии", how:"Как это работает", contact:"Контакты",
+    characterName:"Имя персонажа",
+    realmPlaceholder:"Реалм, например Kazzak",
+    liveSourceText:"Первый живой источник GamePro для Mythic+ данных",
+    verify:"Проверить",
     verifyPlayer:"Проверить игрока",
     reviewSent:"Отзыв отправлен.",
     reviewError:"Не удалось отправить отзыв.",
@@ -55,6 +59,10 @@ const L = {
   },
   EN: {
     games:"Games", players:"Players", guilds:"Guilds", how:"How it works", contact:"Contact",
+    characterName:"Character name",
+    realmPlaceholder:"Realm, e.g. Kazzak",
+    liveSourceText:"The first live GamePro source for Mythic+ data",
+    verify:"Check",
     verifyPlayer:"Check player",
     reviewSent:"Review submitted.",
     reviewError:"Failed to submit review.",
@@ -101,6 +109,10 @@ const L = {
   },
   TR: {
     games:"Oyunlar", players:"Oyuncular", guilds:"Loncalar", how:"Nasıl çalışır", contact:"İletişim",
+    characterName:"Karakter adı",
+    realmPlaceholder:"Realmi, örn. Kazzak",
+    liveSourceText:"Mythic+ verileri için ilk canlı GamePro kaynağı",
+    verify:"Kontrol et",
     verifyPlayer:"Oyuncuyu kontrol et",
     reviewSent:"Yorum gönderildi.",
     reviewError:"Yorum gönderilemedi.",
@@ -147,6 +159,10 @@ const L = {
   },
   DE: {
     games:"Spiele", players:"Spieler", guilds:"Gilden", how:"So funktioniert es", contact:"Kontakt",
+    characterName:"Charaktername",
+    realmPlaceholder:"Realm, z. B. Kazzak",
+    liveSourceText:"Die erste Live-Quelle von GamePro für Mythic+-Daten",
+    verify:"Prüfen",
     verifyPlayer:"Spieler prüfen",
     reviewSent:"Bewertung wurde gesendet.",
     reviewError:"Bewertung konnte nicht gesendet werden.",
@@ -193,6 +209,10 @@ const L = {
   },
   ES: {
     games:"Juegos", players:"Jugadores", guilds:"Gremios", how:"Cómo funciona", contact:"Contacto",
+    characterName:"Nombre del personaje",
+    realmPlaceholder:"Reino, por ejemplo Kazzak",
+    liveSourceText:"La primera fuente en vivo de GamePro para datos de Mythic+",
+    verify:"Comprobar",
     verifyPlayer:"Comprobar jugador",
     reviewSent:"Opinión enviada.",
     reviewError:"No se pudo enviar la opinión.",
@@ -231,6 +251,10 @@ const L = {
   },
   FR: {
     games:"Jeux", players:"Joueurs", guilds:"Guildes", how:"Comment ça marche", contact:"Contact",
+    characterName:"Nom du personnage",
+    realmPlaceholder:"Royaume, par ex. Kazzak",
+    liveSourceText:"La première source live de GamePro pour les données Mythic+",
+    verify:"Vérifier",
     verifyPlayer:"Vérifier le joueur",
     reviewSent:"Avis envoyé.",
     reviewError:"Impossible d'envoyer l'avis.",
@@ -269,6 +293,10 @@ const L = {
   },
   PL: {
     games:"Gry", players:"Gracze", guilds:"Gildie", how:"Jak to działa", contact:"Kontakt",
+    characterName:"Nazwa postaci",
+    realmPlaceholder:"Realm, np. Kazzak",
+    liveSourceText:"Pierwsze aktywne źródło GamePro dla danych Mythic+",
+    verify:"Sprawdź",
     verifyPlayer:"Sprawdź gracza",
     reviewSent:"Opinia została wysłana.",
     reviewError:"Nie udało się wysłać opinii.",
@@ -629,14 +657,14 @@ if (!battlenetId) {
       <section id="raiderio" style={{maxWidth:1160,width:"92%",margin:"auto",padding:"0 0 60px"}}>
         <div style={{...card,borderColor:"#17bcb2"}}>
           <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",gap:12,flexWrap:"wrap"}}>
-            <div><h2 style={{fontSize:28,margin:"0 0 7px"}}>🔎 Проверить игрока через Raider.IO</h2><p style={{color:"#9da6c0",margin:0}}>Первый живой источник GamePro для Mythic+ данных.</p></div>
+            <div><h2 style={{fontSize:28,margin:"0 0 7px"}}>🔎{t.verifyPlayer} через Raider.IO</h2><p style={{color:"#9da6c0",margin:0}}>{t.liveSourceText}</p></div>
             <span className="verifiedPill">RAIDER.IO</span>
           </div>
           <div className="rioForm" style={{display:"grid",gridTemplateColumns:"1fr 1fr 90px auto",gap:10,marginTop:18}}>
-            <input value={rioName} onChange={e=>setRioName(e.target.value)} placeholder="Имя персонажа" style={{background:"#090e1d",border:"1px solid #26364b",borderRadius:12,padding:14,color:"white",outline:"none"}} />
-            <input value={rioRealm} onChange={e=>setRioRealm(e.target.value)} placeholder="Реалм, например Kazzak" style={{background:"#090e1d",border:"1px solid #26364b",borderRadius:12,padding:14,color:"white",outline:"none"}} />
+            <input value={rioName} onChange={e=>setRioName(e.target.value)} placeholder={t.characterName} style={{background:"#090e1d",border:"1px solid #26364b",borderRadius:12,padding:14,color:"white",outline:"none"}} />
+            <input value={rioRealm} onChange={e=>setRioRealm(e.target.value)} placeholder={t.realmPlaceholder} style={{background:"#090e1d",border:"1px solid #26364b",borderRadius:12,padding:14,color:"white",outline:"none"}} />
             <select value={rioRegion} onChange={e=>setRioRegion(e.target.value)} style={{background:"#090e1d",border:"1px solid #26364b",borderRadius:12,padding:14,color:"white"}}><option value="eu">EU</option><option value="us">US</option><option value="kr">KR</option><option value="tw">TW</option></select>
-            <button style={btn} onClick={searchRaiderIO} disabled={rioLoading}>{rioLoading ? "Проверяем…" : "Проверить"}</button>
+            <button style={btn} onClick={searchRaiderIO} disabled={rioLoading}>{rioLoading ? t.verifying : t.verify}</button>
           </div>
           {rioError && <p style={{color:"#ff8e9e",marginBottom:0}}>{rioError}</p>}
           {rioData && <div style={{marginTop:18,padding:18,borderRadius:16,background:"#080d1b",border:"1px solid #1c8f82"}}>
