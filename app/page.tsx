@@ -671,7 +671,7 @@ if (!battlenetId) {
       <section id="raiderio" style={{maxWidth:1160,width:"92%",margin:"auto",padding:"0 0 60px"}}>
         <div style={{...card,borderColor:"#17bcb2"}}>
           <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",gap:12,flexWrap:"wrap"}}>
-            <div><h2 style={{fontSize:28,margin:"0 0 7px"}}>🔎{t.verifyViaRaiderIO}через Raider.I0</h2><p style={{color:"#9da6c0",margin:0}}>{t.liveSourceText}</p></div>
+            <div><h2 style={{fontSize:28,margin:"0 0 7px"}}>🔎{t.verifyViaRaiderIO}</h2><p style={{color:"#9da6c0",margin:0}}>{t.liveSourceText}</p></div>
             <span className="verifiedPill">RAIDER.IO</span>
           </div>
           <div className="rioForm" style={{display:"grid",gridTemplateColumns:"1fr 1fr 90px auto",gap:10,marginTop:18}}>
