@@ -452,7 +452,7 @@ useEffect(() => {
   const saveRaiderIOToSupabase = async () => {
     if (!rioData) return;
     if (!SUPABASE_URL || !SUPABASE_KEY) {
-      setSupabaseStatus("Supabase не настроен в переменных Vercel.");
+      setSupabaseStatus(t.supabaseNotConfigured);
       return;
     }
     setSupabaseSaving(true); setSupabaseStatus("");
@@ -461,7 +461,7 @@ useEffect(() => {
       const battlenetId = (session as any)?.battlenetId;
 
 if (!battlenetId) {
-  setSupabaseStatus("Сначала войди через Battle.net.");
+  setSupabaseStatus(t.loginFirst);
   return;
 }
    const payload = {
@@ -489,9 +489,9 @@ if (!battlenetId) {
       });
       if (!response.ok) {
         const text = await response.text();
-        throw new Error(text || "Supabase не принял данные.");
+        throw new Error(text || t.supabaseError);
       }
-      setSupabaseStatus("✓ Данные сохранены в Supabase. Пока это DATA FOUND, не VERIFIED.");
+      setSupabaseStatus(t.dataSaved);
     } catch (error) {
       setSupabaseStatus(error instanceof Error ? `Supabase: ${error.message}`: t.saveError);
     } finally {
