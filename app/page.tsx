@@ -61,7 +61,7 @@ const L = {
   },
   EN: {
     games:"Games", players:"Players", guilds:"Guilds", how:"How it works", contact:"Contact",
-    ТоverifyViaRaiderIO:"Check player via Raider.IO",
+    verifyViaRaiderIO:"Check player via Raider.IO",
     characterName:"Character name",
     realmPlaceholder:"Realm, e.g. Kazzak",
     liveSourceText:"The first live GamePro source for Mythic+ data",
