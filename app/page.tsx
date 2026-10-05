@@ -453,7 +453,6 @@ export default function HomePage() {
   const [supabaseSaving,setSupabaseSaving] = useState(false);
   const [selectedRole, setSelectedRole] = useState("");
   const [selectedClass, setSelectedClass] = useState("");
-  const [minRating, setMinRating] = useState("");
   const [dbPlayers, setDbPlayers] = useState<any[]>([]); // Для хранения данных из бэкенда
   const [supabaseStatus,setSupabaseStatus] = useState("");
   const [verified,setVerified] = useState(false);
