@@ -724,14 +724,39 @@ if (!battlenetId) {
     <option value="Rogue">{t.classRogue}</option>
   </select>
 
-  {/* Ввод минимального рейтинга */}
-  <input
-    type="number"
-    placeholder={t.minRating}
-    value={minRating}
-    onChange={(e) => setMinRating(e.target.value)}
-    style={{ padding: "8px 12px", background: "#1e293b", border: "1px solid #334155", borderRadius: 8, color: "#fff", fontSize: 14, outline: "none", width: 130 }}
-  />
+{/* Ввод минимального рейтинга */}
+<input
+  type="number"
+  placeholder={t.minRating}
+  value={minRating}
+  onChange={(e) => setMinRating(e.target.value)}
+  min="0"
+  style={{
+    padding: "8px 12px",
+    background: "#1e293b",
+    border: "1px solid #334155",
+    borderRadius: 8,
+    color: "#fff",
+    fontSize: 14,
+    outline: "none",
+    width: 130,
+    height: 40,
+    opacity: 1,
+    pointerEvents: "auto",
+    position: "relative",
+    zIndex: 100,
+    cursor: "text",
+    boxSizing: "border-box"
+  }}
+  onFocus={(e) => {
+    e.currentTarget.style.borderColor = "#22d3ee";
+    e.currentTarget.style.boxShadow = "0 0 0 2px rgba(34,211,238,0.25)";
+  }}
+  onBlur={(e) => {
+    e.currentTarget.style.borderColor = "#334155";
+    e.currentTarget.style.boxShadow = "none";
+  }}
+/>
 </div>
 </section>
      
