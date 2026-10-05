@@ -9,7 +9,7 @@ const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 const L = {
   RU: {
     games:"Игры", players:"Игроки", guilds:"Гильдии", how:"Как это работает", contact:"Контакты",
-    saving:"Сохраняем" : "Сохранить в GamePro",
+    saving:"Сохраняем",saveGamePro: "Сохранить в GamePro",
     allRoles:"Все роли",
     roleTank:"Танк",
     roleHealer:"Хилер",
@@ -74,7 +74,7 @@ const L = {
   },
   EN: {
     games:"Games", players:"Players", guilds:"Guilds", how:"How it works", contact:"Contact",
-    saving:"Saving : Save to GamePro",
+    saving:"Saving",saveGamePro:"Save to GamePro",
     allRoles:"All roles",
     roleTank:"Tank",
     roleHealer:"Healer",
@@ -139,7 +139,7 @@ const L = {
   },
   TR: {
     games:"Oyunlar", players:"Oyuncular", guilds:"Loncalar", how:"Nasıl çalışır", contact:"İletişim",
-    saving:"Kaydediliyor : GamePro'ya Kaydet",
+    saving:"Kaydediliyor",saveGamePro:"GamePro'ya Kaydet",
     allRoles:"Tüm roller",
     roleTank:"Tank",
     roleHealer:"Şifacı",
@@ -204,7 +204,7 @@ const L = {
   },
   DE: {
     games:"Spiele", players:"Spieler", guilds:"Gilden", how:"So funktioniert es", contact:"Kontakt",
-    saving:"Speichern : In GamePro speichern",
+    saving:"Speichern",saveGamePro:"In GamePro speichern",
     allRoles:"Alle Rollen",
     roleTank:"Tank",
     roleHealer:"Heiler",
@@ -269,7 +269,7 @@ const L = {
   },
   ES: {
     games:"Juegos", players:"Jugadores", guilds:"Gremios", how:"Cómo funciona", contact:"Contacto",
-    saving:"Guardando : Guardar en GamePro",
+    saving:"Guardando",saveGamePro:"Guardar en GamePro",
     allRoles:"Todos los roles",
     roleTank:"Tanque",
     roleHealer:"Sanador",
@@ -326,7 +326,7 @@ const L = {
   },
   FR: {
     games:"Jeux", players:"Joueurs", guilds:"Guildes", how:"Comment ça marche", contact:"Contact",
-    saving:"Enregistrement : Enregistrer dans GamePro",
+    saving:"Enregistrement",saveGamePro:"Enregistrer dans GamePro",
     allRoles:"Tous les rôles",
     roleTank:"Tank",
     roleHealer:"Soigneur",
@@ -383,7 +383,7 @@ const L = {
   },
   PL: {
     games:"Gry", players:"Gracze", guilds:"Gildie", how:"Jak to działa", contact:"Kontakt",
-    saving:"Zapisywanie : Zapisz w GamePro",
+    saving:"Zapisywanie",saveGamePro:"Zapisz w GamePro",
     allRoles:"Wszystkie role",
     roleTank:"Tank",
     roleHealer:"Healer",
