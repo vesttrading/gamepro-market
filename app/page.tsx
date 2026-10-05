@@ -78,7 +78,7 @@ const L = {
     roleHealer:"Healer",
     roleDPS:"DPS",
     allClasses:"All classes",
-    ТоclassMage:"Mage",
+    classMage:"Mage",
     classPaladin:"Paladin",
     classDruid:"Druid",
     classWarrior:"Warrior",
