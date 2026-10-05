@@ -9,6 +9,7 @@ const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 const L = {
   RU: {
     games:"Игры", players:"Игроки", guilds:"Гильдии", how:"Как это работает", contact:"Контакты",
+    saveGamePro:"Сохраняем : Сохранить в GamePro",
     allRoles:"Все роли",
     roleTank:"Танк",
     roleHealer:"Хилер",
@@ -73,6 +74,7 @@ const L = {
   },
   EN: {
     games:"Games", players:"Players", guilds:"Guilds", how:"How it works", contact:"Contact",
+    saveGamePro:"Saving : Save to GamePro",
     allRoles:"All roles",
     roleTank:"Tank",
     roleHealer:"Healer",
@@ -137,6 +139,7 @@ const L = {
   },
   TR: {
     games:"Oyunlar", players:"Oyuncular", guilds:"Loncalar", how:"Nasıl çalışır", contact:"İletişim",
+    saveGamePro:"Kaydediliyor : GamePro'ya Kaydet",
     allRoles:"Tüm roller",
     roleTank:"Tank",
     roleHealer:"Şifacı",
@@ -201,6 +204,7 @@ const L = {
   },
   DE: {
     games:"Spiele", players:"Spieler", guilds:"Gilden", how:"So funktioniert es", contact:"Kontakt",
+    saveGamePro:"Speichern : In GamePro speichern",
     allRoles:"Alle Rollen",
     roleTank:"Tank",
     roleHealer:"Heiler",
@@ -265,6 +269,7 @@ const L = {
   },
   ES: {
     games:"Juegos", players:"Jugadores", guilds:"Gremios", how:"Cómo funciona", contact:"Contacto",
+    saveGamePro:"Guardando : Guardar en GamePro",
     allRoles:"Todos los roles",
     roleTank:"Tanque",
     roleHealer:"Sanador",
@@ -321,6 +326,7 @@ const L = {
   },
   FR: {
     games:"Jeux", players:"Joueurs", guilds:"Guildes", how:"Comment ça marche", contact:"Contact",
+    saveGamePro:"Enregistrement : Enregistrer dans GamePro",
     allRoles:"Tous les rôles",
     roleTank:"Tank",
     roleHealer:"Soigneur",
@@ -377,6 +383,7 @@ const L = {
   },
   PL: {
     games:"Gry", players:"Gracze", guilds:"Gildie", how:"Jak to działa", contact:"Kontakt",
+    saveGamePro:"Zapisywanie : Zapisz w GamePro",
     allRoles:"Wszystkie role",
     roleTank:"Tank",
     roleHealer:"Healer",
@@ -796,7 +803,7 @@ if (!battlenetId) {
               <span className="verifiedPill">DATA FOUND · NOT VERIFIED</span>
             </div>
             <div style={{marginTop:14,padding:15,borderRadius:12,background:"#0a1021"}}><b style={{fontSize:22}}>{rioData.mythic_plus_scores_by_season?.[0]?.scores?.all ?? "—"}</b><small style={{display:"block",color:"#9da6c0",marginTop:4}}>Mythic+ Score</small></div>
-            <button onClick={saveRaiderIOToSupabase} disabled={supabaseSaving} style={{...btn,marginTop:14}}>💾 {supabaseSaving ? "Сохраняем…" : "Сохранить в GamePro"}</button>
+            <button onClick={saveRaiderIOToSupabase} disabled={supabaseSaving} style={{...btn,marginTop:14}}>💾 {supabaseSaving ? {t.save} : {t.saveGamePro}</button>
             <button onClick={verifyRaiderIO} disabled={verifying || verified} style={{...btn,marginTop:10,opacity:verified?0.75:1}}>{verified ? "✓ VERIFIED" : (verifying ? "Проверяем…" : "✓ Подтвердить VERIFIED")}</button>
             {supabaseStatus && <p style={{color:supabaseStatus.startsWith("✓") ? "#45e0a1" : "#ffb3bf",fontSize:12,marginBottom:0}}>{supabaseStatus}</p>}
           </div>}
