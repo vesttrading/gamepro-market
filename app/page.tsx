@@ -442,6 +442,7 @@ export default function HomePage() {
 }
   const [lang,setLang] = useState<Lang>("EN");
   const [q,setQ] = useState("");
+  const [minRating,setMinRating] = useState("");
   const [copied,setCopied] = useState(false);
   const [rioName,setRioName] = useState("");
   const [rioRealm,setRioRealm] = useState("");
