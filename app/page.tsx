@@ -14,6 +14,12 @@ const L = {
     roleHealer:"Хилер",
     roleDPS:"ДД (DPS)",
     allClasses:"Все классы",
+    classMage:"Маг",
+    classPaladin:"Паладин",
+    classDruid:"Друид",
+    classWarrior:"Воин",
+    classPriest:"Жрец",
+    classRogue:"Разбойник",
     minRating:"Мин. рейтинг",
     verifyViaRaiderIO:"Проверить игрока через Raider.IO",
     characterName:"Имя персонажа",
@@ -72,6 +78,12 @@ const L = {
     roleHealer:"Healer",
     roleDPS:"DPS",
     allClasses:"All classes",
+    ТоclassMage:"Mage",
+    classPaladin:"Paladin",
+    classDruid:"Druid",
+    classWarrior:"Warrior",
+    classPriest:"Priest",
+    classRogue:"Rogue",
     minRating:"Min. rating",
     verifyViaRaiderIO:"Check player via Raider.IO",
     characterName:"Character name",
@@ -130,6 +142,12 @@ const L = {
     roleHealer:"Şifacı",
     roleDPS:"DPS",
     allClasses:"Tüm sınıflar",
+    classMage:"Büyücü",
+    classPaladin:"Paladin",
+    classDruid:"Druid",
+    classWarrior:"Savaşçı",
+    classPriest:"Rahip",
+    classRogue:"Haydut",
     minRating:"Min. puan",
     verifyViaRaiderIO:"Raider.IO üzerinden oyuncuyu kontrol et",
     characterName:"Karakter adı",
@@ -188,6 +206,12 @@ const L = {
     roleHealer:"Heiler",
     roleDPS:"DPS",
     allClasses:"Alle Klassen",
+    classMage:"Magier",
+    classPaladin:"Paladin",
+    classDruid:"Druide",
+    classWarrior:"Krieger",
+    classPriest:"Priester",
+    classRogue:"Schurke",
     minRating:"Min. Wertung",
     verifyViaRaiderIO:"Spieler über Raider.IO prüfen",
     characterName:"Charaktername",
@@ -246,6 +270,12 @@ const L = {
     roleHealer:"Sanador",
     roleDPS:"DPS",
     allClasses:"Todas las clases",
+    classMage:"Mago",
+    classPaladin:"Paladín",
+    classDruid:"Druida",
+    classWarrior:"Guerrero",
+    classPriest:"Sacerdote",
+    classRogue:"Pícaro",
     minRating:"Rating mín.",
     verifyViaRaiderIO:"Comprobar jugador mediante Raider.IO",
     characterName:"Nombre del personaje",
@@ -296,6 +326,12 @@ const L = {
     roleHealer:"Soigneur",
     roleDPS:"DPS",
     allClasses:"Toutes les classes",
+    classMage:"Mage",
+     classPaladin:"Paladin",
+    classDruid:"Druide",
+    classWarrior:"Guerrier",
+    classPriest:"Prêtre",
+    classRogue:"Voleur",
     minRating:"Rating min.",
     verifyViaRaiderIO:"Vérifier le joueur via Raider.IO",
     characterName:"Nom du personnage",
@@ -674,12 +710,12 @@ if (!battlenetId) {
     style={{ padding: "8px 12px", background: "#1e293b", border: "1px solid #334155", borderRadius: 8, color: "#fff", fontSize: 14, outline: "none", cursor: "pointer" }}
   >
     <option value="">{t.allClasses}</option>
-    <option value="Mage">Маг</option>
-    <option value="Paladin">Паладин</option>
-    <option value="Druid">Друид</option>
-    <option value="Warrior">Воин</option>
-    <option value="Priest">Жрец</option>
-    <option value="Rogue">Разбойник</option>
+    <option value="Mage">{t.classMage}</option>
+    <option value="Paladin">{t.classPaladin}</option>
+    <option value="Druid">{t.classDruid}</option>
+    <option value="Warrior">{t.classWarrior}</option>
+    <option value="Priest">{t.classPriest}</option>
+    <option value="Rogue">{t.classRogue}</option>
   </select>
 
   {/* Ввод минимального рейтинга */}
