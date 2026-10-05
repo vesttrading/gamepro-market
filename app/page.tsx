@@ -10,6 +10,9 @@ const L = {
   RU: {
     games:"Игры", players:"Игроки", guilds:"Гильдии", how:"Как это работает", contact:"Контакты",
     allRoles:"Все роли",
+    roleTank:"Танк",
+    roleHealer:"Хилер",
+    roleDPS:"ДД (DPS)",
     allClasses:"Все классы",
     minRating:"Мин. рейтинг",
     verifyViaRaiderIO:"Проверить игрока через Raider.IO",
@@ -65,6 +68,9 @@ const L = {
   EN: {
     games:"Games", players:"Players", guilds:"Guilds", how:"How it works", contact:"Contact",
     allRoles:"All roles",
+    roleTank:"Tank",
+    roleHealer:"Healer",
+    roleDPS:"DPS",
     allClasses:"All classes",
     minRating:"Min. rating",
     verifyViaRaiderIO:"Check player via Raider.IO",
@@ -120,6 +126,9 @@ const L = {
   TR: {
     games:"Oyunlar", players:"Oyuncular", guilds:"Loncalar", how:"Nasıl çalışır", contact:"İletişim",
     allRoles:"Tüm roller",
+    roleTank:"Tank",
+    roleHealer:"Şifacı",
+    roleDPS:"DPS",
     allClasses:"Tüm sınıflar",
     minRating:"Min. puan",
     verifyViaRaiderIO:"Raider.IO üzerinden oyuncuyu kontrol et",
@@ -175,6 +184,9 @@ const L = {
   DE: {
     games:"Spiele", players:"Spieler", guilds:"Gilden", how:"So funktioniert es", contact:"Kontakt",
     allRoles:"Alle Rollen",
+    roleTank:"Tank",
+    roleHealer:"Heiler",
+    roleDPS:"DPS",
     allClasses:"Alle Klassen",
     minRating:"Min. Wertung",
     verifyViaRaiderIO:"Spieler über Raider.IO prüfen",
@@ -230,6 +242,9 @@ const L = {
   ES: {
     games:"Juegos", players:"Jugadores", guilds:"Gremios", how:"Cómo funciona", contact:"Contacto",
     allRoles:"Todos los roles",
+    roleTank:"Tanque",
+    roleHealer:"Sanador",
+    roleDPS:"DPS",
     allClasses:"Todas las clases",
     minRating:"Rating mín.",
     verifyViaRaiderIO:"Comprobar jugador mediante Raider.IO",
@@ -277,6 +292,9 @@ const L = {
   FR: {
     games:"Jeux", players:"Joueurs", guilds:"Guildes", how:"Comment ça marche", contact:"Contact",
     allRoles:"Tous les rôles",
+    roleTank:"Tank",
+    roleHealer:"Soigneur",
+    roleDPS:"DPS",
     allClasses:"Toutes les classes",
     minRating:"Rating min.",
     verifyViaRaiderIO:"Vérifier le joueur via Raider.IO",
@@ -324,6 +342,9 @@ const L = {
   PL: {
     games:"Gry", players:"Gracze", guilds:"Gildie", how:"Jak to działa", contact:"Kontakt",
     allRoles:"Wszystkie role",
+    roleTank:"Tank",
+    roleHealer:"Healer",
+    roleDPS:"DPS",
     allClasses:"Wszystkie klasy",
     minRating:"Min. rating",
     verifyViaRaiderIO:"Sprawdź gracza przez Raider.IO",
@@ -641,9 +662,9 @@ if (!battlenetId) {
     style={{ padding: "8px 12px", background: "#1e293b", border: "1px solid #334155", borderRadius: 8, color: "#fff", fontSize: 14, outline: "none", cursor: "pointer" }}
   >
     <option value="">{t.allRoles}</option>
-    <option value="Tank">Танк</option>
-    <option value="Healer">Хилер</option>
-    <option value="DPS">ДД (DPS)</option>
+    <option value="Tank">{t.roleTank}</option>
+    <option value="Healer">{t.roleHealer}</option>
+    <option value="DPS">{t.roleDPS}</option>
   </select>
 
   {/* Выбор класса */}
