@@ -44,7 +44,7 @@ const L = {
     supabaseError:"Supabase не принял данные.",
     verifiedError:"Не удалось подтвердить VERIFIED.",
     noName:"Без имени",
-    reviewIntro:"GamePro — отзывы игроков.",
+    reviewsSubtitle:"GamePro — отзывы игроков.",
     leaveReview:"Оставить отзыв",
     loginToReview:"Войди через Battle.net, чтобы оставить отзыв.",
     reviewPlaceholder:"Напиши свой отзыв о GamePro...",
@@ -109,7 +109,7 @@ const L = {
     supabaseError:"Supabase did not accept the data.",
     verifiedError:"Could not confirm VERIFIED.",
     noName:"No name",
-    reviewIntro:"GamePro — player reviews.",
+    reviewsSubtitle:"GamePro — player reviews.",
     leaveReview:"Leave a review",
     loginToReview:"Login with Battle.net to leave a review.",
     reviewPlaceholder:"Write your review of GamePro...",
@@ -174,7 +174,7 @@ const L = {
     supabaseError:"Supabase verileri kabul etmedi.",
     verifiedError:"VERIFIED doğrulanamadı.",
     noName:"İsimsiz",
-    reviewIntro:"GamePro — oyuncu yorumları.",
+    reviewsSubtitle:"GamePro — oyuncu yorumları.",
     leaveReview:"Yorum bırak",
     loginToReview:"Yorum bırakmak için Battle.net ile giriş yap.",
     reviewPlaceholder:"GamePro hakkında yorumunu yaz...",
@@ -239,7 +239,7 @@ const L = {
     supabaseError:"Supabase hat die Daten nicht akzeptiert.",
     verifiedError:"VERIFIED konnte nicht bestätigt werden.",
     noName:"Kein Name",
-    reviewIntro:"GamePro — Spielerbewertungen.",
+    reviewsSubtitle:"GamePro — Spielerbewertungen.",
     leaveReview:"Bewertung abgeben",
     loginToReview:"Melde dich mit Battle.net an, um eine Bewertung abzugeben.",
     reviewPlaceholder:"Schreibe deine Bewertung über GamePro...",
@@ -304,7 +304,7 @@ const L = {
     supabaseError:"Supabase no aceptó los datos.",
     verifiedError:"No se pudo confirmar VERIFIED.",
     noName:"Sin nombre",
-    reviewIntro:"GamePro — opiniones de jugadores.",
+    reviewsSubtitle:"GamePro — opiniones de jugadores.",
     leaveReview:"Dejar una opinión",
     loginToReview:"Inicia sesión con Battle.net para dejar una opinión.",
     reviewPlaceholder:"Escribe tu opinión sobre GamePro...",
@@ -361,7 +361,7 @@ const L = {
     supabaseError:"Supabase n'a pas accepté les données.",
     verifiedError:"Impossible de confirmer VERIFIED.",
     noName:"Sans nom",
-    reviewIntro:"GamePro — avis des joueurs.",
+    reviewsSubtitle:"GamePro — avis des joueurs.",
     leaveReview:"Laisser un avis",
     loginToReview:"Connecte-toi avec Battle.net pour laisser un avis.",
     reviewPlaceholder:"Écris ton avis sur GamePro...",
@@ -418,7 +418,7 @@ const L = {
     supabaseError:"Supabase nie zaakceptował danych.",
     verifiedError:"Nie udało się potwierdzić VERIFIED.",
     noName:"Brak nazwy",
-    reviewIntro:"GamePro — opinie graczy.",
+    reviewsSubtitle:"GamePro — opinie graczy.",
     leaveReview:"Dodaj opinię",
     loginToReview:"Zaloguj się przez Battle.net, aby dodać opinię.",
     reviewPlaceholder:"Napisz swoją opinię o GamePro...",
@@ -844,7 +844,7 @@ if (!battlenetId) {
     color:"#9da6c0",
     marginBottom:30
   }}>
-    GamePro — отзывы игроков.
+    {t.reviewsSubtitle}
   </p>
 
   {/* Форма отзыва */}
