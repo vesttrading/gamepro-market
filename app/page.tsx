@@ -961,7 +961,7 @@ if (!battlenetId) {
           color:"#9da6c0"
         }}
       >
-        Пока нет отзывов. Будь первым игроком!
+        {t.noReviews}
       </div>
     ) : (
       reviews.map(review => (
