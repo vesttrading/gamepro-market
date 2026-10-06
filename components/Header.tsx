@@ -1,6 +1,6 @@
 "use client";
 
-type Lang =  "RU"  |"EN" | "TR" |"DE" | "ES" | "FR" | "PL";
+type Lang =  "RU" |"EN" | "TR" |"DE" | "ES" | "FR" | "PL";
 
 type HeaderProps = {
   lang: Lang;
