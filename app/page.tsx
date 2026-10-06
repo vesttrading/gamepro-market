@@ -901,7 +901,7 @@ if (!battlenetId) {
         <textarea
           value={reviewText}
           onChange={e => setReviewText(e.target.value)}
-          placeholder="Напиши свой отзыв о GamePro..."
+          placeholder={t.reviewPlaceholder}
           maxLength={1000}
           style={{
             width:"100%",
