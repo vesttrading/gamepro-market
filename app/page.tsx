@@ -27,8 +27,6 @@ const L = {
     characterName:"Имя персонажа",
     realmPlaceholder:"Реалм, например Kazzak",
     liveSourceText:"Первый живой источник GamePro для Mythic+ данных",
-    verifying: "Проверяется",
-    verify:"Проверить",
     verifyPlayer:"Проверить игрока",
     reviewSent:"Отзыв отправлен.",
     reviewError:"Не удалось отправить отзыв.",
