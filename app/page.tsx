@@ -10,6 +10,7 @@ const L = {
   RU: {
     games:"Игры", players:"Игроки", guilds:"Гильдии", how:"Как это работает", contact:"Контакты",
     saving:"Сохраняем",saveGamePro: "Сохранить в GamePro",
+    verifying:"Проверяем…",verify:"✓ Подтвердить VERIFIED",
     allRoles:"Все роли",
     roleTank:"Танк",
     roleHealer:"Хилер",
@@ -75,6 +76,7 @@ const L = {
   EN: {
     games:"Games", players:"Players", guilds:"Guilds", how:"How it works", contact:"Contact",
     saving:"Saving",saveGamePro:"Save to GamePro",
+    verifying:"Checking…",verify:"✓ Verify VERIFIED",
     allRoles:"All roles",
     roleTank:"Tank",
     roleHealer:"Healer",
@@ -140,6 +142,7 @@ const L = {
   TR: {
     games:"Oyunlar", players:"Oyuncular", guilds:"Loncalar", how:"Nasıl çalışır", contact:"İletişim",
     saving:"Kaydediliyor",saveGamePro:"GamePro'ya Kaydet",
+    verifying:"Kontrol ediliyor…",verify:"✓ VERIFIED Doğrula",
     allRoles:"Tüm roller",
     roleTank:"Tank",
     roleHealer:"Şifacı",
@@ -205,6 +208,7 @@ const L = {
   DE: {
     games:"Spiele", players:"Spieler", guilds:"Gilden", how:"So funktioniert es", contact:"Kontakt",
     saving:"Speichern",saveGamePro:"In GamePro speichern",
+    verifying:"Wird überprüft…",verify:"✓ VERIFIED bestätigen",
     allRoles:"Alle Rollen",
     roleTank:"Tank",
     roleHealer:"Heiler",
@@ -270,6 +274,7 @@ const L = {
   ES: {
     games:"Juegos", players:"Jugadores", guilds:"Gremios", how:"Cómo funciona", contact:"Contacto",
     saving:"Guardando",saveGamePro:"Guardar en GamePro",
+    verifying:"Comprobando…",verify:"✓ Verificar VERIFIED",
     allRoles:"Todos los roles",
     roleTank:"Tanque",
     roleHealer:"Sanador",
@@ -327,6 +332,7 @@ const L = {
   FR: {
     games:"Jeux", players:"Joueurs", guilds:"Guildes", how:"Comment ça marche", contact:"Contact",
     saving:"Enregistrement",saveGamePro:"Enregistrer dans GamePro",
+    verifying:"Vérification…",verify:"✓ Vérifier VERIFIED",
     allRoles:"Tous les rôles",
     roleTank:"Tank",
     roleHealer:"Soigneur",
@@ -384,6 +390,7 @@ const L = {
   PL: {
     games:"Gry", players:"Gracze", guilds:"Gildie", how:"Jak to działa", contact:"Kontakt",
     saving:"Zapisywanie",saveGamePro:"Zapisz w GamePro",
+    verifying:"Sprawdzanie…",verify:"✓ Zweryfikuj VERIFIED",
     allRoles:"Wszystkie role",
     roleTank:"Tank",
     roleHealer:"Healer",
@@ -804,7 +811,7 @@ if (!battlenetId) {
             </div>
             <div style={{marginTop:14,padding:15,borderRadius:12,background:"#0a1021"}}><b style={{fontSize:22}}>{rioData.mythic_plus_scores_by_season?.[0]?.scores?.all ?? "—"}</b><small style={{display:"block",color:"#9da6c0",marginTop:4}}>Mythic+ Score</small></div>
             <button onClick={saveRaiderIOToSupabase} disabled={supabaseSaving} style={{...btn,marginTop:14}}>💾 {supabaseSaving ? t.saving : t.saveGamePro}</button>
-            <button onClick={verifyRaiderIO} disabled={verifying || verified} style={{...btn,marginTop:10,opacity:verified?0.75:1}}>{verified ? "✓ VERIFIED" : (verifying ? "Проверяем…" : "✓ Подтвердить VERIFIED")}</button>
+            <button onClick={verifyRaiderIO} disabled={verifying || verified} style={{...btn,marginTop:10,opacity:verified?0.75:1}}>{verified ? "✓ VERIFIED" : (verifying ? t.verifying : t.verify)}</button>
             {supabaseStatus && <p style={{color:supabaseStatus.startsWith("✓") ? "#45e0a1" : "#ffb3bf",fontSize:12,marginBottom:0}}>{supabaseStatus}</p>}
           </div>}
           <p style={{color:"#65708d",fontSize:11,margin:"14px 0 0"}}>Источник: <a href="https://raider.io" target="_blank" rel="noreferrer" style={{color:"#52eee3"}}>Raider.IO</a>. Данные из источника ещё не являются VERIFIED GamePro.</p>
