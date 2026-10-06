@@ -860,7 +860,7 @@ if (!battlenetId) {
       textAlign:"center",
       fontSize:24
     }}>
-      Оставить отзыв
+      {t.leaveReview}
     </h3>
 
     {status !== "authenticated" ? (
@@ -869,7 +869,7 @@ if (!battlenetId) {
         textAlign:"center",
         marginBottom:0
       }}>
-        Войди через Battle.net, чтобы оставить отзыв.
+        {t.loginToReview}
       </p>
     ) : (
       <>
