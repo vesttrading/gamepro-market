@@ -530,7 +530,7 @@ useEffect(() => {
   // 2. Возвращаем массив из 5 элементов, который ожидает ваша верстка
   return [
     icon,                                              // x[0] - Иконка
-    p.player_name || "Без имени",                    // x[1] - Никнейм
+    p.player_name || t.noName,                    // x[1] - Никнейм
     `${p.role || ""} ${p.class || ""} - ${p.realm || "EU"}`, // x[2] - Роль, Класс и Сервер
     String(p.rating || 0),                             // x[3] - Рейтинг (переводим число в строку)
     p.source?.toUpperCase() || "VERIFIED", p.id, p.source_verified === true              // x[4] - Источник верификации (например, RAIDER.IO)
