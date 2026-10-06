@@ -71,6 +71,8 @@ const L = {
     badge:"VERIFIED", badgeText:"Только подтверждённые достижения получают зелёный бейдж.",
     passportLink:"Паспорт игрока", shareTitle:"Твой игровой профиль — одной ссылкой", login:"Войти через Battle.net", reviews:"Отзывы", gameproRating:"Оценка GamePro", playerReviews:"Отзывы игроков", verifiedReviews:"Отзывы о системе VERIFIED",
     logout:"Выйти",
+    contact:"Контакты",
+    contactText:"По вопросам GamePro и сотрудничества",
   },
   EN: {
     games:"Games", players:"Players", guilds:"Guilds", how:"How it works", contact:"Contact",
@@ -136,6 +138,8 @@ const L = {
     badge:"VERIFIED", badgeText:"Only verified achievements receive the green badge.",
     passportLink:"Player passport", shareTitle:"Your gaming profile — one link", login:"Login with Battle.net", reviews:"Reviews", gameproRating:"GamePro rating", playerReviews:"Player reviews", verifiedReviews:"VERIFIED system reviews",
     logout:"Log out",
+    contact:"Contact",
+    contactText:"For GamePro inquiries and partnerships",
   },
   TR: {
     games:"Oyunlar", players:"Oyuncular", guilds:"Loncalar", how:"Nasıl çalışır", contact:"İletişim",
@@ -201,6 +205,8 @@ const L = {
     badge:"VERIFIED", badgeText:"Sadece doğrulanmış başarılar yeşil rozet alır.",
     passportLink:"Oyuncu pasaportu", shareTitle:"Oyun profilin — tek bağlantı", login:"Battle.net ile giriş", reviews:"Yorumlar", gameproRating:"GamePro puanı", playerReviews:"Oyuncu yorumları", verifiedReviews:"VERIFIED sistemi yorumları",
     logout:"Çıkış yap",
+    contact:"İletişim",
+    contactText:"GamePro hakkında sorular ve iş birlikleri için",
   },
   DE: {
     games:"Spiele", players:"Spieler", guilds:"Gilden", how:"So funktioniert es", contact:"Kontakt",
@@ -266,6 +272,8 @@ const L = {
     badge:"VERIFIED", badgeText:"Nur verifizierte Erfolge erhalten das grüne Badge.",
     passportLink:"Spielerpass", shareTitle:"Dein Gaming-Profil — ein Link", login:"Mit Battle.net einloggen", reviews:"Bewertungen", gameproRating:"GamePro-Bewertung", playerReviews:"Spielerbewertungen", verifiedReviews:"Bewertungen zum VERIFIED-System",
     logout:"Abmelden",
+    contact:"Kontakt",
+    contactText:"Für Fragen zu GamePro und Kooperationen",
   },
   ES: {
     games:"Juegos", players:"Jugadores", guilds:"Gremios", how:"Cómo funciona", contact:"Contacto",
@@ -323,6 +331,8 @@ const L = {
     howTitle:"Cómo funciona la verificación", howSub:"De los datos del juego a la insignia VERIFIED.", guild:"Gremios y equipos", guildText:"Encuentra jugadores por rol, rating y progreso verificado.", open:"Abrir búsqueda de jugadores", share:"Compartir pasaporte", copied:"¡Enlace copiado!",
     current:"Disponible ahora", future:"Próximamente", wow:"World of Warcraft", wowText:"Mythic+, raids y PvP — el primer juego de GamePro.", futureText:"Dota 2, CS2 y Path of Exile 2 están en la hoja de ruta.", source:"Fuente", sourceText:"GamePro compara los datos del juego con fuentes compatibles.", check:"Verificación", checkText:"Los datos se comprueban antes de recibir el estado VERIFIED.", badge:"VERIFIED", badgeText:"Solo los logros verificados reciben la insignia verde.", passportLink:"Pasaporte del jugador", shareTitle:"Tu perfil gaming — un solo enlace", login:"Entrar con Battle.net", reviews:"Opiniones", gameproRating:"Valoración de GamePro", playerReviews:"Opiniones de jugadores", verifiedReviews:"Opiniones sobre el sistema VERIFIED",
     logout:"Cerrar sesión",
+    contact:"Contacto",
+    contactText:"Para consultas sobre GamePro y colaboraciones",
   },
   FR: {
     games:"Jeux", players:"Joueurs", guilds:"Guildes", how:"Comment ça marche", contact:"Contact",
@@ -380,6 +390,8 @@ const L = {
     howTitle:"Comment fonctionne la vérification", howSub:"Des données du jeu au badge VERIFIED.", guild:"Guildes et équipes", guildText:"Trouve des joueurs par rôle, rating et progression vérifiée.", open:"Ouvrir la recherche", share:"Partager le passeport", copied:"Lien copié !",
     current:"Disponible maintenant", future:"Bientôt", wow:"World of Warcraft", wowText:"Mythic+, raids et PvP — le premier jeu de GamePro.", futureText:"Dota 2, CS2 et Path of Exile 2 sont sur la feuille de route.", source:"Source", sourceText:"GamePro vérifie les données du jeu avec les sources prises en charge.", check:"Vérification", checkText:"Les données sont vérifiées avant l'attribution du statut VERIFIED.", badge:"VERIFIED", badgeText:"Seuls les accomplissements vérifiés obtiennent le badge vert.", passportLink:"Passeport joueur", shareTitle:"Ton profil gaming — un seul lien", login:"Se connecter avec Battle.net", reviews:"Avis", gameproRating:"Note GamePro", playerReviews:"Avis des joueurs", verifiedReviews:"Avis sur le système VERIFIED",
     logout:"Se déconnecter",
+    contact:"Contact",
+    contactText:"Pour toute question concernant GamePro et les collaborations",
   },
   PL: {
     games:"Gry", players:"Gracze", guilds:"Gildie", how:"Jak to działa", contact:"Kontakt",
@@ -437,6 +449,8 @@ const L = {
     howTitle:"Jak działa weryfikacja", howSub:"Od danych z gry do odznaki VERIFIED.", guild:"Gildie i drużyny", guildText:"Znajduj graczy według roli, ratingu i zweryfikowanego progresu.", open:"Otwórz wyszukiwanie graczy", share:"Udostępnij paszport", copied:"Link skopiowany!",
     current:"Dostępne teraz", future:"Wkrótce", wow:"World of Warcraft", wowText:"Mythic+, rajdy i PvP — pierwsza gra GamePro.", futureText:"Dota 2, CS2 i Path of Exile 2 są już na roadmapie.", source:"Źródło", sourceText:"GamePro porównuje dane z gry z obsługiwanymi źródłami.", check:"Weryfikacja", checkText:"Dane są sprawdzane przed nadaniem statusu VERIFIED.", badge:"VERIFIED", badgeText:"Tylko zweryfikowane osiągnięcia otrzymują zieloną odznakę.", passportLink:"Paszport gracza", shareTitle:"Twój profil gamingowy — jeden link", login:"Zaloguj przez Battle.net", reviews:"Opinie", gameproRating:"Ocena GamePro", playerReviews:"Opinie graczy", verifiedReviews:"Opinie o systemie VERIFIED",
     logout:"Wyloguj się",
+    contact:"Kontakt",
+    contactText:"W sprawie GamePro i współpracy",
   }
 } as const;
 
@@ -1006,10 +1020,10 @@ if (!battlenetId) {
     padding:25,
     textAlign:"center"
   }}>
-    <h2 style={{margin:"0 0 18px",fontSize:32}}>Контакты</h2>
+    <h2 style={{margin:"0 0 18px",fontSize:32}}>{t.contact}</h2>
 
     <p style={{color:"#9aa3bd",margin:"18px 0 18px"}}>
-      По вопросам GamePro и сотрудничества
+      {t.contactText}
     </p>
 
     <a
