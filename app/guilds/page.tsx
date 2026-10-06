@@ -188,28 +188,47 @@ export default function GuildApplicationPage() {
   const [guildInterest, setGuildInterest] = useState("поиск игроков");
   const [guildLoading, setGuildLoading] = useState(false);
   const [guildStatus, setGuildStatus] = useState("");
+  const [guilds, setGuilds] = useState<any[]>([]);
+  const [guildSearch, setGuildSearch] = useState("");
+  const [guildLoadingList, setGuildLoadingList] = useState(false);
 
   const t = T[lang];
-
-  useEffect(() => {
-    const saved = localStorage.getItem("gamepro-lang");
-
-    if (
-      saved === "RU" ||
-      saved === "EN" ||
-      saved === "TR" ||
-      saved === "DE" ||
-      saved === "ES" ||
-      saved === "FR" ||
-      saved === "PL"
-    ) {
-      setLang(saved);
-    }
-  }, []);
   const changeLanguage = (value: Lang) => {
     setLang(value);
     localStorage.setItem("gamepro-lang", value);
   };
+
+ useEffect(() => {
+  const loadGuilds = async () => {
+    setGuildLoadingList(true);
+
+    try {
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_SUPABASE_URL}/rest/v1/guild_applications?select=*&order=created_at.desc`,
+        {
+          headers: {
+            apikey: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+            Authorization: `Bearer ${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!}`,
+          },
+          cache: "no-store",
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Failed to load guilds");
+      }
+
+      const data = await response.json();
+      setGuilds(data || []);
+    } catch (error) {
+      console.error("Ошибка загрузки гильдий:", error);
+    } finally {
+      setGuildLoadingList(false);
+    }
+  };
+
+  loadGuilds();
+}, []);
 
   const handleGuildSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -297,6 +316,18 @@ export default function GuildApplicationPage() {
     boxSizing: "border-box",
     height: "44px",
   };
+
+  const filteredGuilds = guilds.filter((guild) => {
+  const search = guildSearch.toLowerCase().trim();
+
+  if (!search) return true;
+
+  return (
+    String(guild.guild_name || "").toLowerCase().includes(search) ||
+    String(guild.realm || "").toLowerCase().includes(search) ||
+    String(guild.game || "").toLowerCase().includes(search)
+  );
+});
 
   return (
     <div
@@ -608,6 +639,137 @@ export default function GuildApplicationPage() {
             </p>
           )}
         </form>
+
+       <section
+  style={{
+    marginTop: 60,
+    width: "100%",
+    maxWidth: 1100,
+    marginLeft: "auto",
+    marginRight: "auto",
+  }}
+>
+  <h2
+    style={{
+      fontSize: 32,
+      marginBottom: 10,
+      textAlign: "center",
+    }}
+  >
+    🛡️ Guilds
+  </h2>
+
+  <p
+    style={{
+      color: "#9aa3bd",
+      textAlign: "center",
+      marginBottom: 25,
+    }}
+  >
+    Find registered GamePro guilds and teams.
+  </p>
+
+  <input
+    type="text"
+    value={guildSearch}
+    onChange={(e) => setGuildSearch(e.target.value)}
+    placeholder="Search guild, realm or game..."
+    style={{
+      width: "100%",
+      boxSizing: "border-box",
+      padding: "14px 16px",
+      marginBottom: 25,
+      borderRadius: 12,
+      border: "1px solid #313858",
+      background: "#0c1123",
+      color: "white",
+      outline: "none",
+      fontSize: 16,
+    }}
+  />
+
+  {guildLoadingList ? (
+    <p style={{ textAlign: "center", color: "#9aa3bd" }}>
+      Loading guilds...
+    </p>
+  ) : filteredGuilds.length === 0 ? (
+    <p style={{ textAlign: "center", color: "#9aa3bd" }}>
+      No guilds found.
+    </p>
+  ) : (
+    <div
+      style={{
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+        gap: 20,
+      }}
+    >
+      {filteredGuilds.map((guild) => (
+        <div
+          key={guild.id}
+          style={{
+            background: "linear-gradient(145deg,#10162b,#080d1b)",
+            border: "1px solid #262d49",
+            borderRadius: 20,
+            padding: 22,
+          }}
+        >
+          <div
+            style={{
+              fontSize: 20,
+              fontWeight: 700,
+              marginBottom: 12,
+            }}
+          >
+            🛡️ {guild.guild_name}
+          </div>
+
+          <div style={{ color: "#9aa3bd", lineHeight: 1.8 }}>
+            <div>🎮 {guild.game}</div>
+            <div>🌍 {guild.region}</div>
+            <div>🏰 {guild.realm}</div>
+
+            {guild.player_count && (
+              <div>👥 {guild.player_count} players</div>
+            )}
+          </div>
+
+          <div
+            style={{
+              marginTop: 15,
+              display: "inline-block",
+              padding: "5px 10px",
+              borderRadius: 8,
+              background: "#102b2b",
+              border: "1px solid #1d7770",
+              color: "#6fffe9",
+              fontSize: 12,
+              fontWeight: 700,
+            }}
+          >
+            GAMEPRO REGISTERED
+          </div>
+
+          {guild.guild_link && (
+            <a
+              href={guild.guild_link}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "block",
+                marginTop: 16,
+                color: "#8b7cff",
+                textDecoration: "none",
+              }}
+            >
+              Open guild link →
+            </a>
+          )}
+        </div>
+      ))}
+    </div>
+  )}
+</section>
       </div>
     </div>
   );
