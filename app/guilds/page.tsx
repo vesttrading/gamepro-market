@@ -161,6 +161,21 @@ const T: Record<Lang, any> = {
 
 export default function GuildApplicationPage() {
   const [lang, setLang] = useState<Lang>("EN");
+ useEffect(() => {
+  const savedLang = localStorage.getItem("gamepro-lang");
+
+  if (
+    savedLang === "RU" ||
+    savedLang === "EN" ||
+    savedLang === "TR" ||
+    savedLang === "DE" ||
+    savedLang === "ES" ||
+    savedLang === "FR" ||
+    savedLang === "PL"
+  ) {
+    setLang(savedLang);
+  }
+}, []);
 
   const [guildName, setGuildName] = useState("");
   const [guildGame, setGuildGame] = useState("World of Warcraft");
