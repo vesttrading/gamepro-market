@@ -455,6 +455,21 @@ export default function HomePage() {
   console.log("ПОЛЬЗОВАТЕЛЬ ВОШЁЛ:", session?.user?.name);
 }
   const [lang,setLang] = useState<Lang>("EN");
+  useEffect(() => {
+  const savedLang = localStorage.getItem("gamepro-lang");
+
+  if (
+    savedLang === "RU" ||
+    savedLang === "EN" ||
+    savedLang === "TR" ||
+    savedLang === "DE" ||
+    savedLang === "ES" ||
+    savedLang === "FR" ||
+    savedLang === "PL"
+  ) {
+    setLang(savedLang);
+  }
+}, []);
   const [q,setQ] = useState("");
   const [minRating,setMinRating] = useState("");
   const [copied,setCopied] = useState(false);
