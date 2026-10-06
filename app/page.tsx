@@ -926,7 +926,7 @@ if (!battlenetId) {
             marginTop:12
           }}
         >
-          {reviewSending ? t.sendingReview : t.submitReview}
+          {reviewSending ? t.sending : t.leaveReview}
         </button>
 
         {reviewStatus && (
