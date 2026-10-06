@@ -157,22 +157,21 @@ const T: Record<Lang, any> = {
     error: "❌ Nie udało się wysłać zgłoszenia. Spróbuj ponownie później.",
     language: "Język",
   },
-};
-
-export default function GuildApplicationPage() {
+}
+  export default function GuildApplicationPage() {
   const [lang, setLang] = useState<Lang>("EN");
  useEffect(() => {
   const savedLang = localStorage.getItem("gamepro-lang");
 
-  if (
-    savedLang === "RU" ||
-    savedLang === "EN" ||
-    savedLang === "TR" ||
-    savedLang === "DE" ||
-    savedLang === "ES" ||
-    savedLang === "FR" ||
-    savedLang === "PL"
-  ) {
+ if (
+  savedLang === "RU" ||
+  savedLang === "EN" ||
+  savedLang === "TR" ||
+  savedLang === "DE" ||
+  savedLang === "ES" ||
+  savedLang === "FR" ||
+  savedLang === "PL"
+) {
     setLang(savedLang);
   }
 }, []);
@@ -217,8 +216,7 @@ export default function GuildApplicationPage() {
       if (!response.ok) {
         throw new Error("Failed to load guilds");
       }
-
-      const data = await response.json();
+    const data = await response.json();
       setGuilds(data || []);
     } catch (error) {
       console.error("Ошибка загрузки гильдий:", error);
@@ -328,7 +326,6 @@ export default function GuildApplicationPage() {
     String(guild.game || "").toLowerCase().includes(search)
   );
 });
-
   return (
     <div
       style={{
@@ -453,8 +450,7 @@ export default function GuildApplicationPage() {
               <option value="Path of Exile 2">Path of Exile 2</option>
             </select>
           </div>
-
-          <div
+        <div
             style={{
               display: "grid",
               gridTemplateColumns: "1fr 2fr",
@@ -580,8 +576,7 @@ export default function GuildApplicationPage() {
             >
               {t.interest}
             </label>
-
-            <select
+         <select
               value={guildInterest}
               onChange={(e) => setGuildInterest(e.target.value)}
               style={{
@@ -640,7 +635,7 @@ export default function GuildApplicationPage() {
           )}
         </form>
 
-     <section
+       <section
   style={{
     marginTop: 60,
     width: "100%",
@@ -656,7 +651,7 @@ export default function GuildApplicationPage() {
       textAlign: "center",
     }}
   >
-    🛡 {t.guildsTitle}
+    🛡 Guilds
   </h2>
 
   <p
@@ -666,14 +661,14 @@ export default function GuildApplicationPage() {
       marginBottom: 25,
     }}
   >
-    {t.guildsSubtitle}
+    Find registered GamePro guilds and teams.
   </p>
 
   <input
     type="text"
     value={guildSearch}
     onChange={(e) => setGuildSearch(e.target.value)}
-    placeholder={t.guildsSearch}
+    placeholder="Search guild, realm or game..."
     style={{
       width: "100%",
       boxSizing: "border-box",
@@ -690,11 +685,11 @@ export default function GuildApplicationPage() {
 
   {guildLoadingList ? (
     <p style={{ textAlign: "center", color: "#9aa3bd" }}>
-      {t.guildsLoading}
+      Loading guilds...
     </p>
   ) : filteredGuilds.length === 0 ? (
     <p style={{ textAlign: "center", color: "#9aa3bd" }}>
-      {t.guildsEmpty}
+      No guilds found.
     </p>
   ) : (
     <div
@@ -730,9 +725,7 @@ export default function GuildApplicationPage() {
             <div>🏰 {guild.realm}</div>
 
             {guild.player_count && (
-              <div>
-                👥 {guild.player_count} {t.guildsPlayers}
-              </div>
+              <div>👥 {guild.player_count} players</div>
             )}
           </div>
 
@@ -749,10 +742,9 @@ export default function GuildApplicationPage() {
               fontWeight: 700,
             }}
           >
-            {t.guildsRegistered}
+            GAMEPRO REGISTERED
           </div>
-
-          {guild.guild_link && (
+            {guild.guild_link && (
             <a
               href={guild.guild_link}
               target="_blank"
@@ -764,7 +756,7 @@ export default function GuildApplicationPage() {
                 textDecoration: "none",
               }}
             >
-              {t.guildsOpen}
+              Open guild link →
             </a>
           )}
         </div>
@@ -772,7 +764,7 @@ export default function GuildApplicationPage() {
     </div>
   )}
 </section>
-      </div>
+     </div>
     </div>
   );
 }
