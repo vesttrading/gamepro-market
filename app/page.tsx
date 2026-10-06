@@ -48,7 +48,7 @@ const L = {
     leaveReview:"Оставить отзыв",
     loginToReview:"Войди через Battle.net, чтобы оставить отзыв.",
     reviewPlaceholder:"Напиши свой отзыв о GamePro...",
-    sending:"Отправляем…",
+    sendingReview:"Отправляем…",
     submitReview:"✍️ Оставить отзыв",
     noReviews:"Пока нет отзывов. Будь первым игроком!",
     gameproPlayer:"GamePro игрок",
@@ -926,7 +926,7 @@ if (!battlenetId) {
             marginTop:12
           }}
         >
-          {reviewSending ? "Отправляем…" : "✍️ Оставить отзыв"}
+          {reviewSending ? t.sendingReview : t.submitReview}
         </button>
 
         {reviewStatus && (
