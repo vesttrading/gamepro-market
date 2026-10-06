@@ -979,7 +979,7 @@ if (!battlenetId) {
           <h3 style={{
             margin:"0 0 8px"
           }}>
-            {review.author_name || {t.gameProPlayer}
+            {review.author_name || "GamePro игрок"}
           </h3>
 
           <p style={{
