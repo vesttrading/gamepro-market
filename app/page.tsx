@@ -24,6 +24,7 @@ const L = {
     classRogue:"Разбойник",
     minRating:"Мин. рейтинг",
     verifyViaRaiderIO:"Проверить игрока через Raider.IO",
+    sourceNotVerified:"Источник: Raider.IO. Данные из источника ещё не являются VERIFIED GamePro.",
     characterName:"Имя персонажа",
     realmPlaceholder:"Реалм, например Kazzak",
     liveSourceText:"Первый живой источник GamePro для Mythic+ данных",
@@ -88,6 +89,7 @@ const L = {
     classRogue:"Rogue",
     minRating:"Min. rating",
     verifyViaRaiderIO:"Check player via Raider.IO",
+    sourceNotVerified:"Source: Raider.IO. Data from the source is not yet VERIFIED by GamePro.",
     characterName:"Character name",
     realmPlaceholder:"Realm, e.g. Kazzak",
     liveSourceText:"The first live GamePro source for Mythic+ data",
@@ -152,6 +154,7 @@ const L = {
     classRogue:"Haydut",
     minRating:"Min. puan",
     verifyViaRaiderIO:"Raider.IO üzerinden oyuncuyu kontrol et",
+    sourceNotVerified:"Kaynak: Raider.IO. Kaynaktan alınan veriler henüz GamePro tarafından VERIFIED değil.",
     characterName:"Karakter adı",
     realmPlaceholder:"Realmi, örn. Kazzak",
     liveSourceText:"Mythic+ verileri için ilk canlı GamePro kaynağı",
@@ -216,6 +219,7 @@ const L = {
     classRogue:"Schurke",
     minRating:"Min. Wertung",
     verifyViaRaiderIO:"Spieler über Raider.IO prüfen",
+    sourceNotVerified:"Quelle: Raider.IO. Die Daten aus der Quelle sind noch nicht von GamePro VERIFIED.",
     characterName:"Charaktername",
     realmPlaceholder:"Realm, z. B. Kazzak",
     liveSourceText:"Die erste Live-Quelle von GamePro für Mythic+-Daten",
@@ -280,6 +284,7 @@ const L = {
     classRogue:"Pícaro",
     minRating:"Rating mín.",
     verifyViaRaiderIO:"Comprobar jugador mediante Raider.IO",
+    sourceNotVerified:"Fuente: Raider.IO. Los datos de la fuente aún no están VERIFIED por GamePro.",
     characterName:"Nombre del personaje",
     realmPlaceholder:"Reino, por ejemplo Kazzak",
     liveSourceText:"La primera fuente en vivo de GamePro para datos de Mythic+",
@@ -336,6 +341,7 @@ const L = {
     classRogue:"Voleur",
     minRating:"Rating min.",
     verifyViaRaiderIO:"Vérifier le joueur via Raider.IO",
+    sourceNotVerified:"Source : Raider.IO. Les données de la source ne sont pas encore VERIFIED par GamePro.",
     characterName:"Nom du personnage",
     realmPlaceholder:"Royaume, par ex. Kazzak",
     liveSourceText:"La première source live de GamePro pour les données Mythic+",
@@ -392,6 +398,7 @@ const L = {
     classRogue:"Łotrzyk",
     minRating:"Min. rating",
     verifyViaRaiderIO:"Sprawdź gracza przez Raider.IO",
+    sourceNotVerified:"Źródło: Raider.IO. Dane ze źródła nie są jeszcze VERIFIED przez GamePro.",
     characterName:"Nazwa postaci",
     realmPlaceholder:"Realm, np. Kazzak",
     liveSourceText:"Pierwsze aktywne źródło GamePro dla danych Mythic+",
@@ -800,7 +807,7 @@ if (!battlenetId) {
             <button onClick={verifyRaiderIO} disabled={verifying || verified} style={{...btn,marginTop:10,opacity:verified?0.75:1}}>{verified ? "✓ VERIFIED" : (verifying ? t.verifying : t.verify)}</button>
             {supabaseStatus && <p style={{color:supabaseStatus.startsWith("✓") ? "#45e0a1" : "#ffb3bf",fontSize:12,marginBottom:0}}>{supabaseStatus}</p>}
           </div>}
-          <p style={{color:"#65708d",fontSize:11,margin:"14px 0 0"}}>Источник: <a href="https://raider.io" target="_blank" rel="noreferrer" style={{color:"#52eee3"}}>Raider.IO</a>. Данные из источника ещё не являются VERIFIED GamePro.</p>
+          <p style={{color:"#65708d",fontSize:11,margin:"14px 0 0"}}>{t.sourceNotVerified} <a href="https://raider.io" target="_blank" rel="noreferrer" style={{color:"#52eee3"}}>Raider.IO</a>. Данные из источника ещё не являются VERIFIED GamePro.</p>
         </div>
       </section>
 
