@@ -48,7 +48,7 @@ const L = {
     leaveReview:"Оставить отзыв",
     loginToReview:"Войди через Battle.net, чтобы оставить отзыв.",
     reviewPlaceholder:"Напиши свой отзыв о GamePro...",
-    sendingReview:"Отправляем…",
+    sending:"Отправляем…",
     submitReview:"✍️ Оставить отзыв",
     noReviews:"Пока нет отзывов. Будь первым игроком!",
     gameproPlayer:"GamePro игрок",
