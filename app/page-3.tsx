@@ -9,6 +9,25 @@ const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 const L = {
   RU: {
     games:"Игры", players:"Игроки", guilds:"Гильдии", how:"Как это работает", contact:"Контакты",
+    saving:"Сохраняем",saveGamePro: "Сохранить в GamePro",
+    verifying:"Проверяем…",verify:"✓ Подтвердить VERIFIED",
+    allRoles:"Все роли",
+    roleTank:"Танк",
+    roleHealer:"Хилер",
+    roleDPS:"ДД (DPS)",
+    allClasses:"Все классы",
+    classMage:"Маг",
+    classPaladin:"Паладин",
+    classDruid:"Друид",
+    classWarrior:"Воин",
+    classPriest:"Жрец",
+    classRogue:"Разбойник",
+    minRating:"Мин. рейтинг",
+    verifyViaRaiderIO:"Проверить игрока через Raider.IO",
+    sourceNotVerified:"Источник: Raider.IO. Данные из источника ещё не являются VERIFIED GamePro.",
+    characterName:"Имя персонажа",
+    realmPlaceholder:"Реалм, например Kazzak",
+    liveSourceText:"Первый живой источник GamePro для Mythic+ данных",
     verifyPlayer:"Проверить игрока",
     reviewSent:"Отзыв отправлен.",
     reviewError:"Не удалось отправить отзыв.",
@@ -25,7 +44,7 @@ const L = {
     supabaseError:"Supabase не принял данные.",
     verifiedError:"Не удалось подтвердить VERIFIED.",
     noName:"Без имени",
-    reviewIntro:"GamePro — отзывы игроков.",
+    reviewsSubtitle:"GamePro — отзывы игроков.",
     leaveReview:"Оставить отзыв",
     loginToReview:"Войди через Battle.net, чтобы оставить отзыв.",
     reviewPlaceholder:"Напиши свой отзыв о GamePro...",
@@ -50,10 +69,31 @@ const L = {
     futureText:"Dota 2, CS2 и Path of Exile 2 уже в плане развития.", source:"Источник", sourceText:"GamePro сверяет игровые данные с поддерживаемыми источниками.",
     check:"Проверка", checkText:"Данные проходят проверку перед получением статуса VERIFIED.",
     badge:"VERIFIED", badgeText:"Только подтверждённые достижения получают зелёный бейдж.",
-    passportLink:"Паспорт игрока", shareTitle:"Твой игровой профиль — одной ссылкой", login:"Войти через Battle.net", reviews:"Отзывы", gameproRating:"Оценка GamePro", playerReviews:"Отзывы игроков", verifiedReviews:"Отзывы о системе VERIFIED"
+    passportLink:"Паспорт игрока", shareTitle:"Твой игровой профиль — одной ссылкой", login:"Войти через Battle.net", reviews:"Отзывы", gameproRating:"Оценка GamePro", playerReviews:"Отзывы игроков", verifiedReviews:"Отзывы о системе VERIFIED",
+    logout:"Выйти",
+    contactText:"По вопросам GamePro и сотрудничества",
   },
   EN: {
     games:"Games", players:"Players", guilds:"Guilds", how:"How it works", contact:"Contact",
+    saving:"Saving",saveGamePro:"Save to GamePro",
+    verifying:"Checking…",verify:"✓ Verify VERIFIED",
+    allRoles:"All roles",
+    roleTank:"Tank",
+    roleHealer:"Healer",
+    roleDPS:"DPS",
+    allClasses:"All classes",
+    classMage:"Mage",
+    classPaladin:"Paladin",
+    classDruid:"Druid",
+    classWarrior:"Warrior",
+    classPriest:"Priest",
+    classRogue:"Rogue",
+    minRating:"Min. rating",
+    verifyViaRaiderIO:"Check player via Raider.IO",
+    sourceNotVerified:"Source: Raider.IO. Data from the source is not yet VERIFIED by GamePro.",
+    characterName:"Character name",
+    realmPlaceholder:"Realm, e.g. Kazzak",
+    liveSourceText:"The first live GamePro source for Mythic+ data",
     verifyPlayer:"Check player",
     reviewSent:"Review submitted.",
     reviewError:"Failed to submit review.",
@@ -70,7 +110,7 @@ const L = {
     supabaseError:"Supabase did not accept the data.",
     verifiedError:"Could not confirm VERIFIED.",
     noName:"No name",
-    reviewIntro:"GamePro — player reviews.",
+    reviewsSubtitle:"GamePro — player reviews.",
     leaveReview:"Leave a review",
     loginToReview:"Login with Battle.net to leave a review.",
     reviewPlaceholder:"Write your review of GamePro...",
@@ -95,10 +135,31 @@ const L = {
     futureText:"Dota 2, CS2 and Path of Exile 2 are already on the roadmap.", source:"Source", sourceText:"GamePro checks game data against supported sources.",
     check:"Verification", checkText:"Data is checked before an achievement receives VERIFIED status.",
     badge:"VERIFIED", badgeText:"Only verified achievements receive the green badge.",
-    passportLink:"Player passport", shareTitle:"Your gaming profile — one link", login:"Login with Battle.net", reviews:"Reviews", gameproRating:"GamePro rating", playerReviews:"Player reviews", verifiedReviews:"VERIFIED system reviews"
+    passportLink:"Player passport", shareTitle:"Your gaming profile — one link", login:"Login with Battle.net", reviews:"Reviews", gameproRating:"GamePro rating", playerReviews:"Player reviews", verifiedReviews:"VERIFIED system reviews",
+    logout:"Log out",
+    contactText:"For GamePro inquiries and partnerships",
   },
   TR: {
     games:"Oyunlar", players:"Oyuncular", guilds:"Loncalar", how:"Nasıl çalışır", contact:"İletişim",
+    saving:"Kaydediliyor",saveGamePro:"GamePro'ya Kaydet",
+    verifying:"Kontrol ediliyor…",verify:"✓ VERIFIED Doğrula",
+    allRoles:"Tüm roller",
+    roleTank:"Tank",
+    roleHealer:"Şifacı",
+    roleDPS:"DPS",
+    allClasses:"Tüm sınıflar",
+    classMage:"Büyücü",
+    classPaladin:"Paladin",
+    classDruid:"Druid",
+    classWarrior:"Savaşçı",
+    classPriest:"Rahip",
+    classRogue:"Haydut",
+    minRating:"Min. puan",
+    verifyViaRaiderIO:"Raider.IO üzerinden oyuncuyu kontrol et",
+    sourceNotVerified:"Kaynak: Raider.IO. Kaynaktan alınan veriler henüz GamePro tarafından VERIFIED değil.",
+    characterName:"Karakter adı",
+    realmPlaceholder:"Realmi, örn. Kazzak",
+    liveSourceText:"Mythic+ verileri için ilk canlı GamePro kaynağı",
     verifyPlayer:"Oyuncuyu kontrol et",
     reviewSent:"Yorum gönderildi.",
     reviewError:"Yorum gönderilemedi.",
@@ -115,7 +176,7 @@ const L = {
     supabaseError:"Supabase verileri kabul etmedi.",
     verifiedError:"VERIFIED doğrulanamadı.",
     noName:"İsimsiz",
-    reviewIntro:"GamePro — oyuncu yorumları.",
+    reviewsSubtitle:"GamePro — oyuncu yorumları.",
     leaveReview:"Yorum bırak",
     loginToReview:"Yorum bırakmak için Battle.net ile giriş yap.",
     reviewPlaceholder:"GamePro hakkında yorumunu yaz...",
@@ -140,10 +201,31 @@ const L = {
     futureText:"Dota 2, CS2 ve Path of Exile 2 yol haritasında.", source:"Kaynak", sourceText:"GamePro oyun verilerini desteklenen kaynaklarla karşılaştırır.",
     check:"Doğrulama", checkText:"Başarı VERIFIED olmadan önce veriler kontrol edilir.",
     badge:"VERIFIED", badgeText:"Sadece doğrulanmış başarılar yeşil rozet alır.",
-    passportLink:"Oyuncu pasaportu", shareTitle:"Oyun profilin — tek bağlantı", login:"Battle.net ile giriş", reviews:"Yorumlar", gameproRating:"GamePro puanı", playerReviews:"Oyuncu yorumları", verifiedReviews:"VERIFIED sistemi yorumları"
+    passportLink:"Oyuncu pasaportu", shareTitle:"Oyun profilin — tek bağlantı", login:"Battle.net ile giriş", reviews:"Yorumlar", gameproRating:"GamePro puanı", playerReviews:"Oyuncu yorumları", verifiedReviews:"VERIFIED sistemi yorumları",
+    logout:"Çıkış yap",
+    contactText:"GamePro hakkında sorular ve iş birlikleri için",
   },
   DE: {
     games:"Spiele", players:"Spieler", guilds:"Gilden", how:"So funktioniert es", contact:"Kontakt",
+    saving:"Speichern",saveGamePro:"In GamePro speichern",
+    verifying:"Wird überprüft…",verify:"✓ VERIFIED bestätigen",
+    allRoles:"Alle Rollen",
+    roleTank:"Tank",
+    roleHealer:"Heiler",
+    roleDPS:"DPS",
+    allClasses:"Alle Klassen",
+    classMage:"Magier",
+    classPaladin:"Paladin",
+    classDruid:"Druide",
+    classWarrior:"Krieger",
+    classPriest:"Priester",
+    classRogue:"Schurke",
+    minRating:"Min. Wertung",
+    verifyViaRaiderIO:"Spieler über Raider.IO prüfen",
+    sourceNotVerified:"Quelle: Raider.IO. Die Daten aus der Quelle sind noch nicht von GamePro VERIFIED.",
+    characterName:"Charaktername",
+    realmPlaceholder:"Realm, z. B. Kazzak",
+    liveSourceText:"Die erste Live-Quelle von GamePro für Mythic+-Daten",
     verifyPlayer:"Spieler prüfen",
     reviewSent:"Bewertung wurde gesendet.",
     reviewError:"Bewertung konnte nicht gesendet werden.",
@@ -160,7 +242,7 @@ const L = {
     supabaseError:"Supabase hat die Daten nicht akzeptiert.",
     verifiedError:"VERIFIED konnte nicht bestätigt werden.",
     noName:"Kein Name",
-    reviewIntro:"GamePro — Spielerbewertungen.",
+    reviewsSubtitle:"GamePro — Spielerbewertungen.",
     leaveReview:"Bewertung abgeben",
     loginToReview:"Melde dich mit Battle.net an, um eine Bewertung abzugeben.",
     reviewPlaceholder:"Schreibe deine Bewertung über GamePro...",
@@ -185,10 +267,31 @@ const L = {
     futureText:"Dota 2, CS2 und Path of Exile 2 stehen bereits auf der Roadmap.", source:"Quelle", sourceText:"GamePro gleicht Spieldaten mit unterstützten Quellen ab.",
     check:"Prüfung", checkText:"Die Daten werden geprüft, bevor ein Erfolg VERIFIED erhält.",
     badge:"VERIFIED", badgeText:"Nur verifizierte Erfolge erhalten das grüne Badge.",
-    passportLink:"Spielerpass", shareTitle:"Dein Gaming-Profil — ein Link", login:"Mit Battle.net einloggen", reviews:"Bewertungen", gameproRating:"GamePro-Bewertung", playerReviews:"Spielerbewertungen", verifiedReviews:"Bewertungen zum VERIFIED-System"
+    passportLink:"Spielerpass", shareTitle:"Dein Gaming-Profil — ein Link", login:"Mit Battle.net einloggen", reviews:"Bewertungen", gameproRating:"GamePro-Bewertung", playerReviews:"Spielerbewertungen", verifiedReviews:"Bewertungen zum VERIFIED-System",
+    logout:"Abmelden",
+    contactText:"Für Fragen zu GamePro und Kooperationen",
   },
   ES: {
     games:"Juegos", players:"Jugadores", guilds:"Gremios", how:"Cómo funciona", contact:"Contacto",
+    saving:"Guardando",saveGamePro:"Guardar en GamePro",
+    verifying:"Comprobando…",verify:"✓ Verificar VERIFIED",
+    allRoles:"Todos los roles",
+    roleTank:"Tanque",
+    roleHealer:"Sanador",
+    roleDPS:"DPS",
+    allClasses:"Todas las clases",
+    classMage:"Mago",
+    classPaladin:"Paladín",
+    classDruid:"Druida",
+    classWarrior:"Guerrero",
+    classPriest:"Sacerdote",
+    classRogue:"Pícaro",
+    minRating:"Rating mín.",
+    verifyViaRaiderIO:"Comprobar jugador mediante Raider.IO",
+    sourceNotVerified:"Fuente: Raider.IO. Los datos de la fuente aún no están VERIFIED por GamePro.",
+    characterName:"Nombre del personaje",
+    realmPlaceholder:"Reino, por ejemplo Kazzak",
+    liveSourceText:"La primera fuente en vivo de GamePro para datos de Mythic+",
     verifyPlayer:"Comprobar jugador",
     reviewSent:"Opinión enviada.",
     reviewError:"No se pudo enviar la opinión.",
@@ -205,7 +308,7 @@ const L = {
     supabaseError:"Supabase no aceptó los datos.",
     verifiedError:"No se pudo confirmar VERIFIED.",
     noName:"Sin nombre",
-    reviewIntro:"GamePro — opiniones de jugadores.",
+    reviewsSubtitle:"GamePro — opiniones de jugadores.",
     leaveReview:"Dejar una opinión",
     loginToReview:"Inicia sesión con Battle.net para dejar una opinión.",
     reviewPlaceholder:"Escribe tu opinión sobre GamePro...",
@@ -222,10 +325,31 @@ const L = {
     create:"Crear pasaporte gamer", find:"Buscar jugador", passport:"Achievement Passport", sub:"No palabras — resultados verificados.", verified:"Perfil verificado", verifiedShort:"VERIFIED",
     searchTitle:"Buscar jugador", searchSub:"Busca por rol, rating y logros verificados.", placeholder:"Por ejemplo: Holy Paladin 2700+", search:"Buscar",
     howTitle:"Cómo funciona la verificación", howSub:"De los datos del juego a la insignia VERIFIED.", guild:"Gremios y equipos", guildText:"Encuentra jugadores por rol, rating y progreso verificado.", open:"Abrir búsqueda de jugadores", share:"Compartir pasaporte", copied:"¡Enlace copiado!",
-    current:"Disponible ahora", future:"Próximamente", wow:"World of Warcraft", wowText:"Mythic+, raids y PvP — el primer juego de GamePro.", futureText:"Dota 2, CS2 y Path of Exile 2 están en la hoja de ruta.", source:"Fuente", sourceText:"GamePro compara los datos del juego con fuentes compatibles.", check:"Verificación", checkText:"Los datos se comprueban antes de recibir el estado VERIFIED.", badge:"VERIFIED", badgeText:"Solo los logros verificados reciben la insignia verde.", passportLink:"Pasaporte del jugador", shareTitle:"Tu perfil gaming — un solo enlace", login:"Entrar con Battle.net", reviews:"Opiniones", gameproRating:"Valoración de GamePro", playerReviews:"Opiniones de jugadores", verifiedReviews:"Opiniones sobre el sistema VERIFIED"
+    current:"Disponible ahora", future:"Próximamente", wow:"World of Warcraft", wowText:"Mythic+, raids y PvP — el primer juego de GamePro.", futureText:"Dota 2, CS2 y Path of Exile 2 están en la hoja de ruta.", source:"Fuente", sourceText:"GamePro compara los datos del juego con fuentes compatibles.", check:"Verificación", checkText:"Los datos se comprueban antes de recibir el estado VERIFIED.", badge:"VERIFIED", badgeText:"Solo los logros verificados reciben la insignia verde.", passportLink:"Pasaporte del jugador", shareTitle:"Tu perfil gaming — un solo enlace", login:"Entrar con Battle.net", reviews:"Opiniones", gameproRating:"Valoración de GamePro", playerReviews:"Opiniones de jugadores", verifiedReviews:"Opiniones sobre el sistema VERIFIED",
+    logout:"Cerrar sesión",
+    contactText:"Para consultas sobre GamePro y colaboraciones",
   },
   FR: {
     games:"Jeux", players:"Joueurs", guilds:"Guildes", how:"Comment ça marche", contact:"Contact",
+    saving:"Enregistrement",saveGamePro:"Enregistrer dans GamePro",
+    verifying:"Vérification…",verify:"✓ Vérifier VERIFIED",
+    allRoles:"Tous les rôles",
+    roleTank:"Tank",
+    roleHealer:"Soigneur",
+    roleDPS:"DPS",
+    allClasses:"Toutes les classes",
+    classMage:"Mage",
+     classPaladin:"Paladin",
+    classDruid:"Druide",
+    classWarrior:"Guerrier",
+    classPriest:"Prêtre",
+    classRogue:"Voleur",
+    minRating:"Rating min.",
+    verifyViaRaiderIO:"Vérifier le joueur via Raider.IO",
+    sourceNotVerified:"Source : Raider.IO. Les données de la source ne sont pas encore VERIFIED par GamePro.",
+    characterName:"Nom du personnage",
+    realmPlaceholder:"Royaume, par ex. Kazzak",
+    liveSourceText:"La première source live de GamePro pour les données Mythic+",
     verifyPlayer:"Vérifier le joueur",
     reviewSent:"Avis envoyé.",
     reviewError:"Impossible d'envoyer l'avis.",
@@ -242,7 +366,7 @@ const L = {
     supabaseError:"Supabase n'a pas accepté les données.",
     verifiedError:"Impossible de confirmer VERIFIED.",
     noName:"Sans nom",
-    reviewIntro:"GamePro — avis des joueurs.",
+    reviewsSubtitle:"GamePro — avis des joueurs.",
     leaveReview:"Laisser un avis",
     loginToReview:"Connecte-toi avec Battle.net pour laisser un avis.",
     reviewPlaceholder:"Écris ton avis sur GamePro...",
@@ -259,10 +383,31 @@ const L = {
     create:"Créer mon passeport", find:"Trouver un joueur", passport:"Achievement Passport", sub:"Pas de paroles — des résultats vérifiés.", verified:"Profil vérifié", verifiedShort:"VERIFIED",
     searchTitle:"Trouver un joueur", searchSub:"Recherche par rôle, rating et accomplissements vérifiés.", placeholder:"Par exemple : Holy Paladin 2700+", search:"Rechercher",
     howTitle:"Comment fonctionne la vérification", howSub:"Des données du jeu au badge VERIFIED.", guild:"Guildes et équipes", guildText:"Trouve des joueurs par rôle, rating et progression vérifiée.", open:"Ouvrir la recherche", share:"Partager le passeport", copied:"Lien copié !",
-    current:"Disponible maintenant", future:"Bientôt", wow:"World of Warcraft", wowText:"Mythic+, raids et PvP — le premier jeu de GamePro.", futureText:"Dota 2, CS2 et Path of Exile 2 sont sur la feuille de route.", source:"Source", sourceText:"GamePro vérifie les données du jeu avec les sources prises en charge.", check:"Vérification", checkText:"Les données sont vérifiées avant l'attribution du statut VERIFIED.", badge:"VERIFIED", badgeText:"Seuls les accomplissements vérifiés obtiennent le badge vert.", passportLink:"Passeport joueur", shareTitle:"Ton profil gaming — un seul lien", login:"Se connecter avec Battle.net", reviews:"Avis", gameproRating:"Note GamePro", playerReviews:"Avis des joueurs", verifiedReviews:"Avis sur le système VERIFIED"
+    current:"Disponible maintenant", future:"Bientôt", wow:"World of Warcraft", wowText:"Mythic+, raids et PvP — le premier jeu de GamePro.", futureText:"Dota 2, CS2 et Path of Exile 2 sont sur la feuille de route.", source:"Source", sourceText:"GamePro vérifie les données du jeu avec les sources prises en charge.", check:"Vérification", checkText:"Les données sont vérifiées avant l'attribution du statut VERIFIED.", badge:"VERIFIED", badgeText:"Seuls les accomplissements vérifiés obtiennent le badge vert.", passportLink:"Passeport joueur", shareTitle:"Ton profil gaming — un seul lien", login:"Se connecter avec Battle.net", reviews:"Avis", gameproRating:"Note GamePro", playerReviews:"Avis des joueurs", verifiedReviews:"Avis sur le système VERIFIED",
+    logout:"Se déconnecter",
+    contactText:"Pour toute question concernant GamePro et les collaborations",
   },
   PL: {
     games:"Gry", players:"Gracze", guilds:"Gildie", how:"Jak to działa", contact:"Kontakt",
+    saving:"Zapisywanie",saveGamePro:"Zapisz w GamePro",
+    verifying:"Sprawdzanie…",verify:"✓ Zweryfikuj VERIFIED",
+    allRoles:"Wszystkie role",
+    roleTank:"Tank",
+    roleHealer:"Healer",
+    roleDPS:"DPS",
+    allClasses:"Wszystkie klasy",
+    classMage:"Mag",
+    classPaladin:"Paladyn",
+    classDruid:"Druid",
+    classWarrior:"Wojownik",
+    classPriest:"Kapłan",
+    classRogue:"Łotrzyk",
+    minRating:"Min. rating",
+    verifyViaRaiderIO:"Sprawdź gracza przez Raider.IO",
+    sourceNotVerified:"Źródło: Raider.IO. Dane ze źródła nie są jeszcze VERIFIED przez GamePro.",
+    characterName:"Nazwa postaci",
+    realmPlaceholder:"Realm, np. Kazzak",
+    liveSourceText:"Pierwsze aktywne źródło GamePro dla danych Mythic+",
     verifyPlayer:"Sprawdź gracza",
     reviewSent:"Opinia została wysłana.",
     reviewError:"Nie udało się wysłać opinii.",
@@ -279,7 +424,7 @@ const L = {
     supabaseError:"Supabase nie zaakceptował danych.",
     verifiedError:"Nie udało się potwierdzić VERIFIED.",
     noName:"Brak nazwy",
-    reviewIntro:"GamePro — opinie graczy.",
+    reviewsSubtitle:"GamePro — opinie graczy.",
     leaveReview:"Dodaj opinię",
     loginToReview:"Zaloguj się przez Battle.net, aby dodać opinię.",
     reviewPlaceholder:"Napisz swoją opinię o GamePro...",
@@ -296,7 +441,9 @@ const L = {
     create:"Utwórz paszport gracza", find:"Znajdź gracza", passport:"Achievement Passport", sub:"Nie słowa — zweryfikowane wyniki.", verified:"Profil zweryfikowany", verifiedShort:"VERIFIED",
     searchTitle:"Znajdź gracza", searchSub:"Szukaj po roli, ratingu i zweryfikowanych osiągnięciach.", placeholder:"Na przykład: Holy Paladin 2700+", search:"Szukaj",
     howTitle:"Jak działa weryfikacja", howSub:"Od danych z gry do odznaki VERIFIED.", guild:"Gildie i drużyny", guildText:"Znajduj graczy według roli, ratingu i zweryfikowanego progresu.", open:"Otwórz wyszukiwanie graczy", share:"Udostępnij paszport", copied:"Link skopiowany!",
-    current:"Dostępne teraz", future:"Wkrótce", wow:"World of Warcraft", wowText:"Mythic+, rajdy i PvP — pierwsza gra GamePro.", futureText:"Dota 2, CS2 i Path of Exile 2 są już na roadmapie.", source:"Źródło", sourceText:"GamePro porównuje dane z gry z obsługiwanymi źródłami.", check:"Weryfikacja", checkText:"Dane są sprawdzane przed nadaniem statusu VERIFIED.", badge:"VERIFIED", badgeText:"Tylko zweryfikowane osiągnięcia otrzymują zieloną odznakę.", passportLink:"Paszport gracza", shareTitle:"Twój profil gamingowy — jeden link", login:"Zaloguj przez Battle.net", reviews:"Opinie", gameproRating:"Ocena GamePro", playerReviews:"Opinie graczy", verifiedReviews:"Opinie o systemie VERIFIED"
+    current:"Dostępne teraz", future:"Wkrótce", wow:"World of Warcraft", wowText:"Mythic+, rajdy i PvP — pierwsza gra GamePro.", futureText:"Dota 2, CS2 i Path of Exile 2 są już na roadmapie.", source:"Źródło", sourceText:"GamePro porównuje dane z gry z obsługiwanymi źródłami.", check:"Weryfikacja", checkText:"Dane są sprawdzane przed nadaniem statusu VERIFIED.", badge:"VERIFIED", badgeText:"Tylko zweryfikowane osiągnięcia otrzymują zieloną odznakę.", passportLink:"Paszport gracza", shareTitle:"Twój profil gamingowy — jeden link", login:"Zaloguj przez Battle.net", reviews:"Opinie", gameproRating:"Ocena GamePro", playerReviews:"Opinie graczy", verifiedReviews:"Opinie o systemie VERIFIED",
+    logout:"Wyloguj się",
+    contactText:"W sprawie GamePro i współpracy",
   }
 } as const;
 
@@ -307,8 +454,9 @@ export default function HomePage() {
  if (status === "authenticated") {
   console.log("ПОЛЬЗОВАТЕЛЬ ВОШЁЛ:", session?.user?.name);
 }
-  const [lang,setLang] = useState<Lang>("RU");
+  const [lang,setLang] = useState<Lang>("EN");
   const [q,setQ] = useState("");
+  const [minRating,setMinRating] = useState("");
   const [copied,setCopied] = useState(false);
   const [rioName,setRioName] = useState("");
   const [rioRealm,setRioRealm] = useState("");
@@ -319,7 +467,6 @@ export default function HomePage() {
   const [supabaseSaving,setSupabaseSaving] = useState(false);
   const [selectedRole, setSelectedRole] = useState("");
   const [selectedClass, setSelectedClass] = useState("");
-  const [minRating, setMinRating] = useState("");
   const [dbPlayers, setDbPlayers] = useState<any[]>([]); // Для хранения данных из бэкенда
   const [supabaseStatus,setSupabaseStatus] = useState("");
   const [verified,setVerified] = useState(false);
@@ -390,7 +537,7 @@ useEffect(() => {
   // 2. Возвращаем массив из 5 элементов, который ожидает ваша верстка
   return [
     icon,                                              // x[0] - Иконка
-    p.player_name || "Без имени",                    // x[1] - Никнейм
+    p.player_name || t.noName,                    // x[1] - Никнейм
     `${p.role || ""} ${p.class || ""} - ${p.realm || "EU"}`, // x[2] - Роль, Класс и Сервер
     String(p.rating || 0),                             // x[3] - Рейтинг (переводим число в строку)
     p.source?.toUpperCase() || "VERIFIED", p.id, p.source_verified === true              // x[4] - Источник верификации (например, RAIDER.IO)
@@ -452,7 +599,7 @@ useEffect(() => {
   const saveRaiderIOToSupabase = async () => {
     if (!rioData) return;
     if (!SUPABASE_URL || !SUPABASE_KEY) {
-      setSupabaseStatus("Supabase не настроен в переменных Vercel.");
+      setSupabaseStatus(t.supabaseNotConfigured);
       return;
     }
     setSupabaseSaving(true); setSupabaseStatus("");
@@ -461,7 +608,7 @@ useEffect(() => {
       const battlenetId = (session as any)?.battlenetId;
 
 if (!battlenetId) {
-  setSupabaseStatus("Сначала войди через Battle.net.");
+  setSupabaseStatus(t.loginFirst);
   return;
 }
    const payload = {
@@ -489,9 +636,9 @@ if (!battlenetId) {
       });
       if (!response.ok) {
         const text = await response.text();
-        throw new Error(text || "Supabase не принял данные.");
+        throw new Error(text || t.supabaseError);
       }
-      setSupabaseStatus("✓ Данные сохранены в Supabase. Пока это DATA FOUND, не VERIFIED.");
+      setSupabaseStatus(t.dataSaved);
     } catch (error) {
       setSupabaseStatus(error instanceof Error ? `Supabase: ${error.message}`: t.saveError);
     } finally {
@@ -560,7 +707,7 @@ if (!battlenetId) {
         <span style={{color:"#72fff4",border:"1px solid #168f88",background:"#0b292b",padding:"8px 13px",borderRadius:99,fontSize:12,fontWeight:800}}>🏆 ACHIEVEMENT PASSPORT</span>
         <h1 style={{fontSize:"clamp(30px,5vw,55px)",lineHeight:.98,margin:"22px 0 18px"}}>{t.h1}<br/><span style={{background:"linear-gradient(90deg,#fff,#e832ff,#16ddff)",WebkitBackgroundClip:"text",color:"transparent"}}>{t.h2}</span></h1>
         <p style={{maxWidth:690,margin:"auto",color:"#9da6c0",fontSize:18,lineHeight:1.65}}>{t.intro}</p>
-        <div style={{marginTop:28,display:"flex",justifyContent:"center",gap:12,flexWrap:"wrap"}}><button style={btn} onClick={()=>signIn("battlenet",{callbackUrl:"/"}, { prompt: "login" })}><span>🎮</span> {t.login}</button><button style={btn} onClick={() => signOut({ callbackUrl: "/" })}>Выйти</button></div><div className="achievementRow" style={{marginTop:22,display:"flex",justifyContent:"center",gap:10,flexWrap:"wrap"}}>{["KSM","AOTC","CE","2400+ PvP"].map(x=><span key={x} className="achievementBadge">✓ {x} <b>VERIFIED</b></span>)}</div>
+        <div style={{marginTop:28,display:"flex",justifyContent:"center",gap:12,flexWrap:"wrap"}}><button style={btn} onClick={()=>signIn("battlenet",{callbackUrl:"/"}, { prompt: "login" })}><span>🎮</span> {t.login}</button><button style={btn} onClick={() => signOut({ callbackUrl: "/" })}>{t.logout}</button></div>
        
         
         <div style={{ marginTop: 16, display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
@@ -570,10 +717,10 @@ if (!battlenetId) {
     onChange={(e) => setSelectedRole(e.target.value)}
     style={{ padding: "8px 12px", background: "#1e293b", border: "1px solid #334155", borderRadius: 8, color: "#fff", fontSize: 14, outline: "none", cursor: "pointer" }}
   >
-    <option value="">Все роли</option>
-    <option value="Tank">Танк</option>
-    <option value="Healer">Хилер</option>
-    <option value="DPS">ДД (DPS)</option>
+    <option value="">{t.allRoles}</option>
+    <option value="Tank">{t.roleTank}</option>
+    <option value="Healer">{t.roleHealer}</option>
+    <option value="DPS">{t.roleDPS}</option>
   </select>
 
   {/* Выбор класса */}
@@ -582,23 +729,48 @@ if (!battlenetId) {
     onChange={(e) => setSelectedClass(e.target.value)}
     style={{ padding: "8px 12px", background: "#1e293b", border: "1px solid #334155", borderRadius: 8, color: "#fff", fontSize: 14, outline: "none", cursor: "pointer" }}
   >
-    <option value="">Все классы</option>
-    <option value="Mage">Маг</option>
-    <option value="Paladin">Паладин</option>
-    <option value="Druid">Друид</option>
-    <option value="Warrior">Воин</option>
-    <option value="Priest">Жрец</option>
-    <option value="Rogue">Разбойник</option>
+    <option value="">{t.allClasses}</option>
+    <option value="Mage">{t.classMage}</option>
+    <option value="Paladin">{t.classPaladin}</option>
+    <option value="Druid">{t.classDruid}</option>
+    <option value="Warrior">{t.classWarrior}</option>
+    <option value="Priest">{t.classPriest}</option>
+    <option value="Rogue">{t.classRogue}</option>
   </select>
 
-  {/* Ввод минимального рейтинга */}
-  <input
-    type="number"
-    placeholder="Мин. рейтинг"
-    value={minRating}
-    onChange={(e) => setMinRating(e.target.value)}
-    style={{ padding: "8px 12px", background: "#1e293b", border: "1px solid #334155", borderRadius: 8, color: "#fff", fontSize: 14, outline: "none", width: 130 }}
-  />
+{/* Ввод минимального рейтинга */}
+<input
+  type="number"
+  placeholder={t.minRating}
+  value={minRating}
+  onChange={(e) => setMinRating(e.target.value)}
+  min="0"
+  style={{
+    padding: "8px 12px",
+    background: "#1e293b",
+    border: "1px solid #334155",
+    borderRadius: 8,
+    color: "#fff",
+    fontSize: 14,
+    outline: "none",
+    width: 130,
+    height: 40,
+    opacity: 1,
+    pointerEvents: "auto",
+    position: "relative",
+    zIndex: 100,
+    cursor: "text",
+    boxSizing: "border-box"
+  }}
+  onFocus={(e) => {
+    e.currentTarget.style.borderColor = "#22d3ee";
+    e.currentTarget.style.boxShadow = "0 0 0 2px rgba(34,211,238,0.25)";
+  }}
+  onBlur={(e) => {
+    e.currentTarget.style.borderColor = "#334155";
+    e.currentTarget.style.boxShadow = "none";
+  }}
+/>
 </div>
 </section>
      
@@ -622,14 +794,14 @@ if (!battlenetId) {
       <section id="raiderio" style={{maxWidth:1160,width:"92%",margin:"auto",padding:"0 0 60px"}}>
         <div style={{...card,borderColor:"#17bcb2"}}>
           <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",gap:12,flexWrap:"wrap"}}>
-            <div><h2 style={{fontSize:28,margin:"0 0 7px"}}>🔎 Проверить игрока через Raider.IO</h2><p style={{color:"#9da6c0",margin:0}}>Первый живой источник GamePro для Mythic+ данных.</p></div>
+            <div><h2 style={{fontSize:28,margin:"0 0 7px"}}>🔎{t.verifyViaRaiderIO}</h2><p style={{color:"#9da6c0",margin:0}}>{t.liveSourceText}</p></div>
             <span className="verifiedPill">RAIDER.IO</span>
           </div>
           <div className="rioForm" style={{display:"grid",gridTemplateColumns:"1fr 1fr 90px auto",gap:10,marginTop:18}}>
-            <input value={rioName} onChange={e=>setRioName(e.target.value)} placeholder="Имя персонажа" style={{background:"#090e1d",border:"1px solid #26364b",borderRadius:12,padding:14,color:"white",outline:"none"}} />
-            <input value={rioRealm} onChange={e=>setRioRealm(e.target.value)} placeholder="Реалм, например Kazzak" style={{background:"#090e1d",border:"1px solid #26364b",borderRadius:12,padding:14,color:"white",outline:"none"}} />
+            <input value={rioName} onChange={e=>setRioName(e.target.value)} placeholder={t.characterName} style={{background:"#090e1d",border:"1px solid #26364b",borderRadius:12,padding:14,color:"white",outline:"none"}} />
+            <input value={rioRealm} onChange={e=>setRioRealm(e.target.value)} placeholder={t.realmPlaceholder} style={{background:"#090e1d",border:"1px solid #26364b",borderRadius:12,padding:14,color:"white",outline:"none"}} />
             <select value={rioRegion} onChange={e=>setRioRegion(e.target.value)} style={{background:"#090e1d",border:"1px solid #26364b",borderRadius:12,padding:14,color:"white"}}><option value="eu">EU</option><option value="us">US</option><option value="kr">KR</option><option value="tw">TW</option></select>
-            <button style={btn} onClick={searchRaiderIO} disabled={rioLoading}>{rioLoading ? "Проверяем…" : "Проверить"}</button>
+            <button style={btn} onClick={searchRaiderIO} disabled={rioLoading}>{rioLoading ? t.verifying : t.verify}</button>
           </div>
           {rioError && <p style={{color:"#ff8e9e",marginBottom:0}}>{rioError}</p>}
           {rioData && <div style={{marginTop:18,padding:18,borderRadius:16,background:"#080d1b",border:"1px solid #1c8f82"}}>
@@ -638,11 +810,11 @@ if (!battlenetId) {
               <span className="verifiedPill">DATA FOUND · NOT VERIFIED</span>
             </div>
             <div style={{marginTop:14,padding:15,borderRadius:12,background:"#0a1021"}}><b style={{fontSize:22}}>{rioData.mythic_plus_scores_by_season?.[0]?.scores?.all ?? "—"}</b><small style={{display:"block",color:"#9da6c0",marginTop:4}}>Mythic+ Score</small></div>
-            <button onClick={saveRaiderIOToSupabase} disabled={supabaseSaving} style={{...btn,marginTop:14}}>💾 {supabaseSaving ? "Сохраняем…" : "Сохранить в GamePro"}</button>
-            <button onClick={verifyRaiderIO} disabled={verifying || verified} style={{...btn,marginTop:10,opacity:verified?0.75:1}}>{verified ? "✓ VERIFIED" : (verifying ? "Проверяем…" : "✓ Подтвердить VERIFIED")}</button>
+            <button onClick={saveRaiderIOToSupabase} disabled={supabaseSaving} style={{...btn,marginTop:14}}>💾 {supabaseSaving ? t.saving : t.saveGamePro}</button>
+            <button onClick={verifyRaiderIO} disabled={verifying || verified} style={{...btn,marginTop:10,opacity:verified?0.75:1}}>{verified ? "✓ VERIFIED" : (verifying ? t.verifying : t.verify)}</button>
             {supabaseStatus && <p style={{color:supabaseStatus.startsWith("✓") ? "#45e0a1" : "#ffb3bf",fontSize:12,marginBottom:0}}>{supabaseStatus}</p>}
           </div>}
-          <p style={{color:"#65708d",fontSize:11,margin:"14px 0 0"}}>Источник: <a href="https://raider.io" target="_blank" rel="noreferrer" style={{color:"#52eee3"}}>Raider.IO</a>. Данные из источника ещё не являются VERIFIED GamePro.</p>
+          <p style={{color:"#65708d",fontSize:11,margin:"14px 0 0"}}>{t.sourceNotVerified} <a href="https://raider.io" target="_blank" rel="noreferrer" style={{color:"#52eee3"}}>Raider.IO</a></p>
         </div>
       </section>
 
@@ -679,7 +851,7 @@ if (!battlenetId) {
     color:"#9da6c0",
     marginBottom:30
   }}>
-    GamePro — отзывы игроков.
+    {t.reviewsSubtitle}
   </p>
 
   {/* Форма отзыва */}
@@ -695,7 +867,7 @@ if (!battlenetId) {
       textAlign:"center",
       fontSize:24
     }}>
-      Оставить отзыв
+      {t.leaveReview}
     </h3>
 
     {status !== "authenticated" ? (
@@ -704,7 +876,7 @@ if (!battlenetId) {
         textAlign:"center",
         marginBottom:0
       }}>
-        Войди через Battle.net, чтобы оставить отзыв.
+        {t.loginToReview}
       </p>
     ) : (
       <>
@@ -736,7 +908,7 @@ if (!battlenetId) {
         <textarea
           value={reviewText}
           onChange={e => setReviewText(e.target.value)}
-          placeholder="Напиши свой отзыв о GamePro..."
+          placeholder={t.reviewPlaceholder}
           maxLength={1000}
           style={{
             width:"100%",
@@ -761,7 +933,7 @@ if (!battlenetId) {
             marginTop:12
           }}
         >
-          {reviewSending ? "Отправляем…" : "✍️ Оставить отзыв"}
+          {reviewSending ? t.sending : t.leaveReview}
         </button>
 
         {reviewStatus && (
@@ -796,7 +968,7 @@ if (!battlenetId) {
           color:"#9da6c0"
         }}
       >
-        Пока нет отзывов. Будь первым игроком!
+        {t.noReviews}
       </div>
     ) : (
       reviews.map(review => (
@@ -841,10 +1013,10 @@ if (!battlenetId) {
     padding:25,
     textAlign:"center"
   }}>
-    <h2 style={{margin:"0 0 18px",fontSize:32}}>Контакты</h2>
+    <h2 style={{margin:"0 0 18px",fontSize:32}}>{t.contact}</h2>
 
     <p style={{color:"#9aa3bd",margin:"18px 0 18px"}}>
-      По вопросам GamePro и сотрудничества
+      {t.contactText}
     </p>
 
     <a
