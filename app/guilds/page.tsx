@@ -191,7 +191,7 @@ export default function GuildApplicationPage() {
       setLang(saved);
     }
   }, []);
-[06.10.2026 15:39] Vladimir: const changeLanguage = (value: Lang) => {
+  const changeLanguage = (value: Lang) => {
     setLang(value);
     localStorage.setItem("gamepro-lang", value);
   };
