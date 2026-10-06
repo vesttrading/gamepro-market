@@ -640,7 +640,7 @@ export default function GuildApplicationPage() {
           )}
         </form>
 
-       <section
+     <section
   style={{
     marginTop: 60,
     width: "100%",
@@ -656,7 +656,7 @@ export default function GuildApplicationPage() {
       textAlign: "center",
     }}
   >
-    🛡️ Guilds
+    🛡 {t.guildsTitle}
   </h2>
 
   <p
@@ -666,14 +666,14 @@ export default function GuildApplicationPage() {
       marginBottom: 25,
     }}
   >
-    Find registered GamePro guilds and teams.
+    {t.guildsSubtitle}
   </p>
 
   <input
     type="text"
     value={guildSearch}
     onChange={(e) => setGuildSearch(e.target.value)}
-    placeholder="Search guild, realm or game..."
+    placeholder={t.guildsSearch}
     style={{
       width: "100%",
       boxSizing: "border-box",
@@ -690,11 +690,11 @@ export default function GuildApplicationPage() {
 
   {guildLoadingList ? (
     <p style={{ textAlign: "center", color: "#9aa3bd" }}>
-      Loading guilds...
+      {t.guildsLoading}
     </p>
   ) : filteredGuilds.length === 0 ? (
     <p style={{ textAlign: "center", color: "#9aa3bd" }}>
-      No guilds found.
+      {t.guildsEmpty}
     </p>
   ) : (
     <div
@@ -721,7 +721,7 @@ export default function GuildApplicationPage() {
               marginBottom: 12,
             }}
           >
-            🛡️ {guild.guild_name}
+            🛡 {guild.guild_name}
           </div>
 
           <div style={{ color: "#9aa3bd", lineHeight: 1.8 }}>
@@ -730,7 +730,9 @@ export default function GuildApplicationPage() {
             <div>🏰 {guild.realm}</div>
 
             {guild.player_count && (
-              <div>👥 {guild.player_count} players</div>
+              <div>
+                👥 {guild.player_count} {t.guildsPlayers}
+              </div>
             )}
           </div>
 
@@ -747,7 +749,7 @@ export default function GuildApplicationPage() {
               fontWeight: 700,
             }}
           >
-            GAMEPRO REGISTERED
+            {t.guildsRegistered}
           </div>
 
           {guild.guild_link && (
@@ -762,7 +764,7 @@ export default function GuildApplicationPage() {
                 textDecoration: "none",
               }}
             >
-              Open guild link →
+              {t.guildsOpen}
             </a>
           )}
         </div>
