@@ -807,7 +807,7 @@ if (!battlenetId) {
             <button onClick={verifyRaiderIO} disabled={verifying || verified} style={{...btn,marginTop:10,opacity:verified?0.75:1}}>{verified ? "✓ VERIFIED" : (verifying ? t.verifying : t.verify)}</button>
             {supabaseStatus && <p style={{color:supabaseStatus.startsWith("✓") ? "#45e0a1" : "#ffb3bf",fontSize:12,marginBottom:0}}>{supabaseStatus}</p>}
           </div>}
-          <p style={{color:"#65708d",fontSize:11,margin:"14px 0 0"}}>{t.sourceNotVerified} <a href="https://raider.io" target="_blank" rel="noreferrer" style={{color:"#52eee3"}}>Raider.IO</a>. Данные из источника ещё не являются VERIFIED GamePro.</p>
+          <p style={{color:"#65708d",fontSize:11,margin:"14px 0 0"}}>{t.sourceNotVerified} <a href="https://raider.io" target="_blank" rel="noreferrer" style={{color:"#52eee3"}}>Raider.IO</a></p>
         </div>
       </section>
 
