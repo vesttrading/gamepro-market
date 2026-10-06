@@ -89,7 +89,11 @@ export default function Header({ lang, setLang, t }: HeaderProps) {
 
           <select
             value={lang}
-            onChange={(e) => setLang(e.target.value as Lang)}
+           onChange={(e) => {
+           const newLang = e.target.value as Lang;
+           setLang(newLang);
+           localStorage.setItem("gamepro-lang", newLang);
+        }}
             style={{
               background: "#0c1123",
               color: "white",
