@@ -756,7 +756,7 @@ const T: Record<Lang, any> = {
                 textDecoration: "none",
               }}
             >
-              Open guild link →
+             {t.guildsOpen}
             </a>
           )}
         </div>
