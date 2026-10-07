@@ -363,27 +363,7 @@ const T: Record<Lang, any> = {
             marginBottom: 10,
           }}
         >
-          <select
-            value={lang}
-            onChange={(e) => changeLanguage(e.target.value as Lang)}
-            aria-label={t.language}
-            style={{
-              background: "#0c1123",
-              color: "white",
-              border: "1px solid #313858",
-              borderRadius: 9,
-              padding: "7px 10px",
-              cursor: "pointer",
-            }}
-          >
-            <option value="EN">EN</option>
-            <option value="DE">DE</option>
-            <option value="ES">ES</option>
-            <option value="FR">FR</option>
-            <option value="TR">TR</option>
-            <option value="RU">RU</option>
-            <option value="PL">PL</option>
-          </select>
+        
         </div>
 
         <div style={{ textAlign: "center", marginBottom: 25 }}>
