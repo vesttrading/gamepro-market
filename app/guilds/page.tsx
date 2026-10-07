@@ -647,7 +647,7 @@ const T: Record<Lang, any> = {
 
    <section
   style={{
-    marginTop: "-130px",
+    marginTop: "40px",
     paddingTop: 0,
     width: "100%",
     maxWidth: 1100,
