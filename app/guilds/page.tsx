@@ -408,7 +408,7 @@ const T: Record<Lang, any> = {
           style={{
             display: "flex",
             flexDirection: "column",
-            gap: 14,
+            gap: 8,
           }}
         >
           <div
@@ -600,7 +600,7 @@ const T: Record<Lang, any> = {
               justifyContent: "center",
               alignItems: "center",
               gap: "16px",
-              marginTop: "24px",
+              marginTop: "8px",
               width: "100%",
               flexWrap: "wrap",
             }}
