@@ -330,7 +330,7 @@ const T: Record<Lang, any> = {
 <div
   style={{
     height: "auto",             // Убедитесь, что здесь auto (убирает 100vh)
-    minHeight: "100vh",         // Оставляем только как минимальную высоту для фона всей страницы
+    minHeight: "auto",         // Оставляем только как минимальную высоту для фона всей страницы
     background: "#050713",
     color: "#f7f8ff",
     fontFamily: "Arial,sans-serif",
@@ -338,7 +338,7 @@ const T: Record<Lang, any> = {
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "flex-start", // <-- ЗАМЕНИТЕ "center" НА "flex-start" (прижмет контент к верху)
-    padding: "40px 20px",       // Вертикальный отступ всей страницы сверху и снизу
+    padding: "40px 20px 10px",       // Вертикальный отступ всей страницы сверху и снизу
   }}
 >
       <div
@@ -625,7 +625,7 @@ const T: Record<Lang, any> = {
 
    <section
   style={{
-    marginTop: "-60px",
+    marginTop: 0,
     width: "100%",
     maxWidth: 1100,
     marginLeft: "auto",
