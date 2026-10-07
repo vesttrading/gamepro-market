@@ -651,7 +651,7 @@ const T: Record<Lang, any> = {
       textAlign: "center",
     }}
   >
-    🛡 Guilds
+    🛡 {t.guildsTitle}
   </h2>
 
   <p
@@ -661,14 +661,14 @@ const T: Record<Lang, any> = {
       marginBottom: 25,
     }}
   >
-    Find registered GamePro guilds and teams.
+   {t.guildsSubtitle}
   </p>
 
   <input
     type="text"
     value={guildSearch}
     onChange={(e) => setGuildSearch(e.target.value)}
-    placeholder="Search guild, realm or game..."
+    placeholder={t.guildsSearch}
     style={{
       width: "100%",
       boxSizing: "border-box",
@@ -689,7 +689,7 @@ const T: Record<Lang, any> = {
     </p>
   ) : filteredGuilds.length === 0 ? (
     <p style={{ textAlign: "center", color: "#9aa3bd" }}>
-      No guilds found.
+     {t.guildsEmpty}
     </p>
   ) : (
     <div
@@ -725,7 +725,7 @@ const T: Record<Lang, any> = {
             <div>🏰 {guild.realm}</div>
 
             {guild.player_count && (
-              <div>👥 {guild.player_count} players</div>
+              <div>👥 {guild.player_count}{t.guildsPlayers}</div>
             )}
           </div>
 
@@ -742,7 +742,7 @@ const T: Record<Lang, any> = {
               fontWeight: 700,
             }}
           >
-            GAMEPRO REGISTERED
+           {t.guildsRegistered}
           </div>
             {guild.guild_link && (
             <a
