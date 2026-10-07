@@ -351,7 +351,7 @@ const T: Record<Lang, any> = {
   background: "linear-gradient(145deg,#10162b,#080d1b)",
   border: "1px solid #17bcb2",
   borderRadius: 20,
-  padding: "20px 30px",     // Уменьшаем отступы сверху/снизу (20px) и делаем больше по бокам (30px)
+  padding: "20px 30px 5px 30px",     // Уменьшаем отступы сверху/снизу (20px) и делаем больше по бокам (30px)
   boxShadow: "0 0 35px #16d8cf12",
   boxSizing: "border-box"
 }}
