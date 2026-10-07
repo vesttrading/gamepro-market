@@ -337,7 +337,8 @@ const T: Record<Lang, any> = {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    justifyContent: "flex-start", // <-- ЗАМЕНИТЕ "center" НА "flex-start" (прижмет контент к верху)
+    justifyContent: "flex-start", 
+    gap: 0,
     padding: "40px 20px 10px",       // Вертикальный отступ всей страницы сверху и снизу
   }}
 >
