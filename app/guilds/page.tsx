@@ -651,7 +651,7 @@ const T: Record<Lang, any> = {
       textAlign: "center",
     }}
   >
-    🛡 {t.guildsTitle}
+    🛡 Guilds
   </h2>
 
   <p
