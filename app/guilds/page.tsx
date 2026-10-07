@@ -635,9 +635,10 @@ const T: Record<Lang, any> = {
           )}
         </form>
 
-       <section
+   <section
   style={{
-    marginTop: 0,
+    marginTop: "-30px",
+    paddingTop: 0,
     width: "100%",
     maxWidth: 1100,
     marginLeft: "auto",
