@@ -644,15 +644,16 @@ const T: Record<Lang, any> = {
     marginRight: "auto",
   }}
 >
-  <h2
-    style={{
-      fontSize: 32,
-      marginBottom: 10,
-      textAlign: "center",
-    }}
-  >
-    🛡 Guilds
-  </h2>
+ <h2
+  style={{
+    fontSize: 32,
+    marginTop: "-30px",
+    marginBottom: 10,
+    textAlign: "center",
+  }}
+>
+  🛡 Guilds
+</h2>
 
   <p
     style={{
