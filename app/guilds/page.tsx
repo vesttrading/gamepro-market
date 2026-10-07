@@ -647,7 +647,7 @@ const T: Record<Lang, any> = {
  <h2
   style={{
     fontSize: 32,
-    marginTop: "-30px",
+    marginTop: "-60px",
     marginBottom: 10,
     textAlign: "center",
   }}
