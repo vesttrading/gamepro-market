@@ -351,7 +351,7 @@ const T: Record<Lang, any> = {
   background: "linear-gradient(145deg,#10162b,#080d1b)",
   border: "1px solid #17bcb2",
   borderRadius: 20,
-  padding: "20px 30px 5px 30px",     // Уменьшаем отступы сверху/снизу (20px) и делаем больше по бокам (30px)
+  padding: "20px 30px",     // Уменьшаем отступы сверху/снизу (20px) и делаем больше по бокам (30px)
   boxShadow: "0 0 35px #16d8cf12",
   boxSizing: "border-box"
 }}
@@ -625,7 +625,7 @@ const T: Record<Lang, any> = {
 
    <section
   style={{
-    marginTop: "0",
+    marginTop: "-60",
     paddingTop: 0,
     width: "100%",
     maxWidth: 1100,
@@ -654,24 +654,28 @@ const T: Record<Lang, any> = {
    {t.guildsSubtitle}
   </p>
 
-  <input
-    type="text"
-    value={guildSearch}
-    onChange={(e) => setGuildSearch(e.target.value)}
-    placeholder={t.guildsSearch}
-    style={{
-      width: "100%",
-      boxSizing: "border-box",
-      padding: "14px 16px",
-      marginBottom: 25,
-      borderRadius: 12,
-      border: "1px solid #313858",
-      background: "#0c1123",
-      color: "white",
-      outline: "none",
-      fontSize: 16,
-    }}
-  />
+ <input
+  type="text"
+  value={guildSearch}
+  onChange={(e) => setGuildSearch(e.target.value)}
+  placeholder={t.guildsSearch}
+  style={{
+    width: "100%",
+    maxWidth: "700px",
+    boxSizing: "border-box",
+    padding: "14px 16px",
+    marginBottom: 25,
+    borderRadius: 12,
+    border: "1px solid #313858",
+    background: "#0c1123",
+    color: "white",
+    outline: "none",
+    fontSize: 16,
+    display: "block",
+    marginLeft: "auto",
+    marginRight: "auto",
+  }}
+/>
 
   {guildLoadingList ? (
     <p style={{ textAlign: "center", color: "#9aa3bd" }}>
