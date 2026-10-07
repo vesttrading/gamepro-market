@@ -637,7 +637,7 @@ const T: Record<Lang, any> = {
 
        <section
   style={{
-    marginTop: 10,
+    marginTop: 0,
     width: "100%",
     maxWidth: 1100,
     marginLeft: "auto",
@@ -647,7 +647,7 @@ const T: Record<Lang, any> = {
  <h2
   style={{
     fontSize: 32,
-    marginTop: "0px",
+    marginTop:  0,
     marginBottom: 10,
     textAlign: "center",
   }}
