@@ -642,6 +642,8 @@ const T: Record<Lang, any> = {
           )}
         </form>
 
+      </div> 
+
    <section
   style={{
     marginTop: "-130px",
@@ -773,7 +775,7 @@ const T: Record<Lang, any> = {
     </div>
   )}
 </section>
-     </div>
+    
     </div>
   );
 }
