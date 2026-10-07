@@ -340,15 +340,22 @@ const T: Record<Lang, any> = {
       }}
     >
       <div
-        style={{
-          maxWidth: 520,
-          width: "100%",
-          background: "linear-gradient(145deg,#10162b,#080d1b)",
-          border: "1px solid #17bcb2",
-          borderRadius: 20,
-          padding: "20px 24px",
-          boxShadow: "0 0 35px #16d8cf12",
-        }}
+       style={{
+  width: "100%",
+  maxWidth: "760px",        // Увеличиваем ширину (было 520/650), чтобы поля растянулись по горизонтали
+  height: "auto",           // Убираем фиксированную высоту, карточка сожмется под контент
+  
+  display: "flex",
+  flexDirection: "column",
+  
+  background: "linear-gradient(145deg,#10162b,#080d1b)",
+  border: "1px solid #17bcb2",
+  borderRadius: 20,
+  
+  padding: "20px 30px",     // Уменьшаем отступы сверху/снизу (20px) и делаем больше по бокам (30px)
+  boxShadow: "0 0 35px #16d8cf12",
+  boxSizing: "border-box"
+}}
       >
         <div
           style={{
