@@ -327,18 +327,19 @@ const T: Record<Lang, any> = {
   );
 });
   return (
-    <div
-      style={{
-        minHeight: "auto",
-        background: "#050713",
-        color: "#f7f8ff",
-        fontFamily: "Arial,sans-serif",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        padding: "20px 20px",
-      }}
-    >
+  <div
+  style={{
+    minHeight: "auto",
+    background: "#050713",
+    color: "#f7f8ff",
+    fontFamily: "Arial,sans-serif",
+    display: "flex",
+    flexDirection: "column",   // <-- ДОБАВЬТЕ ЭТУ СТРОКУ, чтобы блоки встали друг под друга
+    alignItems: "center",      // Центрирует карточку и гильдии по горизонтали
+    justifyContent: "center",
+    padding: "20px 20px",
+  }}
+>
       <div
        style={{
   width: "100%",
