@@ -327,17 +327,18 @@ const T: Record<Lang, any> = {
   );
 });
   return (
-  <div
+<div
   style={{
-    minHeight: "auto",
+    height: "auto",             // Убедитесь, что здесь auto (убирает 100vh)
+    minHeight: "100vh",         // Оставляем только как минимальную высоту для фона всей страницы
     background: "#050713",
     color: "#f7f8ff",
     fontFamily: "Arial,sans-serif",
     display: "flex",
-    flexDirection: "column",   // <-- ДОБАВЬТЕ ЭТУ СТРОКУ, чтобы блоки встали друг под друга
-    alignItems: "center",      // Центрирует карточку и гильдии по горизонтали
-    justifyContent: "center",
-    padding: "20px 20px",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "flex-start", // <-- ЗАМЕНИТЕ "center" НА "flex-start" (прижмет контент к верху)
+    padding: "40px 20px",       // Вертикальный отступ всей страницы сверху и снизу
   }}
 >
       <div
@@ -345,14 +346,11 @@ const T: Record<Lang, any> = {
   width: "100%",
   maxWidth: "760px",        // Увеличиваем ширину (было 520/650), чтобы поля растянулись по горизонтали
   height: "auto",           // Убираем фиксированную высоту, карточка сожмется под контент
-  
   display: "flex",
   flexDirection: "column",
-  
   background: "linear-gradient(145deg,#10162b,#080d1b)",
   border: "1px solid #17bcb2",
   borderRadius: 20,
-  
   padding: "20px 30px",     // Уменьшаем отступы сверху/снизу (20px) и делаем больше по бокам (30px)
   boxShadow: "0 0 35px #16d8cf12",
   boxSizing: "border-box"
@@ -647,7 +645,7 @@ const T: Record<Lang, any> = {
 
    <section
   style={{
-    marginTop: "40px",
+    marginTop: "30px",
     paddingTop: 0,
     width: "100%",
     maxWidth: 1100,
