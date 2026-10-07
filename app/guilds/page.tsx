@@ -329,24 +329,24 @@ const T: Record<Lang, any> = {
   return (
     <div
       style={{
-        minHeight: "100vh",
+        minHeight: "auto",
         background: "#050713",
         color: "#f7f8ff",
         fontFamily: "Arial,sans-serif",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        padding: "40px 20px",
+        padding: "20px 20px",
       }}
     >
       <div
         style={{
-          maxWidth: 650,
+          maxWidth: 520,
           width: "100%",
           background: "linear-gradient(145deg,#10162b,#080d1b)",
           border: "1px solid #17bcb2",
           borderRadius: 20,
-          padding: 30,
+          padding: "20px 24px",
           boxShadow: "0 0 35px #16d8cf12",
         }}
       >
@@ -637,7 +637,7 @@ const T: Record<Lang, any> = {
 
    <section
   style={{
-    marginTop: "-30px",
+    marginTop: "-130px",
     paddingTop: 0,
     width: "100%",
     maxWidth: 1100,
