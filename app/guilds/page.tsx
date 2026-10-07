@@ -356,16 +356,6 @@ const T: Record<Lang, any> = {
   boxSizing: "border-box"
 }}
       >
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "flex-end",
-            marginBottom: 10,
-          }}
-        >
-        
-        </div>
-
         <div style={{ textAlign: "center", marginBottom: 25 }}>
           <div style={{ fontSize: 35 }}>👥</div>
         <h1
@@ -625,9 +615,7 @@ const T: Record<Lang, any> = {
 
  <section
   style={{
-    marginTop: "-200px",
-    position: "relative",
-    zIndex: 10,
+    marginTop: "60",
     width: "100%",
     maxWidth: 1100,
     marginLeft: "auto",
