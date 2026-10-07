@@ -338,7 +338,6 @@ const T: Record<Lang, any> = {
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "flex-start", 
-    gap: 0,
     padding: "40px 20px 10px",       // Вертикальный отступ всей страницы сверху и снизу
   }}
 >
@@ -624,9 +623,11 @@ const T: Record<Lang, any> = {
 
       </div> 
 
-   <section
+ <section
   style={{
-    marginTop: 0,
+    marginTop: "-200px",
+    position: "relative",
+    zIndex: 10,
     width: "100%",
     maxWidth: 1100,
     marginLeft: "auto",
