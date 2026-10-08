@@ -821,6 +821,86 @@ if (!battlenetId) {
       <section id="players" style={{maxWidth:1160,width:"92%",margin:"auto",padding:"0px 0 30px",marginTop:-150}}>
         <h2 style={{textAlign:"center",fontSize:32}}>{t.searchTitle}</h2><p style={{textAlign:"center",color:"#9da6c0"}}>{t.searchSub}</p>
         <div className="searchbar" style={{display:"flex",gap:10,maxWidth:460,margin:"25px auto"}}><input value={q} onChange={e=>setQ(e.target.value)} placeholder={t.placeholder} style={{flex:1,minWidth:0,background:"#090e1d",border:"1px solid #26364b",borderRadius:12,padding:15,color:"white",outline:"none"}}/><button style={btn}>🔎 {t.search}</button></div>
+       <div
+  style={{
+    display:"flex",
+    justifyContent:"center",
+    alignItems:"center",
+    gap:10,
+    flexWrap:"wrap",
+    margin:"0 auto 25px"
+  }}
+>
+  <select
+    value={selectedRole}
+    onChange={e=>setSelectedRole(e.target.value)}
+    style={{
+      padding:"8px 12px",
+      background:"#1e293b",
+      border:"1px solid #334155",
+      borderRadius:8,
+      color:"#fff",
+      fontSize:14,
+      outline:"none",
+      cursor:"pointer",
+      height:40
+    }}
+  >
+    <option value="">{t.allRoles}</option>
+    <option value="Tank">{t.roleTank}</option>
+    <option value="Healer">{t.roleHealer}</option>
+    <option value="DPS">{t.roleDPS}</option>
+  </select>
+
+  <select
+    value={selectedClass}
+    onChange={e=>setSelectedClass(e.target.value)}
+    style={{
+      padding:"8px 12px",
+      background:"#1e293b",
+      border:"1px solid #334155",
+      borderRadius:8,
+      color:"#fff",
+      fontSize:14,
+      outline:"none",
+      cursor:"pointer",
+      height:40
+    }}
+  >
+    <option value="">{t.allClasses}</option>
+    <option value="Mage">{t.classMage}</option>
+    <option value="Paladin">{t.classPaladin}</option>
+    <option value="Druid">{t.classDruid}</option>
+    <option value="Warrior">{t.classWarrior}</option>
+    <option value="Priest">{t.classPriest}</option>
+    <option value="Rogue">{t.classRogue}</option>
+  </select>
+
+  <input
+    type="number"
+    placeholder={t.minRating}
+    value={minRating}
+    onChange={e=>setMinRating(e.target.value)}
+    min="0"
+    style={{
+      padding:"8px 12px",
+      background:"#1e293b",
+      border:"1px solid #334155",
+      borderRadius:8,
+      color:"#fff",
+      fontSize:14,
+      outline:"none",
+      width:130,
+      height:40,
+      opacity:1,
+      pointerEvents:"auto",
+      position:"relative",
+      zIndex:100,
+      cursor:"text",
+      boxSizing:"border-box"
+    }}
+  />
+</div>
         <div className="cards" style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:16}}>{players.map(x=><div key={x[1]} style={{...card,cursor:"pointer"}}onClick={()=>window.location.href=`/player/${x[5]}`}><div style={{display:"flex",gap:12,alignItems:"center"}}><div style={{width:48,height:48,borderRadius:12,display:"grid",placeItems:"center",background:"linear-gradient(135deg,#6126e9,#e92ad4)",fontSize:22}}>{x[0]}</div><div><h3 style={{margin:"0 0 4px"}}>{x[1]}</h3><small style={{color:"#9da6c0"}}>{x[2]}</small></div></div><div style={{display:"flex",gap:7,marginTop:15,flexWrap:"wrap"}}><span className="greenTag">{x[6] ? `✓ ${x[3]} VERIFIED` : `${x[3]} : NOT VERIFIED`}</span><span className="greenTag">✓ {x[4]}</span></div></div>)}</div>
       </section>
 
