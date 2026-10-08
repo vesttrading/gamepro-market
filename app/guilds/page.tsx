@@ -315,16 +315,6 @@ const T: Record<Lang, any> = {
     height: "44px",
   };
 
-  const search = guildSearch.toLowerCase().trim();
-
-  if (!search) return true;
-
-  return (
-    String(guild.guild_name || "").toLowerCase().includes(search) ||
-    String(guild.realm || "").toLowerCase().includes(search) ||
-    String(guild.game || "").toLowerCase().includes(search)
-  );
-});
   return (
 <div
   style={{
