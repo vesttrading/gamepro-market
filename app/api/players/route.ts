@@ -19,7 +19,9 @@ export async function GET(request: Request) {
 
     if (role) query = query.eq('role', role);
     if (playerClass) query = query.eq('class', playerClass);
-    if (minRating) query = query.gte('mythic_plus_score', parseInt(minRating, 10));
+    if (minRating && !isNaN(Number(minRating))) {
+    query = query.gte('mythic_plus_score', Number(minRating));
+  }
 
     query = query.order('mythic_plus_score', { ascending: false });
 
