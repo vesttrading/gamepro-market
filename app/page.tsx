@@ -521,7 +521,7 @@ useEffect(() => {
     };
 
     fetchPlayers();
-  }, [selectedRole, selectedClass, minRating]);
+  }, [selectedRole, selectedClass]);
   
    useEffect(() => {
   const fetchReviews = async () => {
