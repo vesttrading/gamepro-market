@@ -741,72 +741,8 @@ if (!battlenetId) {
         <h1 style={{fontSize:"clamp(30px,5vw,55px)",lineHeight:.98,margin:"22px 0 18px"}}>{t.h1}<br/><span style={{background:"linear-gradient(90deg,#fff,#e832ff,#16ddff)",WebkitBackgroundClip:"text",color:"transparent"}}>{t.h2}</span></h1>
         <p style={{maxWidth:690,margin:"auto",color:"#9da6c0",fontSize:18,lineHeight:1.65}}>{t.intro}</p>
         <div style={{marginTop:28,display:"flex",justifyContent:"center",gap:12,flexWrap:"wrap"}}><button style={btn} onClick={()=>signIn("battlenet",{callbackUrl:"/"}, { prompt: "login" })}><span>🎮</span> {t.login}</button><button style={btn} onClick={() => signOut({ callbackUrl: "/" })}>{t.logout}</button></div>
-       
-        
         <div style={{ marginTop: 16, display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
-  {/* Выбор роли */}
-  <select
-    value={selectedRole}
-    onChange={(e) => setSelectedRole(e.target.value)}
-    style={{ padding: "8px 12px", background: "#1e293b", border: "1px solid #334155", borderRadius: 8, color: "#fff", fontSize: 14, outline: "none", cursor: "pointer" }}
-  >
-    <option value="">{t.allRoles}</option>
-    <option value="Tank">{t.roleTank}</option>
-    <option value="Healer">{t.roleHealer}</option>
-    <option value="DPS">{t.roleDPS}</option>
-  </select>
-
-  {/* Выбор класса */}
-  <select
-    value={selectedClass}
-    onChange={(e) => setSelectedClass(e.target.value)}
-    style={{ padding: "8px 12px", background: "#1e293b", border: "1px solid #334155", borderRadius: 8, color: "#fff", fontSize: 14, outline: "none", cursor: "pointer" }}
-  >
-    <option value="">{t.allClasses}</option>
-    <option value="Mage">{t.classMage}</option>
-    <option value="Paladin">{t.classPaladin}</option>
-    <option value="Druid">{t.classDruid}</option>
-    <option value="Warrior">{t.classWarrior}</option>
-    <option value="Priest">{t.classPriest}</option>
-    <option value="Rogue">{t.classRogue}</option>
-  </select>
-
-{/* Ввод минимального рейтинга */}
-<input
-  type="number"
-  placeholder={t.minRating}
-  value={minRating}
-  onChange={(e) => setMinRating(e.target.value)}
-  min="0"
-  style={{
-    padding: "8px 12px",
-    background: "#1e293b",
-    border: "1px solid #334155",
-    borderRadius: 8,
-    color: "#fff",
-    fontSize: 14,
-    outline: "none",
-    width: 130,
-    height: 40,
-    opacity: 1,
-    pointerEvents: "auto",
-    position: "relative",
-    zIndex: 100,
-    cursor: "text",
-    boxSizing: "border-box",
-  }}
-    onFocus={(e) => {
-    e.currentTarget.style.borderColor = "#22d3ee";
-    e.currentTarget.style.boxShadow = "0 0 0 2px rgba(34,211,238,0.25)";
-  }}
-  onBlur={(e) => {
-    e.currentTarget.style.borderColor = "#334155";
-    e.currentTarget.style.boxShadow = "none";
-  }}
-/>
-</div>
-</section>
-     
+ 
       <section id="passport" style={{maxWidth:1160,width:"92%",margin:"auto",padding:"80px 0 0px"}}>
         <div className="sectionHead"><div><h2 style={{fontSize:36,marginBottom:8}}>{t.passport}</h2><p style={{color:"#9da6c0",marginTop:0}}>{t.sub}</p></div></div>
         <div className="grid2" style={{display:"grid",gridTemplateColumns:"1.05fr .95fr",gap:20}}>
