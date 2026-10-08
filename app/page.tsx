@@ -543,21 +543,38 @@ useEffect(() => {
   fetchReviews();
 }, []);
 
- const players = dbPlayers.map(p => {
-  // 1. Подбираем иконку под класс персонажа
-  let icon = "⚔️"; 
-  if (p.class?.toLowerCase() === "mage") icon = "🧙‍♂️";
-  if (p.class?.toLowerCase() === "paladin") icon = "🛡️";
-  if (p.class?.toLowerCase() === "druid") icon = "🧝‍♀️";
+const players = dbPlayers.map(p => {
+    // 1. Подбираем иконку под класс персонажа
+    let icon = "⚔️";
 
-  // 2. Возвращаем массив из 5 элементов, который ожидает ваша верстка
-  return [
-    icon,                                              // x[0] - Иконка
-    p.player_name || t.noName,                    // x[1] - Никнейм
-    `${p.role || ""} ${p.class || ""} - ${p.realm || "EU"}`, // x[2] - Роль, Класс и Сервер
-    String(p.rating || 0),                             // x[3] - Рейтинг (переводим число в строку)
-    p.source?.toUpperCase() || "VERIFIED", p.id, p.source_verified === true              // x[4] - Источник верификации (например, RAIDER.IO)
-  ];
+    if (p.class?.toLowerCase() === "mage") icon = "🧙‍♂️";
+    if (p.class?.toLowerCase() === "paladin") icon = "🛡";
+    if (p.class?.toLowerCase() === "druid") icon = "🧝‍♀️";
+
+    // 2. Возвращаем массив из 6 элементов
+    return [
+      icon,                                      // x[0] - Иконка
+      p.player_name || t.noName,                // x[1] - Никнейм
+      ${p.role || ""} ${p.class || ""} - ${p.realm || "EU"}, // x[2]
+      String(p.rating || 0),                    // x[3] - Рейтинг
+      p.source?.toUpperCase() || "VERIFIED",    // x[4] - Источник
+      p.id,                                      // x[5] - ID
+      p.source_verified === true                // x[6] - VERIFIED
+    ];
+  })
+  .filter(x => {
+    // Поиск по имени/роли/классу/серверу
+    if (q && !x.join(" ").toLowerCase().includes(q.toLowerCase())) {
+      return false;
+    }
+
+    // Min. rating работает локально, без нового запроса к API
+    if (minRating && Number(x[3]) < Number(minRating)) {
+      return false;
+    }
+
+    return true;
+  });
 }).filter(x => !q || x.join(" ").toLowerCase().includes(q.toLowerCase()));
   const sharePassport = async () => {
     const url = typeof window !== "undefined" ? window.location.href + "#passport" : "";
