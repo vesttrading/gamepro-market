@@ -786,6 +786,26 @@ if (!battlenetId) {
     e.currentTarget.style.boxShadow = "none";
   }}
 />
+ <button
+  type="button"
+  onClick={() => {
+    fetchPlayers();
+  }}
+  style={{
+    padding: "8px 18px",
+    background: "#2bebfa",
+    color: "#00173d",
+    border: "none",
+    borderRadius: 8,
+    fontSize: 14,
+    fontWeight: "bold",
+    height: 40,
+    cursor: "pointer",
+    boxSizing: "border-box",
+  }}
+>
+  {t.search}
+</button>
 </div>
 </section>
      
