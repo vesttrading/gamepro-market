@@ -315,7 +315,6 @@ const T: Record<Lang, any> = {
     height: "44px",
   };
 
-  const filteredGuilds = guilds.filter((guild) => {
   const search = guildSearch.toLowerCase().trim();
 
   if (!search) return true;
