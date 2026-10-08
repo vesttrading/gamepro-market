@@ -555,7 +555,7 @@ const players = dbPlayers.map(p => {
     return [
       icon,                                      // x[0] - Иконка
       p.player_name || t.noName,                // x[1] - Никнейм
-      ${p.role || ""} ${p.class || ""} - ${p.realm || "EU"}, // x[2]
+     `${p.role || ""} ${p.class || ""} - ${p.realm || "EU"}`, // x[2]
       String(p.rating || 0),                    // x[3] - Рейтинг
       p.source?.toUpperCase() || "VERIFIED",    // x[4] - Источник
       p.id,                                      // x[5] - ID
