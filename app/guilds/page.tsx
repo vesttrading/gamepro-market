@@ -610,8 +610,7 @@ const T: Record<Lang, any> = {
             </p>
           )}
         </form>
-
-      </div> 
+     </div> 
   </div>
   );
 }
