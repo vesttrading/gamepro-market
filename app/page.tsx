@@ -505,7 +505,9 @@ useEffect(() => {
       try {
         const params = new URLSearchParams();
         if (selectedRole) params.append('role', selectedRole);
-        if (selectedClass) params.append('class', selectedClass);
+        if (selectedClass) params.append('class', selectedClass); 
+        if (minRating) params.append('minRating', minRating);
+        
        
         const response = await fetch(`/api/players?${params.toString()}`);
         const resData = await response.json();
