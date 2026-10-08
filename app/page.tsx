@@ -777,8 +777,7 @@ if (!battlenetId) {
     cursor: "text",
     boxSizing: "border-box",
   }}
- />
-  onFocus={(e) => {
+    onFocus={(e) => {
     e.currentTarget.style.borderColor = "#22d3ee";
     e.currentTarget.style.boxShadow = "0 0 0 2px rgba(34,211,238,0.25)";
   }}
