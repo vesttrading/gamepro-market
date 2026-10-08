@@ -789,7 +789,9 @@ if (!battlenetId) {
  <button
   type="button"
   onClick={() => {
-    fetchPlayers();
+  onClick={() => {
+  setQ(q);
+}}
   }}
   style={{
     padding: "8px 18px",
