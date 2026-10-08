@@ -575,7 +575,7 @@ const players = dbPlayers.map(p => {
 
     return true;
   });
-}).filter(x => !q || x.join(" ").toLowerCase().includes(q.toLowerCase()));
+
   const sharePassport = async () => {
     const url = typeof window !== "undefined" ? window.location.href + "#passport" : "";
     try {
