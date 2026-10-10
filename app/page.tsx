@@ -631,7 +631,7 @@ try {
   if (minRating) params.append("minRating", minRating);
 
   const playersResponse = await fetch(
-    /api/players?${params.toString()},
+    `/api/players?${params.toString()}`,
     { cache: "no-store" }
   );
 
