@@ -619,9 +619,32 @@ const players = dbPlayers.map(p => {
         body: JSON.stringify({ source_verified: true })
       });
       if (!updateResponse.ok) throw new Error(await updateResponse.text() || t.verifiedError);
-      setVerified(true);
-      setVerifiedId(String(rows[0].id || ""));
-      setSupabaseStatus(t.verifiedGamePro);
+     setVerified(true);
+setVerifiedId(String(rows[0].id || ""));
+
+// Обновляем карточки сразу после подтверждения
+try {
+  const params = new URLSearchParams();
+
+  if (selectedRole) params.append("role", selectedRole);
+  if (selectedClass) params.append("class", selectedClass);
+  if (minRating) params.append("minRating", minRating);
+
+  const playersResponse = await fetch(
+    /api/players?${params.toString()},
+    { cache: "no-store" }
+  );
+
+  const playersData = await playersResponse.json();
+
+  if (playersResponse.ok && playersData.success) {
+    setDbPlayers(playersData.data || []);
+  }
+} catch (refreshError) {
+  console.error("Ошибка обновления карточек:", refreshError);
+}
+
+setSupabaseStatus(t.verifiedGamePro);
     } catch (error) {
       setSupabaseStatus(error instanceof Error ? error.message : t.verifiedError);
     } finally {
