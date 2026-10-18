@@ -12,6 +12,7 @@ const handler = NextAuth({
       params: {
       prompt: "login",
       scope: "wow.profile openid",
+      locale: "en_GB",
       },
      },
     }),
