@@ -9,11 +9,12 @@ const handler = NextAuth({
       issuer: "https://eu.battle.net/oauth",
       checks: ["state", "pkce", "nonce"],
       authorization: {
-        params: {
-          prompt: "login",
-          scope: "wow.profile openid",
-        },
+      params: {
+      prompt: "login",
+      scope: "wow.profile openid",
+      locale: "en_GB",
       },
+     },
     }),
   ],
 
