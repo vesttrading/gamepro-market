@@ -452,7 +452,7 @@ type Lang = keyof typeof L;
 export default function HomePage() {
   const { data: session, status } = useSession();
  if (status === "authenticated") {
-  console.log("ПОЛЬЗОВАТЕЛЬ ВОШЁЛ:", session?.user?.name);
+  console.log("USER LOGGED IN:", session?.user?.name);
 }
   const [lang,setLang] = useState<Lang>("EN");
   useEffect(() => {
