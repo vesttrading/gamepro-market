@@ -42,7 +42,7 @@ export const authOptions: NextAuthOptions = {
                 method: "POST",
                 headers: {
                   apikey: supabaseKey,
-                  Authorization: Bearer ${supabaseKey},
+                  Authorization: `Bearer ${supabaseKey`},
                   "Content-Type": "application/json",
                   Prefer: "resolution=merge-duplicates,return=minimal",
                 },
