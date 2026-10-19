@@ -34,12 +34,12 @@ export const authOptions: NextAuthOptions = {
 
           if (supabaseUrl && supabaseKey && account.providerAccountId) {
             const response = await fetch(
-              ${supabaseUrl}/rest/v1/gamepro_users?on_conflict=battlenet_id,
+              `${supabaseUrl}/rest/v1/gamepro_users?on_conflict=battlenet_id`,
               {
                 method: "POST",
                 headers: {
                   apikey: supabaseKey,
-                  Authorization: Bearer ${supabaseKey},
+                  Authorization: `Bearer ${supabaseKey}`,
                   "Content-Type": "application/json",
                   Prefer: "resolution=merge-duplicates,return=minimal",
                 },
