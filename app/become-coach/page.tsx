@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { signIn, useSession } from "next-auth/react";
+import PublishCoachButton from "../components/PublishCoachButton";
 
 export default function BecomeCoachPage() {
   const { data: session, status } = useSession();
@@ -180,11 +181,14 @@ export default function BecomeCoachPage() {
             cursor: "pointer",
           }}
         >
-          {loading ? "Saving..." : "Save coach profile"}
+         {loading ? "Saving..." : "Save coach profile"}
         </button>
 
         {message && <p role="status">{message}</p>}
       </form>
+
+      <PublishCoachButton />
+
     </main>
   );
 }
