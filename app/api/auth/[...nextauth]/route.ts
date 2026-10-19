@@ -1,7 +1,7 @@
-import NextAuth from "next-auth";
+import NextAuth, { type NextAuthOptions } from "next-auth";
 import BattleNetProvider from "next-auth/providers/battlenet";
 
-const handler = NextAuth({
+export const authOptions: NextAuthOptions = {
   providers: [
     BattleNetProvider({
       clientId: process.env.BATTLE_NET_CLIENT_ID!,
@@ -9,12 +9,12 @@ const handler = NextAuth({
       issuer: "https://eu.battle.net/oauth",
       checks: ["state", "pkce", "nonce"],
       authorization: {
-      params: {
-      prompt: "login",
-      scope: "wow.profile openid",
-      locale: "en_GB",
+        params: {
+          prompt: "login",
+          scope: "wow.profile openid",
+          locale: "en_GB",
+        },
       },
-     },
     }),
   ],
 
@@ -36,15 +36,15 @@ const handler = NextAuth({
           const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
           if (supabaseUrl && supabaseKey && account.providerAccountId) {
-            await fetch(
-              `${supabaseUrl}/rest/v1/gamepro_users?on_conflict=battlenet_id`,
+            const response = await fetch(
+              ${supabaseUrl}/rest/v1/gamepro_users?on_conflict=battlenet_id,
               {
                 method: "POST",
                 headers: {
-                  "apikey": supabaseKey,
-                  Authorization: `Bearer ${supabaseKey}`,
+                  apikey: supabaseKey,
+                  Authorization: Bearer ${supabaseKey},
                   "Content-Type": "application/json",
-                  "Prefer": "resolution=merge-duplicates,return=minimal",
+                  Prefer: "resolution=merge-duplicates,return=minimal",
                 },
                 body: JSON.stringify({
                   battlenet_id: account.providerAccountId,
@@ -53,6 +53,13 @@ const handler = NextAuth({
                 }),
               }
             );
+
+            if (!response.ok) {
+              console.error(
+                "GamePro registration failed:",
+                response.status
+              );
+            }
           }
         } catch (error) {
           console.error("GamePro registration error:", error);
@@ -63,15 +70,13 @@ const handler = NextAuth({
     },
 
     async session({ session, token }) {
-      // @ts-ignore
-      session.accessToken = token.accessToken;
-
-      // @ts-ignore
-      session.battlenetId = token.battlenetId;
-
+      session.accessToken = token.accessToken as string | undefined;
+      session.battlenetId = token.battlenetId as string | undefined;
       return session;
     },
   },
-});
+};
+
+const handler = NextAuth(authOptions);
 
 export { handler as GET, handler as POST };
