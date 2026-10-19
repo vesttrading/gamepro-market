@@ -1,4 +1,4 @@
-[19.10.2026 16:25] Vladimir: import { NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { createClient } from "@supabase/supabase-js";
 import { authOptions } from "../../../../lib/authOptions";
@@ -144,7 +144,7 @@ export async function POST(request: Request) {
       })
       .select("id")
       .single();
-[19.10.2026 16:25] Vladimir: if (error || !data) {
+      if (error || !data) {
       console.error("Coach creation failed:", error?.message);
       return jsonError("Could not create coach profile", 500);
     }
