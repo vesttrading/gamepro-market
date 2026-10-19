@@ -17,6 +17,7 @@ export default function BecomeCoachPage() {
   const [loading, setLoading] = useState(false);
 
   async function submitForm(e: React.FormEvent<HTMLFormElement>) {
+    console.log("COACH FORM SUBMITTED");
     e.preventDefault();
     setLoading(true);
     setMessage("");
