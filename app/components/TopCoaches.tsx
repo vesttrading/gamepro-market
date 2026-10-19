@@ -1,0 +1,186 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
+type Service = {
+  id: number;
+  title: string;
+  price: number;
+  type: string;
+};
+
+type Coach = {
+  id: number;
+  battletag: string | null;
+  avatar: string | null;
+  game: string;
+  role: string | null;
+  rating_mplus: number | null;
+  is_verified: boolean;
+  description: string | null;
+  services: Service[];
+};
+
+export default function TopCoaches() {
+  const [coaches, setCoaches] = useState<Coach[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    let active = true;
+
+    async function loadCoaches() {
+      try {
+        const response = await fetch("/api/coaches", {
+          cache: "no-store",
+        });
+        const result = await response.json();
+
+        if (active && response.ok) {
+          setCoaches(result.coaches || []);
+        }
+      } catch (error) {
+        console.error("Failed to load coaches:", error);
+      } finally {
+        if (active) setLoading(false);
+      }
+    }
+
+    loadCoaches();
+
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  return (
+    <section
+      id="top-coaches"
+      style={{
+        maxWidth: 1160,
+        width: "92%",
+        margin: "0 auto",
+        padding: "35px 0",
+        color: "white",
+      }}
+    >
+      <h2 style={{ textAlign: "center", fontSize: 32 }}>
+        Top Coaches
+      </h2>
+
+      <p style={{ textAlign: "center", color: "#9da6c0" }}>
+        Find your coach. Improve your game.
+      </p>
+
+      {loading ? (
+        <p style={{ textAlign: "center" }}>Loading coaches...</p>
+      ) : coaches.length === 0 ? (
+        <p style={{ textAlign: "center", color: "#9da6c0" }}>
+          Coaches will appear here soon.
+        </p>
+      ) : (
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+            gap: 18,
+            marginTop: 25,
+          }}
+        >
+          {coaches.map((coach) => (
+            <article
+              key={coach.id}
+              style={{
+                background: "linear-gradient(145deg, #10162b, #080d1b)",
+                border: "1px solid #262d49",
+                borderRadius: 18,
+                padding: 20,
+              }}
+            >
+              <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
+                <div
+                  style={{
+                    width: 48,
+                    height: 48,
+                    borderRadius: 12,
+                    display: "grid",
+                    placeItems: "center",
+                    background: "linear-gradient(135deg, #6126e9, #20c9bd)",
+                    fontSize: 24,
+                    overflow: "hidden",
+                  }}
+                >
+                  {coach.avatar ? (
+                    <img
+                      src={coach.avatar}
+                      alt=""
+                      style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                    />
+                  ) : (
+                    "🎮"
+                  )}
+                </div>
+
+                <div style={{ minWidth: 0 }}>
+                  <h3 style={{ margin: 0, overflowWrap: "anywhere" }}>
+                    {coach.battletag || "GamePro Coach"}
+                  </h3>
+                  <span style={{ color: "#9da6c0", fontSize: 13 }}>
+                    {coach.game} · {coach.role || "Coach"}
+                  </span>
+                </div>
+              </div>
+
+              {coach.is_verified && (
+                <p style={{ color: "#34d399", fontSize: 13 }}>
+                  ✓ VERIFIED
+                </p>
+              )}
+
+              <p style={{ color: "#c5cbe0", lineHeight: 1.5 }}>
+                {coach.description || "Game coaching and guidance."}
+              </p>
+              <div style={{ display: "grid", gap: 8 }}>
+                {coach.services?.map((service) => (
+                  <div
+                    key={service.id}
+                    style={{
+                      padding: 12,
+                      background: "#090e1d",
+                      border: "1px solid #26364b",
+                      borderRadius: 10,
+                    }}
+                  >
+                    <div style={{ fontWeight: 600 }}>{service.title}</div>
+                    <div style={{ color: "#20c9bd", marginTop: 5 }}>
+                      ${Number(service.price).toFixed(2)} USD
+                    </div>
+                    <div style={{ color: "#9da6c0", fontSize: 12 }}>
+                      {service.type}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <a
+                href={/coach/${coach.id}}
+                style={{
+                  display: "block",
+                  textAlign: "center",
+                  marginTop: 16,
+                  padding: 12,
+                  borderRadius: 10,
+                  background: "#20c9bd",
+                  color: "#06101a",
+                  fontWeight: 700,
+                  textDecoration: "none",
+                }}
+              >
+                Profile
+              </a>
+            </article>
+          ))}
+        </div>
+      )}
+    </section>
+  );
+}
