@@ -1,4 +1,4 @@
-[19.10.2026 16:16] Vladimir: "use client";
+ "use client";
 
 import { useState } from "react";
 import { signIn, useSession } from "next-auth/react";
@@ -130,7 +130,7 @@ export default function BecomeCoachPage() {
         </label>
 
         <h2>First service</h2>
-[19.10.2026 16:16] Vladimir: <label>
+        <label>
           Service title
           <input
             value={serviceTitle}
