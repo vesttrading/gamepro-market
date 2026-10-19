@@ -18,24 +18,24 @@ export async function GET() {
 
   const { data, error } = await supabase
     .from("coaches")
-    .select(
-      id,
-      battletag,
-      avatar,
-      game,
-      role,
-      rating_mplus,
-      discord,
-      is_verified,
-      description,
-      services (
-        id,
-        title,
-        price,
-        type,
-        description
-      )
-    )
+    .select(`
+  id,
+  battletag,
+  avatar,
+  game,
+  role,
+  rating_mplus,
+  discord,
+  is_verified,
+  description,
+  services (
+    id,
+    title,
+    price,
+    type,
+    description
+  )
+`)
     .eq("is_published", true)
     .order("id", { ascending: false });
 
