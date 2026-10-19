@@ -38,6 +38,8 @@ export default function BecomeCoachPage() {
       });
 
       const result = await response.json();
+     console.log("COACH API STATUS:", response.status);
+     console.log("COACH API RESULT:", result);
 
       if (!response.ok) {
         setMessage(result.error || "Could not save your profile.");
