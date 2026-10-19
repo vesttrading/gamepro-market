@@ -2,6 +2,7 @@
 import Header from "../components/Header";
 import { useState, useEffect } from "react";
 import { signIn,signOut,useSession } from "next-auth/react";
+import TopCoaches from "./components/TopCoaches";
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
@@ -862,6 +863,7 @@ if (!battlenetId) {
 </div>
         <div className="cards" style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:16}}>{players.map(x=><div key={x[1]} style={{...card,cursor:"pointer"}}onClick={()=>window.location.href=`/player/${x[5]}`}><div style={{display:"flex",gap:12,alignItems:"center"}}><div style={{width:48,height:48,borderRadius:12,display:"grid",placeItems:"center",background:"linear-gradient(135deg,#6126e9,#e92ad4)",fontSize:22}}>{x[0]}</div><div><h3 style={{margin:"0 0 4px"}}>{x[1]}</h3><small style={{color:"#9da6c0"}}>{x[2]}</small></div></div><div style={{display:"flex",gap:7,marginTop:15,flexWrap:"wrap"}}><span className="greenTag">{x[6] ? `✓ ${x[3]} VERIFIED` : `${x[3]} : NOT VERIFIED`}</span><span className="greenTag">✓ {x[4]}</span></div></div>)}</div>
       </section>
+      <TopCoaches />
 
       <section id="raiderio" style={{maxWidth:1160,width:"92%",margin:"auto",padding:"0 0 60px"}}>
         <div style={{...card,borderColor:"#17bcb2"}}>
