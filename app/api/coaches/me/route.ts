@@ -177,3 +177,50 @@ export async function POST(request: Request) {
     message: "Coach profile saved. It is not published yet.",
   });
 }
+
+export async function PATCH() {
+  try {
+    const session = await getServerSession(authOptions);
+    const battlenetId = session?.battlenetId;
+
+    if (!battlenetId) {
+      return Response.json(
+        { error: "Unauthorized" },
+        { status: 401 }
+      );
+    }
+
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+    if (!supabaseUrl || !serviceRoleKey) {
+      return Response.json(
+        { error: "Server configuration error" },
+        { status: 500 }
+      );
+    }
+
+    const admin = createClient(supabaseUrl, serviceRoleKey);
+
+    const { data, error } = await admin
+      .from("coaches")
+      .update({ is_published: true })
+      .eq("owner_id", String(battlenetId))
+      .select("id, battletag, is_published")
+      .single();
+
+    if (error || !data) {
+      return Response.json(
+        { error: "Could not publish coach profile" },
+        { status: 400 }
+      );
+    }
+
+    return Response.json({ coach: data });
+  } catch {
+    return Response.json(
+      { error: "Internal server error" },
+      { status: 500 }
+    );
+  }
+}
