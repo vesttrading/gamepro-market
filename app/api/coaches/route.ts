@@ -16,26 +16,67 @@ export async function GET() {
 
   const supabase = createClient(supabaseUrl, supabaseKey);
 
-const { data, error } = await supabase
-  .from("coaches")
-  .select("id, battletag, is_published")
-  .eq("is_published", true)
-  .order("id", { ascending: false });
+  const { data: coaches, error: coachesError } = await supabase
+    .from("coaches")
+    .select(
+      id,
+      battletag,
+      avatar,
+      game,
+      role,
+      rating_mplus,
+      discord,
+      is_verified,
+      description,
+      is_published
+    )
+    .eq("is_published", true)
+    .order("id", { ascending: false });
 
- if (error) {
-  console.error("Coaches API error:", error.message);
+  if (coachesError) {
+    console.error("Coaches API error:", coachesError.message);
 
-  return NextResponse.json(
-    { error: error.message },
-    { status: 500 }
-  );
-}
+    return NextResponse.json(
+      { error: coachesError.message },
+      { status: 500 }
+    );
+  }
 
-return NextResponse.json({
-  coaches: data,
-  debug: {
-    count: data?.length ?? 0,
-    projectConfigured: Boolean(supabaseUrl),
-  },
- });
+  const coachIds = (coaches ?? []).map((coach) => coach.id);
+
+  let services: {
+    id: number;
+    coach_id: number;
+    title: string;
+    price: number;
+    type: string;
+    description: string | null;
+  }[] = [];
+
+  if (coachIds.length > 0) {
+    const { data, error: servicesError } = await supabase
+      .from("services")
+      .select("id, coach_id, title, price, type, description")
+      .in("coach_id", coachIds);
+
+    if (servicesError) {
+      console.error("Services API error:", servicesError.message);
+
+      return NextResponse.json(
+        { error: servicesError.message },
+        { status: 500 }
+      );
+    }
+
+    services = data ?? [];
+  }
+
+  const result = (coaches ?? []).map((coach) => ({
+    ...coach,
+    services: services.filter(
+      (service) => service.coach_id === coach.id
+    ),
+  }));
+
+  return NextResponse.json({ coaches: result });
 }
