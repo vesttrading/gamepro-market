@@ -48,5 +48,10 @@ export async function GET() {
   );
 }
 
-  return NextResponse.json({ coaches: data });
-}
+return NextResponse.json({
+  coaches: data,
+  debug: {
+    count: data?.length ?? 0,
+    projectConfigured: Boolean(supabaseUrl),
+  },
+});
