@@ -191,7 +191,15 @@ useEffect(() => {
               )}
 
               <p style={{ color: "#c5cbe0", lineHeight: 1.5 }}>
-                {coach.description || "Game coaching and guidance."}
+               {coach.description || ({
+               RU: "Обучение игре и помощь тренера.",
+               EN: "Game coaching and guidance.",
+               TR: "Oyun eğitimi ve koçluk desteği.",
+               DE: "Spieltraining und Coaching-Unterstützung.",
+               ES: "Entrenamiento y orientación en el juego.",
+               FR: "Entraînement et accompagnement en jeu.",
+               PL: "Trening i wskazówki dotyczące gry.",
+              }[lang] || "Game coaching and guidance.")}
               </p>
               <div style={{ display: "grid", gap: 8 }}>
                 {coach.services?.map((service) => (
