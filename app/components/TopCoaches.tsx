@@ -27,8 +27,20 @@ export default function TopCoaches() {
   const [lang, setLang] = useState("EN");
 
 useEffect(() => {
-  const savedLang = localStorage.getItem("gamepro-lang");
-  if (savedLang) setLang(savedLang);
+    const updateLang = () => {
+    const savedLang = localStorage.getItem("gamepro-lang");
+    if (savedLang) setLang(savedLang);
+  };
+
+  updateLang();
+
+  window.addEventListener("languageChanged", updateLang);
+  window.addEventListener("storage", updateLang);
+
+  return () => {
+    window.removeEventListener("languageChanged", updateLang);
+    window.removeEventListener("storage", updateLang);
+  };
 }, []);
 
   useEffect(() => {
