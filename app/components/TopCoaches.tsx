@@ -204,6 +204,8 @@ useEffect(() => {
         PL: "Profil",
        }[lang] || "Profile"}
          </a>
+         </article>
+        ))}
         </div>
       )}
     </section>
