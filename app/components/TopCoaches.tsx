@@ -34,6 +34,7 @@ export default function TopCoaches() {
           cache: "no-store",
         });
         const result = await response.json();
+        console.log("Top Coaches API:", result);
 
         if (active && response.ok) {
           setCoaches(result.coaches || []);
