@@ -167,7 +167,7 @@ export default function TopCoaches() {
               </div>
 
            <a
-           href={/coach/${coach.id}}
+           href={`/coach/${coach.id}`}
            style={{
            display: "block",
            textAlign: "center",
