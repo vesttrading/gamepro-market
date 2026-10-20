@@ -180,18 +180,24 @@ export default function TopCoaches() {
            textDecoration: "none",
          }}
        >
-         {{
-           RU: "Профиль",
-           EN: "Profile",
-           TR: "Profil",
-           DE: "Profil",
-           ES: "Perfil",
-           FR: "Profil",
-           PL: "Profil",
-         }[lang] ?? "Profile"}
-        </a>
-            </article>
-          ))}
+        {(() => {
+         if (typeof window === "undefined") return "Profile";
+
+         const lang = localStorage.getItem("gamepro-lang") || "EN";
+
+         const labels: Record<string, string> = {
+         RU: "Профиль",
+         EN: "Profile",
+         TR: "Profil",
+         DE: "Profil",
+         ES: "Perfil",
+         FR: "Profil",
+         PL: "Profil",
+        };
+
+        return labels[lang] || "Profile";
+        })()}
+         </a>
         </div>
       )}
     </section>
