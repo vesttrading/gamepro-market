@@ -166,22 +166,22 @@ export default function TopCoaches() {
                 ))}
               </div>
 
-              <a
-                href={`/coach/${coach.id}`}
-                style={{
-                  display: "block",
-                  textAlign: "center",
-                  marginTop: 16,
-                  padding: 12,
-                  borderRadius: 10,
-                  background: "#20c9bd",
-                  color: "#06101a",
-                  fontWeight: 700,
-                  textDecoration: "none",
-                }}
-              >
-                Profile
-              </a>
+             <a
+            href={`/coach/${coach.id}`}
+           style={{
+            display: "block",
+            textAlign: "center",
+            marginTop: 16,
+            padding: 12,
+            borderRadius: 10,
+            background: "#20c9bd",
+            color: "#06101a",
+            fontWeight: 700,
+            textDecoration: "none",
+           }}
+           >
+              Profile
+             </a>
             </article>
           ))}
         </div>
