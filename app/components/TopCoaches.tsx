@@ -81,16 +81,20 @@ export default function TopCoaches() {
       ) : (
         <div
           style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
-            gap: 18,
-            marginTop: 25,
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 280px), 320px))",
+          gap: 20,
+          justifyContent: "center",
+          width: "100%",
           }}
         >
           {coaches.map((coach) => (
             <article
               key={coach.id}
               style={{
+                width: "100%",
+                maxWidth: 320,
+                boxSizing: "border-box",
                 background: "linear-gradient(145deg, #10162b, #080d1b)",
                 border: "1px solid #262d49",
                 borderRadius: 18,
