@@ -24,6 +24,12 @@ type Coach = {
 export default function TopCoaches() {
   const [coaches, setCoaches] = useState<Coach[]>([]);
   const [loading, setLoading] = useState(true);
+  const [lang, setLang] = useState("EN");
+
+useEffect(() => {
+  const savedLang = localStorage.getItem("gamepro-lang");
+  if (savedLang) setLang(savedLang);
+}, []);
 
   useEffect(() => {
     let active = true;
@@ -64,9 +70,17 @@ export default function TopCoaches() {
         color: "white",
       }}
     >
-      <h2 style={{ textAlign: "center", fontSize: 32 }}>
-        Top Coaches
-      </h2>
+     <h2 style={{ textAlign: "center", fontSize: 32 }}>
+  {{
+    RU: "Топ тренеров",
+    EN: "Top Coaches",
+    TR: "En İyi Koçlar",
+    DE: "Top-Trainer",
+    ES: "Mejores entrenadores",
+    FR: "Meilleurs coachs",
+    PL: "Najlepsi trenerzy",
+  }[lang] || "Top Coaches"}
+</h2>
 
       <p style={{ textAlign: "center", color: "#9da6c0" }}>
         Find your coach. Improve your game.
@@ -180,23 +194,15 @@ export default function TopCoaches() {
            textDecoration: "none",
          }}
        >
-        {(() => {
-         if (typeof window === "undefined") return "Profile";
-
-         const lang = localStorage.getItem("gamepro-lang") || "EN";
-
-         const labels: Record<string, string> = {
-         RU: "Профиль",
-         EN: "Profile",
-         TR: "Profil",
-         DE: "Profil",
-         ES: "Perfil",
-         FR: "Profil",
-         PL: "Profil",
-        };
-
-        return labels[lang] || "Profile";
-        })()}
+       {{
+        RU: "Профиль",
+        EN: "Profile",
+        TR: "Profil",
+        DE: "Profil",
+        ES: "Perfil",
+        FR: "Profil",
+        PL: "Profil",
+       }[lang] || "Profile"}
          </a>
         </div>
       )}
