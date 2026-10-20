@@ -96,7 +96,7 @@ export default function TopCoaches() {
                 maxWidth: 320,
                 boxSizing: "border-box",
                 background: "linear-gradient(145deg, #10162b, #080d1b)",
-                border: "1px solid #262d49",
+                border: "1px solid #20c9bd",
                 borderRadius: 18,
                 padding: 20,
               }}
