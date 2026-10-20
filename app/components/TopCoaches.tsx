@@ -94,8 +94,7 @@ useEffect(() => {
   }[lang] || "Top Coaches"}
 </h2>
 
-      <p style={{ textAlign: "center", color: "#9da6c0" }}>
-{loading ? (
+  {loading ? (
   <p style={{ textAlign: "center" }}>
     {{
       RU: "Загружаем тренеров...",
