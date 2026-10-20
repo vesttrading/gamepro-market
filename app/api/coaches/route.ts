@@ -54,4 +54,5 @@ return NextResponse.json({
     count: data?.length ?? 0,
     projectConfigured: Boolean(supabaseUrl),
   },
-});
+ });
+}
