@@ -18,7 +18,7 @@ export async function GET() {
 
   const { data: coaches, error: coachesError } = await supabase
     .from("coaches")
-    .select(
+    .select(`
       id,
       battletag,
       avatar,
@@ -29,7 +29,7 @@ export async function GET() {
       is_verified,
       description,
       is_published
-    )
+    `)
     .eq("is_published", true)
     .order("id", { ascending: false });
 
