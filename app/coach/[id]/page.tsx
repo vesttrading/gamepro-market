@@ -1,0 +1,123 @@
+import { notFound } from "next/navigation";
+import { createClient } from "@supabase/supabase-js";
+
+export const dynamic = "force-dynamic";
+
+export default async function CoachProfilePage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
+
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+  if (!supabaseUrl || !supabaseKey) {
+    throw new Error("Supabase server configuration is missing");
+  }
+
+  const supabase = createClient(supabaseUrl, supabaseKey);
+
+  const { data: coach, error } = await supabase
+    .from("coaches")
+    .select(
+      "id, battletag, avatar, game, role, rating_mplus, discord, is_verified, description, is_published"
+    )
+    .eq("id", id)
+    .eq("is_published", true)
+    .maybeSingle();
+
+  if (error || !coach) {
+    notFound();
+  }
+
+  const { data: services } = await supabase
+    .from("services")
+    .select("id, title, price, type, description")
+    .eq("coach_id", coach.id);
+
+  return (
+    <main
+      style={{
+        minHeight: "100vh",
+        background: "#070b16",
+        color: "#f4f7ff",
+        padding: "40px 20px",
+      }}
+    >
+      <div
+        style={{
+          maxWidth: 760,
+          margin: "0 auto",
+          padding: 28,
+          border: "1px solid #20c9bd",
+          borderRadius: 18,
+          background: "#10162b",
+          boxShadow: "0 0 18px rgba(32,201,189,0.15)",
+          boxSizing: "border-box",
+        }}
+      >
+        <a
+          href="/"
+          style={{ color: "#20c9bd", textDecoration: "none" }}
+        >
+          ← GamePro
+        </a>
+
+        <h1 style={{ marginTop: 24, overflowWrap: "anywhere" }}>
+          {coach.battletag ?? "Coach"}
+        </h1>
+
+        {coach.is_verified && (
+          <p style={{ color: "#20c9bd", fontWeight: 700 }}>
+            ✓ VERIFIED
+          </p>
+        )}
+
+        <p style={{ color: "#20c9bd" }}>
+          {coach.game} · {coach.role}
+        </p>
+
+        {coach.rating_mplus != null && (
+          <p>Mythic+ Rating: {coach.rating_mplus}</p>
+        )}
+
+        <p style={{ color: "#b5bfd6", lineHeight: 1.7 }}>
+          {coach.description || "No description yet."}
+        </p>
+
+        <h2 style={{ marginTop: 32 }}>Coaching Services</h2>
+
+        {services && services.length > 0 ? (
+          <div style={{ display: "grid", gap: 12 }}>
+            {services.map((service) => (
+              <div
+                key={service.id}
+                style={{
+                  padding: 16,
+                  background: "#090e1d",
+                  border: "1px solid #26364b",
+                  borderRadius: 10,
+                }}
+              >
+                <strong>{service.title}</strong>
+                <p style={{ color: "#20c9bd" }}>
+                  ${Number(service.price).toFixed(2)} USD
+                </p>
+                <p style={{ color: "#9da6c0", fontSize: 13 }}>
+                  {service.type}
+                </p>
+                {service.description && <p>{service.description}</p>}
+              </div>
+            ))}
+          </div>
+        ) : (
+          <p style={{ color: "#9da6c0" }}>
+            No services published yet.
+          </p>
+        )}
+      </div>
+    </main>
+  );
+}
