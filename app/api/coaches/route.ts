@@ -39,14 +39,14 @@ export async function GET() {
     .eq("is_published", true)
     .order("id", { ascending: false });
 
-  if (error) {
-    console.error("Coaches API error:", error.message);
+ if (error) {
+  console.error("Coaches API error:", error.message);
 
-    return NextResponse.json(
-      { error: "Could not load coaches" },
-      { status: 500 }
-    );
-  }
+  return NextResponse.json(
+    { error: error.message },
+    { status: 500 }
+  );
+}
 
   return NextResponse.json({ coaches: data });
 }
