@@ -93,6 +93,7 @@ style={{ height: "45px", width: "auto" }}
           const newLang = e.target.value as Lang;
           setLang(newLang);
           localStorage.setItem("gamepro-lang", newLang);
+          window.dispatchEvent(new Event("languageChanged"));
         }}
         aria-label="Language"
         style={{
