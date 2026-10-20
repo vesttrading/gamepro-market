@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { createClient } from "@supabase/supabase-js";
+import CoachText from "./CoachText";
 
 export const dynamic = "force-dynamic";
 
@@ -71,7 +72,7 @@ export default async function CoachProfilePage({
 
         {coach.is_verified && (
           <p style={{ color: "#20c9bd", fontWeight: 700 }}>
-            ✓ VERIFIED
+            <CoachText text="verified" />
           </p>
         )}
 
@@ -84,10 +85,10 @@ export default async function CoachProfilePage({
         )}
 
         <p style={{ color: "#b5bfd6", lineHeight: 1.7 }}>
-          {coach.description || "No description yet."}
+          {coach.description || <CoachText text="noDescription" />}
         </p>
 
-        <h2 style={{ marginTop: 32 }}>Coaching Services</h2>
+        <h2 style={{ marginTop: 32 }}><CoachText text="services" /></h2>
 
         {services && services.length > 0 ? (
           <div style={{ display: "grid", gap: 12 }}>
@@ -114,7 +115,7 @@ export default async function CoachProfilePage({
           </div>
         ) : (
           <p style={{ color: "#9da6c0" }}>
-            No services published yet.
+          <CoachText text="noServices" />
           </p>
         )}
       </div>
