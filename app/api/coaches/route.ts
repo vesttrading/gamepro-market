@@ -16,28 +16,11 @@ export async function GET() {
 
   const supabase = createClient(supabaseUrl, supabaseKey);
 
-  const { data, error } = await supabase
-    .from("coaches")
-    .select(`
-  id,
-  battletag,
-  avatar,
-  game,
-  role,
-  rating_mplus,
-  discord,
-  is_verified,
-  description,
-  services (
-    id,
-    title,
-    price,
-    type,
-    description
-  )
-`)
-    .eq("is_published", true)
-    .order("id", { ascending: false });
+const { data, error } = await supabase
+  .from("coaches")
+  .select("id, battletag, is_published")
+  .eq("is_published", true)
+  .order("id", { ascending: false });
 
  if (error) {
   console.error("Coaches API error:", error.message);
