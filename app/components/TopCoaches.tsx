@@ -95,25 +95,33 @@ useEffect(() => {
 </h2>
 
       <p style={{ textAlign: "center", color: "#9da6c0" }}>
-  {{
-    RU: "Скоро здесь появятся тренеры.",
-    EN: "Coaches will appear here soon.",
-    TR: "Koçlar yakında burada görünecek.",
-    DE: "Hier werden bald Trainer angezeigt.",
-    ES: "Pronto aparecerán entrenadores aquí.",
-    FR: "Les coachs apparaîtront bientôt ici.",
-    PL: "Wkrótce pojawią się tutaj trenerzy.",
-  }[lang] || "Coaches will appear here soon."}
-</p>
+{loading ? (
+  <p style={{ textAlign: "center" }}>
+    {{
+      RU: "Загружаем тренеров...",
+      EN: "Loading coaches...",
+      TR: "Koçlar yükleniyor...",
+      DE: "Trainer werden geladen...",
+      ES: "Cargando entrenadores...",
+      FR: "Chargement des coachs...",
+      PL: "Ładowanie trenerów...",
+    }[lang] || "Loading coaches..."}
+  </p>
+) : coaches.length === 0 ? (
+  <p style={{ textAlign: "center", color: "#9da6c0" }}>
+    {{
+      RU: "Скоро здесь появятся тренеры.",
+      EN: "Coaches will appear here soon.",
+      TR: "Koçlar yakında burada görünecek.",
+      DE: "Hier werden bald Trainer angezeigt.",
+      ES: "Pronto aparecerán entrenadores aquí.",
+      FR: "Les coachs apparaîtront bientôt ici.",
+      PL: "Wkrótce pojawią się tutaj trenerzy.",
+    }[lang] || "Coaches will appear here soon."}
+  </p>
+) : (
 
-      {loading ? (
-        <p style={{ textAlign: "center" }}>Loading coaches...</p>
-      ) : coaches.length === 0 ? (
-        <p style={{ textAlign: "center", color: "#9da6c0" }}>
-          Coaches will appear here soon.
-        </p>
-      ) : (
-        <div
+       <div
           style={{
           display: "grid",
           gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 280px), 320px))",
