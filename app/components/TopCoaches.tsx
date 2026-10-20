@@ -83,8 +83,16 @@ useEffect(() => {
 </h2>
 
       <p style={{ textAlign: "center", color: "#9da6c0" }}>
-        Find your coach. Improve your game.
-      </p>
+  {{
+    RU: "Скоро здесь появятся тренеры.",
+    EN: "Coaches will appear here soon.",
+    TR: "Koçlar yakında burada görünecek.",
+    DE: "Hier werden bald Trainer angezeigt.",
+    ES: "Pronto aparecerán entrenadores aquí.",
+    FR: "Les coachs apparaîtront bientôt ici.",
+    PL: "Wkrótce pojawią się tutaj trenerzy.",
+  }[lang] || "Coaches will appear here soon."}
+</p>
 
       {loading ? (
         <p style={{ textAlign: "center" }}>Loading coaches...</p>
@@ -150,9 +158,17 @@ useEffect(() => {
               </div>
 
               {coach.is_verified && (
-                <p style={{ color: "#34d399", fontSize: 13 }}>
-                  ✓ VERIFIED
-                </p>
+               <p style={{ color: "#34d399", fontSize: 13 }}>
+             {{
+              RU: "✓ ПОДТВЕРЖДЁН",
+              EN: "✓ VERIFIED",
+              TR: "✓ DOĞRULANDI",
+              DE: "✓ VERIFIZIERT",
+              ES: "✓ VERIFICADO",
+              FR: "✓ VÉRIFIÉ",
+              PL: "✓ ZWERYFIKOWANO",
+             }[lang] || "✓ VERIFIED"}
+           </p>
               )}
 
               <p style={{ color: "#c5cbe0", lineHeight: 1.5 }}>
