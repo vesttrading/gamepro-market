@@ -261,6 +261,29 @@ useEffect(() => {
               ))}
             </div>
 
+              <button
+                onClick={() => {
+                  alert(
+                    lang === "RU"
+                      ? Свяжитесь с тренером ${coach.battletag}
+                      : Contact coach ${coach.battletag}
+                  );
+                }}
+                style={{
+                  width: "100%",
+                  marginTop: 16,
+                  padding: 12,
+                  borderRadius: 10,
+                  border: "none",
+                  background: "#20c9bd",
+                  color: "#06111b",
+                  fontWeight: 700,
+                  cursor: "pointer",
+                }}
+              >
+                {lang === "RU" ? "Связаться с тренером" : "Contact Coach"}
+              </button>
+
            <a
            href={`/coach/${coach.id}`}
            style={{
