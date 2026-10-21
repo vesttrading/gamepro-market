@@ -190,17 +190,31 @@ useEffect(() => {
            </p>
               )}
 
-              <p style={{ color: "#c5cbe0", lineHeight: 1.5 }}>
-               {coach.description || ({
-               RU: "Обучение игре и помощь тренера.",
-               EN: "Game coaching and guidance.",
-               TR: "Oyun eğitimi ve koçluk desteği.",
-               DE: "Spieltraining und Coaching-Unterstützung.",
-               ES: "Entrenamiento y orientación en el juego.",
-               FR: "Entraînement et accompagnement en jeu.",
-               PL: "Trening i wskazówki dotyczące gry.",
-              }[lang] || "Game coaching and guidance.")}
-              </p>
+            <p style={{ color: "#c5cbe0", lineHeight: 1.5 }}>
+        {coach.description ===
+       "Experienced WoW player offering Mythic+ coaching for beginners and advanced players."
+    ? ({
+        RU: "Опытный игрок WoW. Обучаю Mythic+ новичков и опытных игроков.",
+        EN: "Experienced WoW player offering Mythic+ coaching for beginners and advanced players.",
+        TR: "Yeni başlayanlara ve deneyimli oyunculara Mythic+ koçluğu sunan deneyimli bir WoW oyuncusu.",
+        DE: "Erfahrener WoW-Spieler und Mythic+-Coach für Anfänger und erfahrene Spieler.",
+        ES: "Jugador experimentado de WoW que ofrece entrenamiento de Mythic+ para principiantes y jugadores avanzados.",
+        FR: "Joueur expérimenté de WoW proposant du coaching Mythic+ aux débutants et aux joueurs avancés.",
+        PL: "Doświadczony gracz WoW oferujący coaching Mythic+ dla początkujących i zaawansowanych graczy.",
+      } as Record<string, string>)[lang] ||
+      "Experienced WoW player offering Mythic+ coaching for beginners and advanced players."
+    : coach.description ||
+      ({
+        RU: "Обучение игре и помощь тренера.",
+        EN: "Game coaching and guidance.",
+        TR: "Oyun eğitimi ve koçluk desteği.",
+        DE: "Spieltraining und Coaching-Unterstützung.",
+        ES: "Entrenamiento y orientación en el juego.",
+        FR: "Entraînement et accompagnement en jeu.",
+        PL: "Trening i wskazówki dotyczące gry.",
+      } as Record<string, string>)[lang] ||
+      "Game coaching and guidance."}
+  </p>
               <div style={{ display: "grid", gap: 8 }}>
                 {coach.services?.map((service) => (
                   <div
