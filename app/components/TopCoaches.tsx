@@ -226,16 +226,40 @@ useEffect(() => {
                       borderRadius: 10,
                     }}
                   >
-                    <div style={{ fontWeight: 600 }}>{service.title}</div>
-                    <div style={{ color: "#20c9bd", marginTop: 5 }}>
-                      ${Number(service.price).toFixed(2)} USD
-                    </div>
-                    <div style={{ color: "#9da6c0", fontSize: 12 }}>
-                      {service.type}
-                    </div>
-                  </div>
-                ))}
+                   <div style={{ fontWeight: 600 }}>
+                   {service.title === "Mythic+ Coaching Session"
+                  ? ({
+                     RU: "Тренировка Mythic+",
+                     EN: "Mythic+ Coaching Session",
+                     TR: "Mythic+ Koçluk Seansı",
+                     DE: "Mythic+-Coaching-Sitzung",
+                     ES: "Sesión de coaching Mythic+",
+                     FR: "Séance de coaching Mythic+",
+                     PL: "Sesja coachingowa Mythic+",
+                   } as Record<string, string>)[lang] || service.title
+                  : service.title}
               </div>
+
+                 <div style={{ color: "#20c9bd", marginTop: 5 }}>
+                 ${Number(service.price).toFixed(2)} USD
+            </div>
+
+                <div style={{ color: "#9da6c0", fontSize: 12 }}>
+                {service.type === "Coaching"
+               ? ({
+                   RU: "Обучение",
+                   EN: "Coaching",
+                   TR: "Koçluk",
+                   DE: "Coaching",
+                   ES: "Entrenamiento",
+                   FR: "Coaching",
+                   PL: "Coaching",
+                 } as Record<string, string>)[lang] || service.type
+                 : service.type}
+                 </div>
+                </div>
+              ))}
+            </div>
 
            <a
            href={`/coach/${coach.id}`}
