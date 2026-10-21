@@ -55,7 +55,7 @@ useEffect(() => {
         console.log("Top Coaches API:", result);
 
         if (active && response.ok) {
-          setCoaches(result.coaches || []);
+          setCoaches(result.coaches ?? []);
         }
       } catch (error) {
         console.error("Failed to load coaches:", error);
