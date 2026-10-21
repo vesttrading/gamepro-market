@@ -265,8 +265,8 @@ useEffect(() => {
                 onClick={() => {
                   alert(
                     lang === "RU"
-                      ? Свяжитесь с тренером ${coach.battletag}
-                      : Contact coach ${coach.battletag}
+                      ? `Свяжитесь с тренером ${coach.battletag}`
+                      : `Contact coach ${coach.battletag}`
                   );
                 }}
                 style={{
