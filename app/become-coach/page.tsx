@@ -1,4 +1,4 @@
-[22.10.2026 16:55] Vladimir: "use client";
+"use client";
 
 import { useEffect, useState } from "react";
 import { signIn, useSession } from "next-auth/react";
@@ -112,7 +112,7 @@ export default function BecomeCoachPage() {
   const [price, setPrice] = useState("25");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
-[22.10.2026 16:55] Vladimir: useEffect(() => {
+    useEffect(() => {
     const updateLang = () => {
       const saved = localStorage.getItem("gamepro-lang") as Lang | null;
       setLang(saved && translations[saved] ? saved : "EN");
@@ -231,7 +231,7 @@ export default function BecomeCoachPage() {
             value={price} onChange={(e) => setPrice(e.target.value)}
             required style={fieldStyle} />
         </label>
-[22.10.2026 16:55] Vladimir: <button type="submit" disabled={loading} style={{
+         <button type="submit" disabled={loading} style={{
           padding: 14, border: 0, borderRadius: 10, background: "#20c9bd",
           color: "#06101a", fontWeight: 700, cursor: "pointer",
         }}>
