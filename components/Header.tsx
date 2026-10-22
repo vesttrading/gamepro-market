@@ -70,7 +70,7 @@ style={{ height: "45px", width: "auto" }}
         {t.becomeCoach || "Become a coach"}
       </a>
 
-        <a href="/coach/messages" style={{ color: "#20c9bd", textDecoration: "none", whiteSpace: "nowrap" }}>
+        <a href="/coach/messages" style={{ color: "#bdc4da", textDecoration: "none", whiteSpace: "nowrap" }}>
          {lang === "RU" ? "Мои сообщения" : 
          lang === "TR" ? "Mesajlarım" :
          lang === "DE" ? "Meine Nachrichten" :
