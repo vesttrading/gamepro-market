@@ -70,6 +70,16 @@ style={{ height: "45px", width: "auto" }}
         {t.becomeCoach || "Become a coach"}
       </a>
 
+        <a href="/coach/messages" style={{ color: "#20c9bd", textDecoration: "none", whiteSpace: "nowrap" }}>
+         {lang === "RU" ? "Мои сообщения" : 
+         lang === "TR" ? "Mesajlarım" :
+         lang === "DE" ? "Meine Nachrichten" :
+         lang === "ES" ? "Mis mensajes" :
+         lang === "FR" ? "Mes messages" :
+         lang === "PL" ? "Moje wiadomości" :
+         "My Messages"}
+     </a>
+
       <a href="#contact" style={{ color: "#bdc4da" }}>
         {t.contact}
       </a>
