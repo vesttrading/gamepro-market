@@ -53,7 +53,7 @@ const translations: Record<Lang, Record<string, string>> = {
     role: "Rolle oder Spezialisierung", rolePlaceholder: "z. B. Mythic+, Heiler, Midlane",
     discord: "Discord-Kontakt", discordPlaceholder: "Dein Discord-Kontakt",
     about: "Über dich (2–3 Sätze)", service: "Erste Dienstleistung", serviceTitle: "Name der Dienstleistung",
-[22.10.2026 16:55] Vladimir: servicePlaceholder: "z. B. Mythic+-Coaching", serviceType: "Dienstleistungstyp",
+    servicePlaceholder: "z. B. Mythic+-Coaching", serviceType: "Dienstleistungstyp",
     coaching: "Coaching", guide: "Guide", ui: "UI-Einrichtung", price: "Preis (USD)",
     saving: "Wird gespeichert...", save: "Coach-Profil speichern",
     saved: "Profil gespeichert! Es ist noch nicht veröffentlicht.", error: "Profil konnte nicht gespeichert werden.",
