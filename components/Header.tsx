@@ -67,8 +67,14 @@ style={{ height: "45px", width: "auto" }}
       </a>
 
       <a href="/become-coach" style={{ color: "#bdc4da" }}>
-        {t.becomeCoach || "Become a coach"}
-      </a>
+        {lang === "RU" ? "Стать коучем" :
+        lang === "TR" ? "Koç Ol" :
+        lang === "DE" ? "Coach werden" :
+        lang === "ES" ? "Ser coach" :
+        lang === "FR" ? "Devenir coach" :
+        lang === "PL" ? "Zostań coachem" :
+        "Become a coach"}
+    </a>
 
         <a href="/coach/messages" style={{ color: "#bdc4da", textDecoration: "none", whiteSpace: "nowrap" }}>
          {lang === "RU" ? "Мои сообщения" : 
