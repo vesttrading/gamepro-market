@@ -261,29 +261,36 @@ useEffect(() => {
               ))}
             </div>
 
-              <button
-                onClick={() => {
-                  alert(
-                    lang === "RU"
-                      ? `Свяжитесь с тренером ${coach.battletag}`
-                      : `Contact coach ${coach.battletag}`
-                  );
-                }}
-                style={{
-                  width: "100%",
-                  marginTop: 16,
-                  padding: 12,
-                  borderRadius: 10,
-                  border: "none",
-                  background: "#20c9bd",
-                  color: "#06111b",
-                  fontWeight: 700,
-                  cursor: "pointer",
-                }}
-              >
-                {lang === "RU" ? "Связаться с тренером" : "Contact Coach"}
-              </button>
+             <button
+              onClick={() => {
+              const message = window.prompt(
+              lang === "RU"
+              ? `Напишите сообщение тренеру ${coach.battletag}`
+              : `Write a message to coach ${coach.battletag}`
+            );
 
+            if (message && message.trim()) {
+            alert(
+            lang === "RU"
+            ? "Сообщение пока не отправлено. Отправка будет добавлена следующим шагом."
+            : "Message not sent yet. Message delivery will be added in the next step."
+         );
+       }
+     }}
+           style={{
+           width: "100%",
+           marginTop: 16,
+           padding: 12,
+           borderRadius: 10,
+           border: "none",
+           background: "#20c9bd",
+           color: "#06111b",
+           fontWeight: 700,
+           cursor: "pointer",
+        }}
+      >
+          {lang === "RU" ? "Связаться с тренером" : "Contact Coach"}
+         </button>
            <a
            href={`/coach/${coach.id}`}
            style={{
