@@ -261,36 +261,67 @@ useEffect(() => {
               ))}
             </div>
 
-             <button
-              onClick={() => {
-              const message = window.prompt(
-              lang === "RU"
-              ? `Напишите сообщение тренеру ${coach.battletag}`
-              : `Write a message to coach ${coach.battletag}`
-            );
-
-            if (message && message.trim()) {
-            alert(
+            <button
+            onClick={async () => {
+            const message = window.prompt(
             lang === "RU"
-            ? "Сообщение пока не отправлено. Отправка будет добавлена следующим шагом."
-            : "Message not sent yet. Message delivery will be added in the next step."
-         );
-       }
+            ? `Напишите сообщение тренеру ${coach.battletag}`
+            : `Write a message to coach ${coach.battletag}`
+           );
+
+            if (!message?.trim()) return;
+
+            try {
+            const response = await fetch("/api/messages", {
+            method: "POST",
+            headers: {
+            "Content-Type": "application/json",
+          },
+            body: JSON.stringify({
+            coachId: coach.id,
+            message: message.trim(),
+          }),
+        });
+
+           const result = await response.json();
+
+           if (!response.ok) {
+           alert(
+           result.error ||
+           (lang === "RU"
+           ? "Не удалось отправить сообщение"
+           : "Failed to send message")
+        );
+           return;
+        }
+
+           alert(
+           lang === "RU"
+           ? "Сообщение отправлено!"
+           : "Message sent!"
+       );
+      } catch (error) {
+         console.error("Message sending error:", error);
+         alert(
+         lang === "RU"
+         ? "Ошибка отправки сообщения"
+         : "Message sending error"
+       );
+     }
+   }}
+        style={{
+        marginTop: 16,
+        padding: 12,
+        borderRadius: 10,
+        border: "none",
+        background: "#20c9bd",
+        color: "#06111b",
+        fontWeight: 700,
+        cursor: "pointer",
      }}
-           style={{
-           width: "100%",
-           marginTop: 16,
-           padding: 12,
-           borderRadius: 10,
-           border: "none",
-           background: "#20c9bd",
-           color: "#06111b",
-           fontWeight: 700,
-           cursor: "pointer",
-        }}
-      >
-          {lang === "RU" ? "Связаться с тренером" : "Contact Coach"}
-         </button>
+   >
+       {lang === "RU" ? "Связаться с тренером" : "Contact Coach"}
+       </button>
            <a
            href={`/coach/${coach.id}`}
            style={{
