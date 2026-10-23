@@ -25,6 +25,34 @@ export default function TopCoaches() {
   const [coaches, setCoaches] = useState<Coach[]>([]);
   const [loading, setLoading] = useState(true);
   const [lang, setLang] = useState("EN");
+  const [searchName, setSearchName] = useState("");
+  const [selectedGame, setSelectedGame] = useState("");
+  const [selectedServiceType, setSelectedServiceType] = useState("");
+
+  const filteredCoaches = coaches.filter((coach) => {
+    const name = (coach.battletag ?? "").toLowerCase();
+    const query = searchName.trim().toLowerCase();
+
+    const matchesName = name.includes(query);
+
+    const game = (coach.game ?? "").toLowerCase();
+
+    const matchesGame =
+      !selectedGame ||
+      (selectedGame === "WoW"
+        ? game.includes("wow") || game.includes("world of warcraft")
+        : game.includes(selectedGame.toLowerCase()));
+
+    const matchesService =
+      !selectedServiceType ||
+      coach.services?.some(
+        (service) =>
+          (service.type ?? "").toLowerCase() ===
+          selectedServiceType.toLowerCase()
+      );
+
+    return matchesName && matchesGame && matchesService;
+  });
 
 useEffect(() => {
     const updateLang = () => {
@@ -93,7 +121,97 @@ useEffect(() => {
     PL: "Najlepsi trenerzy",
   }[lang] || "Top Coaches"}
 </h2>
+<div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 220px), 1fr))",
+          gap: 12,
+          margin: "24px 0",
+          padding: 16,
+          background: "#10162b",
+          border: "1px solid #26364b",
+          borderRadius: 16,
+        }}
+      >
+        <input
+          value={searchName}
+          onChange={(e) => setSearchName(e.target.value)}
+          placeholder={{
+            RU: "Поиск по нику тренера",
+            EN: "Search coach nickname",
+            TR: "Koç adına göre ara",
+            DE: "Trainer nach Namen suchen",
+            ES: "Buscar entrenador por nombre",
+            FR: "Rechercher un coach par nom",
+            PL: "Szukaj trenera po nicku",
+          }[lang] || "Search coach nickname"}
+          style={{
+            minWidth: 0,
+            padding: 12,
+            borderRadius: 10,
+            border: "1px solid #34415c",
+            background: "#080d1b",
+            color: "white",
+          }}
+        />
 
+        <select
+          value={selectedGame}
+          onChange={(e) => setSelectedGame(e.target.value)}
+          style={{
+            minWidth: 0,
+            padding: 12,
+            borderRadius: 10,
+            border: "1px solid #34415c",
+            background: "#080d1b",
+            color: "white",
+          }}
+        >
+          <option value="">
+            {{
+              RU: "Все игры",
+              EN: "All games",
+              TR: "Tüm oyunlar",
+              DE: "Alle Spiele",
+              ES: "Todos los juegos",
+              FR: "Tous les jeux",
+              PL: "Wszystkie gry",
+            }[lang] || "All games"}
+          </option>
+          <option value="WoW">World of Warcraft</option>
+          <option value="Dota 2">Dota 2</option>
+          <option value="CS2">Counter-Strike 2</option>
+        </select>
+
+        <select
+          value={selectedServiceType}
+          onChange={(e) => setSelectedServiceType(e.target.value)}
+          style={{
+            minWidth: 0,
+            padding: 12,
+            borderRadius: 10,
+            border: "1px solid #34415c",
+            background: "#080d1b",
+            color: "white",
+          }}
+        >
+          <option value="">
+            {{
+              RU: "Все услуги",
+              EN: "All services",
+              TR: "Tüm hizmetler",
+              DE: "Alle Dienstleistungen",
+              ES: "Todos los servicios",
+              FR: "Tous les services",
+              PL: "Wszystkie usługi",
+            }[lang] || "All services"}
+          </option>
+          <option value="Coaching">Coaching</option>
+          <option value="Guide">Guide</option>
+          <option value="UI">UI</option>
+        </select>
+      </div>
+      
   {loading ? (
   <p style={{ textAlign: "center" }}>
     {{
@@ -129,7 +247,7 @@ useEffect(() => {
           width: "100%",
           }}
         >
-          {coaches.map((coach) => (
+          {filteredCoaches.map((coach) => (
             <article
               key={coach.id}
               style={{
