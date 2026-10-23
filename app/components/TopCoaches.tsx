@@ -206,7 +206,41 @@ useEffect(() => {
               PL: "Wszystkie usługi",
             }[lang] || "All services"}
           </option>
-          <option value="Coaching">Coaching</option>
+         <option value="Coaching">
+  {{
+    RU: "Обучение с тренером",
+    EN: "Coaching",
+    TR: "Koçluk",
+    DE: "Coaching",
+    ES: "Entrenamiento",
+    FR: "Coaching",
+    PL: "Trening z trenerem",
+  }[lang] || "Coaching"}
+</option>
+
+<option value="Guide">
+  {{
+    RU: "Руководство",
+    EN: "Guide",
+    TR: "Rehber",
+    DE: "Anleitung",
+    ES: "Guía",
+    FR: "Guide",
+    PL: "Poradnik",
+  }[lang] || "Guide"}
+</option>
+
+<option value="UI">
+  {{
+    RU: "Настройка интерфейса",
+    EN: "UI Setup",
+    TR: "Arayüz Ayarları",
+    DE: "Interface-Einstellungen",
+    ES: "Configuración de interfaz",
+    FR: "Configuration de l’interface",
+    PL: "Konfiguracja interfejsu",
+  }[lang] || "UI Setup"}
+</option>
           <option value="Guide">Guide</option>
           <option value="UI">UI</option>
         </select>
