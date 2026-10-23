@@ -270,16 +270,29 @@ useEffect(() => {
   </p>
 ) : (
 
-       <div
-          style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 280px), 320px))",
-          gap: 20,
-          justifyContent: "center",
-          width: "100%",
-          }}
-        >
-          {filteredCoaches.map((coach) => (
+     {filteredCoaches.length === 0 ? (
+  <p style={{ textAlign: "center", color: "#9da6c0", padding: "24px 12px" }}>
+    {{
+      RU: "Тренеры не найдены. Попробуйте изменить фильтры.",
+      EN: "No coaches found. Try changing your filters.",
+      TR: "Koç bulunamadı. Filtreleri değiştirmeyi deneyin.",
+      DE: "Keine Trainer gefunden. Ändere deine Filter.",
+      ES: "No se encontraron entrenadores. Prueba a cambiar los filtros.",
+      FR: "Aucun coach trouvé. Essayez de modifier les filtres.",
+      PL: "Nie znaleziono trenerów. Spróbuj zmienić filtry.",
+    }[lang] || "No coaches found. Try changing your filters."}
+  </p>
+) : (
+  <div
+    style={{
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 280px), 320px))",
+      gap: 20,
+      justifyContent: "center",
+      width: "100%",
+    }}
+  >
+    {filteredCoaches.map((coach) => (
             <article
               key={coach.id}
               style={{
