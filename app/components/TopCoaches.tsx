@@ -270,7 +270,8 @@ useEffect(() => {
   </p>
 ) : (
 
-     {filteredCoaches.length === 0 ? (
+    </p>
+) : filteredCoaches.length === 0 ? (
   <p style={{ textAlign: "center", color: "#9da6c0", padding: "24px 12px" }}>
     {{
       RU: "Тренеры не найдены. Попробуйте изменить фильтры.",
