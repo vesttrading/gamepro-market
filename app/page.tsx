@@ -14,7 +14,7 @@ const L = {
     verifying:"Проверяем…",verify:"✓ Подтвердить VERIFIED",
     allRoles:"Все роли",
     roleTank:"Танк",
-    roleHealer:"Хилер",ch
+    roleHealer:"Хилер",
     roleDPS:"ДД (DPS)",
     allClasses:"Все классы",
     classMage:"Маг",
