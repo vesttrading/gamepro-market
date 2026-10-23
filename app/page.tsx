@@ -771,6 +771,8 @@ if (!battlenetId) {
         <p style={{maxWidth:690,margin:"auto",color:"#9da6c0",fontSize:18,lineHeight:1.65}}>{t.intro}</p>
         <div style={{marginTop:28,display:"flex",justifyContent:"center",gap:12,flexWrap:"wrap"}}><button style={btn} onClick={()=>signIn("battlenet",{callbackUrl:"/"}, { prompt: "login",locale: ({ RU:"ru_RU", EN:"en_GB", TR:"tr_TR", DE:"de_DE", ES:"es_ES", FR:"fr_FR", PL:"pl_PL" } as Record<string,string>)[lang] || "en_GB" })}><span>🎮</span> {t.login}</button><button style={btn} onClick={() => signOut({ callbackUrl: "/" })}>{t.logout}</button></div>
       </section>
+
+      <TopCoaches />
         
       <section id="games" style={{maxWidth:1160,width:"92%",margin:"auto",padding:"60px 0"}}>
         <div className="gameHeader"><div><h2 style={{fontSize:36,marginBottom:8}}>{t.games}</h2><p style={{color:"#9da6c0",marginTop:0}}>{t.futureText}</p></div></div>
