@@ -241,9 +241,7 @@ useEffect(() => {
     PL: "Konfiguracja interfejsu",
   }[lang] || "UI Setup"}
 </option>
-          <option value="Guide">Guide</option>
-          <option value="UI">UI</option>
-        </select>
+          </select>
       </div>
       
   {loading ? (
