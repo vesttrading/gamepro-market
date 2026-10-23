@@ -268,10 +268,7 @@ useEffect(() => {
       PL: "Wkrótce pojawią się tutaj trenerzy.",
     }[lang] || "Coaches will appear here soon."}
   </p>
-) : (
-
-    </p>
-) : filteredCoaches.length === 0 ? (
+  ) : filteredCoaches.length === 0 ? (  
   <p style={{ textAlign: "center", color: "#9da6c0", padding: "24px 12px" }}>
     {{
       RU: "Тренеры не найдены. Попробуйте изменить фильтры.",
