@@ -583,12 +583,13 @@ const players = dbPlayers.map(p => {
   });
 
   const sharePassport = async () => {
-    const url = typeof window !== "undefined" ? window.location.href + "#passport" : "";
-    try {
-    
-      else { await navigator.clipboard.writeText(url); setCopied(true); setTimeout(()=>setCopied(false),2200); }
-    } catch {}
-  };
+   const url = typeof window !== "undefined" ? window.location.href + "#players" : "";
+try {
+  await navigator.clipboard.writeText(url);
+  setCopied(true);
+  setTimeout(() => setCopied(false), 2200);
+} catch {}
+};
 
   const searchRaiderIO = async () => {
     if (!rioName.trim() || !rioRealm.trim()) { setRioError(t.rioNameRealm); setRioData(null); return; }
