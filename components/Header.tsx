@@ -58,10 +58,7 @@ style={{ height: "45px", width: "auto" }}
         justifyContent: "center",
       }}
     >
-      <a href="#players" style={{ color: "#bdc4da" }}>
-        {t.players}
-      </a>
-
+     
       <a href="#how" style={{ color: "#bdc4da" }}>
         {t.how}
       </a>
