@@ -801,21 +801,21 @@ if (!battlenetId) {
         >
           <div style={card}>
             <h3>🎮 {t.source}</h3>
-            <p style={{ color: "#9da6c0", lineHeight: 1.7 }}>
+            <p style={{ color: "#19cfc5", lineHeight: 1.7 }}>
               {t.sourceText}
             </p>
           </div>
 
           <div style={card}>
             <h3>🔍 {t.check}</h3>
-            <p style={{ color: "#9da6c0", lineHeight: 1.7 }}>
+            <p style={{ color: "#19cfc5", lineHeight: 1.7 }}>
               {t.checkText}
             </p>
           </div>
 
           <div style={card}>
             <h3>🏆 {t.badge}</h3>
-            <p style={{ color: "#9da6c0", lineHeight: 1.7 }}>
+            <p style={{ color: "#19cfc5", lineHeight: 1.7 }}>
               {t.badgeText}
             </p>
           </div>
