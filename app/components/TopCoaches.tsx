@@ -330,6 +330,19 @@ useEffect(() => {
                 <div style={{ minWidth: 0 }}>
                   <h3 style={{ margin: 0, overflowWrap: "anywhere" }}>
                     {coach.battletag || "GamePro Coach"}
+                    {coach.is_verified === true && (
+                <span
+                    title="Verified coach"
+                    style={{
+                    color: "#20c9bd",
+                    fontSize: 16,
+                    fontWeight: 900,
+                    marginLeft: 6,
+                  }}
+                >
+                 ✓
+                </span>
+                )}
                   </h3>
                   <span style={{ color: "#9da6c0", fontSize: 13 }}>
                     {coach.game} · {coach.role || "Coach"}
