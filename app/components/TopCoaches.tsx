@@ -82,9 +82,10 @@ useEffect(() => {
         const result = await response.json();
         console.log("Top Coaches API:", result);
 
-        if (active && response.ok) {
-          setCoaches(result.coaches ?? []);
-        }
+       if (active && response.ok) {
+        console.log("COACH VERIFICATION:", result.coaches);
+        setCoaches(result.coaches ?? []);
+       }
       } catch (error) {
         console.error("Failed to load coaches:", error);
       } finally {
