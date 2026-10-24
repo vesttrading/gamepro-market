@@ -128,9 +128,9 @@ export default async function CoachProfilePage({
           <CoachText text="noServices" />
           </p>
         )}
-        <h2 style={{ marginTop: 32 }}>
-          Отзывы тренера
-        </h2>
+       <h2 style={{ marginTop: 32 }}>
+          <CoachText text="reviews" />
+       </h2>
 
         {reviews && reviews.length > 0 ? (
           <div style={{ display: "grid", gap: 12 }}>
