@@ -347,9 +347,7 @@ useEffect(() => {
         type="button"
         onClick={() =>
           setVerifiedInfoCoachId(
-            verifiedInfoCoachId === coach.id
-              ? null
-              : coach.id
+            verifiedInfoCoachId === coach.id ? null : coach.id
           )
         }
         aria-label={{
@@ -381,7 +379,7 @@ useEffect(() => {
           lineHeight: 1,
         }}
       >
-        ✓
+        {"✓"}
       </button>
     )}
   </div>
