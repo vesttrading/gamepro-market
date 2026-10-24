@@ -38,6 +38,16 @@ export default async function CoachProfilePage({
     .select("id, title, price, type, description")
     .eq("coach_id", coach.id);
 
+  const { data: reviews, error: reviewsError } = await supabase
+    .from("reviews")
+    .select("id, author_name, rating, text, created_at")
+    .eq("coach_id", coach.id)
+    .order("created_at", { ascending: false });
+
+  if (reviewsError) {
+    console.error("Failed to load coach reviews:", reviewsError.message);
+  }
+
   return (
     <main
       style={{
@@ -116,6 +126,41 @@ export default async function CoachProfilePage({
         ) : (
           <p style={{ color: "#9da6c0" }}>
           <CoachText text="noServices" />
+          </p>
+        )}
+        <h2 style={{ marginTop: 32 }}>
+          <CoachText text="reviews" />
+        </h2>
+
+        {reviews && reviews.length > 0 ? (
+          <div style={{ display: "grid", gap: 12 }}>
+            {reviews.map((review) => (
+              <div
+                key={review.id}
+                style={{
+                  padding: 16,
+                  background: "#090e1d",
+                  border: "1px solid #26364b",
+                  borderRadius: 10,
+                }}
+              >
+                <strong>
+                  {review.author_name || "GamePro игрок"}
+                </strong>
+
+                <p style={{ margin: "8px 0" }}>
+                  {"⭐".repeat(Number(review.rating) || 0)}
+                </p>
+
+                <p style={{ color: "#b5bfd6", lineHeight: 1.6 }}>
+                  {review.text}
+                </p>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <p style={{ color: "#9da6c0" }}>
+            <CoachText text="noReviews" />
           </p>
         )}
       </div>
