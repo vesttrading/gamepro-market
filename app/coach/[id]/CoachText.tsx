@@ -11,6 +11,8 @@ const translations: Record<Lang, Record<string, string>> = {
     services: "Услуги тренера",
     noServices: "Услуги пока не добавлены.",
     noDescription: "Описание пока не добавлено.",
+    reviews: "Отзывы тренера",
+    noReviews: "Пока нет отзывов о тренере",
   },
   EN: {
     profile: "Coach Profile",
@@ -18,6 +20,8 @@ const translations: Record<Lang, Record<string, string>> = {
     services: "Coaching Services",
     noServices: "No services published yet.",
     noDescription: "No description yet.",
+    reviews: "Coach Reviews",
+    noReviews: "No reviews for this coach yet",
   },
   TR: {
     profile: "Koç Profili",
@@ -25,6 +29,8 @@ const translations: Record<Lang, Record<string, string>> = {
     services: "Koçluk Hizmetleri",
     noServices: "Henüz hizmet eklenmedi.",
     noDescription: "Henüz açıklama yok.",
+    reviews: "Koç Değerlendirmeleri",
+    noReviews: "Bu koç için henüz değerlendirme yok",
   },
   DE: {
     profile: "Trainerprofil",
@@ -32,6 +38,8 @@ const translations: Record<Lang, Record<string, string>> = {
     services: "Coaching-Angebote",
     noServices: "Noch keine Angebote vorhanden.",
     noDescription: "Noch keine Beschreibung vorhanden.",
+    reviews: "Trainerbewertungen",
+    noReviews: "Dieser Trainer hat noch keine Bewertungen",
   },
   ES: {
     profile: "Perfil del entrenador",
@@ -39,6 +47,8 @@ const translations: Record<Lang, Record<string, string>> = {
     services: "Servicios de entrenamiento",
     noServices: "Todavía no hay servicios.",
     noDescription: "Todavía no hay descripción.",
+    reviews: "Opiniones del entrenador",
+    noReviews: "Este entrenador aún no tiene opiniones",
   },
   FR: {
     profile: "Profil du coach",
@@ -46,6 +56,8 @@ const translations: Record<Lang, Record<string, string>> = {
     services: "Services de coaching",
     noServices: "Aucun service pour le moment.",
     noDescription: "Aucune description pour le moment.",
+    reviews: "Avis sur le coach",
+    noReviews: "Ce coach n’a pas encore d’avis",
   },
   PL: {
     profile: "Profil trenera",
@@ -53,6 +65,8 @@ const translations: Record<Lang, Record<string, string>> = {
     services: "Usługi trenerskie",
     noServices: "Brak dostępnych usług.",
     noDescription: "Brak opisu.",
+    reviews: "Opinie o trenerze",
+    noReviews: "Ten trener nie ma jeszcze opinii",
   },
 };
 
