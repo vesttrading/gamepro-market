@@ -13,6 +13,10 @@ const translations: Record<Lang, Record<string, string>> = {
     noDescription: "Описание пока не добавлено.",
     reviews: "Отзывы тренера",
     noReviews: "Пока нет отзывов о тренере",
+    coachDescription: "Опытный игрок WoW. Обучаю Mythic+ новичков и опытных игроков.",
+    serviceTitle: "Тренировка Mythic+",
+    serviceType: "Обучение",
+    serviceDescription: "Индивидуальная тренировка Mythic+.",
   },
   EN: {
     profile: "Coach Profile",
@@ -22,6 +26,10 @@ const translations: Record<Lang, Record<string, string>> = {
     noDescription: "No description yet.",
     reviews: "Coach Reviews",
     noReviews: "No reviews for this coach yet",
+    coachDescription: "Experienced WoW player offering Mythic+ coaching for beginners and advanced players.",
+    serviceTitle: "Mythic+ Coaching Session",
+    serviceType: "Coaching",
+    serviceDescription: "Personalized Mythic+ coaching session.",
   },
   TR: {
     profile: "Koç Profili",
@@ -31,6 +39,10 @@ const translations: Record<Lang, Record<string, string>> = {
     noDescription: "Henüz açıklama yok.",
     reviews: "Koç Değerlendirmeleri",
     noReviews: "Bu koç için henüz değerlendirme yok",
+    coachDescription: "Yeni başlayan ve deneyimli oyunculara Mythic+ eğitimi veren deneyimli WoW oyuncusu.",
+    serviceTitle: "Mythic+ Eğitimi",
+    serviceType: "Eğitim",
+    serviceDescription: "Kişiye özel Mythic+ eğitim seansı.",
   },
   DE: {
     profile: "Trainerprofil",
@@ -40,6 +52,10 @@ const translations: Record<Lang, Record<string, string>> = {
     noDescription: "Noch keine Beschreibung vorhanden.",
     reviews: "Trainerbewertungen",
     noReviews: "Dieser Trainer hat noch keine Bewertungen",
+    coachDescription: "Erfahrener WoW-Spieler, der Mythic+ für Anfänger und erfahrene Spieler trainiert.",
+    serviceTitle: "Mythic+-Trainingseinheit",
+    serviceType: "Coaching",
+    serviceDescription: "Individuelle Mythic+-Trainingseinheit.",
   },
   ES: {
     profile: "Perfil del entrenador",
@@ -49,6 +65,10 @@ const translations: Record<Lang, Record<string, string>> = {
     noDescription: "Todavía no hay descripción.",
     reviews: "Opiniones del entrenador",
     noReviews: "Este entrenador aún no tiene opiniones",
+    coachDescription: "Jugador experimentado de WoW que ofrece entrenamiento de Mythic+ para principiantes y jugadores avanzados.",
+    serviceTitle: "Sesión de entrenamiento Mythic+",
+    serviceType: "Entrenamiento",
+    serviceDescription: "Sesión personalizada de entrenamiento Mythic+.",
   },
   FR: {
     profile: "Profil du coach",
@@ -58,6 +78,10 @@ const translations: Record<Lang, Record<string, string>> = {
     noDescription: "Aucune description pour le moment.",
     reviews: "Avis sur le coach",
     noReviews: "Ce coach n’a pas encore d’avis",
+    coachDescription: "Joueur expérimenté de WoW proposant du coaching Mythic+ aux débutants et aux joueurs avancés.",
+    serviceTitle: "Séance de coaching Mythic+",
+    serviceType: "Coaching",
+    serviceDescription: "Séance personnalisée de coaching Mythic+.",
   },
   PL: {
     profile: "Profil trenera",
@@ -67,6 +91,10 @@ const translations: Record<Lang, Record<string, string>> = {
     noDescription: "Brak opisu.",
     reviews: "Opinie o trenerze",
     noReviews: "Ten trener nie ma jeszcze opinii",
+    coachDescription: "Doświadczony gracz WoW oferujący trening Mythic+ dla początkujących i zaawansowanych graczy.",
+    serviceTitle: "Sesja treningowa Mythic+",
+    serviceType: "Trening",
+    serviceDescription: "Indywidualna sesja treningowa Mythic+.",
   },
 };
 
