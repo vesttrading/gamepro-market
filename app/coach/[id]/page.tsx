@@ -115,7 +115,12 @@ export default async function CoachProfilePage({
                   borderRadius: 10,
                 }}
               >
-                <strong>{service.title}</strong>
+               <strong>
+               <CoachContent
+               value={service.title}
+               text="serviceTitle"
+            />
+          </strong>
                 <p style={{ color: "#20c9bd" }}>
                   ${Number(service.price).toFixed(2)} USD
                 </p>
