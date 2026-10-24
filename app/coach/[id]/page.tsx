@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { createClient } from "@supabase/supabase-js";
-import CoachText from "./CoachText";
+import CoachText, { CoachContent } from "./CoachText";
 
 export const dynamic = "force-dynamic";
 
@@ -94,9 +94,12 @@ export default async function CoachProfilePage({
           <p>Mythic+ Rating: {coach.rating_mplus}</p>
         )}
 
-        <p style={{ color: "#b5bfd6", lineHeight: 1.7 }}>
-          {coach.description || <CoachText text="noDescription" />}
-        </p>
+       <p style={{ color: "#b5bfd6", lineHeight: 1.7 }}>
+          <CoachContent
+          value={coach.description}
+          text="coachDescription"
+        />
+     </p>
 
         <h2 style={{ marginTop: 32 }}><CoachText text="services" /></h2>
 
