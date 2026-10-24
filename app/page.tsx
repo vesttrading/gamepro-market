@@ -898,7 +898,7 @@ if (!battlenetId) {
     )}
   </div>
 
-  {/* Отзывы игроков */}
+  {/* Отзывы о тренере */}
   <div
     className="reviewGrid"
     style={{
