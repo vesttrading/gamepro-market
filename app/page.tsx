@@ -73,7 +73,6 @@ const L = {
     passportLink:"Паспорт игрока", shareTitle:"Твой игровой профиль — одной ссылкой", login:"Войти через Battle.net", reviews:"Отзывы", gameproRating:"Оценка GamePro", playerReviews:"Отзывы игроков", verifiedReviews:"Отзывы о системе VERIFIED",
     logout:"Выйти",
     contactText:"По вопросам GamePro и сотрудничества",
-    howSub: "Найди подходящего тренера и начни улучшать свою игру.",
     howStep1Title: "Выбери тренера",
     howStep1Text: "Изучи профили, специализации, услуги и отзывы тренеров.",
     howStep2Title: "Свяжись с тренером",
