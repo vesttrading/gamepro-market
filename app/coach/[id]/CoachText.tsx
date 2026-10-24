@@ -98,6 +98,26 @@ const translations: Record<Lang, Record<string, string>> = {
   },
 };
 
+export function translateCoachContent(
+  value: string | null | undefined,
+  key: "coachDescription" | "serviceTitle" | "serviceType" | "serviceDescription",
+  lang: Lang
+) {
+  if (!value) return "";
+
+  const originalValues: Record<string, string> = {
+    coachDescription:
+      "Experienced WoW player offering Mythic+ coaching for beginners and advanced players.",
+    serviceTitle: "Mythic+ Coaching Session",
+    serviceType: "Coaching",
+    serviceDescription: "Personalized Mythic+ coaching session.",
+  };
+
+  if (value !== originalValues[key]) return value;
+
+  return translations[lang][key];
+}
+
 export default function CoachText({
   text,
 }: {
