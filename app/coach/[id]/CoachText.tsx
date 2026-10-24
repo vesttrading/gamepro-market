@@ -105,17 +105,24 @@ export function translateCoachContent(
 ) {
   if (!value) return "";
 
+  const originalDescription =
+    "Experienced WoW player offering Mythic+ coaching for beginners and advanced players.";
+
   const originalValues: Record<string, string> = {
-    coachDescription:
-      "Experienced WoW player offering Mythic+ coaching for beginners and advanced players.",
+    coachDescription: originalDescription,
     serviceTitle: "Mythic+ Coaching Session",
     serviceType: "Coaching",
     serviceDescription: "Personalized Mythic+ coaching session.",
   };
 
+  // Описание услуги совпадает с описанием тренера
+  if (key === "serviceDescription" && value === originalDescription) {
+    return translations[lang].coachDescription;
+  }
+
   if (value !== originalValues[key]) return value;
 
- return translations[lang][key];
+  return translations[lang][key];
 }
 
 type ContentKey =
