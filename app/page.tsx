@@ -73,6 +73,14 @@ const L = {
     passportLink:"Паспорт игрока", shareTitle:"Твой игровой профиль — одной ссылкой", login:"Войти через Battle.net", reviews:"Отзывы", gameproRating:"Оценка GamePro", playerReviews:"Отзывы игроков", verifiedReviews:"Отзывы о системе VERIFIED",
     logout:"Выйти",
     contactText:"По вопросам GamePro и сотрудничества",
+    howTitle: "Как это работает", 
+    howSub: "Найди подходящего тренера и начни улучшать свою игру.",
+    howStep1Title: "Выбери тренера",
+    howStep1Text: "Изучи профили, специализации, услуги и отзывы тренеров.",
+    howStep2Title: "Свяжись с тренером",
+    howStep2Text: "Напиши тренеру и согласуй время и формат тренировки.",
+    howStep3Title: "Начни тренировку",
+    howStep3Text: "Согласуй стоимость напрямую с тренером, пройди тренировку и оставь отзыв.",
   },
   EN: {
     games:"Games", players:"Players", guilds:"Guilds", how:"How it works", contact:"Contact",
@@ -773,6 +781,64 @@ if (!battlenetId) {
       </section>
 
       <TopCoaches />
+
+      <section
+        id="how"
+        style={{
+          maxWidth: 1160,
+          width: "92%",
+          margin: "auto",
+          padding: "55px 0",
+        }}
+      >
+        <h2 style={{ fontSize: 36, marginBottom: 12, textAlign: "center" }}>
+          {t.howTitle}
+        </h2>
+
+        <p
+          style={{
+            color: "#9da6c0",
+            textAlign: "center",
+            lineHeight: 1.6,
+            maxWidth: 700,
+            margin: "0 auto 32px",
+          }}
+        >
+          {t.howSub}
+        </p>
+
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(230px, 1fr))",
+            gap: 18,
+          }}
+        >
+          <div style={card}>
+            <div style={{ fontSize: 32 }}>🔎</div>
+            <h3>1. {t.howStep1Title}</h3>
+            <p style={{ color: "#9da6c0", lineHeight: 1.7 }}>
+              {t.howStep1Text}
+            </p>
+          </div>
+
+          <div style={card}>
+            <div style={{ fontSize: 32 }}>💬</div>
+            <h3>2. {t.howStep2Title}</h3>
+            <p style={{ color: "#9da6c0", lineHeight: 1.7 }}>
+              {t.howStep2Text}
+            </p>
+          </div>
+
+          <div style={card}>
+            <div style={{ fontSize: 32 }}>🤝</div>
+            <h3>3. {t.howStep3Title}</h3>
+            <p style={{ color: "#9da6c0", lineHeight: 1.7 }}>
+              {t.howStep3Text}
+            </p>
+          </div>
+        </div>
+      </section>
         
       <section id="games" style={{maxWidth:1160,width:"92%",margin:"auto",padding:"60px 0"}}>
         <div className="gameHeader"><div><h2 style={{fontSize:36,marginBottom:8}}>{t.games}</h2><p style={{color:"#9da6c0",marginTop:0}}>{t.futureText}</p></div></div>
