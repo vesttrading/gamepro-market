@@ -129,7 +129,7 @@ export default async function CoachProfilePage({
           </p>
         )}
         <h2 style={{ marginTop: 32 }}>
-          <CoachText text="reviews" />
+          Отзывы тренера
         </h2>
 
         {reviews && reviews.length > 0 ? (
