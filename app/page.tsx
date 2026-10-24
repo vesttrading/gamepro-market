@@ -799,21 +799,21 @@ if (!battlenetId) {
             marginTop: 28,
           }}
         >
-          <div style={card}>
+          <div style={{ ...card, border: "1px solid #19cfc5" }}>
             <h3>🎮 {t.source}</h3>
             <p style={{ color: "#9da6c0", lineHeight: 1.7 }}>
               {t.sourceText}
             </p>
           </div>
 
-          <div style={card}>
+          <div style={{ ...card, border: "1px solid #19cfc5" }}>
             <h3>🔍 {t.check}</h3>
             <p style={{ color: "#9da6c0", lineHeight: 1.7 }}>
               {t.checkText}
             </p>
           </div>
 
-          <div style={card}>
+          <div style={{ ...card, border: "1px solid #19cfc5" }}>
             <h3>🏆 {t.badge}</h3>
             <p style={{ color: "#9da6c0", lineHeight: 1.7 }}>
               {t.badgeText}
