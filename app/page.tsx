@@ -784,11 +784,23 @@ if (!battlenetId) {
         }}
       >
         <h2 style={{ fontSize: 36, textAlign: "center", marginBottom: 12 }}>
-          {t.howTitle}
+          {lang === "RU" ? "Как работают Топ тренеров" :
+           lang === "TR" ? "En İyi Koçlar nasıl çalışır?" :
+           lang === "DE" ? "So funktionieren die Top-Coaches" :
+           lang === "ES" ? "Cómo funciona Top Coaches" :
+           lang === "FR" ? "Comment fonctionne Top Coaches" :
+           lang === "PL" ? "Jak działa Top Trenerów" :
+           "How Top Coaches Works"}
         </h2>
 
         <p style={{ color: "#9da6c0", textAlign: "center", lineHeight: 1.6 }}>
-          {t.howSub}
+          {lang === "RU" ? "Найди подходящего тренера, изучи его услуги и начни улучшать свою игру." :
+           lang === "TR" ? "Sana uygun koçu bul, hizmetlerini incele ve oyununu geliştirmeye başla." :
+           lang === "DE" ? "Finde den passenden Coach, entdecke seine Angebote und verbessere dein Spiel." :
+           lang === "ES" ? "Encuentra al entrenador adecuado, consulta sus servicios y mejora tu juego." :
+           lang === "FR" ? "Trouve le coach idéal, découvre ses services et améliore ton jeu." :
+           lang === "PL" ? "Znajdź odpowiedniego trenera, poznaj jego usługi i rozwijaj swoje umiejętności." :
+           "Find the right coach, explore their services, and start improving your game."}
         </p>
 
         <div
@@ -800,23 +812,65 @@ if (!battlenetId) {
           }}
         >
           <div style={{ ...card, border: "1px solid #19cfc5" }}>
-            <h3>🎮 {t.source}</h3>
+            <h3 style={{ color: "#f7f8ff" }}>
+              🔎 {lang === "RU" ? "Выбери тренера" :
+                   lang === "TR" ? "Koçunu seç" :
+                   lang === "DE" ? "Wähle einen Coach" :
+                   lang === "ES" ? "Elige un entrenador" :
+                   lang === "FR" ? "Choisis un coach" :
+                   lang === "PL" ? "Wybierz trenera" :
+                   "Choose a coach"}
+            </h3>
             <p style={{ color: "#9da6c0", lineHeight: 1.7 }}>
-              {t.sourceText}
+              {lang === "RU" ? "Сравни профили тренеров по игре, специализации и рейтингу." :
+               lang === "TR" ? "Koç profillerini oyuna, uzmanlığa ve puanlamaya göre karşılaştır." :
+               lang === "DE" ? "Vergleiche Coach-Profile nach Spiel, Spezialisierung und Bewertung." :
+               lang === "ES" ? "Compara perfiles según el juego, la especialidad y la valoración." :
+               lang === "FR" ? "Compare les profils selon le jeu, la spécialité et les évaluations." :
+               lang === "PL" ? "Porównuj profile według gry, specjalizacji i ocen." :
+               "Compare coach profiles by game, specialization, and rating."}
             </p>
           </div>
 
           <div style={{ ...card, border: "1px solid #19cfc5" }}>
-            <h3>🔍 {t.check}</h3>
+            <h3 style={{ color: "#f7f8ff" }}>
+              📋 {lang === "RU" ? "Изучи услуги" :
+                   lang === "TR" ? "Hizmetleri incele" :
+                   lang === "DE" ? "Entdecke die Angebote" :
+                   lang === "ES" ? "Consulta los servicios" :
+                   lang === "FR" ? "Découvre les services" :
+                   lang === "PL" ? "Sprawdź usługi" :
+                   "Explore services"}
+            </h3>
             <p style={{ color: "#9da6c0", lineHeight: 1.7 }}>
-              {t.checkText}
+              {lang === "RU" ? "Открой профиль, посмотри описание, стоимость услуг и отзывы." :
+               lang === "TR" ? "Profili aç, açıklamayı, hizmet fiyatlarını ve yorumları incele." :
+               lang === "DE" ? "Öffne das Profil und sieh dir Beschreibung, Preise und Bewertungen an." :
+               lang === "ES" ? "Abre el perfil y consulta la descripción, los precios y las reseñas." :
+               lang === "FR" ? "Ouvre le profil pour consulter la description, les prix et les avis." :
+               lang === "PL" ? "Otwórz profil i sprawdź opis, ceny usług oraz opinie." :
+               "Open the profile to view the description, service prices, and reviews."}
             </p>
           </div>
 
           <div style={{ ...card, border: "1px solid #19cfc5" }}>
-            <h3>🏆 {t.badge}</h3>
+            <h3 style={{ color: "#f7f8ff" }}>
+              💬 {lang === "RU" ? "Свяжись с тренером" :
+                   lang === "TR" ? "Koçla iletişime geç" :
+                   lang === "DE" ? "Kontaktiere den Coach" :
+                   lang === "ES" ? "Contacta con el entrenador" :
+                   lang === "FR" ? "Contacte le coach" :
+                   lang === "PL" ? "Skontaktuj się z trenerem" :
+                   "Contact the coach"}
+            </h3>
             <p style={{ color: "#9da6c0", lineHeight: 1.7 }}>
-              {t.badgeText}
+              {lang === "RU" ? "Обсуди тренировку, согласуй время и оплату напрямую с тренером." :
+               lang === "TR" ? "Antrenmanı konuş, zamanı ve ödemeyi doğrudan koçla kararlaştır." :
+               lang === "DE" ? "Besprich das Training sowie Termin und Bezahlung direkt mit dem Coach." :
+               lang === "ES" ? "Acuerda el entrenamiento, el horario y el pago directamente con el entrenador." :
+               lang === "FR" ? "Convenez de la séance, de l’horaire et du paiement directement avec le coach." :
+               lang === "PL" ? "Ustal trening, termin i płatność bezpośrednio z trenerem." :
+               "Discuss the session, schedule, and payment directly with the coach."}
             </p>
           </div>
         </div>
