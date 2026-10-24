@@ -124,10 +124,20 @@ export default async function CoachProfilePage({
                 <p style={{ color: "#20c9bd" }}>
                   ${Number(service.price).toFixed(2)} USD
                 </p>
-                <p style={{ color: "#9da6c0", fontSize: 13 }}>
-                  {service.type}
-                </p>
-                {service.description && <p>{service.description}</p>}
+               <p style={{ color: "#9da6c0", fontSize: 13 }}>
+                  <CoachContent
+                  value={service.type}
+                  text="serviceType"
+               />
+            </p>
+               {service.description && (
+         <p>
+              <CoachContent
+              value={service.description}
+              text="serviceDescription"
+            />
+         </p>
+        )}
               </div>
             ))}
           </div>
