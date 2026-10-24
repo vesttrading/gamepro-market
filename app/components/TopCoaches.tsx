@@ -28,6 +28,7 @@ export default function TopCoaches() {
   const [searchName, setSearchName] = useState("");
   const [selectedGame, setSelectedGame] = useState("");
   const [selectedServiceType, setSelectedServiceType] = useState("");
+  const [verifiedInfoCoachId, setVerifiedInfoCoachId] = useState<number | null>(null);
 
   const filteredCoaches = coaches.filter((coach) => {
     const name = (coach.battletag ?? "").toLowerCase();
@@ -327,15 +328,88 @@ useEffect(() => {
                   )}
                 </div>
 
-                <div style={{ minWidth: 0 }}>
-                  <h3 style={{ margin: 0, overflowWrap: "anywhere" }}>
-                    {coach.battletag || "GamePro Coach"}
-                  </h3>
-                  <span style={{ color: "#9da6c0", fontSize: 13 }}>
-                    {coach.game} · {coach.role || "Coach"}
-                  </span>
-                </div>
-              </div>
+               <div style={{ minWidth: 0, flex: 1 }}>
+  <div style={{
+    display: "flex",
+    alignItems: "center",
+    gap: 7,
+    flexWrap: "wrap"
+  }}>
+    <h3 style={{
+      margin: 0,
+      overflowWrap: "anywhere"
+    }}>
+      {coach.battletag ?? "GamePro Coach"}
+    </h3>
+
+    {coach.is_verified === true && (
+      <button
+        type="button"
+        onClick={() =>
+          setVerifiedInfoCoachId(
+            verifiedInfoCoachId === coach.id
+              ? null
+              : coach.id
+          )
+        }
+        aria-label={{
+          RU: "Информация о проверке",
+          EN: "Verification information",
+          TR: "Doğrulama bilgileri",
+          DE: "Informationen zur Verifizierung",
+          ES: "Información de verificación",
+          FR: "Informations sur la vérification",
+          PL: "Informacje o weryfikacji",
+        }[lang] ?? "Verification information"}
+        title={{
+          RU: "Проверенный тренер",
+          EN: "Verified coach",
+          TR: "Doğrulanmış koç",
+          DE: "Verifizierter Trainer",
+          ES: "Entrenador verificado",
+          FR: "Coach vérifié",
+          PL: "Zweryfikowany trener",
+        }[lang] ?? "Verified coach"}
+        style={{
+          border: "none",
+          background: "transparent",
+          color: "#20c9bd",
+          cursor: "pointer",
+          padding: 0,
+          fontSize: 19,
+          fontWeight: 800,
+          lineHeight: 1,
+        }}
+      >
+        ✓
+      </button>
+    )}
+  </div>
+
+  {coach.is_verified === true &&
+    verifiedInfoCoachId === coach.id && (
+      <div style={{
+        marginTop: 8,
+        padding: 10,
+        background: "#101f2d",
+        border: "1px solid #20c9bd",
+        borderRadius: 8,
+        color: "#cbd5e1",
+        fontSize: 12,
+        lineHeight: 1.5,
+      }}>
+        {{
+          RU: "GamePro подтвердил отмеченные сведения профиля тренера. Это не гарантирует качество услуг или результат обучения.",
+          EN: "GamePro has verified the indicated coach profile details. This does not guarantee service quality or coaching results.",
+          TR: "GamePro, koç profilinde belirtilen bilgileri doğrulamıştır. Bu, hizmet kalitesini veya eğitim sonucunu garanti etmez.",
+          DE: "GamePro hat die angegebenen Profilinformationen des Trainers überprüft. Dies garantiert weder die Servicequalität noch den Lernerfolg.",
+          ES: "GamePro ha verificado los datos indicados del perfil. Esto no garantiza la calidad del servicio ni los resultados.",
+          FR: "GamePro a vérifié les informations indiquées du profil. Cela ne garantit ni la qualité du service ni les résultats.",
+          PL: "GamePro zweryfikował wskazane informacje w profilu trenera. Nie gwarantuje to jakości usługi ani wyników nauki.",
+        }[lang] ?? "GamePro has verified the indicated coach profile details."}
+      </div>
+    )}
+</div>
 
               {coach.is_verified && (
                <p style={{ color: "#34d399", fontSize: 13 }}>
