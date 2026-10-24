@@ -115,7 +115,48 @@ export function translateCoachContent(
 
   if (value !== originalValues[key]) return value;
 
-  return translations[lang][key];
+ return translations[lang][key];
+}
+
+type ContentKey =
+  | "coachDescription"
+  | "serviceTitle"
+  | "serviceType"
+  | "serviceDescription";
+
+export function CoachContent({
+  value,
+  text,
+}: {
+  value: string | null | undefined;
+  text: ContentKey;
+}) {
+  const [lang, setLang] = useState<Lang>("EN");
+
+  useEffect(() => {
+    const updateLang = () => {
+      const saved = localStorage.getItem("gamepro-lang") as Lang | null;
+      const supported: Lang[] = ["RU", "EN", "TR", "DE", "ES", "FR", "PL"];
+
+      setLang(saved && supported.includes(saved) ? saved : "EN");
+    };
+
+    updateLang();
+    window.addEventListener("languageChanged", updateLang);
+    window.addEventListener("storage", updateLang);
+
+    return () => {
+      window.removeEventListener("languageChanged", updateLang);
+      window.removeEventListener("storage", updateLang);
+    };
+  }, []);
+
+  return (
+    <>
+      {translateCoachContent(value, text, lang) ||
+        translations[lang].noDescription}
+    </>
+  );
 }
 
 export default function CoachText({
