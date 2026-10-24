@@ -73,12 +73,6 @@ const L = {
     passportLink:"Паспорт игрока", shareTitle:"Твой игровой профиль — одной ссылкой", login:"Войти через Battle.net", reviews:"Отзывы", gameproRating:"Оценка GamePro", playerReviews:"Отзывы игроков", verifiedReviews:"Отзывы о системе VERIFIED",
     logout:"Выйти",
     contactText:"По вопросам GamePro и сотрудничества",
-    howStep1Title: "Выбери тренера",
-    howStep1Text: "Изучи профили, специализации, услуги и отзывы тренеров.",
-    howStep2Title: "Свяжись с тренером",
-    howStep2Text: "Напиши тренеру и согласуй время и формат тренировки.",
-    howStep3Title: "Начни тренировку",
-    howStep3Text: "Согласуй стоимость напрямую с тренером, пройди тренировку и оставь отзыв.",
   },
   EN: {
     games:"Games", players:"Players", guilds:"Guilds", how:"How it works", contact:"Contact",
@@ -780,7 +774,7 @@ if (!battlenetId) {
 
       <TopCoaches />
 
-      <section
+     <section
         id="how"
         style={{
           maxWidth: 1160,
@@ -789,19 +783,11 @@ if (!battlenetId) {
           padding: "55px 0",
         }}
       >
-        <h2 style={{ fontSize: 36, marginBottom: 12, textAlign: "center" }}>
+        <h2 style={{ fontSize: 36, textAlign: "center", marginBottom: 12 }}>
           {t.howTitle}
         </h2>
 
-        <p
-          style={{
-            color: "#9da6c0",
-            textAlign: "center",
-            lineHeight: 1.6,
-            maxWidth: 700,
-            margin: "0 auto 32px",
-          }}
-        >
+        <p style={{ color: "#9da6c0", textAlign: "center", lineHeight: 1.6 }}>
           {t.howSub}
         </p>
 
@@ -810,29 +796,27 @@ if (!battlenetId) {
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(230px, 1fr))",
             gap: 18,
+            marginTop: 28,
           }}
         >
           <div style={card}>
-            <div style={{ fontSize: 32 }}>🔎</div>
-            <h3>1. {t.howStep1Title}</h3>
+            <h3>🎮 {t.source}</h3>
             <p style={{ color: "#9da6c0", lineHeight: 1.7 }}>
-              {t.howStep1Text}
+              {t.sourceText}
             </p>
           </div>
 
           <div style={card}>
-            <div style={{ fontSize: 32 }}>💬</div>
-            <h3>2. {t.howStep2Title}</h3>
+            <h3>🔍 {t.check}</h3>
             <p style={{ color: "#9da6c0", lineHeight: 1.7 }}>
-              {t.howStep2Text}
+              {t.checkText}
             </p>
           </div>
 
           <div style={card}>
-            <div style={{ fontSize: 32 }}>🤝</div>
-            <h3>3. {t.howStep3Title}</h3>
+            <h3>🏆 {t.badge}</h3>
             <p style={{ color: "#9da6c0", lineHeight: 1.7 }}>
-              {t.howStep3Text}
+              {t.badgeText}
             </p>
           </div>
         </div>
