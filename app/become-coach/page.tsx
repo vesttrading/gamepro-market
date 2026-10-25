@@ -250,6 +250,7 @@ export default function BecomeCoachPage() {
           color: "#06101a", fontWeight: 700, cursor: "pointer",
           marginBottom: 0,
           display: "block",
+          marginTop: "16px"
         }}>
           {loading ? t.saving : t.save}
         </button>
