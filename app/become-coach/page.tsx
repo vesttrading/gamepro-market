@@ -20,6 +20,7 @@ const translations: Record<Lang, Record<string, string>> = {
     saving: "Сохранение...", save: "Сохранить профиль коуча",
     saved: "Профиль сохранён! Пока он не опубликован.", error: "Не удалось сохранить профиль.",
     connection: "Ошибка соединения. Попробуй ещё раз."
+    aboutPlaceholder: "Опишите ваш опыт (минимум 20 символов)..."
   },
   EN: {
     title: "Become a GamePro Coach", intro: "Create your profile and offer coaching services to players.",
@@ -34,6 +35,7 @@ const translations: Record<Lang, Record<string, string>> = {
     saving: "Saving...", save: "Save coach profile",
     saved: "Profile saved! It is not published yet.", error: "Could not save your profile.",
     connection: "Connection error. Please try again."
+    aboutPlaceholder: "Describe your experience (minimum 20 characters)..."
   },
   TR: {
     title: "GamePro Koçu Ol", intro: "Profilini oluştur ve oyunculara koçluk hizmetleri sun.",
@@ -48,6 +50,7 @@ const translations: Record<Lang, Record<string, string>> = {
     saving: "Kaydediliyor...", save: "Koç profilini kaydet",
     saved: "Profil kaydedildi! Henüz yayımlanmadı.", error: "Profil kaydedilemedi.",
     connection: "Bağlantı hatası. Lütfen tekrar dene."
+    aboutPlaceholder: "Deneyiminizi açıklayın (en az 20 karakter)..."
   },
   DE: {
     title: "GamePro-Coach werden", intro: "Erstelle dein Profil und biete Spielern Coaching an.",
@@ -62,6 +65,7 @@ const translations: Record<Lang, Record<string, string>> = {
     saving: "Wird gespeichert...", save: "Coach-Profil speichern",
     saved: "Profil gespeichert! Es ist noch nicht veröffentlicht.", error: "Profil konnte nicht gespeichert werden.",
     connection: "Verbindungsfehler. Bitte versuche es erneut."
+    aboutPlaceholder: "Beschreiben Sie Ihre Erfahrung (mindestens 20 Zeichen)..."
   },
   ES: {
     title: "Conviértete en coach de GamePro", intro: "Crea tu perfil y ofrece servicios de coaching a jugadores.",
@@ -76,6 +80,7 @@ const translations: Record<Lang, Record<string, string>> = {
     saving: "Guardando...", save: "Guardar perfil de coach",
     saved: "¡Perfil guardado! Todavía no está publicado.", error: "No se pudo guardar el perfil.",
     connection: "Error de conexión. Inténtalo de nuevo."
+    aboutPlaceholder: "Describe tu experiencia (mínimo 20 caracteres)..."
   },
   FR: {
     title: "Devenir coach GamePro", intro: "Crée ton profil et propose des services aux joueurs.",
@@ -90,6 +95,7 @@ const translations: Record<Lang, Record<string, string>> = {
     saving: "Enregistrement...", save: "Enregistrer le profil coach",
     saved: "Profil enregistré ! Il n’est pas encore publié.", error: "Impossible d’enregistrer le profil.",
     connection: "Erreur de connexion. Réessaie."
+    aboutPlaceholder: "Décrivez votre expérience (20 caractères minimum)..."
   },
   PL: {
     title: "Zostań coachem GamePro", intro: "Utwórz profil i oferuj graczom usługi coachingowe.",
@@ -104,6 +110,7 @@ const translations: Record<Lang, Record<string, string>> = {
     saving: "Zapisywanie...", save: "Zapisz profil coacha",
     saved: "Profil zapisany! Nie został jeszcze opublikowany.", error: "Nie udało się zapisać profilu.",
     connection: "Błąd połączenia. Spróbuj ponownie."
+    aboutPlaceholder: "Opisz swoje doświadczenie (minimum 20 znaków)..."
   }
 };
 
@@ -221,7 +228,7 @@ export default function BecomeCoachPage() {
         <label>
           {t.about}
           <textarea value={description} onChange={(e) => setDescription(e.target.value)}
-            minLength={20} maxLength={1000} required rows={4} style={fieldStyle} />
+            placeholder={t.aboutPlaceholder} minLength={20} maxLength={1000} required rows={4} style={fieldStyle} />
         </label>
 
         <label>
