@@ -478,7 +478,6 @@ export default function HomePage() {
 }, []);
   const [q,setQ] = useState("");
   const [minRating,setMinRating] = useState("");
-  const [copied,setCopied] = useState(false);
   const [rioName,setRioName] = useState("");
   const [rioRealm,setRioRealm] = useState("");
   const [rioRegion,setRioRegion] = useState("eu");
@@ -582,16 +581,7 @@ const players = dbPlayers.map(p => {
     return true;
   });
 
-  const sharePassport = async () => {
-   const url = typeof window !== "undefined" ? window.location.href + "#players" : "";
-try {
-  await navigator.clipboard.writeText(url);
-  setCopied(true);
-  setTimeout(() => setCopied(false), 2200);
-} catch {}
-};
-
-  const searchRaiderIO = async () => {
+    const searchRaiderIO = async () => {
     if (!rioName.trim() || !rioRealm.trim()) { setRioError(t.rioNameRealm); setRioData(null); return; }
     setRioLoading(true); setRioError(""); setRioData(null); setSupabaseStatus("");
     try {
