@@ -83,6 +83,16 @@ style={{ height: "45px", width: "auto" }}
          "My Messages"}
      </a>
 
+        <a href="/#reviews" style={{ color: "#bdc4da", textDecoration: "none", whiteSpace: "nowrap" }}>
+          {lang === "RU" ? "Отзывы" :
+          lang === "EN" ? "Reviews" :
+          lang === "TR" ? "Yorumlar" :
+          lang === "DE" ? "Bewertungen" :
+          lang === "ES" ? "Reseñas" :
+          lang === "FR" ? "Avis" :
+          "Opinie"}
+      </a>
+
       <a href="#contact" style={{ color: "#bdc4da" }}>
         {t.contact}
       </a>
