@@ -184,7 +184,7 @@ export default function BecomeCoachPage() {
 
   return (
     <main style={{ maxWidth: 680, margin: "15px auto", padding: 16, color: "white" }}>
-    <style>{input::placeholder, textarea::placeholder { color: #cbd5e1 !important; opacity: 1 !important; }}</style>
+    <style>{`input::placeholder, textarea::placeholder { color: #cbd5e1 !important; opacity: 1 !important; }`}</style>
     <h1>{t.title}</h1>
     <p>{t.intro}</p>
 
