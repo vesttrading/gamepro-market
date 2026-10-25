@@ -185,22 +185,24 @@ export default function BecomeCoachPage() {
   return (
     <main style={{ maxWidth: 680, margin: "40px auto", padding: 24, color: "white" }}>
     То<h1>{t.title}</h1>
-
 <a
   href="/"
   style={{
     display: "inline-block",
     marginBottom: 12,
     padding: "8px 12px",
-    border: "1px solid #19cfc5",
+    background: "#20c9bd",
+    border: "none",
     borderRadius: 9,
-    color: "#4de8dd",
+    color: "#10162b",
     textDecoration: "none",
     fontSize: 14,
+    fontWeight: 600,
   }}
 >
-  {t.back}
+  Вернуться на сайт
 </a>
+
 
 <p>{t.intro}</p>
 
