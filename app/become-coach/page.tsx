@@ -258,7 +258,6 @@ export default function BecomeCoachPage() {
     {message}
   </p>
 )}
-</form>
 
 <div
   style={{
@@ -291,6 +290,8 @@ export default function BecomeCoachPage() {
           {t.back}
         </a>
       </div>
+
+     </form> 
     </main>
   );
 }
