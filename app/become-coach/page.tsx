@@ -19,8 +19,8 @@ const translations: Record<Lang, Record<string, string>> = {
     coaching: "Обучение", guide: "Гайд", ui: "Настройка интерфейса", price: "Цена (USD)",
     saving: "Сохранение...", save: "Сохранить профиль коуча",
     saved: "Профиль сохранён! Пока он не опубликован.", error: "Не удалось сохранить профиль.",
-    connection: "Ошибка соединения. Попробуй ещё раз."
-    "aboutPlaceholder": "Опишите ваш опыт (минимум 20 символов)..."
+    connection: "Ошибка соединения. Попробуй ещё раз.",
+    aboutPlaceholder: "Опишите ваш опыт (минимум 20 символов)...",
   },
   EN: {
     title: "Become a GamePro Coach", intro: "Create your profile and offer coaching services to players.",
