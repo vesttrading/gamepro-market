@@ -265,8 +265,8 @@ export default function BecomeCoachPage() {
     display: "flex",
     flexDirection: "column",
     alignItems: "stretch",
-    gap: 0,
-    marginTop: -10,
+    gap: 6,
+    marginTop: 0,
     paddingTop: 0,
   }}
 >
