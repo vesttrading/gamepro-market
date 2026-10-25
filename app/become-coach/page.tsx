@@ -185,26 +185,7 @@ export default function BecomeCoachPage() {
   return (
     <main style={{ maxWidth: 680, margin: "40px auto", padding: 24, color: "white" }}>
     То<h1>{t.title}</h1>
-<a
-  href="/"
-  style={{
-    display: "inline-block",
-    marginBottom: 12,
-    padding: "8px 12px",
-    background: "#20c9bd",
-    border: "none",
-    borderRadius: 9,
-    color: "#10162b",
-    textDecoration: "none",
-    fontSize: 14,
-    fontWeight: 600,
-  }}
->
-  Вернуться на сайт
-</a>
-
-
-<p>{t.intro}</p>
+    <p>{t.intro}</p>
 
       <form onSubmit={submitForm} style={{ display: "grid", gap: 18 }}>
         <label>
@@ -267,7 +248,36 @@ export default function BecomeCoachPage() {
         {message && <p role="status">{message}</p>}
       </form>
 
-      <PublishCoachButton />
+     <div
+  style={{
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 12,
+    flexWrap: "wrap",
+    marginTop: 24,
+  }}
+>
+  <PublishCoachButton />
+
+  <a
+    href="/"
+    style={{
+      display: "inline-block",
+      padding: 14,
+      background: "#20c9bd",
+      border: "none",
+      borderRadius: 10,
+      color: "#06101a",
+      textDecoration: "none",
+      fontSize: 14,
+      fontWeight: 700,
+      textAlign: "center",
+    }}
+  >
+    {t.back}
+  </a>
+</div>
     </main>
   );
 }
