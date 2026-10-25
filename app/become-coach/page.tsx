@@ -244,19 +244,24 @@ export default function BecomeCoachPage() {
         }}>
           {loading ? t.saving : t.save}
         </button>
+    {message && (
+    <p role="status" style={{ margin: "4px 0 0" }}>
+    {message}
+  </p>
+)}
+</form>
 
-      {message && <p role="status">{message}</p>}
-      </form>
-
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "stretch",
-          gap: 10,
-          marginTop: 6,
-        }}
-      >
+<div
+  style={{
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "stretch",
+    gap: 6,
+    marginTop: 0,
+    paddingTop: 0,
+  }}
+>
+     
         <PublishCoachButton />
 
         <a
