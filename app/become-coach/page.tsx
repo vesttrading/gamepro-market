@@ -159,7 +159,7 @@ export default function BecomeCoachPage() {
   }
 
   const fieldStyle: React.CSSProperties = {
-    width: "100%", padding: 12, background: "#0c1123", color: "white",
+    width: "100%", padding: "8px 12px", background: "#0c1123", color: "white",
     border: "1px solid #313858", borderRadius: 9, boxSizing: "border-box",
   };
 
@@ -183,7 +183,7 @@ export default function BecomeCoachPage() {
   }
 
   return (
-    <main style={{ maxWidth: 680, margin: "40px auto", padding: 24, color: "white" }}>
+    <main style={{ maxWidth: 680, margin: "15px auto", padding: 16, color: "white" }}>
     То<h1>{t.title}</h1>
     <p>{t.intro}</p>
 
@@ -191,7 +191,7 @@ export default function BecomeCoachPage() {
       onSubmit={submitForm}
       style={{
       display: "grid",
-      gap: 10,
+      gap: 6,
       marginBottom: 0,
     }}
   >
@@ -246,7 +246,7 @@ export default function BecomeCoachPage() {
             required style={fieldStyle} />
         </label>
          <button type="submit" disabled={loading} style={{
-          padding: 14, border: 0, borderRadius: 10, background: "#20c9bd",
+          padding: 10, border: 0, borderRadius: 10, background: "#20c9bd",
           color: "#06101a", fontWeight: 700, cursor: "pointer",
           marginBottom: 0,
           display: "block",
