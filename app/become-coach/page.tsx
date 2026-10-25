@@ -192,7 +192,7 @@ export default function BecomeCoachPage() {
       onSubmit={submitForm}
       style={{
       display: "grid",
-      gap: 6,
+      gap: 4,
       marginBottom: 0,
     }}
   >
@@ -264,7 +264,7 @@ export default function BecomeCoachPage() {
     flexDirection: "column",
     alignItems: "stretch",
     gap: 6,
-    marginTop: 6,
+    marginTop: 8,
     paddingTop: 0,
   }}
 >
