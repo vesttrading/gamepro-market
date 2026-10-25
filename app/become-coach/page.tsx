@@ -193,6 +193,7 @@ export default function BecomeCoachPage() {
       style={{
       display: "grid",
       gap: 4,
+      rowGap: "2px",  
       marginBottom: 0,
     }}
   >
@@ -264,7 +265,7 @@ export default function BecomeCoachPage() {
     flexDirection: "column",
     alignItems: "stretch",
     gap: 6,
-    marginTop: 8,
+    marginTop: 12,
     paddingTop: 0,
   }}
 >
