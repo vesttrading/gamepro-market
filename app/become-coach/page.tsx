@@ -248,14 +248,16 @@ export default function BecomeCoachPage() {
         {message && <p role="status">{message}</p>}
       </form>
 
-     <div
+   <div
   style={{
     display: "flex",
+    flexDirection: "row",
     alignItems: "center",
-    justifyContent: "center",
-    gap: 12,
-    flexWrap: "wrap",
-    marginTop: 24,
+    justifyContent: "space-between",
+    gap: 32,
+    flexWrap: "nowrap",
+    marginTop: 32,
+    width: "100%",
   }}
 >
   <PublishCoachButton />
@@ -264,7 +266,7 @@ export default function BecomeCoachPage() {
     href="/"
     style={{
       display: "inline-block",
-      padding: 14,
+      padding: "14px 20px",
       background: "#20c9bd",
       border: "none",
       borderRadius: 10,
@@ -273,6 +275,7 @@ export default function BecomeCoachPage() {
       fontSize: 14,
       fontWeight: 700,
       textAlign: "center",
+      whiteSpace: "nowrap",
     }}
   >
     {t.back}
