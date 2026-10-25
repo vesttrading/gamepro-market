@@ -222,7 +222,8 @@ export default function BecomeCoachPage() {
             minLength={20} maxLength={1000} required rows={4} style={fieldStyle} />
         </label>
 
-        <h2>{t.service}</h2>
+   // Сделайте так (задайте небольшой аккуратный отступ только сверху):
+<h2 style={{ margin: "10px 0 4px 0", fontSize: "18px" }}>{t.service}</h2>
 
         <label>
           {t.serviceTitle}
