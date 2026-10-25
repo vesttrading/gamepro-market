@@ -248,6 +248,8 @@ export default function BecomeCoachPage() {
          <button type="submit" disabled={loading} style={{
           padding: 14, border: 0, borderRadius: 10, background: "#20c9bd",
           color: "#06101a", fontWeight: 700, cursor: "pointer",
+          marginBottom: 0,
+          display: "block",
         }}>
           {loading ? t.saving : t.save}
         </button>
