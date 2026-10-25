@@ -245,42 +245,38 @@ export default function BecomeCoachPage() {
           {loading ? t.saving : t.save}
         </button>
 
-        {message && <p role="status">{message}</p>}
+      {message && <p role="status">{message}</p>}
       </form>
 
-   <div
-  style={{
-    display: "flex",
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    gap: 32,
-    flexWrap: "nowrap",
-    marginTop: 32,
-    width: "100%",
-  }}
->
-  <PublishCoachButton />
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "stretch",
+          gap: 20,
+          marginTop: 18,
+        }}
+      >
+        <PublishCoachButton />
 
-  <a
-    href="/"
-    style={{
-      display: "inline-block",
-      padding: "14px 20px",
-      background: "#20c9bd",
-      border: "none",
-      borderRadius: 10,
-      color: "#06101a",
-      textDecoration: "none",
-      fontSize: 14,
-      fontWeight: 700,
-      textAlign: "center",
-      whiteSpace: "nowrap",
-    }}
-  >
-    {t.back}
-  </a>
-</div>
+        <a
+          href="/"
+          style={{
+            display: "block",
+            padding: "14px 20px",
+            background: "#20c9bd",
+            border: "none",
+            borderRadius: 10,
+            color: "#06101a",
+            textDecoration: "none",
+            fontSize: 14,
+            fontWeight: 700,
+            textAlign: "center",
+          }}
+        >
+          {t.back}
+        </a>
+      </div>
     </main>
   );
 }
