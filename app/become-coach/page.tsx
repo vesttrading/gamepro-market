@@ -253,8 +253,8 @@ export default function BecomeCoachPage() {
           display: "flex",
           flexDirection: "column",
           alignItems: "stretch",
-          gap: 20,
-          marginTop: 18,
+          gap: 10,
+          marginTop: 6,
         }}
       >
         <PublishCoachButton />
