@@ -187,7 +187,14 @@ export default function BecomeCoachPage() {
     То<h1>{t.title}</h1>
     <p>{t.intro}</p>
 
-      <form onSubmit={submitForm} style={{ display: "grid", gap: 18 }}>
+     <form
+      onSubmit={submitForm}
+      style={{
+      display: "grid",
+      gap: 10,
+      marginBottom: 0,
+    }}
+  >
         <label>
           {t.game}
           <select value={game} onChange={(e) => setGame(e.target.value)} style={fieldStyle}>
