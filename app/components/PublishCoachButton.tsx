@@ -110,7 +110,7 @@ export default function PublishCoachButton() {
   }
 
   return (
-    <div style={{ marginTop: 20 }}>
+    <div style={{ marginTop: 0 }}>
       <button
         type="button"
         onClick={publishProfile}
