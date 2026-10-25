@@ -9,6 +9,7 @@ type Lang = "RU" | "EN" | "TR" | "DE" | "ES" | "FR" | "PL";
 const translations: Record<Lang, Record<string, string>> = {
   RU: {
     title: "Стать коучем GamePro", intro: "Создай профиль и предлагай игрокам свои услуги.",
+    back: "← Вернуться на сайт",
     login: "Войди через Battle.net, чтобы создать профиль коуча.", signIn: "Войти через Battle.net",
     loading: "Загрузка...", game: "Игра", wow: "World of Warcraft", dota: "Dota 2", cs2: "Counter-Strike 2",
     role: "Роль или специализация", rolePlaceholder: "Например: Mythic+, лекарь, центральная линия",
@@ -22,6 +23,7 @@ const translations: Record<Lang, Record<string, string>> = {
   },
   EN: {
     title: "Become a GamePro Coach", intro: "Create your profile and offer coaching services to players.",
+    back: "← Back to website",
     login: "Sign in with Battle.net to create your coach profile.", signIn: "Sign in with Battle.net",
     loading: "Loading...", game: "Game", wow: "World of Warcraft", dota: "Dota 2", cs2: "Counter-Strike 2",
     role: "Role or specialization", rolePlaceholder: "e.g. Mythic+, Healer, Mid lane",
@@ -35,6 +37,7 @@ const translations: Record<Lang, Record<string, string>> = {
   },
   TR: {
     title: "GamePro Koçu Ol", intro: "Profilini oluştur ve oyunculara koçluk hizmetleri sun.",
+    back: "← Siteye dön",
     login: "Koç profilini oluşturmak için Battle.net ile giriş yap.", signIn: "Battle.net ile giriş yap",
     loading: "Yükleniyor...", game: "Oyun", wow: "World of Warcraft", dota: "Dota 2", cs2: "Counter-Strike 2",
     role: "Rol veya uzmanlık", rolePlaceholder: "Örn. Mythic+, şifacı, orta koridor",
@@ -48,6 +51,7 @@ const translations: Record<Lang, Record<string, string>> = {
   },
   DE: {
     title: "GamePro-Coach werden", intro: "Erstelle dein Profil und biete Spielern Coaching an.",
+    back: "← Zurück zur Website",
     login: "Melde dich mit Battle.net an, um dein Coach-Profil zu erstellen.", signIn: "Mit Battle.net anmelden",
     loading: "Wird geladen...", game: "Spiel", wow: "World of Warcraft", dota: "Dota 2", cs2: "Counter-Strike 2",
     role: "Rolle oder Spezialisierung", rolePlaceholder: "z. B. Mythic+, Heiler, Midlane",
@@ -61,6 +65,7 @@ const translations: Record<Lang, Record<string, string>> = {
   },
   ES: {
     title: "Conviértete en coach de GamePro", intro: "Crea tu perfil y ofrece servicios de coaching a jugadores.",
+    back: "← Volver al sitio",
     login: "Inicia sesión con Battle.net para crear tu perfil.", signIn: "Iniciar sesión con Battle.net",
     loading: "Cargando...", game: "Juego", wow: "World of Warcraft", dota: "Dota 2", cs2: "Counter-Strike 2",
     role: "Rol o especialidad", rolePlaceholder: "Ej.: Mythic+, sanador, línea central",
@@ -74,6 +79,7 @@ const translations: Record<Lang, Record<string, string>> = {
   },
   FR: {
     title: "Devenir coach GamePro", intro: "Crée ton profil et propose des services aux joueurs.",
+    back: "← Retour au site",
     login: "Connecte-toi avec Battle.net pour créer ton profil.", signIn: "Se connecter avec Battle.net",
     loading: "Chargement...", game: "Jeu", wow: "World of Warcraft", dota: "Dota 2", cs2: "Counter-Strike 2",
     role: "Rôle ou spécialisation", rolePlaceholder: "Ex. : Mythic+, soigneur, voie du milieu",
@@ -87,6 +93,7 @@ const translations: Record<Lang, Record<string, string>> = {
   },
   PL: {
     title: "Zostań coachem GamePro", intro: "Utwórz profil i oferuj graczom usługi coachingowe.",
+    back: "← Wróć do strony",
     login: "Zaloguj się przez Battle.net, aby utworzyć profil.", signIn: "Zaloguj przez Battle.net",
     loading: "Ładowanie...", game: "Gra", wow: "World of Warcraft", dota: "Dota 2", cs2: "Counter-Strike 2",
     role: "Rola lub specjalizacja", rolePlaceholder: "Np. Mythic+, healer, środkowa linia",
@@ -177,8 +184,25 @@ export default function BecomeCoachPage() {
 
   return (
     <main style={{ maxWidth: 680, margin: "40px auto", padding: 24, color: "white" }}>
-      <h1>{t.title}</h1>
-      <p>{t.intro}</p>
+    То<h1>{t.title}</h1>
+
+<a
+  href="/"
+  style={{
+    display: "inline-block",
+    marginBottom: 12,
+    padding: "8px 12px",
+    border: "1px solid #19cfc5",
+    borderRadius: 9,
+    color: "#4de8dd",
+    textDecoration: "none",
+    fontSize: 14,
+  }}
+>
+  {t.back}
+</a>
+
+<p>{t.intro}</p>
 
       <form onSubmit={submitForm} style={{ display: "grid", gap: 18 }}>
         <label>
