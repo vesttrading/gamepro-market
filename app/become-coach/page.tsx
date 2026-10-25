@@ -34,8 +34,8 @@ const translations: Record<Lang, Record<string, string>> = {
     coaching: "Coaching", guide: "Guide", ui: "UI setup", price: "Price (USD)",
     saving: "Saving...", save: "Save coach profile",
     saved: "Profile saved! It is not published yet.", error: "Could not save your profile.",
-    connection: "Connection error. Please try again."
-    aboutPlaceholder: "Describe your experience (minimum 20 characters)..."
+    connection: "Connection error. Please try again.",
+    aboutPlaceholder: "Describe your experience (minimum 20 characters)...",
   },
   TR: {
     title: "GamePro Koçu Ol", intro: "Profilini oluştur ve oyunculara koçluk hizmetleri sun.",
@@ -49,8 +49,8 @@ const translations: Record<Lang, Record<string, string>> = {
     coaching: "Koçluk", guide: "Rehber", ui: "Arayüz kurulumu", price: "Fiyat (USD)",
     saving: "Kaydediliyor...", save: "Koç profilini kaydet",
     saved: "Profil kaydedildi! Henüz yayımlanmadı.", error: "Profil kaydedilemedi.",
-    connection: "Bağlantı hatası. Lütfen tekrar dene."
-    aboutPlaceholder: "Deneyiminizi açıklayın (en az 20 karakter)..."
+    connection: "Bağlantı hatası. Lütfen tekrar dene.",
+    aboutPlaceholder: "Deneyiminizi açıklayın (en az 20 karakter)...",
   },
   DE: {
     title: "GamePro-Coach werden", intro: "Erstelle dein Profil und biete Spielern Coaching an.",
@@ -64,8 +64,8 @@ const translations: Record<Lang, Record<string, string>> = {
     coaching: "Coaching", guide: "Guide", ui: "UI-Einrichtung", price: "Preis (USD)",
     saving: "Wird gespeichert...", save: "Coach-Profil speichern",
     saved: "Profil gespeichert! Es ist noch nicht veröffentlicht.", error: "Profil konnte nicht gespeichert werden.",
-    connection: "Verbindungsfehler. Bitte versuche es erneut."
-    aboutPlaceholder: "Beschreiben Sie Ihre Erfahrung (mindestens 20 Zeichen)..."
+    connection: "Verbindungsfehler. Bitte versuche es erneut.",
+    aboutPlaceholder: "Beschreiben Sie Ihre Erfahrung (mindestens 20 Zeichen)...",
   },
   ES: {
     title: "Conviértete en coach de GamePro", intro: "Crea tu perfil y ofrece servicios de coaching a jugadores.",
@@ -79,8 +79,8 @@ const translations: Record<Lang, Record<string, string>> = {
     coaching: "Coaching", guide: "Guía", ui: "Configuración de interfaz", price: "Precio (USD)",
     saving: "Guardando...", save: "Guardar perfil de coach",
     saved: "¡Perfil guardado! Todavía no está publicado.", error: "No se pudo guardar el perfil.",
-    connection: "Error de conexión. Inténtalo de nuevo."
-    aboutPlaceholder: "Describe tu experiencia (mínimo 20 caracteres)..."
+    connection: "Error de conexión. Inténtalo de nuevo.",
+    aboutPlaceholder: "Describe tu experiencia (mínimo 20 caracteres)...",
   },
   FR: {
     title: "Devenir coach GamePro", intro: "Crée ton profil et propose des services aux joueurs.",
@@ -94,8 +94,8 @@ const translations: Record<Lang, Record<string, string>> = {
     coaching: "Coaching", guide: "Guide", ui: "Configuration de l’interface", price: "Prix (USD)",
     saving: "Enregistrement...", save: "Enregistrer le profil coach",
     saved: "Profil enregistré ! Il n’est pas encore publié.", error: "Impossible d’enregistrer le profil.",
-    connection: "Erreur de connexion. Réessaie."
-    aboutPlaceholder: "Décrivez votre expérience (20 caractères minimum)..."
+    connection: "Erreur de connexion. Réessaie.",
+    aboutPlaceholder: "Décrivez votre expérience (20 caractères minimum)...",
   },
   PL: {
     title: "Zostań coachem GamePro", intro: "Utwórz profil i oferuj graczom usługi coachingowe.",
@@ -109,7 +109,7 @@ const translations: Record<Lang, Record<string, string>> = {
     coaching: "Coaching", guide: "Poradnik", ui: "Konfiguracja interfejsu", price: "Cena (USD)",
     saving: "Zapisywanie...", save: "Zapisz profil coacha",
     saved: "Profil zapisany! Nie został jeszcze opublikowany.", error: "Nie udało się zapisać profilu.",
-    connection: "Błąd połączenia. Spróbuj ponownie."
+    connection: "Błąd połączenia. Spróbuj ponownie.",
     aboutPlaceholder: "Opisz swoje doświadczenie (minimum 20 znaków)..."
   }
 };
