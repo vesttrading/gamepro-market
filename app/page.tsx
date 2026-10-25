@@ -1043,7 +1043,6 @@ if (!battlenetId) {
   </div>
 </section>
     
-      <section style={{maxWidth:550,width:"92%",margin:"0 auto 80px",padding: 25,textAlign:"center",border: "1px solid #19cfc5",borderRadius:20,background:"#080d1b"}}><h2 style={{fontSize:32}}>{t.shareTitle}</h2><p style={{color:"#9da6c0"}}>{t.passportLink}: Vladimir · 2850 M+ · CE · VERIFIED</p><button onClick={sharePassport} style={btn}>🔗 {copied ? t.copied : t.share}</button></section>
     </main>
 
     <section id="contact" style={{maxWidth:400,width:"90%",margin:"0 auto 50px"}}>
