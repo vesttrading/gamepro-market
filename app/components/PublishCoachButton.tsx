@@ -126,7 +126,7 @@ export default function PublishCoachButton() {
         width: "100%",
         boxSizing: "border-box",
         padding: "14px 20px",
-        margin: 0,
+        margin: "-10px 0 0 0",
         borderRadius: 10,
         border: "none",
         background: "#20c9bd",
@@ -139,7 +139,7 @@ export default function PublishCoachButton() {
     </button>
 
     {message && (
-      <p style={{ color: "#20c9bd", margin: "6px 0 0" }}>
+      <p style={{ color: "#20c9bd", margin: "2px 0 0" }}>
         {message}
       </p>
     )}
