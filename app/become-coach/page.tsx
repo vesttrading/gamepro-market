@@ -20,7 +20,7 @@ const translations: Record<Lang, Record<string, string>> = {
     saving: "Сохранение...", save: "Сохранить профиль коуча",
     saved: "Профиль сохранён! Пока он не опубликован.", error: "Не удалось сохранить профиль.",
     connection: "Ошибка соединения. Попробуй ещё раз."
-    aboutPlaceholder: "Опишите ваш опыт (минимум 20 символов)..."
+    "aboutPlaceholder": "Опишите ваш опыт (минимум 20 символов)..."
   },
   EN: {
     title: "Become a GamePro Coach", intro: "Create your profile and offer coaching services to players.",
