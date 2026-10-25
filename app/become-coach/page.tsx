@@ -159,7 +159,7 @@ export default function BecomeCoachPage() {
   }
 
   const fieldStyle: React.CSSProperties = {
-    width: "100%", padding: "8px 12px", background: "#0c1123", color: "white",
+    width: "100%", padding: "10px 12px", background: "#0c1123", color: "white",
     border: "1px solid #313858", borderRadius: 9, boxSizing: "border-box",
   };
 
