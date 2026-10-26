@@ -123,17 +123,18 @@ useEffect(() => {
   }[lang] || "Top Coaches"}
 </h2>
 <div
-    style={{
-    display: "grid",
-    gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 190px), 240px))",
-    gap: 12,
-    margin: "24px 0",
-    padding: 16,
-    background: "#10162b",
-    border: "1px solid #26364b",
-    borderRadius: 16,
-    justifyContent: "center",
-  }}
+  style={{
+  display: "grid",
+  gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 220px), 1fr))",
+  gap: 12,
+  margin: "24px auto",   // Добавлено auto по бокам, чтобы центрировать блок
+  padding: 16,
+  background: "#10162b",
+  border: "1px solid #26364b",
+  borderRadius: 16,
+  maxWidth: "750px",     // Добавлено ограничение: строка больше не растянется на весь экран
+  width: "100%"          // Позволяет блоку оставаться адаптивным на мобильных
+}}
       >
         <input
           value={searchName}
