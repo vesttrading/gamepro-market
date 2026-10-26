@@ -123,17 +123,19 @@ useEffect(() => {
   }[lang] || "Top Coaches"}
 </h2>
 <div
-  style={{
+ style={{
   display: "grid",
-  gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 220px), 1fr))",
+  // Изменили minmax с 220px на 100%, чтобы элементы на телефонах не ломали размеры
+  gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 200px), 1fr))",
   gap: 12,
-  margin: "24px auto",   // Добавлено auto по бокам, чтобы центрировать блок
+  margin: "24px auto",
   padding: 16,
   background: "#10162b",
   border: "1px solid #26364b",
   borderRadius: 16,
-  maxWidth: "750px",     // Добавлено ограничение: строка больше не растянется на весь экран
-  width: "100%"          // Позволяет блоку оставаться адаптивным на мобильных
+  maxWidth: "750px",
+  width: "100%",
+  boxSizing: "border-box" // Гарантирует, что отступы не будут распирать ширину на смартфонах
 }}
       >
         <input
