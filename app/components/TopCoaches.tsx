@@ -125,7 +125,6 @@ useEffect(() => {
 <div
  style={{
   display: "grid",
-  // Изменили minmax с 220px на 100%, чтобы элементы на телефонах не ломали размеры
   gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 200px), 1fr))",
   gap: 12,
   margin: "24px auto",
@@ -157,6 +156,8 @@ useEffect(() => {
             border: "1px solid #34415c",
             background: "#080d1b",
             color: "white",
+            width: "100%",
+            boxSizing: "border-box",
           }}
         />
 
@@ -170,6 +171,8 @@ useEffect(() => {
             border: "1px solid #34415c",
             background: "#080d1b",
             color: "white",
+            width: "100%",
+            boxSizing: "border-box",
           }}
         >
           <option value="">
@@ -198,6 +201,8 @@ useEffect(() => {
             border: "1px solid #34415c",
             background: "#080d1b",
             color: "white",
+            width: "100%",
+            boxSizing: "border-box",
           }}
         >
           <option value="">
