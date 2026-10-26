@@ -123,18 +123,17 @@ useEffect(() => {
   }[lang] || "Top Coaches"}
 </h2>
 <div
-      style={{
-      display: "grid",
-      gridTemplateColumns: "minmax(0, 1fr)",
-      gap: 12,
-      margin: "24px 0",
-      padding: 16,
-      background: "#10162b",
-      border: "1px solid #26364b",
-      borderRadius: 16,
-      width: "100%",
-      boxSizing: "border-box",
-    }}
+    style={{
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 190px), 240px))",
+    gap: 12,
+    margin: "24px 0",
+    padding: 16,
+    background: "#10162b",
+    border: "1px solid #26364b",
+    borderRadius: 16,
+    justifyContent: "center",
+  }}
       >
         <input
           value={searchName}
