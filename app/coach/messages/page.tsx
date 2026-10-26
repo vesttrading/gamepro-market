@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 type Coach = {
   id: number;
@@ -58,6 +59,19 @@ export default function CoachMessagesPage() {
       }}
     >
       <div style={{ maxWidth: 850, margin: "0 auto" }}>
+     <Link 
+    href={coaches.length > 0 ? /coach/${coaches[0].id} : "/"} 
+    style={{
+      color: "#00bfff", 
+      textDecoration: "none", 
+      fontSize: "14px", 
+      display: "inline-block", 
+      marginBottom: "16px"
+    }}
+  >
+    ← GamePro
+  </Link>
+
         <h1 style={{ fontSize: 30, marginBottom: 8 }}>
           Coach Inbox
         </h1>
