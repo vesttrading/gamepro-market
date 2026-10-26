@@ -493,6 +493,8 @@ useEffect(() => {
         color: "#06111b",
         fontWeight: 700,
         cursor: "pointer",
+        display: "block",
+        width: "100%",
      }}
    >
        {lang === "RU" ? "Связаться с тренером" : "Contact Coach"}
