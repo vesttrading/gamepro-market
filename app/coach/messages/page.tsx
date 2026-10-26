@@ -59,9 +59,9 @@ export default function CoachMessagesPage() {
       }}
     >
       <div style={{ maxWidth: 850, margin: "0 auto" }}>
-     <Link 
-    href={coaches.length > 0 ? `/coach/${coaches[0].id}` : "/"} 
-    style={{
+      <Link 
+      href="/" 
+      style={{
       color: "#00bfff", 
       textDecoration: "none", 
       fontSize: "14px", 
