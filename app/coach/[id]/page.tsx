@@ -76,34 +76,46 @@ export default async function CoachProfilePage({
           ← GamePro
         </a>
 
-   <div style={{ display: "flex", alignItems: "center", gap: 16, marginTop: 24 }}>
-  {/* Круглый аватар с ярко-зеленой рамкой */}
+ <div style={{ display: "flex", alignItems: "flex-start", gap: 20, marginTop: 24 }}>
+  {/* Крупный аватар с тонкой ярко-зеленой рамкой */}
   <div style={{
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    width: 50,
-    height: 50,
+    width: 80,             // Увеличили размер, чтобы закрывал обе строки
+    height: 80,            // Увеличили размер
     borderRadius: "50%",
-    border: "3px solid #00ff00", // Ярко-зеленая рамка
-    fontSize: 28, // Размер эмодзи
-    backgroundColor: "rgba(0, 255, 0, 0.05)", // Легкий зеленый фон (по желанию)
-    flexShrink: 0 // Чтобы круг не сжимался
+    border: "1px solid #00ff00", // Сделали рамку тонкой (1px вместо 3px)
+    fontSize: 44,          // Крупный осьминог
+    backgroundColor: "transparent",
+    flexShrink: 0,
+    filter: "grayscale(1) brightness(0.9)", // Делает эмодзи полностью черно-белым/не цветным
+    marginTop: 4           // Небольшое выравнивание по верхней линии имени
   }}>
     🐙
   </div>
 
-  {/* Контейнер для текста, чтобы имя и галочка оставались вместе */}
-  <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-    <h1 style={{ fontSize: 32, fontWeight: 700, color: "#fff", margin: 0 }}>
-      {coach.battletag ?? "Coach"}
-    </h1>
+  {/* Контейнер для всей текстовой информации справа */}
+  <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+    
+    {/* Имя и статус подтверждения */}
+    <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+      <h1 style={{ fontSize: 32, fontWeight: 700, color: "#fff", margin: 0 }}>
+        {coach.battletag ?? "Coach"}
+      </h1>
 
-    {coach.is_verified && (
-      <div style={{ display: "inline-block", background: "rgba(34, 197, 94, 0.1)", color: "#22c55e", padding: "4px 8px", borderRadius: 4 }}>
-        ✓ Подтвержден
-      </div>
-    )}
+      {coach.is_verified && (
+        <div style={{ display: "inline-block", background: "rgba(34, 197, 94, 0.1)", color: "#22c55e", padding: "4px 8px", borderRadius: 4 }}>
+          ✓ Подтвержден
+        </div>
+      )}
+    </div>
+
+    {/* Строка WoW под именем, которая теперь находится в одном уровне с аватаром */}
+    <p style={{ color: "#94a3b8", fontSize: 16, margin: 0 }}>
+      {coach.game} • {coach.role}
+    </p>
+
   </div>
 </div>
         <p style={{ color: "#94a3b8", fontSize: 16, marginTop: 12, marginBottom: 16 }}>
