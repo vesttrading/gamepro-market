@@ -62,7 +62,7 @@ export default async function CoachProfilePage({
           maxWidth: 760,
           margin: "0 auto",
           padding: 28,
-          border: coach.is_verified ? "1px solid #22c55e" : "1px solid #334155", // Зеленая тонкая рамка, если коуч подтвержден
+          border: coach.is_verified ? "1px solid #22c55e" : "1px solid #334155",
           borderRadius: 18,
           background: "#1e293b", 
           boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1)", 
@@ -76,16 +76,17 @@ export default async function CoachProfilePage({
           ← GamePro
         </a>
 
-      <h1 style={{ marginTop: 24, fontSize: 32, fontWeight: 700, color: "#fff", overflowWrap: "anywhere" }}>
-          {coach.battletag ?? "Coach"}
-        </h1>
+    <div style={{ display: "flex", alignItems: "center", gap: 12, marginTop: 24 }}>
+  <h1 style={{ fontSize: 32, fontWeight: 700, color: "#fff", margin: 0 }}>
+    {coach.battletag ?? "Coach"}
+  </h1>
 
-        {coach.is_verified && (
-          <div style={{ display: "inline-block", background: "rgba(34, 197, 94, 0.1)", color: "#22c55e", padding: "6px 12px", borderRadius: 20, fontSize: 13, fontWeight: 600, border: "1px solid rgba(34, 197, 94, 0.2)", marginTop: 8 }}>
-            ✓ <CoachText text="verified" />
-          </div>
-        )}
-
+  {coach.is_verified && (
+    <div style={{ display: "inline-block", background: "rgba(34, 197, 94, 0.1)", color: "#22c55e", padding: "4px 8px", borderRadius: 4 }}>
+      ✓ Подтвержден
+    </div>
+  )}
+</div>
         <p style={{ color: "#94a3b8", fontSize: 16, marginTop: 12, marginBottom: 16 }}>
           {coach.game} · {coach.role}
         </p>
