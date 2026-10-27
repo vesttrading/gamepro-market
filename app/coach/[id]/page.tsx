@@ -76,35 +76,35 @@ export default async function CoachProfilePage({
           ← GamePro
         </a>
 
-<div style={{ display: "flex", alignItems: "flex-start", gap: 24, marginTop: 24 }}>
+<div style={{ display: "flex", alignItems: "center", gap: 24, marginTop: 24 }}>
   
-  {/* Круглый аватар с вашей картинкой кальмара и тонкой неоновой рамкой #22c55e */}
+  {/* Круглый аватар с тонкой зеленой рамкой #22c55e */}
   <div style={{
-    width: 90,
-    height: 90,
+    width: 80,
+    height: 80,
     borderRadius: "50%",
-    border: "1.5px solid #22c55e",               // Тонкая зеленая рамка как на карточке
-    boxShadow: "0 0 12px rgba(34, 197, 94, 0.2)", // Мягкое неоновое свечение рамки
-    overflow: "hidden",                           // Идеально скругляет края картинки
-    flexShrink: 0,                                // Защита от сжатия круга на мобильных
+    border: "1.5px solid #22c55e",
+    boxShadow: "0 0 10px rgba(34, 197, 94, 0.15)",
+    overflow: "hidden",
+    flexShrink: 0,
     backgroundColor: "#0f172a"
   }}>
     <img 
-      src="/path-to-your-avatar/bluesquid.png"     // Пропишите сюда локальный путь к вашему файлу
-      alt="BlueSquid Avatar" 
+      src="/avatar.png" // Обязательно замените /avatar.png на точное имя вашего файла картинки
+      alt="BlueSquid" 
       style={{
         width: "100%",
         height: "100%",
-        objectFit: "cover"                          // Центрирует и сохраняет пропорции арта
+        objectFit: "cover"
       }} 
     />
   </div>
 
-  {/* Блок с именем, статусом и бейджами */}
-  <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+  {/* Контейнер для имени и роли */}
+  <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
     
-    {/* Имя и статус подтверждения на одной строке */}
-    <div style={{ display: "flex", alignItems: "center", gap: 12, flexWrap: "wrap" }}>
+    {/* Имя и статус подтверждения в одну строку */}
+    <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
       <h1 style={{ fontSize: 32, fontWeight: 700, color: "#fff", margin: 0, lineHeight: 1 }}>
         {coach.battletag ?? "Coach"}
       </h1>
@@ -115,7 +115,7 @@ export default async function CoachProfilePage({
           background: "rgba(34, 197, 94, 0.05)", 
           color: "#22c55e", 
           border: "1px solid rgba(34, 197, 94, 0.3)",
-          padding: "3px 8px", 
+          padding: "4px 8px", 
           borderRadius: 4,
           fontSize: 13,
           fontWeight: 500
@@ -125,23 +125,10 @@ export default async function CoachProfilePage({
       )}
     </div>
 
-    {/* Прописанная игра и роль тренера */}
+    {/* Строка игры и роли */}
     <p style={{ color: "#94a3b8", fontSize: 16, margin: 0, fontWeight: 500 }}>
       {coach.game} • {coach.role}
     </p>
-
-    {/* Ваши новые теги под карточку */}
-    <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginTop: 4 }}>
-      <span style={{ fontSize: 12, color: "#22c55e", border: "1px solid rgba(34, 197, 94, 0.2)", padding: "2px 8px", borderRadius: 12, background: "rgba(34, 197, 94, 0.02)" }}>
-        ● Онлайн сейчас
-      </span>
-      <span style={{ fontSize: 12, color: "#94a3b8", border: "1px solid #334155", padding: "2px 8px", borderRadius: 12 }}>
-        Ответ ∼15 мин
-      </span>
-      <span style={{ fontSize: 12, color: "#3b82f6", border: "1px solid rgba(59, 130, 246, 0.2)", padding: "2px 8px", borderRadius: 12, background: "rgba(59, 130, 246, 0.02)" }}>
-        RU / EN
-      </span>
-    </div>
 
   </div>
 </div>
