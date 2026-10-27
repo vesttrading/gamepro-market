@@ -419,9 +419,17 @@ useEffect(() => {
                   : service.title}
               </div>
 
-                 <div style={{ color: "#20c9bd", marginTop: 5 }}>
-                 ${Number(service.price).toFixed(2)} USD
-            </div>
+                <div
+                style={{
+                color: "#20c9bd",
+                fontWeight: 800,
+                fontSize: 18,
+                whiteSpace: "nowrap",
+                textShadow: "0 0 8px rgba(32, 201, 189, 0.7)",
+             }}
+            >
+               ${Number(service.price).toFixed(0)}
+           </div>
 
                 <div style={{ color: "#9da6c0", fontSize: 12 }}>
                 {service.type === "Coaching"
