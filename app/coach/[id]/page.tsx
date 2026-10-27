@@ -76,70 +76,72 @@ export default async function CoachProfilePage({
           ← GamePro
         </a>
 
-<div style={{ display: "flex", alignItems: "center", gap: 20, marginTop: 24 }}>
-  {/* Крупный аватар с неоновой ярко-зеленой рамкой и графичным осьминогом */}
+<div style={{ display: "flex", alignItems: "flex-start", gap: 24, marginTop: 24 }}>
+  
+  {/* Круглый аватар с вашей картинкой кальмара и тонкой неоновой рамкой #22c55e */}
   <div style={{
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    width: 80,
-    height: 80,
+    width: 90,
+    height: 90,
     borderRadius: "50%",
-    border: "1.5px solid #00ff00", // Чистый, сочный ярко-зеленый цвет
-    boxShadow: "0 0 10px rgba(0, 255, 0, 0.2)", // Легкое неоновое свечение рамки
-    backgroundColor: "transparent",
-    flexShrink: 0
+    border: "1.5px solid #22c55e",               // Тонкая зеленая рамка как на карточке
+    boxShadow: "0 0 12px rgba(34, 197, 94, 0.2)", // Мягкое неоновое свечение рамки
+    overflow: "hidden",                           // Идеально скругляет края картинки
+    flexShrink: 0,                                // Защита от сжатия круга на мобильных
+    backgroundColor: "#0f172a"
   }}>
-    {/* Красивый минималистичный SVG-осьминог (монохромный/белый) */}
-  <svg 
-  viewBox="0 0 24 24" 
-  width="46" 
-  height="46" 
-  fill="none" 
-  stroke="#ffffff" // Белый цвет осьминога
-  strokeWidth="1.2" // Изящные тонкие линии
-  strokeLinecap="round" 
-  strokeLinejoin="round"
->
-  {/* Голова осьминога */}
-  <path d="M12 2c3.5 0 6.5 2.5 6.5 6.5s-1.5 4.5-3.5 5.5c-.5.3-.5.7-.5 1v1h-5v-1c0-.3 0-.7-.5-1-2-1-3.5-1.5-3.5-5.5S8.5 2 12 2z" />
-  
-  {/* Глаза */}
-  <circle cx="9.5" cy="8.5" r="1" fill="#ffffff" />
-  <circle cx="14.5" cy="8.5" r="1" fill="#ffffff" />
-  
-  {/* Левые щупальца */}
-  <path d="M9 16c-1 1-3 .5-3-1.5s1.5-2.5 2.5-1.5" />
-  <path d="M7 16c-1.5 1-3.5-.5-3-2.5s2.5-2 3-.5" />
-  <path d="M10 16c-1 2-4.5 1.5-5-1s2.5-3.5 4-1.5" />
-  
-  {/* Правые щупальца */}
-  <path d="M15 16c1 1 3 .5 3-1.5s-1.5-2.5-2.5-1.5" />
-  <path d="M17 16c1.5 1 3.5-.5 3-2.5s-2.5-2-3-.5" />
-  <path d="M14 16c1 2 4.5 1.5 5-1s-2.5-3.5-4-1.5" />
-</svg>
+    <img 
+      src="/path-to-your-avatar/bluesquid.png"     // Пропишите сюда локальный путь к вашему файлу
+      alt="BlueSquid Avatar" 
+      style={{
+        width: "100%",
+        height: "100%",
+        objectFit: "cover"                          // Центрирует и сохраняет пропорции арта
+      }} 
+    />
   </div>
 
-  {/* Контейнер для текстовой информации */}
-  <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+  {/* Блок с именем, статусом и бейджами */}
+  <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
     
     {/* Имя и статус подтверждения на одной строке */}
-    <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-      <h1 style={{ fontSize: 32, fontWeight: 700, color: "#fff", margin: 0 }}>
+    <div style={{ display: "flex", alignItems: "center", gap: 12, flexWrap: "wrap" }}>
+      <h1 style={{ fontSize: 32, fontWeight: 700, color: "#fff", margin: 0, lineHeight: 1 }}>
         {coach.battletag ?? "Coach"}
       </h1>
 
       {coach.is_verified && (
-        <div style={{ display: "inline-block", background: "rgba(34, 197, 94, 0.1)", color: "#22c55e", padding: "4px 8px", borderRadius: 4 }}>
+        <div style={{ 
+          display: "inline-block", 
+          background: "rgba(34, 197, 94, 0.05)", 
+          color: "#22c55e", 
+          border: "1px solid rgba(34, 197, 94, 0.3)",
+          padding: "3px 8px", 
+          borderRadius: 4,
+          fontSize: 13,
+          fontWeight: 500
+        }}>
           ✓ Подтвержден
         </div>
       )}
     </div>
 
-    {/* Единственная строка WoW (вторую дублирующуюся мы удалили ниже) */}
-    <p style={{ color: "#94a3b8", fontSize: 16, margin: 0 }}>
+    {/* Прописанная игра и роль тренера */}
+    <p style={{ color: "#94a3b8", fontSize: 16, margin: 0, fontWeight: 500 }}>
       {coach.game} • {coach.role}
     </p>
+
+    {/* Ваши новые теги под карточку */}
+    <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginTop: 4 }}>
+      <span style={{ fontSize: 12, color: "#22c55e", border: "1px solid rgba(34, 197, 94, 0.2)", padding: "2px 8px", borderRadius: 12, background: "rgba(34, 197, 94, 0.02)" }}>
+        ● Онлайн сейчас
+      </span>
+      <span style={{ fontSize: 12, color: "#94a3b8", border: "1px solid #334155", padding: "2px 8px", borderRadius: 12 }}>
+        Ответ ∼15 мин
+      </span>
+      <span style={{ fontSize: 12, color: "#3b82f6", border: "1px solid rgba(59, 130, 246, 0.2)", padding: "2px 8px", borderRadius: 12, background: "rgba(59, 130, 246, 0.02)" }}>
+        RU / EN
+      </span>
+    </div>
 
   </div>
 </div>
