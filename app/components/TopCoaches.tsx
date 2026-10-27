@@ -493,10 +493,17 @@ useEffect(() => {
         );
       } catch (error) {
         console.error("Message sending error:", error);
-        alert(
-          lang === "RU"
-            ? "Ошибка отправки сообщения"
-            : "Message sending error"
+       alert(
+     ({
+      RU: "Ошибка отправки сообщения",
+      EN: "Message sending error",
+      TR: "Mesaj gönderme hatası",
+      DE: "Fehler beim Senden der Nachricht",
+      ES: "Error al enviar el mensaje",
+      FR: "Erreur lors de l’envoi du message",
+      PL: "Błąd wysyłania wiadomości",
+      }[lang] || "Message sending error")
+      );
         );
       }
     }}
