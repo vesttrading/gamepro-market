@@ -48,11 +48,11 @@ export default async function CoachProfilePage({
     console.error("Failed to load coach reviews:", reviewsError.message);
   }
 
-  return (
+ return (
     <main
       style={{
         minHeight: "100vh",
-        background: "#070b16",
+        background: "#0f172a", 
         color: "#f4f7ff",
         padding: "40px 20px",
       }}
@@ -62,10 +62,10 @@ export default async function CoachProfilePage({
           maxWidth: 760,
           margin: "0 auto",
           padding: 28,
-          border: "1px solid #20c9bd",
+          border: coach.is_verified ? "1px solid #22c55e" : "1px solid #334155", // Зеленая тонкая рамка, если коуч подтвержден
           borderRadius: 18,
-          background: "#10162b",
-          boxShadow: "0 0 18px rgba(32,201,189,0.15)",
+          background: "#1e293b", 
+          boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1)", 
           boxSizing: "border-box",
         }}
       >
