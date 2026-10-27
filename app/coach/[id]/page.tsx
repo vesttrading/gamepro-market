@@ -139,10 +139,16 @@ export default async function CoachProfilePage({
             text="serviceTitle"
           />
         </strong>
-        <p style={{ color: "#3b82f6", fontSize: 20, fontWeight: 700, margin: 0 }}>
+        <p style={{ 
+        color: "#00f0ff", // Ярко-голубой неоновый цвет (Cyan)
+        fontSize: 20, 
+        fontWeight: 700, 
+        margin: 0,
+        textShadow: "0 0 10px rgba(0, 240, 255, 0.4)" // Мягкое неоновое свечение самого текста
+      }}>
         ${Number(service.price).toFixed(2)} USD
       </p>
-    </div>
+        </div>
                <p style={{ color: "#9da6c0", fontSize: 13 }}>
                   <CoachContent
                   value={service.type}
