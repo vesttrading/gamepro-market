@@ -117,7 +117,8 @@ export default async function CoachProfilePage({
           </p>
           
           <a 
-            href={coach.discord ? https://discord.com{coach.discord} : "#"} 
+           href={coach.discord ? coach.discord.startsWith("http") ? coach.discord
+           : https://discord.com/${coach.discord.replace(/^\/+/, "")}  : "#"}
             target="_blank" 
             rel="noreferrer" 
             style={{ 
@@ -149,7 +150,7 @@ export default async function CoachProfilePage({
                   key={service.id} 
                   style={{ 
                     background: "#1e293b", 
-                    border: "1px solid #3b82f6", // Тонкая синяя рамка услуги
+                    border: "1px solid #3b82f6",
                     borderRadius: "12px", 
                     padding: "20px", 
                     display: "flex", 
