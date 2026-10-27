@@ -49,26 +49,31 @@ export default async function CoachProfilePage({
   }
 
   return (
-    <main
-      style={{
-        minHeight: "100vh",
-        background: "#070b16",
-        color: "#f4f7ff",
-        padding: "40px 20px",
+  <main
+  style={{
+    minHeight: "100vh",
+    background: "#0f172a",
+    color: "#f4f7ff",
+    padding: "40px 20px",
+  }}
+>
+  <div style={{ maxWidth: "750px", margin: "0 auto", display: "grid", gap: "24px" }}>
+    
+    <a href="/" style={{ color: "#3b82f6", textDecoration: "none", fontSize: "14px", display: "inline-flex", alignItems: "center", gap: "6px" }}>
+      ← GamePro
+    </a>
+
+     <section 
+      style={{ 
+        background: "#1e293b", 
+        border: coach.is_verified ? "1px solid #22c55e" : "1px solid #334155", 
+        borderRadius: "16px", 
+        padding: "24px", 
+        display: "grid", 
+        gap: "16px", 
+        boxSizing: "border-box" 
       }}
     >
-      <div
-        style={{
-          maxWidth: 760,
-          margin: "0 auto",
-          padding: 28,
-          border: "1px solid #20c9bd",
-          borderRadius: 18,
-          background: "#10162b",
-          boxShadow: "0 0 18px rgba(32,201,189,0.15)",
-          boxSizing: "border-box",
-        }}
-      >
         <a
           href="/"
           style={{ color: "#20c9bd", textDecoration: "none" }}
