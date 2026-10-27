@@ -83,22 +83,23 @@ export default async function CoachProfilePage({
     <h1 style={{ fontSize: 32, fontWeight: 700, color: "#fff", margin: 0, lineHeight: 1 }}>
       {coach.battletag ?? "Coach"}
     </h1>
-
-  {coach.is_verified && (
+{coach.is_verified && (
   <div style={{ 
     display: "inline-block", 
-    background: "rgba(0, 240, 255, 0.05)",       // Легкий полупрозрачный неоновый фон
+    background: "rgba(0, 240, 255, 0.08)",       // Чуть более плотный неоновый фон
     color: "#00f0ff",                            // Ярко-голубой неоновый цвет текста
-    border: "1px solid rgba(0, 240, 255, 0.4)",  // Тонкая неоновая окантовка (40% прозрачности)
-    boxShadow: "0 0 8px rgba(0, 240, 255, 0.2)", // Мягкое неоновое свечение вокруг плашки
-    padding: "4px 8px", 
-    borderRadius: 4,
-    fontSize: 13,
-    fontWeight: 500
+    border: "1px solid rgba(0, 240, 255, 0.5)",  // Четкая неоновая окантовка
+    boxShadow: "0 0 12px rgba(0, 240, 255, 0.3)", // Более заметное неоновое свечение
+    padding: "6px 12px",                         // Увеличили отступы, плашка стала крупнее
+    borderRadius: 6,                             // Чуть больше скругление для пропорции
+    fontSize: 16,                                // Увеличили шрифт (было 13)
+    fontWeight: 600,                             // Сделали текст более жирным и читаемым
+    letterSpacing: "0.5px"                       // Небольшое расстояние между буквами для стиля
   }}>
     ✓ Подтвержден
   </div>
 )}
+ 
   </div>
 
   {/* Строка специализации тренера */}
