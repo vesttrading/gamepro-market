@@ -59,12 +59,10 @@ export default async function CoachProfilePage({
     >
       <div style={{ maxWidth: "750px", margin: "0 auto", display: "grid", gap: "24px" }}>
         
-        {/* Кнопка возврата на главную — сохранили вашу родную ссылку */}
-        <a href="/" style={{ color: "#20c9bd", textDecoration: "none", fontSize: "14px", display: "inline-flex", alignItems: "center", gap: "6px" }}>
+       <a href="/" style={{ color: "#20c9bd", textDecoration: "none", fontSize: "14px", display: "inline-flex", alignItems: "center", gap: "6px" }}>
           ← GamePro
         </a>
 
-        {/* БЛОК 1: Карточка профиля тренера с зеленой тонкой рамкой статуса "Подтвержден" */}
         <section 
           style={{ 
             background: "#1e293b", 
@@ -78,7 +76,6 @@ export default async function CoachProfilePage({
         >
           <div style={{ display: "flex", flexWrap: "wrap", gap: "16px", alignItems: "center", justifyContent: "space-between" }}>
             
-            {/* Аватарка + Ник */}
             <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
               <div style={{ width: "64px", height: "64px", borderRadius: "50%", background: "linear-gradient(135deg, #16a34a, #22c55e)", display: "grid", placeItems: "center", fontSize: "32px" }}>
                 触
@@ -93,7 +90,6 @@ export default async function CoachProfilePage({
               </div>
             </div>
 
-            {/* Статусные бейджи */}
             <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
               {coach.is_verified && (
                 <span style={{ background: "rgba(34, 197, 94, 0.1)", color: "#22c55e", padding: "6px 12px", borderRadius: "20px", fontSize: "12px", fontWeight: 600, border: "1px solid rgba(34, 197, 94, 0.2)" }}>
@@ -109,20 +105,17 @@ export default async function CoachProfilePage({
             </div>
           </div>
 
-          {/* Доказательство скилла из вашей базы данных (rating_mplus) */}
-          {coach.rating_mplus != null && (
+         {coach.rating_mplus != null && (
             <div style={{ background: "#0f172a", padding: "12px 16px", borderRadius: "8px", border: "1px solid #334155" }}>
               <span style={{ color: "#94a3b8", fontSize: "13px" }}>Доказательство скилла: </span>
               <strong style={{ color: "#4ade80", fontSize: "14px" }}>Mythic+ Rating: {coach.rating_mplus}</strong>
             </div>
           )}
 
-          {/* Описание тренера */}
-          <p style={{ color: "#cbd5e1", fontSize: "15px", lineHeight: "1.6", margin: 0 }}>
+            <p style={{ color: "#cbd5e1", fontSize: "15px", lineHeight: "1.6", margin: 0 }}>
             <CoachContent value={coach.description} text="coachDescription" />
           </p>
           
-          {/* Главная кнопка действия по ТЗ v2 — Исправленный роутинг на Discord */}
           <a 
             href={coach.discord ? https://discord.com{coach.discord} : "#"} 
             target="_blank" 
@@ -144,7 +137,6 @@ export default async function CoachProfilePage({
           </a>
         </section>
 
-        {/* БЛОК 2: Список услуг с синей рамкой */}
         <section style={{ display: "grid", gap: "16px" }}>
           <h2 style={{ fontSize: "18px", marginTop: 12, fontWeight: 600, color: "#94a3b8" }}>
             <CoachText text="services" />
@@ -197,7 +189,6 @@ export default async function CoachProfilePage({
           )}
         </section>
 
-        {/* БЛОК 3: Отзывы */}
         <section style={{ display: "grid", gap: "16px" }}>
           <h2 style={{ fontSize: "18px", marginTop: 12, fontWeight: 600, color: "#94a3b8" }}>
             <CoachText text="reviews" />
@@ -222,9 +213,8 @@ export default async function CoachProfilePage({
               </p>
             </div>
           )}
-        </section>
-
-      </div>
+       
+       </div>
     </main>
   );
 }
