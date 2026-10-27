@@ -90,16 +90,39 @@ export default async function CoachProfilePage({
           {coach.game} · {coach.role}
         </p>
 
-        {coach.rating_mplus != null && (
-          <p>Mythic+ Rating: {coach.rating_mplus}</p>
+      {coach.rating_mplus != null && (
+          <div style={{ background: "#0f172a", padding: "12px 16px", borderRadius: "8px", border: "1px solid #334155", marginTop: 12, marginBottom: 12 }}>
+            <span style={{ color: "#94a3b8", fontSize: "13px" }}>Доказательство скилла: </span>
+            <strong style={{ color: "#4ade80", fontSize: "14px" }}>Mythic+ Rating: {coach.rating_mplus}</strong>
+          </div>
         )}
 
-       <p style={{ color: "#b5bfd6", lineHeight: 1.7 }}>
+        <p style={{ color: "#cbd5e1", fontSize: "15px", lineHeight: "1.6", marginTop: 12, marginBottom: 20 }}>
           <CoachContent
-          value={coach.description}
-          text="coachDescription"
-        />
-     </p>
+            value={coach.description}
+            text="coachDescription"
+          />
+        </p>
+
+        <a 
+          href={coach.discord ? https://discord.com{coach.discord} : "#"} 
+          target="_blank" 
+          rel="noreferrer" 
+          style={{ 
+            display: "block", 
+            textAlign: "center", 
+            background: "#22c55e", 
+            color: "#0f172a", 
+            textDecoration: "none", 
+            padding: "14px", 
+            borderRadius: "10px", 
+            fontWeight: 700, 
+            fontSize: "16px", 
+            marginBottom: 12
+          }}
+        >
+          Написать в Discord
+        </a>
 
         <h2 style={{ marginTop: 32 }}><CoachText text="services" /></h2>
 
