@@ -127,8 +127,8 @@ export default async function CoachProfilePage({
                 key={service.id}
                 style={{
                   padding: 16,
-                  background: "#090e1d",
-                  border: "1px solid #26364b",
+                  background: "#0f172a",
+                  border: "1px solid rgba(59, 130, 246, 0.4),
                   borderRadius: 10,
                 }}
               >
