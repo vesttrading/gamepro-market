@@ -339,7 +339,7 @@ useEffect(() => {
 
                 <div style={{ minWidth: 0 }}>
                   <h3 style={{ margin: 0, overflowWrap: "anywhere" }}>
-                    {coach.battletag || "GamePro Coach"}
+                   {coach.battletag ? coach.battletag.split(" ")[0] : "GamePro Coach"}
                     {coach.is_verified === true && (
                 <span
                     title="Verified coach"
