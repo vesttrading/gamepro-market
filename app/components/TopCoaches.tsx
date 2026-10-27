@@ -319,6 +319,8 @@ useEffect(() => {
                     width: 48,
                     height: 48,
                     borderRadius: "50%",
+                    border: "1px solid #39ff63",
+                    boxShadow: "0 0 6px rgba(57, 255, 99, 0.35)",
                     border: "1px solid #20c9bd",
                     flexShrink: 0,
                     display: "grid",
