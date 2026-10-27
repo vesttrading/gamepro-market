@@ -76,16 +76,35 @@ export default async function CoachProfilePage({
           ← GamePro
         </a>
 
-    <div style={{ display: "flex", alignItems: "center", gap: 12, marginTop: 24 }}>
-  <h1 style={{ fontSize: 32, fontWeight: 700, color: "#fff", margin: 0 }}>
-    {coach.battletag ?? "Coach"}
-  </h1>
+   <div style={{ display: "flex", alignItems: "center", gap: 16, marginTop: 24 }}>
+  {/* Круглый аватар с ярко-зеленой рамкой */}
+  <div style={{
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    width: 50,
+    height: 50,
+    borderRadius: "50%",
+    border: "3px solid #00ff00", // Ярко-зеленая рамка
+    fontSize: 28, // Размер эмодзи
+    backgroundColor: "rgba(0, 255, 0, 0.05)", // Легкий зеленый фон (по желанию)
+    flexShrink: 0 // Чтобы круг не сжимался
+  }}>
+    🐙
+  </div>
 
-  {coach.is_verified && (
-    <div style={{ display: "inline-block", background: "rgba(34, 197, 94, 0.1)", color: "#22c55e", padding: "4px 8px", borderRadius: 4 }}>
-      ✓ Подтвержден
-    </div>
-  )}
+  {/* Контейнер для текста, чтобы имя и галочка оставались вместе */}
+  <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+    <h1 style={{ fontSize: 32, fontWeight: 700, color: "#fff", margin: 0 }}>
+      {coach.battletag ?? "Coach"}
+    </h1>
+
+    {coach.is_verified && (
+      <div style={{ display: "inline-block", background: "rgba(34, 197, 94, 0.1)", color: "#22c55e", padding: "4px 8px", borderRadius: 4 }}>
+        ✓ Подтвержден
+      </div>
+    )}
+  </div>
 </div>
         <p style={{ color: "#94a3b8", fontSize: 16, marginTop: 12, marginBottom: 16 }}>
           {coach.game} · {coach.role}
