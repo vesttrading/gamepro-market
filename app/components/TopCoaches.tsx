@@ -337,22 +337,31 @@ useEffect(() => {
                   )}
                 </div>
 
-                <div style={{ minWidth: 0 }}>
-                  <h3 style={{ margin: 0, overflowWrap: "anywhere" }}>
-                    {coach.battletag || "GamePro Coach"}
-                    {coach.is_verified === true && (
-                <span
-                    title="Verified coach"
-                    style={{
-                    color: "#20c9bd",
-                    fontSize: 16,
-                    fontWeight: 900,
-                    marginLeft: 6,
-                  }}
-                >
-                 ✓
-                </span>
-                )}
+               <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
+               <h3 style={{ margin: 0, overflowWrap: "anywhere", fontSize: 20, fontWeight: 700, color: "#fff" }}>
+               {coach.battletag ? coach.battletag.replace(" ✓", "") : "GamePro Coach"}
+               </h3>
+
+               {coach.is_verified === true && (
+               <span 
+               title="Verified coach"
+               style={{
+               display: "inline-block",
+               background: "rgba(0, 240, 255, 0.08)",
+               color: "#00f0ff",
+               border: "1px solid rgba(0, 240, 255, 0.4)",
+               boxShadow: "0 0 8px rgba(0, 240, 255, 0.2)",
+               padding: "2px 6px",
+               borderRadius: 4,
+               fontSize: 12,
+               fontWeight: 600,
+               lineHeight: 1
+             }}
+           >
+             ✓ Подтвержден
+           </span>
+         )}
+       </div>
                   </h3>
                   <span style={{ color: "#9da6c0", fontSize: 13 }}>
                     {coach.game} · {coach.role || "Coach"}
