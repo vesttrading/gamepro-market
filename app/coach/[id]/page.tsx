@@ -76,61 +76,35 @@ export default async function CoachProfilePage({
           ← GamePro
         </a>
 
-<div style={{ display: "flex", alignItems: "center", gap: 24, marginTop: 24 }}>
+<div style={{ display: "flex", flexDirection: "column", gap: 8, marginTop: 24 }}>
   
-  {/* Круглый аватар с тонкой зеленой рамкой #22c55e */}
-  <div style={{
-    width: 80,
-    height: 80,
-    borderRadius: "50%",
-    border: "1.5px solid #22c55e",
-    boxShadow: "0 0 10px rgba(34, 197, 94, 0.15)",
-    overflow: "hidden",
-    flexShrink: 0,
-    backgroundColor: "#0f172a"
-  }}>
-    <img 
-      src="/avatar.png" // Обязательно замените /avatar.png на точное имя вашего файла картинки
-      alt="BlueSquid" 
-      style={{
-        width: "100%",
-        height: "100%",
-        objectFit: "cover"
-      }} 
-    />
+  {/* Имя и статус подтверждения в одну строку */}
+  <div style={{ display: "flex", alignItems: "center", gap: 12, flexWrap: "wrap" }}>
+    <h1 style={{ fontSize: 32, fontWeight: 700, color: "#fff", margin: 0, lineHeight: 1 }}>
+      {coach.battletag ?? "Coach"}
+    </h1>
+
+    {coach.is_verified && (
+      <div style={{ 
+        display: "inline-block", 
+        background: "rgba(34, 197, 94, 0.05)", 
+        color: "#22c55e", 
+        border: "1px solid rgba(34, 197, 94, 0.3)",
+        padding: "4px 8px", 
+        borderRadius: 4,
+        fontSize: 13,
+        fontWeight: 500
+      }}>
+        ✓ Подтвержден
+      </div>
+    )}
   </div>
 
-  {/* Контейнер для имени и роли */}
-  <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-    
-    {/* Имя и статус подтверждения в одну строку */}
-    <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-      <h1 style={{ fontSize: 32, fontWeight: 700, color: "#fff", margin: 0, lineHeight: 1 }}>
-        {coach.battletag ?? "Coach"}
-      </h1>
+  {/* Строка специализации тренера */}
+  <p style={{ color: "#94a3b8", fontSize: 16, margin: 0, fontWeight: 500 }}>
+    {coach.game} • {coach.role}
+  </p>
 
-      {coach.is_verified && (
-        <div style={{ 
-          display: "inline-block", 
-          background: "rgba(34, 197, 94, 0.05)", 
-          color: "#22c55e", 
-          border: "1px solid rgba(34, 197, 94, 0.3)",
-          padding: "4px 8px", 
-          borderRadius: 4,
-          fontSize: 13,
-          fontWeight: 500
-        }}>
-          ✓ Подтвержден
-        </div>
-      )}
-    </div>
-
-    {/* Строка игры и роли */}
-    <p style={{ color: "#94a3b8", fontSize: 16, margin: 0, fontWeight: 500 }}>
-      {coach.game} • {coach.role}
-    </p>
-
-  </div>
 </div>
         <p style={{ color: "#94a3b8", fontSize: 16, marginTop: 12, marginBottom: 16 }}>
           {coach.game} · {coach.role}
