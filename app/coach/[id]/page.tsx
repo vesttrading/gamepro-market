@@ -91,23 +91,33 @@ export default async function CoachProfilePage({
     flexShrink: 0
   }}>
     {/* Красивый минималистичный SVG-осьминог (монохромный/белый) */}
-    <svg 
-      viewBox="0 0 24 24" 
-      width="44" 
-      height="44" 
-      fill="none" 
-      stroke="#ffffff" // Цвет осьминога (белый)
-      strokeWidth="1.5" 
-      strokeLinecap="round" 
-      strokeLinejoin="round"
-    >
-      <path d="M12 2a7 7 0 0 0-7 7c0 2.6 1.4 4.9 3.5 6.1a3 3 0 0 1 .5 1.4V19a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-2.5a3 3 0 0 1 .5-1.4c2.1-1.2 3.5-3.5 3.5-6.1a7 7 0 0 0-7-7z" />
-      <path d="M12 12v.01" strokeWidth="2" />
-      <path d="M8 10v.01" strokeWidth="2" />
-      <path d="M16 10v.01" strokeWidth="2" />
-      <path d="M6 21a1 1 0 0 0-1-1h-.5a1.5 1.5 0 0 1 0-3H5" />
-      <path d="M18 21a1 1 0 0 1 1-1h.5a1.5 1.5 0 0 0 0-3H19" />
-    </svg>
+  <svg 
+  viewBox="0 0 24 24" 
+  width="46" 
+  height="46" 
+  fill="none" 
+  stroke="#ffffff" // Белый цвет осьминога
+  strokeWidth="1.2" // Изящные тонкие линии
+  strokeLinecap="round" 
+  strokeLinejoin="round"
+>
+  {/* Голова осьминога */}
+  <path d="M12 2c3.5 0 6.5 2.5 6.5 6.5s-1.5 4.5-3.5 5.5c-.5.3-.5.7-.5 1v1h-5v-1c0-.3 0-.7-.5-1-2-1-3.5-1.5-3.5-5.5S8.5 2 12 2z" />
+  
+  {/* Глаза */}
+  <circle cx="9.5" cy="8.5" r="1" fill="#ffffff" />
+  <circle cx="14.5" cy="8.5" r="1" fill="#ffffff" />
+  
+  {/* Левые щупальца */}
+  <path d="M9 16c-1 1-3 .5-3-1.5s1.5-2.5 2.5-1.5" />
+  <path d="M7 16c-1.5 1-3.5-.5-3-2.5s2.5-2 3-.5" />
+  <path d="M10 16c-1 2-4.5 1.5-5-1s2.5-3.5 4-1.5" />
+  
+  {/* Правые щупальца */}
+  <path d="M15 16c1 1 3 .5 3-1.5s-1.5-2.5-2.5-1.5" />
+  <path d="M17 16c1.5 1 3.5-.5 3-2.5s-2.5-2-3-.5" />
+  <path d="M14 16c1 2 4.5 1.5 5-1s-2.5-3.5-4-1.5" />
+</svg>
   </div>
 
   {/* Контейнер для текстовой информации */}
