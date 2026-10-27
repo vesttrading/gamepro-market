@@ -84,20 +84,21 @@ export default async function CoachProfilePage({
       {coach.battletag ?? "Coach"}
     </h1>
 
-    {coach.is_verified && (
-      <div style={{ 
-        display: "inline-block", 
-        background: "rgba(34, 197, 94, 0.05)", 
-        color: "#22c55e", 
-        border: "1px solid rgba(34, 197, 94, 0.3)",
-        padding: "4px 8px", 
-        borderRadius: 4,
-        fontSize: 13,
-        fontWeight: 500
-      }}>
-        ✓ Подтвержден
-      </div>
-    )}
+  {coach.is_verified && (
+  <div style={{ 
+    display: "inline-block", 
+    background: "rgba(0, 240, 255, 0.05)",       // Легкий полупрозрачный неоновый фон
+    color: "#00f0ff",                            // Ярко-голубой неоновый цвет текста
+    border: "1px solid rgba(0, 240, 255, 0.4)",  // Тонкая неоновая окантовка (40% прозрачности)
+    boxShadow: "0 0 8px rgba(0, 240, 255, 0.2)", // Мягкое неоновое свечение вокруг плашки
+    padding: "4px 8px", 
+    borderRadius: 4,
+    fontSize: 13,
+    fontWeight: 500
+  }}>
+    ✓ Подтвержден
+  </div>
+)}
   </div>
 
   {/* Строка специализации тренера */}
