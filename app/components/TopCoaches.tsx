@@ -444,47 +444,111 @@ useEffect(() => {
          : "Message sending error"
        );
      }
-   }}
-        style={{
-        marginTop: 16,
-        padding: 12,
-        borderRadius: 10,
-        border: "none",
-        background: "#20c9bd",
-        color: "#06111b",
-        fontWeight: 700,
-        cursor: "pointer",
-        display: "block",
-        width: "100%",
-     }}
-   >
-       {lang === "RU" ? "Связаться с тренером" : "Contact Coach"}
-       </button>
-           <a
-           href={`/coach/${coach.id}`}
-           style={{
-           display: "block",
-           textAlign: "center",
-           marginTop: 16,
-           padding: 12,
-           borderRadius: 10,
-           background: "#20c9bd",
-           color: "#06101a",
-           fontWeight: 700,
-           textDecoration: "none",
-         }}
-       >
-       {{
-        RU: "Профиль",
-        EN: "Profile",
-        TR: "Profil",
-        DE: "Profil",
-        ES: "Perfil",
-        FR: "Profil",
-        PL: "Profil",
-       }[lang] || "Profile"}
-         </a>
-         </article>
+   }}<div
+  style={{
+    display: "flex",
+    gap: 8,
+    width: "100%",
+    marginTop: 12,
+  }}
+>
+  <button
+    onClick={async () => {
+      const message = window.prompt(
+        lang === "RU"
+          ? Напишите сообщение тренеру ${coach.battletag}
+          : Write a message to coach ${coach.battletag}
+      );
+
+      if (!message?.trim()) return;
+
+      try {
+        const response = await fetch("/api/messages", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            coachId: coach.id,
+            message: message.trim(),
+          }),
+        });
+
+        const result = await response.json();
+
+        if (!response.ok) {
+          alert(
+            result.error ||
+              (lang === "RU"
+                ? "Не удалось отправить сообщение"
+                : "Failed to send message")
+          );
+          return;
+        }
+
+        alert(
+          lang === "RU"
+            ? "Сообщение отправлено!"
+            : "Message sent!"
+        );
+      } catch (error) {
+        console.error("Message sending error:", error);
+        alert(
+          lang === "RU"
+            ? "Ошибка отправки сообщения"
+            : "Message sending error"
+        );
+      }
+    }}
+  
+    style={{
+      flex: 1,
+      minWidth: 0,
+      padding: "9px 5px",
+      borderRadius: 8,
+      border: "1px solid #20c9bd",
+      background: "#20c9bd",
+      color: "#06111b",
+      fontSize: 12,
+      fontWeight: 700,
+      cursor: "pointer",
+    }}
+  >
+    {lang === "RU" ? "Связаться" : "Contact"}
+  </button>
+
+  <a
+    href={`/coach/${coach.id}`}
+    style={{
+      flex: 1,
+      minWidth: 0,
+      boxSizing: "border-box",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      padding: "9px 5px",
+      borderRadius: 8,
+      border: "1px solid #39ff63",
+      background: "#090e1d",
+      color: "#ffffff",
+      fontSize: 12,
+      fontWeight: 700,
+      textDecoration: "none",
+    }}
+  >
+    {{
+      RU: "Профиль",
+      EN: "Profile",
+      TR: "Profil",
+      DE: "Profil",
+      ES: "Perfil",
+      FR: "Profil",
+      PL: "Profil",
+    }[lang] || "Profile"}
+  </a>
+</div>
+       
+          </article>
         ))}
         </div>
       )}
