@@ -353,10 +353,9 @@ useEffect(() => {
               {coach.is_verified && (
               <p
               style={{
-              color: "#20c9bd",
+              color: "#39ff63",
               fontSize: 13,
               fontWeight: 700,
-              color: "#39ff63",
             }}
           >
              {{
