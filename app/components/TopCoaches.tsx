@@ -361,8 +361,8 @@ useEffect(() => {
              ✓ Подтвержден
            </span>
          )}
-       </div>
-                  </h3>
+      
+               </h3>
                   <span style={{ color: "#9da6c0", fontSize: 13 }}>
                     {coach.game} · {coach.role || "Coach"}
                   </span>
