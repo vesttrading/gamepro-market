@@ -52,7 +52,7 @@ export default async function CoachProfilePage({
     <main
       style={{
         minHeight: "100vh",
-        background: "#0f172a", // Новый чистый тёмный фон вместо старой синевы
+        background: "#0f172a",
         color: "#f4f7ff",
         padding: "40px 20px",
       }}
