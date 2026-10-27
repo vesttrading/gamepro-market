@@ -76,17 +76,17 @@ export default async function CoachProfilePage({
           ← GamePro
         </a>
 
-        <h1 style={{ marginTop: 24, overflowWrap: "anywhere" }}>
+      <h1 style={{ marginTop: 24, fontSize: 32, fontWeight: 700, color: "#fff", overflowWrap: "anywhere" }}>
           {coach.battletag ?? "Coach"}
         </h1>
 
         {coach.is_verified && (
-          <p style={{ color: "#20c9bd", fontWeight: 700 }}>
-            <CoachText text="verified" />
-          </p>
+          <div style={{ display: "inline-block", background: "rgba(34, 197, 94, 0.1)", color: "#22c55e", padding: "6px 12px", borderRadius: 20, fontSize: 13, fontWeight: 600, border: "1px solid rgba(34, 197, 94, 0.2)", marginTop: 8 }}>
+            ✓ <CoachText text="verified" />
+          </div>
         )}
 
-        <p style={{ color: "#20c9bd" }}>
+        <p style={{ color: "#94a3b8", fontSize: 16, marginTop: 12, marginBottom: 16 }}>
           {coach.game} · {coach.role}
         </p>
 
