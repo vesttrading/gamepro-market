@@ -76,29 +76,44 @@ export default async function CoachProfilePage({
           ← GamePro
         </a>
 
- <div style={{ display: "flex", alignItems: "flex-start", gap: 20, marginTop: 24 }}>
-  {/* Крупный аватар с тонкой ярко-зеленой рамкой */}
+<div style={{ display: "flex", alignItems: "center", gap: 20, marginTop: 24 }}>
+  {/* Крупный аватар с неоновой ярко-зеленой рамкой и графичным осьминогом */}
   <div style={{
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    width: 80,             // Увеличили размер, чтобы закрывал обе строки
-    height: 80,            // Увеличили размер
+    width: 80,
+    height: 80,
     borderRadius: "50%",
-    border: "1px solid #00ff00", // Сделали рамку тонкой (1px вместо 3px)
-    fontSize: 44,          // Крупный осьминог
+    border: "1.5px solid #00ff00", // Чистый, сочный ярко-зеленый цвет
+    boxShadow: "0 0 10px rgba(0, 255, 0, 0.2)", // Легкое неоновое свечение рамки
     backgroundColor: "transparent",
-    flexShrink: 0,
-    filter: "grayscale(1) brightness(0.9)", // Делает эмодзи полностью черно-белым/не цветным
-    marginTop: 4           // Небольшое выравнивание по верхней линии имени
+    flexShrink: 0
   }}>
-    🐙
+    {/* Красивый минималистичный SVG-осьминог (монохромный/белый) */}
+    <svg 
+      viewBox="0 0 24 24" 
+      width="44" 
+      height="44" 
+      fill="none" 
+      stroke="#ffffff" // Цвет осьминога (белый)
+      strokeWidth="1.5" 
+      strokeLinecap="round" 
+      strokeLinejoin="round"
+    >
+      <path d="M12 2a7 7 0 0 0-7 7c0 2.6 1.4 4.9 3.5 6.1a3 3 0 0 1 .5 1.4V19a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-2.5a3 3 0 0 1 .5-1.4c2.1-1.2 3.5-3.5 3.5-6.1a7 7 0 0 0-7-7z" />
+      <path d="M12 12v.01" strokeWidth="2" />
+      <path d="M8 10v.01" strokeWidth="2" />
+      <path d="M16 10v.01" strokeWidth="2" />
+      <path d="M6 21a1 1 0 0 0-1-1h-.5a1.5 1.5 0 0 1 0-3H5" />
+      <path d="M18 21a1 1 0 0 1 1-1h.5a1.5 1.5 0 0 0 0-3H19" />
+    </svg>
   </div>
 
-  {/* Контейнер для всей текстовой информации справа */}
-  <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+  {/* Контейнер для текстовой информации */}
+  <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
     
-    {/* Имя и статус подтверждения */}
+    {/* Имя и статус подтверждения на одной строке */}
     <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
       <h1 style={{ fontSize: 32, fontWeight: 700, color: "#fff", margin: 0 }}>
         {coach.battletag ?? "Coach"}
@@ -111,7 +126,7 @@ export default async function CoachProfilePage({
       )}
     </div>
 
-    {/* Строка WoW под именем, которая теперь находится в одном уровне с аватаром */}
+    {/* Единственная строка WoW (вторую дублирующуюся мы удалили ниже) */}
     <p style={{ color: "#94a3b8", fontSize: 16, margin: 0 }}>
       {coach.game} • {coach.role}
     </p>
