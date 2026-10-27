@@ -46,9 +46,8 @@ export default async function CoachProfilePage({
 
   if (reviewsError) {
     console.error("Failed to load coach reviews:", reviewsError.message);
-  }
-
- return (
+ 
+    return (
     <main
       style={{
         minHeight: "100vh",
