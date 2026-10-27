@@ -318,7 +318,9 @@ useEffect(() => {
                   style={{
                     width: 48,
                     height: 48,
-                    borderRadius: 12,
+                    borderRadius: "50%",
+                    border: "1px solid #20c9bd",
+                    flexShrink: 0,
                     display: "grid",
                     placeItems: "center",
                     background: "linear-gradient(135deg, #6126e9, #20c9bd)",
@@ -333,7 +335,7 @@ useEffect(() => {
                       style={{ width: "100%", height: "100%", objectFit: "cover" }}
                     />
                   ) : (
-                    "🎮"
+                   "🦑"
                   )}
                 </div>
 
@@ -354,7 +356,7 @@ useEffect(() => {
               color: "#20c9bd",
               fontSize: 13,
               fontWeight: 700,
-              textShadow: "0 0 8px rgba(32, 201, 189, 0.7)",
+              color: "#39ff63",
             }}
           >
              {{
