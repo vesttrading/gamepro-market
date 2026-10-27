@@ -128,7 +128,7 @@ export default async function CoachProfilePage({
                 style={{
                   padding: 16,
                   background: "#0f172a",
-                  border: "1px solid rgba(59, 130, 246, 0.4),
+                  border: "1px solid #26364b",
                   borderRadius: 10,
                 }}
               >
