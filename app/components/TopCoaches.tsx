@@ -349,7 +349,14 @@ useEffect(() => {
               </div>
 
               {coach.is_verified && (
-               <p style={{ color: "#34d399", fontSize: 13 }}>
+              <p
+              style={{
+              color: "#20c9bd",
+              fontSize: 13,
+              fontWeight: 700,
+              textShadow: "0 0 8px rgba(32, 201, 189, 0.7)",
+            }}
+          >
              {{
               RU: "✓ ПОДТВЕРЖДЁН",
               EN: "✓ VERIFIED",
