@@ -106,11 +106,8 @@ export default async function CoachProfilePage({
   </p>
 
 </div>
-        <p style={{ color: "#94a3b8", fontSize: 16, marginTop: 12, marginBottom: 16 }}>
-          {coach.game} · {coach.role}
-        </p>
-
-        {coach.rating_mplus != null && (
+     
+       {coach.rating_mplus != null && (
           <p>Mythic+ Rating: {coach.rating_mplus}</p>
         )}
 
