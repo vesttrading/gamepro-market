@@ -445,59 +445,46 @@ useEffect(() => {
        );
      }
    }}
-           
-  <div style={{ display: "flex", gap: 10, width: "100%", marginTop: 16 }}>           
-  <button        
-    style={{
-    flex: 1,
-    minWidth: 0,
-    padding: "8px 12px",
-    borderRadius: 8,
-    border: "1px solid #20c9bd",
-    background: "#20c9bd",
-    color: "#06111b",
-    fontSize: 13,
-    fontWeight: 700,
-    cursor: "pointer",
-  }}
->
-  {lang === "RU" ? "Связаться" : "Contact"}
-</button>
-
-<a
-  href={/coach/${coach.id}}
-  style={{
-    flex: 1,
-    minWidth: 0,
-    boxSizing: "border-box",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    padding: "8px 12px",
-    borderRadius: 8,
-    border: "1px solid #39ff63",
-    background: "#090e1d",
-    color: "#ffffff",
-    fontSize: 13,
-    fontWeight: 700,
-    textDecoration: "none",
-  }}
->
-  {
-    {
-      RU: "Профиль",
-      EN: "Profile",
-      TR: "Profil",
-      DE: "Profil",
-      ES: "Perfil",
-      FR: "Profil",
-      PL: "Profil",
-    }[lang] || "Profile"
-  }
- </a>
-  </div>  
-        
-       </article>
+        style={{
+        marginTop: 16,
+        padding: 12,
+        borderRadius: 10,
+        border: "none",
+        background: "#20c9bd",
+        color: "#06111b",
+        fontWeight: 700,
+        cursor: "pointer",
+        display: "block",
+        width: "100%",
+     }}
+   >
+       {lang === "RU" ? "Связаться с тренером" : "Contact Coach"}
+       </button>
+           <a
+           href={`/coach/${coach.id}`}
+           style={{
+           display: "block",
+           textAlign: "center",
+           marginTop: 16,
+           padding: 12,
+           borderRadius: 10,
+           background: "#20c9bd",
+           color: "#06101a",
+           fontWeight: 700,
+           textDecoration: "none",
+         }}
+       >
+       {{
+        RU: "Профиль",
+        EN: "Profile",
+        TR: "Profil",
+        DE: "Profil",
+        ES: "Perfil",
+        FR: "Profil",
+        PL: "Profil",
+       }[lang] || "Profile"}
+         </a>
+         </article>
         ))}
         </div>
       )}
