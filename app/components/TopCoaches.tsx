@@ -396,23 +396,8 @@ useEffect(() => {
       } as Record<string, string>)[lang] ||
       "Game coaching and guidance."}
   </p>
-              <div style={{ display: "grid", gap: 8 }}>
-                {coach.services?.map((service) => (
-                <div
-  key={service.id}
-  style={{
-    padding: 12,
-    background: "#090e1d",
-    border: "1px solid #26364b",
-    borderRadius: 10,
-  }}
->
- 
-  </div>
-         ))}
-    </div>
-
-            <button
+            
+         <button
             onClick={async () => {
             const message = window.prompt(
             lang === "RU"
