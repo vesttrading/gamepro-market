@@ -1,14 +1,16 @@
 "use client";
+import { signOut } from "next-auth/react";
 
 type Lang = "RU" | "EN" | "TR" | "DE" | "ES" | "FR" | "PL";
 
 type HeaderProps = {
-lang: Lang;
-setLang: (lang: Lang) => void;
-t: any;
+  lang: Lang;
+  setLang: (lang: Lang) => void;
+  t: any;
+  isLoggedIn?: boolean;
 };
 
-export default function Header({ lang, setLang, t }: HeaderProps) {
+export default function Header({ lang, setLang, t, isLoggedIn }: HeaderProps) {
 return (
 <header
 style={{
@@ -137,6 +139,23 @@ style={{ height: "45px", width: "auto" }}
         <option value="PL">PL</option>
       </select>
     </div>
+    {isLoggedIn && (
+  <button
+    onClick={() => signOut({ callbackUrl: "/" })}
+    style={{
+      background: "#20c9bd",
+      color: "#06111b",
+      border: "none",
+      borderRadius: 9,
+      padding: "9px 12px",
+      fontWeight: 700,
+      cursor: "pointer",
+      whiteSpace: "nowrap",
+    }}
+  >
+    {t.logout}
+  </button>
+)}
   </nav>
 </header>
 
