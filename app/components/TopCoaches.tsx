@@ -385,27 +385,7 @@ useEffect(() => {
 </div>
               </div>
 
-              {coach.is_verified && (
-              <p
-              style={{
-              color: "#39ff63",
-              fontSize: 13,
-              fontWeight: 700,
-            }}
-          >
-             {{
-             RU: "WoW Mythic+ Хилер ",
-             EN: "WoW Mythic+ Header",
-             TR: "WoW Mythic+ Başlığı",
-             DE: "WoW Mythic+ Überschrift",
-             ES: "Encabezado de WoW Mythic+",
-             FR: "En-tête WoW Mythic+",
-             PL: "Nagłówek WoW Mythic+",
-             }[lang] || "WoW Mythic+ Header"}
-           </p>
-              )}
-
-            <p style={{ color: "#c5cbe0", lineHeight: 1.5 }}>
+           <p style={{ color: "#c5cbe0", lineHeight: 1.5 }}>
         {coach.description ===
        "Experienced WoW player offering Mythic+ coaching for beginners and advanced players."
     ? ({
