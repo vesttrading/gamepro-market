@@ -180,7 +180,7 @@ export default async function CoachProfilePage({
         cursor: "pointer",
         transition: "all 0.2s ease"                    // Плавность при взаимодействии
       }}>
-        {lang === "RU" ? "Забронировать тренировку" : "Book a Session"}
+          Забронировать тренировку
       </button>
                 
               </div>
