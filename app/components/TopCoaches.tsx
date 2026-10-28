@@ -360,14 +360,14 @@ useEffect(() => {
             }}
           >
              {{
-              RU: "✓ WoW Mythic+ Header",
-              EN: "✓ VERIFIED",
-              TR: "✓ DOĞRULANDI",
-              DE: "✓ VERIFIZIERT",
-              ES: "✓ VERIFICADO",
-              FR: "✓ VÉRIFIÉ",
-              PL: "✓ WoW Mythic+ Header",
-             }[lang] || "✓ WoW Mythic+ Header"}
+             RU: "WoW Mythic+ Header",
+             EN: "WoW Mythic+ Header",
+             TR: "WoW Mythic+ Başlığı",
+             DE: "WoW Mythic+ Überschrift",
+             ES: "Encabezado de WoW Mythic+",
+             FR: "En-tête WoW Mythic+",
+             PL: "Nagłówek WoW Mythic+",
+             }[lang] || "WoW Mythic+ Header"}
            </p>
               )}
 
