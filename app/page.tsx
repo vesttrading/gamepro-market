@@ -504,6 +504,7 @@ export default function HomePage() {
   reviews: t.reviews,
   guilds: t.guilds,
   contact: t.contact,
+  logout: t.logout,
 };
 useEffect(() => {
     const fetchPlayers = async () => {
@@ -754,7 +755,12 @@ if (!battlenetId) {
   };
 
   return <div style={{minHeight:"100vh",background:"radial-gradient(circle at 80% 0,#28105b 0,transparent 34%),radial-gradient(circle at 15% 35%,#073c42 0,transparent 25%),#050713",color:"#f7f8ff",fontFamily:"Arial,sans-serif"}}>
-   <Header lang={lang} setLang={setLang} t={headerT} />
+  <Header
+  lang={lang}
+  setLang={setLang}
+  t={headerT}
+  isLoggedIn={status === "authenticated"}
+/>
     <main>
       <section style={{maxWidth:1000,width:"92%",margin:"auto",textAlign:"center",padding:"62px 0 50px"}}>
        <h1 style={{fontSize:"clamp(30px,5vw,55px)",lineHeight:.98,margin:"22px 0 18px"}}>{t.h1}<br/><span style={{background:"linear-gradient(90deg,#fff,#e832ff,#16ddff)",WebkitBackgroundClip:"text",color:"transparent"}}>{t.h2}</span></h1>
