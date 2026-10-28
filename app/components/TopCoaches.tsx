@@ -311,34 +311,10 @@ useEffect(() => {
                 border: "1px solid #20c9bd",
                 borderRadius: 18,
                 padding: 20,
-                position: "relative",
-              }}
+               }}
             >
-              {coach.is_verified && (
-            <div
-              title="Verified Coach"
-              style={{
-              position: "absolute",
-              top: 12,
-              right: 12,
-              width: 28,
-              height: 28,
-              borderRadius: "50%",
-              background: "#20e85a",
-              color: "#ffffff",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: 19,
-              fontWeight: 900,
-              zIndex: 2,
-            }}
-          >
-            ✓
-          </div>
-        )}
-             
-              <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
+            
+               <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
                 <div
                   style={{
                     width: 48,
@@ -365,10 +341,43 @@ useEffect(() => {
                   )}
                 </div>
 
-                <div style={{ minWidth: 0 }}>
-                  <h3 style={{ margin: 0, overflowWrap: "anywhere" }}>
-                   {coach.battletag ? coach.battletag.split(" ")[0] : "GamePro Coach"}
-                   
+               <div style={{ minWidth: 0 }}>
+            <h3
+               style={{
+               margin: 0,
+               overflowWrap: "anywhere",
+              display: "flex",
+              alignItems: "center",
+              gap: 6,
+            }}
+           >
+           <span>
+             {coach.battletag
+             ? coach.battletag.split(" ")[0]
+             : "GamePro Coach"}
+            </span>
+
+            {coach.is_verified && (
+            <span
+             title="Verified Coach"
+             style={{
+             flexShrink: 0,
+             width: 20,
+             height: 20,
+             borderRadius: "50%",
+             background: "#20e85a",
+             color: "#ffffff",
+             display: "inline-flex",
+             alignItems: "center",
+             justifyContent: "center",
+             fontSize: 14,
+             fontWeight: 900,
+           }}
+         >
+           ✓
+         </span>
+       )}
+     </h3>
                   </h3>
                   <span style={{ color: "#9da6c0", fontSize: 13 }}>
                     {coach.game} · {coach.role || "Coach"}
