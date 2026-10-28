@@ -348,7 +348,7 @@ useEffect(() => {
       overflowWrap: "anywhere",
       display: "flex",
       alignItems: "center",
-      gap: 6,
+      gap: 12,
     }}
   >
     <span>
