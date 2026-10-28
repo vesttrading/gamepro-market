@@ -765,7 +765,7 @@ if (!battlenetId) {
       <section style={{maxWidth:1000,width:"92%",margin:"auto",textAlign:"center",padding:"62px 0 50px"}}>
        <h1 style={{fontSize:"clamp(30px,5vw,55px)",lineHeight:.98,margin:"22px 0 18px"}}>{t.h1}<br/><span style={{background:"linear-gradient(90deg,#fff,#e832ff,#16ddff)",WebkitBackgroundClip:"text",color:"transparent"}}>{t.h2}</span></h1>
         <p style={{maxWidth:690,margin:"auto",color:"#9da6c0",fontSize:18,lineHeight:1.65}}>{t.intro}</p>
-        <div style={{marginTop:28,display:"flex",justifyContent:"center",gap:12,flexWrap:"wrap"}}><button style={btn} onClick={()=>signIn("battlenet",{callbackUrl:"/"}, { prompt: "login",locale: ({ RU:"ru_RU", EN:"en_GB", TR:"tr_TR", DE:"de_DE", ES:"es_ES", FR:"fr_FR", PL:"pl_PL" } as Record<string,string>)[lang] || "en_GB" })}><span>🎮</span> {t.login}</button><button style={btn} onClick={() => signOut({ callbackUrl: "/" })}>{t.logout}</button></div>
+        <div style={{marginTop:28,display:"flex",justifyContent:"center",gap:12,flexWrap:"wrap"}}><button style={btn} onClick={()=>signIn("battlenet",{callbackUrl:"/"}, { prompt: "login",locale: ({ RU:"ru_RU", EN:"en_GB", TR:"tr_TR", DE:"de_DE", ES:"es_ES", FR:"fr_FR", PL:"pl_PL" } as Record<string,string>)[lang] || "en_GB" })}><span>🎮</span> {t.login}</button></div>
       </section>
 
       <TopCoaches />
