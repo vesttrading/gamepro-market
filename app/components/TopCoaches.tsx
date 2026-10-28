@@ -341,48 +341,48 @@ useEffect(() => {
                   )}
                 </div>
 
-               <div style={{ minWidth: 0 }}>
-            <h3
-               style={{
-               margin: 0,
-               overflowWrap: "anywhere",
-              display: "flex",
-              alignItems: "center",
-              gap: 6,
-            }}
-           >
-           <span>
-             {coach.battletag
-             ? coach.battletag.split(" ")[0]
-             : "GamePro Coach"}
-            </span>
+            <div style={{ minWidth: 0 }}>
+  <h3
+    style={{
+      margin: 0,
+      overflowWrap: "anywhere",
+      display: "flex",
+      alignItems: "center",
+      gap: 6,
+    }}
+  >
+    <span>
+      {coach.battletag
+        ? coach.battletag.split(" ")[0]
+        : "GamePro Coach"}
+    </span>
 
-            {coach.is_verified && (
-            <span
-             title="Verified Coach"
-             style={{
-             flexShrink: 0,
-             width: 20,
-             height: 20,
-             borderRadius: "50%",
-             background: "#20e85a",
-             color: "#ffffff",
-             display: "inline-flex",
-             alignItems: "center",
-             justifyContent: "center",
-             fontSize: 14,
-             fontWeight: 900,
-           }}
-         >
-           ✓
-         </span>
-       )}
-     </h3>
-                  </h3>
-                  <span style={{ color: "#9da6c0", fontSize: 13 }}>
-                    {coach.game} · {coach.role || "Coach"}
-                  </span>
-                </div>
+    {coach.is_verified && (
+      <span
+        title="Verified Coach"
+        style={{
+          flexShrink: 0,
+          width: 20,
+          height: 20,
+          borderRadius: "50%",
+          background: "#20e85a",
+          color: "#ffffff",
+          display: "inline-flex",
+          alignItems: "center",
+          justifyContent: "center",
+          fontSize: 14,
+          fontWeight: 900,
+        }}
+      >
+        ✓
+      </span>
+    )}
+  </h3>
+
+  <span style={{ color: "#9da6c0", fontSize: 13 }}>
+    {coach.game} · {coach.role || "Coach"}
+  </span>
+</div>
               </div>
 
               {coach.is_verified && (
