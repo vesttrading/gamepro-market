@@ -311,8 +311,33 @@ useEffect(() => {
                 border: "1px solid #20c9bd",
                 borderRadius: 18,
                 padding: 20,
+                position: "relative",
               }}
             >
+              {coach.is_verified && (
+            <div
+              title="Verified Coach"
+              style={{
+              position: "absolute",
+              top: 12,
+              right: 12,
+              width: 28,
+              height: 28,
+              borderRadius: "50%",
+              background: "#20e85a",
+              color: "#ffffff",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              fontSize: 19,
+              fontWeight: 900,
+              zIndex: 2,
+            }}
+          >
+            ✓
+          </div>
+        )}
+             
               <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
                 <div
                   style={{
@@ -360,7 +385,7 @@ useEffect(() => {
             }}
           >
              {{
-             RU: "WoW Mythic+ Header",
+             RU: "WoW Mythic+ Хилер ",
              EN: "WoW Mythic+ Header",
              TR: "WoW Mythic+ Başlığı",
              DE: "WoW Mythic+ Überschrift",
