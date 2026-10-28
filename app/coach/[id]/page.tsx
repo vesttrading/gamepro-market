@@ -165,6 +165,24 @@ export default async function CoachProfilePage({
             />
          </p>
         )}
+
+        <button style={{
+        width: "100%",
+        padding: "10px 16px",
+        marginTop: 16,
+        background: "rgba(0, 240, 255, 0.03)",        // Почти прозрачный неоновый фон
+        border: "1px solid rgba(0, 240, 255, 0.4)",   // Тонкая ярко-голубая окантовка в тон цены
+        boxShadow: "0 0 10px rgba(0, 240, 255, 0.1)", // Мягкое киберспортивное свечение
+        borderRadius: 8,
+        color: "#00f0ff",                             // Ярко-голубой текст кнопки
+        fontSize: 14,
+        fontWeight: 700,
+        cursor: "pointer",
+        transition: "all 0.2s ease"                    // Плавность при взаимодействии
+      }}>
+        {lang === "RU" ? "Забронировать тренировку" : "Book a Session"}
+      </button>
+                
               </div>
             ))}
           </div>
