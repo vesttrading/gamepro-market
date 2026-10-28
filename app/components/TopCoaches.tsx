@@ -360,14 +360,14 @@ useEffect(() => {
             }}
           >
              {{
-              RU: "✓ ПОДТВЕРЖДЁН",
+              RU: "✓ WoW Mythic+ Header",
               EN: "✓ VERIFIED",
               TR: "✓ DOĞRULANDI",
               DE: "✓ VERIFIZIERT",
               ES: "✓ VERIFICADO",
               FR: "✓ VÉRIFIÉ",
-              PL: "✓ ZWERYFIKOWANO",
-             }[lang] || "✓ VERIFIED"}
+              PL: "✓ WoW Mythic+ Header",
+             }[lang] || "✓ WoW Mythic+ Header"}
            </p>
               )}
 
