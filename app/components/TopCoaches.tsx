@@ -409,13 +409,13 @@ useEffect(() => {
         {coach.description ===
        "Experienced WoW player offering Mythic+ coaching for beginners and advanced players."
     ? ({
-        RU: "Опытный игрок WoW. Обучаю Mythic+ новичков и опытных игроков.",
-        EN: "Experienced WoW player offering Mythic+ coaching for beginners and advanced players.",
-        TR: "Yeni başlayanlara ve deneyimli oyunculara Mythic+ koçluğu sunan deneyimli bir WoW oyuncusu.",
-        DE: "Erfahrener WoW-Spieler und Mythic+-Coach für Anfänger und erfahrene Spieler.",
-        ES: "Jugador experimentado de WoW que ofrece entrenamiento de Mythic+ para principiantes y jugadores avanzados.",
-        FR: "Joueur expérimenté de WoW proposant du coaching Mythic+ aux débutants et aux joueurs avancés.",
-        PL: "Doświadczony gracz WoW oferujący coaching Mythic+ dla początkujących i zaawansowanych graczy.",
+      RU: "Закрываю Mythic+ любой сложности. Помогу новичкам освоить механику с нуля, а опытным игрокам — отточить навыки и поднять свой ключ на максимум.",
+      EN: "Clearing Mythic+ of any difficulty. I will help beginners learn the mechanics from scratch and veteran players sharpen their skills to push keys to the max.",
+      TR: "Her zorlukta Mythic+ tamamlıyorum. Yeni başlayanların mekanikleri sıfırdan öğrenmesine, deneyimli oyuncuların ise becerilerini geliştirip anahtarlarını en üst seviyeye çıkarmasına yardımcı oluyorum.",
+      DE: "Ich schließe Mythic+ auf jedem Schwierigkeitsgrad ab. Ich helfe Anfängern, die Mechaniken von Grund auf zu lernen, und erfahrenen Spielern, ihre Fähigkeiten zu verfeinern, um das Maximum aus ihren Keys herauszuholen.",
+      ES: "Completo Mythic+ en cualquier dificultad. Ayudo a los principiantes a aprender las mecánicas desde cero y a los jugadores experimentados a perfeccionar sus habilidades para subir sus piedras al máximo.",
+      FR: "Je valide les Mythic+ de n'importe quelle difficulté. J'aide les débutants à apprendre les mécaniques à partir de zéro et los joueurs expérimentés à perfectionner leurs compétences pour pousser leurs clés au maximum.",
+      PL: "Zamykam Mythic+ na każdym poziomie trudności. Pomogę początkującym opanować mechanikę od zera, a doświadczonym graczom dopracować umiejętności i wycisnąć z kluczy absolutne maksimum.",
       } as Record<string, string>)[lang] ||
       "Experienced WoW player offering Mythic+ coaching for beginners and advanced players."
     : coach.description ||
