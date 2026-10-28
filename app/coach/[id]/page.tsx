@@ -165,25 +165,7 @@ export default async function CoachProfilePage({
             />
          </p>
         )}
-
-      <button style={{
-       display: "block",
-       width: "auto",                                 // Кнопка больше не растягивается во всю ширь
-       margin: "16px 0 0 auto",                       // Прижимает маленькую кнопку к правому краю карточки
-       padding: "6px 16px",                           // Сделали тоньше по высоте (было 10px, стало 6px)
-       background: "rgba(0, 240, 255, 0.03)",        
-       border: "1px solid rgba(0, 240, 255, 0.4)",   
-       boxShadow: "0 0 10px rgba(0, 240, 255, 0.1)", 
-       borderRadius: 6,                               // Чуть уменьшили скругление углов под размер
-       color: "#00f0ff",                             
-       fontSize: 13,                                  // Чуть уменьшили размер шрифта (был 14)
-       fontWeight: 700,
-       cursor: "pointer"
-     }}>
-       Забронировать тренировку
-     </button>
-                
-              </div>
+    </div>
             ))}
           </div>
         ) : (
