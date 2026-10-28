@@ -389,13 +389,13 @@ useEffect(() => {
         {coach.description ===
        "Experienced WoW player offering Mythic+ coaching for beginners and advanced players."
     ? ({
-      RU: "Закрываю Mythic+ любой сложности. Помогу новичкам освоить механику с нуля, а опытным игрокам — отточить навыки и поднять свой ключ на максимум.",
-      EN: "Clearing Mythic+ of any difficulty. I will help beginners learn the mechanics from scratch and veteran players sharpen their skills to push keys to the max.",
-      TR: "Her zorlukta Mythic+ tamamlıyorum. Yeni başlayanların mekanikleri sıfırdan öğrenmesine, deneyimli oyuncuların ise becerilerini geliştirip anahtarlarını en üst seviyeye çıkarmasına yardımcı oluyorum.",
-      DE: "Ich schließe Mythic+ auf jedem Schwierigkeitsgrad ab. Ich helfe Anfängern, die Mechaniken von Grund auf zu lernen, und erfahrenen Spielern, ihre Fähigkeiten zu verfeinern, um das Maximum aus ihren Keys herauszuholen.",
-      ES: "Completo Mythic+ en cualquier dificultad. Ayudo a los principiantes a aprender las mecánicas desde cero y a los jugadores experimentados a perfeccionar sus habilidades para subir sus piedras al máximo.",
-      FR: "Je valide les Mythic+ de n'importe quelle difficulté. J'aide les débutants à apprendre les mécaniques à partir de zéro et los joueurs expérimentés à perfectionner leurs compétences pour pousser leurs clés au maximum.",
-      PL: "Zamykam Mythic+ na każdym poziomie trudności. Pomogę początkującym opanować mechanikę od zera, a doświadczonym graczom dopracować umiejętności i wycisnąć z kluczy absolutne maksimum.",
+   RU: "🚀 Топовый хил в Mythic+ любой сложности!\n\n• Обучение механикам с нуля\n• Оптимизация хила и разбор ошибок\n• Спокойный и эффективный войс-колл",
+   EN: "🚀 Top-tier healing in Mythic+ of any difficulty!\n\n• Learning mechanics from scratch\n• Healing optimization and error analysis\n• Calm and effective voice comms",
+   TR: "🚀 Her zorlukta Mythic+ için üst düzey şifa!\n\n• Sıfırdan mekanik eğitimi\n• Şifa optimizasyonu ve hata analizi\n• Sakin ve etkili sesli iletişim",
+   DE: "🚀 Top-Tier-Heilung in Mythic+ auf jedem Level!\n\n• Mechaniken von Grund auf lernen\n• Heilungsoptimierung und Fehleranalyse\n• Ruhige und effektive Absprachen",
+   ES: "🚀 ¡Sanación de alto nivel en Mythic+ de cualquier dificultad!\n\n• Aprendizaje de mecánicas desde cero\n• Optimización de sanación y análisis de errores\n• Comunicación por voz tranquila y eficaz",
+   FR: "🚀 Soins de haut niveau en Mythic+ de toute difficulté !\n\n• Apprentissage des mécaniques à partir de zéro\n• Optimisation des soins et analyse des erreurs\n• Comms vocales calmes et efficaces",
+   PL: "🚀 Uzdrawianie na najwyższym poziomie w Mythic+ o każdej trudności!\n\n• Nauka mechaniki od zera\n• Optymalizacja leczenia i analiza błędów\n• Spokojna i skuteczna komunikacja głosowa",
       } as Record<string, string>)[lang] ||
       "Experienced WoW player offering Mythic+ coaching for beginners and advanced players."
     : coach.description ||
