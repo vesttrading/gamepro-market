@@ -142,16 +142,17 @@ style={{ height: "45px", width: "auto" }}
     {isLoggedIn && (
   <button
     onClick={() => signOut({ callbackUrl: "/" })}
-    style={{
-      background: "#20c9bd",
-      color: "#06111b",
-      border: "none",
-      borderRadius: 9,
-      padding: "9px 12px",
-      fontWeight: 700,
-      cursor: "pointer",
-      whiteSpace: "nowrap",
-    }}
+   style={{
+  background: "transparent",
+  color: "#bdc4da",
+  border: "1px solid #20c9bd",
+  borderRadius: 9,
+  padding: "9px 12px",
+  fontWeight: 400,
+  fontSize: 14,
+  cursor: "pointer",
+  whiteSpace: "nowrap",
+}}
   >
     {t.logout}
   </button>
