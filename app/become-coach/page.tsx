@@ -299,26 +299,39 @@ return (
       width: "calc(100% - 24px)",
     }}
   >
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "flex-end",
-        marginBottom: 12,
-      }}
-    >
-      <a
-        href="/"
-        style={{
-          color: "#20c9bd",
-          textDecoration: "none",
-          fontSize: 14,
-          fontWeight: 700,
-        }}
-      >
-        ← GamePro
-      </a>
-    </div>
- 
+   <div
+  style={{
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between", // <--- Добавьте эту строчку, она раздвинет заголовок и кнопку по краям
+    gap: 14,
+    marginBottom: 26,
+    width: "100%"                    // <--- Добавьте эту строчку, чтобы flex работал на всю ширину
+  }}
+>
+  <span
+    style={{
+      fontSize: 38,
+      color: "#4789ff",
+      lineHeight: 1,
+    }}
+  >
+    🎮
+  </span>
+
+  {/* Сюда, сразу после иконки или после вашего h1, вставьте вырезанную ссылку: */}
+  <a
+    href="/"
+    style={{
+      color: "#20c9bd",
+      textDecoration: "none",
+      fontSize: 14,
+      fontWeight: 700,
+      marginLeft: "auto" // <--- Добавьте это свойство, оно автоматически прижмет кнопку к правому краю
+    }}
+  >
+    ← GamePro
+  </a>
     <style>{`
   input::placeholder,
   textarea::placeholder {
