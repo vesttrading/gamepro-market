@@ -386,12 +386,13 @@ return (
       <div>
         <h1
           className="coach-card-title"
-          style={{
-            margin: 0,
-            fontSize: 30,
-            fontWeight: 800,
-            letterSpacing: "-0.7px",
-          }}
+         style={{
+        margin: 0,
+        fontSize: 30,
+        fontWeight: 800,
+        letterSpacing: "-0.7px",
+        textAlign: "center" 
+    }}
         >
           {t.title}
         </h1>
