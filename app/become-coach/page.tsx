@@ -523,16 +523,23 @@ return (
   />
 </label>
         
-       <button type="submit" disabled={loading} style={{
-          padding: 10, border: 0, borderRadius: 10, background: "#20c9bd",
-          color: "#06101a", fontWeight: 700, cursor: "pointer",
-          marginBottom: 0,
-          display: "block",
-          marginTop: "16px"
-        }}>
-          {loading ? t.saving : t.save}
-        </button>
-    {message && (
+      <button type="submit" disabled={loading} style={{
+    padding: 10, 
+    border: "2px solid #a855f7", 
+    borderRadius: 10, 
+    background: "#131824", 
+    color: "#ffffff", 
+    fontWeight: 700, 
+    cursor: "pointer",
+    marginBottom: 0,
+    display: "block",
+    marginTop: "16px",
+    width: "100%"
+}}>
+    {loading ? t.saving : t.save}
+</button>
+  
+     {message && (
     <p role="status" style={{ margin: "4px 0 0" }}>
     {message}
   </p>
