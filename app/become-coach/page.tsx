@@ -213,29 +213,20 @@ return (
           flex: 1,
         }}
       >
-        <span
-          style={{
-            fontSize: 38,
-            color: "#4789ff",
-            lineHeight: 1,
-            flexShrink: 0,
-          }}
-        >
-          🎮
-        </span>
-
-        <div style={{ minWidth: 0 }}>
-          <h1
-            className="coach-card-title"
-            style={{
-              margin: 0,
-              fontSize: 30,
-              fontWeight: 800,
-              letterSpacing: "-0.7px",
-            }}
-          >
-            {t.title}
-          </h1>
+      
+      <div style={{ minWidth: 0 }}>
+        <h1
+         className="coach-card-title"
+         style={{
+         margin: 0,
+         fontSize: 30,
+         fontWeight: 800,
+         letterSpacing: "-0.7px",
+         textAlign: "center",
+       }}
+     >
+       {t.title}
+     </h1>
 
           <p
             className="coach-card-subtitle"
@@ -243,6 +234,7 @@ return (
               margin: "8px 0 0",
               color: "#94a3b8",
               lineHeight: 1.5,
+              textAlign: "center",
             }}
           >
             {t.intro}
@@ -375,35 +367,7 @@ return (
       }}
     >
      
-     <div>
-        <h1
-          className="coach-card-title"
-         style={{
-        margin: 0,
-        fontSize: 30,
-        fontWeight: 800,
-        letterSpacing: "-0.7px",
-        textAlign: "center" 
-    }}
-        >
-          {t.title}
-        </h1>
-
-        <p
-          className="coach-card-subtitle"
-          style={{
-            margin: "8px 0 0",
-            color: "#94a3b8",
-            lineHeight: 1.5,
-            textAlign: "center"
-          }}
-        >
-          {t.intro}
-        </p>
-      </div>
-    </div>
-   
-   <form
+     <form
   className="coach-field"
   onSubmit={submitForm}
   style={{
