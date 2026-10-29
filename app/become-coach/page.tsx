@@ -306,17 +306,20 @@ return (
         marginBottom: 12,
       }}
     >
-      <a
-        href="/"
-        style={{
-          color: "#20c9bd",
-          textDecoration: "none",
-          fontSize: 14,
-          fontWeight: 700,
-        }}
-      >
-        ← GamePro
-      </a>
+     <a
+  href="/"
+  style={{
+    color: "#20c9bd",
+    textDecoration: "none",
+    fontSize: 14,
+    fontWeight: 700,
+    float: "right",
+    position: "relative",
+    top: "34px" 
+  }}
+>
+  ← GamePro
+</a>
     </div>
  
     <style>{`
