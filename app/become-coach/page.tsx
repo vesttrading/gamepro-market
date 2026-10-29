@@ -471,7 +471,7 @@ return (
     rows={4}
     style={{
       ...fieldStyle,
-      border: "2px solid #4789ff",
+      border: "2px solid #3b4967",
     }}
   />
 </label>
@@ -497,7 +497,7 @@ return (
     onChange={(e) => setServiceType(e.target.value)}
     style={{
       ...fieldStyle,
-      border: "2px solid #3b4967",
+      border: "2px solid #4789ff",
     }}
   >
     <option value="Coaching">{t.coaching}</option>
