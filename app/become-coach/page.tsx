@@ -373,17 +373,8 @@ return (
         marginBottom: 26,
       }}
     >
-      <span
-        style={{
-          fontSize: 38,
-          color: "#4789ff",
-          lineHeight: 1,
-        }}
-      >
-        🎮
-      </span>
-
-      <div>
+     
+     <div>
         <h1
           className="coach-card-title"
          style={{
