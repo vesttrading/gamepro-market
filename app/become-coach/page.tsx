@@ -291,7 +291,6 @@ return (
       maxWidth: 600,
       margin: "24px auto",
       padding: "12px 24px",
-      position: "relative",
       color: "#f8fafc",
       background: "#101727",
       border: "1px solid #303b52",
@@ -306,22 +305,22 @@ return (
         justifyContent: "flex-end",
         marginBottom: 12,
       }}
-    ><a
+    >
+<a
   href="/"
   style={{
     color: "#20c9bd",
     textDecoration: "none",
     fontSize: 14,
     fontWeight: 700,
-    position: "absolute",
-    left: 0,            
-    top: "48px",        
+    float: "right",
+    position: "relative",
+    top: "52px",
     display: typeof window !== 'undefined' && window.innerWidth < 768 ? 'none' : 'block'
   }}
 >
   ← GamePro
 </a>
-
     </div>
  
     <style>{`
@@ -374,8 +373,17 @@ return (
         marginBottom: 26,
       }}
     >
-     
-     <div>
+      <span
+        style={{
+          fontSize: 38,
+          color: "#4789ff",
+          lineHeight: 1,
+        }}
+      >
+        🎮
+      </span>
+
+      <div>
         <h1
           className="coach-card-title"
          style={{
@@ -395,7 +403,6 @@ return (
             margin: "8px 0 0",
             color: "#94a3b8",
             lineHeight: 1.5,
-            textAlign: "center"
           }}
         >
           {t.intro}
