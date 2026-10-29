@@ -126,7 +126,7 @@ export default function PublishCoachButton() {
     width: "100%",
     boxSizing: "border-box",
     padding: "10px", 
-    margin: "-10px 0 0 0",
+    margin: "12px 0 0 0",
     borderRadius: 10, 
     border: "2px solid #00bcff", 
     background: "#1e293b", 
