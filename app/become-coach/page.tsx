@@ -241,7 +241,27 @@ const fieldStyle: React.CSSProperties = {
       width: "calc(100% - 24px)",
     }}
   >
-   <style>{`
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "flex-end",
+        marginBottom: 12,
+      }}
+    >
+      <a
+        href="/"
+        style={{
+          color: "#20c9bd",
+          textDecoration: "none",
+          fontSize: 14,
+          fontWeight: 700,
+        }}
+      >
+        ← GamePro
+      </a>
+    </div>
+ 
+    <style>{`
   input::placeholder,
   textarea::placeholder {
     color: #cbd5e1 !important;
@@ -339,53 +359,113 @@ const fieldStyle: React.CSSProperties = {
 >
         <label>
           {t.game}
-          <select value={game} onChange={(e) => setGame(e.target.value)} style={fieldStyle}>
+         <select
+  value={game}
+  onChange={(e) => setGame(e.target.value)}
+  style={{
+    ...fieldStyle,
+    border: "2px solid #4789ff",
+  }}
+>
             <option value="WoW">{t.wow}</option>
             <option value="Dota 2">{t.dota}</option>
             <option value="CS2">{t.cs2}</option>
           </select>
         </label>
 
-        <label>
-          {t.role}
-          <input value={role} onChange={(e) => setRole(e.target.value)}
-            placeholder={t.rolePlaceholder} required style={fieldStyle} />
-        </label>
+       <label>
+  {t.role}
+  <input
+    value={role}
+    onChange={(e) => setRole(e.target.value)}
+    placeholder={t.rolePlaceholder}
+    required
+    style={{
+      ...fieldStyle,
+      border: "2px solid #a855f7",
+    }}
+  />
+</label>
 
-        <label>
-          {t.discord}
-          <input value={discord} onChange={(e) => setDiscord(e.target.value)}
-            placeholder={t.discordPlaceholder} required style={fieldStyle} />
-        </label>
+       <label>
+  {t.discord}
+  <input
+    value={discord}
+    onChange={(e) => setDiscord(e.target.value)}
+    placeholder={t.discordPlaceholder}
+    required
+    style={{
+      ...fieldStyle,
+      border: "2px solid #22c55e",
+    }}
+  />
+</label>
 
-        <label>
-          {t.about}
-          <textarea value={description} onChange={(e) => setDescription(e.target.value)}
-            placeholder={t.aboutPlaceholder} minLength={20} maxLength={1000} required rows={4} style={fieldStyle} />
-        </label>
+      <label>
+  {t.about}
+  <textarea
+    value={description}
+    onChange={(e) => setDescription(e.target.value)}
+    placeholder={t.aboutPlaceholder}
+    minLength={20}
+    maxLength={1000}
+    required
+    rows={4}
+    style={{
+      ...fieldStyle,
+      border: "2px solid #4789ff",
+    }}
+  />
+</label>
 
-        <label>
-          {t.serviceTitle}
-          <input value={serviceTitle} onChange={(e) => setServiceTitle(e.target.value)}
-            placeholder={t.servicePlaceholder} required style={fieldStyle} />
-        </label>
+      <label>
+  {t.serviceTitle}
+  <input
+    value={serviceTitle}
+    onChange={(e) => setServiceTitle(e.target.value)}
+    placeholder={t.servicePlaceholder}
+    required
+    style={{
+      ...fieldStyle,
+      border: "2px solid #f59e0b",
+    }}
+  />
+</label>
 
-        <label>
-          {t.serviceType}
-          <select value={serviceType} onChange={(e) => setServiceType(e.target.value)} style={fieldStyle}>
-            <option value="Coaching">{t.coaching}</option>
-            <option value="Guide">{t.guide}</option>
-            <option value="UI">{t.ui}</option>
-          </select>
-        </label>
+      <label>
+  {t.serviceType}
+  <select
+    value={serviceType}
+    onChange={(e) => setServiceType(e.target.value)}
+    style={{
+      ...fieldStyle,
+      border: "2px solid #3b4967",
+    }}
+  >
+    <option value="Coaching">{t.coaching}</option>
+    <option value="Guide">{t.guide}</option>
+    <option value="UI">{t.ui}</option>
+  </select>
+</label>
 
-        <label>
-          {t.price}
-          <input type="number" min="1" max="10000" step="0.01"
-            value={price} onChange={(e) => setPrice(e.target.value)}
-            required style={fieldStyle} />
-        </label>
-         <button type="submit" disabled={loading} style={{
+       <label>
+  {t.price}
+  <input
+    type="number"
+    min="1"
+    max="10000"
+    step="0.01"
+    value={price}
+    onChange={(e) => setPrice(e.target.value)}
+    required
+    style={{
+      ...fieldStyle,
+      border: "2px solid #22c55e",
+    }}
+  />
+</label>
+        
+       <button type="submit" disabled={loading} style={{
           padding: 10, border: 0, borderRadius: 10, background: "#20c9bd",
           color: "#06101a", fontWeight: 700, cursor: "pointer",
           marginBottom: 0,
@@ -413,23 +493,7 @@ const fieldStyle: React.CSSProperties = {
      
         <PublishCoachButton />
 
-        <a
-          href="/"
-          style={{
-            display: "block",
-            padding: "14px 20px",
-            background: "#20c9bd",
-            border: "none",
-            borderRadius: 10,
-            color: "#06101a",
-            textDecoration: "none",
-            fontSize: 14,
-            fontWeight: 700,
-            textAlign: "center",
-          }}
-        >
-          {t.back}
-        </a>
+      
       </div>
 
      </form> 
