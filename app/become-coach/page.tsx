@@ -274,11 +274,17 @@ return (
           callbackUrl: "/become-coach",
         })
       }
-      style={{
-        padding: 13,
-        borderRadius: 9,
-        cursor: "pointer",
-      }}
+     style={{
+  padding: "13px 20px",
+  borderRadius: 10,
+  background: "#101727",
+  border: "1px solid #4789ff",
+  color: "#f8fafc",
+  fontSize: 14,
+  fontWeight: 700,
+  cursor: "pointer",
+  width: "100%",
+}}
     >
       {t.signIn}
     </button>
