@@ -525,7 +525,7 @@ return (
         
       <button type="submit" disabled={loading} style={{
     padding: 10, 
-    border: "2px solid #a855f7", 
+    border: "2px solid #4789ff", 
     borderRadius: 10, 
     background: "#131824", 
     color: "#ffffff", 
