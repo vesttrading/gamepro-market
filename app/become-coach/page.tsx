@@ -523,13 +523,14 @@ return (
   />
 </label>
         
-    <button type="submit" disabled={loading} style={{
+  <button type="submit" disabled={loading} style={{
     padding: 10, 
-    border: "2px solid #a855f7", 
+    border: "2px solid #00bcff", 
     borderRadius: 10, 
     background: "#1e293b", 
-    color: "#c084fc", 
-    fontWeight: 500, 
+    color: "#00bcff", 
+    textShadow: "0 0 8px #00bcff, 0 0 15px #00bcff",
+    fontWeight: 600, 
     cursor: "pointer",
     marginBottom: 0,
     display: "block",
