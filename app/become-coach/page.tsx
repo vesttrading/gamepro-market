@@ -214,7 +214,13 @@ return (
         }}
       >
        
-       <div style={{ minWidth: 0 }}>
+      <div
+       style={{
+       minWidth: 0,
+       width: "100%",
+       textAlign: "center",
+     }}
+   >
          <h1
          className="coach-card-title"
          style={{
