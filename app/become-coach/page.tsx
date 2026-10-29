@@ -290,7 +290,7 @@ return (
     style={{
       maxWidth: 600,
       margin: "24px auto",
-      padding: "12px 24px",
+      padding: "12px 24px 32px 24px",
       color: "#f8fafc",
       background: "#101727",
       border: "1px solid #303b52",
