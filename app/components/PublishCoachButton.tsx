@@ -131,6 +131,7 @@ export default function PublishCoachButton() {
     border: "2px solid #00bcff", 
     background: "#1e293b", 
     color: "#00bcff", 
+    fontSize: "16px",
     fontWeight: 600, 
     cursor: loading ? "wait" : "pointer",
     textAlign: "center"
