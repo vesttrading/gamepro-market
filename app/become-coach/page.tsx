@@ -184,40 +184,68 @@ const fieldStyle: React.CSSProperties = {
   }
 
   if (!session) {
-    return (
-      <main style={{ maxWidth: 620, margin: "60px auto", padding: 24, color: "white" }}>
-       <div style={{
-  display: "flex",
-  alignItems: "center",
-  gap: 14,
-  marginBottom: 26,
-}}>
-  <span style={{
-    fontSize: 38,
-    color: "#4789ff",
-    lineHeight: 1,
-  }}>
-    🎮
-  </span>
-  <div>
-    <h1 className="coach-card-title" style={{
-      margin: 0,
-      fontSize: 30,
-      fontWeight: 800,
-      letterSpacing: "-0.7px",
+  return (
+  <main style={{ maxWidth: 620, margin: "60px auto", padding: 24, color: "white" }}>
+    <div style={{
+      display: "flex",
+      alignItems: "flex-start",
+      justifyContent: "space-between",
+      gap: 14,
+      marginBottom: 26,
     }}>
-      {t.title}
-    </h1>
-    <p className="coach-card-subtitle" style={{
-      margin: "8px 0 0",
-      color: "#94a3b8",
-      lineHeight: 1.5,
-    }}>
-      {t.intro}
-    </p>
-  </div>
-</div>
-        <button
+      <div style={{
+        display: "flex",
+        alignItems: "center",
+        gap: 14,
+        minWidth: 0,
+      }}>
+        <span style={{
+          fontSize: 38,
+          color: "#4789ff",
+          lineHeight: 1,
+        }}>
+          🎮
+        </span>
+
+        <div>
+          <h1 className="coach-card-title" style={{
+            margin: 0,
+            fontSize: 30,
+            fontWeight: 800,
+            letterSpacing: "-0.7px",
+          }}>
+            {t.title}
+          </h1>
+
+          <p className="coach-card-subtitle" style={{
+            margin: "8px 0 0",
+            color: "#94a3b8",
+            lineHeight: 1.5,
+          }}>
+            {t.intro}
+          </p>
+        </div>
+      </div>
+
+      <a
+        href="/"
+        style={{
+          padding: "10px 14px",
+          background: "#20c9bd",
+          borderRadius: 10,
+          color: "#06101a",
+          textDecoration: "none",
+          fontSize: 13,
+          fontWeight: 700,
+          whiteSpace: "nowrap",
+          flexShrink: 0,
+        }}
+      >
+        {t.back}
+      </a>
+    </div>
+       
+       <button
           onClick={() => signIn("battlenet", { callbackUrl: "/become-coach" })}
           style={{ padding: 13, borderRadius: 9, cursor: "pointer" }}
         >
