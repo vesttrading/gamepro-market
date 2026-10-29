@@ -306,7 +306,7 @@ return (
         marginBottom: 12,
       }}
     >
-     <a
+ <a
   href="/"
   style={{
     color: "#20c9bd",
@@ -314,8 +314,7 @@ return (
     fontSize: 14,
     fontWeight: 700,
     float: "right",
-    transform: "translateY(250%)", 
-    clear: "both"
+    display: typeof window !== 'undefined' && window.innerWidth < 768 ? 'none' : 'block'
   }}
 >
   ← GamePro
