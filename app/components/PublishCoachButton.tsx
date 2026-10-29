@@ -117,26 +117,27 @@ export default function PublishCoachButton() {
       width: "100%",
     }}
   >
-    <button
-      type="button"
-      onClick={publishProfile}
-      disabled={loading}
-      style={{
-        display: "block",
-        width: "100%",
-        boxSizing: "border-box",
-        padding: "14px 20px",
-        margin: "-10px 0 0 0",
-        borderRadius: 10,
-        border: "none",
-        background: "#20c9bd",
-        color: "#06101a",
-        fontWeight: 700,
-        cursor: loading ? "wait" : "pointer",
-      }}
-    >
-      {loading ? t.publishing : t.publish}
-    </button>
+   <button
+  type="button"
+  onClick={publishProfile}
+  disabled={loading}
+  style={{
+    display: "block",
+    width: "100%",
+    boxSizing: "border-box",
+    padding: "10px", 
+    margin: "-10px 0 0 0",
+    borderRadius: 10, 
+    border: "2px solid #00bcff", 
+    background: "#1e293b", 
+    color: "#00bcff", 
+    fontWeight: 600, 
+    cursor: loading ? "wait" : "pointer",
+    textAlign: "center"
+  }}
+>
+  {loading ? t.publishing : t.publish}
+</button>
 
     {message && (
       <p style={{ color: "#20c9bd", margin: "2px 0 0" }}>
