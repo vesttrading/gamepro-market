@@ -395,6 +395,7 @@ return (
             margin: "8px 0 0",
             color: "#94a3b8",
             lineHeight: 1.5,
+            textAlign: "center"
           }}
         >
           {t.intro}
