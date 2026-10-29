@@ -291,6 +291,7 @@ return (
       maxWidth: 600,
       margin: "24px auto",
       padding: "12px 24px",
+      position: "relative",
       color: "#f8fafc",
       background: "#101727",
       border: "1px solid #303b52",
