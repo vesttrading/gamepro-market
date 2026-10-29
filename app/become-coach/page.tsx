@@ -184,7 +184,107 @@ const fieldStyle: React.CSSProperties = {
   }
 
   if (!session) {
+return (
+  <main
+    style={{
+      maxWidth: 620,
+      margin: "24px auto",
+      padding: 24,
+      color: "white",
+      boxSizing: "border-box",
+      width: "calc(100% - 24px)",
+    }}
+  >
+    <div
+      style={{
+        display: "flex",
+        alignItems: "flex-start",
+        justifyContent: "space-between",
+        gap: 12,
+        marginBottom: 26,
+      }}
+    >
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: 14,
+          minWidth: 0,
+          flex: 1,
+        }}
+      >
+        <span
+          style={{
+            fontSize: 38,
+            color: "#4789ff",
+            lineHeight: 1,
+            flexShrink: 0,
+          }}
+        >
+          🎮
+        </span>
 
+        <div style={{ minWidth: 0 }}>
+          <h1
+            className="coach-card-title"
+            style={{
+              margin: 0,
+              fontSize: 30,
+              fontWeight: 800,
+              letterSpacing: "-0.7px",
+            }}
+          >
+            {t.title}
+          </h1>
+
+          <p
+            className="coach-card-subtitle"
+            style={{
+              margin: "8px 0 0",
+              color: "#94a3b8",
+              lineHeight: 1.5,
+            }}
+          >
+            {t.intro}
+          </p>
+        </div>
+      </div>
+
+      <a
+        href="/"
+        style={{
+          padding: "10px 12px",
+          background: "#20c9bd",
+          borderRadius: 10,
+          color: "#06101a",
+          textDecoration: "none",
+          fontSize: 13,
+          fontWeight: 700,
+          whiteSpace: "nowrap",
+          flexShrink: 0,
+        }}
+      >
+        {t.back}
+      </a>
+    </div>
+
+    <button
+      onClick={() =>
+        signIn("battlenet", {
+          callbackUrl: "/become-coach",
+        })
+      }
+      style={{
+        padding: 13,
+        borderRadius: 9,
+        cursor: "pointer",
+      }}
+    >
+      {t.signIn}
+    </button>
+  </main>
+);
+}
  return (
   <main
     style={{
@@ -266,20 +366,26 @@ const fieldStyle: React.CSSProperties = {
   }
 `}</style>
    
-   <div
-  style={{
-    display: "block",
-    marginBottom: 26,
-    paddingTop: 12,
-  }}
->
-     
     <div
-    style={{
-    width: "100%",
-    textAlign: "center",
-  }}
->
+      style={{
+        display: "flex",
+        alignItems: "center",
+        gap: 14,
+        marginBottom: 26,
+      }}
+    >
+     
+     <div>
+        <h1
+          className="coach-card-title"
+         style={{
+        margin: 0,
+        fontSize: 30,
+        fontWeight: 800,
+        letterSpacing: "-0.7px",
+        textAlign: "center" 
+    }}
+        >
           {t.title}
         </h1>
 
