@@ -523,18 +523,19 @@ return (
   />
 </label>
         
-      <button type="submit" disabled={loading} style={{
+    <button type="submit" disabled={loading} style={{
     padding: 10, 
-    border: "2px solid #4789ff", 
+    border: "2px solid #a855f7", 
     borderRadius: 10, 
-    background: "#131824", 
-    color: "#ffffff", 
-    fontWeight: 700, 
+    background: "#1e293b", 
+    color: "#c084fc", 
+    fontWeight: 500, 
     cursor: "pointer",
     marginBottom: 0,
     display: "block",
     marginTop: "16px",
-    width: "100%"
+    width: "100%",
+    textAlign: "center"
 }}>
     {loading ? t.saving : t.save}
 </button>
