@@ -306,7 +306,7 @@ return (
         marginBottom: 12,
       }}
     >
- <a
+<a
   href="/"
   style={{
     color: "#20c9bd",
@@ -314,6 +314,8 @@ return (
     fontSize: 14,
     fontWeight: 700,
     float: "right",
+    position: "relative",
+    top: "34px",
     display: typeof window !== 'undefined' && window.innerWidth < 768 ? 'none' : 'block'
   }}
 >
