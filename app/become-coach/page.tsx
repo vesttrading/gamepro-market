@@ -497,7 +497,7 @@ return (
     onChange={(e) => setServiceType(e.target.value)}
     style={{
       ...fieldStyle,
-      border: "2px solid #4789ff",
+      border: "2px solid #a855f7",
     }}
   >
     <option value="Coaching">{t.coaching}</option>
