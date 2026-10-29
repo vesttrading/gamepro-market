@@ -314,8 +314,8 @@ return (
     fontSize: 14,
     fontWeight: 700,
     float: "right",
-    position: "relative",
-    top: "40px" 
+    transform: "translateY(250%)", 
+    clear: "both"
   }}
 >
   ← GamePro
