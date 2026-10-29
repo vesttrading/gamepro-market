@@ -315,7 +315,7 @@ return (
     fontWeight: 700,
     float: "right",
     position: "relative",
-    top: "48px",
+    top: "52px",
     display: typeof window !== 'undefined' && window.innerWidth < 768 ? 'none' : 'block'
   }}
 >
