@@ -529,6 +529,7 @@ return (
     borderRadius: 10, 
     background: "#1e293b", 
     color: "#00bcff", 
+    fontSize: "16px",
     fontWeight: 600, 
     cursor: "pointer",
     marginBottom: 0,
