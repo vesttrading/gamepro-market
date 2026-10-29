@@ -315,7 +315,7 @@ return (
     fontWeight: 700,
     float: "right",
     position: "relative",
-    top: "34px" 
+    top: "40px" 
   }}
 >
   ← GamePro
