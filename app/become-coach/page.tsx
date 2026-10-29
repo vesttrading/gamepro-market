@@ -529,17 +529,13 @@ return (
   />
 </label>
         
-     style={{
-  padding: "13px 20px",
-  border: "1px solid #4789ff",
-  borderRadius: 10,
-  background: "#101727",
-  color: "#f8fafc",
-  fontWeight: 700,
-  cursor: "pointer",
-  width: "100%",
-  marginTop: 16,
-}}
+       <button type="submit" disabled={loading} style={{
+          padding: 10, border: 0, borderRadius: 10, background: "#20c9bd",
+          color: "#06101a", fontWeight: 700, cursor: "pointer",
+          marginBottom: 0,
+          display: "block",
+          marginTop: "16px"
+        }}>
           {loading ? t.saving : t.save}
         </button>
     {message && (
