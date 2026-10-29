@@ -184,44 +184,67 @@ const fieldStyle: React.CSSProperties = {
   }
 
   if (!session) {
-  return (
-  <main style={{ maxWidth: 620, margin: "60px auto", padding: 24, color: "white" }}>
-    <div style={{
-      display: "flex",
-      alignItems: "flex-start",
-      justifyContent: "space-between",
-      gap: 14,
-      marginBottom: 26,
-    }}>
-      <div style={{
+return (
+  <main
+    style={{
+      maxWidth: 620,
+      margin: "24px auto",
+      padding: 24,
+      color: "white",
+      boxSizing: "border-box",
+      width: "calc(100% - 24px)",
+    }}
+  >
+    <div
+      style={{
         display: "flex",
-        alignItems: "center",
-        gap: 14,
-        minWidth: 0,
-      }}>
-        <span style={{
-          fontSize: 38,
-          color: "#4789ff",
-          lineHeight: 1,
-        }}>
+        alignItems: "flex-start",
+        justifyContent: "space-between",
+        gap: 12,
+        marginBottom: 26,
+      }}
+    >
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: 14,
+          minWidth: 0,
+          flex: 1,
+        }}
+      >
+        <span
+          style={{
+            fontSize: 38,
+            color: "#4789ff",
+            lineHeight: 1,
+            flexShrink: 0,
+          }}
+        >
           🎮
         </span>
 
-        <div>
-          <h1 className="coach-card-title" style={{
-            margin: 0,
-            fontSize: 30,
-            fontWeight: 800,
-            letterSpacing: "-0.7px",
-          }}>
+        <div style={{ minWidth: 0 }}>
+          <h1
+            className="coach-card-title"
+            style={{
+              margin: 0,
+              fontSize: 30,
+              fontWeight: 800,
+              letterSpacing: "-0.7px",
+            }}
+          >
             {t.title}
           </h1>
 
-          <p className="coach-card-subtitle" style={{
-            margin: "8px 0 0",
-            color: "#94a3b8",
-            lineHeight: 1.5,
-          }}>
+          <p
+            className="coach-card-subtitle"
+            style={{
+              margin: "8px 0 0",
+              color: "#94a3b8",
+              lineHeight: 1.5,
+            }}
+          >
             {t.intro}
           </p>
         </div>
@@ -230,7 +253,7 @@ const fieldStyle: React.CSSProperties = {
       <a
         href="/"
         style={{
-          padding: "10px 14px",
+          padding: "10px 12px",
           background: "#20c9bd",
           borderRadius: 10,
           color: "#06101a",
@@ -244,17 +267,24 @@ const fieldStyle: React.CSSProperties = {
         {t.back}
       </a>
     </div>
-       
-       <button
-          onClick={() => signIn("battlenet", { callbackUrl: "/become-coach" })}
-          style={{ padding: 13, borderRadius: 9, cursor: "pointer" }}
-        >
-          {t.signIn}
-        </button>
-      </main>
-    );
-  }
 
+    <button
+      onClick={() =>
+        signIn("battlenet", {
+          callbackUrl: "/become-coach",
+        })
+      }
+      style={{
+        padding: 13,
+        borderRadius: 9,
+        cursor: "pointer",
+      }}
+    >
+      {t.signIn}
+    </button>
+  </main>
+);
+}
  return (
   <main
     style={{
