@@ -165,10 +165,19 @@ export default function BecomeCoachPage() {
     }
   }
 
-  const fieldStyle: React.CSSProperties = {
-    width: "100%", padding: "10px 12px", background: "#0c1123", color: "white",
-    border: "1px solid #313858", borderRadius: 9, boxSizing: "border-box",
-  };
+const fieldStyle: React.CSSProperties = {
+  width: "100%",
+  minHeight: 48,
+  padding: "11px 13px",
+  background: "#202c44",
+  color: "#f1f5f9",
+  border: "1px solid #3b4967",
+  borderRadius: 10,
+  boxSizing: "border-box",
+  fontSize: 15,
+  outline: "none",
+  marginTop: 6,
+};
 
   if (status === "loading") {
     return <main style={{ padding: 40, color: "white" }}>{t.loading}</main>;
@@ -177,8 +186,37 @@ export default function BecomeCoachPage() {
   if (!session) {
     return (
       <main style={{ maxWidth: 620, margin: "60px auto", padding: 24, color: "white" }}>
-        <h1>{t.title}</h1>
-        <p>{t.login}</p>
+       <div style={{
+  display: "flex",
+  alignItems: "center",
+  gap: 14,
+  marginBottom: 26,
+}}>
+  <span style={{
+    fontSize: 38,
+    color: "#4789ff",
+    lineHeight: 1,
+  }}>
+    🎮
+  </span>
+  <div>
+    <h1 className="coach-card-title" style={{
+      margin: 0,
+      fontSize: 30,
+      fontWeight: 800,
+      letterSpacing: "-0.7px",
+    }}>
+      {t.title}
+    </h1>
+    <p className="coach-card-subtitle" style={{
+      margin: "8px 0 0",
+      color: "#94a3b8",
+      lineHeight: 1.5,
+    }}>
+      {t.intro}
+    </p>
+  </div>
+</div>
         <button
           onClick={() => signIn("battlenet", { callbackUrl: "/become-coach" })}
           style={{ padding: 13, borderRadius: 9, cursor: "pointer" }}
@@ -189,21 +227,116 @@ export default function BecomeCoachPage() {
     );
   }
 
-  return (
-    <main style={{ maxWidth: 680, margin: "15px auto", padding: 16, color: "white" }}>
-    <style>{`input::placeholder, textarea::placeholder { color: #cbd5e1 !important; opacity: 1 !important; }`}</style>
-    <h1>{t.title}</h1>
-    <p>{t.intro}</p>
-
-     <form
-      onSubmit={submitForm}
-      style={{
-      display: "grid",
-      gap: 4,
-      rowGap: "2px",  
-      marginBottom: 0,
+ return (
+  <main
+    style={{
+      maxWidth: 600,
+      margin: "24px auto",
+      padding: "28px 24px",
+      color: "#f8fafc",
+      background: "#101727",
+      border: "1px solid #303b52",
+      borderRadius: 24,
+      boxSizing: "border-box",
+      width: "calc(100% - 24px)",
     }}
   >
+   <style>{`
+  input::placeholder,
+  textarea::placeholder {
+    color: #cbd5e1 !important;
+    opacity: 1 !important;
+  }
+
+  .coach-field label {
+    display: block;
+    margin-bottom: 13px;
+    color: #cbd5e1;
+    font-size: 14px;
+  }
+
+  .coach-field input,
+  .coach-field select,
+  .coach-field textarea {
+    transition: border-color 0.2s ease;
+  }
+
+  .coach-field input:focus,
+  .coach-field select:focus,
+  .coach-field textarea:focus {
+    border-color: #4789ff !important;
+  }
+
+  .coach-field input,
+  .coach-field textarea {
+    color-scheme: dark;
+  }
+
+  @media (max-width: 480px) {
+    .coach-card-title {
+      font-size: 25px !important;
+    }
+
+    .coach-card-subtitle {
+      font-size: 14px !important;
+    }
+  }
+`}</style>
+   
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        gap: 14,
+        marginBottom: 26,
+      }}
+    >
+      <span
+        style={{
+          fontSize: 38,
+          color: "#4789ff",
+          lineHeight: 1,
+        }}
+      >
+        🎮
+      </span>
+
+      <div>
+        <h1
+          className="coach-card-title"
+          style={{
+            margin: 0,
+            fontSize: 30,
+            fontWeight: 800,
+            letterSpacing: "-0.7px",
+          }}
+        >
+          {t.title}
+        </h1>
+
+        <p
+          className="coach-card-subtitle"
+          style={{
+            margin: "8px 0 0",
+            color: "#94a3b8",
+            lineHeight: 1.5,
+          }}
+        >
+          {t.intro}
+        </p>
+      </div>
+    </div>
+   
+   <form
+  className="coach-field"
+  onSubmit={submitForm}
+  style={{
+    display: "grid",
+    gap: 4,
+    rowGap: "2px",
+    marginBottom: 0,
+  }}
+>
         <label>
           {t.game}
           <select value={game} onChange={(e) => setGame(e.target.value)} style={fieldStyle}>
