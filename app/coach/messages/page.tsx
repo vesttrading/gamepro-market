@@ -24,10 +24,29 @@ const translations = {
 
   type LangKey = keyof typeof translations;
 
-  export default function CoachMessagesPage({ lang = "RU" }: { lang?: LangKey }) {
+  export default function CoachMessagesPage() {
+  const [lang, setLang] = useState<LangKey>("RU");
   const [messages, setMessages] = useState<Message[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+ 
+  useEffect(() => {
+    const updateLanguage = () => {
+      const savedLang = localStorage.getItem("gamepro-lang");
+
+      if (savedLang && savedLang in translations) {
+        setLang(savedLang as LangKey);
+      }
+    };
+
+    updateLanguage();
+
+    window.addEventListener("languageChanged", updateLanguage);
+
+    return () => {
+      window.removeEventListener("languageChanged", updateLanguage);
+    };
+  }, []);
   
     useEffect(() => {
     async function loadMessages() {
