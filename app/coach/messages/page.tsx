@@ -1,4 +1,4 @@
-[30.10.2026 14:55] Vladimir: "use client";
+ "use client";
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
@@ -114,7 +114,7 @@ export default function CoachMessagesPage() {
                 onClick={() => setLang(item)}
                 style={{
                   background: lang === item ? "#3b82f6" : "transparent",
-[30.10.2026 14:55] Vladimir: color: lang === item ? "#ffffff" : "#64748b",
+                  color: lang === item ? "#ffffff" : "#64748b",
                   border: "none",
                   borderRadius: "8px",
                   padding: "4px 8px",
@@ -241,7 +241,7 @@ export default function CoachMessagesPage() {
 
                   {/* КОНТЕНТ */}
                   <div style={{ flex: 1, minWidth: 0 }}>
-[30.10.2026 14:55] Vladimir: {/* ДИНАМИЧЕСКИЙ ТЕКСТ СООБЩЕНИЯ */}
+                     {/* ДИНАМИЧЕСКИЙ ТЕКСТ СООБЩЕНИЯ */}
                     <div
                       style={{
                         fontSize: "26px",
