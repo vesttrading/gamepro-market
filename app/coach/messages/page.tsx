@@ -135,7 +135,7 @@ export default function CoachMessagesPage() {
                     <span
                       style={{
                         padding: "7px 15px",
-                        border: 2px solid ${item.is_read ? "#20c978" : "#f5a623"},
+                        border: `2px solid ${item.is_read ? "#20c978" : "#f5a623"}`,
                         borderRadius: 30,
                         color: item.is_read ? "#20c978" : "#f5a623",
                         fontWeight: 700,
