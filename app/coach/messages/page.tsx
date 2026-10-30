@@ -22,17 +22,14 @@ const translations = {
   PL: { title: "Skrzynka Trenera", subtitle: "Wiadomości wysłane na Twój profil trenera GamePro.", greeting: "Cześć!" }
 };
 
-type LangKey = keyof typeof translations;
+  type LangKey = keyof typeof translations;
 
-export default function CoachMessagesPage() {
+  export default function CoachMessagesPage({ lang = "RU" }: { lang?: LangKey }) {
   const [messages, setMessages] = useState<Message[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   
-  // Состояние выбранного языка (по умолчанию RU)
-  const [lang, setLang] = useState<LangKey>("RU");
-
-  useEffect(() => {
+    useEffect(() => {
     async function loadMessages() {
       try {
         const res = await fetch("/api/coach/messages");
@@ -58,7 +55,7 @@ export default function CoachMessagesPage() {
   const t = translations[lang];
 
   return (
-    <main
+  <main
       style={{
         minHeight: "100vh",
         background: "#080d1b",
@@ -83,7 +80,7 @@ export default function CoachMessagesPage() {
           marginTop: "-70px",
         }}
       >
-        {/* ВЕРХНЯЯ НАВИГАЦИЯ И ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКОВ */}
+        {/* ВЕРХНЯЯ НАВИГАЦИЯ */}
         <div
           style={{
             display: "flex",
@@ -106,29 +103,7 @@ export default function CoachMessagesPage() {
             &lt;- GamePro
           </Link>
           
-          {/* ПАНЕЛЬ ПЕРЕКЛЮЧЕНИЯ СЕМИ ЯЗЫКОВ */}
-          <div style={{ display: "flex", gap: "6px", background: "rgba(255,255,255,0.05)", padding: "4px", borderRadius: "12px" }}>
-            {(Object.keys(translations) as LangKey[]).map((item) => (
-              <button
-                key={item}
-                onClick={() => setLang(item)}
-                style={{
-                  background: lang === item ? "#3b82f6" : "transparent",
-                  color: lang === item ? "#ffffff" : "#64748b",
-                  border: "none",
-                  borderRadius: "8px",
-                  padding: "4px 8px",
-                  fontSize: "12px",
-                  fontWeight: 700,
-                  cursor: "pointer",
-                  transition: "all 0.2s"
-                }}
-              >
-                {item}
-              </button>
-            ))}
-          </div>
-        </div>
+         </div>
 
         {/* ДИНАМИЧЕСКИЙ ЗАГОЛОВОК СТРАНИЦЫ */}
         <h1
@@ -141,7 +116,6 @@ export default function CoachMessagesPage() {
         >
           {t.title}
         </h1>
-        
         {/* ДИНАМИЧЕСКИЙ ПОДЗАГОЛОВОК */}
         <p
           style={{
