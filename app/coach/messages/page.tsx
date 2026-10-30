@@ -44,7 +44,7 @@ export default function CoachMessagesPage() {
         minHeight: "100vh",
         background: "#080d1b",
         color: "#f4f7ff",
-        padding: "-35px 20px 40px 20px",
+        padding: "0px 20px 40px 20px",
         display: "flex",
         justifyContent: "center",
         alignItems: "flex-start",
@@ -85,14 +85,7 @@ export default function CoachMessagesPage() {
             &lt;- GamePro
           </Link>
           
-          {/* Иконки панели управления в стиле макета */}
-          <div style={{ display: "flex", gap: "18px", color: "#64748b" }}>
-            <span style={{ cursor: "pointer" }}>🔍</span>
-            <span style={{ cursor: "pointer" }}>🔔</span>
-            <span style={{ cursor: "pointer" }}>⚙️</span>
-            <span style={{ cursor: "pointer" }}>👤</span>
           </div>
-        </div>
 
         {/* ЗАГОЛОВОК СТРАНИЦЫ */}
         <h1
