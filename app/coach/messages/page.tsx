@@ -186,18 +186,7 @@ const translations = {
             gap: "12px"
           }}
         >
-          <Link
-            href="/"
-            style={{
-              color: "#3b82f6",
-              textDecoration: "none",
-              fontSize: "15px",
-              fontWeight: 500,
-            }}
-          >
-            &lt;- GamePro
-          </Link>
-          
+        
          </div>
 
         {/* ДИНАМИЧЕСКИЙ ЗАГОЛОВОК СТРАНИЦЫ */}
