@@ -1,4 +1,4 @@
-"use client";
+[30.10.2026 14:55] Vladimir: "use client";
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
@@ -11,10 +11,26 @@ interface Message {
   is_read: boolean;
 }
 
+// 1. Словарь переводов для заголовка, подзаголовка и текста "Здравствуй!"
+const translations = {
+  RU: { title: "Инбокс Тренера", subtitle: "Сообщения, отправленные в ваш профиль тренера GamePro.", greeting: "Здравствуй!" },
+  EN: { title: "Coach Inbox", subtitle: "Messages sent to your GamePro coach profile.", greeting: "Hello!" },
+  TR: { title: "Antrenör Kutusu", subtitle: "GamePro antrenör profilinize gönderilen mesajlar.", greeting: "Merhaba!" },
+  DE: { title: "Trainer Posteingang", subtitle: "An dein GamePro-Trainerprofil gesendete Nachrichten.", greeting: "Hallo!" },
+  ES: { title: "Bandeja del Entrenador", subtitle: "Mensajes enviados a tu perfil de entrenador de GamePro.", greeting: "¡Hola!" },
+  FR: { title: "Boîte de Réception du Coach", subtitle: "Messages envoyés sur votre profil de coach GamePro.", greeting: "Bonjour !" },
+  PL: { title: "Skrzynka Trenera", subtitle: "Wiadomości wysłane na Twój profil trenera GamePro.", greeting: "Cześć!" }
+};
+
+type LangKey = keyof typeof translations;
+
 export default function CoachMessagesPage() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  
+  // Состояние выбранного языка (по умолчанию RU)
+  const [lang, setLang] = useState<LangKey>("RU");
 
   useEffect(() => {
     async function loadMessages() {
@@ -38,6 +54,9 @@ export default function CoachMessagesPage() {
     loadMessages();
   }, []);
 
+  // Текущий набор текстов в зависимости от языка
+  const t = translations[lang];
+
   return (
     <main
       style={{
@@ -59,18 +78,20 @@ export default function CoachMessagesPage() {
           background: "rgba(13, 20, 38, 0.6)",
           border: "1px solid rgba(255, 255, 255, 0.08)",
           borderRadius: "24px",
-          padding: "20px 35px 35px 35px",
+          padding: "30px 35px 35px 35px",
           boxShadow: "0 20px 40px rgba(0, 0, 0, 0.4)",
-          marginTop: "-70px"
+          marginTop: "-70px",
         }}
       >
-        {/* ВЕРХНЯЯ НАВИГАЦИЯ И ИКОНКИ */}
+        {/* ВЕРХНЯЯ НАВИГАЦИЯ И ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКОВ */}
         <div
           style={{
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
             marginBottom: "24px",
+            flexWrap: "wrap",
+            gap: "12px"
           }}
         >
           <Link
@@ -85,9 +106,31 @@ export default function CoachMessagesPage() {
             &lt;- GamePro
           </Link>
           
+          {/* ПАНЕЛЬ ПЕРЕКЛЮЧЕНИЯ СЕМИ ЯЗЫКОВ */}
+          <div style={{ display: "flex", gap: "6px", background: "rgba(255,255,255,0.05)", padding: "4px", borderRadius: "12px" }}>
+            {(Object.keys(translations) as LangKey[]).map((item) => (
+              <button
+                key={item}
+                onClick={() => setLang(item)}
+                style={{
+                  background: lang === item ? "#3b82f6" : "transparent",
+[30.10.2026 14:55] Vladimir: color: lang === item ? "#ffffff" : "#64748b",
+                  border: "none",
+                  borderRadius: "8px",
+                  padding: "4px 8px",
+                  fontSize: "12px",
+                  fontWeight: 700,
+                  cursor: "pointer",
+                  transition: "all 0.2s"
+                }}
+              >
+                {item}
+              </button>
+            ))}
           </div>
+        </div>
 
-        {/* ЗАГОЛОВОК СТРАНИЦЫ */}
+        {/* ДИНАМИЧЕСКИЙ ЗАГОЛОВОК СТРАНИЦЫ */}
         <h1
           style={{
             fontSize: "42px",
@@ -96,9 +139,10 @@ export default function CoachMessagesPage() {
             margin: "0 0 8px 0",
           }}
         >
-          Coach Inbox
+          {t.title}
         </h1>
         
+        {/* ДИНАМИЧЕСКИЙ ПОДЗАГОЛОВОК */}
         <p
           style={{
             color: "#94a3b8",
@@ -106,11 +150,11 @@ export default function CoachMessagesPage() {
             margin: "0 0 20px 0",
           }}
         >
-          Messages sent to your GamePro coach profile.
+          {t.subtitle}
         </p>
 
         {/* ТЕГ ПРОФИЛЯ ТРЕНЕРА */}
-        <div style={{ marginBottom: "35px" }}>
+        <div style={{ marginBottom: "10px" }}>
           <span
             style={{
               display: "inline-flex",
@@ -134,7 +178,8 @@ export default function CoachMessagesPage() {
           {!loading && !error && messages.length === 0 && (
             <p style={{ color: "#64748b" }}>У вас пока нет сообщений.</p>
           )}
-            {!loading &&
+
+          {!loading &&
             !error &&
             messages.map((item) => (
               <article
@@ -196,17 +241,19 @@ export default function CoachMessagesPage() {
 
                   {/* КОНТЕНТ */}
                   <div style={{ flex: 1, minWidth: 0 }}>
+[30.10.2026 14:55] Vladimir: {/* ДИНАМИЧЕСКИЙ ТЕКСТ СООБЩЕНИЯ */}
                     <div
                       style={{
                         fontSize: "26px",
                         fontWeight: 700,
                         color: "#ffffff",
                         overflowWrap: "anywhere",
-                        lineHeight: 1.2,
+                        lineHeight: 1.3,
                         marginBottom: "16px",
                       }}
                     >
-                      {item.message}
+                      {/* Если в базе лежит "Здравствуй!", подменяем переводным значением */}
+                      {item.message === "Здравствуй!" ? t.greeting : item.message}
                     </div>
 
                     <div
