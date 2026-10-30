@@ -11,15 +11,91 @@ interface Message {
   is_read: boolean;
 }
 
-// 1. Словарь переводов для заголовка, подзаголовка и текста "Здравствуй!"
 const translations = {
-  RU: { title: "Инбокс Тренера", subtitle: "Сообщения, отправленные в ваш профиль тренера GamePro.", greeting: "Здравствуй!" },
-  EN: { title: "Coach Inbox", subtitle: "Messages sent to your GamePro coach profile.", greeting: "Hello!" },
-  TR: { title: "Antrenör Kutusu", subtitle: "GamePro antrenör profilinize gönderilen mesajlar.", greeting: "Merhaba!" },
-  DE: { title: "Trainer Posteingang", subtitle: "An dein GamePro-Trainerprofil gesendete Nachrichten.", greeting: "Hallo!" },
-  ES: { title: "Bandeja del Entrenador", subtitle: "Mensajes enviados a tu perfil de entrenador de GamePro.", greeting: "¡Hola!" },
-  FR: { title: "Boîte de Réception du Coach", subtitle: "Messages envoyés sur votre profil de coach GamePro.", greeting: "Bonjour !" },
-  PL: { title: "Skrzynka Trenera", subtitle: "Wiadomości wysłane na Twój profil trenera GamePro.", greeting: "Cześć!" }
+  RU: {
+    title: "Инбокс Тренера",
+    subtitle: "Сообщения, отправленные в ваш профиль тренера GamePro.",
+    greeting: "Здравствуй!",
+    read: "Прочитано",
+    unread: "Новое",
+    playerId: "ID игрока",
+    noMessages: "У вас пока нет сообщений.",
+    loading: "Загрузка сообщений...",
+    loadError: "Ошибка загрузки данных",
+    connectionError: "Ошибка соединения. Попробуйте ещё раз.",
+  },
+  EN: {
+    title: "Coach Inbox",
+    subtitle: "Messages sent to your GamePro coach profile.",
+    greeting: "Hello!",
+    read: "Read",
+    unread: "Unread",
+    playerId: "Player ID",
+    noMessages: "No messages yet.",
+    loading: "Loading messages...",
+    loadError: "Error loading data",
+    connectionError: "Connection error. Please try again.",
+  },
+  TR: {
+    title: "Antrenör Gelen Kutusu",
+    subtitle: "GamePro antrenör profilinize gönderilen mesajlar.",
+    greeting: "Merhaba!",
+    read: "Okundu",
+    unread: "Yeni",
+    playerId: "Oyuncu ID",
+    noMessages: "Henüz mesajınız yok.",
+    loading: "Mesajlar yükleniyor...",
+    loadError: "Veriler yüklenirken hata oluştu",
+    connectionError: "Bağlantı hatası. Lütfen tekrar deneyin.",
+  },
+  DE: {
+    title: "Trainer-Posteingang",
+    subtitle: "Nachrichten an dein GamePro-Trainerprofil.",
+    greeting: "Hallo!",
+    read: "Gelesen",
+    unread: "Ungelesen",
+    playerId: "Spieler-ID",
+    noMessages: "Noch keine Nachrichten.",
+    loading: "Nachrichten werden geladen...",
+    loadError: "Fehler beim Laden der Daten",
+    connectionError: "Verbindungsfehler. Bitte erneut versuchen.",
+  },
+  ES: {
+    title: "Bandeja del Entrenador",
+    subtitle: "Mensajes enviados a tu perfil de entrenador de GamePro.",
+    greeting: "¡Hola!",
+    read: "Leído",
+    unread: "Nuevo",
+    playerId: "ID del jugador",
+    noMessages: "Todavía no tienes mensajes.",
+    loading: "Cargando mensajes...",
+    loadError: "Error al cargar los datos",
+    connectionError: "Error de conexión. Inténtalo de nuevo.",
+  },
+  FR: {
+    title: "Boîte de réception du coach",
+    subtitle: "Messages envoyés à votre profil de coach GamePro.",
+    greeting: "Bonjour !",
+    read: "Lu",
+    unread: "Nouveau",
+    playerId: "ID du joueur",
+    noMessages: "Vous n'avez pas encore de messages.",
+    loading: "Chargement des messages...",
+    loadError: "Erreur lors du chargement des données",
+    connectionError: "Erreur de connexion. Veuillez réessayer.",
+  },
+  PL: {
+    title: "Skrzynka trenera",
+    subtitle: "Wiadomości wysłane na Twój profil trenera GamePro.",
+    greeting: "Cześć!",
+    read: "Przeczytano",
+    unread: "Nowa",
+    playerId: "ID gracza",
+    noMessages: "Nie masz jeszcze żadnych wiadomości.",
+    loading: "Ładowanie wiadomości...",
+    loadError: "Błąd ładowania danych",
+    connectionError: "Błąd połączenia. Spróbuj ponownie.",
+  },
 };
 
   type LangKey = keyof typeof translations;
@@ -55,13 +131,13 @@ const translations = {
         const data = await res.json();
         
         if (!res.ok) {
-          setError("Error loading data");
+          setError(t.loadError);
           return;
         }
 
         setMessages(data.messages ?? []);
       } catch {
-        setError("Connection error. Please try again.");
+        setError(t.connectionError);
       } finally {
         setLoading(false);
       }
@@ -168,8 +244,9 @@ const translations = {
 
         {/* СПИСОК СООБЩЕНИЙ */}
         <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+          {loading && <p>{t.loading}</p>}
           {!loading && !error && messages.length === 0 && (
-            <p style={{ color: "#64748b" }}>У вас пока нет сообщений.</p>
+            <p style={{ color: "#64748b" }}>{t.noMessages}</p>
           )}
 
           {!loading &&
@@ -263,7 +340,7 @@ const translations = {
                           fontSize: "16px",
                         }}
                       >
-                        Player ID: {item.sender_id}
+                       Player ID: {t.playerId}: {item.sender_id}
                       </span>
 
                       <span
@@ -276,7 +353,7 @@ const translations = {
                           fontSize: "14px",
                         }}
                       >
-                        {item.is_read ? "Read" : "Unread"}
+                       {item.is_read ? t.read : t.unread}
                       </span>
                     </div>
                   </div>
