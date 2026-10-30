@@ -58,97 +58,130 @@ export default function CoachMessagesPage() {
         padding: "40px 20px",
       }}
     >
-      <div style={{ maxWidth: 850, margin: "0 auto" }}>
-      <Link 
-      href="/" 
-      style={{
-      color: "#00bfff", 
-      textDecoration: "none", 
-      fontSize: "14px", 
-      display: "inline-block", 
-      marginBottom: "16px"
-    }}
-  >
-    ← GamePro
-  </Link>
+   <div style={{ maxWidth: 850, margin: "0 auto" }}>
+        <Link
+          href="/"
+          style={{
+            color: "#00bfff",
+            textDecoration: "none",
+            fontSize: "14px",
+            display: "inline-block",
+            marginBottom: "20px",
+          }}
+        >
+          ← Назад в профиль
+        </Link>
 
-        <h1 style={{ fontSize: 30, marginBottom: 8 }}>
-          Coach Inbox
-        </h1>
-
-        <p style={{ color: "#aab5d0", marginBottom: 28 }}>
-          Messages sent to your GamePro coach profile.
-        </p>
-
-        {loading && <p>Loading messages...</p>}
-
-        {!loading && error && (
-          <div
-            style={{
-              padding: 16,
-              background: "#251522",
-              border: "1px solid #71384d",
-              borderRadius: 12,
-            }}
-          >
-            {error}
-          </div>
-        )}
-
-        {!loading && !error && coaches.length > 0 && (
-          <p style={{ color: "#20c9bd", marginBottom: 20 }}>
-            Coach profile: {coaches.map((coach) => coach.battletag).join(", ")}
-          </p>
-        )}
-
-        {!loading && !error && messages.length === 0 && (
-          <div
-            style={{
-              padding: 24,
-              background: "#10162b",
-              border: "1px solid #262d49",
-              borderRadius: 16,
-            }}
-          >
-            No messages yet.
-          </div>
-        )}
-
+        {/* MESSAGES */}
         {!loading &&
           !error &&
           messages.map((item) => (
             <article
               key={item.id}
               style={{
-                padding: 20,
-                marginBottom: 14,
-                background: "#10162b",
-                border: "1px solid #262d49",
-                borderRadius: 16,
+                padding: "30px 26px",
+                marginBottom: 22,
+                background: "#17233d",
+                border: "2px solid #477fe0",
+                borderRadius: 28,
+                boxShadow: "0 8px 25px #00000020",
               }}
             >
+              {/* ДАТА ОТПРАВКИ ВЕРХУ СПРАВА */}
               <div
                 style={{
                   display: "flex",
-                  justifyContent: "space-between",
-                  gap: 12,
-                  flexWrap: "wrap",
+                  justifyContent: "flex-end",
                   marginBottom: 12,
                 }}
               >
-                <strong>Player ID: {item.sender_id}</strong>
-                <span style={{ color: "#aab5d0", fontSize: 13 }}>
-                  {new Date(item.created_at).toLocaleString()}
+                <span
+                  style={{
+                    color: "#aab5d0",
+                    fontSize: 15,
+                  }}
+                >
+                  {new Date(item.created_at).toLocaleString("ru-RU")}
                 </span>
               </div>
 
-              <p style={{ whiteSpace: "pre-wrap", lineHeight: 1.6 }}>
-                {item.message}
-              </p>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 22,
+                  flexWrap: "wrap",
+                }}
+              >
+                {/* КРУГЛАЯ АВАТАРКА ИГРОКА */}
+                <div
+                  style={{
+                    width: 100,
+                    height: 100,
+                    minWidth: 100,
+                    borderRadius: "50%",
+                    background: "#202d48",
+                    border: "2px solid #34425d",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    color: "#aab5d0",
+                    fontSize: 25,
+                    fontWeight: 700,
+                  }}
+                >
+                  P {item.sender_id}
+                </div>
 
-              <p style={{ color: "#aab5d0", fontSize: 12 }}>
-                {item.is_read ? "Read" : "Unread"}
-              </p>
+                {/* КОНТЕНТ: ТЕКСТ И СТАТУС */}
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  {/* Крупный текст сообщения */}
+                  <div
+                    style={{
+                      fontSize: "clamp(25px, 5vw, 48px)",
+                      fontWeight: 800,
+                      color: "#ffffff",
+                      overflowWrap: "anywhere",
+                      lineHeight: 1.2,
+                      marginBottom: 20,
+                    }}
+                  >
+                    {item.message}
+                  </div>
+
+                  {/* Нижняя строка: ID и цветной бэдж статуса */}
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 14,
+                      flexWrap: "wrap",
+                    }}
+                  >
+                    <span
+                      style={{
+                        color: "#aab5d0",
+                        fontSize: 17,
+                      }}
+                    >
+                      Player ID: {item.sender_id}
+                    </span>
+
+                    <span
+                      style={{
+                        padding: "7px 15px",
+                        border: `2px solid ${item.is_read ? "#20c978" : "#f5a623"}`,
+                        borderRadius: 30,
+                        color: item.is_read ? "#20c978" : "#f5a623",
+                        fontWeight: 700,
+                        fontSize: 15,
+                      }}
+                    >
+                      {item.is_read ? "Read" : "Unread"}
+                    </span>
+                  </div>
+                </div>
+              </div>
             </article>
           ))}
       </div>
