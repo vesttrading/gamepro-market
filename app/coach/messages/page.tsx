@@ -61,7 +61,7 @@ export default function CoachMessagesPage() {
           borderRadius: "24px",
           padding: "20px 35px 35px 35px",
           boxShadow: "0 20px 40px rgba(0, 0, 0, 0.4)",
-          marginTop: "0px"
+          marginTop: "-70px"
         }}
       >
         {/* ВЕРХНЯЯ НАВИГАЦИЯ И ИКОНКИ */}
@@ -205,8 +205,8 @@ export default function CoachMessagesPage() {
                   <div style={{ flex: 1, minWidth: 0 }}>
                     <div
                       style={{
-                        fontSize: "clamp(24px, 4vw, 42px)",
-                        fontWeight: 800,
+                        fontSize: "26px",
+                        fontWeight: 700,
                         color: "#ffffff",
                         overflowWrap: "anywhere",
                         lineHeight: 1.2,
