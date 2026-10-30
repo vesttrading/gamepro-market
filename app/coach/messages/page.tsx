@@ -44,7 +44,7 @@ export default function CoachMessagesPage() {
         minHeight: "100vh",
         background: "#080d1b",
         color: "#f4f7ff",
-        padding: "0px 20px 40px 20px",
+        padding: "10px 20px 40px 20px",
         display: "flex",
         justifyContent: "center",
         alignItems: "flex-start",
