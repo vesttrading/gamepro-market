@@ -180,22 +180,21 @@ const fieldStyle: React.CSSProperties = {
 };
 
   if (status === "loading") {
-   return <main style={{ padding: 40, color: "white", background: "#080d1b", minHeight: "100vh" }}>{t.loading}</main>
+    return <main style={{ padding: 40, color: "white" }}>{t.loading}</main>;
   }
 
   if (!session) {
 return (
- <main
-  style={{
-    minHeight: "100vh",   // Растягивает тёмную область на всю высоту экрана
-    background: "#080d1b", // Окрашивает внешнюю область вокруг карточки в тёмно-синий
-    color: "white",
-    padding: "40px 20px",  // Отступы по краям экрана, чтобы карточка не прижималась к границам
-    width: "100%",
-    boxSizing: "border-box",
-  }}
->
- 
+  <main
+    style={{
+      maxWidth: 620,
+      margin: "24px auto",
+      padding: 24,
+      color: "white",
+      boxSizing: "border-box",
+      width: "calc(100% - 24px)",
+    }}
+  >
     <div
       style={{
         display: "flex",
