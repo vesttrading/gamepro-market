@@ -306,21 +306,6 @@ return (
         marginBottom: 12,
       }}
     >
-<a
-  href="/"
-  style={{
-    color: "#20c9bd",
-    textDecoration: "none",
-    fontSize: 14,
-    fontWeight: 700,
-    float: "right",
-    position: "relative",
-    top: "52px",
-    display: typeof window !== 'undefined' && window.innerWidth < 768 ? 'none' : 'block'
-  }}
->
-  ← GamePro
-</a>
     </div>
  
     <style>{`
