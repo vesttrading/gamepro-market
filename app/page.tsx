@@ -911,7 +911,14 @@ if (!battlenetId) {
       margin:"0 auto 35px",
     }}
   >
-   
+    <h3 style={{
+      marginTop:0,
+      textAlign:"center",
+      fontSize:24
+    }}>
+      {t.leaveReview}
+    </h3>
+
     {status !== "authenticated" ? (
       <p style={{
         color:"#9da6c0",
@@ -922,8 +929,32 @@ if (!battlenetId) {
       </p>
     ) : (
       <>
-      
-         <textarea
+        <div style={{
+          display:"flex",
+          justifyContent:"center",
+          gap:8,
+          marginBottom:15
+        }}>
+          {[1,2,3,4,5].map(star => (
+            <button
+              key={star}
+              type="button"
+              onClick={() => setReviewRating(star)}
+              style={{
+                background:"transparent",
+                border:0,
+                cursor:"pointer",
+                fontSize:28,
+                opacity:star <= reviewRating ? 1 : 0.35,
+                padding:4
+              }}
+            >
+              ⭐
+            </button>
+          ))}
+        </div>
+
+        <textarea
           value={reviewText}
           onChange={e => setReviewText(e.target.value)}
           placeholder={t.reviewPlaceholder}
