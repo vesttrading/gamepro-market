@@ -290,6 +290,7 @@ return (
 }
  return (
   <main
+    className="become-coach-page"
     style={{
       maxWidth: 600,
       margin: "24px auto",
@@ -300,7 +301,7 @@ return (
       borderRadius: 24,
       boxSizing: "border-box",
       width: "calc(100% - 24px)",
-    }}
+      }}
   >
     <div
       style={{
