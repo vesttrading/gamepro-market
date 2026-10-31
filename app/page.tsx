@@ -944,10 +944,10 @@ if (!battlenetId) {
     marginBottom: 24,
   }}>
     {[
-      { value: "all" as const, label: ${t.allReviews} (${reviewCounts.all}), color: "#4789ff" },
-      { value: 5 as const, label: 5⭐ (${reviewCounts[5]}), color: "#4789ff" },
-      { value: 4 as const, label: 4⭐ (${reviewCounts[4]}), color: "#22c55e" },
-      { value: 3 as const, label: 3⭐ (${reviewCounts[3]}), color: "#a855f7" },
+      { value: "all" as const, label: `${t.allReviews} (${reviewCounts.all}`), color: "#4789ff" },
+      { value: 5 as const, label: `5⭐ (${reviewCounts[5]})`, color: "#4789ff" },
+      { value: 4 as const, label: `4⭐ (${reviewCounts[4]})`, color: "#22c55e" },
+      { value: 3 as const, label: `3⭐ (${reviewCounts[3]})`, color: "#a855f7" },
     ].map(item => (
       <button
         key={item.value}
@@ -956,7 +956,7 @@ if (!battlenetId) {
         style={{
           padding: "12px 22px",
           borderRadius: 14,
-          border: 1px solid ${item.color},
+          border: `1px solid ${item.color}`,
           background: reviewFilter === item.value ? item.color : "#101727",
           color: reviewFilter === item.value ? "#ffffff" : item.color,
           fontSize: 17,
@@ -1107,7 +1107,7 @@ if (!battlenetId) {
               gap: 14,
               padding: 18,
               background: "linear-gradient(145deg,#151725,#101727)",
-              border: 1px solid ${color},
+              border: `1px solid ${color}`,
               borderRadius: 16,
               minWidth: 0,
               boxSizing: "border-box",
@@ -1122,8 +1122,8 @@ if (!battlenetId) {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              background: ${color}30,
-              border: 1px solid ${color},
+              background: `${color}30`,
+              border: `1px solid ${color}`,
               color,
               fontSize: 26,
               fontWeight: 700,
