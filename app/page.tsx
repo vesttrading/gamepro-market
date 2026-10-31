@@ -911,14 +911,7 @@ if (!battlenetId) {
       margin:"0 auto 35px",
     }}
   >
-    <h3 style={{
-      marginTop:0,
-      textAlign:"center",
-      fontSize:24
-    }}>
-      {t.leaveReview}
-    </h3>
-
+  
     {status !== "authenticated" ? (
       <p style={{
         color:"#9da6c0",
