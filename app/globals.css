@@ -855,7 +855,7 @@ html:has(.become-coach-page) {
   .become-coach-page {
     width: calc(100% - 20px) !important;
     margin: 12px auto !important;
-    padding: 4px 14px 24px !important;
+    padding: 0px 14px 24px !important;
     border-radius: 18px !important;
     box-sizing: border-box !important;
   }
