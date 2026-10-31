@@ -499,11 +499,6 @@ export default function HomePage() {
   const [reviewStatus,setReviewStatus] = useState("");
   const [reviewSending,setReviewSending] = useState(false);
   const [reviews,setReviews] = useState<any[]>([]);
-  const [selectedRating, setSelectedRating] = useState<number | null>(null);
-
-  const filteredReviews = selectedRating 
-    ? reviews.filter((r: any) => r.rating === selectedRating) 
-    : reviews;
   const t=L[lang];
   const headerT = {
   how: t.how,
@@ -761,10 +756,6 @@ if (!battlenetId) {
     background:"linear-gradient(145deg,#10162b,#080d1b)",border:"1px solid #262d49",borderRadius:20,padding:25
   };
 
-  const filteredReviews = selectedRating 
-    ? reviews.filter((r: any) => r.rating === selectedRating) 
-    : reviews;
-
   return <div style={{minHeight:"100vh",background:"radial-gradient(circle at 80% 0,#28105b 0,transparent 34%),radial-gradient(circle at 15% 35%,#073c42 0,transparent 25%),#050713",color:"#f7f8ff",fontFamily:"Arial,sans-serif"}}>
   <Header
   lang={lang}
@@ -976,51 +967,16 @@ if (!battlenetId) {
     )}
   </div>
 
- {/* Отзывы о тренере */}
-<div style={{ display: "flex", gap: 12, marginBottom: 20 }}>
-    <button
-        type="button"
-        onClick={() => setSelectedRating(null)}
-        style={{
-            padding: "8px 16px",
-            borderRadius: 8,
-            border: "none",
-            backgroundColor: selectedRating === null ? "#2563EB" : "#1E293B",
-            color: "#FFFFFF",
-            fontWeight: "bold",
-            cursor: "pointer"
-        }}
-    >
-        Все ({reviews?.length || 0})
-    </button>
-
-    <button
-        type="button"
-        onClick={() => setSelectedRating(5)}
-        style={{
-            padding: "8px 16px",
-            borderRadius: 8,
-            border: "none",
-            backgroundColor: selectedRating === 5 ? "#2563EB" : "#1E293B",
-            color: "#FFFFFF",
-            fontWeight: "bold",
-            cursor: "pointer"
-        }}
-    >
-        5★ ({reviews?.filter((r: any) => r.rating === 5).length || 0})
-    </button>
-</div>
-
-<div
+  {/* Отзывы о тренере */}
+  <div
     className="reviewGrid"
     style={{
-        display:"grid",
-        gridTemplateColumns:"repeat(3,1fr)",
-        gap:16,
-        marginTop:25
+      display:"grid",
+      gridTemplateColumns:"repeat(3,1fr)",
+      gap:16,
+      marginTop:25
     }}
->
-    {filteredReviews.length === 0 ? (
+  >
     {reviews.length === 0 ? (
       <div
         style={{
@@ -1033,7 +989,7 @@ if (!battlenetId) {
         {t.noReviews}
       </div>
     ) : (
-      filteredReviews.map(review => (
+      reviews.map(review => (
         <div
           key={review.id}
           style={card}
