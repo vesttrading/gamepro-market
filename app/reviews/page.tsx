@@ -338,8 +338,7 @@ export default function ReviewsPage() {
   ];
 
   return (
-    <main
-      style={{
+    <main style={{
         minHeight: "100vh",
         background: "#050713",
         color: "#f7f8ff",
