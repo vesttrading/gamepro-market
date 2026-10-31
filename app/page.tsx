@@ -73,6 +73,7 @@ const L = {
     passportLink:"Паспорт игрока", shareTitle:"Твой игровой профиль — одной ссылкой", login:"Войти через Battle.net", reviews:"Отзывы", gameproRating:"Оценка GamePro", playerReviews:"Отзывы игроков", verifiedReviews:"Отзывы о системе VERIFIED",
     logout:"Выйти",
     contactText:"По вопросам GamePro и сотрудничества",
+    contactResponse: "Мы отвечаем в течение 24 часов • Ответим на почту",
   },
   EN: {
     games:"Games", players:"Players", guilds:"Guilds", how:"How it works", contact:"Contact",
@@ -139,6 +140,7 @@ const L = {
     passportLink:"Player passport", shareTitle:"Your gaming profile — one link", login:"Login with Battle.net", reviews:"Reviews", gameproRating:"GamePro rating", playerReviews:"Player reviews", verifiedReviews:"VERIFIED system reviews",
     logout:"Log out",
     contactText:"For GamePro inquiries and partnerships",
+    contactResponse: "We respond within 24 hours • Reply by email",
   },
   TR: {
     games:"Oyunlar", players:"Oyuncular", guilds:"Loncalar", how:"Nasıl çalışır", contact:"İletişim",
@@ -205,6 +207,7 @@ const L = {
     passportLink:"Oyuncu pasaportu", shareTitle:"Oyun profilin — tek bağlantı", login:"Battle.net ile giriş", reviews:"Yorumlar", gameproRating:"GamePro puanı", playerReviews:"Oyuncu yorumları", verifiedReviews:"VERIFIED sistemi yorumları",
     logout:"Çıkış yap",
     contactText:"GamePro hakkında sorular ve iş birlikleri için",
+    contactResponse: "24 saat içinde yanıt veriyoruz • E-posta ile dönüş yapıyoruz",
   },
   DE: {
     games:"Spiele", players:"Spieler", guilds:"Gilden", how:"So funktioniert es", contact:"Kontakt",
@@ -271,6 +274,7 @@ const L = {
     passportLink:"Spielerpass", shareTitle:"Dein Gaming-Profil — ein Link", login:"Mit Battle.net einloggen", reviews:"Bewertungen", gameproRating:"GamePro-Bewertung", playerReviews:"Spielerbewertungen", verifiedReviews:"Bewertungen zum VERIFIED-System",
     logout:"Abmelden",
     contactText:"Für Fragen zu GamePro und Kooperationen",
+    contactResponse: "Wir antworten innerhalb von 24 Stunden • Antwort per E-Mail",
   },
   ES: {
     games:"Juegos", players:"Jugadores", guilds:"Gremios", how:"Cómo funciona", contact:"Contacto",
@@ -329,6 +333,7 @@ const L = {
     current:"Disponible ahora", future:"Próximamente", wow:"World of Warcraft", wowText:"Mythic+, raids y PvP — el primer juego de GamePro.", futureText:"Dota 2, CS2 y Path of Exile 2 están en la hoja de ruta.", source:"Fuente", sourceText:"GamePro compara los datos del juego con fuentes compatibles.", check:"Verificación", checkText:"Los datos se comprueban antes de recibir el estado VERIFIED.", badge:"VERIFIED", badgeText:"Solo los logros verificados reciben la insignia verde.", passportLink:"Pasaporte del jugador", shareTitle:"Tu perfil gaming — un solo enlace", login:"Entrar con Battle.net", reviews:"Opiniones", gameproRating:"Valoración de GamePro", playerReviews:"Opiniones de jugadores", verifiedReviews:"Opiniones sobre el sistema VERIFIED",
     logout:"Cerrar sesión",
     contactText:"Para consultas sobre GamePro y colaboraciones",
+    contactResponse: "Respondemos en 24 horas • Respuesta por correo",
   },
   FR: {
     games:"Jeux", players:"Joueurs", guilds:"Guildes", how:"Comment ça marche", contact:"Contact",
@@ -387,6 +392,7 @@ const L = {
     current:"Disponible maintenant", future:"Bientôt", wow:"World of Warcraft", wowText:"Mythic+, raids et PvP — le premier jeu de GamePro.", futureText:"Dota 2, CS2 et Path of Exile 2 sont sur la feuille de route.", source:"Source", sourceText:"GamePro vérifie les données du jeu avec les sources prises en charge.", check:"Vérification", checkText:"Les données sont vérifiées avant l'attribution du statut VERIFIED.", badge:"VERIFIED", badgeText:"Seuls les accomplissements vérifiés obtiennent le badge vert.", passportLink:"Passeport joueur", shareTitle:"Ton profil gaming — un seul lien", login:"Se connecter avec Battle.net", reviews:"Avis", gameproRating:"Note GamePro", playerReviews:"Avis des joueurs", verifiedReviews:"Avis sur le système VERIFIED",
     logout:"Se déconnecter",
     contactText:"Pour toute question concernant GamePro et les collaborations",
+    contactResponse: "Nous répondons sous 24 heures • Réponse par e-mail",
   },
   PL: {
     games:"Gry", players:"Gracze", guilds:"Gildie", how:"Jak to działa", contact:"Kontakt",
@@ -445,6 +451,7 @@ const L = {
     current:"Dostępne teraz", future:"Wkrótce", wow:"World of Warcraft", wowText:"Mythic+, rajdy i PvP — pierwsza gra GamePro.", futureText:"Dota 2, CS2 i Path of Exile 2 są już na roadmapie.", source:"Źródło", sourceText:"GamePro porównuje dane z gry z obsługiwanymi źródłami.", check:"Weryfikacja", checkText:"Dane są sprawdzane przed nadaniem statusu VERIFIED.", badge:"VERIFIED", badgeText:"Tylko zweryfikowane osiągnięcia otrzymują zieloną odznakę.", passportLink:"Paszport gracza", shareTitle:"Twój profil gamingowy — jeden link", login:"Zaloguj przez Battle.net", reviews:"Opinie", gameproRating:"Ocena GamePro", playerReviews:"Opinie graczy", verifiedReviews:"Opinie o systemie VERIFIED",
     logout:"Wyloguj się",
     contactText:"W sprawie GamePro i współpracy",
+    contactResponse: "Odpowiadamy w ciągu 24 godzin • Odpowiedź e-mailem",
   }
 } as const;
 
@@ -1046,39 +1053,84 @@ if (!battlenetId) {
     
     </main>
 
-    <section id="contact" style={{maxWidth:400,width:"90%",margin:"0 auto 50px"}}>
-  <div style={{
-    background:"linear-gradient(145deg,#10162b,#080d1b)",
-    border:"1px solid #19cfc5",
-    borderRadius:20,
-    padding:25,
-    textAlign:"center"
-  }}>
-    <h2 style={{margin:"0 0 18px",fontSize:32}}>{t.contact}</h2>
+ <section
+  id="contact"
+  style={{
+    maxWidth: 900,
+    width: "90%",
+    margin: "0 auto 60px",
+    boxSizing: "border-box",
+  }}
+>
+  <div
+    style={{
+      background: "linear-gradient(145deg, #101727, #080d1b)",
+      border: "2px solid #34415a",
+      borderRadius: 32,
+      padding: "55px 30px",
+      textAlign: "center",
+      boxSizing: "border-box",
+    }}
+  >
+    <h2
+      style={{
+        margin: "0 0 12px",
+        fontSize: 54,
+        fontWeight: 800,
+        color: "#ffffff",
+      }}
+    >
+      {t.contact}
+    </h2>
 
-    <p style={{color:"#9aa3bd",margin:"18px 0 18px"}}>
+    <p
+      style={{
+        color: "#aab5ca",
+        fontSize: 20,
+        margin: "0 0 38px",
+      }}
+    >
       {t.contactText}
     </p>
 
     <a
       href="mailto:gamepro.market@gmail.com"
       style={{
-        display:"inline-flex",
-        alignItems:"center",
-        justifyContent:"center",
-        padding:"11px 22px",
-        borderRadius:12,
-        background:"linear-gradient(135deg,#18e0d1,#12bfb6)",
-        color:"#021312",
-        fontWeight:900,
-        textDecoration:"none"
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: 20,
+        width: "fit-content",
+        maxWidth: "100%",
+        margin: "0 auto",
+        padding: "20px 30px",
+        border: "3px solid #22c55e",
+        borderRadius: 28,
+        background: "#17243a",
+        color: "#ffffff",
+        fontSize: 22,
+        fontWeight: 800,
+        textDecoration: "none",
+        boxSizing: "border-box",
+        overflowWrap: "anywhere",
       }}
     >
-      ✉️ gamepro.market@gmail.com
+      <span style={{ color: "#22c55e", fontSize: 32 }}>✉</span>
+      gamepro.market@gmail.com
     </a>
+
+    <p
+      style={{
+        color: "#94a3b8",
+        fontSize: 16,
+        margin: "34px 0 0",
+      }}
+    >
+      {t.contactResponse}
+    </p>
   </div>
 </section>
-
+  
     <footer style={{borderTop:"1px solid #171c31",padding:28,color:"#737c98"}}><div className="footer" style={{maxWidth:1160,width:"92%",margin:"auto",display:"flex",justifyContent:"space-between",gap:15}}><span>© 2026 GamePro Market</span><span>Achievement Passport · WoW MVP · Dota 2 · CS2 · PoE2</span></div></footer>
 
     <style jsx>{`a,button{font-family:inherit}      .navlinks a:hover{color:#58eee5!important}.navlinks a:active,.navlinks a:focus-visible{color:#58eee5!important;text-shadow:0 0 14px #19e0d5}.achievementBadge{display:inline-flex;align-items:center;gap:6px;padding:9px 12px;border:1px solid #1c8f82;border-radius:999px;background:#0a1d24;color:#52eee3;font-size:12px;font-weight:900;box-shadow:0 0 16px #16d8cf18}.achievementBadge b{font-size:9px;color:#8afff7}.achievementBadge:active{box-shadow:0 0 24px #16d8cfaa,0 0 50px #16d8cf55;transform:translateY(1px)}button:active,a:active{box-shadow:0 0 28px #16d8cfaa,0 0 60px #16d8cf44!important;transform:translateY(1px)}button:focus-visible,select:focus-visible,a:focus-visible{outline:2px solid #19e0d5;outline-offset:3px;box-shadow:0 0 24px #16d8cf88}.reviewGrid{}
