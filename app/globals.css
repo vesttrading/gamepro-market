@@ -836,10 +836,12 @@ section#reviews .reviewGrid > div {
   margin-top: 200px !important;
 }
 
-/* Become Coach — page background */
-.become-coach-page {
-  background-color: #080d1b;
-  min-height: 100vh;
+body:has(.become-coach-page) {
+  background: #080d1b !important;
+}
+
+html:has(.become-coach-page) {
+  background: #080d1b !important;
 }
 
 /* =======================================================
