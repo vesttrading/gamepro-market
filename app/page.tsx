@@ -1065,7 +1065,7 @@ if (!battlenetId) {
   <div
     style={{
       background: "linear-gradient(145deg, #101727, #080d1b)",
-      border: "2px solid #34415a",
+      border: "2px solid #22c55e",
       borderRadius: 32,
       padding: "38px 24px",
       textAlign: "center",
