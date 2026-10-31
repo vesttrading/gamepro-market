@@ -836,12 +836,32 @@ section#reviews .reviewGrid > div {
   margin-top: 200px !important;
 }
 
+/* СТАТЬ КОУЧЕМ */
+
 body:has(.become-coach-page) {
   background: #080d1b !important;
 }
 
 html:has(.become-coach-page) {
   background: #080d1b !important;
+}
+/* Become Coach — mobile card */
+@media (max-width: 480px) {
+  .become-coach-page {
+    width: calc(100% - 20px) !important;
+    margin: 12px auto !important;
+    padding: 14px 14px 24px !important;
+    border-radius: 18px !important;
+    box-sizing: border-box !important;
+  }
+
+  .become-coach-page .coach-card-title {
+    font-size: 24px !important;
+  }
+
+  .become-coach-page .coach-card-subtitle {
+    font-size: 14px !important;
+  }
 }
 
 /* =======================================================
