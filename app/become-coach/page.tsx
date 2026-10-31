@@ -185,23 +185,26 @@ const fieldStyle: React.CSSProperties = {
 
   if (!session) {
 return (
-  <main
-    style={{
-      maxWidth: 620,
-      margin: "24px auto",
-      padding: 24,
-      color: "white",
-      boxSizing: "border-box",
-      width: "calc(100% - 24px)",
-    }}
-  >
-    <div
+<main
       style={{
+        minHeight: "100vh",
+        width: "100%",
+        background: "#080d1b", // Тёмно-синий фон страницы (вокруг карточки)
+        padding: "40px 20px",
         display: "flex",
+        justifyContent: "center",
         alignItems: "flex-start",
-        justifyContent: "space-between",
-        gap: 12,
-        marginBottom: 26,
+        boxSizing: "border-box",
+      }}
+    >
+      <div
+        style={{
+          maxWidth: 620,
+          width: "100%",
+          background: "#101727", // Цвет самой карточки (остаётся нетронутым)
+          padding: "24px",
+          borderRadius: "24px",
+          boxSizing: "border-box",
       }}
     >
       <div
