@@ -1148,7 +1148,7 @@ if (!battlenetId) {
                 letterSpacing: 2,
                 marginBottom: 7,
               }}>
-                {"⭐".repeat(Math.max(0, Math.min(5, Number(review.rating) || 0))}
+                {"⭐".repeat(Math.max(0, Math.min(5, Number(review.rating) || 0)))}
                 {"☆".repeat(5 - Math.max(0, Math.min(5, Number(review.rating) || 0)))}
               </div>
 
