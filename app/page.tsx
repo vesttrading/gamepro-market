@@ -499,6 +499,11 @@ export default function HomePage() {
   const [reviewStatus,setReviewStatus] = useState("");
   const [reviewSending,setReviewSending] = useState(false);
   const [reviews,setReviews] = useState<any[]>([]);
+  const [selectedRating, setSelectedRating] = useState<number | null>(null);
+
+  const filteredReviews = selectedRating 
+    ? reviews.filter((r: any) => r.rating === selectedRating) 
+    : reviews;
   const t=L[lang];
   const headerT = {
   how: t.how,
@@ -967,16 +972,51 @@ if (!battlenetId) {
     )}
   </div>
 
-  {/* Отзывы о тренере */}
-  <div
+ {/* Отзывы о тренере */}
+<div style={{ display: "flex", gap: 12, marginBottom: 20 }}>
+    <button
+        type="button"
+        onClick={() => setSelectedRating(null)}
+        style={{
+            padding: "8px 16px",
+            borderRadius: 8,
+            border: "none",
+            backgroundColor: selectedRating === null ? "#2563EB" : "#1E293B",
+            color: "#FFFFFF",
+            fontWeight: "bold",
+            cursor: "pointer"
+        }}
+    >
+        Все ({reviews?.length || 0})
+    </button>
+
+    <button
+        type="button"
+        onClick={() => setSelectedRating(5)}
+        style={{
+            padding: "8px 16px",
+            borderRadius: 8,
+            border: "none",
+            backgroundColor: selectedRating === 5 ? "#2563EB" : "#1E293B",
+            color: "#FFFFFF",
+            fontWeight: "bold",
+            cursor: "pointer"
+        }}
+    >
+        5★ ({reviews?.filter((r: any) => r.rating === 5).length || 0})
+    </button>
+</div>
+
+<div
     className="reviewGrid"
     style={{
-      display:"grid",
-      gridTemplateColumns:"repeat(3,1fr)",
-      gap:16,
-      marginTop:25
+        display:"grid",
+        gridTemplateColumns:"repeat(3,1fr)",
+        gap:16,
+        marginTop:25
     }}
-  >
+>
+    {filteredReviews.length === 0 ? (
     {reviews.length === 0 ? (
       <div
         style={{
@@ -989,7 +1029,7 @@ if (!battlenetId) {
         {t.noReviews}
       </div>
     ) : (
-      reviews.map(review => (
+      filteredReviews.map(review => (
         <div
           key={review.id}
           style={card}
