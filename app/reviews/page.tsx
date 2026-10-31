@@ -237,7 +237,7 @@ export default function ReviewsPage() {
     loadReviews();
   }, []);
 
- То  const submitReview = async () => {
+   const submitReview = async () => {
     if (status !== "authenticated") {
       setReviewStatus(t.loginFirst);
       return;
