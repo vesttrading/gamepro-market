@@ -71,7 +71,7 @@ const L = {
     check:"Проверка", checkText:"Данные проходят проверку перед получением статуса VERIFIED.",
     badge:"VERIFIED", badgeText:"Только подтверждённые достижения получают зелёный бейдж.",
     passportLink:"Паспорт игрока", shareTitle:"Твой игровой профиль — одной ссылкой", login:"Войти через Battle.net", reviews:"Отзывы", gameproRating:"Оценка GamePro", playerReviews:"Отзывы игроков", verifiedReviews:"Отзывы о системе VERIFIED",
-    logout:"Выйти",
+    logout:"Выйти", allReviews: "Все",
     contactText:"По вопросам GamePro и сотрудничества",
     contactResponse: "Мы отвечаем в течение 24 часов • Ответим на почту",
   },
@@ -138,7 +138,7 @@ const L = {
     check:"Verification", checkText:"Data is checked before an achievement receives VERIFIED status.",
     badge:"VERIFIED", badgeText:"Only verified achievements receive the green badge.",
     passportLink:"Player passport", shareTitle:"Your gaming profile — one link", login:"Login with Battle.net", reviews:"Reviews", gameproRating:"GamePro rating", playerReviews:"Player reviews", verifiedReviews:"VERIFIED system reviews",
-    logout:"Log out",
+    logout:"Log out", allReviews: "All",
     contactText:"For GamePro inquiries and partnerships",
     contactResponse: "We respond within 24 hours • Reply by email",
   },
@@ -205,7 +205,7 @@ const L = {
     check:"Doğrulama", checkText:"Başarı VERIFIED olmadan önce veriler kontrol edilir.",
     badge:"VERIFIED", badgeText:"Sadece doğrulanmış başarılar yeşil rozet alır.",
     passportLink:"Oyuncu pasaportu", shareTitle:"Oyun profilin — tek bağlantı", login:"Battle.net ile giriş", reviews:"Yorumlar", gameproRating:"GamePro puanı", playerReviews:"Oyuncu yorumları", verifiedReviews:"VERIFIED sistemi yorumları",
-    logout:"Çıkış yap",
+    logout:"Çıkış yap", allReviews: "Tümü",
     contactText:"GamePro hakkında sorular ve iş birlikleri için",
     contactResponse: "24 saat içinde yanıt veriyoruz • E-posta ile dönüş yapıyoruz",
   },
@@ -272,7 +272,7 @@ const L = {
     check:"Prüfung", checkText:"Die Daten werden geprüft, bevor ein Erfolg VERIFIED erhält.",
     badge:"VERIFIED", badgeText:"Nur verifizierte Erfolge erhalten das grüne Badge.",
     passportLink:"Spielerpass", shareTitle:"Dein Gaming-Profil — ein Link", login:"Mit Battle.net einloggen", reviews:"Bewertungen", gameproRating:"GamePro-Bewertung", playerReviews:"Spielerbewertungen", verifiedReviews:"Bewertungen zum VERIFIED-System",
-    logout:"Abmelden",
+    logout:"Abmelden", allReviews: "Alle",
     contactText:"Für Fragen zu GamePro und Kooperationen",
     contactResponse: "Wir antworten innerhalb von 24 Stunden • Antwort per E-Mail",
   },
@@ -331,7 +331,7 @@ const L = {
     searchTitle:"Buscar jugador", searchSub:"Busca por rol, rating y logros verificados.", placeholder:"Por ejemplo: Holy Paladin 2700+", search:"Buscar",
     howTitle:"Cómo funciona la verificación", howSub:"De los datos del juego a la insignia VERIFIED.", guild:"Gremios y equipos", guildText:"Encuentra jugadores por rol, rating y progreso verificado.", open:"Abrir búsqueda de jugadores", share:"Compartir pasaporte", copied:"¡Enlace copiado!",
     current:"Disponible ahora", future:"Próximamente", wow:"World of Warcraft", wowText:"Mythic+, raids y PvP — el primer juego de GamePro.", futureText:"Dota 2, CS2 y Path of Exile 2 están en la hoja de ruta.", source:"Fuente", sourceText:"GamePro compara los datos del juego con fuentes compatibles.", check:"Verificación", checkText:"Los datos se comprueban antes de recibir el estado VERIFIED.", badge:"VERIFIED", badgeText:"Solo los logros verificados reciben la insignia verde.", passportLink:"Pasaporte del jugador", shareTitle:"Tu perfil gaming — un solo enlace", login:"Entrar con Battle.net", reviews:"Opiniones", gameproRating:"Valoración de GamePro", playerReviews:"Opiniones de jugadores", verifiedReviews:"Opiniones sobre el sistema VERIFIED",
-    logout:"Cerrar sesión",
+    logout:"Cerrar sesión", allReviews: "Todos",
     contactText:"Para consultas sobre GamePro y colaboraciones",
     contactResponse: "Respondemos en 24 horas • Respuesta por correo",
   },
@@ -390,7 +390,7 @@ const L = {
     searchTitle:"Trouver un joueur", searchSub:"Recherche par rôle, rating et accomplissements vérifiés.", placeholder:"Par exemple : Holy Paladin 2700+", search:"Rechercher",
     howTitle:"Comment fonctionne la vérification", howSub:"Des données du jeu au badge VERIFIED.", guild:"Guildes et équipes", guildText:"Trouve des joueurs par rôle, rating et progression vérifiée.", open:"Ouvrir la recherche", share:"Partager le passeport", copied:"Lien copié !",
     current:"Disponible maintenant", future:"Bientôt", wow:"World of Warcraft", wowText:"Mythic+, raids et PvP — le premier jeu de GamePro.", futureText:"Dota 2, CS2 et Path of Exile 2 sont sur la feuille de route.", source:"Source", sourceText:"GamePro vérifie les données du jeu avec les sources prises en charge.", check:"Vérification", checkText:"Les données sont vérifiées avant l'attribution du statut VERIFIED.", badge:"VERIFIED", badgeText:"Seuls les accomplissements vérifiés obtiennent le badge vert.", passportLink:"Passeport joueur", shareTitle:"Ton profil gaming — un seul lien", login:"Se connecter avec Battle.net", reviews:"Avis", gameproRating:"Note GamePro", playerReviews:"Avis des joueurs", verifiedReviews:"Avis sur le système VERIFIED",
-    logout:"Se déconnecter",
+    logout:"Se déconnecter", allReviews: "Tous",
     contactText:"Pour toute question concernant GamePro et les collaborations",
     contactResponse: "Nous répondons sous 24 heures • Réponse par e-mail",
   },
@@ -449,7 +449,7 @@ const L = {
     searchTitle:"Znajdź gracza", searchSub:"Szukaj po roli, ratingu i zweryfikowanych osiągnięciach.", placeholder:"Na przykład: Holy Paladin 2700+", search:"Szukaj",
     howTitle:"Jak działa weryfikacja", howSub:"Od danych z gry do odznaki VERIFIED.", guild:"Gildie i drużyny", guildText:"Znajduj graczy według roli, ratingu i zweryfikowanego progresu.", open:"Otwórz wyszukiwanie graczy", share:"Udostępnij paszport", copied:"Link skopiowany!",
     current:"Dostępne teraz", future:"Wkrótce", wow:"World of Warcraft", wowText:"Mythic+, rajdy i PvP — pierwsza gra GamePro.", futureText:"Dota 2, CS2 i Path of Exile 2 są już na roadmapie.", source:"Źródło", sourceText:"GamePro porównuje dane z gry z obsługiwanymi źródłami.", check:"Weryfikacja", checkText:"Dane są sprawdzane przed nadaniem statusu VERIFIED.", badge:"VERIFIED", badgeText:"Tylko zweryfikowane osiągnięcia otrzymują zieloną odznakę.", passportLink:"Paszport gracza", shareTitle:"Twój profil gamingowy — jeden link", login:"Zaloguj przez Battle.net", reviews:"Opinie", gameproRating:"Ocena GamePro", playerReviews:"Opinie graczy", verifiedReviews:"Opinie o systemie VERIFIED",
-    logout:"Wyloguj się",
+    logout:"Wyloguj się", allReviews: "Wszystkie",
     contactText:"W sprawie GamePro i współpracy",
     contactResponse: "Odpowiadamy w ciągu 24 godzin • Odpowiedź e-mailem",
   }
@@ -499,6 +499,21 @@ export default function HomePage() {
   const [reviewStatus,setReviewStatus] = useState("");
   const [reviewSending,setReviewSending] = useState(false);
   const [reviews,setReviews] = useState<any[]>([]);
+  const [reviewFilter, setReviewFilter] = useState<number | "all">("all");
+
+const filteredReviews =
+  reviewFilter === "all"
+    ? reviews
+    : reviews.filter(
+        review => Number(review.rating) === reviewFilter
+      );
+
+const reviewCounts = {
+  all: reviews.length,
+  5: reviews.filter(r => Number(r.rating) === 5).length,
+  4: reviews.filter(r => Number(r.rating) === 4).length,
+  3: reviews.filter(r => Number(r.rating) === 3).length,
+};
   const t=L[lang];
   const headerT = {
   how: t.how,
@@ -882,58 +897,102 @@ if (!battlenetId) {
         </div>
       </section>
 
-<section
+  <section
   id="reviews"
   style={{
-    maxWidth:1160,
-    width:"92%",
-    margin:"auto",
-    padding:"60px 0"
+    maxWidth: 1160,
+    width: "92%",
+    margin: "auto",
+    padding: "45px 0 60px",
+    boxSizing: "border-box",
   }}
 >
-  <h2 style={{textAlign:"center",fontSize:36}}>
-    {t.reviews}
-  </h2>
-
-  <p style={{
-    textAlign:"center",
-    color:"#9da6c0",
-    marginBottom:30
+  {/* Заголовок */}
+  <div style={{
+    display: "flex",
+    alignItems: "center",
+    gap: 18,
+    marginBottom: 28,
+    flexWrap: "wrap",
   }}>
-    {t.reviewsSubtitle}
-  </p>
+    <h2 style={{
+      margin: 0,
+      fontSize: 42,
+      fontWeight: 750,
+      color: "#ffffff",
+    }}>
+      {t.reviews}
+    </h2>
+
+    <span style={{
+      padding: "9px 16px",
+      border: "1px solid #4789ff",
+      borderRadius: 12,
+      color: "#4789ff",
+      fontSize: 17,
+      fontWeight: 700,
+    }}>
+      {reviews.length}
+    </span>
+  </div>
+
+  {/* Фильтры */}
+  <div style={{
+    display: "flex",
+    gap: 12,
+    flexWrap: "wrap",
+    marginBottom: 24,
+  }}>
+    {[
+      { value: "all" as const, label: ${t.allReviews} (${reviewCounts.all}), color: "#4789ff" },
+      { value: 5 as const, label: 5⭐ (${reviewCounts[5]}), color: "#4789ff" },
+      { value: 4 as const, label: 4⭐ (${reviewCounts[4]}), color: "#22c55e" },
+      { value: 3 as const, label: 3⭐ (${reviewCounts[3]}), color: "#a855f7" },
+    ].map(item => (
+      <button
+        key={item.value}
+        type="button"
+        onClick={() => setReviewFilter(item.value)}
+        style={{
+          padding: "12px 22px",
+          borderRadius: 14,
+          border: 1px solid ${item.color},
+          background: reviewFilter === item.value ? item.color : "#101727",
+          color: reviewFilter === item.value ? "#ffffff" : item.color,
+          fontSize: 17,
+          fontWeight: 650,
+          cursor: "pointer",
+        }}
+      >
+        {item.label}
+      </button>
+    ))}
+  </div>
 
   {/* Форма отзыва */}
-  <div
-    style={{
-      ...card,
-      maxWidth:650,
-      margin:"0 auto 35px",
-    }}
-  >
-    <h3 style={{
-      marginTop:0,
-      textAlign:"center",
-      fontSize:24
-    }}>
-      {t.leaveReview}
-    </h3>
-
+  <div style={{
+    background: "linear-gradient(145deg,#101727,#080d1b)",
+    border: "1px solid #303b52",
+    borderRadius: 18,
+    padding: 18,
+    marginBottom: 24,
+    boxSizing: "border-box",
+  }}>
     {status !== "authenticated" ? (
       <p style={{
-        color:"#9da6c0",
-        textAlign:"center",
-        marginBottom:0
+        color: "#9da6c0",
+        textAlign: "center",
+        margin: 8,
       }}>
         {t.loginToReview}
       </p>
     ) : (
       <>
         <div style={{
-          display:"flex",
-          justifyContent:"center",
-          gap:8,
-          marginBottom:15
+          display: "flex",
+          alignItems: "center",
+          gap: 8,
+          marginBottom: 12,
         }}>
           {[1,2,3,4,5].map(star => (
             <button
@@ -941,12 +1000,12 @@ if (!battlenetId) {
               type="button"
               onClick={() => setReviewRating(star)}
               style={{
-                background:"transparent",
-                border:0,
-                cursor:"pointer",
-                fontSize:28,
-                opacity:star <= reviewRating ? 1 : 0.35,
-                padding:4
+                background: "transparent",
+                border: 0,
+                cursor: "pointer",
+                fontSize: 25,
+                padding: 2,
+                opacity: star <= reviewRating ? 1 : 0.3,
               }}
             >
               ⭐
@@ -954,42 +1013,52 @@ if (!battlenetId) {
           ))}
         </div>
 
-        <textarea
-          value={reviewText}
-          onChange={e => setReviewText(e.target.value)}
-          placeholder={t.reviewPlaceholder}
-          maxLength={1000}
-          style={{
-            width:"100%",
-            minHeight:120,
-            boxSizing:"border-box",
-            resize:"vertical",
-            background:"#090e1d",
-            border:"1px solid #26364b",
-            borderRadius:12,
-            padding:15,
-            color:"white",
-            outline:"none",
-            fontFamily:"inherit"
-          }}
-        />
+        <div className="reviewFormRow">
+          <textarea
+            value={reviewText}
+            onChange={e => setReviewText(e.target.value)}
+            placeholder={t.reviewPlaceholder}
+            maxLength={1000}
+            style={{
+              flex: 1,
+              width: "100%",
+              minWidth: 0,
+              minHeight: 58,
+              boxSizing: "border-box",
+              resize: "vertical",
+              background: "#090e1d",
+              border: "1px solid #303b52",
+              borderRadius: 12,
+              padding: 15,
+              color: "white",
+              outline: "none",
+              fontFamily: "inherit",
+              fontSize: 15,
+            }}
+          />
 
-        <button
-          onClick={submitReview}
-          style={{
-            ...btn,
-            width:"100%",
-            marginTop:12
-          }}
-        >
-          {reviewSending ? t.sending : t.leaveReview}
-        </button>
-
-        {reviewStatus && (
-          <p style={{
-            textAlign:"center",
-            color:"#52eee3",
-            marginBottom:0
+          <button
+            onClick={submitReview}
+            disabled={reviewSending}
+            style={{
+              padding: "14px 24px",
+              border: "1px solid #4789ff",
+              borderRadius: 12,
+              background: "#356bea",
+              color: "white",
+              fontSize: 16,
+              fontWeight: 700,
+              cursor: "pointer",
+              whiteSpace: "nowrap",
+            }}
+          >
+            ✈ {reviewSending ? t.sending : t.leaveReview}
+          </button>
+        </div>
+          {reviewStatus && (
+          <p role="status" style={{
+            color: "#52eee3",
+            marginBottom: 0,
           }}>
             {reviewStatus}
           </p>
@@ -998,55 +1067,104 @@ if (!battlenetId) {
     )}
   </div>
 
-  {/* Отзывы о тренере */}
-  <div
-    className="reviewGrid"
-    style={{
-      display:"grid",
-      gridTemplateColumns:"repeat(3,1fr)",
-      gap:16,
-      marginTop:25
-    }}
-  >
-    {reviews.length === 0 ? (
-      <div
-        style={{
-          ...card,
-          gridColumn:"1 / -1",
-          textAlign:"center",
-          color:"#9da6c0"
-        }}
-      >
+  {/* Карточки отзывов */}
+  <div className="reviewGrid" style={{
+    display: "grid",
+    gridTemplateColumns: "repeat(2,minmax(0,1fr))",
+    gap: 16,
+  }}>
+    {filteredReviews.length === 0 ? (
+      <div style={{
+        gridColumn: "1 / -1",
+        padding: 30,
+        textAlign: "center",
+        color: "#9da6c0",
+        background: "#101727",
+        borderRadius: 16,
+      }}>
         {t.noReviews}
       </div>
     ) : (
-      reviews.map(review => (
-        <div
-          key={review.id}
-          style={card}
-        >
-          <div style={{
-            fontSize:20,
-            marginBottom:10
-          }}>
-            {"⭐".repeat(Number(review.rating) || 0)}
+      filteredReviews.map((review, index) => {
+        const colors = [
+          "#4789ff",
+          "#22c55e",
+          "#a855f7",
+          "#ef476f",
+          "#f59e0b",
+          "#06b6d4",
+        ];
+
+        const color = colors[index % colors.length];
+        const author = review.author_name || "GamePro игрок";
+
+        return (
+          <div
+            key={review.id}
+            style={{
+              display: "flex",
+              alignItems: "flex-start",
+              gap: 14,
+              padding: 18,
+              background: "linear-gradient(145deg,#151725,#101727)",
+              border: 1px solid ${color},
+              borderRadius: 16,
+              minWidth: 0,
+              boxSizing: "border-box",
+            }}
+          >
+            {/* Аватар */}
+            <div style={{
+              width: 56,
+              height: 56,
+              minWidth: 56,
+              borderRadius: "50%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              background: ${color}30,
+              border: 1px solid ${color},
+              color,
+              fontSize: 26,
+              fontWeight: 700,
+            }}>
+              {author.charAt(0).toUpperCase()}
+            </div>
+
+            {/* Содержание */}
+            <div style={{ minWidth: 0, flex: 1 }}>
+              <h3 style={{
+                margin: "0 0 5px",
+                color: "#ffffff",
+                fontSize: 21,
+                fontWeight: 700,
+                overflowWrap: "anywhere",
+              }}>
+                {author}
+              </h3>
+
+              <div style={{
+                fontSize: 21,
+                letterSpacing: 2,
+                marginBottom: 7,
+              }}>
+                {"⭐".repeat(Math.max(0, Math.min(5, Number(review.rating) || 0))}
+                {"☆".repeat(5 - Math.max(0, Math.min(5, Number(review.rating) || 0)))}
+              </div>
+
+              <p style={{
+                color: "#e2e8f0",
+                lineHeight: 1.5,
+                margin: 0,
+                fontSize: 15,
+                overflowWrap: "anywhere",
+              }}>
+                {review.text}
+              </p>
+            </div>
           </div>
-
-          <h3 style={{
-            margin:"0 0 8px"
-          }}>
-            {review.author_name || "GamePro игрок"}
-          </h3>
-
-          <p style={{
-            color:"#9da6c0",
-            lineHeight:1.6,
-            margin:0
-          }}>
-            {review.text}
-          </p>
-        </div>
-      ))
+        );
+      })
     )}
   </div>
 </section>
