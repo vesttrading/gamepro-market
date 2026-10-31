@@ -237,7 +237,7 @@ export default function ReviewsPage() {
     loadReviews();
   }, []);
 
-  const submitReview = async () => {
+ То  const submitReview = async () => {
     if (status !== "authenticated") {
       setReviewStatus(t.loginFirst);
       return;
@@ -273,7 +273,7 @@ export default function ReviewsPage() {
       setReviewRating(5);
       setReviewStatus(t.sent);
       await loadReviews();
-    } catch (error) {
+    } catch (error: any) {
       setReviewStatus(
         error instanceof Error ? error.message : t.error
       );
@@ -282,25 +282,30 @@ export default function ReviewsPage() {
     }
   };
 
+  // Вычисления для счетчиков отзывов
   const reviewCounts = {
     all: reviews.length,
-    5: reviews.filter(r => Number(r.rating) === 5).length,
-    4: reviews.filter(r => Number(r.rating) === 4).length,
-    3: reviews.filter(r => Number(r.rating) === 3).length,
+    5: reviews.filter((r: any) => Number(r.rating) === 5).length,
+    4: reviews.filter((r: any) => Number(r.rating) === 4).length,
+    3: reviews.filter((r: any) => Number(r.rating) === 3).length,
   };
 
+  // Фильтрация отзывов для рендера
   const filteredReviews =
     reviewFilter === "all"
       ? reviews
       : reviews.filter(
-          r => Number(r.rating) === reviewFilter
+          (r: any) => Number(r.rating) === Number(reviewFilter)
         );
 
-  const filters: {
+  // Правильное описание типа объекта в массиве для TypeScript
+  interface FilterItem {
     value: ReviewFilter;
     label: string;
     color: string;
-  }[] = [
+  }
+
+  const filters: FilterItem[] = [
     {
       value: "all",
       label: `${t.all} (${reviewCounts.all})`,
@@ -308,17 +313,17 @@ export default function ReviewsPage() {
     },
     {
       value: 5,
-      label: `5⭐ (${reviewCounts[5]})`,
+      label: `5 ⭐️ (${reviewCounts[5]})`,
       color: "#4789ff",
     },
     {
       value: 4,
-      label: `4⭐ (${reviewCounts[4]})`,
+      label: `4 ⭐️ (${reviewCounts[4]})`,
       color: "#22c55e",
     },
     {
       value: 3,
-      label: `3⭐ (${reviewCounts[3]})`,
+      label: `3 ⭐️ (${reviewCounts[3]})`,
       color: "#a855f7",
     },
   ];
@@ -557,88 +562,86 @@ export default function ReviewsPage() {
                 {t.noReviews}
               </div>
             ) : (
-              filteredReviews.map((review, index) => {
-                const color = colors[index % colors.length];
-                const author =
-                  review.author_name || "GamePro player";
-                const rating = Math.max(
-                  0,
-                  Math.min(5, Number(review.rating) || 0)
-                );
-               return (
-                  <div
-                    key={review.id}
+            filteredReviews.map((review: any, index: number) => {
+            const firstLetter = review.author_name ? review.author_name.charAt(0).toUpperCase() : "U";
+            const currentRating = Math.max(0, Math.min(5, Number(review.rating) || 0));
+            const cardColor = colors && colors.length > 0 ? colors[index % colors.length] : "#4789ff";
+
+            return (
+              <div
+                key={review.id || index}
+                style={{
+                  background: "linear-gradient(145deg, #101727, #080d1b)",
+                  border: "1px solid #303b52",
+                  borderRadius: 18,
+                  padding: 20,
+                  display: "flex",
+                  gap: 16,
+                  alignItems: "start",
+                  boxSizing: "border-box"
+                }}
+              >
+                {/* Круглая аватарка */}
+                <div
+                  style={{
+                    width: 45,
+                    height: 45,
+                    borderRadius: "50%",
+                    background: linear-gradient(135deg, ${cardColor}, #356bea),
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontSize: 22,
+                    fontWeight: 700,
+                    color: "#ffffff",
+                    flexShrink: 0
+                  }}
+                >
+                  {firstLetter}
+                </div>
+
+                {/* Контент отзыва */}
+                <div style={{ minWidth: 0, flex: 1 }}>
+                  <h3
                     style={{
-                      display: "flex",
-                      alignItems: "flex-start",
-                      gap: 14,
-                      padding: 18,
-                      background:
-                        "linear-gradient(145deg,#151725,#101727)",
-                      border: `1px solid ${color}`,
-                      borderRadius: 16,
-                      minWidth: 0,
-                      boxSizing: "border-box",
+                      margin: "0 0 5px",
+                      color: "#ffffff",
+                      fontSize: 18,
+                      fontWeight: 700,
+                      overflowWrap: "anywhere",
                     }}
                   >
-                    <div
-                      style={{
-                        width: 56,
-                        height: 56,
-                        minWidth: 56,
-                        borderRadius: "50%",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        background: `${color}30`,
-                        border: `1px solid ${color}`,
-                        color,
-                        fontSize: 26,
-                        fontWeight: 700,
-                      }}
-                    >
-                      {author.charAt(0).toUpperCase()}
-                    </div>
+                    {review.author_name || "GamePro player"}
+                  </h3>
 
-                    <div style={{ minWidth: 0, flex: 1 }}>
-                      <h3
-                        style={{
-                          margin: "0 0 5px",
-                          color: "#ffffff",
-                          fontSize: 21,
-                          fontWeight: 700,
-                          overflowWrap: "anywhere",
-                        }}
-                      >
-                        {author}
-                      </h3>
-
-                      <div
-                        style={{
-                          fontSize: 21,
-                          letterSpacing: 2,
-                          marginBottom: 7,
-                        }}
-                      >
-                        {"⭐".repeat(rating)}
-                        {"☆".repeat(5 - rating)}
-                      </div>
-
-                      <p
-                        style={{
-                          color: "#e2e8f0",
-                          lineHeight: 1.5,
-                          margin: 0,
-                          fontSize: 15,
-                          overflowWrap: "anywhere",
-                        }}
-                      >
-                        {review.text}
-                      </p>
-                    </div>
+                  {/* Звезды */}
+                  <div
+                    style={{
+                      fontSize: 18,
+                      letterSpacing: 2,
+                      marginBottom: 7,
+                      color: "#ffb800"
+                    }}
+                  >
+                    {"★".repeat(currentRating)}
+                    {"☆".repeat(5 - currentRating)}
                   </div>
-                );
-              })
+
+                  <p
+                    style={{
+                      color: "#e2e8f0",
+                      lineHeight: 1.5,
+                      margin: 0,
+                      fontSize: 15,
+                      overflowWrap: "anywhere",
+                    }}
+                  >
+                    {review.text}
+                  </p>
+                </div>
+              </div>
+            );
+          })
             )}
           </div>
         )}
