@@ -1056,7 +1056,7 @@ if (!battlenetId) {
  <section
   id="contact"
   style={{
-    maxWidth: 900,
+    maxWidth: 760,
     width: "90%",
     margin: "0 auto 60px",
     boxSizing: "border-box",
@@ -1067,7 +1067,7 @@ if (!battlenetId) {
       background: "linear-gradient(145deg, #101727, #080d1b)",
       border: "2px solid #34415a",
       borderRadius: 32,
-      padding: "55px 30px",
+      padding: "38px 24px",
       textAlign: "center",
       boxSizing: "border-box",
     }}
@@ -1075,8 +1075,8 @@ if (!battlenetId) {
     <h2
       style={{
         margin: "0 0 12px",
-        fontSize: 54,
-        fontWeight: 800,
+        fontSize: 42,
+        fontWeight: 600,
         color: "#ffffff",
       }}
     >
@@ -1108,8 +1108,8 @@ if (!battlenetId) {
         borderRadius: 28,
         background: "#17243a",
         color: "#ffffff",
-        fontSize: 22,
-        fontWeight: 800,
+        fontSize: 18,
+        fontWeight: 600,
         textDecoration: "none",
         boxSizing: "border-box",
         overflowWrap: "anywhere",
