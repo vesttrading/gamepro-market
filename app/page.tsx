@@ -922,30 +922,39 @@ if (!battlenetId) {
       </p>
     ) : (
       <>
-        <div style={{
-          display:"flex",
-          justifyContent:"center",
-          gap:8,
-          marginBottom:15
-        }}>
-          {[1,2,3,4,5].map(star => (
-            <button
-              key={star}
-              type="button"
-              onClick={() => setReviewRating(star)}
-              style={{
-                background:"transparent",
-                border:0,
-                cursor:"pointer",
-                fontSize:28,
-                opacity:star <= reviewRating ? 1 : 0.35,
-                padding:4
-              }}
-            >
-              ⭐
-            </button>
-          ))}
-        </div>
+      <div style={{
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "flex-start",
+  gap: 8,
+  marginBottom: 15
+}}>
+  <span style={{
+    color: "#9da6c0",
+    fontSize: 16,
+    fontWeight: 600
+  }}>
+    {t.yourRating}
+  </span>
+
+  {[1,2,3,4,5].map(star => (
+    <button
+      key={star}
+      type="button"
+      onClick={() => setReviewRating(star)}
+      style={{
+        background: "transparent",
+        border: 0,
+        cursor: "pointer",
+        fontSize: 20,
+        opacity: star <= reviewRating ? 1 : 0.35,
+        padding: 2
+      }}
+    >
+      ⭐
+    </button>
+  ))}
+</div>
 
         <textarea
           value={reviewText}
