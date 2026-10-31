@@ -933,8 +933,9 @@ if (!battlenetId) {
   display: "flex",
   alignItems: "center",
   justifyContent: "flex-start",
-  gap: 8,
+  gap: 2,
   marginBottom: 15
+  paddingLeft: 20,
 }}>
   <span style={{
     color: "#9da6c0",
@@ -955,7 +956,7 @@ if (!battlenetId) {
         cursor: "pointer",
         fontSize: 20,
         opacity: star <= reviewRating ? 1 : 0.35,
-        padding: 2
+        padding: 0
       }}
     >
       ⭐
