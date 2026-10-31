@@ -69,13 +69,7 @@ export default async function CoachProfilePage({
           boxSizing: "border-box",
         }}
       >
-        <a
-          href="/"
-          style={{ color: "#20c9bd", textDecoration: "none" }}
-        >
-          ← GamePro
-        </a>
-
+       
 <div style={{ display: "flex", flexDirection: "column", gap: 8, marginTop: 24 }}>
   
   {/* Имя и статус подтверждения в одну строку */}
