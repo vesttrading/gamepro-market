@@ -935,8 +935,7 @@ if (!battlenetId) {
   justifyContent: "flex-start",
   gap: 2,
   marginBottom: 15
-  paddingLeft: 20,
-}}>
+ }}>
   <span style={{
     color: "#9da6c0",
     fontSize: 16,
