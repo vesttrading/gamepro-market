@@ -848,6 +848,9 @@ html:has(.become-coach-page) {
 /* Become Coach — mobile card */
 @media (max-width: 480px) {
   .become-coach-page {
+   padding-top: 6px !important;
+   margin-top: 8px !important;
+}
     width: calc(100% - 20px) !important;
     margin: 12px auto !important;
     padding: 14px 14px 24px !important;
