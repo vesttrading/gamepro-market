@@ -297,7 +297,7 @@ return (
       padding: "12px 24px 32px 24px",
       color: "#f8fafc",
       background: "#101727",
-      border: "1px solid #303b52",
+      border: "1px solid #22c55e",
       borderRadius: 24,
       boxSizing: "border-box",
       width: "calc(100% - 24px)",
