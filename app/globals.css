@@ -836,6 +836,12 @@ section#reviews .reviewGrid > div {
   margin-top: 200px !important;
 }
 
+/* Become Coach — page background */
+.become-coach-page {
+  background-color: #080d1b;
+  min-height: 100vh;
+}
+
 /* =======================================================
    ИТОГОВАЯ БЕЗОПАСНАЯ МОБИЛЬНАЯ АДАПТАЦИЯ (БЕЗ ОШИБОК)
    ======================================================= */
