@@ -308,7 +308,7 @@ export default function ReviewsPage() {
     },
     {
       value: 5,
-      label: 5⭐ (${reviewCounts[5]})`,
+      label: `5⭐ (${reviewCounts[5]})`,
       color: "#4789ff",
     },
     {
