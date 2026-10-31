@@ -871,7 +871,7 @@ html:has(.become-coach-page) {
   .become-coach-page > div:first-child {
     display: none !important;
   }
-
+}
 
 /* =======================================================
    ИТОГОВАЯ БЕЗОПАСНАЯ МОБИЛЬНАЯ АДАПТАЦИЯ (БЕЗ ОШИБОК)
