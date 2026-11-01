@@ -477,16 +477,18 @@ useEffect(() => {
            <a
            href={`/coach/${coach.id}`}
            style={{
-          display: "block",
+       display: "block",
         textAlign: "center",
         marginTop: 16,
-        padding: 12,
+        padding: "11px", /* Чуть уменьшили, учитывая толщину рамки */
         borderRadius: 14,
-        background: "#00ff66",
-        color: "#000000",
+        background: "transparent", /* Тёмная внутри (прозрачная на тёмном фоне карточки) */
+        color: "#ffffff", /* Белые буквы */
         fontWeight: 700,
         textDecoration: "none",
-        boxShadow: "0 0 15px 3px rgba(0, 255, 102, 0.6), 0 0 5px 1px rgba(0, 255, 102, 0.8)"
+        border: "2px solid #00ff66", /* Яркая зелёная рамка */
+        /* Внешнее и внутреннее неоновое свечение рамки: */
+        boxShadow: "0 0 12px rgba(0, 255, 102, 0.6), inset 0 0 8px rgba(0, 255, 102, 0.4)"
          }}
        >
        {{
