@@ -412,7 +412,7 @@ useEffect(() => {
       "Game coaching and guidance."}
   </p>
       <div style={{ fontSize: "24px", fontWeight: "700", color: "#ffffff", marginBottom: "15px", textAlign: "left" }}>
-      {coach.price ? `${coach.price} USD` : "32 USD"}
+      25 USD
       </div>
             
          <button
