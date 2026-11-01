@@ -97,7 +97,8 @@ useEffect(() => {
 
     return () => {
       active = false;
-     }, []);
+    };
+  }, []);
 
   return (
     <section
@@ -336,7 +337,7 @@ useEffect(() => {
                       style={{ width: "100%", height: "100%", objectFit: "cover" }}
                     />
                   ) : (
-                   "🐉"
+                   "🦑"
                   )}
                 </div>
 
@@ -458,54 +459,45 @@ useEffect(() => {
        );
      }
    }}
-      
-<div style={{ display: "flex", gap: "10px", width: "100%", marginTop: "15px" }}>
-  
-  <button
-    style={{
-      padding: 12,
-      borderRadius: 10,
-      border: "none",
-      background: "#20c9bd",
-      color: "#06111b",
-      fontWeight: 700,
-      cursor: "pointer",
-      display: "flex",          // Можно изменить на flex
-      justifyContent: "center", // Центрируем текст внутри
-      alignItems: "center",
-      flex: 1,                  // Теперь это заставит кнопку делить место 50/50
-    }}
-  >
-    {lang === "RU" ? "Связаться с тренером" : "Contact coach"}
-  </button>
-
-  <a
-    href={/coach/${coach.id}}
-    style={{
-      display: "flex",          // Изменяем на flex для единообразия
-      justifyContent: "center", 
-      alignItems: "center",
-      flex: 1,                  // Вторая кнопка займет вторую половину
-      padding: 12,
-      borderRadius: 10,
-      background: "#20c9bd",    // Если нужен другой цвет (как на фото), замените (например, на #ffffff)
-      color: "#06101a",
-      fontWeight: 700,
-      textDecoration: "none",
-    }}
-  >
-    {{
-      RU: "Профиль",
-      EN: "Profile",
-      TR: "Profil",
-      DE: "Profil",
-      ES: "Perfil",
-      FR: "Profil",
-      PL: "Profil",
-    }[lang] || "Profile"}
-  </a>
-
-</div> {/* Закрываем контейнер-обертку */}
+        style={{
+        marginTop: 16,
+        padding: 12,
+        borderRadius: 10,
+        border: "none",
+        background: "#20c9bd",
+        color: "#06111b",
+        fontWeight: 700,
+        cursor: "pointer",
+        display: "block",
+        width: "100%",
+     }}
+   >
+       {lang === "RU" ? "Связаться с тренером" : "Contact Coach"}
+       </button>
+           <a
+           href={`/coach/${coach.id}`}
+           style={{
+           display: "block",
+           textAlign: "center",
+           marginTop: 16,
+           padding: 12,
+           borderRadius: 10,
+           background: "#20c9bd",
+           color: "#06101a",
+           fontWeight: 700,
+           textDecoration: "none",
+         }}
+       >
+       {{
+        RU: "Профиль",
+        EN: "Profile",
+        TR: "Profil",
+        DE: "Profil",
+        ES: "Perfil",
+        FR: "Profil",
+        PL: "Profil",
+       }[lang] || "Profile"}
+         </a>
          </article>
         ))}
         </div>
