@@ -812,11 +812,11 @@ if (!battlenetId) {
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(230px, 1fr))",
-            gap: 18,
+            gap: 30,
             marginTop: 28,
           }}
         >
-         <div style={{ ...card, border: "2px solid #2563eb", boxShadow: "0 0 15px rgba(37, 99, 235, 0.65), inset 0 0 8px rgba(37, 99, 235, 0.2)" }}>
+         <div style={{ ...card, border: "3px solid #2563eb", boxShadow: "0 0 15px rgba(37, 99, 235, 0.65), inset 0 0 8px rgba(37, 99, 235, 0.2)" }}>
             <h3 style={{ color: "#f7f8ff" }}>
               🔎 {lang === "RU" ? "Выбери тренера" :
                    lang === "TR" ? "Koçunu seç" :
@@ -837,7 +837,7 @@ if (!battlenetId) {
             </p>
           </div>
 
-         <div style={{ ...card, border: "2px solid #22c55e", boxShadow: "0 0 15px rgba(34, 197, 94, 0.65), inset 0 0 8px rgba(34, 197, 94, 0.2)" }}>
+         <div style={{ ...card, border: "3px solid #22c55e", boxShadow: "0 0 15px rgba(34, 197, 94, 0.65), inset 0 0 8px rgba(34, 197, 94, 0.2)" }}>
             <h3 style={{ color: "#f7f8ff" }}>
               📋 {lang === "RU" ? "Изучи услуги" :
                    lang === "TR" ? "Hizmetleri incele" :
@@ -858,7 +858,7 @@ if (!battlenetId) {
             </p>
           </div>
 
-         <div style={{ ...card, border: "2px solid #a855f7", boxShadow: "0 0 15px rgba(168, 85, 247, 0.65), inset 0 0 8px rgba(168, 85, 247, 0.2)" }}>
+         <div style={{ ...card, border: "3px solid #a855f7", boxShadow: "0 0 15px rgba(168, 85, 247, 0.65), inset 0 0 8px rgba(168, 85, 247, 0.2)" }}>
             <h3 style={{ color: "#f7f8ff" }}>
               💬 {lang === "RU" ? "Свяжись с тренером" :
                    lang === "TR" ? "Koçla iletişime geç" :
