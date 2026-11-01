@@ -1083,7 +1083,7 @@ if (!battlenetId) {
   <div
     style={{
       background: "linear-gradient(145deg, #101727, #080d1b)",
-      border: "2px solid #34415a",
+      border: "2px solid #22c55e",
       borderRadius: 32,
       padding: "38px 24px",
       textAlign: "center",
@@ -1122,7 +1122,7 @@ if (!battlenetId) {
         maxWidth: "100%",
         margin: "0 auto",
         padding: "20px 30px",
-        border: "3px solid #22c55e",
+        border: "3px solid #2563ed",
         borderRadius: 28,
         background: "#17243a",
         color: "#ffffff",
@@ -1133,7 +1133,7 @@ if (!battlenetId) {
         overflowWrap: "anywhere",
       }}
     >
-      <span style={{ color: "#22c55e", fontSize: 32 }}>✉</span>
+      <span style={{ color: "#2563ed", fontSize: 32 }}>✉</span>
       gamepro.market@gmail.com
     </a>
 
