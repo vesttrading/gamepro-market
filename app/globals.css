@@ -633,7 +633,7 @@ section#games div[class*="gameGrid"] > div:nth-child(3) {
     box-shadow: 0 0 12px rgba(249, 115, 22, 0.6), 0 0 25px rgba(249, 115, 22, 0.3) !important;
 }
 
-/* 4. Path of Exile 2 (Фиолетовый насыщенный неон) */
+/* 4. Path of Exile 2 (Точный фиолетовый неон из макета) */
 section#games div[class*="gameGrid"] > div:nth-child(4) {
     border: 3px solid #a855f7 !important;
     box-shadow: 0 0 12px rgba(168, 85, 247, 0.6), 0 0 25px rgba(168, 85, 247, 0.3) !important;
@@ -664,10 +664,11 @@ section#games div[class*="gameGrid"] > div:nth-child(3) span {
     box-shadow: 0 0 15px rgba(249, 115, 22, 0.8) !important;
 }
 
-/* Плашка 4-й карточки (Фиолетовый неон) */
+/* Фиолетовая плашка "Скоро" для 4-й карточки */
 section#games div[class*="gameGrid"] > div:nth-child(4) span {
     background-color: #a855f7 !important;
     box-shadow: 0 0 15px rgba(168, 85, 247, 0.8) !important;
+    color: #ffffff !important;
 }
 
 /* Правило для мобильного отображения: строго по одной карточке в ряд */
