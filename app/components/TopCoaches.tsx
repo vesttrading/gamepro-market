@@ -459,63 +459,64 @@ useEffect(() => {
        );
      }
    }}
-      <div
-  style={{
+     <article>
+  {/* Аватар и информация */}
+
+  {/* Описание */}
+
+  <div style={{
     display: "flex",
     flexDirection: "row",
     flexWrap: "nowrap",
     gap: 10,
     width: "100%",
     alignItems: "stretch",
-    marginTop: 0,
-  }}
->
-  <button
-    style={{
-      padding: 12,
-      borderRadius: 10,
-      border: "none",
-      background: "#20c9bd",
-      color: "#06111b",
-      fontWeight: 700,
-      cursor: "pointer",
-      flex: 1,
-      minWidth: 0,
-      whiteSpace: "nowrap",
-    }}
-  >
-    {lang === "RU" ? "Связаться с тренером" : "Contact Coach"}
-  </button>
+  }}>
+    <button
+      onClick={/* твой обработчик отправки сообщения */}
+      style={{
+        flex: 1,
+        minWidth: 0,
+        padding: 12,
+        border: "none",
+        borderRadius: 10,
+        background: "#20c9bd",
+        color: "#06111b",
+        fontWeight: 700,
+        cursor: "pointer",
+      }}
+    >
+      {lang === "RU" ? "Связаться с тренером" : "Contact Coach"}
+    </button>
 
-  <a
-    href={/coach/${coach.id}}
-    style={{
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      flex: 1,
-      minWidth: 0,
-      padding: 12,
-      borderRadius: 10,
-      background: "#20c9bd",
-      color: "#06101a",
-      fontWeight: 700,
-      textDecoration: "none",
-      whiteSpace: "nowrap",
-    }}
-  >
-    {{
-      RU: "Профиль",
-      EN: "Profile",
-      TR: "Profil",
-      DE: "Profil",
-      ES: "Perfil",
-      FR: "Profil",
-      PL: "Profil",
-    }[lang] || "Profile"}
-  </a>
-</div>
-         </article>
+    <a
+      href={/coach/${coach.id}}
+      style={{
+        display: "flex",
+        flex: 1,
+        minWidth: 0,
+        justifyContent: "center",
+        alignItems: "center",
+        padding: 12,
+        borderRadius: 10,
+        background: "#20c9bd",
+        color: "#06101a",
+        fontWeight: 700,
+        textDecoration: "none",
+      }}
+    >
+      {{
+        RU: "Профиль",
+        EN: "Profile",
+        TR: "Profil",
+        DE: "Profil",
+        ES: "Perfil",
+        FR: "Profil",
+        PL: "Profil",
+      }[lang] || "Profile"}
+    </a>
+  </div>
+</article>
         ))}
         </div>
       )}
