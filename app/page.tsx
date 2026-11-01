@@ -985,10 +985,10 @@ if (!battlenetId) {
 
         <button
           onClick={submitReview}
-     style={{
-          background: "rgba(0, 245, 255, 0.04)", // Легкий ярко-бирюзовый оттенок внутри кнопки
-          color: "#ffffff",                     // Текст остается белым
-          border: "2.5px solid #00f5ff",        // Насыщенная ярко-бирюзовая рамка
+   style={{
+          background: "rgba(57, 255, 20, 0.04)", // Легкий кислотно-зеленый оттенок внутри
+          color: "#ffffff",                     // Буквы остаются четкими и белыми
+          border: "2.5px solid #39ff14",        // Насыщенная неоново-зеленая рамка (Neon Lime)
           borderRadius: 8,
           padding: "10px 20px",
           fontSize: 16,
@@ -999,8 +999,8 @@ if (!battlenetId) {
           alignItems: "center",
           justifyContent: "center",
           
-          // МОЩНЫЙ ЯРКО-БИРЮЗОВЫЙ НЕОН (многослойная тень для максимальной сочности)
-          boxShadow: "0 0 20px rgba(0, 245, 255, 0.75), 0 0 8px rgba(0, 245, 255, 0.4), inset 0 0 10px rgba(0, 245, 255, 0.3)",
+          // КИСЛОТНО-ЗЕЛЕНЫЙ НЕОН (максимально глубокое и яркое свечение)
+          boxShadow: "0 0 22px rgba(57, 255, 20, 0.8), 0 0 8px rgba(57, 255, 20, 0.5), inset 0 0 10px rgba(57, 255, 20, 0.4)",
           transition: "all 0.2s ease",
         }}
         >
