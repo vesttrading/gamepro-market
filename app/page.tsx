@@ -1074,7 +1074,7 @@ if (!battlenetId) {
  <section
   id="contact"
   style={{
-    maxWidth: 760,
+    maxWidth: 550,
     width: "90%",
     margin: "0 auto 60px",
     boxSizing: "border-box",
@@ -1084,16 +1084,16 @@ if (!battlenetId) {
     style={{
       background: "linear-gradient(145deg, #101727, #080d1b)",
       border: "2px solid #22c55e",
-      borderRadius: 32,
-      padding: "38px 24px",
+      borderRadius: 20,          // Делаем скругление чуть аккуратнее (было 32)
+      padding: "20px 24px",      // Сильно уменьшаем высоту карточки (было 38px)
       textAlign: "center",
       boxSizing: "border-box",
     }}
   >
     <h2
       style={{
-        margin: "0 0 12px",
-        fontSize: 42,
+        margin: "0 0 6px",
+        fontSize: 28,
         fontWeight: 600,
         color: "#ffffff",
       }}
@@ -1121,9 +1121,9 @@ if (!battlenetId) {
         width: "fit-content",
         maxWidth: "100%",
         margin: "0 auto",
-        padding: "20px 30px",
+        padding: "10px 20px",
         border: "3px solid #00f0ff",
-        borderRadius: 28,
+        borderRadius: 12,
         background: "rgba(0, 240, 255, 0.03)", // Едва заметный неоново-голубой фон
         color: "#ffffff",                     // Текст остается белым
         boxShadow: "0 0 25px rgba(0, 240, 255, 0.75), inset 0 0 10px rgba(0, 240, 255, 0.3)", 
