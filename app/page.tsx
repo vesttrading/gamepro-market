@@ -932,7 +932,7 @@ if (!battlenetId) {
       <div style={{
   display: "flex",
   alignItems: "center",
-  justifyContent: "flex-start",
+  justifyContent: "center",
   gap: 2,
   marginBottom: 15
  }}>
