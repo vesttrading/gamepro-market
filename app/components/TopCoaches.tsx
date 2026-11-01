@@ -460,10 +460,6 @@ useEffect(() => {
      }
    }}
      <article>
-  {/* Аватар и информация */}
-
-  {/* Описание */}
-
   <div style={{
     display: "flex",
     flexDirection: "row",
