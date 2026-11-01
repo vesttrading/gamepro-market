@@ -991,7 +991,7 @@ if (!battlenetId) {
           border: "none",
           borderRadius: 8,
           padding: "8px 16px",
-          fontSize: 13,
+          fontSize: 16,
           fontWeight: 700,
           cursor: "pointer",
           width: "auto",
