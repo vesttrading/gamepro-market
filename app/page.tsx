@@ -985,11 +985,20 @@ if (!battlenetId) {
 
         <button
           onClick={submitReview}
-          style={{
-            ...btn,
-            width:"100%",
-            marginTop:12
-          }}
+         style={{
+          background: "#2563eb",
+          color: "#ffffff",
+          border: "none",
+          borderRadius: 8,
+          padding: "8px 16px",
+          fontSize: 13,
+          fontWeight: 700,
+          cursor: "pointer",
+          width: "auto",
+          display: "inline-flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
         >
           {reviewSending ? t.sending : t.leaveReview}
         </button>
