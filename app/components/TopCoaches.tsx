@@ -350,8 +350,7 @@ useEffect(() => {
     display: "flex",
     alignItems: "center",
     gap: 12,
-    fontSize: "22px", /* Увеличиваем размер имени (было по умолчанию меньше) */
-  }}
+     }}
   >
     <span>
       {coach.battletag
