@@ -337,7 +337,7 @@ useEffect(() => {
                       style={{ width: "100%", height: "100%", objectFit: "cover" }}
                     />
                   ) : (
-                   "🦑"
+                   "🐉"
                   )}
                 </div>
 
@@ -477,15 +477,16 @@ useEffect(() => {
            <a
            href={`/coach/${coach.id}`}
            style={{
-           display: "block",
-           textAlign: "center",
-           marginTop: 16,
-           padding: 12,
-           borderRadius: 10,
-           background: "#20c9bd",
-           color: "#06101a",
-           fontWeight: 700,
-           textDecoration: "none",
+          display: "block",
+        textAlign: "center",
+        marginTop: 16,
+        padding: 12,
+        borderRadius: 14,
+        background: "#00ff66",
+        color: "#000000",
+        fontWeight: 700,
+        textDecoration: "none",
+        boxShadow: "0 0 15px 3px rgba(0, 255, 102, 0.6), 0 0 5px 1px rgba(0, 255, 102, 0.8)"
          }}
        >
        {{
