@@ -1093,7 +1093,7 @@ if (!battlenetId) {
     <h2
       style={{
         margin: "0 0 6px",
-        fontSize: 28,
+        fontSize: 34,
         fontWeight: 600,
         color: "#ffffff",
       }}
