@@ -1122,11 +1122,11 @@ if (!battlenetId) {
         maxWidth: "100%",
         margin: "0 auto",
         padding: "20px 30px",
-        border: "3px solid #22c55e",
+        border: "3px solid #00f0ff",
         borderRadius: 28,
-        background: "rgba(34, 197, 94, 0.05)", // Легкий зеленый оттенок фона
-        color: "#22c55e",                     // Делаем текст неоново-зеленым вместо белого
-        boxShadow: "0 0 20px rgba(34, 197, 94, 0.7), inset 0 0 10px rgba(34, 197, 94, 0.3)", // Мощное неоновое свечение снаружи и изнутри
+        background: "rgba(0, 240, 255, 0.03)", // Едва заметный неоново-голубой фон
+        color: "#ffffff",                     // Текст остается белым
+        boxShadow: "0 0 25px rgba(0, 240, 255, 0.75), inset 0 0 10px rgba(0, 240, 255, 0.3)", 
         fontSize: 18,
         fontWeight: 600,
         textDecoration: "none",
@@ -1134,7 +1134,7 @@ if (!battlenetId) {
         overflowWrap: "anywhere",
       }}
     >
-     <span style={{ color: "#22c55e", fontSize: 32, textShadow: "0 0 10px rgba(34, 197, 94, 0.9)" }}>✉</span>
+    <span style={{ color: "#00f0ff", fontSize: 32, textShadow: "0 0 15px rgba(0, 240, 255, 0.9)" }}>✉</span>
       gamepro.market@gmail.com
     </a>
 
