@@ -345,12 +345,13 @@ useEffect(() => {
             <div style={{ minWidth: 0 }}>
   <h3
     style={{
-      margin: 0,
-      overflowWrap: "anywhere",
-      display: "flex",
-      alignItems: "center",
-      gap: 12,
-    }}
+    margin: 0,
+    overflowWrap: "anywhere",
+    display: "flex",
+    alignItems: "center",
+    gap: 12,
+    fontSize: "22px", /* Увеличиваем размер имени (было по умолчанию меньше) */
+  }}
   >
     <span>
       {coach.battletag
@@ -469,7 +470,8 @@ useEffect(() => {
         borderRadius: 10,
         border: "none",
         background: "#20c9bd",
-        color: "#06111b",
+        color: "#ffffff",
+        fontSize: "18px"
         fontWeight: 700,
         cursor: "pointer",
         display: "block",
