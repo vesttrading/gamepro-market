@@ -617,26 +617,57 @@ section#games div[class*="gameGrid"] > div {
 
 /* 1. WoW (Зелёный насыщенный неон) */
 section#games div[class*="gameGrid"] > div:nth-child(1) {
-    border: 2px solid #22c55e !important;
-    box-shadow: 0 0 10px rgba(34, 197, 94, 0.5), 0 0 25px rgba(34, 197, 94, 0.3) !important;
+    border: 3px solid #22c55e !important;
+    box-shadow: 0 0 12px rgba(34, 197, 94, 0.6), 0 0 25px rgba(34, 197, 94, 0.3) !important;
 }
 
 /* 2. Dota 2 (Красный насыщенный неон) */
 section#games div[class*="gameGrid"] > div:nth-child(2) {
-    border: 2px solid #ef4444 !important;
-    box-shadow: 0 0 10px rgba(239, 68, 68, 0.5), 0 0 25px rgba(239, 68, 68, 0.3) !important;
+    border: 3px solid #ef4444 !important;
+    box-shadow: 0 0 12px rgba(239, 68, 68, 0.6), 0 0 25px rgba(239, 68, 68, 0.3) !important;
 }
 
 /* 3. CS2 (Оранжевый насыщенный неон) */
 section#games div[class*="gameGrid"] > div:nth-child(3) {
-    border: 2px solid #f97316 !important;
-    box-shadow: 0 0 10px rgba(249, 115, 22, 0.5), 0 0 25px rgba(249, 115, 22, 0.3) !important;
+    border: 3px solid #f97316 !important;
+    box-shadow: 0 0 12px rgba(249, 115, 22, 0.6), 0 0 25px rgba(249, 115, 22, 0.3) !important;
 }
 
-/* 4. Path of Exile 2 (Яркий неоново-синий или фиолетовый) */
+/* 4. Path of Exile 2 (Фиолетовый насыщенный неон) */
 section#games div[class*="gameGrid"] > div:nth-child(4) {
-    border: 2px solid #3b82f6 !important; /* Если хотите фиолетовый как на макете, замените на #a855f7 */
-    box-shadow: 0 0 10px rgba(59, 130, 246, 0.5), 0 0 25px rgba(59, 130, 246, 0.3) !important;
+    border: 3px solid #a855f7 !important;
+    box-shadow: 0 0 12px rgba(168, 85, 247, 0.6), 0 0 25px rgba(168, 85, 247, 0.3) !important;
+}
+
+/* Базовые стили для всех плашек внутри карточек, чтобы они светились */
+section#games div[class*="gameGrid"] > div span {
+    color: #ffffff !important;
+    font-weight: bold !important;
+    border: none !important;
+}
+
+/* Плашка 1-й карточки (Зеленый неон) */
+section#games div[class*="gameGrid"] > div:nth-child(1) span {
+    background-color: #22c55e !important;
+    box-shadow: 0 0 15px rgba(34, 197, 94, 0.8) !important;
+}
+
+/* Плашка 2-й карточки (Красный неон) */
+section#games div[class*="gameGrid"] > div:nth-child(2) span {
+    background-color: #ef4444 !important;
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.8) !important;
+}
+
+/* Плашка 3-й карточки (Оранжевый неон) */
+section#games div[class*="gameGrid"] > div:nth-child(3) span {
+    background-color: #f97316 !important;
+    box-shadow: 0 0 15px rgba(249, 115, 22, 0.8) !important;
+}
+
+/* Плашка 4-й карточки (Фиолетовый неон) */
+section#games div[class*="gameGrid"] > div:nth-child(4) span {
+    background-color: #a855f7 !important;
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.8) !important;
 }
 
 /* Правило для мобильного отображения: строго по одной карточке в ряд */
