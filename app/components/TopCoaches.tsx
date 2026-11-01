@@ -459,7 +459,7 @@ useEffect(() => {
        );
      }
    }}
-       {/* Добавляем контейнер-обертку для кнопок */}
+      
 <div style={{ display: "flex", gap: "10px", width: "100%", marginTop: "15px" }}>
   
   <button
