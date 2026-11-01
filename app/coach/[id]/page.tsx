@@ -78,18 +78,18 @@ export default async function CoachProfilePage({
       {coach.battletag ?? "Coach"}
     </h1>
 {coach.is_verified && (
- style={{
-          display: "inline-block",
-          background: "rgba(57, 255, 20, 0.06)", // Легкий кислотно-зеленый фон
-          color: "#39ff14",                     // Насыщенный неоново-зеленый текст
-          border: "2px solid #39ff14",          // Сделали рамку толще и ярче (2px вместо 1px)
-          boxShadow: "0 0 15px rgba(57, 255, 20, 0.75), inset 0 0 6px rgba(57, 255, 20, 0.4)", // Мощный круговой неон
-          padding: "5px 12px",
-          borderRadius: 6,
-          fontSize: 14,                         // Чуть уменьшили для большей компактности и аккуратности
-          fontWeight: 700,                      // Сделали текст еще более выразительным
-          letterSpacing: "0.5px",
-        }}
+  <div style={{ 
+    display: "inline-block", 
+    background: "rgba(0, 240, 255, 0.08)",       // Чуть более плотный неоновый фон
+    color: "#00f0ff",                            // Ярко-голубой неоновый цвет текста
+    border: "1px solid rgba(0, 240, 255, 0.5)",  // Четкая неоновая окантовка
+    boxShadow: "0 0 12px rgba(0, 240, 255, 0.3)", // Более заметное неоновое свечение
+    padding: "6px 12px",                         // Увеличили отступы, плашка стала крупнее
+    borderRadius: 6,                             // Чуть больше скругление для пропорции
+    fontSize: 16,                                // Увеличили шрифт (было 13)
+    fontWeight: 600,                             // Сделали текст более жирным и читаемым
+    letterSpacing: "0.5px"                       // Небольшое расстояние между буквами для стиля
+  }}>
     ✓ Подтвержден
   </div>
 )}
