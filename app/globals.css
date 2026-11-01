@@ -569,23 +569,6 @@ body {
     margin-top: 0px !important;
 }
 
-/* 1-я карточка: Выбери тренера (Синий неон) */
-#how div[class*="steps"] > div:nth-child(1) {
-    border: 2px solid #2563eb !important;
-    box-shadow: 0 0 12px rgba(37, 99, 235, 0.65), 0 0 25px rgba(37, 99, 235, 0.3) !important;
-}
-
-/* 2-я карточка: Изучи услуги (Зеленый неон) */
-#how div[class*="steps"] > div:nth-child(2) {
-    border: 2px solid #22c55e !important;
-    box-shadow: 0 0 12px rgba(34, 197, 94, 0.65), 0 0 25px rgba(34, 197, 94, 0.3) !important;
-}
-
-/* 3-я карточка: Свяжись с тренером (Фиолетовый неон) */
-#how div[class*="steps"] > div:nth-child(3) {
-    border: 2px solid #a855f7 !important;
-    box-shadow: 0 0 12px rgba(168, 85, 247, 0.65), 0 0 25px rgba(168, 85, 247, 0.3) !important;
-}
 
 /* Правило сработает ТОЛЬКО на экранах телефонов (меньше 768px) */
 @media (max-width: 768px) {
