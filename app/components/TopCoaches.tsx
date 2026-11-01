@@ -459,49 +459,37 @@ useEffect(() => {
        );
      }
    }}
-     <article>
-  <div style={{
-    display: "flex",
-    flexDirection: "row",
-    flexWrap: "nowrap",
-    gap: 10,
-    width: "100%",
-    alignItems: "stretch",
-  }}>
-    <button
-      onClick={/* твой обработчик отправки сообщения */}
-      style={{
-        flex: 1,
-        minWidth: 0,
+        style={{
+        marginTop: 0,
         padding: 12,
-        border: "none",
         borderRadius: 10,
+        border: "none",
         background: "#20c9bd",
         color: "#06111b",
         fontWeight: 700,
         cursor: "pointer",
-      }}
-    >
-      {lang === "RU" ? "Связаться с тренером" : "Contact Coach"}
-    </button>
-
-    <a
-      href={/coach/${coach.id}}
-      style={{
-        display: "flex",
+        display: "inline-flex",
         flex: 1,
-        minWidth: 0,
-        justifyContent: "center",
-        alignItems: "center",
-        padding: 12,
-        borderRadius: 10,
-        background: "#20c9bd",
-        color: "#06101a",
-        fontWeight: 700,
-        textDecoration: "none",
-      }}
-    >
-      {{
+        marginRight: 10,
+     }}
+   >
+       {lang === "RU" ? "Связаться с тренером" : "Contact Coach"}
+       </button>
+           <a
+           href={`/coach/${coach.id}`}
+           style={{
+           display: "inline-flex",
+           justifyContent: "center", alignItems: "center",
+           flex: 1,
+           padding: 12,
+           borderRadius: 10,
+           background: "#20c9bd",
+           color: "#06101a",
+           fontWeight: 700,
+           textDecoration: "none",
+         }}
+       >
+       {{
         RU: "Профиль",
         EN: "Profile",
         TR: "Profil",
@@ -509,10 +497,9 @@ useEffect(() => {
         ES: "Perfil",
         FR: "Profil",
         PL: "Profil",
-      }[lang] || "Profile"}
-    </a>
-  </div>
-</article>
+       }[lang] || "Profile"}
+         </a>
+         </article>
         ))}
         </div>
       )}
