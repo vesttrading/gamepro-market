@@ -460,7 +460,7 @@ useEffect(() => {
      }
    }}
         style={{
-        marginTop: 16,
+        marginTop: 0,
         padding: 12,
         borderRadius: 10,
         border: "none",
@@ -468,8 +468,9 @@ useEffect(() => {
         color: "#06111b",
         fontWeight: 700,
         cursor: "pointer",
-        display: "block",
-        width: "100%",
+        display: "inline-flex",
+        flex: 1,
+        marginRight: 10,
      }}
    >
        {lang === "RU" ? "Связаться с тренером" : "Contact Coach"}
