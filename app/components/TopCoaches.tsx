@@ -97,8 +97,7 @@ useEffect(() => {
 
     return () => {
       active = false;
-    };
-  }, []);
+     }, []);
 
   return (
     <section
