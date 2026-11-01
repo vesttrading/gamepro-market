@@ -985,12 +985,12 @@ if (!battlenetId) {
 
         <button
           onClick={submitReview}
-         style={{
-          background: "#2563eb",
-          color: "#ffffff",
-          border: "none",
+        style={{
+          background: "rgba(37, 99, 235, 0.03)", // Едва заметный синий фон внутри кнопки
+          color: "#ffffff",                     // Белый цвет текста
+          border: "2.5px solid #2563eb",        // Насыщенная синяя неоновая рамка
           borderRadius: 8,
-          padding: "8px 16px",
+          padding: "10px 20px",
           fontSize: 16,
           fontWeight: 700,
           cursor: "pointer",
@@ -998,6 +998,10 @@ if (!battlenetId) {
           display: "inline-flex",
           alignItems: "center",
           justifyContent: "center",
+          
+          // НАСЫЩЕННЫЙ СИНЙ НЕОН (внешний свет + внутреннее размытие)
+          boxShadow: "0 0 15px rgba(37, 99, 235, 0.6), inset 0 0 8px rgba(37, 99, 235, 0.3)",
+          transition: "all 0.2s ease",
         }}
         >
           {reviewSending ? t.sending : t.leaveReview}
