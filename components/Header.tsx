@@ -142,12 +142,12 @@ style={{ height: "45px", width: "auto" }}
     {isLoggedIn && (
   <button
     onClick={() => signOut({ callbackUrl: "/" })}
-   style={{
+  style={{
   background: "transparent",
   color: "#bdc4da",
-  border: "1px solid #20c9bd",
-  borderRadius: 9,
-  padding: "9px 12px",
+  border: "none",
+  borderRadius: 0,
+  padding: 0,
   fontWeight: 400,
   fontSize: 14,
   cursor: "pointer",
