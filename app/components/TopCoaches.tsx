@@ -308,7 +308,7 @@ useEffect(() => {
                 maxWidth: 320,
                 boxSizing: "border-box",
                 background: "linear-gradient(145deg, #10162b, #080d1b)",
-                border: "3px solid #00d2ff", /* Делаем рамку ярче и синей */
+                border: "3px solid #0022ff", /* Делаем рамку ярче и синей */
                 boxShadow: "0 0 15px rgba(0, 210, 255, 0.35), inset 0 0 10px rgba(0, 210, 255, 0.15)", /* Синий неон */
                 borderRadius: 18,
                 padding: 20,
