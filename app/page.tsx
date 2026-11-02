@@ -1126,7 +1126,7 @@ if (!battlenetId) {
         maxWidth: "100%",
         margin: "0 auto",
         padding: "10px 20px",
-        border: "3px solid #00f0ff",
+        border: "3px solid #00ff66",
         borderRadius: 12,
         background: "rgba(0, 240, 255, 0.03)", // Едва заметный неоново-голубой фон
         color: "#ffffff",                     // Текст остается белым
@@ -1138,7 +1138,7 @@ if (!battlenetId) {
         overflowWrap: "anywhere",
       }}
     >
-    <span style={{ color: "#00f0ff", fontSize: 32, textShadow: "0 0 15px rgba(0, 240, 255, 0.9)" }}>✉</span>
+    <span style={{ color: "#00ff66", fontSize: 32, textShadow: "0 0 15px rgba(0, 240, 255, 0.9)" }}>✉</span>
       gamepro.market@gmail.com
     </a>
 
