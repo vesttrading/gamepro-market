@@ -411,7 +411,7 @@ useEffect(() => {
       } as Record<string, string>)[lang] ||
       "Game coaching and guidance."}
   </p>
-      <div style={{ fontSize: "24px", fontWeight: "700", color: "#ffffff", marginBottom: "15px", textAlign: "left" }}>
+      <div style={{ fontSize: "18px", fontWeight: "700", color: "#ffffff", marginBottom: "15px", textAlign: "left" }}>
       25 USD
       </div>
             
@@ -469,7 +469,8 @@ useEffect(() => {
         borderRadius: 10,
         border: "none",
         background: "#20c9bd",
-        color: "#06111b",
+        color: "#ffffff",
+        fontSize: "18px",
         fontWeight: 700,
         cursor: "pointer",
         display: "block",
