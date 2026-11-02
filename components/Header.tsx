@@ -61,7 +61,7 @@ style={{ height: "45px", width: "auto" }}
       }}
     >
      
-      <a href="#how" style={{ color: "#bdc4da" }}>
+      <a href="#how" style={{ color: "#bdc4da", textDecoration: "none" }}>
         {t.how}
       </a>
 
@@ -95,7 +95,7 @@ style={{ height: "45px", width: "auto" }}
           "Opinie"}
       </a>
 
-      <a href="#contact" style={{ color: "#bdc4da" }}>
+      <a href="#contact" style={{ color: "#bdc4da", textDecoration: "none" }}>
         {t.contact}
       </a>
     </div>
