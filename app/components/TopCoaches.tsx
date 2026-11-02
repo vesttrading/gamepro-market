@@ -468,7 +468,7 @@ useEffect(() => {
         padding: 12,
         borderRadius: 10,
         border: "none",
-        background: "#20c9bd",
+        background: "#00ff66",
         color: "#ffffff",
         fontSize: "18px",
         fontWeight: 700,
