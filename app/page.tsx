@@ -1087,7 +1087,7 @@ if (!battlenetId) {
   <div
     style={{
       background: "linear-gradient(145deg, #101727, #080d1b)",
-      border: "2px solid #22c55e",
+      border: "3px solid #0022ff",
       borderRadius: 20,          // Делаем скругление чуть аккуратнее (было 32)
       padding: "20px 24px",      // Сильно уменьшаем высоту карточки (было 38px)
       textAlign: "center",
