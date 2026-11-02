@@ -390,13 +390,13 @@ useEffect(() => {
         {coach.description ===
        "Experienced WoW player offering Mythic+ coaching for beginners and advanced players."
     ? ({
-   RU: "🚀 Топовый хил в Mythic+ любой сложности!\n\n• Обучение механикам с нуля\n• Оптимизация хила и разбор ошибок\n• Спокойный и эффективный войс-колл",
-   EN: "🚀 Top-tier healing in Mythic+ of any difficulty!\n\n• Learning mechanics from scratch\n• Healing optimization and error analysis\n• Calm and effective voice comms",
-   TR: "🚀 Her zorlukta Mythic+ için üst düzey şifa!\n\n• Sıfırdan mekanik eğitimi\n• Şifa optimizasyonu ve hata analizi\n• Sakin ve etkili sesli iletişim",
-   DE: "🚀 Top-Tier-Heilung in Mythic+ auf jedem Level!\n\n• Mechaniken von Grund auf lernen\n• Heilungsoptimierung und Fehleranalyse\n• Ruhige und effektive Absprachen",
-   ES: "🚀 ¡Sanación de alto nivel en Mythic+ de cualquier dificultad!\n\n• Aprendizaje de mecánicas desde cero\n• Optimización de sanación y análisis de errores\n• Comunicación por voz tranquila y eficaz",
-   FR: "🚀 Soins de haut niveau en Mythic+ de toute difficulté !\n\n• Apprentissage des mécaniques à partir de zéro\n• Optimisation des soins et analyse des erreurs\n• Comms vocales calmes et efficaces",
-   PL: "🚀 Uzdrawianie na najwyższym poziomie w Mythic+ o każdej trudności!\n\n• Nauka mechaniki od zera\n• Optymalizacja leczenia i analiza błędów\n• Spokojna i skuteczna komunikacja głosowa",
+   RU: " Топовый хил в Mythic+ любой сложности!\n\n• Обучение механикам с нуля\n• Оптимизация хила и разбор ошибок\n• Спокойный и эффективный войс-колл",
+   EN: " Top-tier healing in Mythic+ of any difficulty!\n\n• Learning mechanics from scratch\n• Healing optimization and error analysis\n• Calm and effective voice comms",
+   TR: " Her zorlukta Mythic+ için üst düzey şifa!\n\n• Sıfırdan mekanik eğitimi\n• Şifa optimizasyonu ve hata analizi\n• Sakin ve etkili sesli iletişim",
+   DE: " Top-Tier-Heilung in Mythic+ auf jedem Level!\n\n• Mechaniken von Grund auf lernen\n• Heilungsoptimierung und Fehleranalyse\n• Ruhige und effektive Absprachen",
+   ES: " ¡Sanación de alto nivel en Mythic+ de cualquier dificultad!\n\n• Aprendizaje de mecánicas desde cero\n• Optimización de sanación y análisis de errores\n• Comunicación por voz tranquila y eficaz",
+   FR: " Soins de haut niveau en Mythic+ de toute difficulté !\n\n• Apprentissage des mécaniques à partir de zéro\n• Optimisation des soins et analyse des erreurs\n• Comms vocales calmes et efficaces",
+   PL: " Uzdrawianie na najwyższym poziomie w Mythic+ o każdej trudności!\n\n• Nauka mechaniki od zera\n• Optymalizacja leczenia i analiza błędów\n• Spokojna i skuteczna komunikacja głosowa",
       } as Record<string, string>)[lang] ||
       "Experienced WoW player offering Mythic+ coaching for beginners and advanced players."
     : coach.description ||
