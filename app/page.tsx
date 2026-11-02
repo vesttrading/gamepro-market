@@ -1043,10 +1043,20 @@ if (!battlenetId) {
       </div>
     ) : (
       reviews.map(review => (
-        <div
-          key={review.id}
-          style={card}
-        >
+           <div
+            key={review.id}
+            style={{
+                width: "100%",
+                maxWidth: "300px",
+                background: "#0c1926",
+                borderRadius: "16px",
+                padding: "16px",
+                margin: "10px auto",
+               /* Яркий голубой неон: */
+                border: "2px solid #00d2ff",
+               boxShadow: "0 0 15px rgba(0, 210, 255, 0.5), inset 0 0 8px rgba(0, 210, 255, 0.2)",
+              }}
+           >
           <div style={{
             fontSize:20,
             marginBottom:10
