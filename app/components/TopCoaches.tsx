@@ -465,10 +465,10 @@ useEffect(() => {
    }}
         style={{
         marginTop: 16,
-        padding: 12,
+        padding: 11,
         borderRadius: 10,
         border: "none",
-        background: "#00ff66",
+        background: "#20c9bd",
         color: "#06111b",
         fontSize: "16px",
         fontWeight: 700,
