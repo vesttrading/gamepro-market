@@ -65,7 +65,7 @@ style={{ height: "45px", width: "auto" }}
         {t.how}
       </a>
 
-      <a href="/become-coach" style={{ color: "#bdc4da" }}>
+      <a href="/become-coach" style={{ color: "#bdc4da", textDecoration: "none" }}>
         {lang === "RU" ? "Стать коучем" :
         lang === "TR" ? "Koç Ol" :
         lang === "DE" ? "Coach werden" :
