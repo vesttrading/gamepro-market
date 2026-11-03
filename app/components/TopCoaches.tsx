@@ -28,6 +28,9 @@ export default function TopCoaches() {
   const [searchName, setSearchName] = useState("");
   const [selectedGame, setSelectedGame] = useState("");
   const [selectedServiceType, setSelectedServiceType] = useState("");
+  const [selectedCoach, setSelectedCoach] = useState<Coach | null>(null);
+  const [messageText, setMessageText] = useState("");
+  const [sending, setSending] = useState(false);
 
   const filteredCoaches = coaches.filter((coach) => {
     const name = (coach.battletag ?? "").toLowerCase();
@@ -416,7 +419,10 @@ useEffect(() => {
       </div>
             
          <button
-            onClick={async () => {
+           onClick={() => {
+           setSelectedCoach(coach);
+           setMessageText("");
+         }}
             const message = window.prompt(
             lang === "RU"
             ? `Напишите сообщение тренеру ${coach.battletag}`
@@ -510,6 +516,149 @@ useEffect(() => {
         ))}
         </div>
       )}
+{selectedCoach && (
+  <div
+    style={{
+      position: "fixed",
+      inset: 0,
+      zIndex: 99999,
+      background: "rgba(0,0,0,0.85)",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      padding: 16,
+      boxSizing: "border-box",
+    }}
+  >
+    <div
+      style={{
+        width: "100%",
+        maxWidth: 420,
+        maxHeight: "90dvh",
+        overflowY: "auto",
+        background: "#10162b",
+        border: "1px solid #20c9bd",
+        borderRadius: 16,
+        padding: 20,
+        boxSizing: "border-box",
+        color: "white",
+      }}
+    >
+      <h3 style={{ marginTop: 0 }}>
+        {lang === "RU" ? "Написать тренеру" : "Message Coach"}
+      </h3>
+
+      <p style={{ color: "#9da6c0" }}>
+        {selectedCoach.battletag}
+      </p>
+
+      <textarea
+        value={messageText}
+        onChange={(e) => setMessageText(e.target.value)}
+        placeholder={
+          lang === "RU"
+            ? "Введите ваше сообщение..."
+            : "Write your message..."
+        }
+        rows={5}
+        style={{
+          width: "100%",
+          boxSizing: "border-box",
+          padding: 12,
+          borderRadius: 10,
+          border: "1px solid #34415c",
+          background: "#080d1b",
+          color: "white",
+          fontSize: 16,
+          resize: "vertical",
+          outline: "none",
+        }}
+      />
+
+      <button
+        disabled={!messageText.trim() || sending}
+        onClick={async () => {
+          if (!selectedCoach || !messageText.trim()) return;
+
+          setSending(true);
+
+          try {
+            const response = await fetch("/api/messages", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                coachId: selectedCoach.id,
+                message: messageText.trim(),
+              }),
+            });
+
+            const result = await response.json();
+
+            if (!response.ok) {
+              alert(result.error || "Failed to send message");
+              return;
+            }
+
+            alert(
+              lang === "RU"
+                ? "Сообщение отправлено!"
+                : "Message sent!"
+            );
+
+            setSelectedCoach(null);
+            setMessageText("");
+          } catch (error) {
+            console.error(error);
+            alert(
+              lang === "RU"
+                ? "Ошибка отправки сообщения"
+                : "Message sending error"
+            );
+          } finally {
+            setSending(false);
+          }
+        }}
+        style={{
+          width: "100%",
+          marginTop: 14,
+          padding: 13,
+          borderRadius: 10,
+          border: "none",
+          background: "#20c9bd",
+          color: "#06111b",
+          fontWeight: 700,
+          fontSize: 16,
+          opacity: !messageText.trim() || sending ? 0.5 : 1,
+        }}
+      >
+        {sending
+          ? (lang === "RU" ? "Отправка..." : "Sending...")
+          : (lang === "RU" ? "Отправить сообщение" : "Send Message")}
+      </button>
+
+      <button
+        onClick={() => {
+          setSelectedCoach(null);
+          setMessageText("");
+        }}
+        style={{
+          width: "100%",
+          marginTop: 10,
+          padding: 12,
+          borderRadius: 10,
+          border: "1px solid #34415c",
+          background: "transparent",
+          color: "white",
+          fontSize: 15,
+        }}
+      >
+        {lang === "RU" ? "Закрыть" : "Close"}
+      </button>
+    </div>
+  </div>
+)}
     </section>
   );
 }
