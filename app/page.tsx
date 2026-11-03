@@ -912,20 +912,11 @@ if (!battlenetId) {
 
   {/* Форма отзыва */}
   <div
- style={{
-  display: "block",
-  width: "100%",
-  minHeight: 120,
-  boxSizing: "border-box",
-  resize: "vertical",
-  background: "#090e1d",
-  border: "1px solid #26364b",
-  borderRadius: 12,
-  padding: 15,
-  color: "white",
-  outline: "none",
-  fontFamily: "inherit",
-}}
+    style={{
+      ...card,
+      maxWidth:650,
+      margin:"0 auto 35px",
+    }}
   >
   
     {status !== "authenticated" ? (
